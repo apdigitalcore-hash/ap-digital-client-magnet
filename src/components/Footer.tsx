@@ -76,7 +76,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-4">
               {socialLinks.map(social => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-teal/20 hover:text-teal transition-colors" aria-label={social.label}>
-                  <social.icon className="w-5 h-5" />
+                  
                 </a>)}
             </div>
           </div>

@@ -1,9 +1,7 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import ContactForm from './ContactForm';
-
 const Contact = () => {
-  return (
-    <section id="contact" className="section-padding bg-secondary">
+  return <section id="contact" className="section-padding bg-secondary">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Info */}
@@ -28,9 +26,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Phone</h4>
-                  <a href="tel:+15551234567" className="text-muted-foreground hover:text-teal transition-colors">
-                    +1 (555) 123-4567
-                  </a>
+                  <a href="tel:+15551234567" className="text-muted-foreground hover:text-teal transition-colors">+1 (778) 682-5772</a>
                 </div>
               </div>
 
@@ -40,24 +36,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Email</h4>
-                  <a href="mailto:hello@apdigital.com" className="text-muted-foreground hover:text-teal transition-colors">
-                    hello@apdigital.com
-                  </a>
+                  <a href="mailto:hello@apdigital.com" className="text-muted-foreground hover:text-teal transition-colors">apdigitalcore@gmail.com</a>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-teal" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground mb-1">Location</h4>
-                  <p className="text-muted-foreground">
-                    123 Marketing Ave, Suite 100<br />
-                    New York, NY 10001
-                  </p>
-                </div>
-              </div>
+              
 
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center flex-shrink-0">
@@ -65,9 +48,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-1">Business Hours</h4>
-                  <p className="text-muted-foreground">
-                    Mon - Fri: 9:00 AM - 6:00 PM EST
-                  </p>
+                  <p className="text-muted-foreground">Mon - Fri: 9:00 AM - 6:00 PM PST</p>
                 </div>
               </div>
             </div>
@@ -95,8 +76,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
