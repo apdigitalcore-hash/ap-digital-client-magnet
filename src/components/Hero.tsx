@@ -1,9 +1,7 @@
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
+  return <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-teal blur-3xl" />
@@ -19,20 +17,23 @@ const Hero = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{
+          animationDelay: '0.1s'
+        }}>
             Grow Your Business With{' '}
             <span className="text-gradient">Data-Driven</span>{' '}
             Digital Marketing
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            We help salons, real estate agencies, tradespeople, and coaches generate leads, 
-            boost visibility, and scale revenue—guaranteed results in 90 days.
-          </p>
+          <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-up" style={{
+          animationDelay: '0.2s'
+        }}>We help Salons, Real Estate Agencies, Tradespeople, and Coaches generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.</p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: '0.3s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{
+          animationDelay: '0.3s'
+        }}>
             <Button variant="hero" size="xl" asChild>
               <a href="#contact" className="flex items-center gap-2">
                 Book a Free Strategy Call
@@ -48,14 +49,14 @@ const Hero = () => {
           </div>
 
           {/* Social Proof */}
-          <div className="mt-16 pt-12 border-t border-primary-foreground/10 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <div className="mt-16 pt-12 border-t border-primary-foreground/10 animate-fade-up" style={{
+          animationDelay: '0.4s'
+        }}>
             <p className="text-primary-foreground/60 text-sm mb-6">Trusted by industry leaders</p>
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
-              {['SalonPro', 'RealtyMax', 'TradesCo', 'CoachHub', 'GrowthLab'].map((brand) => (
-                <div key={brand} className="text-primary-foreground/80 font-display font-semibold text-lg">
+              {['SalonPro', 'RealtyMax', 'TradesCo', 'CoachHub', 'GrowthLab'].map(brand => <div key={brand} className="text-primary-foreground/80 font-display font-semibold text-lg">
                   {brand}
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -67,8 +68,6 @@ const Hero = () => {
           <div className="w-1.5 h-3 bg-teal rounded-full" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
