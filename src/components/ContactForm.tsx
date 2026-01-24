@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
+import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -13,6 +14,9 @@ import {
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 
+// Allowed niche values for validation
+const ALLOWED_NICHES = ['salon', 'real-estate', 'trades', 'coaching', 'other'] as const;
+
 const niches = [
   { value: 'salon', label: 'Salon / Beauty' },
   { value: 'real-estate', label: 'Real Estate' },
@@ -21,11 +25,68 @@ const niches = [
   { value: 'other', label: 'Other' },
 ];
 
+// Zod schema for form validation with security-focused constraints
+const contactFormSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(1, { message: 'Name is required' })
+    .max(100, { message: 'Name must be less than 100 characters' })
+    .regex(/^[a-zA-Z\s\-'\.]+$/, { message: 'Name contains invalid characters' }),
+  email: z
+    .string()
+    .trim()
+    .min(1, { message: 'Email is required' })
+    .max(255, { message: 'Email must be less than 255 characters' })
+    .email({ message: 'Please enter a valid email address' }),
+  business: z
+    .string()
+    .trim()
+    .min(1, { message: 'Business name is required' })
+    .max(200, { message: 'Business name must be less than 200 characters' }),
+  phone: z
+    .string()
+    .trim()
+    .max(20, { message: 'Phone number must be less than 20 characters' })
+    .regex(/^[\d\s\+\-\(\)]*$/, { message: 'Phone contains invalid characters' })
+    .optional()
+    .or(z.literal('')),
+  niche: z.enum(ALLOWED_NICHES, { message: 'Please select a valid industry' }),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
+
 const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
+
+  const validateForm = (formData: FormData): ContactFormData | null => {
+    const rawData = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      business: formData.get('business') as string,
+      phone: formData.get('phone') as string,
+      niche: formData.get('niche') as string,
+    };
+
+    const result = contactFormSchema.safeParse(rawData);
+    
+    if (!result.success) {
+      const errors: Record<string, string> = {};
+      result.error.errors.forEach((err) => {
+        const field = err.path[0] as string;
+        errors[field] = err.message;
+      });
+      setFormErrors(errors);
+      return null;
+    }
+
+    setFormErrors({});
+    return result.data;
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,20 +100,28 @@ const ContactForm = () => {
       return;
     }
 
+    const formData = new FormData(e.currentTarget);
+    const validatedData = validateForm(formData);
+
+    if (!validatedData) {
+      toast({
+        title: "Validation Error",
+        description: "Please check the form for errors.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      business: formData.get('business'),
-      phone: formData.get('phone'),
-      niche: formData.get('niche'),
-    };
-
     // Simulate form submission - replace with actual endpoint
+    // When implementing backend, ensure server-side validation mirrors this schema
     try {
-      // Example: await fetch('/api/leads', { method: 'POST', body: JSON.stringify(data) });
+      // Example: await fetch('/api/leads', { 
+      //   method: 'POST', 
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(validatedData) 
+      // });
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       setIsSubmitted(true);
@@ -88,7 +157,7 @@ const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div className="grid sm:grid-cols-2 gap-6">
         {/* Name */}
         <div className="space-y-2">
@@ -97,9 +166,14 @@ const ContactForm = () => {
             id="name"
             name="name"
             placeholder="John Smith"
-            required
-            className="bg-background"
+            maxLength={100}
+            className={`bg-background ${formErrors.name ? 'border-destructive' : ''}`}
+            aria-invalid={!!formErrors.name}
+            aria-describedby={formErrors.name ? 'name-error' : undefined}
           />
+          {formErrors.name && (
+            <p id="name-error" className="text-sm text-destructive">{formErrors.name}</p>
+          )}
         </div>
 
         {/* Email */}
@@ -110,9 +184,14 @@ const ContactForm = () => {
             name="email"
             type="email"
             placeholder="john@example.com"
-            required
-            className="bg-background"
+            maxLength={255}
+            className={`bg-background ${formErrors.email ? 'border-destructive' : ''}`}
+            aria-invalid={!!formErrors.email}
+            aria-describedby={formErrors.email ? 'email-error' : undefined}
           />
+          {formErrors.email && (
+            <p id="email-error" className="text-sm text-destructive">{formErrors.email}</p>
+          )}
         </div>
       </div>
 
@@ -124,9 +203,14 @@ const ContactForm = () => {
             id="business"
             name="business"
             placeholder="Your Business"
-            required
-            className="bg-background"
+            maxLength={200}
+            className={`bg-background ${formErrors.business ? 'border-destructive' : ''}`}
+            aria-invalid={!!formErrors.business}
+            aria-describedby={formErrors.business ? 'business-error' : undefined}
           />
+          {formErrors.business && (
+            <p id="business-error" className="text-sm text-destructive">{formErrors.business}</p>
+          )}
         </div>
 
         {/* Phone */}
@@ -137,16 +221,26 @@ const ContactForm = () => {
             name="phone"
             type="tel"
             placeholder="+1 (555) 123-4567"
-            className="bg-background"
+            maxLength={20}
+            className={`bg-background ${formErrors.phone ? 'border-destructive' : ''}`}
+            aria-invalid={!!formErrors.phone}
+            aria-describedby={formErrors.phone ? 'phone-error' : undefined}
           />
+          {formErrors.phone && (
+            <p id="phone-error" className="text-sm text-destructive">{formErrors.phone}</p>
+          )}
         </div>
       </div>
 
       {/* Niche */}
       <div className="space-y-2">
         <Label htmlFor="niche">What industry are you in? *</Label>
-        <Select name="niche" required>
-          <SelectTrigger className="bg-background">
+        <Select name="niche">
+          <SelectTrigger 
+            className={`bg-background ${formErrors.niche ? 'border-destructive' : ''}`}
+            aria-invalid={!!formErrors.niche}
+            aria-describedby={formErrors.niche ? 'niche-error' : undefined}
+          >
             <SelectValue placeholder="Select your industry" />
           </SelectTrigger>
           <SelectContent>
@@ -157,6 +251,9 @@ const ContactForm = () => {
             ))}
           </SelectContent>
         </Select>
+        {formErrors.niche && (
+          <p id="niche-error" className="text-sm text-destructive">{formErrors.niche}</p>
+        )}
       </div>
 
       {/* GDPR Consent */}
