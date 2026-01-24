@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 const packages = [
   {
     name: 'Starter',
-    price: '$1,200',
+    price: '$699',
     period: '/month',
     description: 'Perfect for small businesses starting their digital journey',
     features: [
@@ -18,7 +18,7 @@ const packages = [
   },
   {
     name: 'Growth',
-    price: '$2,500',
+    price: '$2,100',
     period: '/month',
     description: 'For businesses ready to accelerate their growth',
     features: [
