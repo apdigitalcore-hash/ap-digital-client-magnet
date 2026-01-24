@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerLinks = {
@@ -43,21 +43,13 @@ const Footer = () => {
     }]
   };
   const socialLinks = [{
-    icon: Facebook,
-    href: 'https://facebook.com',
-    label: 'Facebook'
-  }, {
     icon: Instagram,
-    href: 'https://instagram.com',
+    href: 'https://www.instagram.com/ap.digimarket/',
     label: 'Instagram'
   }, {
     icon: Linkedin,
-    href: 'https://linkedin.com',
+    href: 'https://www.linkedin.com/company/110553927/admin/dashboard/',
     label: 'LinkedIn'
-  }, {
-    icon: Twitter,
-    href: 'https://twitter.com',
-    label: 'Twitter'
   }];
   return <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
@@ -76,7 +68,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex gap-4">
               {socialLinks.map(social => <a key={social.label} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-teal/20 hover:text-teal transition-colors" aria-label={social.label}>
-                  
+                  <social.icon size={20} />
                 </a>)}
             </div>
           </div>
