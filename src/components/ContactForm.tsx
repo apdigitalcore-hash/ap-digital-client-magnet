@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 // Allowed niche values for validation
 const ALLOWED_NICHES = ['salon', 'real-estate', 'trades', 'coaching', 'other'] as const;
@@ -114,15 +115,16 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission - replace with actual endpoint
-    // When implementing backend, ensure server-side validation mirrors this schema
     try {
-      // Example: await fetch('/api/leads', { 
-      //   method: 'POST', 
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(validatedData) 
-      // });
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const { error } = await supabase.from('leads').insert({
+        name: validatedData.name,
+        email: validatedData.email,
+        business: validatedData.business,
+        phone: validatedData.phone || null,
+        niche: validatedData.niche,
+      });
+
+      if (error) throw error;
       
       setIsSubmitted(true);
       toast({
