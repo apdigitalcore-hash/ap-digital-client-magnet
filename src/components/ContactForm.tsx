@@ -62,6 +62,9 @@ const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  // Honeypot fields - bots will fill these, real users won't see them
+  const [honeypot, setHoneypot] = useState('');
+  const [honeypotWebsite, setHoneypotWebsite] = useState('');
   const { toast } = useToast();
 
   const validateForm = (formData: FormData): ContactFormData | null => {
@@ -89,9 +92,21 @@ const ContactForm = () => {
     return result.data;
   };
 
+  // Check if honeypot fields are filled (indicates bot)
+  const isBot = (): boolean => {
+    return honeypot.length > 0 || honeypotWebsite.length > 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
+    // Silent rejection for bots - don't reveal detection
+    if (isBot()) {
+      // Fake success to not alert bots
+      setIsSubmitted(true);
+      return;
+    }
+
     if (!gdprConsent) {
       toast({
         title: "Consent Required",
@@ -160,6 +175,42 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+      {/* Honeypot fields - hidden from real users, bots will fill them */}
+      <div 
+        aria-hidden="true" 
+        style={{ 
+          position: 'absolute', 
+          left: '-9999px', 
+          top: '-9999px',
+          opacity: 0,
+          height: 0,
+          width: 0,
+          overflow: 'hidden',
+          pointerEvents: 'none'
+        }}
+      >
+        <label htmlFor="company_website">Website</label>
+        <input
+          type="text"
+          id="company_website"
+          name="company_website"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+        <label htmlFor="contact_url">URL</label>
+        <input
+          type="url"
+          id="contact_url"
+          name="contact_url"
+          value={honeypotWebsite}
+          onChange={(e) => setHoneypotWebsite(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-6">
         {/* Name */}
         <div className="space-y-2">
