@@ -22,9 +22,6 @@ const Footer = () => {
       label: 'About Us',
       href: '#'
     }, {
-      label: 'Case Studies',
-      href: '#testimonials'
-    }, {
       label: 'Pricing',
       href: '#pricing'
     }, {
