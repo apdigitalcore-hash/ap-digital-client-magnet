@@ -1,10 +1,28 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers":
-    "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
-};
+// Allowed origins for CORS - restrict to known domains
+const allowedOrigins = [
+  "https://apdigital.lovable.app",
+  "https://id-preview--5016096a-1f2a-4fc5-a0a5-ef8947dc9e8f.lovable.app",
+];
+
+// Add development origins if in development mode
+if (Deno.env.get("ENVIRONMENT") === "development") {
+  allowedOrigins.push("http://localhost:8080", "http://localhost:5173");
+}
+
+function getCorsHeaders(origin: string | null): Record<string, string> {
+  const safeOrigin = origin || "";
+  if (allowedOrigins.some((allowed) => safeOrigin.startsWith(allowed) || safeOrigin.includes(".lovableproject.com") || safeOrigin.includes(".lovable.app"))) {
+    return {
+      "Access-Control-Allow-Origin": safeOrigin,
+      "Access-Control-Allow-Headers":
+        "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+      "Vary": "Origin",
+    };
+  }
+  return {};
+}
 
 // In-memory rate limiting (resets on function restart, but provides basic protection)
 const rateLimits = new Map<string, number[]>();
@@ -127,9 +145,20 @@ function recordSubmission(ip: string): void {
 }
 
 Deno.serve(async (req) => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = getCorsHeaders(origin);
+
   // Handle CORS preflight
   if (req.method === "OPTIONS") {
     return new Response("ok", { headers: corsHeaders });
+  }
+
+  // Reject requests from disallowed origins
+  if (Object.keys(corsHeaders).length === 0) {
+    return new Response(
+      JSON.stringify({ error: "Forbidden" }),
+      { status: 403, headers: { "Content-Type": "application/json" } }
+    );
   }
 
   // Only allow POST
@@ -204,7 +233,7 @@ Deno.serve(async (req) => {
     // Record successful submission for rate limiting
     recordSubmission(clientIP);
     
-    console.log(`Lead submitted successfully: ${data.id} from IP: ${clientIP}`);
+    console.log(`Lead submitted successfully: ${data.id}`);
 
     return new Response(
       JSON.stringify({ success: true, id: data.id }),
