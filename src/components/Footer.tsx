@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Linkedin } from 'lucide-react';
-import { forwardRef } from 'react';
 
-const Footer = forwardRef<HTMLElement>((_props, ref) => {
+const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
@@ -36,7 +35,7 @@ const Footer = forwardRef<HTMLElement>((_props, ref) => {
   ];
 
   return (
-    <footer ref={ref} className="bg-primary text-primary-foreground">
+    <footer className="bg-primary text-primary-foreground">
       {/* Main Footer */}
       <div className="container-custom py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -149,8 +148,6 @@ const Footer = forwardRef<HTMLElement>((_props, ref) => {
       </div>
     </footer>
   );
-});
-
-Footer.displayName = 'Footer';
+};
 
 export default Footer;
