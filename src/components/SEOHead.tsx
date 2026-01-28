@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { forwardRef, useEffect } from 'react';
 
 interface SEOHeadProps {
   title: string;
@@ -9,16 +9,20 @@ interface SEOHeadProps {
   keywords?: string;
 }
 
-const SEOHead = ({
-  title,
-  description,
-  canonicalUrl,
-  ogImage = 'https://apdigital.lovable.app/og-image.png',
-  structuredData,
-  keywords,
-}: SEOHeadProps) => {
-  const baseUrl = 'https://apdigital.lovable.app';
-  const fullCanonicalUrl = canonicalUrl ? `${baseUrl}${canonicalUrl}` : baseUrl;
+const SEOHead = forwardRef<unknown, SEOHeadProps>(
+  (
+    {
+      title,
+      description,
+      canonicalUrl,
+      ogImage = 'https://apdigital.lovable.app/og-image.png',
+      structuredData,
+      keywords,
+    },
+    _ref,
+  ) => {
+    const baseUrl = 'https://apdigital.lovable.app';
+    const fullCanonicalUrl = canonicalUrl ? `${baseUrl}${canonicalUrl}` : baseUrl;
 
   useEffect(() => {
     // Update document title
@@ -98,7 +102,10 @@ const SEOHead = ({
     };
   }, [title, description, canonicalUrl, ogImage, keywords, structuredData, fullCanonicalUrl]);
 
-  return null; // This component doesn't render anything
-};
+    return null; // This component doesn't render anything
+  },
+);
+
+SEOHead.displayName = 'SEOHead';
 
 export default SEOHead;

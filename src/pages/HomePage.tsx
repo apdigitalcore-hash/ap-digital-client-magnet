@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
+import Services from '@/components/Services';
 import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
 
 const HomePage = () => {
@@ -18,13 +19,6 @@ const HomePage = () => {
       )
     ]
   };
-
-  const niches = [
-    { name: 'Salons & Beauty', icon: '💇', link: '/salon-marketing' },
-    { name: 'Real Estate Agents', icon: '🏠', link: '/real-estate-marketing' },
-    { name: 'Trades & Contractors', icon: '🔧', link: '/trades-marketing' },
-    { name: 'Coaches & Consultants', icon: '🎯', link: '/local-marketing' },
-  ];
 
   const steps = [
     {
@@ -130,37 +124,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Who We Help Section */}
-      <section className="section-padding bg-background" id="who-we-help">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Who We Help
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              We specialize in marketing for local service businesses across Canada who want more leads without the guesswork.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {niches.map((niche) => (
-              <Link
-                key={niche.name}
-                to={niche.link}
-                className="group p-8 bg-card rounded-xl border border-border hover:border-teal/50 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="text-4xl mb-4">{niche.icon}</div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2 group-hover:text-teal transition-colors">
-                  {niche.name}
-                </h3>
-                <span className="text-teal text-sm font-medium flex items-center gap-1">
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Services />
 
       {/* How It Works Section */}
       <section className="section-padding bg-secondary" id="how-it-works">
