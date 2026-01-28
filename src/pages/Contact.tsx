@@ -1,17 +1,29 @@
-import { useEffect } from 'react';
 import { CheckCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import SEOHead from '@/components/SEOHead';
+import { organizationSchema, getFAQSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 const Contact = () => {
-  useEffect(() => {
-    document.title = 'Book a Free Marketing Growth Audit | AP DIGITAL';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Book a free marketing growth audit with AP DIGITAL. We\'ll analyze your current marketing, identify opportunities, and show you how to get more leads.');
-    }
-  }, []);
+  const faqData = [
+    { question: "Is this really free?", answer: "Yes, 100%. The audit call is completely free with no strings attached. We believe in providing value upfront." },
+    { question: "How long is the call?", answer: "Typically 20-30 minutes. Enough time to understand your business and give you real insights, without wasting your day." },
+    { question: "What happens after the call?", answer: "If it's a good fit, we'll discuss working together. If not, you'll still walk away with actionable advice you can implement yourself." },
+    { question: "Do you require long-term contracts?", answer: "No. We work month-to-month. We earn your business every month based on results, not contracts." }
+  ];
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema,
+      getFAQSchema(faqData),
+      getBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Contact", url: "/contact" }
+      ])
+    ]
+  };
 
   const auditIncludes = [
     'Complete review of your current marketing',
@@ -51,6 +63,13 @@ const Contact = () => {
 
   return (
     <main className="min-h-screen">
+      <SEOHead
+        title="Book a Free Marketing Growth Audit | AP DIGITAL"
+        description="Book a free marketing growth audit with AP DIGITAL. We'll analyze your current marketing, identify opportunities, and show you how to get more leads."
+        canonicalUrl="/contact"
+        keywords="free marketing audit, book marketing consultation, digital marketing consultation Canada"
+        structuredData={structuredData}
+      />
       <Header />
       
       {/* Hero Section */}

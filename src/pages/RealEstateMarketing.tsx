@@ -1,18 +1,26 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Home, TrendingUp, Video, MapPin, Users, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
+import { getServiceSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 const RealEstateMarketing = () => {
-  useEffect(() => {
-    document.title = 'Marketing Agency for Real Estate Agents | More Buyer & Seller Leads';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Marketing agency for real estate agents in Canada. We help realtors generate buyer and seller leads with targeted ads and short-form video content.');
-    }
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      getServiceSchema(
+        "Real Estate Marketing Services",
+        "Marketing agency for real estate agents in Canada. We help realtors generate buyer and seller leads with targeted ads and short-form video content.",
+        "https://apdigital.lovable.app/real-estate-marketing"
+      ),
+      getBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Real Estate Marketing", url: "/real-estate-marketing" }
+      ])
+    ]
+  };
 
   const problems = [
     'Spending money on Zillow/Realtor.ca with no results',
@@ -54,6 +62,13 @@ const RealEstateMarketing = () => {
 
   return (
     <main className="min-h-screen">
+      <SEOHead
+        title="Marketing Agency for Real Estate Agents | More Buyer & Seller Leads"
+        description="Marketing agency for real estate agents in Canada. We help realtors generate buyer and seller leads with targeted ads and short-form video content."
+        canonicalUrl="/real-estate-marketing"
+        keywords="real estate marketing agency, realtor marketing, real estate lead generation Canada, buyer seller leads"
+        structuredData={structuredData}
+      />
       <Header />
       
       {/* Hero Section */}

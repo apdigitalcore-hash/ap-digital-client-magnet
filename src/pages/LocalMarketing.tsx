@@ -1,18 +1,22 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, MapPin, TrendingUp, Search, Users, Phone, Building } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
+import { organizationSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 const LocalMarketing = () => {
-  useEffect(() => {
-    document.title = 'Digital Marketing Agency in Pitt Meadows, BC | Local Lead Generation';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Digital marketing agency in Pitt Meadows, BC helping local businesses grow with targeted ads, SEO, and lead generation across British Columbia and Canada.');
-    }
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema,
+      getBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Pitt Meadows Marketing", url: "/local-marketing" }
+      ])
+    ]
+  };
 
   const areas = [
     'Pitt Meadows',
@@ -58,6 +62,13 @@ const LocalMarketing = () => {
 
   return (
     <main className="min-h-screen">
+      <SEOHead
+        title="Digital Marketing Agency in Pitt Meadows, BC | Local Lead Generation"
+        description="Digital marketing agency in Pitt Meadows, BC helping local businesses grow with targeted ads, SEO, and lead generation across British Columbia and Canada."
+        canonicalUrl="/local-marketing"
+        keywords="digital marketing Pitt Meadows, marketing agency BC, local SEO British Columbia, Pitt Meadows business marketing"
+        structuredData={structuredData}
+      />
       <Header />
       
       {/* Hero Section */}
