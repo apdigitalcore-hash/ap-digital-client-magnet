@@ -119,7 +119,7 @@ const HomePage = () => {
             <div className="mt-16 pt-12 border-t border-primary-foreground/10 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <p className="text-primary-foreground/60 text-sm mb-6">Based in British Columbia, serving all of Canada</p>
               <div className="flex flex-wrap justify-center items-center gap-4">
-                {['Pitt Meadows', 'Vancouver', 'Surrey', 'Burnaby', 'Toronto'].map((city) => (
+                {['Pitt Meadows', 'Vancouver', 'Surrey', 'Burnaby', 'Toronto', 'Coquitlam', 'Calgary', 'Langley', 'Edmonton'].map((city) => (
                   <span key={city} className="px-3 py-1 rounded-full bg-primary-foreground/10 text-primary-foreground/70 text-sm">
                     {city}
                   </span>
@@ -236,11 +236,11 @@ const HomePage = () => {
             
             <div className="grid grid-cols-3 gap-8 mb-12">
               <div>
-                <div className="text-4xl font-display font-bold text-teal">150+</div>
+                <div className="text-4xl font-display font-bold text-teal">72+</div>
                 <div className="text-primary-foreground/70 text-sm">Clients Served</div>
               </div>
               <div>
-                <div className="text-4xl font-display font-bold text-teal">$2M+</div>
+                <div className="text-4xl font-display font-bold text-teal">$630k</div>
                 <div className="text-primary-foreground/70 text-sm">Revenue Generated</div>
               </div>
               <div>
