@@ -1,18 +1,26 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Calendar, TrendingUp, Video, Users, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
+import { getServiceSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 const SalonMarketing = () => {
-  useEffect(() => {
-    document.title = 'Marketing Agency for Salons | Get More Booked Appointments';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Marketing agency for salons in Canada. We help hair salons, beauty spas, and barber shops fill their chairs with short-form video content and targeted ads.');
-    }
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      getServiceSchema(
+        "Salon Marketing Services",
+        "Marketing agency for salons in Canada. We help hair salons, beauty spas, and barber shops fill their chairs with short-form video content and targeted ads.",
+        "https://apdigital.lovable.app/salon-marketing"
+      ),
+      getBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Salon Marketing", url: "/salon-marketing" }
+      ])
+    ]
+  };
 
   const problems = [
     'Empty chairs during off-peak hours',
@@ -54,6 +62,13 @@ const SalonMarketing = () => {
 
   return (
     <main className="min-h-screen">
+      <SEOHead
+        title="Marketing Agency for Salons | Get More Booked Appointments"
+        description="Marketing agency for salons in Canada. We help hair salons, beauty spas, and barber shops fill their chairs with short-form video content and targeted ads."
+        canonicalUrl="/salon-marketing"
+        keywords="salon marketing agency, hair salon marketing, beauty salon ads, salon lead generation Canada"
+        structuredData={structuredData}
+      />
       <Header />
       
       {/* Hero Section */}

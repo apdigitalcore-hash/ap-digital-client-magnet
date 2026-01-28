@@ -1,18 +1,26 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Wrench, TrendingUp, MapPin, Phone, FileText, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
+import { getServiceSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 const TradesMarketing = () => {
-  useEffect(() => {
-    document.title = 'Marketing Agency for Trades | Get More Local Service Leads';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Marketing agency for trades in Canada. We help plumbers, roofers, HVAC, electricians, and contractors get job-ready leads with paid ads and landing pages.');
-    }
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      getServiceSchema(
+        "Trades Marketing Services",
+        "Marketing agency for trades in Canada. We help plumbers, roofers, HVAC, electricians, and contractors get job-ready leads with paid ads and landing pages.",
+        "https://apdigital.lovable.app/trades-marketing"
+      ),
+      getBreadcrumbSchema([
+        { name: "Home", url: "/" },
+        { name: "Trades Marketing", url: "/trades-marketing" }
+      ])
+    ]
+  };
 
   const trades = [
     'Plumbers',
@@ -65,6 +73,13 @@ const TradesMarketing = () => {
 
   return (
     <main className="min-h-screen">
+      <SEOHead
+        title="Marketing Agency for Trades | Get More Local Service Leads"
+        description="Marketing agency for trades in Canada. We help plumbers, roofers, HVAC, electricians, and contractors get job-ready leads with paid ads and landing pages."
+        canonicalUrl="/trades-marketing"
+        keywords="trades marketing agency, contractor marketing, plumber marketing, HVAC marketing Canada"
+        structuredData={structuredData}
+      />
       <Header />
       
       {/* Hero Section */}

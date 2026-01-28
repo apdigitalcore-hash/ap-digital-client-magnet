@@ -1,18 +1,23 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, CheckCircle, Users, TrendingUp, Target, Zap, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
+import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
 
 const HomePage = () => {
-  useEffect(() => {
-    document.title = 'Digital Marketing Agency in Canada | Get More Leads & Sales';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads using short-form content and paid ads.');
-    }
-  }, []);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      organizationSchema,
+      getWebPageSchema(
+        "Digital Marketing Agency in Canada",
+        "AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads using short-form content and paid ads.",
+        "/"
+      )
+    ]
+  };
 
   const niches = [
     { name: 'Salons & Beauty', icon: '💇', link: '/salon-marketing' },
@@ -64,6 +69,13 @@ const HomePage = () => {
 
   return (
     <main className="min-h-screen">
+      <SEOHead
+        title="Digital Marketing Agency in Canada | Get More Leads & Sales"
+        description="AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads using short-form content and paid ads."
+        canonicalUrl="/"
+        keywords="digital marketing agency Canada, marketing agency BC, lead generation Canada, Pitt Meadows marketing"
+        structuredData={structuredData}
+      />
       <Header />
       
       {/* Hero Section */}
