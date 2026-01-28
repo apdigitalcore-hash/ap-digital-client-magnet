@@ -131,15 +131,32 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from('leads').insert({
-        name: validatedData.name,
-        email: validatedData.email,
-        business: validatedData.business,
-        phone: validatedData.phone || null,
-        niche: validatedData.niche,
+      // Use edge function for rate-limited submission
+      const { data, error } = await supabase.functions.invoke('submit-lead', {
+        body: {
+          name: validatedData.name,
+          email: validatedData.email,
+          business: validatedData.business,
+          phone: validatedData.phone || null,
+          niche: validatedData.niche,
+        },
       });
 
       if (error) throw error;
+      
+      // Check for rate limiting response
+      if (data?.code === 'RATE_LIMITED') {
+        toast({
+          title: "Too many submissions",
+          description: "Please wait a bit before trying again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (data?.error) {
+        throw new Error(data.error);
+      }
       
       setIsSubmitted(true);
       toast({
