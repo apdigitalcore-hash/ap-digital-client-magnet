@@ -1,3 +1,4 @@
+// HomePage - Main landing page for AP DIGITAL
 import { Link } from 'react-router-dom';
 import { ArrowRight, Play, CheckCircle, Users, TrendingUp, Target, Zap, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
