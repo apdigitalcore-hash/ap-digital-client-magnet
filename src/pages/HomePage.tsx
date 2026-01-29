@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 import Services from '@/components/Services';
+import Portfolio from '@/components/Portfolio';
 import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
 import { useIsMobile } from '@/hooks/use-mobile';
 import heroVideo from '@/assets/hero-video.mp4';
@@ -157,6 +158,8 @@ const HomePage = () => {
       </section>
 
       <Services />
+
+      <Portfolio />
 
       {/* How It Works Section */}
       <section className="section-padding bg-secondary" id="how-it-works">
