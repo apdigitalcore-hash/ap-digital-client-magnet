@@ -78,6 +78,15 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <a
+              href="/#portfolio"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              Portfolio
+            </a>
+
             <Link
               to="/contact"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
@@ -133,6 +142,14 @@ const Header = () => {
                   {service.label}
                 </Link>
               ))}
+
+              <a
+                href="/#portfolio"
+                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Portfolio
+              </a>
 
               <Link
                 to="/contact"
