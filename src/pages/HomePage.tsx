@@ -7,6 +7,9 @@ import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
 import Services from '@/components/Services';
 import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
+import { useIsMobile } from '@/hooks/use-mobile';
+import heroVideo from '@/assets/hero-video.mp4';
+import heroFallback from '@/assets/hero-fallback.jpg';
 
 const HomePage = () => {
   const structuredData = {
@@ -62,6 +65,8 @@ const HomePage = () => {
     },
   ];
 
+  const isMobile = useIsMobile();
+
   return (
     <main className="min-h-screen">
       <SEOHead
@@ -74,8 +79,34 @@ const HomePage = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center gradient-hero overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Video/Image Background */}
+        <div className="absolute inset-0 z-0">
+          {!isMobile ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+              poster={heroFallback}
+            >
+              <source src={heroVideo} type="video/mp4" />
+            </video>
+          ) : (
+            <img
+              src={heroFallback}
+              alt=""
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
+          
+          {/* Dark Overlay for text readability */}
+          <div className="absolute inset-0 bg-primary/70" />
+        </div>
+
+        {/* Subtle accent glow effects */}
+        <div className="absolute inset-0 opacity-20 z-[1] pointer-events-none">
           <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-teal blur-3xl" />
           <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-teal-light blur-3xl" />
         </div>
