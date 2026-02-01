@@ -1,22 +1,46 @@
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useIsMobile } from '@/hooks/use-mobile';
+import { useEffect, useState, useRef } from 'react';
 import heroVideo from '@/assets/hero-video.mp4';
 import heroFallback from '@/assets/hero-fallback.jpg';
 
+const MOBILE_BREAKPOINT = 768;
+
 const Hero = () => {
-  const isMobile = useIsMobile();
+  const [isMobile, setIsMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+    const checkMobile = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Force video to play on mount
+  useEffect(() => {
+    if (videoRef.current && !isMobile && isClient) {
+      videoRef.current.play().catch(() => {
+        // Autoplay was prevented, video will show poster instead
+      });
+    }
+  }, [isMobile, isClient]);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Video/Image Background */}
       <div className="absolute inset-0 z-0">
+        {/* Always render video on desktop, image on mobile */}
         {!isMobile ? (
           <video
+            ref={videoRef}
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             className="absolute inset-0 w-full h-full object-cover"
             poster={heroFallback}
           >
