@@ -77,8 +77,8 @@ const Hero = () => {
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" 
             style={{ animationDelay: '0.1s' }}
           >
-            Digital Marketing Built to Generate{' '}
-            <span className="text-gradient">Qualified Leads</span>
+            More Leads. More Revenue.{' '}
+            <span className="text-gradient">Guaranteed.</span>
           </h1>
 
           {/* Subheadline */}
