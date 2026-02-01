@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const metrics = [
   {
@@ -31,6 +32,29 @@ const platforms = [
   { name: 'YouTube', icon: '/platforms/youtube.svg' },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 const ResultsProof = () => {
   return (
     <section className="relative py-20 md:py-28 bg-charcoal overflow-hidden">
@@ -41,7 +65,13 @@ const ResultsProof = () => {
 
       <div className="container-custom relative z-10">
         {/* Section header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-6">
             <ArrowUpRight className="w-4 h-4" />
             <span className="text-sm font-semibold uppercase tracking-wider">Proven Results</span>
@@ -52,14 +82,21 @@ const ResultsProof = () => {
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Real numbers from real campaigns. We don't chase vanity metrics—we drive revenue.
           </p>
-        </div>
+        </motion.div>
 
         {/* Metrics grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
+        <motion.div 
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {metrics.map((metric, index) => (
-            <div
+            <motion.div
               key={metric.label}
               className="relative group"
+              variants={itemVariants}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-teal/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-charcoal-light/50 backdrop-blur-sm">
@@ -73,9 +110,9 @@ const ResultsProof = () => {
                   {metric.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Platform logos */}
         <div className="text-center">
