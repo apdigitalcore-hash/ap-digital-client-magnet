@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, Linkedin } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,9 +35,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-near-black text-primary-foreground">
       {/* Main Footer */}
-      <div className="container-custom py-16">
+      <div className="container-custom py-16 md:py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
@@ -46,24 +46,25 @@ const Footer = () => {
                 <span className="text-teal">AP</span> DIGITAL
               </span>
             </Link>
-            <p className="text-primary-foreground/70 mb-4 max-w-xs">
-              Digital marketing agency helping local businesses across Canada generate leads and grow revenue.
+            <p className="text-gray-400 mb-4 max-w-xs">
+              Performance marketing agency helping Canadian service businesses generate leads and scale revenue.
             </p>
-            <p className="text-primary-foreground/70 text-sm mb-6">
-              Based in Pitt Meadows, BC
+            <p className="text-gray-500 text-sm mb-6 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-teal" />
+              Pitt Meadows, BC, Canada
             </p>
             {/* Social Links */}
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-lg bg-primary-foreground/10 flex items-center justify-center hover:bg-teal/20 hover:text-teal transition-colors"
+                  className="w-10 h-10 rounded-xl bg-charcoal-light border border-gray-800 flex items-center justify-center hover:border-teal hover:text-teal transition-all duration-300"
                   aria-label={social.label}
                 >
-                  <social.icon size={20} />
+                  <social.icon size={18} />
                 </a>
               ))}
             </div>
@@ -71,13 +72,13 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold mb-6">Services</h4>
+            <h4 className="font-semibold text-primary-foreground mb-6">Services</h4>
             <ul className="space-y-3">
               {services.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-primary-foreground/70 hover:text-teal transition-colors"
+                    className="text-gray-400 hover:text-teal transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -88,13 +89,13 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-semibold mb-6">Company</h4>
+            <h4 className="font-semibold text-primary-foreground mb-6">Company</h4>
             <ul className="space-y-3">
               {company.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-primary-foreground/70 hover:text-teal transition-colors"
+                    className="text-gray-400 hover:text-teal transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -105,20 +106,19 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-6">Contact</h4>
-            <ul className="space-y-3 text-primary-foreground/70">
+            <h4 className="font-semibold text-primary-foreground mb-6">Contact</h4>
+            <ul className="space-y-4 text-gray-400">
               <li>
-                <a href="tel:+17786825772" className="hover:text-teal transition-colors">
+                <a href="tel:+17786825772" className="flex items-center gap-3 hover:text-teal transition-colors">
+                  <Phone className="w-4 h-4 text-teal" />
                   +1 (778) 682-5772
                 </a>
               </li>
               <li>
-                <a href="mailto:apdigital.core@gmail.com" className="hover:text-teal transition-colors">
+                <a href="mailto:apdigital.core@gmail.com" className="flex items-center gap-3 hover:text-teal transition-colors">
+                  <Mail className="w-4 h-4 text-teal" />
                   apdigital.core@gmail.com
                 </a>
-              </li>
-              <li className="pt-2">
-                <span className="text-sm">Pitt Meadows, BC, Canada</span>
               </li>
             </ul>
           </div>
@@ -126,10 +126,10 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
+      <div className="border-t border-gray-800">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/60 text-sm">
+            <p className="text-gray-500 text-sm">
               © {currentYear} AP DIGITAL. All rights reserved.
             </p>
             <div className="flex gap-6">
@@ -137,7 +137,7 @@ const Footer = () => {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-primary-foreground/60 text-sm hover:text-teal transition-colors"
+                  className="text-gray-500 text-sm hover:text-teal transition-colors"
                 >
                   {link.label}
                 </a>

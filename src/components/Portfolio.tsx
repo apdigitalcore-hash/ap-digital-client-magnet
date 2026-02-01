@@ -173,19 +173,15 @@ const Portfolio = () => {
   };
 
   return (
-    <section id="portfolio" className="section-padding bg-background">
+    <section id="portfolio" className="py-20 md:py-28 bg-background">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-teal font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Our Portfolio
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Real Results for{' '}
-            <span className="text-gradient">Real Businesses</span>
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+            Our <span className="text-gradient">Work</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Browse our work across different industries and services. Every project is designed to drive measurable growth.
+            Real results for real businesses. Every project drives measurable growth.
           </p>
         </div>
 
@@ -198,7 +194,7 @@ const Portfolio = () => {
               className={cn(
                 'flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300',
                 activeCategory === category.id
-                  ? 'bg-teal text-primary-foreground shadow-lg shadow-teal/25'
+                  ? 'bg-teal text-primary-foreground shadow-teal'
                   : 'bg-card border border-border text-muted-foreground hover:border-teal hover:text-teal'
               )}
             >
