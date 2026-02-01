@@ -4,31 +4,31 @@ import { Button } from '@/components/ui/button';
 
 const testimonials = [
   {
-    name: 'Sarah Mitchell',
-    role: 'Owner, Luxe Hair Studio',
+    name: 'Priya Sharma',
+    role: 'Owner, Glow Beauty Bar',
     niche: 'Salon',
-    content: "We went from struggling to book appointments to having a 3-week waitlist. Their social media strategy alone brought in 40+ new clients in the first month.",
+    content: "Honestly, I was skeptical at first. We'd tried a few agencies before and got burned. But these guys actually delivered—our booking calendar went from half-empty to a 3-week waitlist in about 6 weeks. The reels they made for us just kept going viral locally.",
     rating: 5,
     result: '+40 clients/month',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face',
   },
   {
-    name: 'James Rodriguez',
-    role: 'Broker, Prime Realty',
+    name: 'Marcus Chen',
+    role: 'Realtor, Re/Max Elite',
     niche: 'Real Estate',
-    content: "The ROI on our paid ads has been incredible. We're generating 25+ qualified leads per week, and our cost per lead dropped by 60%.",
+    content: "I was spending way too much on Zillow leads that never converted. AP Digital switched me to targeted Meta ads and honestly, the difference was night and day. I'm getting 25+ serious buyer inquiries a week now, and my cost per lead dropped by like 60%.",
     rating: 5,
     result: '25+ leads/week',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face',
   },
   {
-    name: 'Mike Thompson',
-    role: 'Founder, Elite Plumbing',
+    name: 'Dave Kowalski',
+    role: 'Owner, Kowalski Plumbing & Heating',
     niche: 'Trades',
-    content: "As a plumber, I never thought digital marketing was for me. Now our local SEO dominates, and we're fully booked 2 months out.",
+    content: "Look, I'm a plumber—I fix pipes, I don't do marketing. Tried doing my own Google Ads and wasted a ton of money. These guys took over and now we show up first when anyone in Mississauga searches for emergency plumbing. Fully booked 2 months out.",
     rating: 5,
     result: 'Booked 2 months out',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
   },
 ];
 
