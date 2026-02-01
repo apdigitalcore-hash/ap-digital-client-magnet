@@ -1,6 +1,7 @@
 import { Star, Quote, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { motion } from 'framer-motion';
 
 const testimonials = [
   {
@@ -32,12 +33,41 @@ const testimonials = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut" as const,
+    },
+  },
+};
+
 const TestimonialsDark = () => {
   return (
     <section className="py-20 md:py-28 bg-charcoal-dark">
       <div className="container-custom">
         {/* Section header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+        <motion.div 
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
               What Clients <span className="text-gradient">Say</span>
@@ -52,14 +82,21 @@ const TestimonialsDark = () => {
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
-        </div>
+        </motion.div>
 
         {/* Testimonials grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div 
+          className="grid md:grid-cols-3 gap-6 lg:gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={testimonial.name}
               className="relative group"
+              variants={cardVariants}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-teal/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative h-full p-6 lg:p-8 rounded-2xl border border-gray-800 bg-charcoal-light/50 backdrop-blur-sm">
@@ -100,9 +137,9 @@ const TestimonialsDark = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
