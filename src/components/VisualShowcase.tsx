@@ -5,14 +5,14 @@ const showcaseItems = [
     type: 'video',
     title: 'Social Media Content',
     description: 'Scroll-stopping reels & TikToks',
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&h=800&fit=crop',
     stats: '2.5M+ views generated',
   },
   {
     type: 'ad',
     title: 'Paid Ad Creatives',
     description: 'High-converting Meta & Google ads',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
     stats: '$2.40 avg. cost per lead',
   },
   {
@@ -26,7 +26,7 @@ const showcaseItems = [
     type: 'social',
     title: 'Brand Content',
     description: 'Cohesive visual identities',
-    image: 'https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?w=600&h=800&fit=crop',
+    image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=600&h=800&fit=crop',
     stats: '850+ followers/month',
   },
 ];

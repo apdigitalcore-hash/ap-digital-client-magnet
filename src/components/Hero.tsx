@@ -53,9 +53,8 @@ const Hero = () => {
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" 
             style={{ animationDelay: '0.1s' }}
           >
-            Grow Your Business With{' '}
-            <span className="text-gradient">Data-Driven</span>{' '}
-            Digital Marketing
+            Marketing That Gets You{' '}
+            <span className="text-gradient">More Clients</span>
           </h1>
 
           {/* Subheadline */}

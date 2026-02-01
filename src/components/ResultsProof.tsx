@@ -82,11 +82,11 @@ const ResultsProof = () => {
           <p className="text-gray-500 text-sm mb-6 uppercase tracking-wider">
             Certified across major platforms
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-            {['Meta', 'Google Ads', 'TikTok', 'Instagram', 'YouTube'].map((platform) => (
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+            {['Meta', 'Google Ads', 'TikTok', 'Instagram', 'YouTube', 'LinkedIn', 'Shopify'].map((platform) => (
               <div
                 key={platform}
-                className="px-6 py-3 rounded-lg bg-gray-800/50 border border-gray-700/50 text-gray-400 font-medium text-sm hover:text-teal hover:border-teal/30 transition-all duration-300"
+                className="px-5 py-2.5 rounded-lg bg-gray-800/50 border border-gray-700/50 text-gray-400 font-medium text-sm hover:text-teal hover:border-teal/30 transition-all duration-300"
               >
                 {platform}
               </div>
