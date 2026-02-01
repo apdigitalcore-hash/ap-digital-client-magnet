@@ -1,11 +1,16 @@
-// HomePage - Main landing page for AP DIGITAL
+// HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play, CheckCircle, Users, TrendingUp, Target, Zap, Phone, MapPin } from 'lucide-react';
+import { ArrowRight, Play, Zap, Target, Users, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import SEOHead from '@/components/SEOHead';
-import Services from '@/components/Services';
+import ResultsProof from '@/components/ResultsProof';
+import VisualShowcase from '@/components/VisualShowcase';
+import ServicesDark from '@/components/ServicesDark';
+import TestimonialsDark from '@/components/TestimonialsDark';
+import ProcessDark from '@/components/ProcessDark';
+import DarkCTA from '@/components/DarkCTA';
 import Portfolio from '@/components/Portfolio';
 import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -25,44 +30,26 @@ const HomePage = () => {
     ]
   };
 
-  const steps = [
-    {
-      number: '01',
-      title: 'Audit',
-      description: 'We analyze your current marketing, identify gaps, and map out exactly what\'s working and what\'s not.',
-    },
-    {
-      number: '02',
-      title: 'Launch',
-      description: 'We build and launch high-converting campaigns using short-form content and targeted paid ads.',
-    },
-    {
-      number: '03',
-      title: 'Optimize',
-      description: 'We continuously refine your campaigns to maximize leads and lower your cost per acquisition.',
-    },
-  ];
-
   const differentiators = [
     {
       icon: Zap,
       title: 'No Long-Term Contracts',
-      description: 'Month-to-month flexibility. We earn your business every month.',
+      description: 'Month-to-month flexibility.',
     },
     {
       icon: Target,
       title: 'Results-Focused',
-      description: 'We track leads and revenue, not vanity metrics like impressions.',
+      description: 'We track leads, not vanity metrics.',
     },
     {
       icon: Users,
       title: 'Niche Expertise',
-      description: 'We specialize in local service businesses across Canada.',
+      description: 'Built for service businesses.',
     },
     {
       icon: TrendingUp,
       title: 'Proven Systems',
-      description: 'Battle-tested strategies that have generated thousands of leads.',
+      description: 'Battle-tested strategies.',
     },
   ];
 
@@ -79,9 +66,9 @@ const HomePage = () => {
       />
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Video/Image Background */}
+      {/* Hero Section - Dark, Bold, Minimal */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-near-black">
+        {/* Video/Image Background with heavy overlay */}
         <div className="absolute inset-0 z-0">
           {!isMobile ? (
             <video
@@ -89,7 +76,7 @@ const HomePage = () => {
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
               poster={heroFallback}
             >
               <source src={heroVideo} type="video/mp4" />
@@ -98,40 +85,52 @@ const HomePage = () => {
             <img
               src={heroFallback}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
             />
           )}
           
-          {/* Dark Overlay for text readability */}
-          <div className="absolute inset-0 bg-primary/70" />
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-near-black via-near-black/90 to-near-black" />
         </div>
 
-        {/* Subtle accent glow effects */}
-        <div className="absolute inset-0 opacity-20 z-[1] pointer-events-none">
-          <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-teal blur-3xl" />
-          <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-teal-light blur-3xl" />
+        {/* Accent glow */}
+        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal/10 rounded-full blur-3xl opacity-60" />
         </div>
 
-        <div className="container-custom relative z-10 pt-24 pb-16">
-          <div className="max-w-4xl mx-auto text-center">
+        <div className="container-custom relative z-10 pt-32 pb-20">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Minimal badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-8 animate-fade-up">
-              <MapPin className="w-4 h-4" />
-              <span className="text-sm font-medium">Serving Businesses Across Canada</span>
+              <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
+              <span className="text-sm font-semibold uppercase tracking-wider">Performance Marketing Agency</span>
             </div>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: '0.1s' }}>
-              Digital Marketing Agency Helping Local Businesses Get{' '}
-              <span className="text-gradient">Consistent Leads</span>
+            {/* Bold headline - reduced text */}
+            <h1 
+              className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.1] mb-6 animate-fade-up" 
+              style={{ animationDelay: '0.1s' }}
+            >
+              We Turn Clicks Into{' '}
+              <span className="text-gradient">Customers</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-              We help salons, real estate agents, trades, and coaches get predictable leads using short-form content and paid ads — without long-term contracts.
+            {/* Short subheadline */}
+            <p 
+              className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-up" 
+              style={{ animationDelay: '0.2s' }}
+            >
+              Paid ads. Short-form content. Real results for Canadian service businesses.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: '0.3s' }}>
-              <Button variant="hero" size="xl" asChild>
+            {/* CTAs */}
+            <div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" 
+              style={{ animationDelay: '0.3s' }}
+            >
+              <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
                 <Link to="/contact" className="flex items-center gap-2">
-                  Book a Free Growth Audit
+                  Book a Free Strategy Call
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
@@ -142,149 +141,71 @@ const HomePage = () => {
                 </a>
               </Button>
             </div>
+          </div>
+        </div>
 
-            <div className="mt-16 pt-12 border-t border-primary-foreground/10 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              <p className="text-primary-foreground/60 text-sm mb-6">Based in British Columbia, serving all of Canada</p>
-              <div className="flex flex-wrap justify-center items-center gap-4">
-                {['Pitt Meadows', 'Vancouver', 'Surrey', 'Burnaby', 'Toronto', 'Coquitlam', 'Calgary', 'Langley', 'Edmonton'].map((city) => (
-                  <span key={city} className="px-3 py-1 rounded-full bg-primary-foreground/10 text-primary-foreground/70 text-sm">
-                    {city}
-                  </span>
-                ))}
-              </div>
-            </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
+          <div className="w-6 h-10 rounded-full border-2 border-gray-600 flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-teal rounded-full" />
           </div>
         </div>
       </section>
 
-      <Services />
+      {/* Results / Proof Section - Right after hero */}
+      <ResultsProof />
 
+      {/* Visual Showcase - Content that converts */}
+      <VisualShowcase />
+
+      {/* Process Section */}
+      <ProcessDark />
+
+      {/* Services Section */}
+      <ServicesDark />
+
+      {/* Testimonials */}
+      <TestimonialsDark />
+
+      {/* Mid-page CTA */}
+      <DarkCTA 
+        headline="Ready to Dominate Your Market?" 
+        subheadline="Book a free strategy call and discover how we can scale your business."
+      />
+
+      {/* Portfolio */}
       <Portfolio />
 
-      {/* How It Works Section */}
-      <section className="section-padding bg-secondary" id="how-it-works">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              How It Works
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A simple 3-step process to get you more leads in Canada
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <div key={step.number} className="relative">
-                <div className="bg-card p-8 rounded-xl border border-border h-full">
-                  <span className="text-6xl font-display font-bold text-teal/20">{step.number}</span>
-                  <h3 className="font-display text-2xl font-bold text-foreground mt-4 mb-3">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground">{step.description}</p>
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                    <ArrowRight className="w-8 h-8 text-teal" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* What Makes Us Different */}
-      <section className="section-padding bg-background">
+      <section className="py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              What Makes Us Different
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
+              Why <span className="text-gradient">Choose Us</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              No fluff. No buzzwords. Just real results for Canadian businesses.
+            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+              No fluff. No buzzwords. Just results.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {differentiators.map((item) => (
-              <div key={item.title} className="p-6 bg-card rounded-xl border border-border">
-                <div className="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center mb-4">
+              <div key={item.title} className="p-6 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300">
+                <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center mb-4">
                   <item.icon className="w-6 h-6 text-teal" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                <h3 className="font-display text-lg font-semibold text-primary-foreground mb-2">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <p className="text-gray-500 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-              Trusted by Local Businesses Across Canada
-            </h2>
-            <p className="text-primary-foreground/80 text-lg mb-8">
-              From Pitt Meadows, BC to Toronto, ON — we've helped service businesses generate consistent leads and grow their revenue.
-            </p>
-            
-            <div className="grid grid-cols-3 gap-8 mb-12">
-              <div>
-                <div className="text-4xl font-display font-bold text-teal">72+</div>
-                <div className="text-primary-foreground/70 text-sm">Clients Served</div>
-              </div>
-              <div>
-                <div className="text-4xl font-display font-bold text-teal">$630k</div>
-                <div className="text-primary-foreground/70 text-sm">Revenue Generated</div>
-              </div>
-              <div>
-                <div className="text-4xl font-display font-bold text-teal">90 Day</div>
-                <div className="text-primary-foreground/70 text-sm">Results Guarantee</div>
-              </div>
-            </div>
-
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/contact" className="flex items-center gap-2">
-                Book a Free Growth Audit
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Ready to Get More Leads?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              Book a free growth audit and see exactly how we can help your business grow in Canada.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="hero" size="xl" asChild>
-                <Link to="/contact" className="flex items-center gap-2">
-                  Book a Free Growth Audit
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="tel:+17786825772" className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  Call Us Now
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <DarkCTA />
 
       <Footer />
     </main>
