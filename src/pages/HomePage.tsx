@@ -120,7 +120,7 @@ const HomePage = () => {
               className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-up" 
               style={{ animationDelay: '0.2s' }}
             >
-              Paid ads. Short-form content. Real results for Canadian service businesses.
+              Trusted by 150+ Canadian service businesses to drive qualified leads on autopilot.
             </p>
 
             {/* CTAs */}
