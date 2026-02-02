@@ -111,8 +111,7 @@ const HomePage = () => {
               className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.1] mb-6 animate-fade-up" 
               style={{ animationDelay: '0.1s' }}
             >
-               Digital Marketing Built to Generate{' '}
-               <span className="text-gradient">Qualified Leads.</span>
+               Digital Marketing Built to Generate <span className="text-gradient whitespace-nowrap">Qualified Leads.</span>
             </h1>
 
             {/* Short subheadline */}
