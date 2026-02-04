@@ -13,11 +13,11 @@ const SEOHead = ({
   title,
   description,
   canonicalUrl,
-  ogImage = 'https://apdigital.lovable.app/og-image.png',
+  ogImage = 'https://ap-digital.ca/og-image.png',
   structuredData,
   keywords,
 }: SEOHeadProps) => {
-  const baseUrl = 'https://apdigital.lovable.app';
+  const baseUrl = 'https://ap-digital.ca';
   const fullCanonicalUrl = canonicalUrl ? `${baseUrl}${canonicalUrl}` : baseUrl;
 
   useEffect(() => {
