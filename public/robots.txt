@@ -1,11 +1,12 @@
 # AP DIGITAL - Digital Marketing Agency
-# https://apdigital.lovable.app
+# https://ap-digital.ca
+# Generated with seoagent.com automation
 
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://apdigital.lovable.app/sitemap.xml
+Sitemap: https://ap-digital.ca/sitemap.xml
 
 # Crawl-delay (optional, be gentle with server)
 Crawl-delay: 1
