@@ -148,7 +148,7 @@ const HomePage = () => {
             <div className="flex flex-wrap gap-8 lg:justify-end animate-fade-up" style={{ animationDelay: '0.4s' }}>
               {[
                 { value: '150+', label: 'Clients Served' },
-                { value: '$0', label: 'Setup Fee' },
+                { value: '4.9★', label: 'Client Rating' },
                 { value: '90-Day', label: 'Results Guarantee' },
               ].map((stat) => (
                 <div key={stat.label} className="text-center lg:text-right">
