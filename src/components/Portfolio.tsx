@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import realEstateBefore from '@/assets/real-estate-before.jpg';
+import realEstateAfter from '@/assets/real-estate-after.jpg';
 
 interface CaseStudy {
   id: number;
@@ -64,8 +66,8 @@ const caseStudies: CaseStudy[] = [
       { value: '9', label: 'Deals Closed' },
     ],
     services: ['Meta Ads', 'Landing Pages', 'Retargeting'],
-    beforeImage: 'https://images.unsplash.com/photo-1582407947092-50b8c1eb61c8?w=800&h=600&fit=crop&q=60&sat=-100',
-    afterImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
+    beforeImage: realEstateBefore,
+    afterImage: realEstateAfter,
   },
   {
     id: 4,
