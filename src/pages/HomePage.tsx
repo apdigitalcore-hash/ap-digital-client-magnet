@@ -109,12 +109,11 @@ const HomePage = () => {
 
               {/* Bold headline */}
               <h1 
-                className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-primary-foreground leading-[1.05] mb-8 animate-fade-up uppercase" 
+                className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-8 animate-fade-up uppercase" 
                 style={{ animationDelay: '0.1s' }}
               >
-                We Generate<br />
-                <span className="text-gradient">Qualified Leads</span><br />
-                For Your Business.
+                Digital Marketing<br />
+                For <span className="text-gradient">Local Businesses</span>
               </h1>
 
               {/* Subheadline */}
