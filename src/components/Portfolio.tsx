@@ -3,6 +3,7 @@ import { ArrowRight, ArrowUpRight, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 
 interface CaseStudy {
   id: number;
@@ -13,8 +14,8 @@ interface CaseStudy {
   description: string;
   metrics: { value: string; label: string }[];
   services: string[];
-  image: string;
-  logo?: string;
+  beforeImage: string;
+  afterImage: string;
 }
 
 const caseStudies: CaseStudy[] = [
@@ -24,14 +25,15 @@ const caseStudies: CaseStudy[] = [
     niche: 'Salon & Beauty',
     location: 'Mississauga, ON',
     tagline: 'From half-empty chairs to a 3-week waitlist',
-    description: 'Luxe was struggling with inconsistent bookings and zero online presence. We built a conversion-focused website, launched targeted Instagram Reels, and ran Meta ads to local audiences. Within 6 weeks, their calendar was fully booked.',
+    description: 'Luxe was struggling with inconsistent bookings and zero online presence. We built a conversion-focused website, launched targeted Instagram Reels, and ran Meta ads to local audiences.',
     metrics: [
       { value: '300%', label: 'More Bookings' },
       { value: '3-Week', label: 'Waitlist' },
       { value: '#1', label: 'Google Local' },
     ],
     services: ['Website Design', 'Instagram Reels', 'Meta Ads'],
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop',
+    beforeImage: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&h=600&fit=crop&q=60&sat=-100',
+    afterImage: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&h=600&fit=crop',
   },
   {
     id: 2,
@@ -39,14 +41,15 @@ const caseStudies: CaseStudy[] = [
     niche: 'Trades & Contractors',
     location: 'Vancouver, BC',
     tagline: 'Booked solid for 2 months straight',
-    description: 'ProPlumb relied entirely on word-of-mouth. We took over their Google presence—optimized their profile, built local citations, and launched Google Ads targeting emergency plumbing keywords. They now dominate local search.',
+    description: 'ProPlumb relied entirely on word-of-mouth. We took over their Google presence—optimized their profile, built local citations, and launched Google Ads targeting emergency keywords.',
     metrics: [
       { value: '180%', label: 'More Leads' },
       { value: '$18', label: 'Cost Per Call' },
       { value: '5x', label: 'Google Reviews' },
     ],
     services: ['Google Ads', 'Local SEO', 'Review Management'],
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop',
+    beforeImage: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&h=600&fit=crop&q=60&sat=-100',
+    afterImage: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop',
   },
   {
     id: 3,
@@ -54,14 +57,15 @@ const caseStudies: CaseStudy[] = [
     niche: 'Real Estate',
     location: 'Toronto, ON',
     tagline: '340 qualified leads in 90 days',
-    description: 'Coastal was burning cash on Zillow with minimal returns. We created hyper-targeted Facebook and Instagram campaigns with compelling property showcases and retargeting funnels. Cost per lead dropped by 80%.',
+    description: 'Coastal was burning cash on Zillow with minimal returns. We created hyper-targeted Facebook and Instagram campaigns with compelling property showcases and retargeting funnels.',
     metrics: [
       { value: '$2.40', label: 'Per Lead' },
       { value: '340', label: 'Leads in 90 Days' },
       { value: '12', label: 'Deals Closed' },
     ],
     services: ['Meta Ads', 'Landing Pages', 'Retargeting'],
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
+    beforeImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=60&sat=-100',
+    afterImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
   },
   {
     id: 4,
@@ -69,20 +73,19 @@ const caseStudies: CaseStudy[] = [
     niche: 'Dental / Healthcare',
     location: 'Calgary, AB',
     tagline: '200+ new patients in 6 months',
-    description: 'Maple Dental had an outdated website that failed to convert visitors. We redesigned it with virtual tours, patient reviews, and seamless appointment booking. Combined with multi-location SEO, patient acquisition skyrocketed.',
+    description: 'Maple Dental had an outdated website that failed to convert. We redesigned it with virtual tours, patient reviews, and seamless booking. Combined with multi-location SEO, patient acquisition skyrocketed.',
     metrics: [
       { value: '200+', label: 'New Patients' },
       { value: '4.9★', label: 'Google Rating' },
       { value: '35%', label: 'More Bookings' },
     ],
     services: ['Website Redesign', 'Local SEO', 'Content Strategy'],
-    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
+    beforeImage: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&h=600&fit=crop&q=60&sat=-100',
+    afterImage: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&h=600&fit=crop',
   },
 ];
 
 const Portfolio = () => {
-  const [hoveredId, setHoveredId] = useState<number | null>(null);
-
   return (
     <section id="portfolio" className="py-20 md:py-28 bg-near-black">
       <div className="container-custom">
@@ -100,7 +103,7 @@ const Portfolio = () => {
               Our <span className="text-gradient">Work</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-lg">
-              Real campaigns. Real numbers. Real businesses like yours.
+              Real campaigns. Real numbers. Drag to compare before & after.
             </p>
           </div>
           <Button variant="heroOutline" size="lg" asChild className="shrink-0">
@@ -121,23 +124,16 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              onMouseEnter={() => setHoveredId(study.id)}
-              onMouseLeave={() => setHoveredId(null)}
             >
               <div className="grid md:grid-cols-2 gap-0">
-                {/* Image */}
-                <div className="relative h-64 md:h-[400px] overflow-hidden">
-                  <img
-                    src={study.image}
-                    alt={study.client}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
+                {/* Before/After Slider */}
+                <div className="relative h-72 md:h-[420px] overflow-hidden">
+                  <BeforeAfterSlider
+                    beforeImage={study.beforeImage}
+                    afterImage={study.afterImage}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-charcoal-light/80 hidden md:block" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal-light/90 to-transparent md:hidden" />
-                  
                   {/* Niche badge */}
-                  <div className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-near-black/70 backdrop-blur-sm border border-gray-700 text-xs font-medium text-primary-foreground">
+                  <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-near-black/70 backdrop-blur-sm border border-gray-700 text-xs font-medium text-primary-foreground z-20">
                     {study.niche}
                   </div>
                 </div>
