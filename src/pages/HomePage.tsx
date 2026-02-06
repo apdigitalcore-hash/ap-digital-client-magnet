@@ -76,7 +76,7 @@ const HomePage = () => {
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
               poster={heroFallback}
             >
               <source src={heroVideo} type="video/mp4" />
@@ -85,12 +85,12 @@ const HomePage = () => {
             <img
               src={heroFallback}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              className="absolute inset-0 w-full h-full object-cover opacity-35"
             />
           )}
           
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-near-black via-near-black/80 to-near-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-near-black via-near-black/70 to-near-black/40" />
         </div>
 
         {/* Subtle accent glow */}
@@ -112,8 +112,9 @@ const HomePage = () => {
                 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-primary-foreground leading-[1.05] mb-8 animate-fade-up uppercase" 
                 style={{ animationDelay: '0.1s' }}
               >
-                Digital Marketing Built to Generate{' '}
-                <span className="text-gradient">Qualified Leads.</span>
+                We Generate<br />
+                <span className="text-gradient">Qualified Leads</span><br />
+                For Your Business.
               </h1>
 
               {/* Subheadline */}
