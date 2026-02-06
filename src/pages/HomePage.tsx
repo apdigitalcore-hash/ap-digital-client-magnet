@@ -66,8 +66,8 @@ const HomePage = () => {
       />
       <Header />
       
-      {/* Hero Section - Dark, Bold, Minimal */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-near-black">
+      {/* Hero Section - Bold, Left-Aligned, Editorial */}
+      <section className="relative min-h-screen flex items-end overflow-hidden bg-near-black">
         {/* Video/Image Background with heavy overlay */}
         <div className="absolute inset-0 z-0">
           {!isMobile ? (
@@ -76,7 +76,7 @@ const HomePage = () => {
               loop
               muted
               playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
               poster={heroFallback}
             >
               <source src={heroVideo} type="video/mp4" />
@@ -85,62 +85,77 @@ const HomePage = () => {
             <img
               src={heroFallback}
               alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
             />
           )}
           
           {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-near-black via-near-black/90 to-near-black" />
+          <div className="absolute inset-0 bg-gradient-to-t from-near-black via-near-black/80 to-near-black/60" />
         </div>
 
-        {/* Accent glow */}
+        {/* Subtle accent glow */}
         <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-teal/10 rounded-full blur-3xl opacity-60" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[300px] bg-teal/5 rounded-full blur-3xl" />
         </div>
 
-        <div className="container-custom relative z-10 pt-32 pb-20">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Minimal badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-8 animate-fade-up">
-              <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-              <span className="text-sm font-semibold uppercase tracking-wider">Performance Marketing Agency</span>
+        <div className="container-custom relative z-10 pt-32 pb-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-end">
+            {/* Left column - Text */}
+            <div className="text-left">
+              {/* Badge */}
+              <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-teal/15 border border-teal/30 text-teal mb-10 animate-fade-up">
+                <span className="text-sm font-bold uppercase tracking-widest">#1 Marketing Agency in Canada</span>
+              </div>
+
+              {/* Bold headline */}
+              <h1 
+                className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold text-primary-foreground leading-[1.05] mb-8 animate-fade-up uppercase" 
+                style={{ animationDelay: '0.1s' }}
+              >
+                Digital Marketing Built to Generate{' '}
+                <span className="text-gradient">Qualified Leads.</span>
+              </h1>
+
+              {/* Subheadline */}
+              <p 
+                className="text-lg md:text-xl text-gray-400 max-w-xl mb-10 animate-fade-up leading-relaxed" 
+                style={{ animationDelay: '0.2s' }}
+              >
+                We help salons, real estate agencies, tradespeople, and coaches generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
+              </p>
+
+              {/* CTAs */}
+              <div 
+                className="flex flex-col sm:flex-row gap-4 items-start animate-fade-up" 
+                style={{ animationDelay: '0.3s' }}
+              >
+                <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
+                  <Link to="/contact" className="flex items-center gap-2">
+                    Book a Free Strategy Call
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+                <Button variant="light" size="lg" asChild>
+                  <a href="#how-it-works" className="flex items-center gap-2">
+                    <Play className="w-4 h-4" />
+                    See How It Works
+                  </a>
+                </Button>
+              </div>
             </div>
 
-            {/* Bold headline - reduced text */}
-            <h1 
-              className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-primary-foreground leading-[1.1] mb-6 animate-fade-up" 
-              style={{ animationDelay: '0.1s' }}
-            >
-               Digital Marketing Built to Generate
-               <br />
-               <span className="text-gradient">Qualified Leads.</span>
-            </h1>
-
-            {/* Short subheadline */}
-            <p 
-              className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 animate-fade-up" 
-              style={{ animationDelay: '0.2s' }}
-            >
-              Trusted by 150+ Canadian service businesses to drive qualified leads on autopilot.
-            </p>
-
-            {/* CTAs */}
-            <div 
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" 
-              style={{ animationDelay: '0.3s' }}
-            >
-              <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
-                <Link to="/contact" className="flex items-center gap-2">
-                  Book a Free Strategy Call
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
-              </Button>
-              <Button variant="light" size="lg" asChild>
-                <a href="#how-it-works" className="flex items-center gap-2">
-                  <Play className="w-4 h-4" />
-                  See How It Works
-                </a>
-              </Button>
+            {/* Right column - Stats */}
+            <div className="flex flex-wrap gap-8 lg:justify-end animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              {[
+                { value: '150+', label: 'Clients Served' },
+                { value: '$0', label: 'Setup Fee' },
+                { value: '90-Day', label: 'Results Guarantee' },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center lg:text-right">
+                  <div className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">{stat.value}</div>
+                  <div className="text-sm text-gray-500 mt-1 uppercase tracking-wider">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
