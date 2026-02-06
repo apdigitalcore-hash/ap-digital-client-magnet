@@ -64,8 +64,8 @@ const caseStudies: CaseStudy[] = [
       { value: '12', label: 'Deals Closed' },
     ],
     services: ['Meta Ads', 'Landing Pages', 'Retargeting'],
-    beforeImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&q=60&sat=-100',
-    afterImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
+    beforeImage: 'https://images.unsplash.com/photo-1582407947092-50b8c1eb61c8?w=800&h=600&fit=crop&q=60&sat=-100',
+    afterImage: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop',
   },
   {
     id: 4,
