@@ -5,10 +5,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { label: 'Salon Marketing', href: '/salon-marketing' },
-    { label: 'Real Estate Marketing', href: '/real-estate-marketing' },
-    { label: 'Trades Marketing', href: '/trades-marketing' },
-    { label: 'Local Marketing (BC)', href: '/local-marketing' },
+    { label: 'Paid Ads', href: '/#service-paid-ads' },
+    { label: 'Content Creation', href: '/#service-content-creation' },
+    { label: 'Web Design', href: '/#service-web-design' },
+    { label: 'SEO', href: '/#service-seo' },
+    { label: 'Social Media', href: '/#service-social-media' },
+    { label: 'Lead Generation', href: '/#service-lead-gen' },
   ];
 
   const company = [
@@ -17,8 +19,8 @@ const Footer = () => {
   ];
 
   const legal = [
-    { label: 'Privacy Policy', href: '#privacy' },
-    { label: 'Terms of Service', href: '#terms' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms of Service', href: '/terms-of-service' },
   ];
 
   const socialLinks = [
@@ -29,7 +31,7 @@ const Footer = () => {
     },
     {
       icon: Linkedin,
-      href: 'https://www.linkedin.com/company/110553927/',
+      href: 'https://www.linkedin.com/company/110553927',
       label: 'LinkedIn'
     }
   ];
@@ -134,13 +136,13 @@ const Footer = () => {
             </p>
             <div className="flex gap-6">
               {legal.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
+                  to={link.href}
                   className="text-gray-500 text-sm hover:text-teal transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
