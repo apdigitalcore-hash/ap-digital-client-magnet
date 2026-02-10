@@ -8,7 +8,7 @@ import {
   BarChart3,
   ChevronDown
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 
 const services = [
   {
@@ -61,12 +61,6 @@ const services = [
   },
 ];
 
-const niches = [
-  { title: 'Salons & Beauty', link: '/salon-marketing' },
-  { title: 'Real Estate', link: '/real-estate-marketing' },
-  { title: 'Trades & Contractors', link: '/trades-marketing' },
-  { title: 'Local Businesses', link: '/local-marketing' },
-];
 
 const ServiceCard = ({ service }: { service: typeof services[0] }) => {
   const [open, setOpen] = useState(false);
@@ -141,23 +135,6 @@ const ServicesDark = () => {
           ))}
         </div>
 
-        {/* Industries */}
-        <div className="text-center">
-          <p className="text-muted-foreground mb-6">
-            Specialized marketing for:
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {niches.map((niche) => (
-              <Link
-                key={niche.title}
-                to={niche.link}
-                className="px-5 py-2.5 rounded-full bg-card border border-border text-foreground font-medium hover:border-teal hover:text-teal transition-all duration-300"
-              >
-                {niche.title}
-              </Link>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
