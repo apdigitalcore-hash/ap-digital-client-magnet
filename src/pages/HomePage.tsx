@@ -1,6 +1,6 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play, Zap, Target, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Play, Zap, Target, Users, TrendingUp, Video, Globe, Search, Megaphone, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -144,17 +144,25 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Right column - Stats */}
-            <div className="flex flex-wrap gap-8 lg:justify-end animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            {/* Right column - Services Quick Links */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 animate-fade-up" style={{ animationDelay: '0.4s' }}>
               {[
-                { value: '150+', label: 'Clients Served' },
-                { value: '4.9★', label: 'Client Rating' },
-                { value: '90-Day', label: 'Results Guarantee' },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center lg:text-right">
-                  <div className="font-display text-4xl md:text-5xl font-bold text-primary-foreground">{stat.value}</div>
-                  <div className="text-sm text-gray-500 mt-1 uppercase tracking-wider">{stat.label}</div>
-                </div>
+                { icon: Target, title: 'Paid Ads', id: 'service-paid-ads' },
+                { icon: Video, title: 'Content', id: 'service-content-creation' },
+                { icon: Globe, title: 'Web Design', id: 'service-web-design' },
+                { icon: Search, title: 'SEO', id: 'service-seo' },
+                { icon: Megaphone, title: 'Social Media', id: 'service-social-media' },
+                { icon: BarChart3, title: 'Lead Gen', id: 'service-lead-gen' },
+              ].map((service) => (
+                <a
+                  key={service.title}
+                  href={`#${service.id}`}
+                  className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-teal/40 hover:bg-teal/10 transition-all duration-300"
+                >
+                  <service.icon className="w-5 h-5 text-teal shrink-0" />
+                  <span className="text-sm font-medium text-primary-foreground group-hover:text-teal transition-colors">{service.title}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-gray-500 group-hover:text-teal ml-auto transition-all group-hover:translate-x-0.5" />
+                </a>
               ))}
             </div>
           </div>
