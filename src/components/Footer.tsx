@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
-import apLogo from '@/assets/ap-logo-clean.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,7 +44,6 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <img src={apLogo} alt="AP Digital Marketing" className="w-16 h-16 mb-2" />
               <span className="font-display font-bold text-2xl">
                 <span className="text-teal">AP</span> DIGITAL
               </span>

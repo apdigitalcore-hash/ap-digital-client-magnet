@@ -16,7 +16,6 @@ import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
 import { useIsMobile } from '@/hooks/use-mobile';
 import heroVideo from '@/assets/hero-video.mp4';
 import heroFallback from '@/assets/hero-fallback.jpg';
-import apLogo from '@/assets/ap-logo-clean.png';
 
 const HomePage = () => {
   const structuredData = {
@@ -145,34 +144,26 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Right column - Logo + Services Quick Links */}
-            <div className="flex flex-col items-center gap-8 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              {/* Logo */}
-              <div className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 opacity-90">
-                <img src={apLogo} alt="AP Digital Marketing" className="w-full h-full object-contain drop-shadow-2xl" />
-              </div>
-              
-              {/* Services Quick Links */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-                {[
-                  { icon: Target, title: 'Paid Ads', id: 'service-paid-ads' },
-                  { icon: Video, title: 'Content', id: 'service-content-creation' },
-                  { icon: Globe, title: 'Web Design', id: 'service-web-design' },
-                  { icon: Search, title: 'SEO', id: 'service-seo' },
-                  { icon: Megaphone, title: 'Social Media', id: 'service-social-media' },
-                  { icon: BarChart3, title: 'Lead Gen', id: 'service-lead-gen' },
-                ].map((service) => (
-                  <a
-                    key={service.title}
-                    href={`#${service.id}`}
-                    className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-teal/40 hover:bg-teal/10 transition-all duration-300"
-                  >
-                    <service.icon className="w-5 h-5 text-teal shrink-0" />
-                    <span className="text-sm font-medium text-primary-foreground group-hover:text-teal transition-colors">{service.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-gray-500 group-hover:text-teal ml-auto transition-all group-hover:translate-x-0.5" />
-                  </a>
-                ))}
-              </div>
+            {/* Right column - Services Quick Links */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              {[
+                { icon: Target, title: 'Paid Ads', id: 'service-paid-ads' },
+                { icon: Video, title: 'Content', id: 'service-content-creation' },
+                { icon: Globe, title: 'Web Design', id: 'service-web-design' },
+                { icon: Search, title: 'SEO', id: 'service-seo' },
+                { icon: Megaphone, title: 'Social Media', id: 'service-social-media' },
+                { icon: BarChart3, title: 'Lead Gen', id: 'service-lead-gen' },
+              ].map((service) => (
+                <a
+                  key={service.title}
+                  href={`#${service.id}`}
+                  className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-teal/40 hover:bg-teal/10 transition-all duration-300"
+                >
+                  <service.icon className="w-5 h-5 text-teal shrink-0" />
+                  <span className="text-sm font-medium text-primary-foreground group-hover:text-teal transition-colors">{service.title}</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-gray-500 group-hover:text-teal ml-auto transition-all group-hover:translate-x-0.5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
