@@ -23,10 +23,12 @@ const Header = () => {
   }, []);
 
   const services = [
-    { href: '/salon-marketing', label: 'Salon Marketing' },
-    { href: '/real-estate-marketing', label: 'Real Estate Marketing' },
-    { href: '/trades-marketing', label: 'Trades Marketing' },
-    { href: '/local-marketing', label: 'Local Marketing (BC)' },
+    { href: '/#service-paid-ads', label: 'Paid Ads' },
+    { href: '/#service-content-creation', label: 'Content Creation' },
+    { href: '/#service-web-design', label: 'Web Design' },
+    { href: '/#service-seo', label: 'SEO' },
+    { href: '/#service-social-media', label: 'Social Media' },
+    { href: '/#service-lead-gen', label: 'Lead Generation' },
   ];
 
   const isHomePage = location.pathname === '/';
