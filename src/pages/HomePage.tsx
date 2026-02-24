@@ -1,6 +1,6 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play, Zap, Target, Users, TrendingUp, Video, Globe, Search, Megaphone, BarChart3 } from 'lucide-react';
+import { ArrowRight, Play, Zap, Target, Users, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -13,9 +13,7 @@ import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
 import Portfolio from '@/components/Portfolio';
 import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
-import { useIsMobile } from '@/hooks/use-mobile';
-import heroVideo from '@/assets/hero-video.mp4';
-import heroFallback from '@/assets/hero-fallback.jpg';
+import heroImage from '@/assets/hero-right.jpg';
 
 const HomePage = () => {
   const structuredData = {
@@ -53,8 +51,6 @@ const HomePage = () => {
     },
   ];
 
-  const isMobile = useIsMobile();
-
   return (
     <main className="min-h-screen">
       <SEOHead
@@ -66,111 +62,80 @@ const HomePage = () => {
       />
       <Header />
       
-      {/* Hero Section - Bold, Left-Aligned, Editorial */}
-      <section className="relative min-h-screen flex items-end overflow-hidden bg-near-black">
-        {/* Video/Image Background with heavy overlay */}
-        <div className="absolute inset-0 z-0">
-          {!isMobile ? (
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
-              poster={heroFallback}
-            >
-              <source src={heroVideo} type="video/mp4" />
-            </video>
-          ) : (
-            <img
-              src={heroFallback}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-35"
-            />
-          )}
-          
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-near-black via-near-black/70 to-near-black/40" />
-        </div>
-
-        {/* Subtle accent glow */}
-        <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-[600px] h-[300px] bg-teal/5 rounded-full blur-3xl" />
-        </div>
-
-        <div className="container-custom relative z-10 pt-32 pb-24">
-          <div className="grid lg:grid-cols-2 gap-12 items-end">
-            {/* Left column - Text */}
-            <div className="text-left">
-              {/* Badge */}
-              <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-teal/15 border border-teal/30 text-teal mb-10 animate-fade-up">
-                <span className="text-sm font-bold uppercase tracking-widest">#1 Marketing Agency in Canada</span>
-              </div>
-
-              {/* Bold headline */}
-              <h1 
-                className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-8 animate-fade-up uppercase" 
-                style={{ animationDelay: '0.1s' }}
-              >
-                Digital Marketing<br />
-                For <span className="text-gradient">Local Businesses</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p 
-                className="text-lg md:text-xl text-gray-400 max-w-xl mb-10 animate-fade-up leading-relaxed" 
-                style={{ animationDelay: '0.2s' }}
-              >
-                We help salons, real estate agencies, tradespeople, and coaches generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
-              </p>
-
-              {/* CTAs */}
-              <div 
-                className="flex flex-col sm:flex-row gap-4 items-start animate-fade-up" 
-                style={{ animationDelay: '0.3s' }}
-              >
-                <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
-                  <Link to="/contact" className="flex items-center gap-2">
-                    Book a Free Strategy Call
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button variant="light" size="lg" asChild>
-                  <a href="#how-it-works" className="flex items-center gap-2">
-                    <Play className="w-4 h-4" />
-                    See How It Works
-                  </a>
-                </Button>
-              </div>
+      {/* Hero Section - Split Layout */}
+      <section className="relative min-h-screen flex bg-near-black overflow-hidden">
+        {/* Left Content */}
+        <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-between min-h-screen px-6 sm:px-10 lg:px-16 pt-28 pb-12">
+          <div className="flex-1 flex flex-col justify-center max-w-xl">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal/20 text-teal mb-8 w-fit animate-fade-up">
+              <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
+              <span className="text-sm font-bold uppercase tracking-widest">#1 Marketing Agency in Canada</span>
             </div>
 
-            {/* Right column - Services Quick Links */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-              {[
-                { icon: Target, title: 'Paid Ads', id: 'service-paid-ads' },
-                { icon: Video, title: 'Content', id: 'service-content-creation' },
-                { icon: Globe, title: 'Web Design', id: 'service-web-design' },
-                { icon: Search, title: 'SEO', id: 'service-seo' },
-                { icon: Megaphone, title: 'Social Media', id: 'service-social-media' },
-                { icon: BarChart3, title: 'Lead Gen', id: 'service-lead-gen' },
-              ].map((service) => (
-                <a
-                  key={service.title}
-                  href={`#${service.id}`}
-                  className="group flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:border-teal/40 hover:bg-teal/10 transition-all duration-300"
-                >
-                  <service.icon className="w-5 h-5 text-teal shrink-0" />
-                  <span className="text-sm font-medium text-primary-foreground group-hover:text-teal transition-colors">{service.title}</span>
-                  <ArrowRight className="w-3.5 h-3.5 text-gray-500 group-hover:text-teal ml-auto transition-all group-hover:translate-x-0.5" />
+            {/* Headline */}
+            <h1 
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-fade-up uppercase"
+              style={{ animationDelay: '0.1s' }}
+            >
+              Digital Marketing For{' '}
+              <span className="text-gradient">Local Businesses.</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p 
+              className="text-base md:text-lg text-muted-foreground max-w-md mb-10 animate-fade-up leading-relaxed" 
+              style={{ animationDelay: '0.2s' }}
+            >
+              We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
+            </p>
+
+            {/* CTAs */}
+            <div 
+              className="flex flex-wrap items-center gap-4 animate-fade-up" 
+              style={{ animationDelay: '0.3s' }}
+            >
+              <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
+                <Link to="/contact" className="flex items-center gap-2">
+                  Book a Free Strategy Call
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
+              <Button variant="light" size="lg" asChild>
+                <a href="#how-it-works" className="flex items-center gap-2">
+                  <Play className="w-4 h-4" />
+                  See How It Works
                 </a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Bottom Logos */}
+          <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            <p className="text-muted-foreground text-xs uppercase tracking-widest mb-4">Trusted by industry leaders</p>
+            <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-50">
+              {['SalonPro', 'RealtyMax', 'TradesCo', 'CoachHub', 'GrowthLab'].map(brand => (
+                <div key={brand} className="text-primary-foreground font-display font-semibold text-sm md:text-base">
+                  {brand}
+                </div>
               ))}
             </div>
           </div>
         </div>
 
+        {/* Right Image */}
+        <div className="hidden lg:block w-1/2 relative">
+          <img
+            src={heroImage}
+            alt="Digital marketing agency creative"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-near-black via-near-black/40 to-transparent" />
+        </div>
+
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-          <div className="w-6 h-10 rounded-full border-2 border-gray-600 flex items-start justify-center p-2">
+        <div className="absolute bottom-8 left-1/4 lg:left-1/4 -translate-x-1/2 animate-bounce z-10">
+          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
             <div className="w-1.5 h-3 bg-teal rounded-full" />
           </div>
         </div>
