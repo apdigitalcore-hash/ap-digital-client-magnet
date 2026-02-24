@@ -109,18 +109,6 @@ const HomePage = () => {
               </Button>
             </div>
           </div>
-
-          {/* Bottom Logos */}
-          <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            <p className="text-muted-foreground text-xs uppercase tracking-widest mb-4">Trusted by industry leaders</p>
-            <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-50">
-              {['SalonPro', 'RealtyMax', 'TradesCo', 'CoachHub', 'GrowthLab'].map(brand => (
-                <div key={brand} className="text-primary-foreground font-display font-semibold text-sm md:text-base">
-                  {brand}
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Right Image */}
