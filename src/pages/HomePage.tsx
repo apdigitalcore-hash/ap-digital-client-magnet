@@ -111,7 +111,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Right Image */}
+        {/* Right Image - visible on all screens */}
         <div className="hidden lg:block w-1/2 relative">
           <img
             src={heroImage}
@@ -121,8 +121,17 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-near-black via-near-black/40 to-transparent" />
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/4 lg:left-1/4 -translate-x-1/2 animate-bounce z-10">
+        {/* Mobile Hero Image */}
+        <div className="block lg:hidden absolute inset-0 z-0">
+          <img
+            src={heroImage}
+            alt="Digital marketing agency creative"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+
+        {/* Scroll Indicator - centered on full page width */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
           <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
             <div className="w-1.5 h-3 bg-teal rounded-full" />
           </div>
