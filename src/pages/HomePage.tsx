@@ -13,7 +13,7 @@ import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
 import Portfolio from '@/components/Portfolio';
 import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
-import heroImage from '@/assets/hero-right.jpg';
+import heroImage from '@/assets/hero-split.jpg';
 
 const HomePage = () => {
   const structuredData = {
