@@ -1,100 +1,43 @@
 import { ArrowRight, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useEffect, useState, useRef } from 'react';
-import heroVideo from '@/assets/hero-video.mp4';
-import heroFallback from '@/assets/hero-fallback.jpg';
-
-const MOBILE_BREAKPOINT = 768;
+import heroImage from '@/assets/hero-right.jpg';
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    setIsClient(true);
-    const checkMobile = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Force video to play on mount
-  useEffect(() => {
-    if (videoRef.current && !isMobile && isClient) {
-      videoRef.current.play().catch(() => {
-        // Autoplay was prevented, video will show poster instead
-      });
-    }
-  }, [isMobile, isClient]);
-
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Video/Image Background */}
-      <div className="absolute inset-0 z-0">
-        {/* Always render video on desktop, image on mobile */}
-        {!isMobile ? (
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover"
-            poster={heroFallback}
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
-        ) : (
-          <img
-            src={heroFallback}
-            alt=""
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        )}
-        
-        {/* Dark Overlay for text readability */}
-        <div className="absolute inset-0 bg-primary/70" />
-      </div>
-
-      {/* Subtle accent glow effects */}
-      <div className="absolute inset-0 opacity-20 z-[1] pointer-events-none">
-        <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-teal blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-teal-light blur-3xl" />
-      </div>
-
-      <div className="container-custom relative z-10 pt-24 pb-16">
-        <div className="max-w-4xl mx-auto text-center">
+    <section className="relative min-h-screen flex bg-near-black overflow-hidden">
+      {/* Left Content */}
+      <div className="relative z-10 w-full lg:w-1/2 flex flex-col justify-between min-h-screen px-6 sm:px-10 lg:px-16 pt-28 pb-12">
+        {/* Main Content */}
+        <div className="flex-1 flex flex-col justify-center max-w-xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-8 animate-fade-up">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal/20 text-teal mb-8 w-fit animate-fade-up">
             <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-            <span className="text-sm font-medium">Trusted by 150+ Local Businesses</span>
+            <span className="text-sm font-medium">#1 Marketing Agency in Canada</span>
           </div>
 
           {/* Headline */}
           <h1 
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" 
+            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-fade-up"
             style={{ animationDelay: '0.1s' }}
           >
-            Digital Marketing Built to Generate{' '}
+            Digital Marketing That Generates{' '}
             <span className="text-gradient">Qualified Leads.</span>
           </h1>
 
           {/* Subheadline */}
           <p 
-            className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-10 animate-fade-up" 
+            className="text-base md:text-lg text-muted-foreground max-w-md mb-10 animate-fade-up leading-relaxed" 
             style={{ animationDelay: '0.2s' }}
           >
-            We help Salons, Real Estate Agencies, Tradespeople, and Coaches generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
+            We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
           </p>
 
           {/* CTAs */}
           <div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" 
+            className="flex flex-wrap items-center gap-4 animate-fade-up" 
             style={{ animationDelay: '0.3s' }}
           >
-            <Button variant="hero" size="xl" asChild>
+            <Button variant="hero" size="lg" asChild>
               <a href="#contact" className="flex items-center gap-2">
                 Book a Free Strategy Call
                 <ArrowRight className="w-5 h-5" />
@@ -107,29 +50,30 @@ const Hero = () => {
               </a>
             </Button>
           </div>
+        </div>
 
-          {/* Social Proof */}
-          <div 
-            className="mt-16 pt-12 border-t border-primary-foreground/10 animate-fade-up" 
-            style={{ animationDelay: '0.4s' }}
-          >
-            <p className="text-primary-foreground/60 text-sm mb-6">Trusted by industry leaders</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-60">
-              {['SalonPro', 'RealtyMax', 'TradesCo', 'CoachHub', 'GrowthLab'].map(brand => (
-                <div key={brand} className="text-primary-foreground/80 font-display font-semibold text-lg">
-                  {brand}
-                </div>
-              ))}
-            </div>
+        {/* Bottom Logos */}
+        <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <p className="text-muted-foreground text-xs uppercase tracking-widest mb-4">Trusted by industry leaders</p>
+          <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-50">
+            {['SalonPro', 'RealtyMax', 'TradesCo', 'CoachHub', 'GrowthLab'].map(brand => (
+              <div key={brand} className="text-primary-foreground font-display font-semibold text-sm md:text-base">
+                {brand}
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-teal rounded-full" />
-        </div>
+      {/* Right Image */}
+      <div className="hidden lg:block w-1/2 relative">
+        <img
+          src={heroImage}
+          alt="Digital marketing agency creative"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Subtle gradient blend from left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-near-black via-near-black/40 to-transparent" />
       </div>
     </section>
   );
