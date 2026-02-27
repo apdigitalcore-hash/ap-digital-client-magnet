@@ -11,7 +11,7 @@ import ServicesDark from '@/components/ServicesDark';
 import TestimonialsDark from '@/components/TestimonialsDark';
 import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
-import Portfolio from '@/components/Portfolio';
+
 import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
 
@@ -160,8 +160,6 @@ const HomePage = () => {
         subheadline="Book a free strategy call and discover how we can scale your business."
       />
 
-      {/* Portfolio */}
-      <Portfolio />
 
       {/* What Makes Us Different */}
       <section className="py-20 md:py-28 bg-charcoal">
