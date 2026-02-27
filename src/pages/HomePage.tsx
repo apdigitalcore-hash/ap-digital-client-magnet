@@ -126,8 +126,9 @@ const HomePage = () => {
           <img
             src={heroImage}
             alt="Digital marketing agency creative"
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-40"
           />
+          <div className="absolute inset-0 bg-near-black/60" />
         </div>
 
         {/* Scroll Indicator - centered on full page width */}
