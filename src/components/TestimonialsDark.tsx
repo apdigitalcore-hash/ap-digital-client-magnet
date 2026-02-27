@@ -9,28 +9,28 @@ const testimonials = [
     role: 'Salon Owner · Mississauga',
     content: "Calendar went from half-empty to a 3-week waitlist in 6 weeks. The Instagram content they made just took off.",
     result: '+40 clients/mo',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face',
+    
   },
   {
     name: 'Marcus C.',
     role: 'Realtor · Vancouver',
     content: "Was burning cash on Zillow. They set up Facebook ads that actually convert. 25 solid leads a week now.",
     result: '25+ leads/wk',
-    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face',
+    
   },
   {
     name: 'Dave K.',
     role: 'Plumber · Calgary',
     content: "I know pipes, not marketing. They took over Google and now we're booked solid two months out.",
     result: 'Booked 2 months',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
+    
   },
   {
     name: 'Sarah L.',
     role: 'Life Coach · Toronto',
     content: "Went from 2 discovery calls a month to 15. The short-form videos are a game changer.",
     result: '7x more calls',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face',
+    
   },
 ];
 
@@ -93,12 +93,6 @@ const TestimonialsDark = () => {
 
                 {/* Author */}
                 <div className="flex items-center gap-3 pt-4 border-t border-gray-800/60">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    className="w-9 h-9 rounded-full object-cover"
-                    loading="lazy"
-                  />
                   <div>
                     <div className="font-semibold text-primary-foreground text-sm">{testimonial.name}</div>
                     <div className="text-xs text-gray-500">{testimonial.role}</div>
