@@ -2,7 +2,7 @@ import { CheckCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
-import SEOHead from '@/components/SEOHead';
+import { Helmet } from 'react-helmet-async';
 import { organizationSchema, getFAQSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 const Contact = () => {
