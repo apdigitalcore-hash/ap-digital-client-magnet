@@ -5,11 +5,15 @@ import { Helmet } from 'react-helmet-async';
 const PrivacyPolicy = () => {
   return (
     <main className="min-h-screen bg-near-black">
-      <SEOHead
-        title="Privacy Policy | AP DIGITAL"
-        description="Privacy Policy for AP DIGITAL - how we collect, use, and protect your information."
-        canonicalUrl="/privacy-policy"
-      />
+      <Helmet>
+        <title>Privacy Policy | AP DIGITAL</title>
+        <meta name="description" content="Privacy Policy for AP DIGITAL - how we collect, use, and protect your information." />
+        <link rel="canonical" href="https://ap-digital.ca/privacy-policy" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ap-digital.ca/privacy-policy" />
+        <meta property="og:title" content="Privacy Policy | AP DIGITAL" />
+        <meta property="og:description" content="Privacy Policy for AP DIGITAL - how we collect, use, and protect your information." />
+      </Helmet>
       <Header />
 
       <section className="pt-32 pb-20">
