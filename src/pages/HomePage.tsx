@@ -87,8 +87,8 @@ const HomePage = () => {
               className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-fade-up uppercase"
               style={{ animationDelay: '0.1s' }}
             >
-              Digital Marketing For{' '}
-              <span className="text-gradient">Local Businesses.</span>
+              Digital Marketing Agency in Canada That Gets You{' '}
+              <span className="text-gradient">Predictable Leads.</span>
             </h1>
 
             {/* Subheadline */}
@@ -148,7 +148,57 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Results / Proof Section - Right after hero */}
+      {/* Niche Services Sections */}
+      <section className="py-20 md:py-28 bg-charcoal">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+                Social Media & Paid Ads for <span className="text-gradient">Salons</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                We run Instagram and Facebook ads that bring new bookings to your salon every week — without you lifting a finger. 
+                Our campaigns target local clients actively searching for hair, beauty, and wellness services in your area. 
+                Most salon partners see a full appointment book within the first 30 days.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+                Digital Marketing for <span className="text-gradient">Real Estate Agents</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                We generate qualified buyer and seller leads through hyper-targeted social media campaigns and Google Ads. 
+                Our proven funnels capture contact info and nurture prospects so you spend less time chasing and more time closing. 
+                Real estate agents we work with typically see 15–30 new leads per month.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+                Lead Generation for <span className="text-gradient">Trades Businesses</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Plumbers, electricians, roofers, and contractors — we build ad campaigns that put your business in front of homeowners who need you right now. 
+                No more relying on word-of-mouth alone. Our clients consistently fill their schedules with high-value jobs week after week.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+                Marketing for <span className="text-gradient">Private Coaches & Trainers</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Whether you're a personal trainer, life coach, or fitness studio owner, we create content and ad campaigns that attract your ideal clients. 
+                Our systems automate lead capture and follow-up so you can focus on coaching. 
+                Most coaches double their client base within 90 days of working with us.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Results / Proof Section */}
       <ResultsProof />
 
       {/* Visual Showcase - Content that converts */}
@@ -169,7 +219,6 @@ const HomePage = () => {
         subheadline="Book a free strategy call and discover how we can scale your business."
       />
 
-
       {/* What Makes Us Different */}
       <section className="py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
@@ -177,7 +226,7 @@ const HomePage = () => {
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
               Why <span className="text-gradient">Choose Us</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
               No fluff. No buzzwords. Just results.
             </p>
           </div>
@@ -191,7 +240,7 @@ const HomePage = () => {
                 <h3 className="font-display text-lg font-semibold text-primary-foreground mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 text-sm">{item.description}</p>
+                <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -199,7 +248,10 @@ const HomePage = () => {
       </section>
 
       {/* Final CTA */}
-      <DarkCTA />
+      <DarkCTA 
+        headline="Ready to Get Predictable Leads?"
+        subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
+      />
 
       <Footer />
     </main>
