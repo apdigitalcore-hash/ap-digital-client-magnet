@@ -2,7 +2,7 @@ import { CheckCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
-import SEOHead from '@/components/SEOHead';
+import { Helmet } from 'react-helmet-async';
 import { organizationSchema, getFAQSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
 const Contact = () => {
@@ -63,13 +63,19 @@ const Contact = () => {
 
   return (
     <main className="min-h-screen">
-      <SEOHead
-        title="Book a Free Marketing Growth Audit | AP DIGITAL"
-        description="Book a free marketing growth audit with AP DIGITAL. We'll analyze your current marketing, identify opportunities, and show you how to get more leads."
-        canonicalUrl="/contact"
-        keywords="free marketing audit, book marketing consultation, digital marketing consultation Canada"
-        structuredData={structuredData}
-      />
+      <Helmet>
+        <title>Book a Free Marketing Growth Audit | AP DIGITAL</title>
+        <meta name="description" content="Book a free marketing growth audit with AP DIGITAL. We'll analyze your current marketing, identify opportunities, and show you how to get more leads." />
+        <meta name="keywords" content="free marketing audit, book marketing consultation, digital marketing consultation Canada" />
+        <link rel="canonical" href="https://ap-digital.ca/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ap-digital.ca/contact" />
+        <meta property="og:title" content="Book a Free Marketing Growth Audit | AP DIGITAL" />
+        <meta property="og:description" content="Book a free marketing growth audit with AP DIGITAL. We'll analyze your current marketing, identify opportunities, and show you how to get more leads." />
+        {structuredData && (
+          <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        )}
+      </Helmet>
       <Header />
       
       {/* Hero Section */}

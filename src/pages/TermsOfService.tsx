@@ -1,15 +1,19 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import SEOHead from '@/components/SEOHead';
+import { Helmet } from 'react-helmet-async';
 
 const TermsOfService = () => {
   return (
     <main className="min-h-screen bg-near-black">
-      <SEOHead
-        title="Terms of Service | AP DIGITAL"
-        description="Terms of Service for AP DIGITAL - the terms governing use of our website and services."
-        canonicalUrl="/terms-of-service"
-      />
+      <Helmet>
+        <title>Terms of Service | AP DIGITAL</title>
+        <meta name="description" content="Terms of Service for AP DIGITAL - the terms governing use of our website and services." />
+        <link rel="canonical" href="https://ap-digital.ca/terms-of-service" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ap-digital.ca/terms-of-service" />
+        <meta property="og:title" content="Terms of Service | AP DIGITAL" />
+        <meta property="og:description" content="Terms of Service for AP DIGITAL - the terms governing use of our website and services." />
+      </Helmet>
       <Header />
 
       <section className="pt-32 pb-20">
