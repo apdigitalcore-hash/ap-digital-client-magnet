@@ -53,13 +53,22 @@ const HomePage = () => {
 
   return (
     <main className="min-h-screen">
-      <SEOHead
-        title="Digital Marketing Agency in Canada | Get More Leads & Sales"
-        description="AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads using short-form content and paid ads."
-        canonicalUrl="/"
-        keywords="digital marketing agency Canada, marketing agency BC, lead generation Canada, Pitt Meadows marketing"
-        structuredData={structuredData}
-      />
+      <Helmet>
+        <title>Digital Marketing Agency Canada | Leads for Salons, Trades &amp; Real Estate | AP DIGITAL</title>
+        <meta name="description" content="AP DIGITAL helps salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads. Book a free strategy call today." />
+        <meta name="keywords" content="digital marketing agency Canada, marketing agency BC, lead generation Canada, Pitt Meadows marketing" />
+        <link rel="canonical" href="https://ap-digital.ca/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ap-digital.ca/" />
+        <meta property="og:title" content="Digital Marketing Agency Canada | Leads for Salons, Trades & Real Estate | AP DIGITAL" />
+        <meta property="og:description" content="AP DIGITAL helps salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads. Book a free strategy call today." />
+        <meta property="og:image" content="https://ap-digital.ca/og-image.png" />
+        <meta property="og:site_name" content="AP DIGITAL" />
+        <meta name="twitter:card" content="summary_large_image" />
+        {structuredData && (
+          <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        )}
+      </Helmet>
       <Header />
       
       {/* Hero Section - Split Layout */}
