@@ -18,13 +18,29 @@ import heroImage from '@/assets/hero-split.jpg';
 const HomePage = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@graph": [
-      organizationSchema,
-      getWebPageSchema(
-        "Digital Marketing Agency in Canada",
-        "AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads using short-form content and paid ads.",
-        "/"
-      )
+    "@type": "LocalBusiness",
+    "name": "AP DIGITAL",
+    "url": "https://ap-digital.ca",
+    "description": "AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades businesses, and private coaches get predictable leads through social media marketing and paid ads.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pitt Meadows",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    },
+    "areaServed": [
+      "Pitt Meadows", "Maple Ridge", "Metro Vancouver",
+      "British Columbia", "Canada"
+    ],
+    "knowsAbout": [
+      "Salon Marketing", "Real Estate Marketing",
+      "Trades Marketing", "Coaching Marketing",
+      "Facebook Ads", "Instagram Ads", "TikTok Ads",
+      "Social Media Management", "Lead Generation"
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.instagram.com/apdigital.co"
     ]
   };
 
