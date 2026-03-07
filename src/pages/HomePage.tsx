@@ -87,8 +87,8 @@ const HomePage = () => {
               className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-fade-up uppercase"
               style={{ animationDelay: '0.1s' }}
             >
-              Digital Marketing For{' '}
-              <span className="text-gradient">Local Businesses.</span>
+              Digital Marketing Agency in Canada That Gets You{' '}
+              <span className="text-gradient">Predictable Leads.</span>
             </h1>
 
             {/* Subheadline */}
