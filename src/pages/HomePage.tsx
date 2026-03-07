@@ -219,18 +219,14 @@ const HomePage = () => {
         subheadline="Book a free strategy call and discover how we can scale your business."
       />
 
-      {/* Final CTA */}
-      <DarkCTA 
-        headline="Ready to Get Predictable Leads?"
-        subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
-      />
+      {/* What Makes Us Different */}
       <section className="py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
               Why <span className="text-gradient">Choose Us</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
               No fluff. No buzzwords. Just results.
             </p>
           </div>
@@ -244,7 +240,7 @@ const HomePage = () => {
                 <h3 className="font-display text-lg font-semibold text-primary-foreground mb-2">
                   {item.title}
                 </h3>
-                <p className="text-gray-500 text-sm">{item.description}</p>
+                <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -252,7 +248,10 @@ const HomePage = () => {
       </section>
 
       {/* Final CTA */}
-      <DarkCTA />
+      <DarkCTA 
+        headline="Ready to Get Predictable Leads?"
+        subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
+      />
 
       <Footer />
     </main>
