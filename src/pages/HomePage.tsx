@@ -219,8 +219,11 @@ const HomePage = () => {
         subheadline="Book a free strategy call and discover how we can scale your business."
       />
 
-
-      {/* What Makes Us Different */}
+      {/* Final CTA */}
+      <DarkCTA 
+        headline="Ready to Get Predictable Leads?"
+        subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
+      />
       <section className="py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
           <div className="text-center mb-16">

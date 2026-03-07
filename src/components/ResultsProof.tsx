@@ -77,7 +77,7 @@ const ResultsProof = () => {
             <span className="text-sm font-semibold uppercase tracking-wider">Proven Results</span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Performance That <span className="text-gradient">Speaks</span>
+            Real Results for <span className="text-gradient">Real Businesses</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Real numbers from real campaigns. We don't chase vanity metrics—we drive revenue.
