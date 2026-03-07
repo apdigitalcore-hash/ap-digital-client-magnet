@@ -1,12 +1,3 @@
-# AP DIGITAL - Digital Marketing Agency
-# https://ap-digital.ca
-# Generated with seoagent.com automation
-
 User-agent: *
 Allow: /
-
-# Sitemap location
 Sitemap: https://ap-digital.ca/sitemap.xml
-
-# Crawl-delay (optional, be gentle with server)
-Crawl-delay: 1
