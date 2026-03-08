@@ -23,12 +23,19 @@ const Header = () => {
   }, []);
 
   const services = [
-    { href: '/#service-paid-ads', label: 'Paid Ads' },
-    { href: '/#service-content-creation', label: 'Content Creation' },
-    { href: '/#service-web-design', label: 'Web Design' },
-    { href: '/#service-seo', label: 'SEO' },
-    { href: '/#service-social-media', label: 'Social Media' },
-    { href: '/#service-lead-gen', label: 'Lead Generation' },
+    { href: '/services/paid-ads', label: 'Paid Ads' },
+    { href: '/services/content-creation', label: 'Content Creation' },
+    { href: '/services/web-design', label: 'Web Design' },
+    { href: '/services/seo', label: 'SEO' },
+    { href: '/services/social-media', label: 'Social Media' },
+    { href: '/services/lead-generation', label: 'Lead Generation' },
+  ];
+
+  const industries = [
+    { href: '/salon-marketing', label: 'Salons & Beauty' },
+    { href: '/real-estate-marketing', label: 'Real Estate' },
+    { href: '/trades-marketing', label: 'Trades & Contractors' },
+    { href: '/coaching-marketing', label: 'Coaches & Trainers' },
   ];
 
   const isHomePage = location.pathname === '/';
