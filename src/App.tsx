@@ -15,6 +15,10 @@ import ContentCreation from "./pages/services/ContentCreation";
 import SEO from "./pages/services/SEO";
 import LeadGeneration from "./pages/services/LeadGeneration";
 import WebDesign from "./pages/services/WebDesign";
+import SalonMarketing from "./pages/niches/SalonMarketing";
+import RealEstateMarketing from "./pages/niches/RealEstateMarketing";
+import TradesMarketing from "./pages/niches/TradesMarketing";
+import CoachingMarketing from "./pages/niches/CoachingMarketing";
 
 const queryClient = new QueryClient();
 
