@@ -87,14 +87,22 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a
-              href="/#portfolio"
-              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}
-            >
-              Portfolio
-            </a>
+              }`}>
+                Industries <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-56">
+                {industries.map((industry) => (
+                  <DropdownMenuItem key={industry.href} asChild>
+                    <Link to={industry.href} className="cursor-pointer">
+                      {industry.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <Link
               to="/contact"
