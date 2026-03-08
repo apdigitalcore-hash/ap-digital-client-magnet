@@ -62,25 +62,25 @@ const niches = [
     icon: Scissors,
     title: 'Salon & Beauty',
     description: 'Fill your appointment book with high-value clients.',
-    link: '/contact',
+    link: '/salon-marketing',
   },
   {
     icon: Home,
     title: 'Real Estate',
     description: 'Generate qualified buyer and seller leads consistently.',
-    link: '/contact',
+    link: '/real-estate-marketing',
   },
   {
     icon: Wrench,
     title: 'Trades & Contractors',
     description: 'Get more calls from homeowners who need your services.',
-    link: '/contact',
+    link: '/trades-marketing',
   },
   {
     icon: MapPin,
-    title: 'Local Businesses',
-    description: 'Dominate your local market and outrank competitors.',
-    link: '/contact',
+    title: 'Coaches & Trainers',
+    description: 'Fill your roster with clients who are ready to invest.',
+    link: '/coaching-marketing',
   },
 ];
 
