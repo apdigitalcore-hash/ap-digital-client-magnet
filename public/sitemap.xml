@@ -36,6 +36,26 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://ap-digital.ca/salon-marketing</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ap-digital.ca/real-estate-marketing</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ap-digital.ca/trades-marketing</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://ap-digital.ca/coaching-marketing</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://ap-digital.ca/contact</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>

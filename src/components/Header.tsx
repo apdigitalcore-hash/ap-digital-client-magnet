@@ -160,13 +160,20 @@ const Header = () => {
                 </Link>
               ))}
 
-              <a
-                href="/#portfolio"
-                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Portfolio
-              </a>
+              <div className="px-4 py-2 text-sm text-muted-foreground font-medium">
+                Industries
+              </div>
+
+              {industries.map((industry) => (
+                <Link
+                  key={industry.href}
+                  to={industry.href}
+                  className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {industry.label}
+                </Link>
+              ))}
 
               <Link
                 to="/contact"
