@@ -106,16 +106,17 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
           {services.map((service, index) => (
-            <div
+            <Link
               key={service.title}
-              className="bg-card rounded-xl p-6 lg:p-8 card-hover border border-border group"
+              to={service.link}
+              className="bg-card rounded-xl p-6 lg:p-8 card-hover border border-border group block"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center mb-6 group-hover:bg-teal/20 transition-colors">
                 <service.icon className="w-6 h-6 text-teal" />
               </div>
               
-              <h3 className="font-display text-xl font-bold text-foreground mb-3">
+              <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-teal transition-colors">
                 {service.title}
               </h3>
               
@@ -131,7 +132,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Link>
           ))}
         </div>
 
