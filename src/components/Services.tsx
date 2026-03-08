@@ -17,61 +17,43 @@ const services = [
     icon: Target,
     title: 'Paid Advertising',
     description: 'Laser-targeted ads on Google, Facebook, and Instagram that maximize your ad spend ROI.',
-    benefits: [
-      'Google & Meta Ads certified',
-      'A/B testing & optimization',
-      'Retargeting campaigns',
-    ],
+    benefits: ['Google & Meta Ads certified', 'A/B testing & optimization', 'Retargeting campaigns'],
+    link: '/services/paid-ads',
   },
   {
     icon: Video,
     title: 'Content Creation',
     description: 'Scroll-stopping short-form videos and graphics that capture attention and drive engagement.',
-    benefits: [
-      'Short-form video production',
-      'Social media graphics',
-      'Brand photography',
-    ],
+    benefits: ['Short-form video production', 'Social media graphics', 'Brand photography'],
+    link: '/services/content-creation',
   },
   {
     icon: Globe,
     title: 'Web Services',
     description: 'High-converting websites and landing pages designed to turn visitors into paying customers.',
-    benefits: [
-      'Custom website design',
-      'Landing page optimization',
-      'Mobile-first development',
-    ],
+    benefits: ['Custom website design', 'Landing page optimization', 'Mobile-first development'],
+    link: '/services/web-design',
   },
   {
     icon: Megaphone,
     title: 'Social Media Management',
     description: 'Build an engaged community and establish authority with consistent, compelling content.',
-    benefits: [
-      'Content calendar & scheduling',
-      'Community engagement',
-      'Growth-focused strategies',
-    ],
+    benefits: ['Content calendar & scheduling', 'Community engagement', 'Growth-focused strategies'],
+    link: '/services/social-media',
   },
   {
     icon: Search,
     title: 'SEO Optimization',
     description: 'Rank higher on Google and attract organic traffic that converts—without paying for every click.',
-    benefits: [
-      'Local SEO for service areas',
-      'Technical SEO audits',
-      'Content optimization',
-    ],
+    benefits: ['Local SEO for service areas', 'Technical SEO audits', 'Content optimization'],
+    link: '/services/seo',
   },
   {
     icon: Users,
     title: 'Lead Generation',
     description: 'Predictable lead flow systems that keep your calendar full with qualified prospects.',
-    benefits: [
-      'Funnel optimization',
-      'Lead nurturing sequences',
-      'CRM integration',
-    ],
+    benefits: ['Funnel optimization', 'Lead nurturing sequences', 'CRM integration'],
+    link: '/services/lead-generation',
   },
 ];
 
@@ -124,16 +106,17 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
           {services.map((service, index) => (
-            <div
+            <Link
               key={service.title}
-              className="bg-card rounded-xl p-6 lg:p-8 card-hover border border-border group"
+              to={service.link}
+              className="bg-card rounded-xl p-6 lg:p-8 card-hover border border-border group block"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center mb-6 group-hover:bg-teal/20 transition-colors">
                 <service.icon className="w-6 h-6 text-teal" />
               </div>
               
-              <h3 className="font-display text-xl font-bold text-foreground mb-3">
+              <h3 className="font-display text-xl font-bold text-foreground mb-3 group-hover:text-teal transition-colors">
                 {service.title}
               </h3>
               
@@ -149,7 +132,7 @@ const Services = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Link>
           ))}
         </div>
 
