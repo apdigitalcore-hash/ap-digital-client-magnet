@@ -15,6 +15,10 @@ import ContentCreation from "./pages/services/ContentCreation";
 import SEO from "./pages/services/SEO";
 import LeadGeneration from "./pages/services/LeadGeneration";
 import WebDesign from "./pages/services/WebDesign";
+import SalonMarketing from "./pages/niches/SalonMarketing";
+import RealEstateMarketing from "./pages/niches/RealEstateMarketing";
+import TradesMarketing from "./pages/niches/TradesMarketing";
+import CoachingMarketing from "./pages/niches/CoachingMarketing";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +40,10 @@ const App = () => (
             <Route path="/services/seo" element={<SEO />} />
             <Route path="/services/lead-generation" element={<LeadGeneration />} />
             <Route path="/services/web-design" element={<WebDesign />} />
+            <Route path="/salon-marketing" element={<SalonMarketing />} />
+            <Route path="/real-estate-marketing" element={<RealEstateMarketing />} />
+            <Route path="/trades-marketing" element={<TradesMarketing />} />
+            <Route path="/coaching-marketing" element={<CoachingMarketing />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

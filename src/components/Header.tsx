@@ -23,12 +23,19 @@ const Header = () => {
   }, []);
 
   const services = [
-    { href: '/#service-paid-ads', label: 'Paid Ads' },
-    { href: '/#service-content-creation', label: 'Content Creation' },
-    { href: '/#service-web-design', label: 'Web Design' },
-    { href: '/#service-seo', label: 'SEO' },
-    { href: '/#service-social-media', label: 'Social Media' },
-    { href: '/#service-lead-gen', label: 'Lead Generation' },
+    { href: '/services/paid-ads', label: 'Paid Ads' },
+    { href: '/services/content-creation', label: 'Content Creation' },
+    { href: '/services/web-design', label: 'Web Design' },
+    { href: '/services/seo', label: 'SEO' },
+    { href: '/services/social-media', label: 'Social Media' },
+    { href: '/services/lead-generation', label: 'Lead Generation' },
+  ];
+
+  const industries = [
+    { href: '/salon-marketing', label: 'Salons & Beauty' },
+    { href: '/real-estate-marketing', label: 'Real Estate' },
+    { href: '/trades-marketing', label: 'Trades & Contractors' },
+    { href: '/coaching-marketing', label: 'Coaches & Trainers' },
   ];
 
   const isHomePage = location.pathname === '/';
@@ -80,14 +87,22 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <a
-              href="/#portfolio"
-              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}
-            >
-              Portfolio
-            </a>
+              }`}>
+                Industries <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-56">
+                {industries.map((industry) => (
+                  <DropdownMenuItem key={industry.href} asChild>
+                    <Link to={industry.href} className="cursor-pointer">
+                      {industry.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <Link
               to="/contact"
@@ -145,13 +160,20 @@ const Header = () => {
                 </Link>
               ))}
 
-              <a
-                href="/#portfolio"
-                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Portfolio
-              </a>
+              <div className="px-4 py-2 text-sm text-muted-foreground font-medium">
+                Industries
+              </div>
+
+              {industries.map((industry) => (
+                <Link
+                  key={industry.href}
+                  to={industry.href}
+                  className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {industry.label}
+                </Link>
+              ))}
 
               <Link
                 to="/contact"
