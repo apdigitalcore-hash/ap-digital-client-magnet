@@ -9,6 +9,12 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import PaidAds from "./pages/services/PaidAds";
+import SocialMedia from "./pages/services/SocialMedia";
+import ContentCreation from "./pages/services/ContentCreation";
+import SEO from "./pages/services/SEO";
+import LeadGeneration from "./pages/services/LeadGeneration";
+import WebDesign from "./pages/services/WebDesign";
 
 const queryClient = new QueryClient();
 
