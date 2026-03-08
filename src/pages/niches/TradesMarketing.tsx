@@ -1,0 +1,112 @@
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { CheckCircle, TrendingUp, Phone, Star } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+
+const included = [
+  'Google Ads campaigns for local service searches',
+  'Facebook & Instagram ads targeting homeowners',
+  'Google Business Profile optimization & management',
+  'Review generation & reputation management',
+  'Before-and-after project content creation',
+  'Landing pages built to convert job inquiries',
+  'Monthly lead tracking & ROI reporting',
+  'Local SEO to rank in your service area',
+];
+
+const results = [
+  { icon: TrendingUp, stat: '5-10x', label: 'Return on ad spend for trades clients' },
+  { icon: Phone, stat: '30+', label: 'Qualified job leads per month' },
+  { icon: Star, stat: '4.8★', label: 'Average Google rating after review strategy' },
+];
+
+const faqs = [
+  {
+    question: 'I get most of my work from referrals — why do I need marketing?',
+    answer: 'Referrals are great, but they\'re unpredictable. Marketing gives you a consistent, controllable flow of new job leads so you\'re never waiting for the phone to ring. The best trades businesses use both referrals AND marketing to stay booked year-round.',
+  },
+  {
+    question: 'Which platforms work best for trades and contractors?',
+    answer: 'Google Ads is the #1 platform for trades because people search "plumber near me" or "electrician in [city]" when they need help right now. We pair that with Facebook ads for brand awareness and retargeting. Google Business Profile optimization is also critical for showing up in local map results.',
+  },
+  {
+    question: 'How much should I budget for ads as a contractor?',
+    answer: 'Most trades businesses see great results starting at $1,000-$2,000/month in ad spend. The cost per lead varies by trade and location, but our clients typically see leads coming in at $20-$50 each — and a single job can be worth thousands. We\'ll help you find the right budget for your market.',
+  },
+];
+
+const TradesMarketing = () => (
+  <>
+    <Helmet>
+      <title>Digital Marketing for Trades Canada | Get More Jobs with Paid Ads | AP DIGITAL</title>
+      <meta name="description" content="AP DIGITAL helps contractors, electricians, plumbers, and HVAC businesses across Canada get more job leads with Google Ads, Facebook marketing, and local SEO. Book your free strategy call." />
+      <link rel="canonical" href="https://ap-digital.ca/trades-marketing" />
+    </Helmet>
+    <Header />
+    <main className="pt-24 pb-16">
+      <div className="container-custom max-w-4xl">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
+          Trades Marketing That Gets Your Phone Ringing <span className="text-gradient">With New Jobs</span>
+        </h1>
+
+        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
+          <p>You're great at what you do — roofing, plumbing, electrical, HVAC, landscaping, or general contracting. But if homeowners in your area can't find you online, they're calling your competitors instead. At AP DIGITAL, we make sure that when someone searches for your services, your business shows up first.</p>
+          <p>We build lead generation campaigns on Google and Facebook that target homeowners actively looking for trades services in your area. When someone searches "electrician near me" or "roof repair in [your city]," your ad appears at the top. When they click, they land on a page designed to get them to call you — not browse and leave.</p>
+          <p>But it's not just about ads. We also optimize your Google Business Profile so you show up in the local map pack, implement review generation strategies that build trust and social proof, and create content that showcases your best work. The result is a complete online presence that makes homeowners confident in choosing you.</p>
+          <p>We understand that trades businesses run on reputation and reliability. That's why every campaign we build is designed to generate real job leads — not tire-kickers. You'll know exactly how many leads came in, what they cost, and which ones turned into paying jobs.</p>
+          <p>Whether you're a one-person operation or a growing crew, our marketing systems scale with you. Stop relying solely on referrals and start building a predictable pipeline of new jobs every month.</p>
+        </div>
+
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>
+        <ul className="grid sm:grid-cols-2 gap-4 mb-16">
+          {included.map((item) => (
+            <li key={item} className="flex items-start gap-3 text-foreground">
+              <CheckCircle className="w-5 h-5 text-teal mt-0.5 shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Trades Clients See</h2>
+        <div className="grid sm:grid-cols-3 gap-6 mb-16">
+          {results.map((r) => (
+            <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
+              <r.icon className="w-8 h-8 text-teal mx-auto mb-3" />
+              <div className="font-display text-3xl font-bold text-teal mb-2">{r.stat}</div>
+              <p className="text-muted-foreground text-sm">{r.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+        <Accordion type="single" collapsible className="mb-16">
+          {faqs.map((faq, i) => (
+            <AccordionItem key={i} value={`faq-${i}`}>
+              <AccordionTrigger className="text-left text-foreground font-medium">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
+          <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and find out how we can keep your crew booked with quality jobs.</p>
+          <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
+            <Link to="/contact">Book Your Free Strategy Call</Link>
+          </Button>
+        </section>
+      </div>
+    </main>
+    <Footer />
+  </>
+);
+
+export default TradesMarketing;
