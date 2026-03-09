@@ -105,6 +105,15 @@ const Header = () => {
             </DropdownMenu>
 
             <Link
+              to="/about"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              About
+            </Link>
+
+            <Link
               to="/contact"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
