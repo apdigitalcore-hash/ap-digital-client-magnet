@@ -19,6 +19,7 @@ import SalonMarketing from "./pages/niches/SalonMarketing";
 import RealEstateMarketing from "./pages/niches/RealEstateMarketing";
 import TradesMarketing from "./pages/niches/TradesMarketing";
 import CoachingMarketing from "./pages/niches/CoachingMarketing";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="/real-estate-marketing" element={<RealEstateMarketing />} />
             <Route path="/trades-marketing" element={<TradesMarketing />} />
             <Route path="/coaching-marketing" element={<CoachingMarketing />} />
+            <Route path="/about" element={<About />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
