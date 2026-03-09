@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, TrendingUp, Calendar, Users } from 'lucide-react';
+import OurServices from '@/components/OurServices';
 import {
   Accordion,
   AccordionContent,
@@ -99,8 +100,11 @@ const SalonMarketing = () => (
           ))}
         </Accordion>
 
+        {/* Our Services */}
+        <OurServices />
+
         {/* CTA */}
-        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center">
+        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and find out how we can fill your salon's calendar with high-value clients.</p>
           <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
