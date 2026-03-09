@@ -19,6 +19,7 @@ import SalonMarketing from "./pages/niches/SalonMarketing";
 import RealEstateMarketing from "./pages/niches/RealEstateMarketing";
 import TradesMarketing from "./pages/niches/TradesMarketing";
 import CoachingMarketing from "./pages/niches/CoachingMarketing";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
