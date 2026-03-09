@@ -7,32 +7,32 @@
   </url>
   <url>
     <loc>https://ap-digital.ca/services/paid-ads</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://ap-digital.ca/services/social-media</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://ap-digital.ca/services/content-creation</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://ap-digital.ca/services/seo</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://ap-digital.ca/services/lead-generation</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://ap-digital.ca/services/web-design</loc>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
@@ -56,8 +56,13 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
+    <loc>https://ap-digital.ca/about</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
     <loc>https://ap-digital.ca/contact</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>
