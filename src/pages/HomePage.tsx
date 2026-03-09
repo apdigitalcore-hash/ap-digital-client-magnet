@@ -168,7 +168,7 @@ const HomePage = () => {
       <section className="py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+            <Link to="/salon-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                 Social Media & Paid Ads for <span className="text-gradient">Salons</span>
               </h2>
@@ -177,9 +177,9 @@ const HomePage = () => {
                 Our campaigns target local clients actively searching for hair, beauty, and wellness services in your area. 
                 Most salon partners see a full appointment book within the first 30 days.
               </p>
-            </div>
+            </Link>
 
-            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+            <Link to="/real-estate-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                 Digital Marketing for <span className="text-gradient">Real Estate Agents</span>
               </h2>
@@ -188,9 +188,9 @@ const HomePage = () => {
                 Our proven funnels capture contact info and nurture prospects so you spend less time chasing and more time closing. 
                 Real estate agents we work with typically see 15–30 new leads per month.
               </p>
-            </div>
+            </Link>
 
-            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+            <Link to="/trades-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                 Lead Generation for <span className="text-gradient">Trades Businesses</span>
               </h2>
@@ -198,9 +198,9 @@ const HomePage = () => {
                 Plumbers, electricians, roofers, and contractors — we build ad campaigns that put your business in front of homeowners who need you right now. 
                 No more relying on word-of-mouth alone. Our clients consistently fill their schedules with high-value jobs week after week.
               </p>
-            </div>
+            </Link>
 
-            <div className="p-8 rounded-2xl bg-charcoal-light border border-gray-800">
+            <Link to="/coaching-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
                 Marketing for <span className="text-gradient">Private Coaches & Trainers</span>
               </h2>
@@ -209,7 +209,7 @@ const HomePage = () => {
                 Our systems automate lead capture and follow-up so you can focus on coaching. 
                 Most coaches double their client base within 90 days of working with us.
               </p>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

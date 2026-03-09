@@ -47,7 +47,10 @@ const PaidAds = () => (
           ))}
         </ul>
 
-        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center">
+        {/* Industries We Serve */}
+        <IndustriesWeServe />
+
+        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and find out how paid ads can fill your pipeline with qualified leads.</p>
           <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
