@@ -176,6 +176,14 @@ const Header = () => {
               ))}
 
               <Link
+                to="/about"
+                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+
+              <Link
                 to="/contact"
                 className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
