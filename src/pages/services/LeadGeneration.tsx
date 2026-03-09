@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
+import IndustriesWeServe from '@/components/IndustriesWeServe';
 
 const included = [
   'Custom lead generation funnel design',
