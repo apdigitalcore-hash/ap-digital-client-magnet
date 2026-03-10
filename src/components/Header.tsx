@@ -114,6 +114,15 @@ const Header = () => {
             </Link>
 
             <Link
+              to="/blog"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              Blog
+            </Link>
+
+            <Link
               to="/contact"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
@@ -190,6 +199,14 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
+              </Link>
+
+              <Link
+                to="/blog"
+                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Blog
               </Link>
 
               <Link
