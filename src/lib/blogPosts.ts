@@ -127,6 +127,73 @@ At AP DIGITAL, we specialize in helping trades businesses across Canada get more
 
 **Book your free strategy call today** and let's build a marketing system that keeps your phone ringing in 2026 and beyond.`,
   },
+  {
+    slug: 'real-estate-agent-social-media-tips',
+    title: '7 Social Media Tips Every Real Estate Agent in Canada Needs in 2026',
+    metaTitle: 'Social Media Tips for Real Estate Agents in Canada 2026 | AP DIGITAL',
+    metaDescription: 'Discover 7 proven social media tips for real estate agents in Canada. Learn how to build your personal brand, film listing videos, and generate buyer and seller leads online.',
+    excerpt: '7 actionable social media strategies to help Canadian real estate agents generate more leads and build a standout personal brand in 2026.',
+    date: '2026-03-12',
+    readTime: '6 min read',
+    category: 'Real Estate Marketing',
+    content: `The real estate market in Canada is as competitive as it's ever been. Whether you're working in the GTA, Vancouver, Calgary, or a smaller market, one thing is clear: the agents who dominate social media are the ones closing more deals. If you're still relying solely on yard signs, open houses, and your brokerage's website, you're falling behind.
+
+Here are seven social media tips every real estate agent in Canada needs to implement in 2026 to attract more clients and close more transactions.
+
+## 1. Build a Personal Brand, Not Just a Business Page
+
+Here's the truth most agents don't want to hear: people don't hire brokerages — they hire people. Your personal brand is what sets you apart from the thousands of other licensed agents in your market.
+
+That means your social media presence should showcase who you are, not just what you sell. Share your story, your market insights, your personality. Let potential clients feel like they know you before they ever pick up the phone. The agents who build authentic personal brands generate more inbound leads because trust is already established before the first conversation.
+
+Think of your social media as your digital first impression. When a referral Googles your name or looks you up on Instagram, what do they see? A polished, active, and engaging profile — or a ghost town with a few listing posts from six months ago?
+
+## 2. Choose the Right Platform: Instagram vs. LinkedIn
+
+Not all social media platforms are created equal for real estate agents, and spreading yourself too thin is a common mistake.
+
+**Instagram** is your best platform for reaching buyers, especially first-time buyers and younger demographics. It's visual, fast-paced, and built for the kind of content real estate agents naturally create — property tours, neighbourhood highlights, and lifestyle content. Reels and Stories are your most powerful tools here.
+
+**LinkedIn** is underrated in real estate but incredibly effective for connecting with sellers, investors, and referral partners. Posting market updates, sharing transaction milestones, and writing thoughtful commentary on housing trends positions you as a knowledgeable professional. If you work with higher-end properties or commercial real estate, LinkedIn should be a priority.
+
+The ideal approach? Use Instagram for consumer-facing content and LinkedIn for professional credibility. You don't need to be on every platform — just the right ones.
+
+## 3. Film Listing Videos That Actually Get Watched
+
+Static listing photos are table stakes. In 2026, video is what stops the scroll and drives engagement.
+
+You don't need a film crew. Grab your phone, use natural light, and walk through the property like you're giving a friend a personal tour. Talk about the features, the neighbourhood, and why you love the home. Keep it under 60 seconds for Reels and TikTok, or go longer for YouTube and Facebook.
+
+The key is to be natural and conversational. Overly produced, corporate-style videos feel cold and get skipped. Authentic, enthusiastic walkthroughs make viewers feel something — and that emotional connection is what drives inquiries.
+
+Pro tip: always start with a hook. "This might be the best-value home in Mississauga right now" is far more compelling than "New listing at 123 Main Street."
+
+## 4. Run Lead Ads for Buyers and Sellers
+
+Organic content builds your brand over time, but if you want leads now, paid advertising is the fastest path.
+
+Facebook and Instagram lead ads are purpose-built for real estate. You can target specific demographics — first-time buyers aged 25 to 35 in a specific city, or homeowners aged 45 and older who might be thinking about selling. Lead ads let users submit their contact information without ever leaving the platform, which dramatically increases conversion rates.
+
+For buyers, offer something valuable: a list of homes under a certain price point, a first-time buyer guide, or early access to new listings. For sellers, a free home valuation or a market report for their neighbourhood works exceptionally well.
+
+The key is to follow up fast. Leads from social media go cold quickly, so having a system to respond within minutes — not hours — makes all the difference.
+
+## 5. Leverage Google Reviews and Social Proof
+
+Every post, every ad, and every interaction should reinforce that you deliver results. Share client testimonials, closing day photos (with permission), and screenshots of glowing Google reviews. Social proof is the most persuasive content you can post because it lets your past clients sell for you.
+
+## 6. Post Consistently — Even When You're Busy
+
+The biggest mistake agents make is posting only when they have a new listing. Consistency is what builds an audience. Aim for at least three to five posts per week, mixing listing content with market insights, personal stories, and community highlights.
+
+## 7. Don't Do It Alone
+
+Managing social media on top of showings, negotiations, and paperwork is a lot. The most successful agents either hire a dedicated marketing person or partner with an agency that understands real estate.
+
+At AP DIGITAL, we help real estate agents across Canada build powerful personal brands, create scroll-stopping content, and generate consistent buyer and seller leads through strategic social media marketing and paid advertising.
+
+**Book your free strategy call today** and let's build a social media strategy that helps you close more deals in 2026.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
