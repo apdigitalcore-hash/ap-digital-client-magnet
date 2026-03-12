@@ -265,6 +265,63 @@ At AP DIGITAL, we work with businesses across Canada to build custom social medi
 
 **Book your free strategy call today** and let's figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
   },
+  {
+    slug: 'best-ads-platform-for-small-business-canada',
+    title: 'Facebook Ads vs Google Ads: Which Is Better for Small Business in Canada?',
+    metaTitle: 'Facebook Ads vs Google Ads for Small Business Canada | AP DIGITAL',
+    metaDescription: 'Facebook Ads vs Google Ads — which platform delivers better results for small businesses in Canada? Compare costs, lead quality, and which niches perform best on each.',
+    excerpt: 'A head-to-head comparison of Facebook Ads and Google Ads for Canadian small businesses — including costs per lead, best niches, and when to use each platform.',
+    date: '2026-03-12',
+    readTime: '6 min read',
+    category: 'Paid Advertising',
+    content: `If you're a small business owner in Canada trying to figure out where to spend your advertising budget, you've probably asked yourself this question: should I run Facebook Ads or Google Ads? It's one of the most common debates in digital marketing — and the answer isn't as simple as picking one over the other.
+
+Let's break down how each platform works, what they cost, which industries perform best on each, and how to decide where your money will go the furthest.
+
+## Google Ads: Capturing High-Intent Searches
+
+Google Ads puts your business in front of people who are actively searching for what you offer. When someone types "emergency plumber Toronto" or "best hair salon near me" into Google, they have immediate intent. They need something right now and they're ready to take action.
+
+This is what makes Google Ads so powerful for service-based businesses. You're not interrupting someone's scroll — you're showing up exactly when they're looking for you. Google Search Ads and Local Service Ads (LSAs) are particularly effective because they capture demand that already exists.
+
+**Cost per lead on Google Ads** varies widely by industry and competition. In Canada, most small businesses can expect to pay anywhere from $15 to $80 per lead depending on the niche. Highly competitive industries like legal services or real estate tend to sit at the higher end, while trades and local services often see leads in the $15 to $40 range.
+
+The downside? Google Ads can get expensive quickly if your campaigns aren't optimized properly. Poorly managed campaigns waste budget on irrelevant clicks, broad keywords, and low-quality traffic. That's why working with an experienced agency matters — the difference between a well-run and a poorly-run Google Ads account can be thousands of dollars per month.
+
+## Facebook and Instagram Ads: Building Awareness and Retargeting
+
+Facebook and Instagram Ads work differently. Instead of capturing existing demand, they create demand. People aren't searching for your business on Facebook — they're scrolling through their feed, watching Reels, and catching up with friends. Your ad interrupts that experience and introduces your brand to someone who might not have known you existed.
+
+This makes Facebook and Instagram Ads incredibly powerful for brand awareness, promotions, and retargeting. You can target very specific audiences based on demographics, interests, behaviours, and location. Want to reach women aged 25 to 40 within 15 kilometres of your salon? Done. Want to target homeowners over 45 in a specific neighbourhood? Easy.
+
+**Retargeting** is where Facebook Ads really shine. You can show ads to people who visited your website, engaged with your Instagram profile, or watched one of your videos — keeping your business top of mind until they're ready to convert. This is especially effective for businesses with longer decision cycles, like real estate or coaching.
+
+**Cost per lead on Facebook Ads** in Canada typically ranges from $5 to $40, depending on your offer, your creative quality, and how well your targeting is dialled in. Lead ads — where users submit their information without leaving the platform — tend to produce the cheapest leads, though the quality can vary if your qualifying questions aren't strong enough.
+
+## Which Niches Work Better on Which Platform?
+
+This is where the decision gets more nuanced. Here's a general guide based on what we see working for Canadian small businesses:
+
+**Google Ads works best for:** Trades and home services (plumbing, HVAC, roofing, electrical), legal services, dental and medical practices, emergency services, and any business where customers are actively searching for a solution to an immediate problem.
+
+**Facebook/Instagram Ads work best for:** Salons and beauty businesses, real estate agents, fitness studios and gyms, coaches and consultants, e-commerce brands, and businesses that rely on visual content and emotional connection to drive conversions.
+
+**Both platforms together work best for:** Businesses that want to capture high-intent searches on Google while simultaneously building brand awareness and retargeting warm audiences on social media. This combined approach is the most effective strategy for sustained growth.
+
+## So Which One Should You Choose?
+
+If you have a limited budget and your business relies on people searching for your service, start with Google Ads. You'll see faster, more direct results because you're meeting customers at the moment of intent.
+
+If your business is more visual, promotion-driven, or relies on building relationships before someone buys, Facebook and Instagram Ads are your best starting point. They're also generally cheaper per lead and give you more creative flexibility.
+
+If you can invest in both, that's the winning formula. Use Google Ads to capture demand and Facebook Ads to create demand and retarget. Together, they cover the full customer journey from awareness to conversion.
+
+## Let's Find the Right Strategy for Your Business
+
+At AP DIGITAL, we help small businesses across Canada build profitable advertising strategies on both Google and Facebook. We don't believe in one-size-fits-all — we analyze your industry, your competition, and your goals to recommend the right platform mix for your budget.
+
+**Book your free strategy call today** and let's figure out exactly where your ad dollars will deliver the best return in 2026.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
