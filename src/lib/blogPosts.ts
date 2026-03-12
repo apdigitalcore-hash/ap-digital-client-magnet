@@ -66,6 +66,67 @@ At AP DIGITAL, we specialize in helping salons across Canada build their online 
 
 **Book your free strategy call today** and let's build a plan to fill your chair consistently in 2026 and beyond.`,
   },
+  {
+    slug: 'how-to-market-a-trades-business-online',
+    title: 'How to Market Your Trades Business Online and Get More Jobs',
+    metaTitle: 'How to Market a Trades Business Online in 2026 | AP DIGITAL',
+    metaDescription: 'Learn how trades businesses across Canada are using Google Ads, Facebook Ads, social media content, and Google reviews to generate consistent leads and book more jobs.',
+    excerpt: 'Discover why most trades businesses struggle with marketing and how to fix it with Google Ads, social media, and a strong review strategy.',
+    date: '2026-03-12',
+    readTime: '6 min read',
+    category: 'Trades Marketing',
+    content: `If you're a plumber, electrician, roofer, HVAC tech, or general contractor, chances are you got into your trade because you're great with your hands — not because you love marketing. And that's completely fair. But here's the reality: in 2026, the trades businesses that are winning aren't just the most skilled. They're the ones that show up online when someone needs help.
+
+Let's break down exactly how to market your trades business online, get more leads, and fill your schedule with quality jobs — without wasting money on strategies that don't work.
+
+## Why Most Trades Businesses Struggle with Marketing
+
+Most tradespeople rely on word-of-mouth, lawn signs, and maybe a listing on a directory site. While referrals are great, they're unpredictable. You can't control when they come in, and you definitely can't scale your business on hope alone.
+
+The biggest issue? Most trades businesses don't have a system for generating leads consistently. They go through busy seasons where they're turning work away, followed by slow stretches where the phone barely rings. Sound familiar?
+
+The other common problem is trusting the wrong marketing company. Too many agencies sell generic packages that aren't built for the trades industry. They'll post pretty graphics on Instagram that get likes but zero calls. What you actually need is a strategy designed to drive inquiries from homeowners in your service area who need your help right now.
+
+## Google Ads vs. Facebook Ads: Which One Works Better for Trades?
+
+The short answer? Both — but they serve very different purposes.
+
+**Google Ads** are the closest thing to a guaranteed lead machine for trades businesses. When someone searches "emergency plumber near me" or "roof repair in Calgary," they need help now. Google Ads put you at the top of those search results, right when intent is highest. This is the fastest way to generate calls from people who are actively looking for your service.
+
+Google Local Service Ads (LSAs) are especially powerful. They show your business at the very top of Google with a "Google Guaranteed" badge, your reviews, and a click-to-call button. For trades, this format converts incredibly well because it builds instant trust.
+
+**Facebook and Instagram Ads** work differently. People aren't searching for a plumber while scrolling Facebook — but that doesn't mean these platforms aren't valuable. Facebook Ads are excellent for building awareness, promoting seasonal offers (like furnace tune-ups before winter or AC servicing in spring), and staying top of mind in your community.
+
+The winning approach is to run Google Ads for immediate, high-intent leads while using Facebook Ads to build your brand and capture demand before the competition does.
+
+## The Power of Before-and-After Content on Social Media
+
+Here's a secret that most trades businesses overlook: your work is incredibly visual, and people love seeing transformations.
+
+A before-and-after photo of a bathroom renovation, a deck build, a driveway repair, or a fresh electrical panel installation is content gold. It shows your craftsmanship, builds trust, and makes potential customers imagine what you could do for them.
+
+Short-form video works even better. A 15-second time-lapse of a job from start to finish can rack up thousands of views on Instagram Reels or TikTok — and those views translate into local awareness and inbound inquiries.
+
+You don't need a professional videographer. Just pull out your phone, hit record, and show the work. Authenticity beats polish every single time in the trades space.
+
+## Why Google Reviews Are Your Most Valuable Marketing Asset
+
+If you take one thing away from this article, let it be this: your Google reviews matter more than almost anything else in your marketing.
+
+When a homeowner searches for a service in their area, they look at three things: proximity, reviews, and responsiveness. You can't always control proximity, but you can absolutely control your reviews.
+
+Make it a habit to ask every satisfied customer to leave a Google review. Send them a direct link via text right after the job is done. Most happy customers are willing — they just need to be asked.
+
+Aim for a steady stream of five-star reviews with detailed comments. A profile with 50 or more quality reviews will outperform competitors in local search results and build instant credibility with potential customers. It's free marketing that compounds over time.
+
+## Stop Leaving Money on the Table
+
+If your trades business doesn't have a consistent online marketing strategy, you're leaving jobs — and revenue — on the table every single day. The good news is that it doesn't have to be complicated. With the right combination of Google Ads, social media content, and a strong review strategy, you can build a predictable pipeline of leads month after month.
+
+At AP DIGITAL, we specialize in helping trades businesses across Canada get more jobs through proven digital marketing strategies. We handle the ads, the content, and the strategy — so you can focus on doing what you do best.
+
+**Book your free strategy call today** and let's build a marketing system that keeps your phone ringing in 2026 and beyond.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
