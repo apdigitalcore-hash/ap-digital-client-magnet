@@ -3,12 +3,12 @@
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://apdigital.lovable.app/#organization",
+  "@id": "https://ap-digital.ca/#organization",
   "name": "AP DIGITAL",
   "description": "Digital marketing agency in Canada helping local businesses get consistent leads through short-form content and paid ads.",
-  "url": "https://apdigital.lovable.app",
-  "logo": "https://apdigital.lovable.app/logo.png",
-  "image": "https://apdigital.lovable.app/og-image.png",
+  "url": "https://ap-digital.ca",
+  "logo": "https://ap-digital.ca/logo.png",
+  "image": "https://ap-digital.ca/og-image.png",
   "telephone": "+1-778-682-5772",
   "email": "apdigital.core@gmail.com",
   "address": {
@@ -52,7 +52,7 @@ export const getServiceSchema = (
   "provider": {
     "@type": "LocalBusiness",
     "name": "AP DIGITAL",
-    "url": "https://apdigital.lovable.app"
+    "url": "https://ap-digital.ca"
   },
   "name": name,
   "description": description,
@@ -70,7 +70,7 @@ export const getBreadcrumbSchema = (items: { name: string; url: string }[]) => (
     "@type": "ListItem",
     "position": index + 1,
     "name": item.name,
-    "item": `https://apdigital.lovable.app${item.url}`
+    "item": `https://ap-digital.ca${item.url}`
   }))
 });
 
@@ -96,15 +96,15 @@ export const getWebPageSchema = (
   "@type": "WebPage",
   "name": name,
   "description": description,
-  "url": `https://apdigital.lovable.app${url}`,
+  "url": `https://ap-digital.ca${url}`,
   "isPartOf": {
     "@type": "WebSite",
     "name": "AP DIGITAL",
-    "url": "https://apdigital.lovable.app"
+    "url": "https://ap-digital.ca"
   },
   "publisher": {
     "@type": "Organization",
     "name": "AP DIGITAL",
-    "url": "https://apdigital.lovable.app"
+    "url": "https://ap-digital.ca"
   }
 });

@@ -2,6 +2,8 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 // Allowed origins for CORS - restrict to known domains
 const allowedOrigins = [
+  "https://ap-digital.ca",
+  "https://www.ap-digital.ca",
   "https://apdigital.lovable.app",
   "https://id-preview--5016096a-1f2a-4fc5-a0a5-ef8947dc9e8f.lovable.app",
 ];
