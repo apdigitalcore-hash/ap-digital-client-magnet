@@ -420,6 +420,41 @@ Facebook Ads build awareness and generate leads at scale. Google Ads capture peo
 
 At AP DIGITAL, we run Facebook, Instagram, and Google Ads for businesses across Canada. We'll tell you exactly which platform makes sense for your goals and budget.`,
   },
+  {
+    slug: 'real-estate-social-media-tips',
+    title: '5 Social Media Tips Every Canadian Realtor Needs in 2025',
+    metaTitle: '5 Social Media Tips Every Canadian Realtor Needs in 2025 | AP DIGITAL',
+    metaDescription: "Struggling to get real estate leads on social media? These 5 tips help Canadian realtors attract buyers and sellers consistently in 2025.",
+    excerpt: "5 proven social media strategies helping Canadian realtors generate more buyer and seller leads in 2025.",
+    date: '2025-03-17',
+    readTime: '5 min read',
+    category: 'Real Estate Marketing',
+    content: `[Real estate](/real-estate-marketing) is one of the most competitive industries on social media. With thousands of realtors across Metro Vancouver, the GTA, and Calgary fighting for the same audience — how do you stand out? The answer isn't posting more. It's posting smarter. Here are 5 strategies consistently generating leads for Canadian realtors right now.
+
+## 1. Lead With Local Knowledge, Not Just Listings
+
+Buyers and sellers don't follow realtors for listings — they follow them for insights. Post content like "5 things to know before buying in Maple Ridge," "What $800K gets you in Burnaby vs Surrey right now," or "Why I tell all my first-time buyers to look here first." This positions you as a trusted expert, not just a salesperson.
+
+## 2. Use Short-Form Video (Reels and TikTok)
+
+Short-form video is the highest-reach content on every platform right now. A 30-second neighbourhood tour, market update, or day-in-the-life video will outperform a listing post every single time. You don't need professional equipment — your iPhone and good lighting is enough to get started.
+
+## 3. Run Facebook and Instagram Lead Ads
+
+Organic content builds trust. Paid ads generate leads now. Facebook and Instagram let you target first-time buyers in a specific city, homeowners aged 35–65 who are potential sellers, and investors looking for rental properties. A $500–$1,000/month ad budget, managed correctly, can generate 10–20 qualified leads per month.
+
+## 4. Post Consistently, Not Constantly
+
+Posting every day leads to burnout and low-quality content. You don't need to post daily — but you do need to post consistently. Three to four posts per week mixing educational content, listings, and personal story will outperform seven posts a week of just listings every time.
+
+## 5. Have a Follow-Up System
+
+Social media generates leads — but you need a system to convert them. Use a simple CRM or even a Google Sheet to track leads, set follow-up reminders, and nurture prospects over 3–6 months. Most [real estate](/real-estate-marketing) deals happen 30–90 days after first contact. The fortune is in the follow-up.
+
+## Want a Full Real Estate Marketing System?
+
+At AP DIGITAL, we build complete social media marketing systems for Canadian realtors — from content creation to paid ads to lead follow-up. Book a free strategy call today.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
