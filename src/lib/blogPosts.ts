@@ -369,6 +369,57 @@ The real question isn't how much it costs — it's how much it brings back. A we
 
 At AP DIGITAL, we specialize in social media marketing for salons, real estate agents, trades businesses, and private coaches across Canada. Book a free strategy call and we'll show you exactly what your investment looks like.`,
   },
+  {
+    slug: 'facebook-ads-vs-google-ads',
+    title: 'Facebook Ads vs Google Ads: Which One Is Right for Your Business?',
+    metaTitle: 'Facebook Ads vs Google Ads: Which One Is Right for Your Business? | AP DIGITAL',
+    metaDescription: "Facebook Ads or Google Ads — which is better for your business? We break down the differences so Canadian businesses can invest their ad budget wisely.",
+    excerpt: "Facebook Ads or Google Ads? We compare both platforms so Canadian small businesses can choose the right one for their goals and budget.",
+    date: '2025-03-17',
+    readTime: '5 min read',
+    category: 'Paid Advertising',
+    content: `Every business owner asking about paid advertising faces the same question: Facebook Ads or Google Ads? The truth is, they're not the same tool — and using the wrong one means wasted budget and disappointing results. Here's what you need to know before spending a dollar on ads.
+
+## How Facebook Ads Work
+
+Facebook Ads (which includes Instagram) is a push marketing platform. You're showing your ad to people who fit your target audience — even if they weren't actively searching for you. Facebook Ads are best for building brand awareness, generating leads for service businesses, retargeting website visitors, and reaching specific local audiences.
+
+## How Google Ads Work
+
+Google Ads is a pull marketing platform. Your ad appears when someone actively searches for what you offer. Google Ads are best for high-intent buyers ready to purchase, trades businesses, service businesses where people search "near me," and people with immediate needs.
+
+## The Key Differences
+
+**Facebook Ads:**
+
+- Intent: Interruption-based (you reach them)
+- Best for: Awareness and lead generation
+- Cost: Lower cost per click
+- Targeting: Demographics and interests
+- Format: Image and video heavy
+
+**Google Ads:**
+
+- Intent: Search-based (they find you)
+- Best for: High-intent searches
+- Cost: Higher cost per click
+- Targeting: Keywords and location
+- Format: Text and display
+
+## Which One Should You Choose?
+
+**Choose Facebook Ads** if you run a salon, coaching business, or real estate agency, you want to reach a specific local audience, or you want leads at a lower cost per click.
+
+**Choose Google Ads** if you're in trades (plumbing, HVAC, roofing), your customers search "near me" or "emergency," or you want immediate high-intent leads.
+
+## The Best Strategy? Use Both.
+
+Facebook Ads build awareness and generate leads at scale. Google Ads capture people who are actively searching and ready to buy. Together, they cover every stage of the customer journey.
+
+## Not Sure Where to Start?
+
+At AP DIGITAL, we run Facebook, Instagram, and Google Ads for businesses across Canada. We'll tell you exactly which platform makes sense for your goals and budget.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
