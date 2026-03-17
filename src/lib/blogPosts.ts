@@ -322,6 +322,53 @@ At AP DIGITAL, we help small businesses across Canada build profitable advertisi
 
 **Book your free strategy call today** and let's figure out exactly where your ad dollars will deliver the best return in 2026.`,
   },
+  {
+    slug: 'social-media-marketing-cost-canada',
+    title: 'How Much Does Social Media Marketing Cost in Canada? (2025 Honest Guide)',
+    metaTitle: 'How Much Does Social Media Marketing Cost in Canada? (2025 Guide) | AP DIGITAL',
+    metaDescription: "Wondering how much social media marketing costs in Canada? Here's an honest breakdown of pricing for small businesses in 2025.",
+    excerpt: "An honest breakdown of social media marketing pricing for Canadian small businesses in 2025 — freelancers, in-house hires, and agencies compared.",
+    date: '2025-03-17',
+    readTime: '6 min read',
+    category: 'Marketing Strategy',
+    content: `If you've Googled "how much does social media marketing cost in Canada," you've probably found vague answers like "it depends." So let's be real. In this guide, we break down exactly what you should expect to pay in 2025 — and what actually gets results for small businesses.
+
+## The 3 Ways Canadian Businesses Pay for Social Media Marketing
+
+### 1. Hiring a Freelancer ($500–$2,000/month)
+
+Freelancers are the most affordable option. For $500–$2,000/month you get basic content creation and posting. The downside: results are inconsistent and you have to manage them closely.
+
+### 2. Hiring an In-House Employee ($4,000–$6,000/month)
+
+A full-time social media manager in Canada costs $48,000–$72,000/year in salary alone — before benefits and software. For most small businesses, this is too expensive.
+
+### 3. Working with a Digital Marketing Agency ($1,000–$5,000/month)
+
+An agency gives you a full team — strategists, content creators, and ad managers — for less than the cost of one employee. At AP DIGITAL, our packages are designed specifically for small businesses in Canada.
+
+## What's Included in Social Media Marketing?
+
+Good social media marketing isn't just posting photos. It includes content strategy, graphic design, video editing, caption writing, community management, paid advertising on Facebook and Instagram, and monthly performance reports.
+
+## How Much Should You Budget?
+
+For a local Canadian business — salon, trades, real estate, or coaching — we recommend:
+
+- Organic content + management: $1,000–$1,500/month
+- Paid ad spend: $500–$1,000/month
+- Total starting budget: $1,500–$2,500/month
+
+This is enough to generate consistent leads without breaking the bank.
+
+## What's the ROI?
+
+The real question isn't how much it costs — it's how much it brings back. A well-run Facebook and Instagram campaign for a salon can generate 20–40 new bookings per month. For a trades business, a single lead can be worth $500–$5,000 in job revenue. When marketing is done right, it pays for itself many times over.
+
+## Ready to Get Predictable Leads?
+
+At AP DIGITAL, we specialize in social media marketing for salons, real estate agents, trades businesses, and private coaches across Canada. Book a free strategy call and we'll show you exactly what your investment looks like.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
