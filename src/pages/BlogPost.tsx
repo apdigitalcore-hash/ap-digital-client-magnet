@@ -47,9 +47,13 @@ const BlogPost = () => {
   };
 
   const renderInline = (text: string) => {
-    // Bold **text**
-    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    // Links [text](url) and Bold **text**
+    const parts = text.split(/(\[.*?\]\(.*?\)|\*\*[^*]+\*\*)/g);
     return parts.map((part, i) => {
+      const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
+      if (linkMatch) {
+        return <Link key={i} to={linkMatch[2]} className="text-teal underline hover:text-teal/80 transition-colors">{linkMatch[1]}</Link>;
+      }
       if (part.startsWith('**') && part.endsWith('**')) {
         return <strong key={i} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>;
       }
