@@ -13,21 +13,34 @@ const BlogPost = () => {
   if (!post) return <Navigate to="/blog" replace />;
 
   // Simple markdown-like rendering: split by ## for sections
+  const renderBlock = (block: string, key: number) => {
+    const trimmed = block.trim();
+    if (!trimmed) return null;
+    if (trimmed.startsWith('### ')) {
+      return <h3 key={key} className="font-display text-xl font-bold text-foreground mt-8 mb-3">{trimmed.slice(4)}</h3>;
+    }
+    if (trimmed.startsWith('- ')) {
+      const items = trimmed.split('\n').filter(l => l.startsWith('- '));
+      return (
+        <ul key={key} className="list-disc list-inside text-foreground/80 leading-relaxed mb-6 space-y-2">
+          {items.map((item, idx) => <li key={idx}>{renderInline(item.slice(2))}</li>)}
+        </ul>
+      );
+    }
+    return <p key={key} className="text-foreground/80 leading-relaxed mb-6">{renderInline(trimmed)}</p>;
+  };
+
   const renderContent = (content: string) => {
     const sections = content.split(/^## /m);
     return sections.map((section, i) => {
       if (i === 0) {
-        return section.split('\n\n').map((p, j) => (
-          <p key={j} className="text-foreground/80 leading-relaxed mb-6">{renderInline(p)}</p>
-        ));
+        return section.split('\n\n').map((p, j) => renderBlock(p, j));
       }
       const [heading, ...rest] = section.split('\n\n');
       return (
         <div key={i}>
           <h2 className="font-display text-2xl font-bold text-foreground mt-10 mb-4">{heading.trim()}</h2>
-          {rest.map((p, j) => (
-            <p key={j} className="text-foreground/80 leading-relaxed mb-6">{renderInline(p.trim())}</p>
-          ))}
+          {rest.map((p, j) => renderBlock(p, j))}
         </div>
       );
     });
