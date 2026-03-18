@@ -455,6 +455,91 @@ Social media generates leads — but you need a system to convert them. Use a si
 
 At AP DIGITAL, we build complete social media marketing systems for Canadian realtors — from content creation to paid ads to lead follow-up. Book a free strategy call today.`,
   },
+  {
+    slug: 'email-marketing-vs-social-media',
+    title: 'Email Marketing vs Social Media Marketing: Which Is Better for Canadian Small Businesses?',
+    metaTitle: 'Email Marketing vs Social Media Marketing | AP DIGITAL',
+    metaDescription: 'Email marketing or social media — which delivers better ROI for Canadian small businesses? We compare costs, results, and when to use each.',
+    excerpt: 'Should you invest in email marketing or social media? We compare costs, ROI, and strategy so Canadian small businesses can make the right call.',
+    date: '2025-07-10',
+    readTime: '6 min read',
+    category: 'Strategy',
+    content: `Every small business owner has a limited marketing budget — so where should you put your money? Email marketing and social media marketing are two of the most effective digital channels, but they work very differently. Here's an honest comparison to help you decide.
+
+## What Is Email Marketing?
+
+Email marketing means sending targeted messages directly to a list of subscribers. This includes newsletters, promotions, abandoned cart reminders, and follow-up sequences. You own your email list — no algorithm decides who sees your content.
+
+### Why It Works
+
+- **Direct access** to your audience's inbox
+- **High ROI** — email marketing returns an average of $36–$42 for every $1 spent
+- **Automation** lets you nurture leads on autopilot
+- **Full control** — no platform changes can take your list away
+
+### The Downside
+
+Building an email list takes time. If you're starting from zero, it can take months before email becomes a significant revenue driver.
+
+## What Is Social Media Marketing?
+
+[Social media marketing](/services/social-media) means creating content and running ads on platforms like Facebook, Instagram, TikTok, and LinkedIn. It's how most small businesses build brand awareness and generate leads today.
+
+### Why It Works
+
+- **Massive reach** — billions of active users across platforms
+- **Visual storytelling** builds trust and brand recognition
+- **Paid ads** let you target specific audiences by location, age, and interest
+- **Community building** creates loyal customers over time
+
+### The Downside
+
+You don't own your audience. Algorithm changes can cut your reach overnight. Organic reach on Facebook is now under 5% for most business pages.
+
+## Cost Comparison
+
+- **Email marketing tools**: $0–$100/month for most small businesses (Mailchimp, ConvertKit, etc.)
+- **Social media management**: $1,000–$3,000/month if outsourced to an agency
+- **Paid social ads**: $500–$2,000/month in ad spend alone
+
+Email is cheaper to run but requires a list. Social media costs more but builds awareness faster.
+
+## ROI Comparison
+
+- **Email**: $36–$42 return per $1 spent (highest ROI of any digital channel)
+- **Social media**: Varies widely — organic content is hard to measure, but [paid ads](/services/paid-ads) can generate $5–$15 return per $1 spent when managed well
+
+For pure ROI, email wins. But social media drives the top-of-funnel awareness that fills your email list in the first place.
+
+## When to Use Email Marketing
+
+- You already have a customer list or subscriber base
+- You want to nurture leads over time with automated sequences
+- You sell products or services with repeat purchase potential
+- You want a channel you fully own and control
+
+## When to Use Social Media Marketing
+
+- You need to build brand awareness from scratch
+- You want to reach new local audiences quickly
+- You're in a visual industry like salons, real estate, or trades
+- You want to generate leads through paid advertising
+
+## The Best Answer? Use Both Together.
+
+The smartest Canadian small businesses use social media to attract new audiences and email to convert and retain them. Here's how:
+
+- Run Facebook or Instagram ads to drive traffic to a lead magnet (free guide, discount, consultation)
+- Capture emails through a landing page
+- Nurture those leads with an automated email sequence
+- Convert subscribers into paying customers
+
+This funnel approach combines the reach of social media with the conversion power of email.
+
+## Need Help Building Your Marketing System?
+
+At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/lead-generation). Book a free strategy call and we'll map out the right mix for your business.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
