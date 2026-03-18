@@ -540,6 +540,113 @@ This funnel approach combines the reach of social media with the conversion powe
 
 At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/lead-generation). Book a free strategy call and we'll map out the right mix for your business.`,
   },
+  {
+    slug: 'best-ads-for-trades-businesses-canada',
+    title: 'The Best Ads Strategy for Trades Businesses in Canada (2025)',
+    metaTitle: 'Best Ads for Trades Businesses in Canada | AP DIGITAL',
+    metaDescription: 'Plumber, electrician, roofer, or HVAC tech? Here\'s exactly how to run Facebook and Google Ads that generate real jobs — not just clicks.',
+    excerpt: 'Learn how Canadian trades businesses can use Facebook and Google Ads to generate consistent, high-quality leads in 2025.',
+    date: '2025-08-05',
+    readTime: '7 min read',
+    category: 'Paid Advertising',
+    content: `If you're a plumber, electrician, roofer, HVAC tech, or general contractor in Canada — you already know that word-of-mouth only goes so far. The businesses booking $50K–$100K+ per month in jobs are the ones running ads. Here's exactly how to do it right.
+
+## Why Ads Work for Trades Businesses
+
+[Trades businesses](/trades-marketing) have a massive advantage when it comes to advertising: your services are in constant demand. People don't browse for fun — when a pipe bursts or a furnace breaks, they need help now. That urgency makes ads incredibly effective.
+
+The key is showing up at the right moment with the right message.
+
+## Google Ads: Capture High-Intent Leads
+
+Google Ads is the single best platform for trades businesses. Why? Because your customers are already searching for you.
+
+### How It Works
+
+When someone searches "emergency plumber near me" or "roof repair Vancouver," your ad appears at the top of Google — above organic results and above your competitors.
+
+### What to Expect
+
+- **Cost per click**: $5–$25 depending on your trade and location
+- **Cost per lead**: $30–$80 for most trades
+- **Monthly budget**: $1,000–$3,000 for consistent lead flow
+- **Lead quality**: High — these people need your service right now
+
+### Best Practices
+
+- Target "near me" and city-specific keywords
+- Use call extensions so people can tap to call directly
+- Set up conversion tracking to measure actual leads, not just clicks
+- Run ads during business hours when you can answer the phone
+
+## Facebook and Instagram Ads: Build Awareness and Fill Slow Seasons
+
+While Google captures people actively searching, [Facebook and Instagram ads](/services/paid-ads) let you reach homeowners before they even know they need you.
+
+### Best Ad Types for Trades
+
+- **Before-and-after project photos** — these consistently get the highest engagement
+- **Video walkthroughs** of completed jobs
+- **Seasonal offers** — "Book your furnace tune-up before winter" or "Spring deck building special"
+- **Testimonial ads** featuring happy customers
+
+### What to Expect
+
+- **Cost per click**: $1–$5 (much cheaper than Google)
+- **Cost per lead**: $10–$40
+- **Monthly budget**: $500–$1,500 for solid results
+- **Lead quality**: Medium — these leads need nurturing but convert well over time
+
+## Google Ads vs Facebook Ads: Which Should You Choose?
+
+### Choose Google Ads If:
+
+- You handle emergency or urgent services (plumbing, HVAC, locksmith)
+- Your customers search for your service before hiring
+- You want leads ready to book today
+
+### Choose Facebook Ads If:
+
+- You do planned projects (renovations, landscaping, painting)
+- You want to stay top-of-mind in your local area
+- You want cheaper leads and are willing to follow up
+
+### The Best Strategy: Run Both
+
+Google Ads captures the 3% of people actively searching right now. Facebook Ads builds awareness with the other 97%. Together, they create a full pipeline.
+
+## Common Mistakes Trades Businesses Make With Ads
+
+- **No tracking** — running ads without knowing which ones generate actual jobs
+- **Too broad targeting** — advertising province-wide when you only serve one city
+- **No follow-up** — getting leads but not calling back within 5 minutes
+- **DIY without strategy** — boosting posts on Facebook instead of running proper lead campaigns
+- **Giving up too soon** — ads need 2–4 weeks of data before you can optimize properly
+
+## What a Good Ads Setup Looks Like
+
+A proper [paid advertising](/services/paid-ads) setup for a trades business includes:
+
+- Google Ads targeting high-intent local keywords
+- Facebook/Instagram ads with before-and-after creative
+- A simple landing page designed to convert visitors into leads
+- Call tracking and form tracking to measure real results
+- Weekly optimization to lower costs and improve lead quality
+
+## How Much Should You Budget?
+
+For a Canadian trades business looking for consistent leads:
+
+- **Starter**: $1,000/month ad spend + management — expect 15–30 leads/month
+- **Growth**: $2,500/month ad spend + management — expect 40–80 leads/month
+- **Scale**: $5,000+/month ad spend + management — expect 100+ leads/month
+
+A single job from a qualified lead can be worth $500–$10,000+. Even at the starter level, one or two closed jobs pays for your entire monthly ad budget.
+
+## Ready to Fill Your Schedule With Jobs?
+
+At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) specifically for trades businesses across Canada. We handle everything — strategy, creative, targeting, and optimization — so you can focus on doing the work. Book a free strategy call and we'll show you exactly what to expect.`,
+  },
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
