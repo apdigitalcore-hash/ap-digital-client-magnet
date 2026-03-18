@@ -651,3 +651,383 @@ At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) spe
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
+
+
+// ─── NEW VANCOUVER-SPECIFIC BLOG POSTS ───────────────────────────────────────
+
+const newPosts: BlogPost[] = [
+  {
+    slug: 'digital-marketing-agency-vancouver-bc',
+    title: 'How to Choose the Right Digital Marketing Agency in Vancouver BC',
+    metaTitle: 'How to Choose a Digital Marketing Agency in Vancouver BC | AP DIGITAL',
+    metaDescription: 'Looking for a digital marketing agency in Vancouver BC? Here\'s exactly what to look for, what to avoid, and how AP DIGITAL helps local businesses get real leads.',
+    excerpt: 'Not all Vancouver marketing agencies are created equal. Here\'s what to look for before you sign any contract.',
+    date: '2026-03-15',
+    readTime: '6 min read',
+    category: 'Digital Marketing',
+    content: `If you're a local business owner in Vancouver, BC searching for a digital marketing agency, you've probably already noticed the problem: there are hundreds of agencies promising results, and almost all of them sound exactly the same. "Data-driven." "Full-service." "Results-focused." The words blur together, and it's nearly impossible to know who to trust with your marketing budget.
+
+This guide will cut through the noise. We'll show you exactly what to look for in a Vancouver marketing agency, what red flags to avoid, and why niche-focused agencies consistently outperform generalists.
+
+## Why Vancouver's Marketing Landscape Is Unique
+
+Vancouver is one of the most competitive cities in Canada for small business. Whether you're a salon owner in Kitsilano, a realtor on the North Shore, a contractor in Surrey, or a fitness coach in Burnaby — you're operating in a market where consumers are digitally savvy, price-conscious, and spoiled for choice.
+
+Generic marketing won't cut it here. What works in a small Ontario city won't necessarily work in Metro Vancouver. You need an agency that understands:
+
+- Vancouver's multicultural demographics and how to market to them
+- The hyper-local nature of Metro Vancouver's neighbourhoods (Yaletown vs. East Van are very different audiences)
+- The high cost of living and how it affects consumer spending behavior
+- The competitive landscape in your specific niche
+
+The best Vancouver agencies don't just run ads — they understand your market at a granular level.
+
+## What to Look for in a Vancouver Digital Marketing Agency
+
+### 1. Niche Experience
+
+The single most important factor is whether the agency has experience in your specific industry. A generalist agency might know how to run Facebook ads — but have they run campaigns for salons? For real estate agents? For trades contractors?
+
+Ask directly: "How many clients in my industry do you work with, and can I see results?" If they can't answer confidently, keep looking.
+
+### 2. Transparent Reporting
+
+You should know exactly where every marketing dollar is going and what it's producing. Look for agencies that provide monthly reports showing:
+
+- Ad spend breakdown
+- Cost per lead
+- Number of leads generated
+- Which campaigns and channels are performing
+
+If an agency talks in vague terms about "brand awareness" and "impressions" without tying results to actual leads and revenue, that's a red flag.
+
+### 3. Clear Pricing
+
+Vancouver agencies range wildly in price. Some charge $500/month, others charge $10,000+. Neither extreme is automatically good or bad — but you need to understand what you're getting. A reputable agency will give you a clear breakdown of management fees vs. ad spend, and realistic timelines for when to expect results.
+
+### 4. Specialization Over Services
+
+The best agencies are exceptional at one or two things rather than mediocre at everything. If an agency offers web design, SEO, PPC, social media, email marketing, video production, PR, and influencer marketing all in one package — ask yourself: how deep is their expertise in any single area?
+
+For most local Vancouver businesses, the highest ROI comes from paid social ads and short-form video content. An agency that specializes in exactly that will outperform a generalist every time.
+
+## Red Flags to Avoid
+
+- **"We guarantee Page 1 on Google"** — no ethical agency can guarantee organic rankings
+- **Long contracts with no exit clause** — reputable agencies don't need to trap you
+- **No case studies or client testimonials** — results should be provable
+- **Vague deliverables** — you should know exactly what you're getting each month
+- **No dedicated account manager** — you shouldn't be passed around
+
+## Why Local Beats Global for Vancouver Businesses
+
+There's a temptation to hire a large national or US-based agency for the perceived credibility. But for Vancouver small businesses, local almost always wins. A local agency:
+
+- Understands Metro Vancouver's neighbourhoods and demographics
+- Can meet with you in person if needed
+- Has relationships with local platforms, influencers, and directories
+- Is invested in your community and reputation
+
+## AP DIGITAL: Built for Vancouver Small Businesses
+
+AP DIGITAL was built specifically to serve the kinds of businesses that drive Vancouver's economy — salons, real estate agents, trades contractors, and coaches. We don't take on every client. We specialize in four niches and go deep, not wide.
+
+Every client gets a custom strategy built around their specific neighbourhood, target demographic, and budget. And we measure success in one currency: leads and bookings — not impressions or followers.
+
+**Ready to see if we're the right fit?** Book a free strategy call and we'll show you exactly how we'd approach your business.`,
+  },
+  {
+    slug: 'salon-marketing-vancouver-bc',
+    title: 'Salon Marketing in Vancouver BC: How to Fill Your Chair Every Week',
+    metaTitle: 'Salon Marketing Vancouver BC | Fill Your Chair Every Week | AP DIGITAL',
+    metaDescription: 'Discover how Vancouver BC salons are using Instagram Reels, Facebook Ads, and local SEO to get consistent bookings. Free strategy call with AP DIGITAL.',
+    excerpt: 'Vancouver salons face unique competition. Here\'s the exact marketing system filling chairs in Kitsilano, Yaletown, and beyond.',
+    date: '2026-03-17',
+    readTime: '7 min read',
+    category: 'Salon Marketing',
+    content: `Running a salon in Vancouver, BC is both an incredible opportunity and a serious challenge. The city has one of the highest densities of salons per capita in Canada — from Kitsilano to Yaletown to North Vancouver — and clients have endless options at their fingertips. If your marketing isn't working hard for you, your competitors are taking those bookings.
+
+The good news: most Vancouver salons are still relying on word-of-mouth and hoping Instagram followers turn into clients. The salons that build a real marketing system are the ones consistently booked out weeks in advance. Here's exactly how to do it.
+
+## Why Vancouver Is Different for Salon Marketing
+
+Vancouver's beauty market has unique characteristics you need to understand before spending a dollar on marketing:
+
+**High expectations, high spend.** Vancouver clients spend more on personal care than almost any city in Canada. They're willing to pay premium prices — but they need to trust you first. Your online presence is the trust signal.
+
+**Neighbourhood identity matters.** A Kitsilano salon serves a very different client than one in Burnaby or Surrey. Your marketing needs to speak to your specific neighbourhood's demographics — age, lifestyle, income level, and aesthetic preferences.
+
+**Instagram is non-negotiable.** Vancouver is one of the most Instagram-active cities in Canada. For salons, this isn't just a nice-to-have. It's your primary storefront. Clients will check your feed before they check your website.
+
+**Multicultural market.** Metro Vancouver's diversity means there are massive untapped markets in communities that often feel underserved by mainstream salon marketing.
+
+## The Vancouver Salon Marketing System That Works
+
+### Step 1: Instagram as Your Anchor
+
+Your Instagram profile needs to function as a portfolio, a trust signal, and a lead generator all in one. For Vancouver salons, this means:
+
+- **Reels 3-5x per week.** Transformation videos, day-in-the-life content, before-and-after reveals. The Instagram algorithm rewards video heavily — even small accounts can reach thousands of local viewers.
+- **Location tagging.** Tag your Vancouver neighbourhood in every post. Use local hashtags like #KitsilanHair, #YalettownSalon, #NorthVanBeauty alongside broader tags.
+- **Stories daily.** Behind-the-scenes content, client results, booking availability, polls — Stories keep you top of mind with followers who are one step away from booking.
+
+### Step 2: Facebook and Instagram Ads for Fast Results
+
+Organic content builds your brand over time — but paid ads fill your chair fast. For Vancouver salons, we target:
+
+- Women aged 22-55 within 10-15km of your location
+- Interest targeting: hair, beauty, fashion, wellness
+- Retargeting: people who visited your website or engaged with your profile
+
+The most effective offers we've run for Vancouver salons:
+
+- "New client special: 20% off your first visit"
+- "Book online and get a complimentary deep conditioning treatment"
+- "Refer a friend and both of you get $25 off"
+
+A budget of $500-$1,000/month in ad spend, managed correctly, typically generates 30-60 new client inquiries per month in the Vancouver market.
+
+### Step 3: Google Business Profile Optimization
+
+When someone searches "hair salon near me" or "balayage Vancouver," the Google Map Pack is the first thing they see. If your Google Business Profile isn't optimized, you're invisible for those searches.
+
+For Vancouver salons, optimize your profile with:
+
+- Your exact neighbourhood in the business name and description (e.g., "Kitsilano Hair Salon")
+- All services listed with Vancouver-specific keywords
+- Photos updated weekly — before/after, interior, team shots
+- Responding to every review within 24 hours
+- Posting weekly updates through the GBP posts feature
+
+Reviews are the single biggest trust factor for new Vancouver clients. Aim for 50+ Google reviews with an average of 4.7 stars or higher.
+
+### Step 4: Short-Form Video on TikTok
+
+TikTok has become a genuine discovery platform in Vancouver, particularly for clients aged 18-35. Transformation videos, "come to my salon" POV content, and styling tip videos regularly go viral and drive direct DMs and bookings.
+
+The best part: you don't need a big following. A great video can reach 50,000+ local viewers with zero ad spend if it resonates.
+
+## What Results Can Vancouver Salons Expect?
+
+Based on our work with salon clients across BC:
+
+- **Weeks 1-2:** Campaigns launch, profiles are optimized, and first inquiries start coming in
+- **Month 1:** 20-40 new client inquiries, 10-25 booked appointments
+- **Month 3:** Consistent pipeline of 40-60+ monthly inquiries, many clients now returning for second and third visits
+- **Month 6:** Fully booked schedule, waitlist forming, organic content driving significant additional traffic
+
+## Ready to Fill Your Vancouver Salon?
+
+AP DIGITAL specializes in marketing for salons across Metro Vancouver and BC. We handle your content, your ads, and your strategy — so you can focus on your clients.
+
+**Book your free strategy call** and we'll show you exactly how we'd fill your chair within the first 30 days.`,
+  },
+  {
+    slug: 'trades-marketing-vancouver-bc',
+    title: 'Trades Marketing Vancouver BC: How Contractors Get More Local Jobs',
+    metaTitle: 'Trades Marketing Vancouver BC | Get More Contractor Leads | AP DIGITAL',
+    metaDescription: 'How plumbers, electricians, roofers, and contractors in Vancouver BC are using Google Ads, Facebook Ads, and local SEO to get consistent job leads.',
+    excerpt: 'Vancouver contractors are leaving thousands in revenue on the table because of weak marketing. Here\'s the system that actually works.',
+    date: '2026-03-18',
+    readTime: '6 min read',
+    category: 'Trades Marketing',
+    content: `If you're a contractor in Vancouver BC — whether you're a plumber in Burnaby, an electrician in Surrey, a roofer in Coquitlam, or a general contractor anywhere in Metro Vancouver — you already know the market is competitive. New builds are slowing, homeowners are more selective, and the contractors winning the most jobs aren't necessarily the most skilled. They're the ones who show up first online.
+
+Here's the exact marketing system Vancouver trades businesses are using to stay booked solid in 2026.
+
+## Why Vancouver Trades Businesses Struggle with Marketing
+
+Most contractors in Vancouver fall into one of two traps:
+
+**Trap 1: Relying entirely on referrals.** Referrals are great — but they're unpredictable. You have no control over volume, timing, or the type of job. One slow month can create serious cash flow problems.
+
+**Trap 2: Wasting money on the wrong platforms.** We've seen Vancouver contractors spend thousands on flyers, Yellow Pages listings, or generic website packages that generate zero leads. The problem isn't the budget — it's the channel.
+
+The solution is a simple, proven system: high-intent Google Ads + local SEO + a strong Google Business Profile. When combined correctly, this system puts your business in front of homeowners in Vancouver the exact moment they need your services.
+
+## The Vancouver Trades Marketing System
+
+### Step 1: Google Ads for Immediate Leads
+
+When a homeowner in Vancouver has a burst pipe, they're not scrolling Instagram. They're typing "emergency plumber Vancouver" into Google and calling the first number they see. Google Ads puts you at the top of that search instantly.
+
+The key is targeting the right keywords. For Vancouver trades, the highest-intent keywords include:
+
+- "plumber Vancouver BC"
+- "electrician near me Burnaby"
+- "roof repair Surrey BC"
+- "HVAC repair Vancouver"
+- "general contractor Coquitlam"
+- "kitchen renovation contractor North Vancouver"
+
+A well-managed Google Ads campaign with a $1,000-$2,000/month budget in the Vancouver market can generate 20-40 qualified leads per month, with a cost per lead of $40-$100 depending on the trade.
+
+### Step 2: Google Business Profile — Your #1 Local SEO Asset
+
+The Google Map Pack — the three businesses that show up with a map when you search for a local service — captures 40-60% of all clicks for trades searches. Getting into that map pack for your Vancouver neighbourhood is one of the highest-value things you can do for your business.
+
+To rank in Vancouver's Map Pack:
+
+- Complete your Google Business Profile 100% — services, hours, photos, description
+- Add your specific Vancouver neighbourhoods to your service area
+- Collect Google reviews consistently — aim for 1-2 new reviews per week
+- Post updates weekly using the GBP Posts feature
+- Add photos of completed jobs in Vancouver — Google prioritizes active profiles
+
+Reviews are critical. Vancouver homeowners read reviews before calling anyone. A contractor with 50+ reviews and a 4.8 rating will get the call over a competitor with 10 reviews at 4.2 every single time.
+
+### Step 3: Facebook and Instagram Ads for Bigger Jobs
+
+Google Ads are perfect for emergency and high-intent searches. But Facebook and Instagram ads are the tool for landing bigger renovation and construction projects — because you can reach homeowners before they even start searching.
+
+For Vancouver contractors, we target:
+
+- Homeowners aged 35-65 in specific Metro Vancouver postal codes
+- People who recently searched for home improvement content
+- Custom audiences built from your past client list
+- Retargeting visitors to your website
+
+The most effective ad formats for Vancouver trades:
+
+- Before-and-after photos of completed local projects
+- "We're now taking bookings in [neighbourhood]" posts
+- Video walkthroughs of finished renovation projects
+- Client testimonial videos
+
+### Step 4: A Website That Converts
+
+Your website is your 24/7 salesperson. For Vancouver trades businesses, a high-converting website needs:
+
+- Your service area listed prominently (Metro Vancouver, Lower Mainland, specific cities)
+- Click-to-call button visible on mobile
+- Google reviews displayed on the homepage
+- Clear service pages for each trade/service you offer
+- Fast load time — Vancouver homeowners will leave a slow site immediately
+
+### Step 5: Social Proof — The Vancouver Trust Factor
+
+Vancouver homeowners do their research. Before hiring any contractor, they'll check your Google reviews, look at your website, possibly check your Instagram or Facebook page, and ask around. Your social proof needs to be airtight.
+
+The minimum standard to compete in the Vancouver trades market in 2026:
+
+- 30+ Google reviews with 4.5+ average rating
+- A professional website with real project photos
+- Active social media showing completed local work
+- Clear service area covering Metro Vancouver
+
+## What to Expect from Vancouver Trades Marketing
+
+Based on our work with trades clients across BC:
+
+- **Month 1:** Google Ads live, GBP optimized, first new leads within 7-10 days
+- **Month 2:** 20-40 qualified leads/month, first referrals from new clients coming in
+- **Month 3+:** Consistent lead flow, schedule 4-6 weeks booked in advance, organic search traffic growing
+
+## Ready to Get More Vancouver Jobs?
+
+AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — Google Ads, social media content, and local SEO — and we measure success in jobs booked, not clicks.
+
+**Book your free strategy call** and get a custom plan to fill your schedule with quality Vancouver jobs.`,
+  },
+  {
+    slug: 'real-estate-agent-marketing-vancouver-bc',
+    title: 'Real Estate Agent Marketing in Vancouver BC: How to Get More Listings and Leads',
+    metaTitle: 'Real Estate Agent Marketing Vancouver BC | More Listings & Leads | AP DIGITAL',
+    metaDescription: 'How Vancouver BC real estate agents are using social media, paid ads, and personal branding to generate consistent buyer and seller leads in 2026.',
+    excerpt: 'Vancouver\'s real estate market is fiercely competitive. Here\'s how top agents are standing out and generating consistent leads in 2026.',
+    date: '2026-03-19',
+    readTime: '7 min read',
+    category: 'Real Estate Marketing',
+    content: `Vancouver's real estate market is one of the most competitive in North America. With thousands of licensed realtors competing for a limited number of listings and buyers, the agents who win aren't always the most experienced — they're the most visible. In 2026, your personal brand and digital marketing are the difference between a thriving business and a quiet phone.
+
+Here's exactly how Vancouver real estate agents are using digital marketing to generate consistent leads and build a referral-worthy reputation.
+
+## The Vancouver Real Estate Marketing Challenge
+
+Vancouver's market has unique characteristics that directly affect how you need to market yourself:
+
+**High average transaction values.** With Metro Vancouver's average home price among the highest in Canada, even one additional deal per quarter from your marketing is worth tens of thousands of dollars. The ROI on effective marketing is massive.
+
+**Hyper-local expertise is your edge.** A buyer looking in Dunbar doesn't want a generalist — they want the agent who knows every street, every school catchment, and every micro-market shift in that neighbourhood. Your marketing needs to position you as the hyperlocal expert.
+
+**A multicultural market.** Metro Vancouver's diverse population creates opportunities to serve communities that are often underserved. Mandarin-speaking realtors, for example, have a significant competitive advantage if they market effectively to the Chinese-Canadian community.
+
+**Long buying cycles.** Real estate clients often take 6-18 months from first contact to closing. Your marketing needs to keep you top-of-mind throughout that entire journey — not just generate one-time leads.
+
+## The Vancouver Real Estate Marketing System
+
+### Step 1: Build Your Personal Brand on Instagram and Facebook
+
+In Vancouver real estate, people hire people — not companies. Your personal brand is your most valuable marketing asset. Before a potential client calls you, they will look you up online. What they find will determine whether they pick up the phone.
+
+Your Instagram and Facebook presence should communicate:
+
+- Your specific neighbourhood expertise (e.g., "East Vancouver's Specialist")
+- Your personality and values — Vancouver clients want to work with someone they like and trust
+- Your market knowledge — regular posts about Vancouver market trends, neighbourhood guides, and buying/selling tips
+- Your results — sold properties, happy client testimonials, milestones
+
+For Vancouver realtors, the most effective content types are:
+
+- **Neighbourhood tours** — short Reels walking through Kitsilano, Commercial Drive, Mount Pleasant, etc.
+- **Market update videos** — weekly or monthly breakdowns of what's happening in your specific area
+- **Client success stories** — with permission, share the journey of helping clients buy or sell in Vancouver
+- **"Day in the life"** content — showing your process builds trust and humanhood
+
+### Step 2: Facebook and Instagram Ads for Consistent Lead Generation
+
+Organic content builds your brand — but paid ads generate consistent, predictable leads. For Vancouver real estate agents, the two most effective campaigns are:
+
+**Seller lead campaigns:** Target homeowners in specific Vancouver neighbourhoods with ads like "Curious what your home is worth in today's market? Get a free Vancouver home valuation." These generate seller leads at relatively low cost because most Vancouver homeowners are curious about their equity.
+
+**Buyer lead campaigns:** Target renters aged 28-45 in Metro Vancouver with ads about first-time buyer programs, pre-sale opportunities, or neighbourhood guides. These build your pipeline of future buyers who aren't ready yet but will be.
+
+For Vancouver's premium market, a budget of $1,000-$2,000/month in ad spend, managed correctly, can generate 15-30 qualified leads per month — a significant pipeline when each deal is worth $15,000-$50,000+ in commission.
+
+### Step 3: Video Marketing — The Vancouver Agent's Secret Weapon
+
+No content format builds trust faster than video. Vancouver buyers and sellers want to see you — your confidence, your knowledge, your personality — before they'll consider working with you. Short-form video on Instagram Reels, TikTok, and YouTube Shorts is the fastest way to build that trust at scale.
+
+The most effective video formats for Vancouver realtors:
+
+- **Property walkthrough Reels** — even if it's not your listing, walk through neighbourhoods
+- **"Vancouver Market Minute"** — 60-second weekly market update in your specific area
+- **Buyer and seller tip series** — "3 things every first-time buyer in Vancouver needs to know"
+- **Behind the scenes** — offer presentations, accepted offers, keys handovers (with client permission)
+
+### Step 4: Hyperlocal SEO — Own Your Neighbourhood
+
+When a homeowner in Kitsilano types "Kitsilano real estate agent" into Google, you want to be the first name they see. Hyperlocal SEO for Vancouver realtors involves:
+
+- A website with dedicated pages for each neighbourhood you serve
+- Blog content targeting long-tail keywords like "buying a townhouse in East Vancouver 2026" or "best neighbourhoods in Vancouver for families"
+- Google Business Profile optimized for your specific areas
+- Local citations and directory listings (REBGV, Realtor.ca, Yelp, local directories)
+
+### Step 5: The Long Game — Nurture Your Pipeline
+
+Because Vancouver real estate cycles are long, you need a system to stay top-of-mind with leads who aren't ready yet. This means:
+
+- Email newsletter with monthly Vancouver market updates
+- Retargeting ads that follow your website visitors for 30-90 days
+- Regular Instagram Stories so your followers see your face daily
+- Personalized check-ins with leads every 60-90 days
+
+The agents who consistently win in Vancouver are the ones who are still in front of a lead 12 months after first contact — because that's often when the timing finally becomes right.
+
+## What to Expect from Vancouver Real Estate Marketing
+
+- **Month 1-2:** Brand content live, first lead campaigns running, pipeline begins building
+- **Month 3-4:** 15-30 leads/month, first deals directly attributed to marketing
+- **Month 6+:** Consistent lead flow, strong personal brand recognition in target neighbourhoods, referrals increasing from digital touchpoints
+
+## Ready to Stand Out in Vancouver's Real Estate Market?
+
+AP DIGITAL works with real estate agents across Metro Vancouver to build personal brands and lead generation systems that produce consistent results. We handle the content, the ads, and the strategy — so you can focus on closing deals.
+
+**Book your free strategy call** and get a custom Vancouver real estate marketing plan.`,
+  },
+];
+
+// Merge new posts into the main array (prepend so newest appear first)
+blogPosts.unshift(...newPosts);
