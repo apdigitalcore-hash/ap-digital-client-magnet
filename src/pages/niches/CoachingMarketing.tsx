@@ -11,6 +11,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Marketing for Coaches Canada | Fill Your Roster With Social Media & Ads | AP DIGITAL';
+const DESC = 'AP DIGITAL helps private coaches and personal trainers across Canada attract more clients with Instagram growth, short-form content, and targeted paid ads. Book your free strategy call.';
+const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Instagram & TikTok growth strategy',
@@ -31,8 +37,8 @@ const results = [
 
 const faqs = [
   {
-    question: 'I\'m a coach/trainer — do I really need paid ads?',
-    answer: 'Organic content builds your brand, but paid ads accelerate your growth. Even a small ad budget ($500-$1,000/month) can consistently fill your roster with qualified clients who are ready to invest. We combine organic and paid strategies for the fastest results.',
+    question: "I'm a coach/trainer — do I really need paid ads?",
+    answer: "Organic content builds your brand, but paid ads accelerate your growth. Even a small ad budget ($500-$1,000/month) can consistently fill your roster with qualified clients who are ready to invest. We combine organic and paid strategies for the fastest results.",
   },
   {
     question: 'What kind of content should I be posting as a coach?',
@@ -44,12 +50,39 @@ const faqs = [
   },
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getServiceSchema('Coaching Marketing', DESC, '/coaching-marketing'),
+    getFAQSchema(faqs),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Coaching Marketing', url: '/coaching-marketing' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/coaching-marketing'),
+  ]
+};
+
 const CoachingMarketing = () => (
   <>
     <Helmet>
-      <title>Marketing for Coaches Canada | Fill Your Roster With Social Media & Ads | AP DIGITAL</title>
-      <meta name="description" content="AP DIGITAL helps private coaches and personal trainers across Canada attract more clients with Instagram growth, short-form content, and targeted paid ads. Book your free strategy call." />
-      <link rel="canonical" href="https://ap-digital.ca/coaching-marketing" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
@@ -97,7 +130,6 @@ const CoachingMarketing = () => (
           ))}
         </Accordion>
 
-        {/* Our Services */}
         <OurServices />
 
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">

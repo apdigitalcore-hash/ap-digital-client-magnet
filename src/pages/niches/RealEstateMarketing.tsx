@@ -11,6 +11,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Real Estate Marketing Agency Canada | Social Media & Ads for Agents | AP DIGITAL';
+const DESC = 'AP DIGITAL helps real estate agents across Canada generate qualified buyer and seller leads with Facebook Ads, Instagram marketing, and short-form video content. Book your free strategy call.';
+const CANONICAL = 'https://ap-digital.ca/real-estate-marketing';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Facebook & Instagram lead ad campaigns',
@@ -32,24 +38,51 @@ const results = [
 const faqs = [
   {
     question: 'What kind of leads will I get from Facebook and Instagram ads?',
-    answer: 'We generate buyer and seller leads through targeted lead form ads. These are people in your market who have actively expressed interest in buying or selling a home. We qualify them through the ad funnel so you\'re only talking to serious prospects.',
+    answer: "We generate buyer and seller leads through targeted lead form ads. These are people in your market who have actively expressed interest in buying or selling a home. We qualify them through the ad funnel so you're only talking to serious prospects.",
   },
   {
     question: 'How does personal branding help me sell more homes?',
-    answer: 'In real estate, people choose agents they know, like, and trust. A strong personal brand on social media — through Reels, market updates, and behind-the-scenes content — positions you as the go-to agent in your area. When someone is ready to buy or sell, you\'re the first person they think of.',
+    answer: "In real estate, people choose agents they know, like, and trust. A strong personal brand on social media — through Reels, market updates, and behind-the-scenes content — positions you as the go-to agent in your area. When someone is ready to buy or sell, you're the first person they think of.",
   },
   {
     question: 'Do you work with teams or just individual agents?',
-    answer: 'We work with both individual agents and real estate teams. For teams, we can create campaigns that generate leads for the team while also building individual agent brands. We\'ll customize the strategy based on your team structure and goals.',
+    answer: "We work with both individual agents and real estate teams. For teams, we can create campaigns that generate leads for the team while also building individual agent brands. We'll customize the strategy based on your team structure and goals.",
   },
 ];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getServiceSchema('Real Estate Marketing', DESC, '/real-estate-marketing'),
+    getFAQSchema(faqs),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Real Estate Marketing', url: '/real-estate-marketing' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/real-estate-marketing'),
+  ]
+};
 
 const RealEstateMarketing = () => (
   <>
     <Helmet>
-      <title>Real Estate Marketing Agency Canada | Social Media & Ads for Agents | AP DIGITAL</title>
-      <meta name="description" content="AP DIGITAL helps real estate agents across Canada generate qualified buyer and seller leads with Facebook Ads, Instagram marketing, and short-form video content. Book your free strategy call." />
-      <link rel="canonical" href="https://ap-digital.ca/real-estate-marketing" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
@@ -97,7 +130,6 @@ const RealEstateMarketing = () => (
           ))}
         </Accordion>
 
-        {/* Our Services */}
         <OurServices />
 
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">

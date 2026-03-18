@@ -4,6 +4,24 @@ import { Button } from '@/components/ui/button';
 import { Target, BarChart3, Video, Scissors, Home, Wrench, Dumbbell } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { organizationSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'About AP DIGITAL | Canadian Digital Marketing Agency | Vancouver BC';
+const DESC = 'AP DIGITAL is a Vancouver-based digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads.';
+const CANONICAL = 'https://ap-digital.ca/about';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    organizationSchema,
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'About', url: '/about' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/about'),
+  ]
+};
 
 const About = () => {
   const differentiators = [
@@ -34,9 +52,23 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About AP DIGITAL | Canadian Digital Marketing Agency</title>
-        <meta name="description" content="AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads. Founded in Pitt Meadows, BC." />
-        <link rel="canonical" href="https://ap-digital.ca/about" />
+        <title>{TITLE}</title>
+        <meta name="description" content={DESC} />
+        <link rel="canonical" href={CANONICAL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={CANONICAL} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESC} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:site_name" content="AP DIGITAL" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESC} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
       <Header />
@@ -54,7 +86,7 @@ const About = () => {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">Our Story</h2>
           <div className="max-w-3xl space-y-4 text-muted-foreground text-lg leading-relaxed">
             <p>
-              AP DIGITAL was founded in Pitt Meadows, BC by a young entrepreneur who saw local businesses wasting thousands of dollars on marketing that didn't convert. Flashy campaigns with no leads. Expensive agencies with no accountability. It was broken — and we knew we could fix it.
+              AP DIGITAL was founded in Vancouver, BC by a young entrepreneur who saw local businesses wasting thousands of dollars on marketing that didn't convert. Flashy campaigns with no leads. Expensive agencies with no accountability. It was broken — and we knew we could fix it.
             </p>
             <p>
               We built AP DIGITAL with one mission: help local businesses get predictable, measurable leads using the strategies that actually work today — short-form video content and targeted paid advertising.

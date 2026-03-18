@@ -11,6 +11,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Digital Marketing for Trades Canada | Get More Jobs with Paid Ads | AP DIGITAL';
+const DESC = 'AP DIGITAL helps contractors, electricians, plumbers, and HVAC businesses across Canada get more job leads with Google Ads, Facebook marketing, and local SEO. Book your free strategy call.';
+const CANONICAL = 'https://ap-digital.ca/trades-marketing';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Google Ads campaigns for local service searches',
@@ -32,7 +38,7 @@ const results = [
 const faqs = [
   {
     question: 'I get most of my work from referrals — why do I need marketing?',
-    answer: 'Referrals are great, but they\'re unpredictable. Marketing gives you a consistent, controllable flow of new job leads so you\'re never waiting for the phone to ring. The best trades businesses use both referrals AND marketing to stay booked year-round.',
+    answer: "Referrals are great, but they're unpredictable. Marketing gives you a consistent, controllable flow of new job leads so you're never waiting for the phone to ring. The best trades businesses use both referrals AND marketing to stay booked year-round.",
   },
   {
     question: 'Which platforms work best for trades and contractors?',
@@ -40,16 +46,43 @@ const faqs = [
   },
   {
     question: 'How much should I budget for ads as a contractor?',
-    answer: 'Most trades businesses see great results starting at $1,000-$2,000/month in ad spend. The cost per lead varies by trade and location, but our clients typically see leads coming in at $20-$50 each — and a single job can be worth thousands. We\'ll help you find the right budget for your market.',
+    answer: "Most trades businesses see great results starting at $1,000-$2,000/month in ad spend. The cost per lead varies by trade and location, but our clients typically see leads coming in at $20-$50 each — and a single job can be worth thousands. We'll help you find the right budget for your market.",
   },
 ];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getServiceSchema('Trades Marketing', DESC, '/trades-marketing'),
+    getFAQSchema(faqs),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Trades Marketing', url: '/trades-marketing' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/trades-marketing'),
+  ]
+};
 
 const TradesMarketing = () => (
   <>
     <Helmet>
-      <title>Digital Marketing for Trades Canada | Get More Jobs with Paid Ads | AP DIGITAL</title>
-      <meta name="description" content="AP DIGITAL helps contractors, electricians, plumbers, and HVAC businesses across Canada get more job leads with Google Ads, Facebook marketing, and local SEO. Book your free strategy call." />
-      <link rel="canonical" href="https://ap-digital.ca/trades-marketing" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
@@ -97,7 +130,6 @@ const TradesMarketing = () => (
           ))}
         </Accordion>
 
-        {/* Our Services */}
         <OurServices />
 
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">

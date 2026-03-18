@@ -5,6 +5,12 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Paid Ads Agency Canada | Facebook & Google Ads That Generate Leads | AP DIGITAL';
+const DESC = 'AP DIGITAL runs high-converting Facebook, Instagram, and Google ad campaigns for Canadian businesses. Get predictable leads every week with data-driven paid advertising.';
+const CANONICAL = 'https://ap-digital.ca/services/paid-ads';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Facebook & Instagram ad campaign setup',
@@ -17,12 +23,38 @@ const included = [
   'Dedicated account manager',
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getServiceSchema('Paid Advertising', DESC, '/services/paid-ads'),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Paid Ads', url: '/services/paid-ads' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/services/paid-ads'),
+  ]
+};
+
 const PaidAds = () => (
   <>
     <Helmet>
-      <title>Paid Ads Agency Canada | Facebook & Instagram Ads That Generate Leads | AP DIGITAL</title>
-      <meta name="description" content="AP DIGITAL runs high-converting Facebook, Instagram, and Google ad campaigns for Canadian businesses. Get predictable leads every week with data-driven paid advertising." />
-      <link rel="canonical" href="https://ap-digital.ca/services/paid-ads" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
@@ -48,7 +80,6 @@ const PaidAds = () => (
           ))}
         </ul>
 
-        {/* Industries We Serve */}
         <IndustriesWeServe />
 
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">

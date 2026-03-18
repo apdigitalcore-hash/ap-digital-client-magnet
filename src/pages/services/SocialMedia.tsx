@@ -5,6 +5,12 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Social Media Marketing Canada | Content That Grows Your Business | AP DIGITAL';
+const DESC = 'AP DIGITAL manages your social media so you can focus on your business. We create content, engage your community, and turn followers into paying clients across Canada.';
+const CANONICAL = 'https://ap-digital.ca/services/social-media';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Custom content calendar & scheduling',
@@ -17,12 +23,38 @@ const included = [
   'Competitor analysis',
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getServiceSchema('Social Media Marketing', DESC, '/services/social-media'),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Social Media Marketing', url: '/services/social-media' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/services/social-media'),
+  ]
+};
+
 const SocialMedia = () => (
   <>
     <Helmet>
-      <title>Social Media Marketing Canada | Content That Grows Your Business | AP DIGITAL</title>
-      <meta name="description" content="AP DIGITAL manages your social media so you can focus on your business. We create content, engage your community, and turn followers into paying clients across Canada." />
-      <link rel="canonical" href="https://ap-digital.ca/services/social-media" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
@@ -48,7 +80,6 @@ const SocialMedia = () => (
           ))}
         </ul>
 
-        {/* Industries We Serve */}
         <IndustriesWeServe />
 
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">

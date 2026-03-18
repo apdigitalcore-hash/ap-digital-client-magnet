@@ -11,6 +11,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Salon Marketing Agency Canada | Get More Bookings with Social Media & Ads | AP DIGITAL';
+const DESC = 'AP DIGITAL helps salons across Canada fill their chairs with high-value clients using Instagram Reels, Facebook Ads, and short-form video marketing. Book your free strategy call today.';
+const CANONICAL = 'https://ap-digital.ca/salon-marketing';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Instagram & Facebook ad campaigns targeting local clients',
@@ -32,7 +38,7 @@ const results = [
 const faqs = [
   {
     question: 'How quickly will I see new bookings from marketing?',
-    answer: 'Most salon clients start seeing new appointment requests within the first 2 weeks of launching ad campaigns. By month two, you\'ll have a predictable flow of new clients coming in weekly. We optimize continuously to keep your cost per booking as low as possible.',
+    answer: "Most salon clients start seeing new appointment requests within the first 2 weeks of launching ad campaigns. By month two, you'll have a predictable flow of new clients coming in weekly. We optimize continuously to keep your cost per booking as low as possible.",
   },
   {
     question: 'Do I need to create content myself or do you handle everything?',
@@ -40,16 +46,43 @@ const faqs = [
   },
   {
     question: 'What budget do I need for salon marketing?',
-    answer: 'We recommend a minimum ad spend of $500-$1,000/month to start seeing consistent results. Combined with our management fee, most salon owners see a positive ROI within the first month. We\'ll help you find the right budget based on your goals and location.',
+    answer: "We recommend a minimum ad spend of $500-$1,000/month to start seeing consistent results. Combined with our management fee, most salon owners see a positive ROI within the first month. We'll help you find the right budget based on your goals and location.",
   },
 ];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getServiceSchema('Salon Marketing', DESC, '/salon-marketing'),
+    getFAQSchema(faqs),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Salon Marketing', url: '/salon-marketing' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/salon-marketing'),
+  ]
+};
 
 const SalonMarketing = () => (
   <>
     <Helmet>
-      <title>Salon Marketing Agency Canada | Get More Bookings with Social Media & Ads | AP DIGITAL</title>
-      <meta name="description" content="AP DIGITAL helps salons across Canada fill their chairs with high-value clients using Instagram Reels, Facebook Ads, and short-form video marketing. Book your free strategy call today." />
-      <link rel="canonical" href="https://ap-digital.ca/salon-marketing" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
@@ -66,7 +99,6 @@ const SalonMarketing = () => (
           <p>We've helped salons across Canada go from relying on referrals to having a waitlist. Your transformation is next.</p>
         </div>
 
-        {/* What You Get */}
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>
         <ul className="grid sm:grid-cols-2 gap-4 mb-16">
           {included.map((item) => (
@@ -77,7 +109,6 @@ const SalonMarketing = () => (
           ))}
         </ul>
 
-        {/* Results */}
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Salon Clients See</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
@@ -89,7 +120,6 @@ const SalonMarketing = () => (
           ))}
         </div>
 
-        {/* FAQ */}
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
         <Accordion type="single" collapsible className="mb-16">
           {faqs.map((faq, i) => (
@@ -100,10 +130,8 @@ const SalonMarketing = () => (
           ))}
         </Accordion>
 
-        {/* Our Services */}
         <OurServices />
 
-        {/* CTA */}
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and find out how we can fill your salon's calendar with high-value clients.</p>

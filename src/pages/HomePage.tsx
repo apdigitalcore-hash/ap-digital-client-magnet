@@ -12,81 +12,72 @@ import TestimonialsDark from '@/components/TestimonialsDark';
 import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
 
-import { organizationSchema, getWebPageSchema } from '@/lib/structuredData';
+import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
 
+const TITLE = 'Digital Marketing Agency Canada | Leads for Salons, Trades & Real Estate | AP DIGITAL';
+const DESC = 'AP DIGITAL helps salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads. Based in Vancouver, BC. Book a free strategy call today.';
+const CANONICAL = 'https://ap-digital.ca/';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    organizationSchema,
+    getWebSiteSchema(),
+    getWebPageSchema(TITLE, DESC, '/'),
+    getBreadcrumbSchema([{ name: 'Home', url: '/' }]),
+  ]
+};
+
+const differentiators = [
+  {
+    icon: Zap,
+    title: 'No Long-Term Contracts',
+    description: 'Month-to-month flexibility.',
+  },
+  {
+    icon: Target,
+    title: 'Results-Focused',
+    description: 'We track leads, not vanity metrics.',
+  },
+  {
+    icon: Users,
+    title: 'Niche Expertise',
+    description: 'Built for service businesses.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Proven Systems',
+    description: 'Battle-tested strategies.',
+  },
+];
+
 const HomePage = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "AP DIGITAL",
-    "url": "https://ap-digital.ca",
-    "description": "AP DIGITAL is a Canadian digital marketing agency helping salons, real estate agents, trades businesses, and private coaches get predictable leads through social media marketing and paid ads.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Pitt Meadows",
-      "addressRegion": "BC",
-      "addressCountry": "CA"
-    },
-    "areaServed": [
-      "Pitt Meadows", "Maple Ridge", "Metro Vancouver",
-      "British Columbia", "Canada"
-    ],
-    "knowsAbout": [
-      "Salon Marketing", "Real Estate Marketing",
-      "Trades Marketing", "Coaching Marketing",
-      "Facebook Ads", "Instagram Ads", "TikTok Ads",
-      "Social Media Management", "Lead Generation"
-    ],
-    "priceRange": "$$",
-    "sameAs": [
-      "https://www.instagram.com/apdigital.co"
-    ]
-  };
-
-  const differentiators = [
-    {
-      icon: Zap,
-      title: 'No Long-Term Contracts',
-      description: 'Month-to-month flexibility.',
-    },
-    {
-      icon: Target,
-      title: 'Results-Focused',
-      description: 'We track leads, not vanity metrics.',
-    },
-    {
-      icon: Users,
-      title: 'Niche Expertise',
-      description: 'Built for service businesses.',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Proven Systems',
-      description: 'Battle-tested strategies.',
-    },
-  ];
-
   return (
     <main className="min-h-screen">
       <Helmet>
-        <title>Digital Marketing Agency Canada | Leads for Salons, Trades &amp; Real Estate | AP DIGITAL</title>
-        <meta name="description" content="AP DIGITAL helps salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads. Book a free strategy call today." />
-        <meta name="keywords" content="digital marketing agency Canada, marketing agency BC, lead generation Canada, Pitt Meadows marketing" />
-        <link rel="canonical" href="https://ap-digital.ca/" />
+        <title>{TITLE}</title>
+        <meta name="description" content={DESC} />
+        <meta name="keywords" content="digital marketing agency Canada, marketing agency Vancouver BC, lead generation Canada, salon marketing, real estate marketing, trades marketing" />
+        <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ap-digital.ca/" />
-        <meta property="og:title" content="Digital Marketing Agency Canada | Leads for Salons, Trades & Real Estate | AP DIGITAL" />
-        <meta property="og:description" content="AP DIGITAL helps salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads. Book a free strategy call today." />
-        <meta property="og:image" content="https://ap-digital.ca/og-image.png" />
+        <meta property="og:url" content={CANONICAL} />
+        <meta property="og:title" content={TITLE} />
+        <meta property="og:description" content={DESC} />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_CA" />
         <meta property="og:site_name" content="AP DIGITAL" />
         <meta name="twitter:card" content="summary_large_image" />
-        {structuredData && (
-          <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-        )}
+        <meta name="twitter:title" content={TITLE} />
+        <meta name="twitter:description" content={DESC} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
-      
+
       {/* Hero Section - Split Layout */}
       <section className="relative min-h-screen flex bg-near-black overflow-hidden">
         {/* Left Content */}
@@ -99,7 +90,7 @@ const HomePage = () => {
             </div>
 
             {/* Headline */}
-            <h1 
+            <h1
               className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-fade-up uppercase"
               style={{ animationDelay: '0.1s' }}
             >
@@ -108,16 +99,16 @@ const HomePage = () => {
             </h1>
 
             {/* Subheadline */}
-            <p 
-              className="text-base md:text-lg text-muted-foreground max-w-md mb-10 animate-fade-up leading-relaxed" 
+            <p
+              className="text-base md:text-lg text-muted-foreground max-w-md mb-10 animate-fade-up leading-relaxed"
               style={{ animationDelay: '0.2s' }}
             >
               We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
             </p>
 
             {/* CTAs */}
-            <div 
-              className="flex flex-wrap items-center gap-4 animate-fade-up" 
+            <div
+              className="flex flex-wrap items-center gap-4 animate-fade-up"
               style={{ animationDelay: '0.3s' }}
             >
               <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
@@ -156,7 +147,7 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-near-black/60" />
         </div>
 
-        {/* Scroll Indicator - centered on full page width */}
+        {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
           <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
             <div className="w-1.5 h-3 bg-teal rounded-full" />
@@ -173,8 +164,8 @@ const HomePage = () => {
                 Social Media & Paid Ads for <span className="text-gradient">Salons</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                We run Instagram and Facebook ads that bring new bookings to your salon every week — without you lifting a finger. 
-                Our campaigns target local clients actively searching for hair, beauty, and wellness services in your area. 
+                We run Instagram and Facebook ads that bring new bookings to your salon every week — without you lifting a finger.
+                Our campaigns target local clients actively searching for hair, beauty, and wellness services in your area.
                 Most salon partners see a full appointment book within the first 30 days.
               </p>
             </Link>
@@ -184,8 +175,8 @@ const HomePage = () => {
                 Digital Marketing for <span className="text-gradient">Real Estate Agents</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                We generate qualified buyer and seller leads through hyper-targeted social media campaigns and Google Ads. 
-                Our proven funnels capture contact info and nurture prospects so you spend less time chasing and more time closing. 
+                We generate qualified buyer and seller leads through hyper-targeted social media campaigns and Google Ads.
+                Our proven funnels capture contact info and nurture prospects so you spend less time chasing and more time closing.
                 Real estate agents we work with typically see 15–30 new leads per month.
               </p>
             </Link>
@@ -195,7 +186,7 @@ const HomePage = () => {
                 Lead Generation for <span className="text-gradient">Trades Businesses</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Plumbers, electricians, roofers, and contractors — we build ad campaigns that put your business in front of homeowners who need you right now. 
+                Plumbers, electricians, roofers, and contractors — we build ad campaigns that put your business in front of homeowners who need you right now.
                 No more relying on word-of-mouth alone. Our clients consistently fill their schedules with high-value jobs week after week.
               </p>
             </Link>
@@ -205,8 +196,8 @@ const HomePage = () => {
                 Marketing for <span className="text-gradient">Private Coaches & Trainers</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you're a personal trainer, life coach, or fitness studio owner, we create content and ad campaigns that attract your ideal clients. 
-                Our systems automate lead capture and follow-up so you can focus on coaching. 
+                Whether you're a personal trainer, life coach, or fitness studio owner, we create content and ad campaigns that attract your ideal clients.
+                Our systems automate lead capture and follow-up so you can focus on coaching.
                 Most coaches double their client base within 90 days of working with us.
               </p>
             </Link>
@@ -214,24 +205,14 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Results / Proof Section */}
       <ResultsProof />
-
-      {/* Visual Showcase - Content that converts */}
       <VisualShowcase />
-
-      {/* Process Section */}
       <ProcessDark />
-
-      {/* Services Section */}
       <ServicesDark />
-
-      {/* Testimonials */}
       <TestimonialsDark />
 
-      {/* Mid-page CTA */}
-      <DarkCTA 
-        headline="Ready to Dominate Your Market?" 
+      <DarkCTA
+        headline="Ready to Dominate Your Market?"
         subheadline="Book a free strategy call and discover how we can scale your business."
       />
 
@@ -263,8 +244,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <DarkCTA 
+      <DarkCTA
         headline="Ready to Get Predictable Leads?"
         subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
       />

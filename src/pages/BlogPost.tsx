@@ -5,12 +5,30 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { getPostBySlug } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
+import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
 
   if (!post) return <Navigate to="/blog" replace />;
+
+  const canonical = `https://ap-digital.ca/blog/${post.slug}`;
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      getArticleSchema(post),
+      getBreadcrumbSchema([
+        { name: 'Home', url: '/' },
+        { name: 'Blog', url: '/blog' },
+        { name: post.title, url: `/blog/${post.slug}` },
+      ]),
+      getWebPageSchema(post.metaTitle, post.metaDescription, `/blog/${post.slug}`),
+    ]
+  };
 
   // Simple markdown-like rendering: split by ## for sections
   const renderBlock = (block: string, key: number) => {
@@ -47,7 +65,6 @@ const BlogPost = () => {
   };
 
   const renderInline = (text: string) => {
-    // Links [text](url) and Bold **text**
     const parts = text.split(/(\[.*?\]\(.*?\)|\*\*[^*]+\*\*)/g);
     return parts.map((part, i) => {
       const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
@@ -66,19 +83,21 @@ const BlogPost = () => {
       <Helmet>
         <title>{post.metaTitle}</title>
         <meta name="description" content={post.metaDescription} />
-        <link rel="canonical" href={`https://ap-digital.ca/blog/${post.slug}`} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonical} />
         <meta property="og:title" content={post.metaTitle} />
         <meta property="og:description" content={post.metaDescription} />
-        <meta property="og:type" content="article" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          headline: post.title,
-          description: post.metaDescription,
-          datePublished: post.date,
-          author: { "@type": "Organization", name: "AP DIGITAL" },
-          publisher: { "@type": "Organization", name: "AP DIGITAL" },
-        })}</script>
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:site_name" content="AP DIGITAL" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.metaTitle} />
+        <meta name="twitter:description" content={post.metaDescription} />
+        <meta name="twitter:image" content={OG_IMAGE} />
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
       <main className="min-h-screen bg-background pt-28 pb-20">

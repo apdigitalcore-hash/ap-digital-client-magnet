@@ -4,13 +4,44 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { blogPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
+import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Blog | Digital Marketing Tips for Local Businesses | AP DIGITAL';
+const DESC = 'Actionable digital marketing tips for salons, real estate agents, trades, and coaches. Learn how to generate more leads with social media and paid ads.';
+const CANONICAL = 'https://ap-digital.ca/blog';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Blog', url: '/blog' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/blog'),
+  ]
+};
 
 const Blog = () => (
   <>
     <Helmet>
-      <title>Blog | AP DIGITAL — Digital Marketing Tips for Local Businesses</title>
-      <meta name="description" content="Actionable digital marketing tips for salons, real estate agents, trades, and coaches. Learn how to generate more leads with social media and paid ads." />
-      <link rel="canonical" href="https://ap-digital.ca/blog" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="min-h-screen bg-background pt-28 pb-20">

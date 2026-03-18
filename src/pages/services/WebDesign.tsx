@@ -5,6 +5,12 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+
+const TITLE = 'Web Design Agency Canada | Websites Built to Convert | AP DIGITAL';
+const DESC = 'AP DIGITAL designs and builds high-converting websites for Canadian businesses. Mobile-first, fast-loading, and optimized to turn visitors into paying customers.';
+const CANONICAL = 'https://ap-digital.ca/services/web-design';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Custom responsive website design',
@@ -17,12 +23,38 @@ const included = [
   'Ongoing maintenance & support',
 ];
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    getServiceSchema('Web Design', DESC, '/services/web-design'),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Web Design', url: '/services/web-design' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/services/web-design'),
+  ]
+};
+
 const WebDesign = () => (
   <>
     <Helmet>
-      <title>Web Design Agency Canada | Websites Built to Convert | AP DIGITAL</title>
-      <meta name="description" content="AP DIGITAL designs and builds high-converting websites for Canadian businesses. Mobile-first, fast-loading, and optimized to turn visitors into paying customers." />
-      <link rel="canonical" href="https://ap-digital.ca/services/web-design" />
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
@@ -48,7 +80,6 @@ const WebDesign = () => (
           ))}
         </ul>
 
-        {/* Industries We Serve */}
         <IndustriesWeServe />
 
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
