@@ -106,7 +106,7 @@ const About = () => {
                 <Link
                   key={niche.label}
                   to={niche.href}
-                  className="bg-card rounded-xl p-6 shadow-custom-sm hover:shadow-custom-md transition-all duration-300 group"
+                  className="bg-card rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group"
                 >
                   <niche.icon className="w-8 h-8 text-teal mb-4" />
                   <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-teal transition-colors">{niche.label}</h3>
