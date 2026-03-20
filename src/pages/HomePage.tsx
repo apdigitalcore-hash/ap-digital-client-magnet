@@ -206,7 +206,7 @@ const HomePage = () => {
       </section>
 
       <ResultsProof />
-      <VisualShowcase />
+      
       <ProcessDark />
       <ServicesDark />
       <TestimonialsDark />
