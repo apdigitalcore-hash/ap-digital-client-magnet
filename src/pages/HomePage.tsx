@@ -91,11 +91,12 @@ const HomePage = () => {
 
             {/* Headline */}
             <h1
-              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.45] tracking-[0.08em] mb-6 animate-fade-up uppercase"
+              className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.15] tracking-normal mb-6 animate-fade-up"
               style={{ animationDelay: '0.1s' }}
             >
-              Digital Marketing Agency in Canada That Gets You{' '}
-              <span className="text-gradient">Predictable Leads.</span>
+              <span className="block">Digital Marketing</span>
+              <span className="block">Agency in Canada</span>
+              <span className="block">That Gets You <span className="text-gradient">Leads.</span></span>
             </h1>
 
             {/* Subheadline */}
