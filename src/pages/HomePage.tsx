@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import ResultsProof from '@/components/ResultsProof';
-import VisualShowcase from '@/components/VisualShowcase';
+
 import ServicesDark from '@/components/ServicesDark';
 import TestimonialsDark from '@/components/TestimonialsDark';
 import ProcessDark from '@/components/ProcessDark';
