@@ -53,7 +53,7 @@ const Footer = () => {
             </p>
             <p className="text-gray-500 text-sm mb-6 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-teal" />
-              Pitt Meadows, BC, Canada
+              Vancouver, BC, Canada
             </p>
             {/* Social Links */}
             <div className="flex gap-3">
