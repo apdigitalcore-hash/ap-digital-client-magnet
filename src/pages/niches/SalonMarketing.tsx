@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Salon Marketing Agency Canada | Get More Bookings with Social Media & Ads | AP DIGITAL';
-const DESC = 'AP DIGITAL helps salons across Canada fill their chairs with high-value clients using Instagram Reels, Facebook Ads, and short-form video marketing. Book your free strategy call today.';
+const TITLE = 'Salon Marketing Agency Canada | Get More Bookings | AP Digital';
+const DESC = 'AP Digital helps Canadian hair salons & beauty studios get more bookings using Meta Ads & organic content. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/salon-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

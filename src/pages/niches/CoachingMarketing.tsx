@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Marketing for Coaches Canada | Fill Your Roster With Social Media & Ads | AP DIGITAL';
-const DESC = 'AP DIGITAL helps private coaches and personal trainers across Canada attract more clients with Instagram growth, short-form content, and targeted paid ads. Book your free strategy call.';
+const TITLE = 'Coaching Marketing Agency Canada | Get More Clients | AP Digital';
+const DESC = 'AP Digital helps life, business & fitness coaches across Canada get more clients using Meta Ads & organic social content. No lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

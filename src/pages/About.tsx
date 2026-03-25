@@ -6,8 +6,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { organizationSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'About AP DIGITAL | Canadian Digital Marketing Agency | Vancouver BC';
-const DESC = 'AP DIGITAL is a Vancouver-based digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads.';
+const TITLE = 'About AP Digital | Canadian Digital Marketing Agency | Arjun Sharma';
+const DESC = 'AP Digital was founded by Arjun Sharma in Pitt Meadows, BC. We specialize in lead generation for salons, trades, real estate & coaches across Canada.';
 const CANONICAL = 'https://ap-digital.ca/about';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

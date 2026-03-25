@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing for Trades Canada | Get More Jobs with Paid Ads | AP DIGITAL';
-const DESC = 'AP DIGITAL helps contractors, electricians, plumbers, and HVAC businesses across Canada get more job leads with Google Ads, Facebook marketing, and local SEO. Book your free strategy call.';
+const TITLE = 'Trades Marketing Agency Canada | Plumber, HVAC & Electrician Leads | AP Digital';
+const DESC = 'AP Digital generates leads for BC plumbers, electricians, HVAC companies, roofers & contractors using Meta Ads. No contracts. Starts at $500/month.';
 const CANONICAL = 'https://ap-digital.ca/trades-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

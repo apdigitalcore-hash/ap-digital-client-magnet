@@ -64,14 +64,14 @@ const Contact = () => {
   return (
     <main className="min-h-screen">
       <Helmet>
-        <title>Book a Free Marketing Growth Audit | AP DIGITAL</title>
-        <meta name="description" content="Book a free marketing growth audit with AP DIGITAL. We'll analyze your current marketing, identify opportunities, and show you how to get more leads." />
+        <title>Contact AP Digital | Book a Free Strategy Call</title>
+        <meta name="description" content="Book a free 20-minute strategy call with AP Digital. We'll show you how many leads are available in your area and how to get them. No pressure." />
         <meta name="keywords" content="free marketing audit, book marketing consultation, digital marketing consultation Canada" />
         <link rel="canonical" href="https://ap-digital.ca/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ap-digital.ca/contact" />
-        <meta property="og:title" content="Book a Free Marketing Growth Audit | AP DIGITAL" />
-        <meta property="og:description" content="Book a free marketing growth audit with AP DIGITAL. We'll analyze your current marketing, identify opportunities, and show you how to get more leads." />
+        <meta property="og:title" content="Contact AP Digital | Book a Free Strategy Call" />
+        <meta property="og:description" content="Book a free 20-minute strategy call with AP Digital. We'll show you how many leads are available in your area and how to get them. No pressure." />
         {structuredData && (
           <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         )}

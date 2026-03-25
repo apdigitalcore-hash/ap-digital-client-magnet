@@ -15,8 +15,8 @@ import DarkCTA from '@/components/DarkCTA';
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
 
-const TITLE = 'Digital Marketing Agency Canada | Leads for Salons, Trades & Real Estate | AP DIGITAL';
-const DESC = 'AP DIGITAL helps salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads. Based in Vancouver, BC. Book a free strategy call today.';
+const TITLE = 'Digital Marketing Agency Canada | Leads for Salons, Trades & Real Estate | AP Digital';
+const DESC = 'AP Digital is a Canadian digital marketing agency helping salons, trades, real estate agents & coaches get predictable leads using Meta Ads & short-form content. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

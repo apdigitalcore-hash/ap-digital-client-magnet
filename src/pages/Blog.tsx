@@ -6,8 +6,8 @@ import { blogPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Blog | Digital Marketing Tips for Local Businesses | AP DIGITAL';
-const DESC = 'Actionable digital marketing tips for salons, real estate agents, trades, and coaches. Learn how to generate more leads with social media and paid ads.';
+const TITLE = 'Digital Marketing Blog | AP Digital — Tips for Salons, Trades & Realtors';
+const DESC = 'Marketing tips, ad strategies & lead generation guides for Canadian salons, trades businesses, realtors & coaches. Published by AP Digital.';
 const CANONICAL = 'https://ap-digital.ca/blog';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

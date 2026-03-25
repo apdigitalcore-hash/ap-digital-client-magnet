@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Real Estate Marketing Agency Canada | Social Media & Ads for Agents | AP DIGITAL';
-const DESC = 'AP DIGITAL helps real estate agents across Canada generate qualified buyer and seller leads with Facebook Ads, Instagram marketing, and short-form video content. Book your free strategy call.';
+const TITLE = 'Real Estate Marketing Agency Canada | Leads for Realtors | AP Digital';
+const DESC = 'AP Digital generates real estate leads across Canada using Meta Ads & social content. Serving realtors, brokerages & investors. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/real-estate-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
