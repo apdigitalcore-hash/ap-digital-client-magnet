@@ -86,7 +86,7 @@ const WebDesign = () => (
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and get a website that works as hard as you do.</p>
           <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
-            <Link to="/contact">Book Your Free Strategy Call</Link>
+            <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
           </Button>
         </section>
       </div>

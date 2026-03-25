@@ -142,7 +142,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Button variant="hero" size="default" asChild>
-              <Link to="/contact">Book Free Call</Link>
+              <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">Book Free Call</a>
             </Button>
           </div>
 
@@ -239,9 +239,9 @@ const Header = () => {
 
               <div className="px-4 pt-4">
                 <Button variant="hero" className="w-full" asChild>
-                  <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                  <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                     Book Free Call
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </nav>

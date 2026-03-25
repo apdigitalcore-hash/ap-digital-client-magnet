@@ -141,7 +141,7 @@ const About = () => {
               Book a free strategy call and let's talk about how we can generate predictable leads for your business.
             </p>
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">Book Your Free Strategy Call</Link>
+              <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
             </Button>
           </div>
         </section>
