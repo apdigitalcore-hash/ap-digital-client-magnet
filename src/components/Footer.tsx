@@ -18,6 +18,12 @@ const Footer = () => {
     { label: 'Contact', href: '/contact' },
   ];
 
+  const nichePages = [
+    { label: 'Trades Marketing BC', href: 'https://trades.ap-digital.ca' },
+    { label: 'Contractor Marketing BC', href: 'https://contractor.ap-digital.ca' },
+    { label: 'Coaching Marketing BC', href: 'https://coaching.ap-digital.ca' },
+  ];
+
   const legal = [
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms of Service', href: '/terms-of-service' },
@@ -40,7 +46,7 @@ const Footer = () => {
     <footer className="bg-near-black text-primary-foreground">
       {/* Main Footer */}
       <div className="container-custom py-16 md:py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
@@ -101,6 +107,25 @@ const Footer = () => {
                   >
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Niche Pages */}
+          <div>
+            <h4 className="font-semibold text-primary-foreground mb-6">Industry Pages</h4>
+            <ul className="space-y-3">
+              {nichePages.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-teal transition-colors"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>

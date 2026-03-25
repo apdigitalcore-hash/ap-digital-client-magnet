@@ -32,10 +32,11 @@ const Header = () => {
   ];
 
   const industries = [
-    { href: '/salon-marketing', label: 'Salons & Beauty' },
-    { href: '/real-estate-marketing', label: 'Real Estate' },
-    { href: '/trades-marketing', label: 'Trades & Contractors' },
-    { href: '/coaching-marketing', label: 'Coaches & Trainers' },
+    { href: '/salon-marketing', label: 'Salons & Beauty', external: false },
+    { href: '/real-estate-marketing', label: 'Real Estate', external: false },
+    { href: 'https://trades.ap-digital.ca', label: 'Trades Marketing BC', external: true },
+    { href: 'https://contractor.ap-digital.ca', label: 'Contractor Marketing BC', external: true },
+    { href: 'https://coaching.ap-digital.ca', label: 'Coaching Marketing BC', external: true },
   ];
 
   const isHomePage = location.pathname === '/';
@@ -96,9 +97,15 @@ const Header = () => {
               <DropdownMenuContent align="center" className="w-56">
                 {industries.map((industry) => (
                   <DropdownMenuItem key={industry.href} asChild>
-                    <Link to={industry.href} className="cursor-pointer">
-                      {industry.label}
-                    </Link>
+                    {industry.external ? (
+                      <a href={industry.href} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+                        {industry.label}
+                      </a>
+                    ) : (
+                      <Link to={industry.href} className="cursor-pointer">
+                        {industry.label}
+                      </Link>
+                    )}
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
@@ -183,14 +190,27 @@ const Header = () => {
               </div>
 
               {industries.map((industry) => (
-                <Link
-                  key={industry.href}
-                  to={industry.href}
-                  className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {industry.label}
-                </Link>
+                industry.external ? (
+                  <a
+                    key={industry.href}
+                    href={industry.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {industry.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={industry.href}
+                    to={industry.href}
+                    className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {industry.label}
+                  </Link>
+                )
               ))}
 
               <Link
