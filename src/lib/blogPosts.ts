@@ -1031,3 +1031,422 @@ AP DIGITAL works with real estate agents across Metro Vancouver to build persona
 
 // Merge new posts into the main array (prepend so newest appear first)
 blogPosts.unshift(...newPosts);
+
+// ─── ADDITIONAL KEYWORD-TARGETED POSTS ───────────────────────────────────────
+
+const extraPosts: BlogPost[] = [
+  {
+    slug: 'meta-ads-cost-contractors-bc',
+    title: 'How Much Do Meta Ads Cost for Contractors in BC? (2026 Guide)',
+    metaTitle: 'Meta Ads Cost for Contractors in BC 2026 | AP DIGITAL',
+    metaDescription: 'Wondering how much Meta Ads cost for contractors in BC? Get a realistic breakdown of ad spend, cost per lead, and expected ROI for trades businesses in Metro Vancouver.',
+    excerpt: 'A transparent breakdown of what BC contractors actually spend on Meta Ads — and what they get back.',
+    date: '2026-03-20',
+    readTime: '5 min read',
+    category: 'Trades Marketing',
+    content: `If you're a contractor in BC thinking about running Facebook or Instagram ads, the first question is almost always: "How much is this going to cost me?" It's a fair question — and unlike a lot of agencies, we're going to give you a straight answer.
+
+## What Does "Meta Ads Cost" Actually Mean?
+
+When people talk about Meta Ads costs, there are two separate numbers to understand:
+
+1. **Ad spend** — the money that goes directly to Facebook/Instagram to show your ads
+2. **Management fee** — what you pay an agency or freelancer to set up, run, and optimize your campaigns
+
+Both matter. A cheap management fee with an ineffective strategy will waste your ad spend. Good management maximizes what every dollar produces.
+
+## Realistic Meta Ads Budgets for BC Contractors
+
+Here's what we see working for trades businesses across Metro Vancouver and the Lower Mainland:
+
+### Starter: $500–$1,000/month ad spend
+Best for: sole operators, single-trade businesses, testing the market
+Expected results: 10–20 qualified leads/month
+Cost per lead: $30–$70
+Best for: plumbers, electricians, HVAC techs in specific neighbourhoods (Burnaby, Coquitlam, North Vancouver)
+
+### Growth: $1,000–$2,500/month ad spend
+Best for: established trades businesses wanting consistent lead flow
+Expected results: 25–50 qualified leads/month
+Cost per lead: $25–$55
+Best for: roofers, general contractors, landscapers covering Metro Vancouver
+
+### Scale: $2,500–$5,000+/month ad spend
+Best for: multi-crew operations, franchise models, or multiple trades
+Expected results: 60–120+ leads/month
+Cost per lead: $20–$45
+Best for: large contracting companies covering the entire Lower Mainland
+
+## What Affects Cost Per Lead for BC Contractors?
+
+Several factors affect how much each lead costs:
+
+**Trade type matters.** Emergency services (plumbing, HVAC) typically have lower cost per lead because the intent is high and decisions are fast. Renovation and construction projects have higher lead costs but much higher job values.
+
+**Competition in your area.** Surrey and Burnaby are highly competitive — expect higher costs. Pitt Meadows, Maple Ridge, or Abbotsford tend to have lower CPLs.
+
+**Season.** Summer (renovation season) and winter (heating/plumbing emergencies) see higher competition and costs. Spring and fall are often more efficient.
+
+**Ad quality.** Well-shot before-and-after photos and short video clips of real jobs dramatically reduce cost per lead compared to stock photos or text-heavy ads.
+
+## Is Meta Ads ROI Worth It for BC Contractors?
+
+Let's run the numbers for a plumber in Metro Vancouver:
+
+- Ad spend: $1,000/month
+- Management: $500/month
+- Total: $1,500/month
+- Leads generated: 20–30/month
+- Close rate: 30–40% (6–12 booked jobs)
+- Average job value: $400–$800
+- Monthly revenue from ads: $2,400–$9,600
+
+Even at the low end, the ROI is strong. At the high end, you're generating 6x your investment. That's why trades businesses in BC that run Meta Ads consistently don't stop — because the math works.
+
+## The Key: What Happens After the Lead
+
+The biggest mistake BC contractors make isn't the ad budget — it's the follow-up. A lead that doesn't get a callback within 30 minutes has an 80% lower chance of converting. Speed matters more than any ad setting.
+
+Make sure you have a system to respond fast: a dedicated phone number on your ads, text message follow-up, and a callback process that's faster than your competitors.
+
+## Ready to Run Meta Ads for Your BC Contractor Business?
+
+At AP DIGITAL, we specialize in [Meta Ads for BC contractors and trades businesses](https://contractor.ap-digital.ca). We handle the targeting, creative, and optimization — you focus on answering the phone.
+
+**Book a free strategy call** and get a custom budget recommendation for your trade and service area.`,
+  },
+  {
+    slug: 'hvac-marketing-vancouver-bc',
+    title: 'HVAC Marketing in Vancouver BC: How to Get More Service Calls',
+    metaTitle: 'HVAC Marketing Vancouver BC | Get More Service Calls | AP DIGITAL',
+    metaDescription: 'How HVAC companies in Vancouver BC are using Google Ads, Meta Ads, and local SEO to get more furnace, AC, and heat pump service calls year-round.',
+    excerpt: 'HVAC businesses in Metro Vancouver that dominate search and social are always booked. Here\'s the exact system.',
+    date: '2026-03-21',
+    readTime: '5 min read',
+    category: 'Trades Marketing',
+    content: `Running an HVAC business in Vancouver BC comes with a unique challenge: you're either slammed or slow. Furnace season hits in October and the phones ring off the hook. By March, it slows down. Summer AC demand is growing but still unpredictable. The HVAC companies that stay booked year-round are the ones who have cracked the marketing equation.
+
+Here's exactly how to market your Vancouver HVAC business to generate consistent service calls in every season.
+
+## Why HVAC Marketing in Vancouver Is Different
+
+Metro Vancouver's climate creates specific marketing opportunities:
+
+**Gas furnace demand is huge.** Despite BC's push toward heat pumps, the majority of Metro Vancouver homes still run on gas heat. Furnace tune-ups, repairs, and replacements are a massive revenue stream from October through March.
+
+**Heat pump momentum is building.** BC Hydro and CleanBC rebates have driven significant heat pump adoption. Marketing heat pump installations and upgrades puts you in front of a growing, motivated market.
+
+**Emergency calls are gold.** A burst pipe or a no-heat call on a cold night means someone is calling the first HVAC company they find online. If you're not showing up at the top of Google for "emergency HVAC Vancouver" — you're losing those calls to competitors.
+
+**Year-round revenue is possible.** AC tune-ups in spring, heat pump servicing in summer, furnace season in fall, emergency repairs in winter — with the right marketing, there's no slow season.
+
+## The HVAC Marketing System for Metro Vancouver
+
+### Google Ads: Your Emergency Call Machine
+
+When a homeowner's furnace breaks at 11pm in Burnaby, they're not asking friends for referrals. They're typing "furnace repair near me" into Google and calling whoever is at the top. Google Ads puts you there.
+
+High-value keywords for Vancouver HVAC:
+- "furnace repair Vancouver"
+- "emergency HVAC Burnaby"
+- "heat pump installation Metro Vancouver"
+- "AC repair Surrey BC"
+- "boiler service North Vancouver"
+
+A $1,500–$3,000/month Google Ads budget managed correctly can generate 30–60 HVAC service leads per month in Metro Vancouver.
+
+### Google Business Profile: Own the Map Pack
+
+The three businesses in Google's local map pack get 50%+ of all clicks for local service searches. For HVAC in Vancouver, ranking in the map pack for your service areas is worth thousands of dollars per month in booked jobs.
+
+Optimize your GBP for:
+- Every city in your service area (Vancouver, Burnaby, Surrey, Richmond, North Van, Coquitlam)
+- All service types (furnace, AC, heat pump, boiler, ductwork)
+- Weekly photo updates of completed jobs
+- Consistent 5-star reviews — aim for 2+ new reviews per month
+
+### Meta Ads: Seasonal Campaigns That Fill Your Schedule
+
+Facebook and Instagram ads work differently than Google — you're reaching homeowners before they have a problem, not during one. This is perfect for:
+
+- **Fall furnace tune-up campaigns** ("Get your furnace ready for winter — book a tune-up from $X")
+- **Spring AC campaigns** ("Beat the heat — book your AC service now before summer")
+- **Heat pump upgrade campaigns** ("BC rebates available — get up to $X back on a new heat pump installation")
+
+These seasonal campaigns, run 4–6 weeks before peak demand, fill your schedule before the competition even starts advertising.
+
+### Before/After Content on Social Media
+
+HVAC transformations are surprisingly compelling content. An old, inefficient furnace replaced with a modern unit. A heat pump installation that cut a family's energy bills. A complete ductwork replacement. These before-and-after posts perform extremely well on Instagram and Facebook and build trust with Vancouver homeowners who are considering upgrades.
+
+## What Vancouver HVAC Companies Can Expect
+
+Based on results with HVAC clients in BC:
+
+- **Month 1:** Google Ads live, GBP optimized, first service calls within 1–2 weeks
+- **Month 2:** 30–50 leads/month, seasonal campaigns showing strong CPL
+- **Month 3+:** Consistent lead flow, seasonal spikes managed, pipeline building for installations
+
+## Ready to Fill Your HVAC Schedule in Vancouver?
+
+AP DIGITAL helps HVAC companies across Metro Vancouver build lead generation systems that work year-round. We handle Google Ads, Meta Ads, and content — so your phone keeps ringing. Check out our [BC trades marketing](https://trades.ap-digital.ca) and [contractor marketing](https://contractor.ap-digital.ca) pages to learn more.
+
+**Book your free strategy call** and get a custom HVAC marketing plan for your Vancouver service area.`,
+  },
+  {
+    slug: 'coaching-clients-bc',
+    title: 'How to Get More Coaching Clients in BC Using Meta Ads (2026)',
+    metaTitle: 'How to Get More Coaching Clients in BC | Meta Ads Guide | AP DIGITAL',
+    metaDescription: 'Struggling to get consistent coaching clients in BC? Learn how life, business, and fitness coaches across Metro Vancouver are using Meta Ads to fill their practice.',
+    excerpt: 'The exact Meta Ads system BC coaches are using to get consistent clients — without relying on referrals or cold outreach.',
+    date: '2026-03-22',
+    readTime: '6 min read',
+    category: 'Coaching Marketing',
+    content: `If you're a coach in BC — whether you're a life coach, business coach, fitness coach, or health coach — you already know the hardest part isn't delivering results. It's getting a consistent flow of clients in the first place.
+
+Most coaches in Metro Vancouver rely on referrals, word of mouth, or cold outreach on LinkedIn and Instagram. These methods work — but they're unpredictable. You have no control over volume, quality, or timing. One slow month can throw your entire business into a tailspin.
+
+Meta Ads — Facebook and Instagram advertising — is the most reliable system for BC coaches to generate consistent, qualified leads. Here's exactly how it works.
+
+## Why Meta Ads Work So Well for Coaches in BC
+
+The coaching market has a unique dynamic: your ideal clients are not searching for you on Google. They don't type "life coach Vancouver" when they're struggling with a career decision at 10pm on a Tuesday. They're scrolling Instagram or Facebook — and the right ad, at the right moment, can stop them mid-scroll and make them think: "This is exactly what I need."
+
+That's the power of Meta Ads for coaches. You're not waiting for someone to find you. You're putting yourself in front of the right people at exactly the right emotional moment.
+
+## The Coaching Client Acquisition System
+
+### Step 1: Define Your Dream Client
+
+The biggest mistake coaches make with Meta Ads is being too broad. "I help people improve their lives" is not a targetable audience. The more specific you are about who you serve, the lower your cost per lead and the higher your conversion rate.
+
+Examples of high-performing coaching niches in Metro Vancouver:
+
+- **Business coaches:** targeting founders and solo operators in BC who've been in business 1–3 years and are hitting a growth ceiling
+- **Life coaches:** targeting professionals aged 28–45 in Vancouver who are career-transitioning or dealing with burnout
+- **Fitness coaches:** targeting women aged 30–50 in Metro Vancouver who want sustainable weight loss, not gym culture
+- **Health coaches:** targeting people recently diagnosed with a chronic condition who want lifestyle-based support
+
+The more specific your niche, the better your Meta Ads will perform.
+
+### Step 2: The Lead Magnet Strategy
+
+The highest-converting Meta Ads for coaches don't ask people to book a call immediately. They offer something valuable for free first — a lead magnet — to build trust before the ask.
+
+Effective lead magnets for BC coaches:
+
+- "Free 5-day email course: How to get unstuck in your business"
+- "Download: The 10 habits of clients who lose 20lbs and keep it off"
+- "Free worksheet: Identify your core values and design your ideal life"
+- "Video training: How to scale past $10K/month as a BC service business"
+
+When someone downloads your lead magnet, they've self-identified as your ideal client. You now have permission to follow up, nurture, and eventually invite them to a discovery call.
+
+### Step 3: The Discovery Call Funnel
+
+Once you have leads coming in from your lead magnet, the path to a paying client typically looks like this:
+
+1. Lead downloads freebie from your Meta Ad
+2. They receive an automated email sequence delivering value and building trust
+3. After 3–5 emails, they're invited to book a free discovery call
+4. You have a 30-minute call and present your offer
+5. They become a client
+
+With a well-built funnel and good follow-up, BC coaches typically see a 20–35% conversion rate from discovery call to paid client. If your offer is $1,500–$5,000, the math gets compelling very quickly.
+
+### Step 4: Retargeting — Capturing the "Almost Ready" Clients
+
+Not everyone who downloads your freebie will book a call immediately. But many of them will be ready in 30–60 days. Retargeting ads keep you in front of these warm leads with:
+
+- Client testimonials and transformation stories
+- Behind-the-scenes content showing your coaching process
+- Urgency offers ("Only 2 spots left for April")
+- Direct "Book a call" CTAs for leads who have been in your funnel for 2+ weeks
+
+Retargeting ads typically cost 60–80% less than cold audience ads because you're reaching people who already know who you are.
+
+## What BC Coaches Can Expect from Meta Ads
+
+Based on results with coaching clients in BC:
+
+- **Month 1:** Funnel built, lead magnet live, first leads within 1–2 weeks of launch
+- **Month 2:** 20–40 leads/month, discovery calls being booked, first clients from ads
+- **Month 3+:** Consistent lead flow, retargeting compounding results, cost per client decreasing as data builds
+
+A typical result: a BC life coach spending $800/month on ad spend generates 25–35 leads/month, books 8–12 discovery calls, and converts 2–4 new clients — at $2,000–$5,000 per client. The ROI speaks for itself.
+
+## Ready to Get Consistent Coaching Clients in BC?
+
+AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We build your entire lead generation system — the ads, the funnel, and the follow-up strategy. Visit our [BC coaching marketing page](https://coach.ap-digital.ca) to learn more.
+
+**Book your free strategy call** and let's map out a client acquisition system for your coaching practice.`,
+  },
+  {
+    slug: 'plumber-marketing-metro-vancouver',
+    title: 'Plumber Marketing in Metro Vancouver: Get More Service Calls',
+    metaTitle: 'Plumber Marketing Metro Vancouver | More Service Calls | AP DIGITAL',
+    metaDescription: 'How plumbers in Metro Vancouver are using Google Ads, Meta Ads, and local SEO to get more calls from Burnaby, Surrey, Coquitlam, and across the Lower Mainland.',
+    excerpt: 'The plumbing market in Metro Vancouver is competitive. Here\'s the digital marketing system getting plumbers booked 4–6 weeks out.',
+    date: '2026-03-23',
+    readTime: '5 min read',
+    category: 'Trades Marketing',
+    content: `Plumbing is one of the most competitive trades markets in Metro Vancouver. Every neighbourhood has multiple plumbers competing for the same jobs — and the ones who consistently win aren't necessarily the most experienced. They're the ones who show up first online when a homeowner needs help.
+
+Whether you're a solo plumber in Burnaby, a two-crew operation in Surrey, or a growing plumbing company covering the entire Lower Mainland, this guide covers the digital marketing system that's working right now for Vancouver plumbers.
+
+## The Metro Vancouver Plumbing Market in 2026
+
+A few realities about the Vancouver plumbing market that should shape your marketing:
+
+**Emergency calls are high value.** A burst pipe, a backed-up drain, or a hot water tank failure means someone is calling right now and will pay a premium for fast response. These are the highest-converting leads in plumbing — and they almost always come from Google.
+
+**The renovation market is huge.** Metro Vancouver's aging housing stock means massive demand for bathroom and kitchen renovations, pipe replacements, and water line upgrades. These higher-value jobs come from homeowners doing research — and they compare multiple contractors.
+
+**Reviews drive decisions.** Vancouver homeowners check Google reviews before calling anyone. A plumber with 50+ reviews and a 4.8 rating gets the call over a plumber with 10 reviews at 4.3, every single time.
+
+**Local trust wins.** Homeowners want a local plumber — someone who knows their neighbourhood, shows up fast, and stands behind their work. Your marketing needs to emphasize your local roots.
+
+## The Vancouver Plumber Marketing System
+
+### Google Ads: Emergency Leads on Demand
+
+For emergency plumbing calls, Google Ads is unmatched. When a pipe bursts in Burnaby at 7am, the homeowner searches "emergency plumber Burnaby" and calls whoever appears first. Google Ads puts you there — immediately.
+
+High-performing keywords for Metro Vancouver plumbers:
+- "emergency plumber Vancouver"
+- "plumber Burnaby"
+- "drain cleaning Surrey"
+- "hot water tank replacement Coquitlam"
+- "plumbing repair North Vancouver"
+- "bathroom renovation plumber Richmond"
+
+With a $1,000–$2,000/month budget, a well-managed Google Ads campaign generates 20–40 plumbing leads per month across Metro Vancouver.
+
+### Google Business Profile: The Local Map Pack
+
+The Google Map Pack — the three businesses shown on a map at the top of local search results — captures over 50% of clicks for "plumber near me" searches. Getting into that map pack for your service areas is one of the most valuable things you can do for your plumbing business.
+
+To rank in Vancouver's plumbing map pack:
+- Add every city you serve to your service area (Vancouver, Burnaby, Surrey, Coquitlam, Richmond, North Vancouver, West Vancouver, New Westminster, Port Moody, Maple Ridge)
+- Collect reviews consistently — ask every happy customer the day the job is done
+- Add photos of completed plumbing jobs weekly
+- Post updates through the GBP Posts feature monthly
+- Respond to every review within 24 hours
+
+### Meta Ads: Renovation and Upgrade Campaigns
+
+Google Ads handle emergency calls. Facebook and Instagram ads handle the bigger, planned jobs. For Vancouver plumbers, effective Meta Ads campaigns include:
+
+- **Hot water tank campaigns:** "Is your hot water tank over 10 years old? Get a free quote on a new tank installation."
+- **Renovation targeting:** Target homeowners in Metro Vancouver who have shown interest in home renovation, targeting ages 35–65
+- **Before/after content:** Photos of bathroom renovations, new pipe installations, and sump pump setups perform exceptionally well
+
+### Social Proof: Reviews and Content
+
+For plumbers in Metro Vancouver, social proof is your most powerful marketing asset after ads. The minimum to compete effectively:
+
+- 30+ Google reviews with 4.5+ rating
+- Professional photos of completed work on your website and Google profile
+- A few before-and-after posts on Instagram or Facebook showing real Vancouver jobs
+
+## What Metro Vancouver Plumbers Can Expect
+
+- **Week 1–2:** Google Ads live, GBP optimized, first calls coming in
+- **Month 1:** 15–30 qualified leads, 5–15 booked jobs
+- **Month 3+:** Consistent lead flow, growing review count, Meta Ads adding renovation pipeline
+
+## Ready to Get More Plumbing Jobs in Metro Vancouver?
+
+AP DIGITAL specializes in marketing for trades and contractors across the Lower Mainland. We build the full system — Google Ads, Meta Ads, content, and local SEO — and we measure success in booked jobs. See our [BC trades marketing page](https://trades.ap-digital.ca) and [contractor marketing page](https://contractor.ap-digital.ca).
+
+**Book your free strategy call** and get a custom marketing plan for your Vancouver plumbing business.`,
+  },
+  {
+    slug: 'electrician-leads-bc',
+    title: 'How BC Electricians Get More Leads with Digital Marketing (2026)',
+    metaTitle: 'Electrician Leads BC | Digital Marketing for Electricians | AP DIGITAL',
+    metaDescription: 'How electricians across BC are using Google Ads, Meta Ads, and local SEO to get consistent residential and commercial leads in Metro Vancouver and the Lower Mainland.',
+    excerpt: 'BC electricians relying on referrals are leaving serious money on the table. Here\'s the digital system that keeps the phone ringing.',
+    date: '2026-03-24',
+    readTime: '5 min read',
+    category: 'Trades Marketing',
+    content: `Electrical work is one of the most in-demand trades in Metro Vancouver. New builds, EV charger installations, panel upgrades, smart home wiring — the demand is there. But so is the competition. There are thousands of licensed electricians in BC, and the ones consistently landing the best jobs are the ones showing up online when homeowners and project managers search.
+
+If you're a BC electrician relying mostly on referrals and repeat clients, this guide will show you exactly how to build a digital lead generation system that keeps your crew busy year-round.
+
+## The BC Electrical Market in 2026
+
+A few trends shaping the electrical market in Metro Vancouver right now:
+
+**EV charger demand is exploding.** As electric vehicle adoption accelerates across BC, residential EV charger installations have become one of the highest-demand electrical services in Metro Vancouver. Homeowners search specifically for electricians who specialize in this — and there's relatively low competition for these search terms.
+
+**Panel upgrades are everywhere.** Metro Vancouver's aging housing stock means thousands of homes still running on outdated 100-amp panels. With more appliances, EVs, and home offices demanding power, panel upgrades are a high-value, steady revenue stream.
+
+**New construction is active.** Despite the housing slowdown, multi-family construction in the Lower Mainland continues. Commercial and residential new builds represent significant contract opportunities for BC electricians with the right marketing presence.
+
+**Smart home installations are growing.** Vancouver homeowners increasingly want smart lighting, automated systems, and integrated security wiring — premium services with premium margins.
+
+## The Digital Marketing System for BC Electricians
+
+### Google Ads: The Fastest Path to New Leads
+
+For high-intent electrical searches — "electrician near me," "panel upgrade Surrey," "EV charger installation Burnaby" — Google Ads delivers leads immediately. When a homeowner needs an electrician, they search Google. Being at the top of that search is the single highest-ROI marketing channel for BC electricians.
+
+Top-performing Google Ads keywords for BC electricians:
+- "electrician Vancouver BC"
+- "panel upgrade Metro Vancouver"
+- "EV charger installation Burnaby"
+- "residential electrician Surrey"
+- "electrical repair Coquitlam"
+- "smart home wiring North Vancouver"
+- "commercial electrician Lower Mainland"
+
+A $1,000–$2,500/month Google Ads budget generates 20–50 qualified electrical leads per month across Metro Vancouver.
+
+### Google Business Profile: The Local SEO Foundation
+
+Ranking in Google's local map pack for electrical searches in your service area is worth thousands of dollars per month in booked jobs. The electricians who dominate local search in Metro Vancouver have invested in their Google Business Profile.
+
+Optimize your GBP for maximum results:
+- List every city in your service area — Vancouver, Burnaby, Surrey, Richmond, Coquitlam, North Vancouver, Langley, Abbotsford
+- Add every service you offer — panel upgrades, EV chargers, smart home, commercial, new construction
+- Upload photos of completed jobs weekly (panel upgrades, EV charger installs, new construction work)
+- Build your review count — aim for 2+ new Google reviews per month
+- Post updates monthly via GBP Posts featuring recent jobs or seasonal tips
+
+### Meta Ads: Proactive Lead Generation
+
+Facebook and Instagram ads reach homeowners before they're actively searching — positioning you as the go-to electrician when they do need help. For BC electricians, the most effective Meta Ad campaigns:
+
+**EV Charger campaigns:** "Own a Tesla or EV in Metro Vancouver? Get a Level 2 home charger installed by a certified BC electrician. Free quote." This campaign targets EV owners directly and consistently produces low-cost, high-value leads.
+
+**Panel upgrade campaigns:** "Is your home still on a 100-amp panel? Most Metro Vancouver homes need an upgrade. Get a free assessment." Targets homeowners in older Vancouver-area neighbourhoods.
+
+**Seasonal campaigns:** "Protect your home this winter — get your electrical system inspected before the cold hits." Seasonal angles create urgency and drive bookings.
+
+### Instagram and Facebook Content
+
+For electricians, social content might seem unnecessary — but it builds the trust that converts leads into booked jobs. What works:
+
+- Before/after panel upgrades
+- EV charger installation time-lapses
+- "Did you know?" posts about electrical safety for Metro Vancouver homeowners
+- Photos of completed commercial projects
+
+You don't need to post daily. Two or three posts per week showing real local work is enough to maintain credibility and reinforce your ads.
+
+## What BC Electricians Can Expect
+
+- **Week 1–2:** Google Ads and GBP optimized, first leads arriving
+- **Month 1:** 20–40 leads, 8–15 booked jobs
+- **Month 3+:** Consistent pipeline, EV charger and panel upgrade leads compounding, review count growing
+
+## Ready to Get More Electrical Jobs in BC?
+
+AP DIGITAL builds complete digital marketing systems for electricians and trades businesses across Metro Vancouver and the Lower Mainland. We handle Google Ads, Meta Ads, and local SEO — so your phone keeps ringing and your crew stays busy. See our dedicated [BC trades marketing page](https://trades.ap-digital.ca) and [contractor marketing page](https://contractor.ap-digital.ca).
+
+**Book your free strategy call** and get a custom lead generation plan for your BC electrical business.`,
+  },
+];
+
+blogPosts.unshift(...extraPosts);
