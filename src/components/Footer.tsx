@@ -21,7 +21,7 @@ const Footer = () => {
   const nichePages = [
     { label: 'Trades Marketing BC', href: 'https://trades.ap-digital.ca' },
     { label: 'Contractor Marketing BC', href: 'https://contractor.ap-digital.ca' },
-    { label: 'Coaching Marketing BC', href: 'https://coaching.ap-digital.ca' },
+    { label: 'Coaching Marketing BC', href: 'https://coach.ap-digital.ca' },
   ];
 
   const legal = [

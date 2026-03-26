@@ -36,7 +36,7 @@ const Header = () => {
     { href: '/real-estate-marketing', label: 'Real Estate', external: false },
     { href: 'https://trades.ap-digital.ca', label: 'Trades Marketing BC', external: true },
     { href: 'https://contractor.ap-digital.ca', label: 'Contractor Marketing BC', external: true },
-    { href: 'https://coaching.ap-digital.ca', label: 'Coaching Marketing BC', external: true },
+    { href: 'https://coach.ap-digital.ca', label: 'Coaching Marketing BC', external: true },
   ];
 
   const isHomePage = location.pathname === '/';
