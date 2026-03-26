@@ -46,7 +46,14 @@ export const organizationSchema = {
     "@type": "Country",
     "name": "Canada"
   },
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "14",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
 };
 
 export const getWebSiteSchema = () => ({
