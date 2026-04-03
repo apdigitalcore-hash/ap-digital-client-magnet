@@ -1083,7 +1083,7 @@ Several factors affect how much each lead costs:
 
 **Trade type matters.** Emergency services (plumbing, HVAC) typically have lower cost per lead because the intent is high and decisions are fast. Renovation and construction projects have higher lead costs but much higher job values.
 
-**Competition in your area.** Surrey and Burnaby are highly competitive — expect higher costs. Pitt Meadows, Maple Ridge, or Abbotsford tend to have lower CPLs.
+**Competition in your area.** Surrey and Burnaby are highly competitive — expect higher costs. **Competition in your area.** Surrey and Burnaby are highly competitive — expect higher costs. Maple Ridge, or Abbotsford tend to have lower CPLs.
 
 **Season.** Summer (renovation season) and winter (heating/plumbing emergencies) see higher competition and costs. Spring and fall are often more efficient.
 
