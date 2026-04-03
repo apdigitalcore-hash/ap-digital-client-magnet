@@ -76,7 +76,7 @@ const SEOHead = ({
 
     // Geo Tags
     updateMeta('geo.region', 'CA-BC');
-    updateMeta('geo.placename', 'Pitt Meadows');
+    updateMeta('geo.placename', 'Vancouver');
     updateMeta('geo.position', '49.2214;-122.6899');
     updateMeta('ICBM', '49.2214, -122.6899');
 
