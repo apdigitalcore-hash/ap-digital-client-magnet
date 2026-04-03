@@ -77,8 +77,8 @@ const SEOHead = ({
     // Geo Tags
     updateMeta('geo.region', 'CA-BC');
     updateMeta('geo.placename', 'Vancouver');
-    updateMeta('geo.position', '49.2214;-122.6899');
-    updateMeta('ICBM', '49.2214, -122.6899');
+    updateMeta('geo.position', '49.2827;-123.1207');
+    updateMeta('ICBM', '49.2827, -123.1207');
 
     // Structured Data
     if (structuredData) {
