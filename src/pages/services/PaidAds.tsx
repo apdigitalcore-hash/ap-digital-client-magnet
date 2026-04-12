@@ -7,8 +7,8 @@ import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Paid Ads Agency Canada | Facebook & Google Ads That Generate Leads | AP DIGITAL';
-const DESC = 'AP DIGITAL runs high-converting Facebook, Instagram, and Google ad campaigns for Canadian businesses. Get predictable leads every week with data-driven paid advertising.';
+const TITLE = 'Paid Ads Agency Vancouver | Meta & Google Ads | AP Digital';
+const DESC = 'Run high-converting Meta Ads & Google Ads with AP Digital. We manage paid advertising for small businesses in Vancouver, BC. Results from month one. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/services/paid-ads';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -54,13 +54,14 @@ const PaidAds = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Paid Ads That Bring You Leads <span className="text-gradient">Every Single Week</span>
+          Paid Ads Management for Canadian Small Business
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

@@ -22,6 +22,10 @@ import CoachingMarketing from "./pages/niches/CoachingMarketing";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Surrey from "./pages/locations/Surrey";
+import Burnaby from "./pages/locations/Burnaby";
+import Langley from "./pages/locations/Langley";
+import Coquitlam from "./pages/locations/Coquitlam";
 
 const queryClient = new QueryClient();
 
@@ -50,6 +54,10 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/surrey" element={<Surrey />} />
+            <Route path="/burnaby" element={<Burnaby />} />
+            <Route path="/langley" element={<Langley />} />
+            <Route path="/coquitlam" element={<Coquitlam />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -7,8 +7,8 @@ import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Lead Generation Agency Canada | Predictable Leads for Local Business | AP DIGITAL';
-const DESC = 'AP DIGITAL builds predictable lead generation systems for Canadian local businesses. Stop chasing clients and start filling your calendar with qualified prospects every week.';
+const TITLE = 'Lead Generation Vancouver BC | AP Digital';
+const DESC = 'Stop waiting for referrals. AP Digital builds predictable lead generation systems for salons, trades, realtors & coaches in Vancouver, BC. From $500/month.';
 const CANONICAL = 'https://ap-digital.ca/services/lead-generation';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -54,13 +54,14 @@ const LeadGeneration = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Predictable Lead Generation So You <span className="text-gradient">Never Chase Clients Again</span>
+          Lead Generation Agency Canada — Predictable Leads Every Month
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

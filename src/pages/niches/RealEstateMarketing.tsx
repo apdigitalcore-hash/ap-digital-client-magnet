@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Real Estate Marketing Agency Canada | Leads for Realtors | AP Digital';
-const DESC = 'AP Digital generates real estate leads across Canada using Meta Ads & social content. Serving realtors, brokerages & investors. Month-to-month.';
+const TITLE = 'Real Estate Marketing Vancouver | AP Digital';
+const DESC = "Get consistent buyer & seller leads with AP Digital's real estate marketing. Meta Ads, social media & paid ads for Vancouver realtors. No lock-in contracts.";
 const CANONICAL = 'https://ap-digital.ca/real-estate-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -37,16 +37,20 @@ const results = [
 
 const faqs = [
   {
-    question: 'What kind of leads will I get from Facebook and Instagram ads?',
-    answer: "We generate buyer and seller leads through targeted lead form ads. These are people in your market who have actively expressed interest in buying or selling a home. We qualify them through the ad funnel so you're only talking to serious prospects.",
+    question: 'How do real estate agents get more leads in Vancouver?',
+    answer: 'Meta Ads and Google Ads targeting buyers and sellers in your farm area are the most effective. AP Digital builds and manages these campaigns for Vancouver realtors.',
   },
   {
-    question: 'How does personal branding help me sell more homes?',
-    answer: "In real estate, people choose agents they know, like, and trust. A strong personal brand on social media — through Reels, market updates, and behind-the-scenes content — positions you as the go-to agent in your area. When someone is ready to buy or sell, you're the first person they think of.",
+    question: 'How much do real estate leads cost?',
+    answer: 'Cost per lead varies by area and competition. Most realtors start with $500–$1,000/month in ad spend. AP Digital tracks cost per lead transparently.',
   },
   {
-    question: 'Do you work with teams or just individual agents?',
-    answer: "We work with both individual agents and real estate teams. For teams, we can create campaigns that generate leads for the team while also building individual agent brands. We'll customize the strategy based on your team structure and goals.",
+    question: 'Is there a contract?',
+    answer: 'No long-term contracts. Month-to-month only.',
+  },
+  {
+    question: 'Do you work with new agents?',
+    answer: 'Yes. AP Digital works with both new and experienced realtors across Metro Vancouver.',
   },
 ];
 
@@ -82,13 +86,14 @@ const RealEstateMarketing = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Real Estate Marketing That Brings Qualified Buyers and Sellers <span className="text-gradient">to You</span>
+          Real Estate Marketing Canada — Leads for Agents &amp; Brokerages
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">

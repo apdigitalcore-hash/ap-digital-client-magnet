@@ -2,12 +2,12 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { blogPosts } from '@/lib/blogPosts';
+import { allPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Blog | AP Digital — Tips for Salons, Trades & Realtors';
-const DESC = 'Marketing tips, ad strategies & lead generation guides for Canadian salons, trades businesses, realtors & coaches. Published by AP Digital.';
+const TITLE = 'Marketing Tips for Small Business Canada | AP Digital Blog';
+const DESC = 'Free marketing guides for salons, trades, real estate agents & coaches in Canada. Tips on paid ads, social media, lead generation & growing your business.';
 const CANONICAL = 'https://ap-digital.ca/blog';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -41,20 +41,21 @@ const Blog = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="min-h-screen bg-background pt-28 pb-20">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-          The <span className="text-teal">AP DIGITAL</span> Blog
+          Digital Marketing Blog — Tips for Salons, Trades &amp; Real Estate
         </h1>
         <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
           Proven strategies to help local businesses get more leads, more clients, and more revenue.
         </p>
 
         <div className="flex flex-col gap-6">
-          {blogPosts.map((post) => (
+          {allPosts.map((post) => (
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}

@@ -14,8 +14,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'how-to-get-more-salon-clients',
     title: 'How to Get More Salon Clients in 2026 Using Social Media and Paid Ads',
-    metaTitle: 'How to Get More Salon Clients in 2026 | AP DIGITAL',
-    metaDescription: 'Learn how salons across Canada are using social media and paid ads to get consistent new bookings every week. Free strategy call available.',
+    metaTitle: 'How to Get More Salon Clients in 2026 | AP Digital',
+    metaDescription: 'Struggling to fill your appointment book? Here are proven strategies to get more salon clients using social media, paid ads & referrals in Vancouver, BC.',
     excerpt: 'Learn how salons across Canada are using social media and paid ads to get consistent new bookings every week.',
     date: '2026-03-10',
     readTime: '5 min read',
@@ -69,8 +69,8 @@ At AP DIGITAL, we specialize in helping salons across Canada build their online 
   {
     slug: 'how-to-market-a-trades-business-online',
     title: 'How to Market Your Trades Business Online and Get More Jobs',
-    metaTitle: 'How to Market a Trades Business Online in 2026 | AP DIGITAL',
-    metaDescription: 'Learn how trades businesses across Canada are using Google Ads, Facebook Ads, social media content, and Google reviews to generate consistent leads and book more jobs.',
+    metaTitle: 'How to Market a Trades Business Online in Canada',
+    metaDescription: 'A practical guide to online marketing for tradespeople in Canada. Learn how plumbers, electricians & HVAC techs get leads with Google Ads, Meta Ads & SEO.',
     excerpt: 'Discover why most trades businesses struggle with marketing and how to fix it with Google Ads, social media, and a strong review strategy.',
     date: '2026-03-12',
     readTime: '6 min read',
@@ -130,8 +130,8 @@ At AP DIGITAL, we specialize in helping trades businesses across Canada get more
   {
     slug: 'real-estate-agent-social-media-tips',
     title: '7 Social Media Tips Every Real Estate Agent in Canada Needs in 2026',
-    metaTitle: 'Social Media Tips for Real Estate Agents in Canada 2026 | AP DIGITAL',
-    metaDescription: 'Discover 7 proven social media tips for real estate agents in Canada. Learn how to build your personal brand, film listing videos, and generate buyer and seller leads online.',
+    metaTitle: 'Social Media Tips for Real Estate Agents Canada | AP Digital',
+    metaDescription: 'Want more buyer & seller leads from social media? Here are the top social media strategies for Canadian real estate agents that generate leads in 2026.',
     excerpt: '7 actionable social media strategies to help Canadian real estate agents generate more leads and build a standout personal brand in 2026.',
     date: '2026-03-12',
     readTime: '6 min read',
@@ -197,8 +197,8 @@ At AP DIGITAL, we help real estate agents across Canada build powerful personal 
   {
     slug: 'how-much-does-social-media-marketing-cost-canada',
     title: 'How Much Does Social Media Marketing Cost in Canada in 2026?',
-    metaTitle: 'How Much Does Social Media Marketing Cost in Canada? | AP DIGITAL',
-    metaDescription: 'Find out how much social media marketing costs in Canada in 2026. We break down agency retainer pricing from $500 to $5,000/month and what you should expect at each level.',
+    metaTitle: 'How Much Does Social Media Marketing Cost in Canada?',
+    metaDescription: 'Wondering what social media marketing costs in Canada? We break down agency fees, ad spend & DIY options so you know exactly what to budget in 2026.',
     excerpt: 'A transparent breakdown of social media marketing costs in Canada — from budget packages to full-service retainers — and what you should expect at every price point.',
     date: '2026-03-12',
     readTime: '7 min read',
@@ -268,8 +268,8 @@ At AP DIGITAL, we work with businesses across Canada to build custom social medi
   {
     slug: 'best-ads-platform-for-small-business-canada',
     title: 'Facebook Ads vs Google Ads: Which Is Better for Small Business in Canada?',
-    metaTitle: 'Facebook Ads vs Google Ads for Small Business Canada | AP DIGITAL',
-    metaDescription: 'Facebook Ads vs Google Ads — which platform delivers better results for small businesses in Canada? Compare costs, lead quality, and which niches perform best on each.',
+    metaTitle: 'Best Ads Platform for Small Business in Canada 2026',
+    metaDescription: 'Meta Ads or Google Ads — which is better for your small business in Canada? We compare both platforms so you can pick the right one for your budget & goals.',
     excerpt: 'A head-to-head comparison of Facebook Ads and Google Ads for Canadian small businesses — including costs per lead, best niches, and when to use each platform.',
     date: '2026-03-12',
     readTime: '6 min read',
@@ -325,8 +325,8 @@ At AP DIGITAL, we help small businesses across Canada build profitable advertisi
   {
     slug: 'social-media-marketing-cost-canada',
     title: 'How Much Does Social Media Marketing Cost in Canada? (2025 Honest Guide)',
-    metaTitle: 'How Much Does Social Media Marketing Cost in Canada? (2025 Guide) | AP DIGITAL',
-    metaDescription: "Wondering how much social media marketing costs in Canada? Here's an honest breakdown of pricing for small businesses in 2025.",
+    metaTitle: 'Social Media Marketing Cost Canada 2026 | AP Digital',
+    metaDescription: "Full breakdown of social media marketing costs for Canadian businesses — from DIY to full-service agency. Know what you're paying for before you spend a dollar.",
     excerpt: "An honest breakdown of social media marketing pricing for Canadian small businesses in 2025 — freelancers, in-house hires, and agencies compared.",
     date: '2025-03-17',
     readTime: '6 min read',
@@ -372,8 +372,8 @@ At AP DIGITAL, we specialize in social media marketing for salons, real estate a
   {
     slug: 'facebook-ads-vs-google-ads',
     title: 'Facebook Ads vs Google Ads: Which One Is Right for Your Business?',
-    metaTitle: 'Facebook Ads vs Google Ads: Which One Is Right for Your Business? | AP DIGITAL',
-    metaDescription: "Facebook Ads or Google Ads — which is better for your business? We break down the differences so Canadian businesses can invest their ad budget wisely.",
+    metaTitle: 'Facebook Ads vs Google Ads: Which Is Better for You?',
+    metaDescription: "Facebook Ads vs Google Ads — what's the difference and which should you run? AP Digital breaks down both platforms for Canadian small businesses in 2026.",
     excerpt: "Facebook Ads or Google Ads? We compare both platforms so Canadian small businesses can choose the right one for their goals and budget.",
     date: '2025-03-17',
     readTime: '5 min read',
@@ -423,8 +423,8 @@ At AP DIGITAL, we run Facebook, Instagram, and Google Ads for businesses across 
   {
     slug: 'real-estate-social-media-tips',
     title: '5 Social Media Tips Every Canadian Realtor Needs in 2025',
-    metaTitle: '5 Social Media Tips Every Canadian Realtor Needs in 2025 | AP DIGITAL',
-    metaDescription: "Struggling to get real estate leads on social media? These 5 tips help Canadian realtors attract buyers and sellers consistently in 2025.",
+    metaTitle: 'Real Estate Social Media Tips That Actually Work | AP Digital',
+    metaDescription: "Stop posting just for likes. Here are real estate social media strategies that generate actual buyer & seller leads for Canadian realtors in 2026.",
     excerpt: "5 proven social media strategies helping Canadian realtors generate more buyer and seller leads in 2025.",
     date: '2025-03-17',
     readTime: '5 min read',
@@ -458,8 +458,8 @@ At AP DIGITAL, we build complete social media marketing systems for Canadian rea
   {
     slug: 'email-marketing-vs-social-media',
     title: 'Email Marketing vs Social Media Marketing: Which Is Better for Canadian Small Businesses?',
-    metaTitle: 'Email Marketing vs Social Media Marketing | AP DIGITAL',
-    metaDescription: 'Email marketing or social media — which delivers better ROI for Canadian small businesses? We compare costs, results, and when to use each.',
+    metaTitle: 'Email Marketing vs Social Media: What Works in 2026?',
+    metaDescription: 'Email or social media — where should your business focus? We compare both channels for Canadian small businesses so you can make the smartest marketing choice.',
     excerpt: 'Should you invest in email marketing or social media? We compare costs, ROI, and strategy so Canadian small businesses can make the right call.',
     date: '2025-07-10',
     readTime: '6 min read',
@@ -543,8 +543,8 @@ At AP DIGITAL, we help Canadian small businesses build complete marketing system
   {
     slug: 'best-ads-for-trades-businesses-canada',
     title: 'The Best Ads Strategy for Trades Businesses in Canada (2025)',
-    metaTitle: 'Best Ads for Trades Businesses in Canada | AP DIGITAL',
-    metaDescription: 'Plumber, electrician, roofer, or HVAC tech? Here\'s exactly how to run Facebook and Google Ads that generate real jobs — not just clicks.',
+    metaTitle: 'Best Ads for Trades Businesses in Canada | AP Digital',
+    metaDescription: 'Which ads platform works best for plumbers, HVAC, electricians & roofers in Canada? We break down Meta Ads vs Google Ads for trades businesses in 2026.',
     excerpt: 'Learn how Canadian trades businesses can use Facebook and Google Ads to generate consistent, high-quality leads in 2025.',
     date: '2025-08-05',
     readTime: '7 min read',
@@ -650,7 +650,9 @@ At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) spe
 ];
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
-  blogPosts.find((p) => p.slug === slug);
+  [...blogPosts, ...newPosts].find((p) => p.slug === slug);
+
+export const allPosts = [...blogPosts, ...newPosts];
 
 
 // ─── NEW VANCOUVER-SPECIFIC BLOG POSTS ───────────────────────────────────────
@@ -659,8 +661,8 @@ const newPosts: BlogPost[] = [
   {
     slug: 'digital-marketing-agency-vancouver-bc',
     title: 'How to Choose the Right Digital Marketing Agency in Vancouver BC',
-    metaTitle: 'How to Choose a Digital Marketing Agency in Vancouver BC | AP DIGITAL',
-    metaDescription: 'Looking for a digital marketing agency in Vancouver BC? Here\'s exactly what to look for, what to avoid, and how AP DIGITAL helps local businesses get real leads.',
+    metaTitle: 'Digital Marketing Agency Vancouver BC | AP Digital',
+    metaDescription: 'Looking for a digital marketing agency in Vancouver, BC? AP Digital helps local businesses get more leads with paid ads & social media. No contracts.',
     excerpt: 'Not all Vancouver marketing agencies are created equal. Here\'s what to look for before you sign any contract.',
     date: '2026-03-15',
     readTime: '6 min read',
@@ -739,8 +741,8 @@ Every client gets a custom strategy built around their specific neighbourhood, t
   {
     slug: 'salon-marketing-vancouver-bc',
     title: 'Salon Marketing in Vancouver BC: How to Fill Your Chair Every Week',
-    metaTitle: 'Salon Marketing Vancouver BC | Fill Your Chair Every Week | AP DIGITAL',
-    metaDescription: 'Discover how Vancouver BC salons are using Instagram Reels, Facebook Ads, and local SEO to get consistent bookings. Free strategy call with AP DIGITAL.',
+    metaTitle: 'Salon Marketing Vancouver BC: Get More Clients | AP Digital',
+    metaDescription: 'The complete guide to salon marketing in Vancouver, BC. Learn how to use Instagram ads, Google Ads & local SEO to fill your bookings week after week.',
     excerpt: 'Vancouver salons face unique competition. Here\'s the exact marketing system filling chairs in Kitsilano, Yaletown, and beyond.',
     date: '2026-03-17',
     readTime: '7 min read',
@@ -825,8 +827,8 @@ AP DIGITAL specializes in marketing for salons across Metro Vancouver and BC. We
   {
     slug: 'trades-marketing-vancouver-bc',
     title: 'Trades Marketing Vancouver BC: How Contractors Get More Local Jobs',
-    metaTitle: 'Trades Marketing Vancouver BC | Get More Contractor Leads | AP DIGITAL',
-    metaDescription: 'How plumbers, electricians, roofers, and contractors in Vancouver BC are using Google Ads, Facebook Ads, and local SEO to get consistent job leads.',
+    metaTitle: 'Trades Marketing Vancouver BC: Get More Leads | AP Digital',
+    metaDescription: 'How trades businesses in Vancouver, BC get a steady flow of leads online. Practical paid ads & SEO strategies for plumbers, HVAC, electricians & roofers.',
     excerpt: 'Vancouver contractors are leaving thousands in revenue on the table because of weak marketing. Here\'s the system that actually works.',
     date: '2026-03-18',
     readTime: '6 min read',
@@ -932,8 +934,8 @@ AP DIGITAL specializes in marketing for trades and contractors across Metro Vanc
   {
     slug: 'real-estate-agent-marketing-vancouver-bc',
     title: 'Real Estate Agent Marketing in Vancouver BC: How to Get More Listings and Leads',
-    metaTitle: 'Real Estate Agent Marketing Vancouver BC | More Listings & Leads | AP DIGITAL',
-    metaDescription: 'How Vancouver BC real estate agents are using social media, paid ads, and personal branding to generate consistent buyer and seller leads in 2026.',
+    metaTitle: 'Real Estate Agent Marketing Vancouver BC | AP Digital',
+    metaDescription: 'How Vancouver realtors get consistent leads in 2026. A practical guide to real estate agent marketing using Meta Ads, social media & Google Ads in BC.',
     excerpt: 'Vancouver\'s real estate market is fiercely competitive. Here\'s how top agents are standing out and generating consistent leads in 2026.',
     date: '2026-03-19',
     readTime: '7 min read',
@@ -1038,8 +1040,8 @@ const extraPosts: BlogPost[] = [
   {
     slug: 'meta-ads-cost-contractors-bc',
     title: 'How Much Do Meta Ads Cost for Contractors in BC? (2026 Guide)',
-    metaTitle: 'Meta Ads Cost for Contractors in BC 2026 | AP DIGITAL',
-    metaDescription: 'Wondering how much Meta Ads cost for contractors in BC? Get a realistic breakdown of ad spend, cost per lead, and expected ROI for trades businesses in Metro Vancouver.',
+    metaTitle: 'How Much Do Meta Ads Cost for Contractors in BC?',
+    metaDescription: 'Wondering what Meta Ads cost for contractors in BC? We break down realistic ad budgets for plumbers, HVAC, electricians & roofers in Metro Vancouver.',
     excerpt: 'A transparent breakdown of what BC contractors actually spend on Meta Ads — and what they get back.',
     date: '2026-03-20',
     readTime: '5 min read',
@@ -1118,8 +1120,8 @@ At AP DIGITAL, we specialize in [Meta Ads for BC contractors and trades business
   {
     slug: 'hvac-marketing-vancouver-bc',
     title: 'HVAC Marketing in Vancouver BC: How to Get More Service Calls',
-    metaTitle: 'HVAC Marketing Vancouver BC | Get More Service Calls | AP DIGITAL',
-    metaDescription: 'How HVAC companies in Vancouver BC are using Google Ads, Meta Ads, and local SEO to get more furnace, AC, and heat pump service calls year-round.',
+    metaTitle: 'HVAC Marketing Vancouver BC: Get More Leads | AP Digital',
+    metaDescription: 'How HVAC companies in Vancouver, BC get a consistent stream of service calls using Meta Ads, Google Ads & local SEO. Real strategies that work.',
     excerpt: 'HVAC businesses in Metro Vancouver that dominate search and social are always booked. Here\'s the exact system.',
     date: '2026-03-21',
     readTime: '5 min read',
@@ -1196,8 +1198,8 @@ AP DIGITAL helps HVAC companies across Metro Vancouver build lead generation sys
   {
     slug: 'coaching-clients-bc',
     title: 'How to Get More Coaching Clients in BC Using Meta Ads (2026)',
-    metaTitle: 'How to Get More Coaching Clients in BC | Meta Ads Guide | AP DIGITAL',
-    metaDescription: 'Struggling to get consistent coaching clients in BC? Learn how life, business, and fitness coaches across Metro Vancouver are using Meta Ads to fill their practice.',
+    metaTitle: 'How to Get More Coaching Clients in BC | AP Digital',
+    metaDescription: "Struggling to find coaching clients in BC? Here's how fitness, business & life coaches use paid ads & social media to grow their practice in BC.",
     excerpt: 'The exact Meta Ads system BC coaches are using to get consistent clients — without relying on referrals or cold outreach.',
     date: '2026-03-22',
     readTime: '6 min read',
@@ -1284,8 +1286,8 @@ AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We
   {
     slug: 'plumber-marketing-metro-vancouver',
     title: 'Plumber Marketing in Metro Vancouver: Get More Service Calls',
-    metaTitle: 'Plumber Marketing Metro Vancouver | More Service Calls | AP DIGITAL',
-    metaDescription: 'How plumbers in Metro Vancouver are using Google Ads, Meta Ads, and local SEO to get more calls from Burnaby, Surrey, Coquitlam, and across the Lower Mainland.',
+    metaTitle: 'Plumber Marketing Metro Vancouver: Get More Calls',
+    metaDescription: 'How plumbing companies in Metro Vancouver get more service calls with Google Ads, Meta Ads & local SEO. A practical lead generation guide for BC plumbers.',
     excerpt: 'The plumbing market in Metro Vancouver is competitive. Here\'s the digital marketing system getting plumbers booked 4–6 weeks out.',
     date: '2026-03-23',
     readTime: '5 min read',
@@ -1364,8 +1366,8 @@ AP DIGITAL specializes in marketing for trades and contractors across the Lower 
   {
     slug: 'electrician-leads-bc',
     title: 'How BC Electricians Get More Leads with Digital Marketing (2026)',
-    metaTitle: 'Electrician Leads BC | Digital Marketing for Electricians | AP DIGITAL',
-    metaDescription: 'How electricians across BC are using Google Ads, Meta Ads, and local SEO to get consistent residential and commercial leads in Metro Vancouver and the Lower Mainland.',
+    metaTitle: 'How Electricians Get More Leads in BC | AP Digital',
+    metaDescription: 'The best ways for BC electricians to generate consistent leads online. Paid ads, Google Business Profile & local SEO strategies for electrical contractors.',
     excerpt: 'BC electricians relying on referrals are leaving serious money on the table. Here\'s the digital system that keeps the phone ringing.',
     date: '2026-03-24',
     readTime: '5 min read',

@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Coaching Marketing Agency Canada | Get More Clients | AP Digital';
-const DESC = 'AP Digital helps life, business & fitness coaches across Canada get more clients using Meta Ads & organic social content. No lock-in contracts.';
+const TITLE = 'Coaching Marketing Agency Canada | AP Digital';
+const DESC = 'Grow your coaching business with predictable client leads. AP Digital runs paid ads & social media for fitness, business & life coaches across Canada.';
 const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -37,16 +37,20 @@ const results = [
 
 const faqs = [
   {
-    question: "I'm a coach/trainer — do I really need paid ads?",
-    answer: "Organic content builds your brand, but paid ads accelerate your growth. Even a small ad budget ($500-$1,000/month) can consistently fill your roster with qualified clients who are ready to invest. We combine organic and paid strategies for the fastest results.",
+    question: 'How do coaches get more clients in BC?',
+    answer: 'Paid social ads on Meta targeting your ideal client avatar are the fastest way to grow a coaching practice. AP Digital builds these campaigns for coaches across BC.',
   },
   {
-    question: 'What kind of content should I be posting as a coach?',
-    answer: 'The best-performing content for coaches includes client transformation stories, quick tips and educational clips, day-in-the-life content, and behind-the-scenes training sessions. We build a content strategy around your unique expertise and create the content for you.',
+    question: 'What types of coaches do you work with?',
+    answer: 'AP Digital works with fitness coaches, business coaches, life coaches, and consultants across British Columbia.',
   },
   {
-    question: 'How do you help me stand out from other coaches in my area?',
-    answer: 'We position you as the authority in your niche through strategic personal branding. This means consistent, high-quality content that showcases your expertise, client results, and personality. Combined with targeted ads, you become the obvious choice for anyone looking for a coach in your market.',
+    question: 'How much does coaching marketing cost?',
+    answer: "Most coaches start with $500/month in ad spend. AP Digital's fee is month-to-month and fully transparent.",
+  },
+  {
+    question: 'Is there a contract?',
+    answer: "No. Month-to-month only. You stay because you're getting clients.",
   },
 ];
 
@@ -82,13 +86,14 @@ const CoachingMarketing = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Coaching Marketing That Turns Your Audience Into <span className="text-gradient">Paying Clients</span>
+          Coaching Marketing Agency Canada — Fill Your Calendar
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">

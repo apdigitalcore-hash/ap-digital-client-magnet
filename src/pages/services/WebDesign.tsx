@@ -7,8 +7,8 @@ import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Web Design Agency Canada | Websites Built to Convert | AP DIGITAL';
-const DESC = 'AP DIGITAL designs and builds high-converting websites for Canadian businesses. Mobile-first, fast-loading, and optimized to turn visitors into paying customers.';
+const TITLE = 'Web Design Vancouver BC | Small Business Websites | AP Digital';
+const DESC = 'Fast, conversion-focused websites for small businesses in Vancouver. AP Digital builds sites that turn visitors into leads. No fluff, just results.';
 const CANONICAL = 'https://ap-digital.ca/services/web-design';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -54,13 +54,14 @@ const WebDesign = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Web Design That Looks Great and Actually <span className="text-gradient">Converts Visitors</span>
+          Web Design for Canadian Small Business
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

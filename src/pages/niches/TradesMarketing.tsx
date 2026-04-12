@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Trades Marketing Agency Canada | Plumber, HVAC & Electrician Leads | AP Digital';
-const DESC = 'AP Digital generates leads for BC plumbers, electricians, HVAC companies, roofers & contractors using Meta Ads. No contracts. Starts at $500/month.';
+const TITLE = 'Trades Marketing Agency Vancouver BC | AP Digital';
+const DESC = 'Get more leads for your trades business with Meta Ads & Google Ads managed by AP Digital. Serving plumbers, HVAC, electricians & roofers in Metro Vancouver.';
 const CANONICAL = 'https://ap-digital.ca/trades-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -37,16 +37,20 @@ const results = [
 
 const faqs = [
   {
-    question: 'I get most of my work from referrals — why do I need marketing?',
-    answer: "Referrals are great, but they're unpredictable. Marketing gives you a consistent, controllable flow of new job leads so you're never waiting for the phone to ring. The best trades businesses use both referrals AND marketing to stay booked year-round.",
+    question: 'How quickly will I get leads as a trades business?',
+    answer: 'Most trades businesses in Metro Vancouver see their first leads within 2 weeks of launching their Meta Ads campaign with AP Digital.',
   },
   {
-    question: 'Which platforms work best for trades and contractors?',
-    answer: 'Google Ads is the #1 platform for trades because people search "plumber near me" or "electrician in [city]" when they need help right now. We pair that with Facebook ads for brand awareness and retargeting. Google Business Profile optimization is also critical for showing up in local map results.',
+    question: 'Is there a contract for trades marketing?',
+    answer: 'No contracts. AP Digital works month-to-month with all clients.',
   },
   {
-    question: 'How much should I budget for ads as a contractor?',
-    answer: "Most trades businesses see great results starting at $1,000-$2,000/month in ad spend. The cost per lead varies by trade and location, but our clients typically see leads coming in at $20-$50 each — and a single job can be worth thousands. We'll help you find the right budget for your market.",
+    question: 'How much does trades marketing cost in BC?',
+    answer: "Most BC contractors start with $500–$1,500/month in ad spend. AP Digital's management fee is separate and fully transparent.",
+  },
+  {
+    question: 'Which ad platform works best for trades businesses?',
+    answer: 'It depends on your trade. Meta Ads work well for awareness. Google Ads are better for high-intent searches like emergency plumbing or HVAC repair.',
   },
 ];
 
@@ -82,13 +86,14 @@ const TradesMarketing = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Trades Marketing That Gets Your Phone Ringing <span className="text-gradient">With New Jobs</span>
+          Trades Marketing for BC Contractors — Get Leads with Meta Ads
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">

@@ -15,8 +15,8 @@ import DarkCTA from '@/components/DarkCTA';
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
 
-const TITLE = 'Digital Marketing Agency Canada | Leads for Salons, Trades & Real Estate | AP Digital';
-const DESC = 'AP Digital is a Canadian digital marketing agency helping salons, trades, real estate agents & coaches get predictable leads using Meta Ads & short-form content. Month-to-month.';
+const TITLE = 'Digital Marketing Agency Vancouver | AP Digital';
+const DESC = 'AP Digital helps salons, trades, real estate agents & coaches get predictable leads using paid ads & social media. Based in Vancouver, BC. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -74,6 +74,7 @@ const HomePage = () => {
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
@@ -94,9 +95,7 @@ const HomePage = () => {
               className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold text-primary-foreground leading-[1.15] tracking-normal mb-6 animate-fade-up"
               style={{ animationDelay: '0.1s' }}
             >
-              <span className="block">Digital Marketing</span>
-              <span className="block">Agency in Canada</span>
-              <span className="block">That Gets You <span className="text-gradient">Leads.</span></span>
+              Digital Marketing Agency Canada — Leads for Salons, Trades &amp; Real Estate
             </h1>
 
             {/* Subheadline */}

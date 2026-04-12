@@ -6,8 +6,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { organizationSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'About AP Digital | Canadian Digital Marketing Agency | Arjun Sharma';
-const DESC = 'AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for salons, trades, real estate & coaches across Canada.';
+const TITLE = 'About AP Digital | Vancouver Marketing Agency';
+const DESC = 'Meet AP Digital — a Vancouver-based marketing agency run by Arjun Sharma. Personal account management, no contracts, and real results for local businesses.';
 const CANONICAL = 'https://ap-digital.ca/about';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -68,6 +68,7 @@ const About = () => {
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
+        <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
 
@@ -77,7 +78,7 @@ const About = () => {
         {/* Hero */}
         <section className="container-custom py-16 md:py-24">
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground max-w-4xl">
-            We're AP DIGITAL — A Results-First Marketing Agency
+            About AP Digital — Built for Canadian Small Business
           </h1>
         </section>
 

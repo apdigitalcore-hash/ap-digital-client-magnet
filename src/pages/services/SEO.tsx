@@ -7,8 +7,8 @@ import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'SEO Agency Canada | Rank Higher on Google and Get Found | AP DIGITAL';
-const DESC = 'AP DIGITAL helps Canadian businesses rank higher on Google with proven SEO strategies. Get found by customers actively searching for your services — without paying for every click.';
+const TITLE = 'SEO Services Vancouver BC | Local SEO Agency | AP Digital';
+const DESC = 'Rank higher on Google and get found by local customers. AP Digital offers SEO services for small businesses in Vancouver, BC. Month-to-month, no lock-in.';
 const CANONICAL = 'https://ap-digital.ca/services/seo';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -54,13 +54,14 @@ const SEO = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          SEO That Gets Your Business to the <span className="text-gradient">Top of Google</span>
+          SEO for Canadian Small Business — Get Found on Google
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

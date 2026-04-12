@@ -64,14 +64,16 @@ const Contact = () => {
   return (
     <main className="min-h-screen">
       <Helmet>
-        <title>Contact AP Digital | Book a Free Strategy Call</title>
-        <meta name="description" content="Book a free 20-minute strategy call with AP Digital. We'll show you how many leads are available in your area and how to get them. No pressure." />
-        <meta name="keywords" content="free marketing audit, book marketing consultation, digital marketing consultation Canada" />
+        <title>Contact AP Digital | Get a Free Strategy Call</title>
+        <meta name="description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
         <link rel="canonical" href="https://ap-digital.ca/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ap-digital.ca/contact" />
-        <meta property="og:title" content="Contact AP Digital | Book a Free Strategy Call" />
-        <meta property="og:description" content="Book a free 20-minute strategy call with AP Digital. We'll show you how many leads are available in your area and how to get them. No pressure." />
+        <meta property="og:title" content="Contact AP Digital | Get a Free Strategy Call" />
+        <meta property="og:description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
+        <meta name="twitter:title" content="Contact AP Digital | Get a Free Strategy Call" />
+        <meta name="twitter:description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
+        <meta name="robots" content="index, follow" />
         {structuredData && (
           <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
         )}
@@ -88,8 +90,7 @@ const Contact = () => {
         <div className="container-custom relative z-10">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground leading-tight mb-6">
-              Book a Free Marketing{' '}
-              <span className="text-gradient">Growth Audit</span>
+              Book a Free Strategy Call with AP Digital
             </h1>
 
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-xl mx-auto">

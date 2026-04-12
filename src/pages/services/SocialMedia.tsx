@@ -7,8 +7,8 @@ import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Social Media Marketing Canada | Content That Grows Your Business | AP DIGITAL';
-const DESC = 'AP DIGITAL manages your social media so you can focus on your business. We create content, engage your community, and turn followers into paying clients across Canada.';
+const TITLE = 'Social Media Marketing Vancouver | AP Digital';
+const DESC = 'Grow your following & generate real leads on Instagram, Facebook & TikTok. AP Digital manages social media for local businesses in Vancouver, BC.';
 const CANONICAL = 'https://ap-digital.ca/services/social-media';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -54,13 +54,14 @@ const SocialMedia = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Social Media Management That Turns Followers Into <span className="text-gradient">Paying Clients</span>
+          Social Media Marketing for Canadian Small Business
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

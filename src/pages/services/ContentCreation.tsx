@@ -7,8 +7,8 @@ import { CheckCircle } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Short Form Content Creation Canada | Reels & TikTok for Business | AP DIGITAL';
-const DESC = 'AP DIGITAL creates scroll-stopping short-form video content for Canadian businesses. Reels, TikToks, and Shorts that capture attention and drive real business results.';
+const TITLE = 'Content Creation for Small Business Vancouver | AP Digital';
+const DESC = 'Short-form video & social content that gets your business noticed. AP Digital creates scroll-stopping content for salons, trades & local businesses in BC.';
 const CANONICAL = 'https://ap-digital.ca/services/content-creation';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -54,13 +54,14 @@ const ContentCreation = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Short-Form Content That Stops The Scroll and <span className="text-gradient">Drives Action</span>
+          Short-Form Content Creation for Canadian Businesses
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Salon Marketing Agency Canada | Get More Bookings | AP Digital';
-const DESC = 'AP Digital helps Canadian hair salons & beauty studios get more bookings using Meta Ads & organic content. Month-to-month. No contracts.';
+const TITLE = 'Salon Marketing Agency Vancouver | AP Digital';
+const DESC = 'Fill your chair every week. AP Digital runs paid ads & social media for hair salons, spas & beauty studios in Vancouver, BC. Month-to-month, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/salon-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -37,16 +37,20 @@ const results = [
 
 const faqs = [
   {
-    question: 'How quickly will I see new bookings from marketing?',
-    answer: "Most salon clients start seeing new appointment requests within the first 2 weeks of launching ad campaigns. By month two, you'll have a predictable flow of new clients coming in weekly. We optimize continuously to keep your cost per booking as low as possible.",
+    question: 'How do I get more salon clients in Vancouver?',
+    answer: 'The fastest way is targeted Instagram and Facebook ads reaching people in your area who are actively looking for salon services. AP Digital sets this up and manages it for you.',
   },
   {
-    question: 'Do I need to create content myself or do you handle everything?',
-    answer: 'We handle everything. Our team creates scroll-stopping Reels, stories, and graphics using your existing photos and videos, or we can guide you through simple filming sessions. You focus on your clients — we handle the marketing.',
+    question: 'How much does salon marketing cost?',
+    answer: "Most salons start with $500/month in ad spend. AP Digital's management fee is transparent and month-to-month — no long-term contracts.",
   },
   {
-    question: 'What budget do I need for salon marketing?',
-    answer: "We recommend a minimum ad spend of $500-$1,000/month to start seeing consistent results. Combined with our management fee, most salon owners see a positive ROI within the first month. We'll help you find the right budget based on your goals and location.",
+    question: 'How fast will I see new bookings?',
+    answer: 'Most salon clients see new bookings within the first 2 weeks of launching their campaign.',
+  },
+  {
+    question: 'Is there a contract?',
+    answer: 'No. AP Digital works month-to-month with all salon clients. You stay because it works.',
   },
 ];
 
@@ -82,13 +86,14 @@ const SalonMarketing = () => (
       <meta name="twitter:title" content={TITLE} />
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Salon Marketing That Fills Your Chair <span className="text-gradient">Every Single Week</span>
+          Salon Marketing Agency — Get More Bookings with Meta Ads
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
