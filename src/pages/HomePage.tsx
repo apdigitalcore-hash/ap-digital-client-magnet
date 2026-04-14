@@ -87,7 +87,7 @@ const HomePage = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-teal/20 text-teal mb-8 w-fit animate-fade-up">
               <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-              <span className="text-sm font-bold uppercase tracking-widest">#1 Marketing Agency in Canada</span>
+              <span className="text-sm font-bold uppercase tracking-widest">Serving Metro Vancouver, BC</span>
             </div>
 
             {/* Headline */}
@@ -118,10 +118,10 @@ const HomePage = () => {
                 </Link>
               </Button>
               <Button variant="light" size="lg" asChild>
-                <a href="#how-it-works" className="flex items-center gap-2">
+                <Link to="/services/paid-ads" className="flex items-center gap-2">
                   <Play className="w-4 h-4" />
-                  See How It Works
-                </a>
+                  See Our Services
+                </Link>
               </Button>
             </div>
           </div>
@@ -164,9 +164,7 @@ const HomePage = () => {
                 Social Media & Paid Ads for <span className="text-gradient">Salons</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                We run Instagram and Facebook ads that bring new bookings to your salon every week — without you lifting a finger.
-                Our campaigns target local clients actively searching for hair, beauty, and wellness services in your area.
-                Most salon partners see a full appointment book within the first 30 days.
+                Instagram and Facebook ads that bring consistent new bookings to your salon every week — without you lifting a finger. Most salon partners see a full appointment book within 30 days.
               </p>
             </Link>
 
@@ -175,9 +173,7 @@ const HomePage = () => {
                 Digital Marketing for <span className="text-gradient">Real Estate Agents</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                We generate qualified buyer and seller leads through hyper-targeted social media campaigns and Google Ads.
-                Our proven funnels capture contact info and nurture prospects so you spend less time chasing and more time closing.
-                Real estate agents we work with typically see 15–30 new leads per month.
+                Qualified buyer and seller leads through hyper-targeted Meta and Google Ads. Spend less time chasing and more time closing — typically 15–30 new leads per month.
               </p>
             </Link>
 
@@ -186,19 +182,16 @@ const HomePage = () => {
                 Lead Generation for <span className="text-gradient">Trades Businesses</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Plumbers, electricians, roofers, and contractors — we build ad campaigns that put your business in front of homeowners who need you right now.
-                No more relying on word-of-mouth alone. Our clients consistently fill their schedules with high-value jobs week after week.
+                Plumbers, electricians, roofers, and contractors — ads that put you in front of homeowners who need you right now. Stop relying on word-of-mouth and start filling your schedule.
               </p>
             </Link>
 
             <Link to="/coaching-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
               <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
-                Marketing for <span className="text-gradient">Private Coaches & Trainers</span>
+                Marketing for <span className="text-gradient">Coaches & Consultants</span>
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Whether you're a personal trainer, life coach, or fitness studio owner, we create content and ad campaigns that attract your ideal clients.
-                Our systems automate lead capture and follow-up so you can focus on coaching.
-                Most coaches double their client base within 90 days of working with us.
+                Personal trainers, life coaches, and fitness studio owners — we build ad campaigns and content systems that attract your ideal clients and keep your calendar full.
               </p>
             </Link>
           </div>
@@ -206,15 +199,10 @@ const HomePage = () => {
       </section>
 
       <ResultsProof />
-      
+
       <ProcessDark />
       <ServicesDark />
       <TestimonialsDark />
-
-      <DarkCTA
-        headline="Ready to Dominate Your Market?"
-        subheadline="Book a free strategy call and discover how we can scale your business."
-      />
 
       {/* What Makes Us Different */}
       <section className="py-20 md:py-28 bg-charcoal">
@@ -239,6 +227,37 @@ const HomePage = () => {
                 </h3>
                 <p className="text-muted-foreground text-sm">{item.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cities We Serve */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Cities We <span className="text-gradient">Serve</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+              Based in the Lower Mainland, we serve local businesses across Metro Vancouver and the Fraser Valley.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { city: 'Surrey', href: '/surrey', sub: 'South Fraser' },
+              { city: 'Burnaby', href: '/burnaby', sub: 'Tri-Cities' },
+              { city: 'Langley', href: '/langley', sub: 'Fraser Valley' },
+              { city: 'Coquitlam', href: '/coquitlam', sub: 'Tri-Cities' },
+            ].map(({ city, href, sub }) => (
+              <Link
+                key={href}
+                to={href}
+                className="group bg-card border border-border rounded-2xl p-6 text-center hover:border-teal/40 transition-colors"
+              >
+                <div className="font-display text-xl font-bold text-foreground group-hover:text-teal transition-colors mb-1">{city}</div>
+                <div className="text-muted-foreground text-sm">{sub}</div>
+              </Link>
             ))}
           </div>
         </div>
