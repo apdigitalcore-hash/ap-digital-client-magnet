@@ -649,12 +649,6 @@ At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) spe
   },
 ];
 
-export const getPostBySlug = (slug: string): BlogPost | undefined =>
-  [...blogPosts, ...newPosts].find((p) => p.slug === slug);
-
-export const allPosts = [...blogPosts, ...newPosts];
-
-
 // ─── NEW VANCOUVER-SPECIFIC BLOG POSTS ───────────────────────────────────────
 
 const newPosts: BlogPost[] = [
