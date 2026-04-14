@@ -31,6 +31,13 @@ const Header = () => {
     { href: '/services/lead-generation', label: 'Lead Generation' },
   ];
 
+  const locations = [
+    { href: '/surrey', label: 'Surrey' },
+    { href: '/burnaby', label: 'Burnaby' },
+    { href: '/langley', label: 'Langley' },
+    { href: '/coquitlam', label: 'Coquitlam' },
+  ];
+
   const industries = [
     { href: '/salon-marketing', label: 'Salons & Beauty', external: false },
     { href: '/real-estate-marketing', label: 'Real Estate', external: false },
@@ -111,6 +118,21 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}>
+                Locations <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-48">
+                {locations.map((loc) => (
+                  <DropdownMenuItem key={loc.href} asChild>
+                    <Link to={loc.href} className="cursor-pointer">{loc.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link
               to="/about"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
@@ -182,6 +204,21 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {service.label}
+                </Link>
+              ))}
+
+              <div className="px-4 py-2 text-sm text-muted-foreground font-medium">
+                Locations
+              </div>
+
+              {locations.map((loc) => (
+                <Link
+                  key={loc.href}
+                  to={loc.href}
+                  className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {loc.label}
                 </Link>
               ))}
 
