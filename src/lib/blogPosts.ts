@@ -1446,3 +1446,8 @@ AP DIGITAL builds complete digital marketing systems for electricians and trades
 ];
 
 blogPosts.unshift(...extraPosts);
+
+export const getPostBySlug = (slug: string): BlogPost | undefined =>
+  [...blogPosts, ...newPosts].find((p) => p.slug === slug);
+
+export const allPosts = [...blogPosts, ...newPosts];
