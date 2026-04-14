@@ -1445,7 +1445,414 @@ AP DIGITAL builds complete digital marketing systems for electricians and trades
   },
 ];
 
-blogPosts.unshift(...extraPosts);
+const vancouverPosts: BlogPost[] = [
+  {
+    slug: 'best-digital-marketing-agency-vancouver',
+    title: 'How to Choose the Best Digital Marketing Agency in Vancouver in 2026',
+    metaTitle: 'Best Digital Marketing Agency Vancouver 2026 | AP Digital',
+    metaDescription: 'Looking for the best digital marketing agency in Vancouver? Learn what to look for, red flags to avoid, and how to pick an agency that delivers real ROI.',
+    excerpt: 'A no-BS guide to finding a Vancouver digital marketing agency that actually delivers results — not just pretty reports.',
+    date: '2026-04-01',
+    readTime: '6 min read',
+    category: 'Marketing Strategy',
+    content: `Vancouver is home to hundreds of digital marketing agencies, freelancers, and consultants — all promising to grow your business. But how do you separate the ones that deliver real results from the ones that just burn through your budget? Here's what every Vancouver business owner needs to know before hiring an agency in 2026.
+
+## Why Vancouver Businesses Need a Local Marketing Partner
+
+Vancouver's market is unique. The cost of living is high, competition is fierce across almost every industry, and consumer behaviour in the Lower Mainland is different from Toronto, Calgary, or Montreal. A generic, one-size-fits-all marketing approach won't cut it here.
+
+A local Vancouver agency understands the nuances: seasonal trends in the housing market, the competitive landscape for restaurants on Main Street versus Commercial Drive, how to target homeowners in Kitsilano differently from those in Surrey. That local knowledge translates directly into better-performing campaigns and higher ROI.
+
+## Red Flags to Watch For
+
+Before you sign a contract with any Vancouver marketing agency, watch out for these common red flags:
+
+- **Long-term contracts with no performance guarantees.** If an agency locks you into a 12-month contract but won't commit to specific KPIs, walk away. Good agencies earn your business month after month.
+- **Vanity metrics instead of real results.** Impressions, likes, and followers are nice — but they don't pay the bills. Ask any prospective agency: "How many leads or sales can I expect?" If they can't give you a straight answer, they're not the right fit.
+- **No transparency on ad spend.** Some agencies bundle their management fee with your ad budget and won't tell you how much is actually going to ads. You should always know exactly where your money is going.
+- **Generic strategies.** If the agency pitches you the same strategy they'd pitch a dentist, a restaurant, and a law firm, they're not thinking about your business specifically.
+
+## What to Look for in a Vancouver Digital Marketing Agency
+
+The best agencies share a few key traits:
+
+**Industry-specific experience.** An agency that's worked with businesses like yours — whether that's salons, trades, real estate, or coaching — will get results faster because they already know what works.
+
+**Transparent reporting.** You should receive clear, easy-to-understand reports showing exactly how many leads you're getting, what they cost, and what's converting. No jargon, no fluff.
+
+**A focus on ROI.** The right agency talks about revenue, leads, and booked jobs — not vanity metrics. Every dollar you spend should be traceable to a result.
+
+**Local presence and understanding.** An agency based in Vancouver that understands the Lower Mainland market will outperform a remote agency running generic campaigns every time.
+
+## How Much Should You Budget?
+
+For most small to mid-sized Vancouver businesses, a reasonable digital marketing budget ranges from $1,500 to $5,000 per month, including both agency fees and ad spend. This typically covers:
+
+- Google Ads or Meta Ads management
+- Content creation for social media
+- Monthly reporting and strategy calls
+- Landing page optimization
+
+Businesses in highly competitive Vancouver industries — real estate, legal, home services — may need to invest more to stand out. The key is to view marketing as an investment with measurable returns, not an expense.
+
+## Why Vancouver Businesses Choose AP DIGITAL
+
+At AP DIGITAL, we specialize in helping Vancouver small businesses and service providers generate consistent leads through proven digital marketing strategies. We don't do long-term contracts, we don't hide behind vanity metrics, and we don't run cookie-cutter campaigns.
+
+Every strategy we build is tailored to your industry, your market, and your goals. Whether you're a salon in Yaletown, a contractor in East Vancouver, or a real estate agent covering the Lower Mainland, we build marketing systems that deliver real, measurable results.
+
+**Book your free strategy call** and let's talk about growing your Vancouver business in 2026.`,
+  },
+  {
+    slug: 'vancouver-small-business-seo-guide',
+    title: 'Vancouver Small Business SEO: The Complete Guide to Ranking on Google in 2026',
+    metaTitle: 'Vancouver Small Business SEO Guide 2026 | AP Digital',
+    metaDescription: 'Learn how Vancouver small businesses can rank higher on Google with local SEO, Google Business Profile optimization, and content strategy. Complete 2026 guide.',
+    excerpt: 'Everything Vancouver small business owners need to know about local SEO, Google Business Profile, and ranking higher in 2026.',
+    date: '2026-04-05',
+    readTime: '8 min read',
+    category: 'SEO',
+    content: `If you own a small business in Vancouver and you're not showing up on the first page of Google, you're invisible to the majority of your potential customers. In 2026, local SEO isn't optional — it's the foundation of a successful digital presence. Here's your complete guide to ranking higher in Vancouver.
+
+## Why Local SEO Matters for Vancouver Businesses
+
+When someone in Vancouver searches "best hair salon near me" or "plumber in Kitsilano," Google serves up local results — the map pack and organic listings. If your business isn't optimized for these searches, your competitors are getting those calls and bookings instead.
+
+Local SEO is especially powerful for Vancouver businesses because:
+
+- **High search volume:** Vancouver has 2.6 million people in the metro area actively searching for local services every day.
+- **Mobile-first behaviour:** Over 70% of local searches happen on mobile devices, and "near me" searches have grown 500% in the past five years.
+- **High intent:** People searching for local services are ready to buy. These aren't casual browsers — they need a plumber, a salon, a restaurant right now.
+
+## Step 1: Optimize Your Google Business Profile
+
+Your Google Business Profile (GBP) is the single most important factor in local search rankings. Here's how to optimize it for Vancouver:
+
+- **Complete every field.** Business name, address, phone number, website, hours, and categories. Leave nothing blank.
+- **Choose the right categories.** Your primary category should be your core service (e.g., "Hair Salon" or "Plumber"). Add secondary categories for everything else you offer.
+- **Add Vancouver-specific service areas.** List every neighbourhood and city you serve: Vancouver, Burnaby, Richmond, North Vancouver, West Vancouver, Coquitlam, New Westminster, Surrey.
+- **Upload photos weekly.** Businesses with photos get 42% more direction requests and 35% more click-throughs. Show your work, your team, and your location.
+- **Post regularly.** GBP Posts let you share updates, offers, and news directly on your profile. Post at least twice a month.
+
+## Step 2: Build a Review Strategy
+
+Google reviews are one of the top three ranking factors for local search. Vancouver businesses with more — and better — reviews consistently outrank their competitors.
+
+Here's how to build your review count:
+
+- Ask every happy customer for a review immediately after the service. Send them a direct link via text or email.
+- Respond to every review — positive and negative. Google rewards businesses that engage with their reviewers.
+- Aim for at least two new reviews per week. Consistency matters more than a one-time push.
+- Never buy fake reviews. Google's detection is sophisticated and the penalties are severe.
+
+## Step 3: On-Page SEO for Your Website
+
+Your website needs to signal to Google that you're a relevant, authoritative Vancouver business. Key on-page SEO elements:
+
+- **Title tags:** Include your primary keyword and "Vancouver" (e.g., "Best Hair Salon in Vancouver | Your Business Name").
+- **Meta descriptions:** Write compelling descriptions that include your location and a call to action.
+- **H1 headings:** Each page should have one H1 that clearly states what the page is about.
+- **Location pages:** If you serve multiple areas, create dedicated pages for each (e.g., "Plumbing Services in Burnaby," "Hair Salon in Kitsilano").
+- **Schema markup:** Add LocalBusiness structured data to help Google understand your business details.
+
+## Step 4: Create Vancouver-Focused Content
+
+Content marketing drives long-term organic traffic. For Vancouver businesses, that means creating content that answers the questions your local customers are asking:
+
+- "How much does a kitchen renovation cost in Vancouver?"
+- "Best neighbourhoods for first-time homebuyers in the Lower Mainland"
+- "What to look for in a Vancouver wedding photographer"
+
+Blog posts, guides, and FAQ pages targeting these long-tail, Vancouver-specific keywords build your authority and drive organic traffic that converts into leads.
+
+## Step 5: Build Local Citations and Backlinks
+
+Citations are mentions of your business name, address, and phone number (NAP) across the web. Consistent citations on directories like Yelp, Yellow Pages, and industry-specific sites reinforce your local relevance.
+
+Backlinks from other Vancouver businesses, local news sites, and community organizations are even more powerful. Sponsor a local event, contribute to a community blog, or partner with complementary businesses to earn high-quality local backlinks.
+
+## How Long Does Vancouver SEO Take?
+
+SEO is a long game. Expect to see initial improvements in three to six months, with significant results by month six to twelve. The businesses that commit to consistent optimization outperform those looking for quick fixes every time.
+
+## Get More Vancouver Customers with AP DIGITAL
+
+At AP DIGITAL, we help Vancouver small businesses rank higher on Google, get more reviews, and generate consistent organic leads. Our local SEO strategies are built specifically for the Vancouver market — not generic templates applied to every city.
+
+**Book your free SEO audit** and let's find out exactly where your Vancouver business stands — and how to get to page one.`,
+  },
+  {
+    slug: 'facebook-ads-vancouver-small-business',
+    title: 'Facebook Ads for Vancouver Small Businesses: A Complete 2026 Guide',
+    metaTitle: 'Facebook Ads Vancouver Small Business Guide 2026 | AP Digital',
+    metaDescription: 'Learn how Vancouver small businesses use Facebook and Instagram ads to generate leads and grow. Targeting tips, budget advice, and real campaign strategies.',
+    excerpt: 'How Vancouver small businesses can use Facebook and Instagram ads to generate leads, build awareness, and grow — with real targeting strategies and budget breakdowns.',
+    date: '2026-04-08',
+    readTime: '7 min read',
+    category: 'Paid Ads',
+    content: `Facebook and Instagram ads remain two of the most cost-effective ways for Vancouver small businesses to generate leads and grow in 2026. But running ads without a strategy is like throwing money into the Georgia Strait. Here's how to do it right.
+
+## Why Facebook Ads Work for Vancouver Businesses
+
+Meta's advertising platform (Facebook + Instagram) gives Vancouver businesses access to incredibly precise targeting. You can reach:
+
+- Homeowners in specific Vancouver neighbourhoods (Kitsilano, Mount Pleasant, Dunbar, Kerrisdale)
+- People within a specific radius of your business
+- Users based on interests, behaviours, income level, and life events
+- Lookalike audiences based on your existing customers
+
+For local businesses, this precision is invaluable. Instead of broadcasting to everyone, you're putting your message in front of the exact people most likely to become customers.
+
+## Choosing the Right Campaign Objective
+
+The biggest mistake Vancouver business owners make with Facebook Ads is choosing the wrong campaign objective. Here's a quick guide:
+
+- **Lead Generation:** Best for service businesses (salons, trades, coaches, real estate agents) that need contact information from potential clients. Meta's native lead forms convert exceptionally well on mobile.
+- **Traffic:** Best for driving visitors to a specific landing page, blog post, or offer page on your website.
+- **Awareness:** Best for new businesses or those launching in a new Vancouver neighbourhood who need to build name recognition.
+- **Conversions:** Best for e-commerce businesses or those with a clear online action (booking, purchase, sign-up).
+
+For most Vancouver service businesses, Lead Generation campaigns deliver the best cost-per-lead.
+
+## Vancouver-Specific Targeting Strategies
+
+Here are targeting approaches that work particularly well in the Vancouver market:
+
+### Geographic Targeting
+- Target specific municipalities: Vancouver, Burnaby, Richmond, North Vancouver, West Vancouver, New Westminster, Coquitlam, Port Moody
+- Use radius targeting around your business location (5–15 km works well for most local businesses)
+- Exclude areas you don't serve to avoid wasted spend
+
+### Demographic Targeting
+- **Home services:** Target homeowners aged 30–65 in specific postal code areas
+- **Salons and beauty:** Target women aged 22–50 interested in beauty, skincare, and self-care
+- **Real estate:** Target renters aged 25–40 (for buyers) or homeowners aged 45+ (for sellers)
+- **Coaching and consulting:** Target professionals aged 28–50 interested in personal development and entrepreneurship
+
+### Interest-Based Targeting
+Layer interests on top of demographics for more precise targeting. For example, a Vancouver personal trainer might target: women aged 25–45 + interested in fitness + living within 10 km of their gym.
+
+## Budget: How Much Should Vancouver Businesses Spend?
+
+A realistic monthly Facebook Ads budget for Vancouver small businesses:
+
+- **Testing phase (Month 1):** $500–$1,000 to test audiences, creatives, and offers
+- **Growth phase (Month 2–3):** $1,000–$2,500 as you scale winning campaigns
+- **Established (Month 4+):** $1,500–$5,000+ depending on your industry and lead volume goals
+
+Add agency management fees on top (typically $500–$1,500/month for a good Vancouver agency).
+
+The key is to view this as an investment with measurable returns. If you're spending $2,000/month on ads and generating 40 leads that convert into $20,000 in revenue, that's a 10x return.
+
+## Creative That Converts in Vancouver
+
+Your ad creative matters as much as your targeting. What works in Vancouver:
+
+- **Authentic, local imagery.** Show real Vancouver landmarks, neighbourhoods, and scenery. Stock photos of generic cityscapes don't resonate with locals.
+- **Video over static images.** Video ads consistently outperform static images. A 15–30 second video introducing your business, showing your work, or explaining your offer drives higher engagement.
+- **Social proof.** Include review counts, testimonials, or client results in your ad copy. "Rated 4.9 stars by 200+ Vancouver clients" builds instant trust.
+- **Clear, specific offers.** "Free consultation for Vancouver homeowners" beats "Contact us today" every time.
+
+## Tracking and Measuring Results
+
+Don't just launch ads and hope for the best. Set up proper tracking:
+
+- Install the Meta Pixel on your website to track conversions
+- Use UTM parameters to attribute leads to specific campaigns
+- Review your cost-per-lead weekly and adjust accordingly
+- Track lead quality, not just quantity — 10 qualified leads beat 50 tire-kickers
+
+## Common Mistakes Vancouver Businesses Make
+
+- **Targeting too broadly.** Vancouver metro has 2.6 million people — you don't need to reach all of them. Narrow your audience.
+- **Not testing creative.** Run at least 3–4 ad variations per campaign. Let the data tell you what works.
+- **Giving up too soon.** Facebook's algorithm needs 3–7 days and at least 50 conversions to optimize. Don't kill campaigns after 48 hours.
+- **Ignoring Instagram.** Instagram placements often deliver lower costs-per-lead than Facebook alone. Always run both.
+
+## Let AP DIGITAL Run Your Vancouver Facebook Ads
+
+At AP DIGITAL, we build and manage high-performing Facebook and Instagram ad campaigns for Vancouver small businesses. From targeting strategy to creative production to lead follow-up systems, we handle everything — so you can focus on serving your customers.
+
+**Book your free strategy call** and let's build a Facebook Ads campaign that generates real leads for your Vancouver business.`,
+  },
+  {
+    slug: 'vancouver-google-ads-guide-local-business',
+    title: 'Google Ads for Vancouver Local Businesses: How to Get More Calls and Leads in 2026',
+    metaTitle: 'Google Ads Vancouver Local Business Guide 2026 | AP Digital',
+    metaDescription: 'Learn how Vancouver local businesses use Google Ads and Local Service Ads to get more calls, leads, and booked jobs. Complete strategy guide for 2026.',
+    excerpt: 'How Vancouver plumbers, salons, contractors, and service businesses can use Google Ads to dominate local search and fill their schedules in 2026.',
+    date: '2026-04-10',
+    readTime: '7 min read',
+    category: 'Paid Ads',
+    content: `When a Vancouver homeowner needs a plumber at 10 PM on a Tuesday or a business owner searches for "web designer Vancouver" during their lunch break, they go to Google. If your business isn't showing up at the top of those search results, you're losing jobs to competitors who are. Here's how Vancouver businesses can use Google Ads to capture high-intent leads in 2026.
+
+## Why Google Ads Are Essential for Vancouver Businesses
+
+Google Ads put your business at the top of search results for the exact keywords your customers are searching. Unlike social media advertising where you're interrupting people, Google Ads capture demand that already exists. Someone searching "emergency electrician Vancouver" needs help right now — and they're going to call whoever shows up first.
+
+For Vancouver local businesses, Google Ads deliver:
+
+- **Immediate visibility.** You can be at the top of Google within hours of launching a campaign.
+- **High-intent leads.** These are people actively searching for your service — not casual browsers.
+- **Measurable ROI.** Every click, call, and conversion is tracked. You know exactly what you're paying per lead.
+- **Geographic precision.** Target only Vancouver and the specific surrounding areas you serve.
+
+## Google Local Service Ads: The #1 Tool for Vancouver Service Businesses
+
+If you're a plumber, electrician, HVAC tech, locksmith, cleaner, or any home service provider in Vancouver, Google Local Service Ads (LSAs) should be your top priority.
+
+LSAs appear above regular Google Ads — at the very top of search results — with your business name, reviews, phone number, and a "Google Guaranteed" badge. You only pay per lead (phone call or message), not per click. This makes LSAs one of the highest-ROI advertising channels available.
+
+To qualify for LSAs in Vancouver, you need:
+- A verified Google Business Profile
+- Proper licensing and insurance for your trade
+- Background checks (for applicable industries)
+- A minimum number of Google reviews (aim for 10+)
+
+Vancouver businesses running LSAs typically see costs of $15–$50 per lead, depending on the industry. For a plumber charging $300+ per job, that's an exceptional return.
+
+## Search Ads: Capturing Every High-Intent Keyword
+
+Standard Google Search Ads complement LSAs by capturing searches that LSAs don't cover. For Vancouver businesses, the key is targeting the right keywords:
+
+### High-Intent Keywords to Target
+- "[Service] Vancouver" (e.g., "plumber Vancouver," "hair salon Vancouver")
+- "[Service] near me" (Google uses the searcher's location)
+- "Best [service] in [neighbourhood]" (e.g., "best dentist in Kitsilano")
+- "Emergency [service] Vancouver" (for trades and urgent services)
+- "[Service] cost Vancouver" (captures people researching prices)
+
+### Negative Keywords to Add
+Equally important is telling Google what you don't want to show up for:
+- "Jobs," "hiring," "salary" (unless you're recruiting)
+- "DIY," "how to" (unless you sell products)
+- "Free" (filters out people not willing to pay)
+- Competitor brand names (unless you're running competitor campaigns intentionally)
+
+## Budget Strategy for Vancouver Google Ads
+
+Google Ads costs in Vancouver vary significantly by industry:
+
+- **Home services (plumbing, electrical, HVAC):** $3–$8 per click, $20–$50 per lead
+- **Legal services:** $10–$30 per click, $50–$150 per lead
+- **Real estate:** $2–$6 per click, $15–$40 per lead
+- **Health and wellness:** $2–$5 per click, $10–$30 per lead
+- **Salons and beauty:** $1–$3 per click, $8–$20 per lead
+
+A reasonable starting budget for most Vancouver small businesses is $1,000–$2,500 per month in ad spend, plus $500–$1,500 for professional management.
+
+## Landing Pages: Where Most Vancouver Businesses Lose Money
+
+Here's where many Vancouver businesses fail with Google Ads: they send traffic to their homepage instead of a dedicated landing page. Your homepage is designed for general browsing — not for converting ad traffic.
+
+A high-converting landing page for Vancouver Google Ads should include:
+
+- A clear, specific headline matching the search query (e.g., "Vancouver's Top-Rated Plumbing Service")
+- Your phone number prominently displayed with click-to-call
+- Social proof: Google review count, testimonials, trust badges
+- A simple contact form (name, phone, brief description of the need)
+- Your service area clearly listed
+- No distracting navigation or links away from the page
+
+Businesses that use dedicated landing pages see 2–3x higher conversion rates than those sending traffic to their homepage.
+
+## Tracking and Optimizing Your Vancouver Campaigns
+
+Set up proper conversion tracking from day one:
+
+- **Call tracking:** Use Google's call forwarding or a third-party tool to track which ads generate phone calls
+- **Form submissions:** Track every contact form submission as a conversion
+- **Google Analytics 4:** Connect GA4 to your Google Ads account for deeper insights
+- **Search terms report:** Review weekly to find new keyword opportunities and add negative keywords
+
+The most successful Vancouver Google Ads campaigns are optimized continuously — not set up and forgotten.
+
+## Get More Vancouver Leads with AP DIGITAL
+
+At AP DIGITAL, we build and manage high-performance Google Ads campaigns for Vancouver local businesses. From keyword research to landing page design to ongoing optimization, we handle everything — and we report on the metrics that matter: leads, calls, and booked jobs.
+
+**Book your free strategy call** and let's build a Google Ads campaign that puts your Vancouver business at the top of search results.`,
+  },
+  {
+    slug: 'social-media-marketing-vancouver',
+    title: 'Social Media Marketing in Vancouver: What Works for Local Businesses in 2026',
+    metaTitle: 'Social Media Marketing Vancouver 2026 | AP Digital',
+    metaDescription: 'Discover what social media strategies actually work for Vancouver local businesses in 2026. Platform selection, content ideas, and real growth tactics.',
+    excerpt: 'What Vancouver businesses need to know about social media marketing in 2026 — from platform selection to content strategy to measuring real results.',
+    date: '2026-04-12',
+    readTime: '6 min read',
+    category: 'Social Media',
+    content: `Social media marketing in Vancouver is unlike any other Canadian market. The city's diversity, tech-savviness, and highly competitive business landscape mean that generic social strategies fall flat. Here's what actually works for Vancouver local businesses in 2026.
+
+## The Vancouver Social Media Landscape
+
+Vancouver's population is young, urban, and digitally connected. Over 85% of Vancouver residents aged 18–65 use social media daily, and they expect local businesses to have an active, engaging presence. The businesses that win on social media in Vancouver share a few traits: they're authentic, they're consistent, and they understand which platforms their audience actually uses.
+
+## Platform Selection: Where Vancouver Businesses Should Focus
+
+### Instagram
+Instagram is the dominant platform for consumer-facing Vancouver businesses. Salons, restaurants, fitness studios, real estate agents, and retail shops all thrive here. Vancouver's visual culture — mountains, ocean, food scene — makes Instagram content particularly shareable.
+
+What works on Instagram in Vancouver:
+- Reels showing your work, behind-the-scenes, or Vancouver lifestyle content
+- Stories with polls, Q&As, and location tags
+- Carousel posts with tips, guides, or before-and-after transformations
+- Consistent posting (3–5 times per week minimum)
+
+### LinkedIn
+For B2B businesses, consultants, coaches, and professional services in Vancouver, LinkedIn is the highest-value platform. Vancouver's tech and startup ecosystem is active on LinkedIn, and thoughtful posts about industry trends, business lessons, and market insights generate meaningful engagement and leads.
+
+### TikTok
+Vancouver's younger demographic (18–35) is heavily active on TikTok. Restaurants, fitness brands, and entertainment businesses that embrace short-form video see explosive organic reach. The key is authenticity — polished corporate content doesn't work here.
+
+### Facebook
+Facebook remains relevant for Vancouver businesses targeting homeowners aged 35+, community groups, and local events. It's also the primary platform for running paid ads through Meta's advertising platform.
+
+## Content Strategy for Vancouver Businesses
+
+The most effective Vancouver social media content follows a simple framework:
+
+**40% Value Content:** Tips, guides, how-tos, and educational posts that help your audience. A Vancouver salon might post "3 ways to protect your hair colour in Vancouver's rainy season." A contractor might share "What Vancouver homeowners need to know about heritage home renovations."
+
+**30% Social Proof:** Client testimonials, reviews, before-and-after photos, case studies. This content builds trust and shows real results from real Vancouver customers.
+
+**20% Behind-the-Scenes:** Show the human side of your business. Your team, your process, your workspace. Vancouver audiences value authenticity and want to know the people behind the brand.
+
+**10% Promotional:** Offers, sales, and direct calls to action. Keep promotional content to a minimum — if every post is a sales pitch, your audience tunes out.
+
+## Vancouver-Specific Content Ideas
+
+- Neighbourhood spotlights (Gastown, Main Street, Commercial Drive, Granville Island)
+- Seasonal content tied to Vancouver events (PNE, Celebration of Light, Whitecaps games)
+- Weather-related posts ("Rainy day specials," "Summer patio season is here")
+- Community partnerships and local collaborations
+- Vancouver lifestyle content that resonates with your target audience
+
+## Measuring What Matters
+
+Stop measuring likes and followers — start measuring what impacts your bottom line:
+
+- **Website clicks from social media:** Are people visiting your site?
+- **DM inquiries:** How many potential customers are reaching out?
+- **Booking or contact form submissions:** Track social media as a source.
+- **Cost per lead (for paid campaigns):** What's the actual cost to acquire a customer?
+
+## Common Mistakes Vancouver Businesses Make on Social Media
+
+- **Inconsistency.** Posting five times one week and then disappearing for a month kills your momentum and your algorithm ranking.
+- **Ignoring engagement.** Social media is a two-way conversation. Reply to every comment and DM within 24 hours.
+- **No strategy.** Posting randomly without a content calendar or clear goals wastes time and resources.
+- **Trying to be everywhere.** Focus on one or two platforms and do them well, rather than posting mediocre content across five platforms.
+
+## Let AP DIGITAL Handle Your Vancouver Social Media
+
+At AP DIGITAL, we build and execute social media strategies specifically for Vancouver local businesses. From content creation to community management to paid campaigns, we handle everything — so you can focus on running your business.
+
+**Book your free strategy call** and let's build a social media presence that grows your Vancouver business in 2026.`,
+  },
+];
+
+blogPosts.unshift(...extraPosts, ...vancouverPosts);
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
