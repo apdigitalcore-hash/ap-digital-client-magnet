@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Burnaby BC | AP Digital';
-const DESC = 'AP Digital helps Burnaby businesses get consistent leads with Meta Ads, Google Ads & social media. Trades, salons, realtors & coaches in Burnaby, BC. No contracts.';
+const TITLE = 'Digital Marketing Agency Burnaby BC | Meta Ads & Google Ads | AP Digital';
+const DESC = 'Digital marketing agency in Burnaby, BC. AP Digital runs Meta Ads & Google Ads for Burnaby trades, salons, realtors & coaches. Get qualified leads in 2 weeks. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/burnaby';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -45,6 +45,18 @@ const faqs = [
     question: 'Who manages my account at AP Digital?',
     answer: 'Arjun Sharma personally manages every client account. No outsourcing, no junior account managers, no handoffs.',
   },
+  {
+    question: 'Do you work with Burnaby restaurants and retail businesses?',
+    answer: 'We primarily serve service-based businesses — trades, salons, real estate, coaches, and health & wellness. If you run a restaurant or retail shop in Burnaby, reach out and we\'ll let you know honestly whether paid ads are the right fit for your specific situation.',
+  },
+  {
+    question: 'What\'s the minimum budget for Burnaby clients?',
+    answer: 'We recommend a minimum of $500/month in ad spend to generate meaningful results. Our management fee is quoted separately and upfront — no surprises. For most Burnaby businesses, the total investment starts in the $1,000–$2,000/month range including both ad spend and management.',
+  },
+  {
+    question: 'Can you help a new Burnaby business with no online presence?',
+    answer: 'Yes — we build from scratch. If your Burnaby business doesn\'t yet have a Google Business Profile, landing page, or social media presence, we handle all of it. We set up your GBP, build a high-converting landing page, launch your ads, and establish your social media foundation. You don\'t need to have everything in place before working with us.',
+  },
 ];
 
 const structuredData = {
@@ -57,6 +69,38 @@ const structuredData = {
       { name: 'Burnaby', url: '/burnaby' },
     ]),
     getWebPageSchema(TITLE, DESC, '/burnaby'),
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://ap-digital.ca/burnaby",
+      "name": "AP Digital — Burnaby Digital Marketing Agency",
+      "description": DESC,
+      "url": "https://ap-digital.ca/burnaby",
+      "telephone": "+1-778-682-5772",
+      "email": "apdigital.core@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pitt Meadows",
+        "addressRegion": "BC",
+        "postalCode": "V3Y 0G3",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Burnaby" },
+        { "@type": "City", "name": "New Westminster" },
+        { "@type": "City", "name": "Coquitlam" },
+        { "@type": "City", "name": "North Burnaby" },
+        { "@type": "City", "name": "Metrotown" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "founder": { "@type": "Person", "name": "Arjun Sharma" },
+      "sameAs": ["https://ap-digital.ca"]
+    }
   ]
 };
 
@@ -190,10 +234,86 @@ const Burnaby = () => (
         </div>
       </section>
 
-      {/* Why AP Digital */}
+      {/* Why Burnaby Businesses Are Investing in Paid Ads */}
+      <section className="bg-background py-20">
+        <div className="container-custom max-w-4xl">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            Why Burnaby Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+            Burnaby sits at the centre of Metro Vancouver's economy — and local competition for customers is intensifying every year.
+          </p>
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <p>
+              Burnaby is one of BC's most commercially dense cities, with distinct neighbourhoods that each attract different consumer profiles. Metrotown draws high foot traffic and houses hundreds of service businesses competing for the same local clientele. Brentwood has undergone a major transformation with its new towers and retail district, creating a fresh influx of residents who need local service providers — from trades to health and wellness. North Burnaby and Edmonds have established residential bases where small business marketing in Burnaby is shifting rapidly toward digital channels. As a digital marketing agency in Burnaby BC, we understand that winning in this market requires more than just showing up online — it requires showing up at the exact moment your ideal customer is searching or scrolling.
+            </p>
+            <p>
+              The density of Burnaby's market is both an opportunity and a challenge. There are thousands of potential clients within a tight geographic radius, which makes paid advertising extraordinarily cost-efficient compared to cities with more dispersed populations. Lead generation in Burnaby through Google Ads means your business appears at the top of search results when someone in Metrotown types "HVAC repair near me" or when a Brentwood resident searches "hair salon Burnaby." Meta Ads let you layer on demographic and behavioural targeting — reaching the exact homeowner or lifestyle profile that converts best for your business. For Burnaby small business marketing, the combination of search intent (Google) and social discovery (Meta) creates a comprehensive digital presence that captures demand at every stage of the customer journey.
+            </p>
+            <p>
+              What separates the Burnaby businesses that dominate their niche from those that struggle to break through is consistency. The businesses winning in Metrotown, Brentwood, North Burnaby, and Edmonds aren't spending more on ads — they're spending smarter. They have campaigns that are precisely geo-targeted, continuously optimized, and tied to landing pages designed specifically to convert Burnaby visitors into booked appointments or phone calls. As a focused marketing agency Burnaby clients rely on month after month, AP Digital brings that precision without the overhead of a large agency. No layers of account managers between you and the person making decisions on your campaigns — just direct, results-focused management from founder Arjun Sharma.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Burnaby Marketing Process */}
+      <section className="bg-charcoal py-20">
+        <div className="container-custom">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
+            Our Burnaby Marketing Process
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+            A clear, proven process that gets your Burnaby business generating leads fast — with no guesswork.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">1</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Free Strategy Call</h3>
+              <p className="text-muted-foreground text-sm">We learn your Burnaby market, your competition, and your goals. Every campaign starts with a clear picture of what success looks like for your specific business.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">2</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Campaign Build</h3>
+              <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Burnaby and surrounding areas — Metrotown, Brentwood, North Burnaby, Edmonds, and beyond.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">3</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Launch & Optimize</h3>
+              <p className="text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to ensure your Burnaby campaign is performing from day one.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">4</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Scale</h3>
+              <p className="text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead improves as the campaign matures and data builds.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Areas We Serve */}
       <section className="bg-background py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            Areas We Serve Near <span className="text-gradient">Burnaby</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+            Our campaigns cover all of Burnaby and the surrounding Metro Vancouver region. We geo-target your specific neighbourhoods so your budget reaches the right customers — not just anyone in the Lower Mainland.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {['Metrotown', 'Brentwood', 'North Burnaby', 'Edmonds', 'New Westminster', 'Coquitlam', 'Vancouver East'].map((area) => (
+              <span key={area} className="rounded-full bg-muted px-4 py-2 text-sm text-foreground">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why AP Digital */}
+      <section className="bg-charcoal py-20">
+        <div className="container-custom">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
             Why Burnaby Businesses Choose <span className="text-gradient">AP Digital</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
@@ -220,15 +340,15 @@ const Burnaby = () => (
       </section>
 
       {/* FAQ */}
-      <section className="bg-charcoal py-20">
+      <section className="bg-background py-20">
         <div className="container-custom max-w-3xl">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             Common Questions
           </h2>
           <Accordion type="single" collapsible>
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border-gray-800">
-                <AccordionTrigger className="text-left text-primary-foreground font-medium hover:text-teal">
+                <AccordionTrigger className="text-left text-foreground font-medium hover:text-teal">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">

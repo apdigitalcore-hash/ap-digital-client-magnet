@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Surrey BC | AP Digital';
-const DESC = 'AP Digital helps Surrey businesses get more leads with Meta Ads, Google Ads & social media. Serving trades, salons, realtors & coaches in Surrey, BC. No contracts.';
+const TITLE = 'Digital Marketing Agency Surrey BC | Meta Ads & Google Ads | AP Digital';
+const DESC = 'Top-rated digital marketing agency in Surrey, BC. AP Digital runs Meta Ads & Google Ads for Surrey trades, salons, realtors & coaches. Get leads in 2 weeks. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/surrey';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -45,6 +45,18 @@ const faqs = [
     question: 'Will Arjun personally manage my account?',
     answer: 'Yes. Arjun Sharma personally manages every client account at AP Digital. No outsourcing, no junior account managers.',
   },
+  {
+    question: 'Do you run Google Ads for Surrey businesses?',
+    answer: 'Yes — we run both Google Ads and Meta Ads for Surrey businesses. Which platform we prioritize depends on your business type. For high-intent searches like "plumber Surrey" or "electrician near me," Google Ads typically delivers the best results. For awareness and retargeting — salons, coaches, and health & wellness — Meta Ads often wins. We recommend the right mix after your free strategy call.',
+  },
+  {
+    question: 'What industries do you serve in Surrey?',
+    answer: 'We work with all service-based businesses in Surrey, BC — trades (plumbers, HVAC, electricians, roofers), hair salons & beauty studios, real estate agents, coaches & consultants, restaurants, and health & wellness businesses. If you run a local service business in Surrey, we can build a campaign for you.',
+  },
+  {
+    question: 'How is AP Digital different from other Surrey marketing agencies?',
+    answer: 'The founder, Arjun Sharma, personally manages every single account — no outsourcing, no handing you off to a junior team member. We also work month-to-month with no lock-in contracts, so we earn your business every month by actually delivering results. Most Surrey marketing agencies put you through a sales team, then hand your account to a generalist. We don\'t operate that way.',
+  },
 ];
 
 const structuredData = {
@@ -57,6 +69,38 @@ const structuredData = {
       { name: 'Surrey', url: '/surrey' },
     ]),
     getWebPageSchema(TITLE, DESC, '/surrey'),
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://ap-digital.ca/surrey",
+      "name": "AP Digital — Surrey Digital Marketing Agency",
+      "description": DESC,
+      "url": "https://ap-digital.ca/surrey",
+      "telephone": "+1-778-682-5772",
+      "email": "apdigital.core@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pitt Meadows",
+        "addressRegion": "BC",
+        "postalCode": "V3Y 0G3",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Surrey" },
+        { "@type": "City", "name": "White Rock" },
+        { "@type": "City", "name": "Delta" },
+        { "@type": "City", "name": "Langley" },
+        { "@type": "City", "name": "Cloverdale" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "founder": { "@type": "Person", "name": "Arjun Sharma" },
+      "sameAs": ["https://ap-digital.ca"]
+    }
   ]
 };
 
@@ -190,10 +234,86 @@ const Surrey = () => (
         </div>
       </section>
 
-      {/* Why AP Digital */}
+      {/* Why Surrey Businesses Are Investing in Paid Ads */}
+      <section className="bg-background py-20">
+        <div className="container-custom max-w-4xl">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            Why Surrey Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+            Surrey is one of the fastest-growing cities in Metro Vancouver — and the competition for local customers is only intensifying.
+          </p>
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <p>
+              Surrey, BC is no longer just a bedroom community — it's a full economic hub with distinct neighbourhoods each carrying their own commercial energy. Newton has a dense population of service-hungry households. Guildford is a retail and service corridor where competition among trades and beauty businesses is fierce. South Surrey and White Rock attract higher-income demographics actively searching for premium service providers. Cloverdale and Whalley are home to a growing number of small business owners who need a digital marketing agency in Surrey BC that actually understands their local market. Running generic, city-wide campaigns doesn't cut it here — neighbourhood-level targeting is what separates the businesses that get booked solid from those that wonder why their ads aren't working.
+            </p>
+            <p>
+              The shift toward digital-first customer behaviour in Surrey has accelerated dramatically. Surrey small business marketing is no longer optional — it's the primary growth lever. When a homeowner in Guildford needs an HVAC technician, they're not flipping through a directory. They're searching on Google or scrolling Facebook and Instagram. When someone in South Surrey is looking for a new salon, they're clicking on ads they see in their feed. Lead generation in Surrey now happens almost entirely online, and the businesses that invest in Meta Ads and Google Ads are capturing that demand while competitors who rely on word-of-mouth slowly fade. The window to build a dominant local presence before your niche gets saturated is still open — but it won't stay open forever.
+            </p>
+            <p>
+              What makes paid advertising uniquely powerful for a marketing agency Surrey clients can trust is the precision of targeting. Unlike SEO, which takes months to compound, a well-structured Google Ads or Meta Ads campaign for a Surrey business can generate qualified leads within days of going live. We geo-target specific postal codes in Newton, Guildford, South Surrey, Cloverdale, and Whalley so your ad budget reaches the exact neighbourhoods where your ideal customers live. For trades businesses, this means fewer wasted clicks from outside your service radius. For salons, it means filling chairs with local clients who are actually within driving distance. For realtors, it means reaching motivated buyers and sellers in the specific Surrey submarkets you specialize in — not wasting impressions on people who'll never convert.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Surrey Marketing Process */}
+      <section className="bg-charcoal py-20">
+        <div className="container-custom">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
+            Our Surrey Marketing Process
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+            A clear, proven process that gets your Surrey business generating leads fast — with no guesswork.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">1</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Free Strategy Call</h3>
+              <p className="text-muted-foreground text-sm">We learn your Surrey market, your competition, and your goals. No cookie-cutter approach — every campaign starts with understanding your specific business.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">2</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Campaign Build</h3>
+              <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Surrey and surrounding areas — Newton, Guildford, South Surrey, Cloverdale, White Rock, and beyond.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">3</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Launch & Optimize</h3>
+              <p className="text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Surrey campaign hits its stride as fast as possible.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">4</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Scale</h3>
+              <p className="text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Areas We Serve */}
       <section className="bg-background py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            Areas We Serve Near <span className="text-gradient">Surrey</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+            Our digital marketing campaigns cover all of Surrey and the surrounding South Fraser region. Whether you're based in Newton or South Surrey, we target your exact service area so every ad dollar is working as hard as possible.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {['Newton', 'Guildford', 'South Surrey', 'Cloverdale', 'Whalley', 'White Rock', 'Delta', 'Langley'].map((area) => (
+              <span key={area} className="rounded-full bg-muted px-4 py-2 text-sm text-foreground">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why AP Digital */}
+      <section className="bg-charcoal py-20">
+        <div className="container-custom">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
             Why Surrey Businesses Choose <span className="text-gradient">AP Digital</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
@@ -220,15 +340,15 @@ const Surrey = () => (
       </section>
 
       {/* FAQ */}
-      <section className="bg-charcoal py-20">
+      <section className="bg-background py-20">
         <div className="container-custom max-w-3xl">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             Common Questions
           </h2>
           <Accordion type="single" collapsible>
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border-gray-800">
-                <AccordionTrigger className="text-left text-primary-foreground font-medium hover:text-teal">
+                <AccordionTrigger className="text-left text-foreground font-medium hover:text-teal">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">

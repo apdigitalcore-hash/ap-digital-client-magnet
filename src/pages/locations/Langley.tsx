@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Langley BC | AP Digital';
-const DESC = 'AP Digital helps Langley businesses get more leads with Meta Ads, Google Ads & social media. Serving trades, salons, realtors & coaches in Langley, BC. No contracts.';
+const TITLE = 'Digital Marketing Agency Langley BC | Meta Ads & Google Ads | AP Digital';
+const DESC = 'Digital marketing agency serving Langley City & Township, BC. Meta Ads & Google Ads for trades, salons, realtors & coaches. AP Digital — leads in 2 weeks, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/langley';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -45,6 +45,18 @@ const faqs = [
     question: 'Does AP Digital work with Langley trades businesses?',
     answer: 'Yes — Langley trades are one of our strongest niches. We run Meta and Google Ads for plumbers, HVAC, electricians, roofers, and contractors across Langley City and Township.',
   },
+  {
+    question: 'Do you work with Langley farms or agricultural businesses?',
+    answer: 'We primarily serve service-based businesses, but agri-tourism and farm retail can work very well with Meta Ads. If you run a farm market, u-pick operation, or agri-tourism destination in the Langley area, reach out and we\'ll walk you through whether a campaign makes sense for your model.',
+  },
+  {
+    question: 'Can you target both Langley City and the Township?',
+    answer: 'Yes — we geo-target Langley City and the Township separately or combined, depending on your service area. Many Langley businesses serve both, and we can set up campaigns that cover all of Langley, Walnut Grove, Willowbrook, Murrayville, Aldergrove, and surrounding areas simultaneously.',
+  },
+  {
+    question: 'What results can Langley trades businesses expect?',
+    answer: 'Most Langley contractors — plumbers, HVAC, electricians, roofers — see 10 to 30 qualified leads per month within 60 days of launching with AP Digital. Results depend on your service area, budget, and niche, but trades businesses in Langley consistently perform well because local search intent is high and the competition, while present, is beatable with a well-structured campaign.',
+  },
 ];
 
 const structuredData = {
@@ -57,6 +69,38 @@ const structuredData = {
       { name: 'Langley', url: '/langley' },
     ]),
     getWebPageSchema(TITLE, DESC, '/langley'),
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://ap-digital.ca/langley",
+      "name": "AP Digital — Langley Digital Marketing Agency",
+      "description": DESC,
+      "url": "https://ap-digital.ca/langley",
+      "telephone": "+1-778-682-5772",
+      "email": "apdigital.core@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pitt Meadows",
+        "addressRegion": "BC",
+        "postalCode": "V3Y 0G3",
+        "addressCountry": "CA"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Langley" },
+        { "@type": "City", "name": "Langley City" },
+        { "@type": "City", "name": "Aldergrove" },
+        { "@type": "City", "name": "Walnut Grove" },
+        { "@type": "City", "name": "Abbotsford" }
+      ],
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "founder": { "@type": "Person", "name": "Arjun Sharma" },
+      "sameAs": ["https://ap-digital.ca"]
+    }
   ]
 };
 
@@ -190,10 +234,86 @@ const Langley = () => (
         </div>
       </section>
 
-      {/* Why AP Digital */}
+      {/* Why Langley Businesses Are Investing in Paid Ads */}
+      <section className="bg-background py-20">
+        <div className="container-custom max-w-4xl">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            Why Langley Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+            Langley is one of the fastest-growing communities in BC — and local businesses that move first on digital marketing are capturing market share that's hard to take back.
+          </p>
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <p>
+              Langley — spanning both the City and the Township — is in the middle of a sustained growth surge that's creating enormous opportunity for local service businesses. Willowbrook continues to evolve as a commercial hub, drawing consumers from across the southern Fraser Valley. Murrayville, Walnut Grove, and Aldergrove have dense residential populations whose residents are increasingly searching for and booking local services online. This is the environment where a digital marketing agency in Langley BC that understands the local geography makes an outsized difference. Generic campaigns targeting broad Metro Vancouver audiences waste budget reaching people who would never drive to your location. Precision targeting at the neighbourhood level is what converts.
+            </p>
+            <p>
+              Langley's market has a distinctive character: it's suburban and semi-rural, with strong community identity, high homeownership rates, and a trades market that reflects the active development and renovation happening throughout the Township. Lead generation in Langley for contractors — plumbers, HVAC companies, electricians, roofers — is particularly high-return because the demand is real and consistent. There's always a new build or renovation project in Walnut Grove or Willowbrook that needs service providers. Meta Ads work exceptionally well for Langley small business marketing because the demographic targeting lets you reach homeowners specifically, filtering out renters and apartment dwellers who are unlikely to need your services. That precision is the difference between an ad budget that pays for itself tenfold and one that bleeds money.
+            </p>
+            <p>
+              What makes the current moment so important for a marketing agency Langley businesses should be acting on is the competitive window that still exists. Unlike Vancouver or Burnaby where every niche is saturated with advertisers driving up cost-per-click, Langley still offers relatively affordable ad costs with high intent. A plumber in Langley Township running Google Ads today is capturing leads at a fraction of what the same campaign costs in Vancouver. A salon in Willowbrook running Meta Ads can reach the entire Langley and Cloverdale market at lower CPMs than their counterparts in Metrotown or Brentwood. That window won't stay open as more businesses discover what's working — the time to build a dominant position in Langley's digital landscape is now, before competitors do.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Langley Marketing Process */}
+      <section className="bg-charcoal py-20">
+        <div className="container-custom">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
+            Our Langley Marketing Process
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+            A clear, proven process that gets your Langley business generating leads fast — with no guesswork.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">1</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Free Strategy Call</h3>
+              <p className="text-muted-foreground text-sm">We learn your Langley market, your competition, and your goals. Whether you serve Langley City, the Township, or both — we build around your actual service area.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">2</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Campaign Build</h3>
+              <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Langley and surrounding areas — Willowbrook, Walnut Grove, Murrayville, Aldergrove, Cloverdale, and Abbotsford.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">3</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Launch & Optimize</h3>
+              <p className="text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Langley campaign is generating real, qualified leads.</p>
+            </div>
+            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
+              <div className="font-display text-3xl font-bold text-teal mb-3">4</div>
+              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Scale</h3>
+              <p className="text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Most Langley clients see cost-per-lead improve significantly within the first 90 days.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Areas We Serve */}
       <section className="bg-background py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+            Areas We Serve Near <span className="text-gradient">Langley</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+            Our campaigns cover all of Langley City, Langley Township, and the surrounding Fraser Valley communities. We target the specific areas where your customers live — not just a broad radius that wastes budget.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center">
+            {['Langley City', 'Walnut Grove', 'Murrayville', 'Willowbrook', 'Aldergrove', 'Cloverdale', 'Abbotsford'].map((area) => (
+              <span key={area} className="rounded-full bg-muted px-4 py-2 text-sm text-foreground">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why AP Digital */}
+      <section className="bg-charcoal py-20">
+        <div className="container-custom">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
             Why Langley Businesses Choose <span className="text-gradient">AP Digital</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
@@ -220,15 +340,15 @@ const Langley = () => (
       </section>
 
       {/* FAQ */}
-      <section className="bg-charcoal py-20">
+      <section className="bg-background py-20">
         <div className="container-custom max-w-3xl">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
             Common Questions
           </h2>
           <Accordion type="single" collapsible>
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border-gray-800">
-                <AccordionTrigger className="text-left text-primary-foreground font-medium hover:text-teal">
+                <AccordionTrigger className="text-left text-foreground font-medium hover:text-teal">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
