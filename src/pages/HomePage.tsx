@@ -14,7 +14,6 @@ import DarkCTA from '@/components/DarkCTA';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
-import heroImageWebp from '@/assets/hero-split.webp';
 
 const TITLE = 'Digital Marketing Agency Vancouver | AP Digital';
 const DESC = 'AP Digital helps salons, trades, real estate agents & coaches get predictable leads using paid ads & social media. Based in Vancouver, BC. Month-to-month.';
@@ -85,17 +84,14 @@ const HomePage = () => {
       <section className="relative min-h-screen flex items-center justify-center bg-near-black overflow-hidden">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
-          <picture>
-            <source srcSet={heroImageWebp} type="image/webp" />
-            <img
-              src={heroImage}
-              alt="Digital marketing agency for local businesses in Vancouver BC"
-              className="absolute inset-0 w-full h-full object-cover opacity-20"
-              fetchPriority="high"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
+          <img
+            src={heroImage}
+            alt="Digital marketing agency for local businesses in Vancouver BC"
+            className="absolute inset-0 w-full h-full object-cover opacity-20"
+            fetchPriority="high"
+            loading="eager"
+            decoding="sync"
+          />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,_rgba(255,255,255,0.08)_0%,_transparent_60%)]" />
           <div className="absolute inset-0 bg-near-black/60" />
         </div>
@@ -112,7 +108,9 @@ const HomePage = () => {
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.08] tracking-tight mb-8 animate-fade-up"
             style={{ animationDelay: '0.1s' }}
           >
-            Digital Marketing That Generates Leads
+            Website Design &{' '}
+            <br className="hidden sm:block" />
+            Marketing Systems
           </h1>
 
           {/* Subheadline */}
@@ -120,7 +118,9 @@ const HomePage = () => {
             className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up leading-relaxed"
             style={{ animationDelay: '0.2s' }}
           >
-            We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
+            Marketing does not have to be complicated.
+            We provide the tools and systems you need to
+            succeed. Your job is to show up and close them.
           </p>
 
           {/* CTAs */}
@@ -130,7 +130,7 @@ const HomePage = () => {
           >
             <Button variant="hero" size="lg" asChild>
               <Link to="/contact" className="flex items-center gap-2">
-                Book a Free Strategy Call
+                Book a Strategy Call
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
