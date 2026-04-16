@@ -24,8 +24,8 @@ export const organizationSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 49.2827,
-    "longitude": -123.1207
+    "latitude": 49.2165,
+    "longitude": -122.6895
   },
   "telephone": "+1-778-682-5772",
   "email": "apdigital.core@gmail.com",
