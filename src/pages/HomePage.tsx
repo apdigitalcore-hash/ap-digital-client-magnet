@@ -1,6 +1,6 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play, Zap, Target, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
