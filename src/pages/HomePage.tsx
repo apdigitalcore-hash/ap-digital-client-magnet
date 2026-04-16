@@ -75,7 +75,7 @@ const HomePage = () => {
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
-        <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
+        <link rel="preload" as="image" href={heroImage} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
