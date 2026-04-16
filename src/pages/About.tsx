@@ -74,7 +74,7 @@ const structuredData = {
       description: 'Arjun Sharma is the founder of AP Digital, a Vancouver-based marketing agency helping Canadian small businesses generate predictable leads through short-form content and paid advertising.',
       url: '/about',
       sameAs: [
-        'https://www.instagram.com/apdigital',
+        'https://www.instagram.com/theapdigital/',
         'https://www.linkedin.com/company/apdigital',
       ],
     }),
