@@ -50,7 +50,7 @@ const Contact = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Vancouver, BC, Canada',
+      value: 'Pitt Meadows, BC, Canada',
       href: null,
     },
     {
