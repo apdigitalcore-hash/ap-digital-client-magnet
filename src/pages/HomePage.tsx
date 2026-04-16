@@ -75,6 +75,7 @@ const HomePage = () => {
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
+        <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
@@ -131,8 +132,11 @@ const HomePage = () => {
         <div className="hidden lg:block w-1/2 relative">
           <img
             src={heroImage}
-            alt="Digital marketing agency creative"
+            alt="Digital marketing agency for local businesses in Vancouver BC"
             className="absolute inset-0 w-full h-full object-cover"
+            fetchpriority="high"
+            loading="eager"
+            decoding="sync"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-near-black via-near-black/40 to-transparent" />
         </div>
@@ -141,8 +145,11 @@ const HomePage = () => {
         <div className="block lg:hidden absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Digital marketing agency creative"
+            alt="Digital marketing agency for local businesses in Vancouver BC"
             className="w-full h-full object-cover opacity-40"
+            fetchpriority="high"
+            loading="eager"
+            decoding="sync"
           />
           <div className="absolute inset-0 bg-near-black/60" />
         </div>

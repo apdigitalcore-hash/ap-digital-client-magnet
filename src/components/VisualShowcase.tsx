@@ -53,6 +53,8 @@ const VisualShowcase = () => {
               src={showcaseItems[0].image}
               alt={showcaseItems[0].title}
               className="w-full h-[400px] lg:h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -80,6 +82,8 @@ const VisualShowcase = () => {
               src={showcaseItems[1].image}
               alt={showcaseItems[1].title}
               className="w-full h-[250px] md:h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -102,6 +106,8 @@ const VisualShowcase = () => {
               src={showcaseItems[3].image}
               alt={showcaseItems[3].title}
               className="w-full h-[400px] lg:h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -124,6 +130,8 @@ const VisualShowcase = () => {
               src={showcaseItems[2].image}
               alt={showcaseItems[2].title}
               className="w-full h-[250px] md:h-[300px] object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
