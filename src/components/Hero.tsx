@@ -71,7 +71,7 @@ const Hero = () => {
           src={heroImage}
           alt="Digital marketing agency for local businesses in Vancouver BC"
           className="absolute inset-0 w-full h-full object-cover"
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
           decoding="sync"
         />

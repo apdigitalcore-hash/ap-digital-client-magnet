@@ -75,7 +75,7 @@ const HomePage = () => {
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
-        <link rel="preload" as="image" href={heroImage} fetchpriority="high" />
+        <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
@@ -134,7 +134,7 @@ const HomePage = () => {
             src={heroImage}
             alt="Digital marketing agency for local businesses in Vancouver BC"
             className="absolute inset-0 w-full h-full object-cover"
-            fetchpriority="high"
+            fetchPriority="high"
             loading="eager"
             decoding="sync"
           />
@@ -147,7 +147,7 @@ const HomePage = () => {
             src={heroImage}
             alt="Digital marketing agency for local businesses in Vancouver BC"
             className="w-full h-full object-cover opacity-40"
-            fetchpriority="high"
+            fetchPriority="high"
             loading="eager"
             decoding="sync"
           />
