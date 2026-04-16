@@ -39,7 +39,7 @@ export const organizationSchema = {
   ],
   "sameAs": [
     "https://share.google/lI0pYZTBgTazYNTSp",
-    "https://www.instagram.com/apdigital",
+    "https://www.instagram.com/theapdigital/",
     "https://www.facebook.com/apdigital",
     "https://www.linkedin.com/company/apdigital"
   ],

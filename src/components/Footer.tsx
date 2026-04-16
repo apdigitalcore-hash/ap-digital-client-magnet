@@ -32,7 +32,7 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Instagram,
-      href: 'https://www.instagram.com/ap.digimarket/',
+      href: 'https://www.instagram.com/theapdigital/',
       label: 'Instagram'
     },
     {
