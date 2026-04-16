@@ -130,6 +130,24 @@ export const getWebPageSchema = (
   "publisher": { "@id": `${BASE_URL}/#organization` }
 });
 
+export const getPersonSchema = (person: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  url: string;
+  sameAs?: string[];
+}) => ({
+  "@type": "Person",
+  "@id": `${BASE_URL}${person.url}#person`,
+  "name": person.name,
+  "jobTitle": person.jobTitle,
+  "description": person.description,
+  "url": `${BASE_URL}${person.url}`,
+  "worksFor": { "@id": `${BASE_URL}/#organization` },
+  "image": OG_IMAGE,
+  ...(person.sameAs && person.sameAs.length > 0 ? { "sameAs": person.sameAs } : {})
+});
+
 export const getArticleSchema = (post: {
   slug: string;
   title: string;
