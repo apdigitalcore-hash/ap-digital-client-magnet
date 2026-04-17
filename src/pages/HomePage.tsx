@@ -155,41 +155,41 @@ const HomePage = () => {
       </section>
 
       {/* Niche Services Sections */}
-      <section className="py-20 md:py-28 bg-charcoal">
+      <section className="py-14 sm:py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-            <Link to="/salon-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+          <div className="grid md:grid-cols-2 gap-5 sm:gap-8 md:gap-12 lg:gap-16">
+            <Link to="/salon-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
                 Social Media & Paid Ads for <span className="text-gradient">Salons</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Instagram and Facebook ads that bring consistent new bookings to your salon every week — without you lifting a finger. Most salon partners see a full appointment book within 30 days.
               </p>
             </Link>
 
-            <Link to="/real-estate-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+            <Link to="/real-estate-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
                 Digital Marketing for <span className="text-gradient">Real Estate Agents</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Qualified buyer and seller leads through hyper-targeted Meta and Google Ads. Spend less time chasing and more time closing — typically 15–30 new leads per month.
               </p>
             </Link>
 
-            <Link to="/trades-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+            <Link to="/trades-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
                 Lead Generation for <span className="text-gradient">Trades Businesses</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Plumbers, electricians, roofers, and contractors — ads that put you in front of homeowners who need you right now. Stop relying on word-of-mouth and start filling your schedule.
               </p>
             </Link>
 
-            <Link to="/coaching-marketing" className="p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-4">
+            <Link to="/coaching-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
+              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
                 Marketing for <span className="text-gradient">Coaches & Consultants</span>
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Personal trainers, life coaches, and fitness studio owners — we build ad campaigns and content systems that attract your ideal clients and keep your calendar full.
               </p>
             </Link>
@@ -204,27 +204,27 @@ const HomePage = () => {
       <TestimonialsDark />
 
       {/* What Makes Us Different */}
-      <section className="py-20 md:py-28 bg-charcoal">
+      <section className="py-14 sm:py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4">
+          <div className="text-center mb-10 sm:mb-14 md:mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
               Why <span className="text-gradient">Choose Us</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-2">
               No fluff. No buzzwords. Just results.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-6">
             {differentiators.map((item) => (
-              <div key={item.title} className="p-6 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center mb-4">
-                  <item.icon className="w-6 h-6 text-teal" />
+              <div key={item.title} className="p-4 sm:p-6 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-teal/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-teal" />
                 </div>
-                <h3 className="font-display text-lg font-semibold text-primary-foreground mb-2">
+                <h3 className="font-display text-base sm:text-lg font-semibold text-primary-foreground mb-1.5 sm:mb-2 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">{item.description}</p>
+                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
@@ -232,17 +232,17 @@ const HomePage = () => {
       </section>
 
       {/* Cities We Serve */}
-      <section className="py-20 md:py-28 bg-background">
+      <section className="py-14 sm:py-20 md:py-28 bg-background">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 leading-tight">
               Cities We <span className="text-gradient">Serve</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-2">
               Based in the Lower Mainland, we serve local businesses across Metro Vancouver and the Fraser Valley.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {[
               { city: 'Surrey', href: '/surrey', sub: 'South Fraser' },
               { city: 'Burnaby', href: '/burnaby', sub: 'Tri-Cities' },
@@ -252,10 +252,10 @@ const HomePage = () => {
               <Link
                 key={href}
                 to={href}
-                className="group bg-card border border-border rounded-2xl p-6 text-center hover:border-teal/40 transition-colors"
+                className="group bg-card border border-border rounded-2xl p-4 sm:p-6 text-center hover:border-teal/40 transition-colors"
               >
-                <div className="font-display text-xl font-bold text-foreground group-hover:text-teal transition-colors mb-1">{city}</div>
-                <div className="text-muted-foreground text-sm">{sub}</div>
+                <div className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-teal transition-colors mb-1">{city}</div>
+                <div className="text-muted-foreground text-xs sm:text-sm">{sub}</div>
               </Link>
             ))}
           </div>
