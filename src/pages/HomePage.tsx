@@ -101,15 +101,15 @@ const HomePage = () => {
         </div>
 
         {/* Centered content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pt-24 pb-32 sm:py-0">
           {/* Eyebrow */}
-          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-8 animate-fade-up font-medium">
+          <p className="text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] sm:tracking-[0.3em] text-muted-foreground mb-5 sm:mb-8 animate-fade-up font-medium">
             AP Digital Marketing
           </p>
 
           {/* Headline */}
           <h1
-            className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.08] tracking-tight mb-8 animate-fade-up"
+            className="font-display text-[2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] tracking-tight mb-5 sm:mb-8 animate-fade-up"
             style={{ animationDelay: '0.1s' }}
           >
             Digital Marketing That Generates Leads
@@ -117,7 +117,7 @@ const HomePage = () => {
 
           {/* Subheadline */}
           <p
-            className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-12 animate-fade-up leading-relaxed px-2 sm:px-0"
             style={{ animationDelay: '0.2s' }}
           >
             We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
@@ -125,17 +125,17 @@ const HomePage = () => {
 
           {/* CTAs */}
           <div
-            className="flex flex-wrap items-center justify-center gap-4 animate-fade-up"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-up"
             style={{ animationDelay: '0.3s' }}
           >
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact" className="flex items-center gap-2">
+            <Button variant="hero" size="lg" asChild className="w-full sm:w-auto">
+              <Link to="/contact" className="flex items-center justify-center gap-2">
                 Book a Free Strategy Call
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
-            <Button variant="light" size="lg" asChild>
-              <a href="#services">
+            <Button variant="light" size="lg" asChild className="w-full sm:w-auto">
+              <a href="#services" className="flex items-center justify-center">
                 See What's Included
               </a>
             </Button>
@@ -143,10 +143,10 @@ const HomePage = () => {
         </div>
 
         {/* Bottom trust bar */}
-        <div className="absolute bottom-8 left-0 right-0 z-10 animate-fade-up" style={{ animationDelay: '0.5s' }}>
-          <div className="flex items-center justify-center gap-10 md:gap-16 opacity-40">
+        <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-10 animate-fade-up px-4" style={{ animationDelay: '0.5s' }}>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-10 md:gap-x-16 opacity-40">
             {['Google', 'Facebook', 'Instagram', 'LinkedIn'].map(brand => (
-              <span key={brand} className="text-primary-foreground font-display font-semibold text-sm md:text-base tracking-wide">
+              <span key={brand} className="text-primary-foreground font-display font-semibold text-xs sm:text-sm md:text-base tracking-wide">
                 {brand}
               </span>
             ))}
