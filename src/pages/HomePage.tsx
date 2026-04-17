@@ -155,7 +155,7 @@ const HomePage = () => {
       </section>
 
       {/* Niche Services Sections */}
-      <section className="py-14 sm:py-20 md:py-28 bg-charcoal">
+      <section className="py-8 sm:py-16 md:py-28 bg-charcoal">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-5 sm:gap-8 md:gap-12 lg:gap-16">
             <Link to="/salon-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
