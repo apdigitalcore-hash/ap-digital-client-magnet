@@ -5,32 +5,28 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    name: 'Priya S.',
-    role: 'Salon Owner · Mississauga',
-    content: "Calendar went from half-empty to a 3-week waitlist in 6 weeks. The Instagram content they made just took off.",
+    name: 'Hollis Whitaker',
+    role: 'Salon Owner · Kitsilano, Vancouver',
+    content: "Honestly thought another agency was going to be a waste of money. Six weeks in we had a proper waitlist and I had to hire a second stylist. The reels they shot in the studio just kept hitting.",
     result: '+40 clients/mo',
-    
   },
   {
-    name: 'Marcus C.',
-    role: 'Realtor · Vancouver',
-    content: "Was burning cash on Zillow. They set up Facebook ads that actually convert. 25 solid leads a week now.",
+    name: 'Emmett Brogan',
+    role: 'Realtor · North Vancouver',
+    content: "I was dumping close to two grand a month into Zillow leads going nowhere. Switched everything to Meta ads with their team and now I'm closing 2-3 deals a month off it. Stopped checking Zillow entirely.",
     result: '25+ leads/wk',
-    
   },
   {
-    name: 'Dave K.',
-    role: 'Plumber · Calgary',
-    content: "I know pipes, not marketing. They took over Google and now we're booked solid two months out.",
+    name: 'Declan Voss',
+    role: 'Plumber · Calgary SE',
+    content: "I'm a plumber, I don't know what a funnel is and I don't want to. They handle the Google stuff, the calls come in, I show up. Booked into late next month right now which has never happened before.",
     result: 'Booked 2 months',
-    
   },
   {
-    name: 'Sarah L.',
-    role: 'Life Coach · Toronto',
-    content: "Went from 2 discovery calls a month to 15. The short-form videos are a game changer.",
+    name: 'Sloane Marchetti',
+    role: 'Executive Coach · Toronto',
+    content: "Was getting maybe two discovery calls a month off LinkedIn and crickets everywhere else. The short-form content strategy they built completely changed it. Last month I had to close my calendar.",
     result: '7x more calls',
-    
   },
 ];
 
