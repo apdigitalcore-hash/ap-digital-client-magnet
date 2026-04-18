@@ -152,6 +152,16 @@ const Header = () => {
             </Link>
 
             <Link
+              to="/#digital-arsenal"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal flex items-center gap-1.5 ${
+                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
+              Digital Arsenal
+            </Link>
+
+            <Link
               to="/contact"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
@@ -264,6 +274,15 @@ const Header = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Blog
+              </Link>
+
+              <Link
+                to="/#digital-arsenal"
+                className="px-4 py-3 text-teal font-medium hover:bg-muted transition-colors flex items-center gap-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
+                Digital Arsenal
               </Link>
 
               <Link
