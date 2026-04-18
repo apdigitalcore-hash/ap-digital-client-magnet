@@ -116,7 +116,7 @@ const DigitalArsenal = () => {
 
                   <p className="text-gray-400 text-base leading-relaxed mb-7">
                     50 AI agents covering every part of your business — marketing, sales, content,
-                    ops, and customer support. Copy-paste into ChatGPT. Get deliverables, not
+                    ops, and customer support. Copy-paste into Claude. Get deliverables, not
                     suggestions.
                   </p>
 
@@ -189,7 +189,7 @@ const DigitalArsenal = () => {
                     {/* Trust signals */}
                     <ul className="space-y-2 mt-5">
                       {[
-                        'Works with free ChatGPT',
+                        'Works with free Claude',
                         '30-day money-back guarantee',
                         'Instant PDF download',
                         'Lifetime updates included',
