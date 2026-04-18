@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 // ── Update this URL once the funnel is deployed ──────────────────────────────
-const AI_EMPLOYEE_URL = 'https://ai-10k.vercel.app';
+const AI_EMPLOYEE_URL = 'https://buy.stripe.com/aFa5kF5R27g1flhg2o8EM03';
 // ─────────────────────────────────────────────────────────────────────────────
 
 const features = [
