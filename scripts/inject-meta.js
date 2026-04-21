@@ -110,9 +110,18 @@ for (const route of routes) {
     html = html.replace(/<link rel="canonical"[^>]*\/>/, `<link rel="canonical" href="${canonical}" />`);
   }
 
-  const dir = resolve(distDir, route.path);
-  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
-  writeFileSync(resolve(dir, 'index.html'), html);
+  // Write as flat .html file for Vercel cleanUrls (e.g. dist/trades-marketing.html)
+  const parts = route.path.split('/');
+  const filename = parts.pop();
+  const parentDir = parts.length > 0 ? resolve(distDir, ...parts) : distDir;
+  if (!existsSync(parentDir)) mkdirSync(parentDir, { recursive: true });
+  writeFileSync(resolve(parentDir, `${filename}.html`), html);
+  console.log(`Generated: dist/${route.path}.html`);
+
+  // Also write as directory index for fallback (e.g. dist/trades-marketing/index.html)
+  const indexDir = resolve(distDir, route.path);
+  if (!existsSync(indexDir)) mkdirSync(indexDir, { recursive: true });
+  writeFileSync(resolve(indexDir, 'index.html'), html);
   console.log(`Generated: dist/${route.path}/index.html`);
 }
 
