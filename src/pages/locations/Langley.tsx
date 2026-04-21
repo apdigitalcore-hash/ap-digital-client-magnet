@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Langley BC | Meta Ads & Google Ads | AP Digital';
-const DESC = 'Digital marketing agency serving Langley City & Township, BC. Meta Ads & Google Ads for trades, salons, realtors & coaches. AP Digital — leads in 2 weeks, no contracts.';
+const TITLE = 'Digital Marketing Agency Langley BC | AP Digital';
+const DESC = 'AP Digital helps Langley businesses get predictable leads. Salons, trades, real estate & coaches. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/langley';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Coquitlam BC | Meta Ads & Google Ads | AP Digital';
-const DESC = 'Digital marketing agency in Coquitlam & Tri-Cities, BC. AP Digital runs Meta Ads & Google Ads for trades, salons, realtors & coaches. Get leads in 2 weeks. No contracts.';
+const TITLE = 'Digital Marketing Agency Coquitlam BC | AP Digital';
+const DESC = 'AP Digital helps Coquitlam businesses generate leads. Salons, trades, realtors & coaches. Meta Ads & Google Ads. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/coquitlam';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
