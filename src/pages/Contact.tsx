@@ -44,8 +44,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@ap-digital.ca',
-      href: 'mailto:hello@ap-digital.ca',
+      value: 'apdigital.core@gmail.com',
+      href: 'mailto:apdigital.core@gmail.com',
     },
     {
       icon: MapPin,

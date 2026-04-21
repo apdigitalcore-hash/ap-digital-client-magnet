@@ -142,9 +142,9 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@ap-digital.ca" className="flex items-center gap-3 hover:text-teal transition-colors">
+                <a href="mailto:apdigital.core@gmail.com" className="flex items-center gap-3 hover:text-teal transition-colors">
                   <Mail className="w-4 h-4 text-teal" />
-                  hello@ap-digital.ca
+                  apdigital.core@gmail.com
                 </a>
               </li>
             </ul>
