@@ -80,7 +80,7 @@ const structuredData = {
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Pitt Meadows",
+        "addressLocality": "Vancouver",
         "addressRegion": "BC",
         "postalCode": "V3Y 0G3",
         "addressCountry": "CA"
@@ -386,3 +386,4 @@ const Burnaby = () => (
 );
 
 export default Burnaby;
+
