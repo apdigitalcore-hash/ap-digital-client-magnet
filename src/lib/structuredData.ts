@@ -28,7 +28,7 @@ export const organizationSchema = {
     "longitude": -122.6895
   },
   "telephone": "+1-778-682-5772",
-  "email": "apdigital.core@gmail.com",
+  "email": "hello@ap-digital.ca",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",

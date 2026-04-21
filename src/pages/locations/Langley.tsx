@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Langley BC | Meta Ads & Google Ads | AP Digital';
-const DESC = 'Digital marketing agency serving Langley City & Township, BC. Meta Ads & Google Ads for trades, salons, realtors & coaches. AP Digital — leads in 2 weeks, no contracts.';
+const TITLE = 'Digital Marketing Agency Langley BC | AP Digital';
+const DESC = 'AP Digital helps Langley businesses get predictable leads. Salons, trades, real estate & coaches. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/langley';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -76,7 +76,7 @@ const structuredData = {
       "description": DESC,
       "url": "https://ap-digital.ca/langley",
       "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
+      "email": "hello@ap-digital.ca",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -138,9 +138,8 @@ const Langley = () => (
               <span className="text-teal text-sm font-medium">Serving Langley City & Township, BC</span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Digital Marketing for{' '}
-              <span className="text-gradient">Langley, BC</span>{' '}
-              — Lead Generation That Works
+              Digital Marketing Agency{' '}
+              <span className="text-gradient">Langley BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Langley businesses get more leads using Meta Ads, Google Ads & social media. From Langley City to the Township — trades, salons, realtors & coaches. Month-to-month.

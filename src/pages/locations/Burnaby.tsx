@@ -76,7 +76,7 @@ const structuredData = {
       "description": DESC,
       "url": "https://ap-digital.ca/burnaby",
       "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
+      "email": "hello@ap-digital.ca",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -138,9 +138,8 @@ const Burnaby = () => (
               <span className="text-teal text-sm font-medium">Serving Burnaby & Tri-Cities, BC</span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Digital Marketing Agency in{' '}
-              <span className="text-gradient">Burnaby, BC</span>{' '}
-              — More Leads. No Contracts.
+              Digital Marketing Agency{' '}
+              <span className="text-gradient">Burnaby BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Burnaby businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. No lock-in contracts. Personal service from founder Arjun Sharma.

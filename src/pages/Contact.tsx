@@ -44,8 +44,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'apdigital.core@gmail.com',
-      href: 'mailto:apdigital.core@gmail.com',
+      value: 'hello@ap-digital.ca',
+      href: 'mailto:hello@ap-digital.ca',
     },
     {
       icon: MapPin,
@@ -65,7 +65,7 @@ const Contact = () => {
     <main className="min-h-screen">
       <Helmet>
         <title>Contact AP Digital | Book a Free Strategy Call</title>
-        <meta name="description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
+        <meta name="description" content="Book a free 20-minute strategy call with AP Digital. We'll show you how many leads are available in your area. No pressure." />
         <link rel="canonical" href="https://ap-digital.ca/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ap-digital.ca/contact" />

@@ -76,7 +76,7 @@ const structuredData = {
       "description": DESC,
       "url": "https://ap-digital.ca/surrey",
       "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
+      "email": "hello@ap-digital.ca",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -138,9 +138,8 @@ const Surrey = () => (
               <span className="text-teal text-sm font-medium">Serving Surrey & South Fraser, BC</span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Digital Marketing Agency in{' '}
-              <span className="text-gradient">Surrey, BC</span>{' '}
-              — Get More Leads
+              Digital Marketing Agency{' '}
+              <span className="text-gradient">Surrey BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. Month-to-month. Managed personally by Arjun Sharma.

@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Coquitlam BC | Meta Ads & Google Ads | AP Digital';
-const DESC = 'Digital marketing agency in Coquitlam & Tri-Cities, BC. AP Digital runs Meta Ads & Google Ads for trades, salons, realtors & coaches. Get leads in 2 weeks. No contracts.';
+const TITLE = 'Digital Marketing Agency Coquitlam BC | AP Digital';
+const DESC = 'AP Digital helps Coquitlam businesses generate leads. Salons, trades, realtors & coaches. Meta Ads & Google Ads. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/coquitlam';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -76,7 +76,7 @@ const structuredData = {
       "description": DESC,
       "url": "https://ap-digital.ca/coquitlam",
       "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
+      "email": "hello@ap-digital.ca",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -138,9 +138,8 @@ const Coquitlam = () => (
               <span className="text-teal text-sm font-medium">Serving Coquitlam & Tri-Cities, BC</span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Digital Marketing for{' '}
-              <span className="text-gradient">Coquitlam, BC</span>{' '}
-              — Get Consistent, Qualified Leads
+              Digital Marketing Agency{' '}
+              <span className="text-gradient">Coquitlam BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Coquitlam businesses — and across Port Moody & Port Coquitlam — generate qualified leads with Meta Ads, Google Ads & social media. No contracts, month-to-month.
