@@ -23,11 +23,13 @@ const Hero = () => {
       {/* Centered content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Eyebrow */}
-        <p
-          className="text-sm md:text-base uppercase tracking-[0.3em] text-muted-foreground mb-8 animate-fade-up font-medium"
-        >
-          AP Digital Marketing
-        </p>
+        <div className="flex items-center justify-center gap-2 mb-8 animate-fade-up">
+          <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse flex-shrink-0" />
+          <p className="text-sm md:text-base uppercase tracking-[0.3em] text-teal font-semibold">
+            AP Digital Marketing
+          </p>
+          <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse flex-shrink-0" />
+        </div>
 
         {/* Headline */}
         <h1
