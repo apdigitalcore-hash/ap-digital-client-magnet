@@ -2,3 +2,6 @@ project_id = "pgivuezbonyqqbaazfnp"
 
 [functions.submit-lead]
 verify_jwt = false
+
+[functions.audit-analysis]
+verify_jwt = false
