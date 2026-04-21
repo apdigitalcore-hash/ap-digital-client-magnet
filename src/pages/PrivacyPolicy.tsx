@@ -56,7 +56,7 @@ const PrivacyPolicy = () => {
 
             <div>
               <h2 className="text-xl font-semibold text-primary-foreground mb-3">7. Contact Us</h2>
-              <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:apdigital.core@gmail.com" className="text-teal hover:underline">apdigital.core@gmail.com</a> or call <a href="tel:+17786825772" className="text-teal hover:underline">+1 (778) 682-5772</a>.</p>
+              <p>If you have questions about this Privacy Policy, please contact us at <a href="mailto:hello@ap-digital.ca" className="text-teal hover:underline">hello@ap-digital.ca</a> or call <a href="tel:+17786825772" className="text-teal hover:underline">+1 (778) 682-5772</a>.</p>
             </div>
           </div>
         </div>

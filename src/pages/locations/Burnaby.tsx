@@ -76,7 +76,7 @@ const structuredData = {
       "description": DESC,
       "url": "https://ap-digital.ca/burnaby",
       "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
+      "email": "hello@ap-digital.ca",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
