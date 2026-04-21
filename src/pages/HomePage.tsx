@@ -18,7 +18,7 @@ import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
 const TITLE = 'Digital Marketing Agency Vancouver | AP Digital';
-const DESC = 'AP Digital helps salons, trades, real estate agents & coaches get predictable leads using paid ads & social media. Based in Vancouver, BC. Month-to-month.';
+const DESC = 'AP Digital helps salons, trades, real estate agents & coaches in Vancouver get predictable leads using Meta Ads & short-form content. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
