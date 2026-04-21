@@ -8,8 +8,8 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'Web Design Vancouver BC | Small Business Websites | AP Digital';
-const DESC = 'Fast, conversion-focused websites for small businesses in Vancouver. AP Digital builds sites that turn visitors into leads. No fluff, just results.';
+const TITLE = 'Web Design Agency Vancouver | Websites for Small Business | AP Digital';
+const DESC = 'AP Digital builds fast, conversion-focused websites for Vancouver small businesses. Salons, trades, real estate & coaches.';
 const CANONICAL = 'https://ap-digital.ca/services/web-design';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -86,7 +86,7 @@ const WebDesign = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Web Design for Canadian Small Business
+          Web Design for Vancouver Small Business
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

@@ -64,7 +64,7 @@ const Contact = () => {
   return (
     <main className="min-h-screen">
       <Helmet>
-        <title>Contact AP Digital | Get a Free Strategy Call</title>
+        <title>Contact AP Digital | Book a Free Strategy Call</title>
         <meta name="description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
         <link rel="canonical" href="https://ap-digital.ca/contact" />
         <meta property="og:type" content="website" />

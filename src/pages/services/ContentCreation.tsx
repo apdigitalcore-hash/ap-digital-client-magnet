@@ -8,8 +8,8 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'Content Creation for Small Business Vancouver | AP Digital';
-const DESC = 'Short-form video & social content that gets your business noticed. AP Digital creates scroll-stopping content for salons, trades & local businesses in BC.';
+const TITLE = 'Content Creation Agency Vancouver | Short-Form Video | AP Digital';
+const DESC = 'AP Digital creates short-form video content and social posts for Vancouver small businesses — salons, trades, coaches & realtors.';
 const CANONICAL = 'https://ap-digital.ca/services/content-creation';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -86,7 +86,7 @@ const ContentCreation = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Short-Form Content Creation for Canadian Businesses
+          Short-Form Content Creation for Vancouver Businesses
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

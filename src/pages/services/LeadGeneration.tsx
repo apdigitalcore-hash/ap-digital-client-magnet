@@ -8,8 +8,8 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'Lead Generation Vancouver BC | AP Digital';
-const DESC = 'Stop waiting for referrals. AP Digital builds predictable lead generation systems for salons, trades, realtors & coaches in Vancouver, BC. From $500/month.';
+const TITLE = 'Lead Generation Agency Vancouver | Predictable Leads | AP Digital';
+const DESC = 'AP Digital builds lead generation systems for Vancouver salons, trades, realtors & coaches using Meta Ads and organic content.';
 const CANONICAL = 'https://ap-digital.ca/services/lead-generation';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -86,7 +86,7 @@ const LeadGeneration = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Lead Generation Agency Canada — Predictable Leads Every Month
+          Lead Generation — Predictable Leads Every Month
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

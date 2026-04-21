@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Salon Marketing Agency Vancouver | AP Digital';
-const DESC = 'Fill your chair every week. AP Digital runs paid ads & social media for hair salons, spas & beauty studios in Vancouver, BC. Month-to-month, no contracts.';
+const TITLE = 'Salon Marketing Agency Vancouver | Get More Bookings | AP Digital';
+const DESC = 'AP Digital helps Vancouver salons get more bookings using Meta Ads & organic content. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/salon-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -93,7 +93,7 @@ const SalonMarketing = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Salon Marketing Agency — Get More Bookings with Meta Ads
+          Salon Marketing — Get More Bookings with Meta Ads
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
