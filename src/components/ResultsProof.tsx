@@ -85,8 +85,8 @@ const ResultsProof = () => {
         </motion.div>
 
         {/* Metrics grid */}
-        <motion.div 
-          className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16"
+        <motion.div
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16 items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -95,18 +95,18 @@ const ResultsProof = () => {
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
-              className="relative group"
+              className="relative group h-full"
               variants={itemVariants}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-teal/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative p-6 md:p-8 rounded-2xl border border-gray-800 bg-charcoal-light/50 backdrop-blur-sm">
+              <div className="relative h-full p-5 md:p-7 rounded-2xl border border-gray-800 bg-charcoal-light/50 backdrop-blur-sm flex flex-col">
                 <div className="stat-value text-white mb-2">
                   {metric.value}
                 </div>
-                <div className="text-teal font-semibold text-sm uppercase tracking-wider mb-1">
+                <div className="text-teal font-semibold text-xs sm:text-sm uppercase tracking-wider mb-1">
                   {metric.label}
                 </div>
-                <p className="text-gray-500 text-sm">
+                <p className="text-gray-500 text-xs sm:text-sm mt-auto">
                   {metric.description}
                 </p>
               </div>

@@ -64,7 +64,11 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link
+            to="/"
+            className="flex items-center gap-2"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <div className={`font-display font-bold text-xl md:text-2xl transition-colors duration-300 ${
               isScrolled ? 'text-primary' : 'text-primary-foreground'
             }`}>
