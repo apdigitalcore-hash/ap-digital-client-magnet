@@ -68,7 +68,7 @@ const Contact = () => {
           </div>
 
           {/* Right Column - Form */}
-          <div className="bg-card rounded-2xl p-8 lg:p-10 border border-border shadow-custom-lg">
+          <div className="bg-card rounded-2xl p-5 sm:p-8 lg:p-10 border border-border shadow-custom-lg">
             <h3 className="font-display text-xl font-bold text-foreground mb-6">
               Get Your Free Strategy Session
             </h3>

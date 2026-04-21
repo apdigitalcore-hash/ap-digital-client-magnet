@@ -17,8 +17,8 @@ const DarkCTA = ({
     <section className="relative py-24 md:py-32 bg-charcoal overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[300px] bg-teal/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[400px] h-[200px] bg-teal/3 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-0 w-[600px] h-[300px] bg-teal/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[200px] bg-teal/3 rounded-full blur-3xl" />
       </div>
 
       {/* Decorative top border */}
@@ -26,7 +26,7 @@ const DarkCTA = ({
 
       <div className="container-custom relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             {headline}
           </h2>
           <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-xl mx-auto">

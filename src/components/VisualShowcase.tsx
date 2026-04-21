@@ -37,7 +37,7 @@ const VisualShowcase = () => {
       <div className="container-wide">
         {/* Section header */}
         <div className="text-center mb-16 px-4">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Content That <span className="text-gradient">Converts</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

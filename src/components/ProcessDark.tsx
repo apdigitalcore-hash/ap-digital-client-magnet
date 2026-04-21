@@ -30,7 +30,7 @@ const ProcessDark = () => {
       <div className="container-custom">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
             How It <span className="text-gradient">Works</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">

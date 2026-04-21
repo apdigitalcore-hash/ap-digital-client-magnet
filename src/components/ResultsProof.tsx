@@ -76,7 +76,7 @@ const ResultsProof = () => {
             <ArrowUpRight className="w-4 h-4" />
             <span className="text-sm font-semibold uppercase tracking-wider">Proven Results</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Real Results for <span className="text-gradient">Real Businesses</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
