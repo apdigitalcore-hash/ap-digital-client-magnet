@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Coaching Marketing Agency Canada | AP Digital';
-const DESC = 'Grow your coaching business with predictable client leads. AP Digital runs paid ads & social media for fitness, business & life coaches across Canada.';
+const TITLE = 'Coaching Marketing Agency BC | Get More Clients | AP Digital';
+const DESC = 'AP Digital helps life, business & fitness coaches across BC get more clients using Meta Ads. No lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -93,7 +93,7 @@ const CoachingMarketing = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Coaching Marketing Agency Canada — Fill Your Calendar
+          Coaching Marketing BC — Fill Your Calendar
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">

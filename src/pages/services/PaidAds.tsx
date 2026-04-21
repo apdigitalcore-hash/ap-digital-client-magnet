@@ -9,7 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
 const TITLE = 'Paid Ads Agency Vancouver | Meta & Google Ads | AP Digital';
-const DESC = 'Run high-converting Meta Ads & Google Ads with AP Digital. We manage paid advertising for small businesses in Vancouver, BC. Results from month one. No contracts.';
+const DESC = 'AP Digital manages Meta Ads & Google Ads for Vancouver small businesses. Salons, trades, realtors & coaches. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/services/paid-ads';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -86,7 +86,7 @@ const PaidAds = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Paid Ads Management for Canadian Small Business
+          Paid Ads Management for Vancouver Small Business
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

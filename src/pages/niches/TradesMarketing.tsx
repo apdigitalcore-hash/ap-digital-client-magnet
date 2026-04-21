@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Trades Marketing Agency Vancouver BC | AP Digital';
-const DESC = 'Get more leads for your trades business with Meta Ads & Google Ads managed by AP Digital. Serving plumbers, HVAC, electricians & roofers in Metro Vancouver.';
+const TITLE = 'Trades Marketing Agency BC | Plumber, HVAC & Electrician Leads | AP Digital';
+const DESC = 'AP Digital generates leads for BC plumbers, electricians, HVAC companies, roofers & contractors using Meta Ads. No contracts. Starts at $500/month.';
 const CANONICAL = 'https://ap-digital.ca/trades-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Surrey BC | Meta Ads & Google Ads | AP Digital';
-const DESC = 'Top-rated digital marketing agency in Surrey, BC. AP Digital runs Meta Ads & Google Ads for Surrey trades, salons, realtors & coaches. Get leads in 2 weeks. No contracts.';
+const TITLE = 'Digital Marketing Agency Surrey BC | AP Digital';
+const DESC = 'AP Digital helps Surrey businesses get more leads using Meta Ads & Google Ads. Salons, trades, real estate & coaches. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/surrey';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

@@ -27,8 +27,8 @@ import {
   getFAQSchema,
 } from '@/lib/structuredData';
 
-const TITLE = 'About AP Digital | Founded by Arjun Sharma | Vancouver Marketing Agency';
-const DESC = 'AP Digital is a Vancouver-based digital marketing agency founded by Arjun Sharma. We help salons, trades, realtors & coaches across BC generate predictable leads through short-form content and paid ads. 5.0 stars, 14+ reviews, no lock-in contracts.';
+const TITLE = 'About AP Digital | Vancouver Digital Marketing Agency | Arjun Sharma';
+const DESC = 'AP Digital was founded by Arjun Sharma in Pitt Meadows, BC. We specialize in lead generation for salons, trades, real estate & coaches.';
 const CANONICAL = 'https://ap-digital.ca/about';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -171,7 +171,7 @@ const About = () => {
               <span className="text-sm font-semibold uppercase tracking-wider">Pitt Meadows, BC · Serving Metro Vancouver</span>
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl mb-6">
-              About <span className="text-gradient">AP Digital</span> — The Agency Behind Canadian Small Business Growth
+              About <span className="text-gradient">AP Digital</span> — Built for Vancouver Small Business
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-3xl leading-relaxed">
               Founded by Arjun Sharma in Vancouver, BC, AP Digital is a specialist marketing agency helping salons, trades, real estate agents, and coaches generate predictable leads through short-form content and targeted paid advertising. No lock-in contracts. No vanity metrics. Just measurable results.

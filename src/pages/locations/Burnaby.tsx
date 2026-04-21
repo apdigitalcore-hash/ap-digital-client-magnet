@@ -12,8 +12,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Burnaby BC | Meta Ads & Google Ads | AP Digital';
-const DESC = 'Digital marketing agency in Burnaby, BC. AP Digital runs Meta Ads & Google Ads for Burnaby trades, salons, realtors & coaches. Get qualified leads in 2 weeks. No contracts.';
+const TITLE = 'Digital Marketing Agency Burnaby BC | AP Digital';
+const DESC = 'AP Digital helps Burnaby businesses get more leads. Salons, trades, realtors & coaches. Meta Ads & Google Ads. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/burnaby';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

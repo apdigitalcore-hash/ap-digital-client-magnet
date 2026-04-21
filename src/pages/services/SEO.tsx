@@ -8,8 +8,8 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'SEO Services Vancouver BC | Local SEO Agency | AP Digital';
-const DESC = 'Rank higher on Google and get found by local customers. AP Digital offers SEO services for small businesses in Vancouver, BC. Month-to-month, no lock-in.';
+const TITLE = 'SEO Agency Vancouver | Search Engine Optimization | AP Digital';
+const DESC = 'AP Digital provides SEO for Vancouver small businesses — salons, trades, real estate & coaches. Get found on Google. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/services/seo';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -86,7 +86,7 @@ const SEO = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          SEO for Canadian Small Business — Get Found on Google
+          SEO for Vancouver Small Business — Get Found on Google
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">

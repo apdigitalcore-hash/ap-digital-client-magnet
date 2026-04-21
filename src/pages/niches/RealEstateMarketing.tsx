@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Real Estate Marketing Vancouver | AP Digital';
-const DESC = "Get consistent buyer & seller leads with AP Digital's real estate marketing. Meta Ads, social media & paid ads for Vancouver realtors. No lock-in contracts.";
+const TITLE = 'Real Estate Marketing Agency BC | Leads for Realtors | AP Digital';
+const DESC = 'AP Digital generates real estate leads across BC using Meta Ads. Serving realtors, brokerages & investors. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/real-estate-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -93,7 +93,7 @@ const RealEstateMarketing = () => (
     <main className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Real Estate Marketing Canada — Leads for Agents &amp; Brokerages
+          Real Estate Marketing BC — Leads for Agents &amp; Brokerages
         </h1>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
