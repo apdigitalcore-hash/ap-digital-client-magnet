@@ -69,13 +69,13 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-start">
           {packages.map((pkg) => (
             <div
               key={pkg.name}
               className={`relative rounded-2xl p-8 border ${
                 pkg.popular
-                  ? 'bg-primary border-teal shadow-teal scale-105'
+                  ? 'bg-primary border-teal shadow-teal md:scale-105'
                   : 'bg-card border-border'
               }`}
             >

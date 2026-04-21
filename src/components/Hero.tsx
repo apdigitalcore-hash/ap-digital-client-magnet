@@ -70,7 +70,7 @@ const Hero = () => {
 
       {/* Bottom trust bar */}
       <div className="absolute bottom-8 left-0 right-0 z-10 animate-fade-up" style={{ animationDelay: '0.5s' }}>
-        <div className="flex items-center justify-center gap-10 md:gap-16 opacity-40">
+        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 opacity-40 px-4">
           {['Google', 'Facebook', 'Instagram', 'LinkedIn'].map(brand => (
             <span key={brand} className="text-primary-foreground font-display font-semibold text-sm md:text-base tracking-wide">
               {brand}

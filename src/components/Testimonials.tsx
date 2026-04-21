@@ -121,7 +121,7 @@ const Testimonials = () => {
         </div>
 
         {/* Case Study */}
-        <div className="mt-20 bg-card rounded-2xl p-8 lg:p-12 border border-border">
+        <div className="mt-20 bg-card rounded-2xl p-6 sm:p-8 lg:p-12 border border-border">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <span className="text-teal font-semibold text-sm uppercase tracking-wider mb-4 block">
@@ -139,28 +139,28 @@ const Testimonials = () => {
                 Get Similar Results →
               </a>
             </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="bg-secondary rounded-xl p-6 text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold text-teal mb-2">
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              <div className="bg-secondary rounded-xl p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-teal mb-1 sm:mb-2">
                   487%
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-xs sm:text-sm text-muted-foreground">
                   ROI Increase
                 </div>
               </div>
-              <div className="bg-secondary rounded-xl p-6 text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold text-teal mb-2">
+              <div className="bg-secondary rounded-xl p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-teal mb-1 sm:mb-2">
                   5x
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-xs sm:text-sm text-muted-foreground">
                   More Bookings
                 </div>
               </div>
-              <div className="bg-secondary rounded-xl p-6 text-center">
-                <div className="text-3xl md:text-4xl font-display font-bold text-teal mb-2">
+              <div className="bg-secondary rounded-xl p-4 sm:p-6 text-center">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-teal mb-1 sm:mb-2">
                   90
                 </div>
-                <div className="text-sm text-muted-foreground">
+                <div className="text-xs sm:text-sm text-muted-foreground">
                   Days to Results
                 </div>
               </div>

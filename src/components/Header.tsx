@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -12,7 +12,12 @@ import {
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
   const location = useLocation();
+
+  const toggleSection = (section: string) => {
+    setOpenSection(prev => prev === section ? null : section);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -192,114 +197,157 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-card shadow-custom-lg animate-fade-in">
-            <nav className="flex flex-col py-4">
-              <Link
-                to="/"
-                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              
-              <div className="px-4 py-2 text-sm text-muted-foreground font-medium">
-                Services
-              </div>
-              
-              {services.map((service) => (
+          <div className="md:hidden fixed inset-0 top-[57px] bg-card z-40 overflow-y-auto animate-fade-in">
+            <nav className="flex flex-col pb-8">
+
+              {/* Primary links */}
+              <div className="px-4 pt-4 pb-2 space-y-1">
                 <Link
-                  key={service.href}
-                  to={service.href}
-                  className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                  to="/"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {service.label}
+                  Home
                 </Link>
-              ))}
 
-              <div className="px-4 py-2 text-sm text-muted-foreground font-medium">
-                Locations
-              </div>
-
-              {locations.map((loc) => (
                 <Link
-                  key={loc.href}
-                  to={loc.href}
-                  className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
+                  to="/about"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {loc.label}
+                  About
                 </Link>
-              ))}
 
-              <div className="px-4 py-2 text-sm text-muted-foreground font-medium">
-                Industries
+                <Link
+                  to="/blog"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog
+                </Link>
+
+                <a
+                  href="/#digital-arsenal"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-teal font-semibold hover:bg-teal/10 transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <span className="w-2 h-2 rounded-full bg-teal animate-pulse flex-shrink-0" />
+                  Digital Arsenal
+                </a>
+
+                <Link
+                  to="/contact"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
               </div>
 
-              {industries.map((industry) => (
-                industry.external ? (
-                  <a
-                    key={industry.href}
-                    href={industry.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {industry.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={industry.href}
-                    to={industry.href}
-                    className="px-6 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {industry.label}
-                  </Link>
-                )
-              ))}
+              {/* Divider */}
+              <div className="mx-4 my-2 border-t border-border" />
 
-              <Link
-                to="/about"
-                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
+              {/* Services accordion */}
+              <div className="px-4 py-1">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
+                  onClick={() => toggleSection('services')}
+                >
+                  <span>Services</span>
+                  <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'services' ? 'rotate-180' : ''}`} />
+                </button>
+                {openSection === 'services' && (
+                  <div className="mt-1 ml-2 space-y-0.5">
+                    {services.map((service) => (
+                      <Link
+                        key={service.href}
+                        to={service.href}
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-              <Link
-                to="/blog"
-                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Blog
-              </Link>
+              {/* Industries accordion */}
+              <div className="px-4 py-1">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
+                  onClick={() => toggleSection('industries')}
+                >
+                  <span>Industries</span>
+                  <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'industries' ? 'rotate-180' : ''}`} />
+                </button>
+                {openSection === 'industries' && (
+                  <div className="mt-1 ml-2 space-y-0.5">
+                    {industries.map((industry) => (
+                      industry.external ? (
+                        <a
+                          key={industry.href}
+                          href={industry.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
+                          {industry.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={industry.href}
+                          to={industry.href}
+                          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
+                          {industry.label}
+                        </Link>
+                      )
+                    ))}
+                  </div>
+                )}
+              </div>
 
-              <a
-                href="/#digital-arsenal"
-                className="px-4 py-3 text-teal font-medium hover:bg-muted transition-colors flex items-center gap-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
-                Digital Arsenal
-              </a>
+              {/* Locations accordion */}
+              <div className="px-4 py-1">
+                <button
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
+                  onClick={() => toggleSection('locations')}
+                >
+                  <span>Locations</span>
+                  <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'locations' ? 'rotate-180' : ''}`} />
+                </button>
+                {openSection === 'locations' && (
+                  <div className="mt-1 ml-2 space-y-0.5">
+                    {locations.map((loc) => (
+                      <Link
+                        key={loc.href}
+                        to={loc.href}
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
+                        {loc.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-              <Link
-                to="/contact"
-                className="px-4 py-3 text-foreground hover:bg-muted hover:text-teal transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-
-              <div className="px-4 pt-4">
-                <Button variant="hero" className="w-full" asChild>
+              {/* CTA */}
+              <div className="px-4 pt-4 mt-2">
+                <Button variant="hero" className="w-full" size="lg" asChild>
                   <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                     Book Free Call
                   </a>
                 </Button>
               </div>
+
             </nav>
           </div>
         )}

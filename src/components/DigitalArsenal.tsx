@@ -186,7 +186,7 @@ const FreePrompts = () => {
     >
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-teal/60 to-transparent" />
 
-      <div className="p-8 md:p-12">
+      <div className="p-5 sm:p-8 md:p-12">
         {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
           <div>
@@ -267,17 +267,17 @@ const FreePrompts = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 px-6 py-5 rounded-2xl bg-teal/5 border border-teal/15">
+        <div className="mt-8 flex flex-col gap-4 px-4 sm:px-6 py-5 rounded-2xl bg-teal/5 border border-teal/15">
           <div>
             <p className="text-white font-semibold text-sm">
               These are 5 of the 50 prompts inside the playbook.
             </p>
             <p className="text-gray-400 text-xs mt-0.5">
-              The other 45 cover sales, content, ops, research & customer support — all $9 one-time.
+              The other 45 cover sales, content, ops, research & support — all $9 one-time.
             </p>
           </div>
-          <Button variant="hero" size="default" asChild className="flex-shrink-0 shadow-teal-lg">
-            <a href={AI_EMPLOYEE_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+          <Button variant="hero" size="default" asChild className="w-full sm:w-auto shadow-teal-lg">
+            <a href={AI_EMPLOYEE_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
               Get All 50 — $9
               <ArrowRight className="w-4 h-4" />
             </a>
@@ -309,7 +309,7 @@ const TimeCalculator = () => {
     >
       <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-teal/60 to-transparent" />
 
-      <div className="p-8 md:p-12">
+      <div className="p-5 sm:p-8 md:p-12">
         {/* Header */}
         <div className="mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-bold uppercase tracking-wider mb-3">
@@ -324,14 +324,14 @@ const TimeCalculator = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left: Sliders */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Hourly rate */}
-            <div className="rounded-2xl border border-gray-700/60 bg-gray-900/40 p-5">
-              <div className="flex items-center justify-between mb-3">
-                <label className="text-sm font-semibold text-gray-300">Your hourly rate (or value)</label>
-                <span className="text-teal font-bold text-sm">${rate}/hr</span>
+            <div className="rounded-2xl border border-gray-700/60 bg-gray-900/40 p-4 sm:p-5">
+              <div className="flex items-center justify-between mb-3 gap-2">
+                <label className="text-sm font-semibold text-gray-300 min-w-0">Your hourly rate (or value)</label>
+                <span className="text-teal font-bold text-sm flex-shrink-0">${rate}/hr</span>
               </div>
               <input
                 type="range"
@@ -349,12 +349,13 @@ const TimeCalculator = () => {
 
             {/* Task sliders */}
             {SLIDER_CONFIG.map(({ key, label, icon, desc }) => (
-              <div key={key} className="rounded-2xl border border-gray-700/60 bg-gray-900/40 p-5">
-                <div className="flex items-center justify-between mb-1">
-                  <label className="text-sm font-semibold text-gray-300 flex items-center gap-1.5">
-                    <span>{icon}</span> {label}
+              <div key={key} className="rounded-2xl border border-gray-700/60 bg-gray-900/40 p-4 sm:p-5">
+                <div className="flex items-center justify-between mb-1 gap-2">
+                  <label className="text-sm font-semibold text-gray-300 flex items-center gap-1.5 min-w-0">
+                    <span className="flex-shrink-0">{icon}</span>
+                    <span className="truncate">{label}</span>
                   </label>
-                  <span className="text-teal font-bold text-sm">{hours[key]} hrs/wk</span>
+                  <span className="text-teal font-bold text-sm flex-shrink-0">{hours[key]} hrs/wk</span>
                 </div>
                 <p className="text-xs text-gray-500 mb-3">{desc}</p>
                 <input
@@ -376,47 +377,47 @@ const TimeCalculator = () => {
           {/* Right: Results */}
           <div className="space-y-4">
             {/* Summary stats */}
-            <div className="rounded-2xl border border-gray-700/80 bg-gray-900/60 p-6 space-y-4">
+            <div className="rounded-2xl border border-gray-700/80 bg-gray-900/60 p-4 sm:p-6 space-y-4 overflow-hidden">
               <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Your numbers</p>
 
-              <div className="flex items-center justify-between py-3 border-b border-gray-800">
-                <span className="text-sm text-gray-400">Hours burned / week</span>
-                <span className="text-white font-bold">{totalHours} hrs</span>
+              <div className="flex items-center justify-between py-3 border-b border-gray-800 gap-3">
+                <span className="text-sm text-gray-400 min-w-0">Hours burned / week</span>
+                <span className="text-white font-bold flex-shrink-0">{totalHours} hrs</span>
               </div>
-              <div className="flex items-center justify-between py-3 border-b border-gray-800">
-                <span className="text-sm text-gray-400">Hours burned / month</span>
-                <span className="text-white font-bold">{Math.round(monthlyHours)} hrs</span>
+              <div className="flex items-center justify-between py-3 border-b border-gray-800 gap-3">
+                <span className="text-sm text-gray-400 min-w-0">Hours burned / month</span>
+                <span className="text-white font-bold flex-shrink-0">{Math.round(monthlyHours)} hrs</span>
               </div>
-              <div className="flex items-center justify-between py-3 border-b border-gray-800">
-                <span className="text-sm text-gray-400">Monthly value lost</span>
-                <span className="text-red-400 font-bold text-lg">${monthlyCost.toLocaleString()}</span>
+              <div className="flex items-center justify-between py-3 border-b border-gray-800 gap-3">
+                <span className="text-sm text-gray-400 min-w-0">Monthly value lost</span>
+                <span className="text-red-400 font-bold text-lg flex-shrink-0">${monthlyCost.toLocaleString()}</span>
               </div>
-              <div className="flex items-center justify-between py-3">
-                <span className="text-sm text-gray-400">Annual bleed</span>
-                <span className="text-red-400 font-black text-2xl">${annualCost.toLocaleString()}</span>
+              <div className="flex items-center justify-between py-3 gap-3">
+                <span className="text-sm text-gray-400 min-w-0">Annual bleed</span>
+                <span className="text-red-400 font-black text-xl sm:text-2xl flex-shrink-0">${annualCost.toLocaleString()}</span>
               </div>
             </div>
 
             {/* The fix */}
-            <div className="rounded-2xl border border-teal/25 bg-teal/5 p-6">
+            <div className="rounded-2xl border border-teal/25 bg-teal/5 p-4 sm:p-6 overflow-hidden">
               <div className="flex items-center gap-2 mb-3">
-                <TrendingDown className="w-4 h-4 text-teal" />
+                <TrendingDown className="w-4 h-4 text-teal flex-shrink-0" />
                 <p className="text-xs font-bold text-teal uppercase tracking-wider">With 50 Claude prompts</p>
               </div>
               <p className="text-sm text-gray-300 leading-relaxed mb-4">
-                Our buyers report cutting these tasks by <span className="text-white font-bold">80%</span>. At your numbers, that's{' '}
-                <span className="text-teal font-bold">${savedCost.toLocaleString()}/month</span> back in your pocket — or redirected to work that actually grows revenue.
+                Our buyers report cutting these tasks by <span className="text-white font-bold">80%</span>. That's{' '}
+                <span className="text-teal font-bold">${savedCost.toLocaleString()}/month</span> back in your pocket — redirected to revenue.
               </p>
 
-              <div className="flex items-center justify-between px-4 py-3 rounded-xl bg-gray-900/60 border border-gray-700/60 mb-4">
-                <span className="text-gray-400 text-sm">Cost of the solution</span>
-                <span className="text-white font-black text-xl">$9</span>
+              <div className="flex items-center justify-between px-4 py-3 rounded-xl bg-gray-900/60 border border-gray-700/60 mb-4 gap-3">
+                <span className="text-gray-400 text-sm min-w-0">Cost of the solution</span>
+                <span className="text-white font-black text-xl flex-shrink-0">$9</span>
               </div>
 
-              <Button variant="hero" size="lg" asChild className="w-full shadow-teal-lg">
-                <a href={AI_EMPLOYEE_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                  Stop the bleed — Get the $9 Playbook
-                  <ArrowRight className="w-5 h-5" />
+              <Button variant="hero" size="default" asChild className="w-full shadow-teal-lg">
+                <a href={AI_EMPLOYEE_URL} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 text-sm">
+                  Stop the bleed — $9 Playbook
+                  <ArrowRight className="w-4 h-4 flex-shrink-0" />
                 </a>
               </Button>
 
@@ -458,7 +459,7 @@ const DigitalArsenal = () => {
             <Zap className="w-4 h-4" />
             <span className="text-sm font-semibold uppercase tracking-wider">Digital Arsenal</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
             AI Tools Built for <span className="text-gradient">Business Owners</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -482,8 +483,8 @@ const DigitalArsenal = () => {
             {/* Top accent line */}
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-teal/60 to-transparent" />
 
-            <div className="p-8 md:p-12">
-              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            <div className="p-5 sm:p-8 md:p-12">
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
                 {/* ── Left: Product Info ── */}
                 <div>
@@ -501,7 +502,7 @@ const DigitalArsenal = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-display text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
+                  <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
                     The{' '}
                     <span className="text-gradient">$10K AI Employee</span>
                   </h3>
@@ -550,7 +551,7 @@ const DigitalArsenal = () => {
                       <span className="text-gray-500 text-sm line-through">$330+</span>
                     </div>
                     <div className="flex items-end gap-3 mb-6">
-                      <span className="font-display text-6xl font-black text-white leading-none">$9</span>
+                      <span className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-white leading-none">$9</span>
                       <span className="text-gray-400 text-base mb-2">one-time · no subscription</span>
                     </div>
 
