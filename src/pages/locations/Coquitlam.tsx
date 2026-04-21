@@ -80,7 +80,7 @@ const structuredData = {
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Pitt Meadows",
+        "addressLocality": "Vancouver",
         "addressRegion": "BC",
         "postalCode": "V3Y 0G3",
         "addressCountry": "CA"
@@ -90,7 +90,7 @@ const structuredData = {
         { "@type": "City", "name": "Port Moody" },
         { "@type": "City", "name": "Port Coquitlam" },
         { "@type": "City", "name": "New Westminster" },
-        { "@type": "City", "name": "Pitt Meadows" }
+        { "@type": "City", "name": "Vancouver" }
       ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -386,3 +386,4 @@ const Coquitlam = () => (
 );
 
 export default Coquitlam;
+
