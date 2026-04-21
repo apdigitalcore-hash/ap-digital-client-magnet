@@ -60,7 +60,7 @@ const routes = [
   {
     path: 'about',
     title: 'About AP Digital | Vancouver Digital Marketing Agency | Arjun Sharma',
-    description: 'AP Digital was founded by Arjun Sharma in Pitt Meadows, BC. We specialize in lead generation for salons, trades, real estate & coaches.'
+    description: 'AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for salons, trades, real estate & coaches.'
   },
   {
     path: 'contact',
@@ -126,3 +126,4 @@ for (const route of routes) {
 }
 
 console.log('Meta injection complete.');
+
