@@ -28,7 +28,7 @@ import {
 } from '@/lib/structuredData';
 
 const TITLE = 'About AP Digital | Vancouver Digital Marketing Agency | Arjun Sharma';
-const DESC = 'AP Digital was founded by Arjun Sharma in Pitt Meadows, BC. We specialize in lead generation for salons, trades, real estate & coaches.';
+const DESC = 'AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for salons, trades, real estate & coaches.';
 const CANONICAL = 'https://ap-digital.ca/about';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     question: 'Where is AP Digital based?',
-    answer: 'AP Digital is headquartered in Pitt Meadows, BC, and serves small businesses across Metro Vancouver and the Fraser Valley — including Surrey, Burnaby, Langley, Coquitlam, Port Coquitlam, Maple Ridge, New Westminster, and the City of Vancouver. We also work with Canadian clients nationally when the fit is right.',
+    answer: 'AP Digital is headquartered in Vancouver, BC, and serves small businesses across Metro Vancouver and the Fraser Valley — including Surrey, Burnaby, Langley, Coquitlam, Port Coquitlam, Maple Ridge, New Westminster, and the City of Vancouver. We also work with Canadian clients nationally when the fit is right.',
   },
   {
     question: 'What industries do you specialize in?',
@@ -168,7 +168,7 @@ const About = () => {
           <div className="container-custom relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-6">
               <MapPin className="w-4 h-4" />
-              <span className="text-sm font-semibold uppercase tracking-wider">Pitt Meadows, BC · Serving Metro Vancouver</span>
+              <span className="text-sm font-semibold uppercase tracking-wider">Vancouver, BC · Serving Metro Vancouver</span>
             </div>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl mb-6">
               About <span className="text-gradient">AP Digital</span> — Built for Vancouver Small Business
@@ -361,3 +361,4 @@ const About = () => {
 };
 
 export default About;
+
