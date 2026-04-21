@@ -1,24 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "routes": [
-    { "src": "/trades-marketing", "dest": "/trades-marketing.html" },
-    { "src": "/salon-marketing", "dest": "/salon-marketing.html" },
-    { "src": "/real-estate-marketing", "dest": "/real-estate-marketing.html" },
-    { "src": "/coaching-marketing", "dest": "/coaching-marketing.html" },
-    { "src": "/services/paid-ads", "dest": "/services/paid-ads.html" },
-    { "src": "/services/social-media", "dest": "/services/social-media.html" },
-    { "src": "/services/content-creation", "dest": "/services/content-creation.html" },
-    { "src": "/services/seo", "dest": "/services/seo.html" },
-    { "src": "/services/lead-generation", "dest": "/services/lead-generation.html" },
-    { "src": "/services/web-design", "dest": "/services/web-design.html" },
-    { "src": "/about", "dest": "/about.html" },
-    { "src": "/contact", "dest": "/contact.html" },
-    { "src": "/blog", "dest": "/blog.html" },
-    { "src": "/surrey", "dest": "/surrey.html" },
-    { "src": "/burnaby", "dest": "/burnaby.html" },
-    { "src": "/langley", "dest": "/langley.html" },
-    { "src": "/coquitlam", "dest": "/coquitlam.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
