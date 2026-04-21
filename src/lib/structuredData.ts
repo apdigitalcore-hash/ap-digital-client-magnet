@@ -18,7 +18,7 @@ export const organizationSchema = {
   "description": "AP DIGITAL is a Vancouver-based digital marketing agency helping salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads.",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Pitt Meadows",
+    "addressLocality": "Vancouver",
     "addressRegion": "BC",
     "addressCountry": "CA"
   },
@@ -177,3 +177,4 @@ export const getArticleSchema = (post: {
   "isPartOf": { "@id": `${BASE_URL}/#website` },
   "mainEntityOfPage": { "@id": `${BASE_URL}/blog/${post.slug}#webpage` }
 });
+
