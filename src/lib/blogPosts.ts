@@ -62,7 +62,7 @@ The important thing to understand is that this isn't magic — it's a system. Wh
 
 If you're tired of inconsistent bookings and want a proven system to bring in new salon clients every single week, it's time to talk strategy.
 
-At AP DIGITAL, we specialize in helping salons across Canada build their online presence and generate real, measurable leads. We handle the content, the ads, and the strategy — so you can focus on what you do best.
+At AP DIGITAL, we specialize in [salon marketing](/salon-marketing) across Canada — helping salons build their online presence and generate real, measurable leads through [social media](/services/social-media) and [paid ads](/services/paid-ads). We handle the content, the ads, and the strategy — so you can focus on what you do best.
 
 **Book your free strategy call today** and let's build a plan to fill your chair consistently in 2026 and beyond.`,
   },
@@ -261,7 +261,7 @@ Not all agencies are created equal. Here's what you should look for before signi
 
 Every business is different, and cookie-cutter packages rarely deliver the best results. The right investment depends on your goals, your industry, your competition, and where you currently stand with your online presence.
 
-At AP DIGITAL, we work with businesses across Canada to build custom social media marketing strategies that fit your budget and deliver measurable results. Whether you're just getting started or ready to scale, we'll build a plan that makes sense for you.
+At AP DIGITAL, we work with businesses across Canada to build custom [social media marketing](/services/social-media) and [lead generation](/services/lead-generation) strategies that fit your budget and deliver measurable results. Whether you're just getting started or ready to scale, we'll build a plan that makes sense for you.
 
 **Book your free strategy call today** and let's figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
   },
@@ -318,7 +318,7 @@ If you can invest in both, that's the winning formula. Use Google Ads to capture
 
 ## Let's Find the Right Strategy for Your Business
 
-At AP DIGITAL, we help small businesses across Canada build profitable advertising strategies on both Google and Facebook. We don't believe in one-size-fits-all — we analyze your industry, your competition, and your goals to recommend the right platform mix for your budget.
+At AP DIGITAL, we help small businesses across Canada build profitable [paid advertising](/services/paid-ads) strategies on both Google and Facebook. We don't believe in one-size-fits-all — we analyze your industry, your competition, and your goals to recommend the right platform mix for your budget.
 
 **Book your free strategy call today** and let's figure out exactly where your ad dollars will deliver the best return in 2026.`,
   },
@@ -367,7 +367,7 @@ The real question isn't how much it costs — it's how much it brings back. A we
 
 ## Ready to Get Predictable Leads?
 
-At AP DIGITAL, we specialize in social media marketing for salons, real estate agents, trades businesses, and private coaches across Canada. Book a free strategy call and we'll show you exactly what your investment looks like.`,
+At AP DIGITAL, we specialize in [social media marketing](/services/social-media) for [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades businesses](/trades-marketing), and [coaches](/coaching-marketing) across Canada. Book a free strategy call and we'll show you exactly what your investment looks like.`,
   },
   {
     slug: 'facebook-ads-vs-google-ads',
@@ -418,7 +418,7 @@ Facebook Ads build awareness and generate leads at scale. Google Ads capture peo
 
 ## Not Sure Where to Start?
 
-At AP DIGITAL, we run Facebook, Instagram, and Google Ads for businesses across Canada. We'll tell you exactly which platform makes sense for your goals and budget.`,
+At AP DIGITAL, we run [Facebook, Instagram, and Google Ads](/services/paid-ads) for businesses across Canada. We'll tell you exactly which platform makes sense for your goals and budget.`,
   },
   {
     slug: 'real-estate-social-media-tips',
@@ -453,7 +453,7 @@ Social media generates leads — but you need a system to convert them. Use a si
 
 ## Want a Full Real Estate Marketing System?
 
-At AP DIGITAL, we build complete social media marketing systems for Canadian realtors — from content creation to paid ads to lead follow-up. Book a free strategy call today.`,
+At AP DIGITAL, we build complete [real estate marketing](/real-estate-marketing) systems for Canadian realtors — from [social media](/services/social-media) content to [paid ads](/services/paid-ads) to lead follow-up. Book a free strategy call today.`,
   },
   {
     slug: 'email-marketing-vs-social-media',
@@ -726,7 +726,7 @@ There's a temptation to hire a large national or US-based agency for the perceiv
 
 ## AP DIGITAL: Built for Vancouver Small Businesses
 
-AP DIGITAL was built specifically to serve the kinds of businesses that drive Vancouver's economy — salons, real estate agents, trades contractors, and coaches. We don't take on every client. We specialize in four niches and go deep, not wide.
+AP DIGITAL was built specifically to serve the kinds of businesses that drive Vancouver's economy — [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades contractors](/trades-marketing), and [coaches](/coaching-marketing). We don't take on every client. We specialize in four niches and go deep, not wide.
 
 Every client gets a custom strategy built around their specific neighbourhood, target demographic, and budget. And we measure success in one currency: leads and bookings — not impressions or followers.
 
@@ -814,7 +814,7 @@ Based on our work with salon clients across BC:
 
 ## Ready to Fill Your Vancouver Salon?
 
-AP DIGITAL specializes in marketing for salons across Metro Vancouver and BC. We handle your content, your ads, and your strategy — so you can focus on your clients.
+AP DIGITAL specializes in [salon marketing](/salon-marketing) across Metro Vancouver and BC. We handle your [social media content](/services/social-media), your [paid ads](/services/paid-ads), and your strategy — so you can focus on your clients.
 
 **Book your free strategy call** and we'll show you exactly how we'd fill your chair within the first 30 days.`,
   },
@@ -1019,7 +1019,7 @@ The agents who consistently win in Vancouver are the ones who are still in front
 
 ## Ready to Stand Out in Vancouver's Real Estate Market?
 
-AP DIGITAL works with real estate agents across Metro Vancouver to build personal brands and lead generation systems that produce consistent results. We handle the content, the ads, and the strategy — so you can focus on closing deals.
+AP DIGITAL works with real estate agents across Metro Vancouver to build personal brands and [lead generation](/services/lead-generation) systems that produce consistent results. See our dedicated [Vancouver real estate marketing](/real-estate-marketing) page for details on how we work. We handle the content, the [paid ads](/services/paid-ads), and the strategy — so you can focus on closing deals.
 
 **Book your free strategy call** and get a custom Vancouver real estate marketing plan.`,
   },
@@ -1499,7 +1499,7 @@ Businesses in highly competitive Vancouver industries — real estate, legal, ho
 
 At AP DIGITAL, we specialize in helping Vancouver small businesses and service providers generate consistent leads through proven digital marketing strategies. We don't do long-term contracts, we don't hide behind vanity metrics, and we don't run cookie-cutter campaigns.
 
-Every strategy we build is tailored to your industry, your market, and your goals. Whether you're a salon in Yaletown, a contractor in East Vancouver, or a real estate agent covering the Lower Mainland, we build marketing systems that deliver real, measurable results.
+Every strategy we build is tailored to your industry, your market, and your goals. Whether you're a [salon in Yaletown](/salon-marketing), a [contractor in East Vancouver](/trades-marketing), a [real estate agent](/real-estate-marketing) covering the Lower Mainland, or a [coach](/coaching-marketing) growing your practice, we build marketing systems that deliver real, measurable results.
 
 **Book your free strategy call** and let's talk about growing your Vancouver business in 2026.`,
   },
@@ -1577,7 +1577,7 @@ SEO is a long game. Expect to see initial improvements in three to six months, w
 
 ## Get More Vancouver Customers with AP DIGITAL
 
-At AP DIGITAL, we help Vancouver small businesses rank higher on Google, get more reviews, and generate consistent organic leads. Our local SEO strategies are built specifically for the Vancouver market — not generic templates applied to every city.
+At AP DIGITAL, we help Vancouver small businesses [rank higher on Google](/services/seo), get more reviews, and generate consistent organic leads. Our [local SEO strategies](/services/seo) are built specifically for the Vancouver market — not generic templates applied to every city.
 
 **Book your free SEO audit** and let's find out exactly where your Vancouver business stands — and how to get to page one.`,
   },
@@ -1671,7 +1671,7 @@ Don't just launch ads and hope for the best. Set up proper tracking:
 
 ## Let AP DIGITAL Run Your Vancouver Facebook Ads
 
-At AP DIGITAL, we build and manage high-performing Facebook and Instagram ad campaigns for Vancouver small businesses. From targeting strategy to creative production to lead follow-up systems, we handle everything — so you can focus on serving your customers.
+At AP DIGITAL, we build and manage high-performing [Facebook and Instagram ad campaigns](/services/paid-ads) for Vancouver small businesses. From targeting strategy to creative production to lead follow-up systems, we handle everything — so you can focus on serving your customers. We serve [salons](/salon-marketing), [trades businesses](/trades-marketing), [real estate agents](/real-estate-marketing), and [coaches](/coaching-marketing) across Metro Vancouver.
 
 **Book your free strategy call** and let's build a Facebook Ads campaign that generates real leads for your Vancouver business.`,
   },
@@ -1769,7 +1769,7 @@ The most successful Vancouver Google Ads campaigns are optimized continuously �
 
 ## Get More Vancouver Leads with AP DIGITAL
 
-At AP DIGITAL, we build and manage high-performance Google Ads campaigns for Vancouver local businesses. From keyword research to landing page design to ongoing optimization, we handle everything — and we report on the metrics that matter: leads, calls, and booked jobs.
+At AP DIGITAL, we build and manage high-performance [Google Ads campaigns](/services/paid-ads) for Vancouver local businesses. From keyword research to landing page design to ongoing optimization, we handle everything — and we report on the metrics that matter: leads, calls, and booked jobs. We specialize in [trades and contractor marketing](/trades-marketing), [salon marketing](/salon-marketing), and [real estate agent marketing](/real-estate-marketing) across Metro Vancouver.
 
 **Book your free strategy call** and let's build a Google Ads campaign that puts your Vancouver business at the top of search results.`,
   },
@@ -1846,7 +1846,7 @@ Stop measuring likes and followers — start measuring what impacts your bottom 
 
 ## Let AP DIGITAL Handle Your Vancouver Social Media
 
-At AP DIGITAL, we build and execute social media strategies specifically for Vancouver local businesses. From content creation to community management to paid campaigns, we handle everything — so you can focus on running your business.
+At AP DIGITAL, we build and execute [social media marketing](/services/social-media) strategies specifically for Vancouver local businesses. From content creation to community management to [paid campaigns](/services/paid-ads), we handle everything — so you can focus on running your business. We serve [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades businesses](/trades-marketing), and [coaches](/coaching-marketing) across Metro Vancouver.
 
 **Book your free strategy call** and let's build a social media presence that grows your Vancouver business in 2026.`,
   },
