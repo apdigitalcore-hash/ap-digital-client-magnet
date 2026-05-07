@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Real Estate Marketing Agency BC | Leads for Realtors | AP Digital';
-const DESC = 'AP Digital generates real estate leads across BC using Meta Ads. Serving realtors, brokerages & investors. Month-to-month.';
+const TITLE = 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital';
+const DESC = 'AP Digital generates 15–30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/real-estate-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

@@ -8,8 +8,8 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'SEO Agency Vancouver | Search Engine Optimization | AP Digital';
-const DESC = 'AP Digital provides SEO for Vancouver small businesses — salons, trades, real estate & coaches. Get found on Google. Month-to-month.';
+const TITLE = 'SEO Agency Vancouver | Page 1 Rankings in 90 Days | AP Digital';
+const DESC = 'AP Digital provides local SEO for Vancouver salons, trades, realtors & coaches. Most clients reach page 1 within 90–180 days. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/services/seo';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

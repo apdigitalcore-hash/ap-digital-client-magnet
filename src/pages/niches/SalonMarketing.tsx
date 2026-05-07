@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Salon Marketing Agency Vancouver | Get More Bookings | AP Digital';
-const DESC = 'AP Digital helps Vancouver salons get more bookings using Meta Ads & organic content. Month-to-month. No contracts.';
+const TITLE = 'Salon Marketing Vancouver | Fill Your Chair Every Week | AP Digital';
+const DESC = 'Get 20–40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/salon-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

@@ -99,8 +99,8 @@ function articleSchema(post) {
 const staticRoutes = [
   {
     path: 'trades-marketing',
-    title: 'Trades Marketing Agency BC | Plumber, HVAC & Electrician Leads | AP Digital',
-    description: 'AP Digital generates leads for BC plumbers, electricians, HVAC companies, roofers & contractors using Meta Ads & Google Ads. No contracts. Starts at $500/month.',
+    title: 'Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital',
+    description: 'AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20–50 qualified leads/month via Google & Meta Ads. No contracts. Starts at $500/month.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -113,8 +113,8 @@ const staticRoutes = [
   },
   {
     path: 'salon-marketing',
-    title: 'Salon Marketing Agency Vancouver | Get More Bookings | AP Digital',
-    description: 'AP Digital helps Vancouver salons get more bookings using Meta Ads & organic content. Month-to-month. No contracts.',
+    title: 'Salon Marketing Vancouver | Fill Your Chair Every Week | AP Digital',
+    description: 'Get 20–40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -127,8 +127,8 @@ const staticRoutes = [
   },
   {
     path: 'real-estate-marketing',
-    title: 'Real Estate Marketing Agency BC | Buyer & Seller Leads | AP Digital',
-    description: 'AP Digital generates real estate leads across BC using Meta Ads & Google Ads. Serving realtors, brokerages & investors. Month-to-month.',
+    title: 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital',
+    description: 'AP Digital generates 15–30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -141,8 +141,8 @@ const staticRoutes = [
   },
   {
     path: 'coaching-marketing',
-    title: 'Coaching Marketing Agency BC | Get More Clients | AP Digital',
-    description: 'AP Digital helps life, business & fitness coaches across BC get more clients using Meta Ads. No lock-in contracts.',
+    title: 'Coaching Marketing BC | Get Consistent Clients | AP Digital',
+    description: 'AP Digital helps BC life, business & fitness coaches get 20–40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -155,8 +155,8 @@ const staticRoutes = [
   },
   {
     path: 'services/paid-ads',
-    title: 'Paid Ads Agency Vancouver | Meta & Google Ads That Convert | AP Digital',
-    description: 'AP Digital manages Meta Ads & Google Ads for Vancouver small businesses. Salons, trades, realtors & coaches. 5–10× ROAS. Month-to-month.',
+    title: 'Paid Ads Agency Vancouver | Meta & Google Ads | AP Digital',
+    description: 'AP Digital manages Meta & Google Ads for Vancouver salons, trades, realtors & coaches. 5–10× ROAS. First leads within 2 weeks. Month-to-month.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -178,8 +178,8 @@ const staticRoutes = [
   },
   {
     path: 'services/social-media',
-    title: 'Social Media Marketing Vancouver | Organic Growth & Content | AP Digital',
-    description: 'AP Digital manages social media for Vancouver salons, trades & real estate professionals. Short-form content, Reels & organic growth. Month-to-month.',
+    title: 'Social Media Marketing Vancouver | Reels & Content | AP Digital',
+    description: 'AP Digital manages social media for Vancouver salons, trades & realtors. Instagram Reels, short-form video & organic growth. Month-to-month.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -192,8 +192,8 @@ const staticRoutes = [
   },
   {
     path: 'services/content-creation',
-    title: 'Content Creation Agency Vancouver | Short-Form Video & Reels | AP Digital',
-    description: 'AP Digital creates short-form video content, Instagram Reels & social posts for Vancouver small businesses. Scroll-stopping content that converts.',
+    title: 'Content Creation Agency Vancouver | Reels & Social Video | AP Digital',
+    description: 'AP Digital creates scroll-stopping Reels, short-form video & social posts for Vancouver small businesses. Content that drives bookings and leads.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -206,8 +206,8 @@ const staticRoutes = [
   },
   {
     path: 'services/seo',
-    title: 'SEO Agency Vancouver | Rank Higher on Google | AP Digital',
-    description: 'AP Digital provides local SEO for Vancouver small businesses — salons, trades, real estate & coaches. Page-1 rankings within 6 months. Month-to-month.',
+    title: 'SEO Agency Vancouver | Page 1 Rankings in 90 Days | AP Digital',
+    description: 'AP Digital provides local SEO for Vancouver salons, trades, realtors & coaches. Most clients reach page 1 within 90–180 days. Month-to-month.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -228,8 +228,8 @@ const staticRoutes = [
   },
   {
     path: 'services/lead-generation',
-    title: 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered | AP Digital',
-    description: 'AP Digital builds lead generation systems for Vancouver salons, trades, realtors & coaches. 2,400+ leads delivered. 5–10× ROAS. Month-to-month.',
+    title: 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered',
+    description: 'AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches. 5–10× ROAS. First leads within 2 weeks. Month-to-month.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -242,8 +242,8 @@ const staticRoutes = [
   },
   {
     path: 'services/web-design',
-    title: 'Web Design Agency Vancouver | Conversion-Focused Websites | AP Digital',
-    description: 'AP Digital builds fast, conversion-focused websites for Vancouver small businesses. Salons, trades, real estate & coaches. Built to generate leads.',
+    title: 'Web Design Agency Vancouver | Built to Generate Leads | AP Digital',
+    description: 'AP Digital builds fast, lead-generating websites for Vancouver salons, trades, realtors & coaches. Mobile-first, SEO-ready, conversion-focused.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -283,8 +283,8 @@ const staticRoutes = [
   },
   {
     path: 'blog',
-    title: 'Digital Marketing Blog | Leads for Salons, Trades & Realtors | AP Digital',
-    description: 'Marketing tips, paid ads strategies & lead generation guides for Vancouver salons, trades businesses, realtors & coaches from AP Digital.',
+    title: 'Digital Marketing Blog | AP Digital Vancouver',
+    description: 'Paid ads, SEO & lead generation guides for Vancouver salons, trades businesses, realtors & coaches. Proven strategies from AP Digital.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -296,8 +296,8 @@ const staticRoutes = [
   },
   {
     path: 'surrey',
-    title: 'Digital Marketing Agency Surrey BC | Meta & Google Ads | AP Digital',
-    description: 'AP Digital helps Surrey businesses get consistent leads using Meta Ads & Google Ads. Salons, trades, realtors & coaches. Month-to-month. Personally managed.',
+    title: 'Digital Marketing Agency Surrey BC | Leads for Local Business',
+    description: 'AP Digital helps Surrey salons, trades, realtors & coaches get consistent leads with Meta & Google Ads. Month-to-month. No contracts.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -331,8 +331,8 @@ const staticRoutes = [
   },
   {
     path: 'burnaby',
-    title: 'Digital Marketing Agency Burnaby BC | Meta & Google Ads | AP Digital',
-    description: 'AP Digital helps Burnaby businesses get more leads. Salons, trades, realtors & coaches. Meta Ads & Google Ads. Month-to-month. No contracts.',
+    title: 'Digital Marketing Agency Burnaby BC | Leads for Local Business',
+    description: 'AP Digital helps Burnaby salons, trades, realtors & coaches get more leads with Meta & Google Ads. Month-to-month. No contracts.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -353,8 +353,8 @@ const staticRoutes = [
   },
   {
     path: 'langley',
-    title: 'Digital Marketing Agency Langley BC | Predictable Leads | AP Digital',
-    description: 'AP Digital helps Langley businesses get predictable leads. Salons, trades, real estate & coaches. Meta Ads & Google Ads. Month-to-month. No contracts.',
+    title: 'Digital Marketing Agency Langley BC | Leads for Local Business',
+    description: 'AP Digital helps Langley salons, trades, realtors & coaches get predictable leads with Meta & Google Ads. Month-to-month. No contracts.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -375,8 +375,8 @@ const staticRoutes = [
   },
   {
     path: 'coquitlam',
-    title: 'Digital Marketing Agency Coquitlam BC | Meta & Google Ads | AP Digital',
-    description: 'AP Digital helps Coquitlam businesses generate more leads. Salons, trades, realtors & coaches. Meta Ads & Google Ads. Month-to-month. No contracts.',
+    title: 'Digital Marketing Agency Coquitlam BC | Leads for Local Business',
+    description: 'AP Digital helps Coquitlam salons, trades, realtors & coaches generate more leads with Meta & Google Ads. Month-to-month. No contracts.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [

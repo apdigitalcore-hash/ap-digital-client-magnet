@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Coaching Marketing Agency BC | Get More Clients | AP Digital';
-const DESC = 'AP Digital helps life, business & fitness coaches across BC get more clients using Meta Ads. No lock-in contracts.';
+const TITLE = 'Coaching Marketing BC | Get Consistent Clients | AP Digital';
+const DESC = 'AP Digital helps BC life, business & fitness coaches get 20–40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

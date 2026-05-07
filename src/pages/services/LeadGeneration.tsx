@@ -8,8 +8,8 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'Lead Generation Agency Vancouver | Predictable Leads | AP Digital';
-const DESC = 'AP Digital builds lead generation systems for Vancouver salons, trades, realtors & coaches using Meta Ads and organic content.';
+const TITLE = 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered';
+const DESC = 'AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches. 5–10× ROAS. First leads within 2 weeks. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/services/lead-generation';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
