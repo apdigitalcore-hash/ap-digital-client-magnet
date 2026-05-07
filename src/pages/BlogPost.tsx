@@ -15,7 +15,7 @@ const BlogPost = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
-  const canonical = `https://ap-digital.ca/blog/${post.slug}`;
+  const canonical = post.canonicalUrl ?? `https://ap-digital.ca/blog/${post.slug}`;
 
   const structuredData = {
     "@context": "https://schema.org",

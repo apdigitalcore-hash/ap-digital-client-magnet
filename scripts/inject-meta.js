@@ -420,7 +420,7 @@ const blogPosts = [
   { slug: 'real-estate-agent-social-media-tips', metaTitle: 'Social Media Tips for Real Estate Agents Canada | AP Digital', metaDescription: 'The top social media strategies for Canadian real estate agents that generate buyer & seller leads in 2026.', date: '2026-03-12', category: 'Real Estate Marketing' },
   { slug: 'how-much-does-social-media-marketing-cost-canada', metaTitle: 'How Much Does Social Media Marketing Cost in Canada? | AP Digital', metaDescription: 'Transparent breakdown of social media marketing costs for Canadian businesses — agency fees, ad spend & what to expect at every price point.', date: '2026-03-12', category: 'Marketing Strategy' },
   { slug: 'best-ads-platform-for-small-business-canada', metaTitle: 'Facebook Ads vs Google Ads for Small Business in Canada 2026 | AP Digital', metaDescription: 'Meta Ads or Google Ads — which is better for your Canadian small business? Head-to-head comparison with costs, niches & recommendations.', date: '2026-03-12', category: 'Paid Advertising' },
-  { slug: 'social-media-marketing-cost-canada', metaTitle: 'Social Media Marketing Cost Canada 2026 | AP Digital', metaDescription: "Full breakdown of social media marketing costs for Canadian businesses — from DIY to full-service agency. Know what you're paying for before you spend a dollar.", date: '2026-03-17', category: 'Marketing Strategy' },
+  { slug: 'social-media-marketing-cost-canada', canonical: 'https://ap-digital.ca/blog/how-much-does-social-media-marketing-cost-canada', metaTitle: 'Social Media Marketing Cost Canada 2026 | AP Digital', metaDescription: "Full breakdown of social media marketing costs for Canadian businesses — from DIY to full-service agency. Know what you're paying for before you spend a dollar.", date: '2026-03-17', category: 'Marketing Strategy' },
   { slug: 'facebook-ads-vs-google-ads', metaTitle: 'Facebook Ads vs Google Ads: Which Is Better for Canadian Business? | AP Digital', metaDescription: "Facebook Ads vs Google Ads — what's the difference and which should you run? AP Digital breaks down both platforms for Canadian small businesses.", date: '2026-03-17', category: 'Paid Advertising' },
   { slug: 'real-estate-social-media-tips', metaTitle: 'Real Estate Social Media Tips That Generate Leads | AP Digital', metaDescription: "Stop posting just for likes. Real estate social media strategies that generate actual buyer & seller leads for Canadian realtors in 2026.", date: '2026-03-17', category: 'Real Estate Marketing' },
   { slug: 'email-marketing-vs-social-media', metaTitle: 'Email Marketing vs Social Media: What Works in 2026? | AP Digital', metaDescription: 'Email or social media — where should your business focus? We compare both channels for Canadian small businesses so you can make the smartest marketing choice.', date: '2026-07-10', category: 'Marketing Strategy' },
@@ -500,7 +500,7 @@ for (const route of staticRoutes) {
 
 console.log('\n📝 Generating blog post HTML...');
 for (const post of blogPosts) {
-  const canonical = `${BASE_URL}/blog/${post.slug}`;
+  const canonical = post.canonical || `${BASE_URL}/blog/${post.slug}`;
   const schema = {
     "@context": "https://schema.org",
     "@graph": [

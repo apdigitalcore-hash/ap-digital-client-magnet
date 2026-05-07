@@ -8,6 +8,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   content: string;
+  canonicalUrl?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -324,6 +325,7 @@ At AP DIGITAL, we help small businesses across Canada build profitable [paid adv
   },
   {
     slug: 'social-media-marketing-cost-canada',
+    canonicalUrl: 'https://ap-digital.ca/blog/how-much-does-social-media-marketing-cost-canada',
     title: 'How Much Does Social Media Marketing Cost in Canada? (2025 Honest Guide)',
     metaTitle: 'Social Media Marketing Cost Canada 2026 | AP Digital',
     metaDescription: "Full breakdown of social media marketing costs for Canadian businesses — from DIY to full-service agency. Know what you're paying for before you spend a dollar.",
