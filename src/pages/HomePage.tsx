@@ -13,6 +13,7 @@ import DarkCTA from '@/components/DarkCTA';
 import DigitalArsenal from '@/components/DigitalArsenal';
 import MarketingAuditAI from '@/components/MarketingAuditAI';
 import HeroMoveCard from '@/components/HeroMoveCard';
+import Pricing from '@/components/Pricing';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
@@ -213,6 +214,7 @@ const HomePage = () => {
       <TestimonialsDark />
       <DigitalArsenal />
       <MarketingAuditAI />
+      <Pricing />
 
       {/* What Makes Us Different */}
       <section className="py-14 sm:py-20 md:py-28 bg-charcoal">

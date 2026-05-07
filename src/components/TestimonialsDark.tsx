@@ -2,6 +2,15 @@ import { Star, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef } from 'react';
 
 const testimonials = [
   {
@@ -31,11 +40,13 @@ const testimonials = [
 ];
 
 const TestimonialsDark = () => {
+  const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+
   return (
     <section className="py-20 md:py-28 bg-charcoal-dark">
       <div className="container-custom">
         {/* Section header */}
-        <motion.div 
+        <motion.div
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,46 +69,52 @@ const TestimonialsDark = () => {
           </Button>
         </motion.div>
 
-        {/* Testimonials grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              className="group relative"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="h-full p-6 rounded-2xl border border-gray-800 bg-charcoal-light/50 hover:border-teal/30 transition-colors duration-300 flex flex-col">
-                {/* Stars */}
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-teal text-teal" />
-                  ))}
-                </div>
+        {/* Testimonials slider */}
+        <Carousel
+          opts={{ align: 'start', loop: true }}
+          plugins={[autoplay.current]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {testimonials.map((testimonial) => (
+              <CarouselItem
+                key={testimonial.name}
+                className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+              >
+                <div className="h-full p-6 rounded-2xl border border-gray-800 bg-charcoal-light/50 hover:border-teal/30 transition-colors duration-300 flex flex-col">
+                  {/* Stars */}
+                  <div className="flex gap-0.5 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-teal text-teal" />
+                    ))}
+                  </div>
 
-                {/* Quote */}
-                <p className="text-gray-300 text-sm leading-relaxed mb-5 flex-1">
-                  "{testimonial.content}"
-                </p>
+                  {/* Quote */}
+                  <p className="text-gray-300 text-sm leading-relaxed mb-5 flex-1">
+                    "{testimonial.content}"
+                  </p>
 
-                {/* Result badge */}
-                <div className="inline-flex self-start items-center px-3 py-1 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-bold uppercase tracking-wide mb-5">
-                  {testimonial.result}
-                </div>
+                  {/* Result badge */}
+                  <div className="inline-flex self-start items-center px-3 py-1 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-bold uppercase tracking-wide mb-5">
+                    {testimonial.result}
+                  </div>
 
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-4 border-t border-gray-800/60">
-                  <div>
-                    <div className="font-semibold text-primary-foreground text-sm">{testimonial.name}</div>
-                    <div className="text-xs text-gray-500">{testimonial.role}</div>
+                  {/* Author */}
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-800/60">
+                    <div>
+                      <div className="font-semibold text-primary-foreground text-sm">{testimonial.name}</div>
+                      <div className="text-xs text-gray-500">{testimonial.role}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          {/* Nav arrows — hidden on mobile (swipe instead) */}
+          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-12 bg-charcoal-light border-gray-700 text-white hover:bg-teal hover:border-teal hover:text-near-black" />
+          <CarouselNext className="hidden md:flex -right-4 lg:-right-12 bg-charcoal-light border-gray-700 text-white hover:bg-teal hover:border-teal hover:text-near-black" />
+        </Carousel>
       </div>
     </section>
   );
