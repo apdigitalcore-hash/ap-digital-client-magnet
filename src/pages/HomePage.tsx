@@ -12,6 +12,7 @@ import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
 import DigitalArsenal from '@/components/DigitalArsenal';
 import MarketingAuditAI from '@/components/MarketingAuditAI';
+import HeroMoveCard from '@/components/HeroMoveCard';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
@@ -82,8 +83,8 @@ const HomePage = () => {
       </Helmet>
       <Header />
 
-      {/* Hero Section - Clean Centered */}
-      <section className="relative min-h-screen flex items-center justify-center bg-near-black overflow-hidden">
+      {/* Hero Section - Split layout (copy left, marketing-move card right) */}
+      <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-16 lg:py-0">
         {/* Background image with overlay */}
         <div className="absolute inset-0 z-0">
           <picture>
@@ -91,66 +92,74 @@ const HomePage = () => {
             <img
               src={heroImage}
               alt="Digital marketing agency for local businesses in Vancouver BC"
-              className="absolute inset-0 w-full h-full object-cover opacity-20"
+              className="absolute inset-0 w-full h-full object-cover opacity-15"
               fetchPriority="high"
               loading="eager"
               decoding="sync"
             />
           </picture>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,_rgba(255,255,255,0.08)_0%,_transparent_60%)]" />
-          <div className="absolute inset-0 bg-near-black/60" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(20,184,166,0.18)_0%,_transparent_55%)]" />
+          <div className="absolute inset-0 bg-near-black/70" />
         </div>
 
-        {/* Centered content */}
-        <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto pt-24 pb-32 sm:py-0">
-          {/* Eyebrow */}
-          <p className="text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] sm:tracking-[0.3em] text-muted-foreground mb-5 sm:mb-8 animate-fade-up font-medium">
-            AP Digital Marketing
-          </p>
+        <div className="container-custom relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            {/* Left: Copy */}
+            <div className="text-center lg:text-left">
+              <p className="text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] sm:tracking-[0.3em] text-muted-foreground mb-5 sm:mb-8 animate-fade-up font-medium">
+                AP Digital Marketing
+              </p>
 
-          {/* Headline */}
-          <h1
-            className="font-display text-[2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] tracking-tight mb-5 sm:mb-8 animate-fade-up"
-            style={{ animationDelay: '0.1s' }}
-          >
-            Digital Marketing That Generates Leads
-          </h1>
+              <h1
+                className="font-display text-[2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-[1.1] tracking-tight mb-5 sm:mb-8 animate-fade-up"
+                style={{ animationDelay: '0.1s' }}
+              >
+                Digital Marketing That Generates Leads
+              </h1>
 
-          {/* Subheadline */}
-          <p
-            className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-12 animate-fade-up leading-relaxed px-2 sm:px-0"
-            style={{ animationDelay: '0.2s' }}
-          >
-            We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
-          </p>
+              <p
+                className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10 animate-fade-up leading-relaxed px-2 sm:px-0"
+                style={{ animationDelay: '0.2s' }}
+              >
+                We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
+              </p>
 
-          {/* CTAs */}
-          <div
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 animate-fade-up"
-            style={{ animationDelay: '0.3s' }}
-          >
-            <Button variant="hero" size="lg" asChild className="w-full sm:w-auto">
-              <Link to="/contact" className="flex items-center justify-center gap-2">
-                Book a Free Strategy Call
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </Button>
-            <Button variant="light" size="lg" asChild className="w-full sm:w-auto">
-              <a href="#services" className="flex items-center justify-center">
-                See What's Included
-              </a>
-            </Button>
-          </div>
-        </div>
+              <div
+                className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-up"
+                style={{ animationDelay: '0.3s' }}
+              >
+                <Button variant="hero" size="lg" asChild className="w-full sm:w-auto">
+                  <Link to="/contact" className="flex items-center justify-center gap-2">
+                    Book a Free Strategy Call
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
+                <Button variant="light" size="lg" asChild className="w-full sm:w-auto">
+                  <a href="#services" className="flex items-center justify-center">
+                    See What's Included
+                  </a>
+                </Button>
+              </div>
 
-        {/* Bottom trust bar */}
-        <div className="absolute bottom-4 sm:bottom-8 left-0 right-0 z-10 animate-fade-up px-4" style={{ animationDelay: '0.5s' }}>
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:gap-x-10 md:gap-x-16 opacity-40">
-            {['Google', 'Facebook', 'Instagram', 'LinkedIn'].map(brand => (
-              <span key={brand} className="text-primary-foreground font-display font-semibold text-xs sm:text-sm md:text-base tracking-wide">
-                {brand}
-              </span>
-            ))}
+              {/* Trust bar - now inline with copy */}
+              <div className="mt-10 sm:mt-12 animate-fade-up" style={{ animationDelay: '0.5s' }}>
+                <p className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-gray-500 mb-3 text-center lg:text-left">
+                  Platforms we run
+                </p>
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 sm:gap-x-8 opacity-50">
+                  {['Google', 'Facebook', 'Instagram', 'LinkedIn'].map(brand => (
+                    <span key={brand} className="text-primary-foreground font-display font-semibold text-xs sm:text-sm tracking-wide">
+                      {brand}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Today's Move card */}
+            <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+              <HeroMoveCard />
+            </div>
           </div>
         </div>
       </section>
