@@ -6,12 +6,12 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
+import ResultsProof from '@/components/ResultsProof';
+import ServicesDark from '@/components/ServicesDark';
+import TestimonialsDark from '@/components/TestimonialsDark';
+import ProcessDark from '@/components/ProcessDark';
+import DarkCTA from '@/components/DarkCTA';
 
-const ResultsProof = lazy(() => import('@/components/ResultsProof'));
-const ServicesDark = lazy(() => import('@/components/ServicesDark'));
-const TestimonialsDark = lazy(() => import('@/components/TestimonialsDark'));
-const ProcessDark = lazy(() => import('@/components/ProcessDark'));
-const DarkCTA = lazy(() => import('@/components/DarkCTA'));
 const DigitalArsenal = lazy(() => import('@/components/DigitalArsenal'));
 const MarketingAuditAI = lazy(() => import('@/components/MarketingAuditAI'));
 
@@ -200,12 +200,14 @@ const HomePage = () => {
         </div>
       </section>
 
+      <ResultsProof />
+      <ProcessDark />
+      <ServicesDark />
+      <TestimonialsDark />
       <Suspense fallback={null}>
-        <ResultsProof />
-        <ProcessDark />
-        <ServicesDark />
-        <TestimonialsDark />
         <DigitalArsenal />
+      </Suspense>
+      <Suspense fallback={null}>
         <MarketingAuditAI />
       </Suspense>
 
@@ -268,12 +270,10 @@ const HomePage = () => {
         </div>
       </section>
 
-      <Suspense fallback={null}>
-        <DarkCTA
-          headline="Ready to Get Predictable Leads?"
-          subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
-        />
-      </Suspense>
+      <DarkCTA
+        headline="Ready to Get Predictable Leads?"
+        subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
+      />
 
       <Footer />
     </main>
