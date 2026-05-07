@@ -44,6 +44,7 @@
   {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "MarketingAgency"],
+    "@id": "https://ap-digital.ca/#organization",
     "name": "AP Digital",
     "description": "Digital marketing agency specializing in lead generation for salons, trades, real estate agents, and coaches in Vancouver, BC.",
     "url": "https://ap-digital.ca",
@@ -51,16 +52,33 @@
     "email": "apdigital.core@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Pitt Meadows",
+      "addressLocality": "Vancouver",
       "addressRegion": "BC",
       "addressCountry": "CA"
     },
-    "areaServed": ["Metro Vancouver", "Surrey", "Burnaby", "Langley", "Coquitlam", "Abbotsford", "BC"],
-    "serviceType": ["Digital Marketing", "Lead Generation", "Meta Ads", "Google Ads", "Salon Marketing", "Trades Marketing", "Real Estate Marketing"],
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 49.2827,
+      "longitude": -123.1207
+    },
+    "areaServed": ["Vancouver", "Surrey", "Burnaby", "Langley", "Coquitlam", "Metro Vancouver", "BC"],
+    "serviceType": ["Digital Marketing", "Lead Generation", "Meta Ads", "Google Ads", "SEO", "Salon Marketing", "Trades Marketing", "Real Estate Marketing", "Coaching Marketing"],
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
     "founder": {
       "@type": "Person",
       "name": "Arjun Sharma"
-    }
+    },
+    "sameAs": [
+      "https://www.instagram.com/theapdigital/",
+      "https://www.facebook.com/apdigital",
+      "https://www.linkedin.com/company/apdigital"
+    ]
   }
   </script>
 

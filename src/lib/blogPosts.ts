@@ -123,7 +123,7 @@ Aim for a steady stream of five-star reviews with detailed comments. A profile w
 
 If your trades business doesn't have a consistent online marketing strategy, you're leaving jobs — and revenue — on the table every single day. The good news is that it doesn't have to be complicated. With the right combination of Google Ads, social media content, and a strong review strategy, you can build a predictable pipeline of leads month after month.
 
-At AP DIGITAL, we specialize in helping trades businesses across Canada get more jobs through proven digital marketing strategies. We handle the ads, the content, and the strategy — so you can focus on doing what you do best. Visit our dedicated [trades marketing page for BC](https://trades.ap-digital.ca) or our [contractor marketing page](https://contractor.ap-digital.ca) to see exactly how we work.
+At AP DIGITAL, we specialize in helping trades businesses across Canada get more jobs through proven digital marketing strategies. We handle the ads, the content, and the strategy — so you can focus on doing what you do best. Visit our dedicated [trades marketing page for BC](/trades-marketing) or our [contractor marketing page](/services/paid-ads) to see exactly how we work.
 
 **Book your free strategy call today** and let's build a marketing system that keeps your phone ringing in 2026 and beyond.`,
   },
@@ -645,7 +645,7 @@ A single job from a qualified lead can be worth $500–$10,000+. Even at the sta
 
 ## Ready to Fill Your Schedule With Jobs?
 
-At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) specifically for trades businesses across Canada. We handle everything — strategy, creative, targeting, and optimization — so you can focus on doing the work. Check out our dedicated [BC trades marketing page](https://trades.ap-digital.ca) or our [contractor marketing page](https://contractor.ap-digital.ca) to learn more. Book a free strategy call and we'll show you exactly what to expect.`,
+At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) specifically for trades businesses across Canada. We handle everything — strategy, creative, targeting, and optimization — so you can focus on doing the work. Check out our dedicated [BC trades marketing page](/trades-marketing) or our [contractor marketing page](/services/paid-ads) to learn more. Book a free strategy call and we'll show you exactly what to expect.`,
   },
 ];
 
@@ -921,7 +921,7 @@ Based on our work with trades clients across BC:
 
 ## Ready to Get More Vancouver Jobs?
 
-AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — Google Ads, social media content, and local SEO — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](https://trades.ap-digital.ca) or our [contractor marketing page](https://contractor.ap-digital.ca) for more.
+AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — Google Ads, social media content, and local SEO — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) or our [contractor marketing page](/services/paid-ads) for more.
 
 **Book your free strategy call** and get a custom plan to fill your schedule with quality Vancouver jobs.`,
   },
@@ -1107,7 +1107,7 @@ Make sure you have a system to respond fast: a dedicated phone number on your ad
 
 ## Ready to Run Meta Ads for Your BC Contractor Business?
 
-At AP DIGITAL, we specialize in [Meta Ads for BC contractors and trades businesses](https://contractor.ap-digital.ca). We handle the targeting, creative, and optimization — you focus on answering the phone.
+At AP DIGITAL, we specialize in [Meta Ads for BC contractors and trades businesses](/services/paid-ads). We handle the targeting, creative, and optimization — you focus on answering the phone.
 
 **Book a free strategy call** and get a custom budget recommendation for your trade and service area.`,
   },
@@ -1185,7 +1185,7 @@ Based on results with HVAC clients in BC:
 
 ## Ready to Fill Your HVAC Schedule in Vancouver?
 
-AP DIGITAL helps HVAC companies across Metro Vancouver build lead generation systems that work year-round. We handle Google Ads, Meta Ads, and content — so your phone keeps ringing. Check out our [BC trades marketing](https://trades.ap-digital.ca) and [contractor marketing](https://contractor.ap-digital.ca) pages to learn more.
+AP DIGITAL helps HVAC companies across Metro Vancouver build lead generation systems that work year-round. We handle Google Ads, Meta Ads, and content — so your phone keeps ringing. Check out our [BC trades marketing](/trades-marketing) and [contractor marketing](/services/paid-ads) pages to learn more.
 
 **Book your free strategy call** and get a custom HVAC marketing plan for your Vancouver service area.`,
   },
@@ -1273,7 +1273,7 @@ A typical result: a BC life coach spending $800/month on ad spend generates 25�
 
 ## Ready to Get Consistent Coaching Clients in BC?
 
-AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We build your entire lead generation system — the ads, the funnel, and the follow-up strategy. Visit our [BC coaching marketing page](https://coach.ap-digital.ca) to learn more.
+AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We build your entire lead generation system — the ads, the funnel, and the follow-up strategy. Visit our [BC coaching marketing page](/coaching-marketing) to learn more.
 
 **Book your free strategy call** and let's map out a client acquisition system for your coaching practice.`,
   },
@@ -1353,7 +1353,7 @@ For plumbers in Metro Vancouver, social proof is your most powerful marketing as
 
 ## Ready to Get More Plumbing Jobs in Metro Vancouver?
 
-AP DIGITAL specializes in marketing for trades and contractors across the Lower Mainland. We build the full system — Google Ads, Meta Ads, content, and local SEO — and we measure success in booked jobs. See our [BC trades marketing page](https://trades.ap-digital.ca) and [contractor marketing page](https://contractor.ap-digital.ca).
+AP DIGITAL specializes in marketing for trades and contractors across the Lower Mainland. We build the full system — Google Ads, Meta Ads, content, and local SEO — and we measure success in booked jobs. See our [BC trades marketing page](/trades-marketing) and [contractor marketing page](/services/paid-ads).
 
 **Book your free strategy call** and get a custom marketing plan for your Vancouver plumbing business.`,
   },
@@ -1439,7 +1439,7 @@ You don't need to post daily. Two or three posts per week showing real local wor
 
 ## Ready to Get More Electrical Jobs in BC?
 
-AP DIGITAL builds complete digital marketing systems for electricians and trades businesses across Metro Vancouver and the Lower Mainland. We handle Google Ads, Meta Ads, and local SEO — so your phone keeps ringing and your crew stays busy. See our dedicated [BC trades marketing page](https://trades.ap-digital.ca) and [contractor marketing page](https://contractor.ap-digital.ca).
+AP DIGITAL builds complete digital marketing systems for electricians and trades businesses across Metro Vancouver and the Lower Mainland. We handle Google Ads, Meta Ads, and local SEO — so your phone keeps ringing and your crew stays busy. See our dedicated [BC trades marketing page](/trades-marketing) and [contractor marketing page](/services/paid-ads).
 
 **Book your free strategy call** and get a custom lead generation plan for your BC electrical business.`,
   },
