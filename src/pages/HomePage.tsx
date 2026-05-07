@@ -1,18 +1,19 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
+import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Target, Users, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
-import ResultsProof from '@/components/ResultsProof';
 
-import ServicesDark from '@/components/ServicesDark';
-import TestimonialsDark from '@/components/TestimonialsDark';
-import ProcessDark from '@/components/ProcessDark';
-import DarkCTA from '@/components/DarkCTA';
-import DigitalArsenal from '@/components/DigitalArsenal';
-import MarketingAuditAI from '@/components/MarketingAuditAI';
+const ResultsProof = lazy(() => import('@/components/ResultsProof'));
+const ServicesDark = lazy(() => import('@/components/ServicesDark'));
+const TestimonialsDark = lazy(() => import('@/components/TestimonialsDark'));
+const ProcessDark = lazy(() => import('@/components/ProcessDark'));
+const DarkCTA = lazy(() => import('@/components/DarkCTA'));
+const DigitalArsenal = lazy(() => import('@/components/DigitalArsenal'));
+const MarketingAuditAI = lazy(() => import('@/components/MarketingAuditAI'));
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
@@ -78,7 +79,7 @@ const HomePage = () => {
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
-        <link rel="preload" as="image" href={heroImage} />
+        <link rel="preload" as="image" href={heroImageWebp} type="image/webp" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
@@ -199,14 +200,14 @@ const HomePage = () => {
         </div>
       </section>
 
-      <ResultsProof />
-
-      <ProcessDark />
-      <ServicesDark />
-      <TestimonialsDark />
-
-      <DigitalArsenal />
-      <MarketingAuditAI />
+      <Suspense fallback={null}>
+        <ResultsProof />
+        <ProcessDark />
+        <ServicesDark />
+        <TestimonialsDark />
+        <DigitalArsenal />
+        <MarketingAuditAI />
+      </Suspense>
 
       {/* What Makes Us Different */}
       <section className="py-14 sm:py-20 md:py-28 bg-charcoal">
@@ -267,10 +268,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      <DarkCTA
-        headline="Ready to Get Predictable Leads?"
-        subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
-      />
+      <Suspense fallback={null}>
+        <DarkCTA
+          headline="Ready to Get Predictable Leads?"
+          subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
+        />
+      </Suspense>
 
       <Footer />
     </main>
