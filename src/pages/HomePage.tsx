@@ -1,5 +1,4 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
-import { lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Target, Users, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,9 +10,8 @@ import ServicesDark from '@/components/ServicesDark';
 import TestimonialsDark from '@/components/TestimonialsDark';
 import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
-
-const DigitalArsenal = lazy(() => import('@/components/DigitalArsenal'));
-const MarketingAuditAI = lazy(() => import('@/components/MarketingAuditAI'));
+import DigitalArsenal from '@/components/DigitalArsenal';
+import MarketingAuditAI from '@/components/MarketingAuditAI';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
@@ -204,12 +202,8 @@ const HomePage = () => {
       <ProcessDark />
       <ServicesDark />
       <TestimonialsDark />
-      <Suspense fallback={null}>
-        <DigitalArsenal />
-      </Suspense>
-      <Suspense fallback={null}>
-        <MarketingAuditAI />
-      </Suspense>
+      <DigitalArsenal />
+      <MarketingAuditAI />
 
       {/* What Makes Us Different */}
       <section className="py-14 sm:py-20 md:py-28 bg-charcoal">
