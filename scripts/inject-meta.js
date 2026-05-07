@@ -8,6 +8,21 @@ const baseHtml = readFileSync(resolve(distDir, 'index.html'), 'utf-8');
 
 const BASE_URL = 'https://ap-digital.ca';
 
+const websiteSchema = {
+  "@type": "WebSite",
+  "@id": `${BASE_URL}/#website`,
+  "url": BASE_URL,
+  "name": "AP Digital",
+  "description": "Digital marketing agency in Vancouver BC specializing in lead generation for salons, trades, real estate agents, and coaches.",
+  "publisher": { "@id": `${BASE_URL}/#organization` },
+  "inLanguage": "en-CA",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": { "@type": "EntryPoint", "urlTemplate": `${BASE_URL}/blog?q={search_term_string}` },
+    "query-input": "required name=search_term_string"
+  }
+};
+
 const orgSchema = {
   "@type": ["LocalBusiness", "MarketingAgency"],
   "@id": `${BASE_URL}/#organization`,
@@ -444,6 +459,10 @@ function injectIntoHtml(html, { title, description, canonical, schema }) {
   }
 
   if (schema) {
+    // Ensure every page's @graph includes the WebSite node so #website references resolve
+    if (schema['@graph'] && !schema['@graph'].some(n => n['@type'] === 'WebSite')) {
+      schema['@graph'].unshift(websiteSchema);
+    }
     const scriptTag = `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
     html = html.replace('</head>', `${scriptTag}\n</head>`);
   }

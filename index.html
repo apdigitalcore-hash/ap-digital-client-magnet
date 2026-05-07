@@ -35,15 +35,25 @@
 
   <!-- Fallback Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Digital Marketing Agency Vancouver | AP Digital" />
-  <meta name="twitter:description" content="AP DIGITAL helps salons, real estate agents, trades, and coaches get predictable leads through social media and paid ads. Based in Vancouver, BC." />
+  <meta name="twitter:title" content="Digital Marketing Agency Vancouver | 2,400+ Leads Delivered | AP Digital" />
+  <meta name="twitter:description" content="AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches using Meta Ads & Google Ads. Month-to-month. No contracts." />
   <meta name="twitter:image" content="https://ap-digital.ca/og-image.png" />
 
-  <!-- Static LocalBusiness schema — crawler-visible without JS -->
+  <!-- Static schema — crawler-visible without JS -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "MarketingAgency"],
+    "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://ap-digital.ca/#website",
+      "url": "https://ap-digital.ca",
+      "name": "AP Digital",
+      "publisher": { "@id": "https://ap-digital.ca/#organization" },
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": ["LocalBusiness", "MarketingAgency"],
     "@id": "https://ap-digital.ca/#organization",
     "name": "AP Digital",
     "description": "Digital marketing agency specializing in lead generation for salons, trades, real estate agents, and coaches in Vancouver, BC.",
@@ -78,6 +88,8 @@
       "https://www.instagram.com/theapdigital/",
       "https://www.facebook.com/apdigital",
       "https://www.linkedin.com/company/apdigital"
+    ]
+    }
     ]
   }
   </script>
