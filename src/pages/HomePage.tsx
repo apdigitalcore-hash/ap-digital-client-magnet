@@ -87,83 +87,10 @@ const HomePage = () => {
       {/* ─────────────────── HERO ─────────────────── */}
       <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-20 lg:py-0">
 
-        {/* Background — gradient + Vancouver skyline silhouette */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Background — single subtle gradient */}
+        <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_28%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
-
-          {/* Vancouver skyline silhouette */}
-          <svg
-            viewBox="0 0 1440 320"
-            preserveAspectRatio="xMidYMax slice"
-            className="absolute bottom-0 left-0 right-0 w-full h-[260px] sm:h-[320px] md:h-[380px] pointer-events-none"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="skylineMountain" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="hsl(170, 40%, 55%)" stopOpacity="0" />
-                <stop offset="100%" stopColor="hsl(170, 45%, 50%)" stopOpacity="0.20" />
-              </linearGradient>
-              <linearGradient id="skylineCity" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="hsl(170, 70%, 55%)" stopOpacity="0.30" />
-                <stop offset="100%" stopColor="hsl(170, 75%, 45%)" stopOpacity="0.55" />
-              </linearGradient>
-              <radialGradient id="skylineGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="hsl(170, 85%, 55%)" stopOpacity="0.28" />
-                <stop offset="100%" stopColor="hsl(170, 85%, 55%)" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-
-            {/* North Shore mountains */}
-            <path
-              d="M0 160 L120 110 L240 130 L360 80 L490 105 L620 55 L760 95 L880 60 L1020 95 L1160 55 L1290 90 L1440 70 L1440 320 L0 320 Z"
-              fill="url(#skylineMountain)"
-            />
-
-            {/* Horizon glow */}
-            <ellipse cx="720" cy="220" rx="780" ry="70" fill="url(#skylineGlow)" />
-
-            {/* City silhouette — single continuous path */}
-            <path
-              d="
-                M0 320
-                L0 260
-                Q 25 240 50 258 Q 75 245 100 258 L 100 200
-                L 175 200 L 175 175 L 220 175 L 220 220
-                Q 248 175 275 195 Q 302 160 332 188 Q 360 170 392 195
-                L 392 220
-                L 422 220 L 422 130
-                L 450 130 L 450 110
-                L 460 110 L 460 80 L 482 80 L 482 110 L 492 110 L 492 130
-                L 522 130 L 522 220
-                L 555 220 L 555 175 L 605 175 L 605 145 L 630 145 L 630 110 L 660 110 L 660 175 L 715 175
-                L 715 220 L 745 220
-                L 745 100 L 770 100 L 770 75 L 815 75 L 815 100 L 838 100 L 838 220
-                L 870 220 L 870 50 L 910 50 L 910 220
-                L 940 220 L 940 145 L 985 145 L 985 105 L 1025 105 L 1025 145 L 1060 145 L 1060 220
-                L 1090 220
-                Q 1130 130 1175 220
-                L 1205 220 L 1205 150 L 1245 150 L 1245 115 L 1290 115 L 1290 220
-                L 1320 220 L 1320 175 L 1370 175 L 1370 195 L 1410 195 L 1410 165 L 1440 165
-                L 1440 320 Z
-              "
-              fill="url(#skylineCity)"
-            />
-
-            {/* Harbour Centre observation disc — separate so it floats */}
-            <ellipse cx="471" cy="74" rx="20" ry="7" fill="hsl(170, 75%, 50%)" fillOpacity="0.5" />
-
-            {/* Subtle horizon line */}
-            <line
-              x1="0"
-              y1="220"
-              x2="1440"
-              y2="220"
-              stroke="hsl(170, 70%, 55%)"
-              strokeOpacity="0.12"
-              strokeWidth="1"
-            />
-          </svg>
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
         </div>
 
         <div className="container-custom relative z-10 w-full">
