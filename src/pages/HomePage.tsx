@@ -1,6 +1,6 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, ChevronRight, Zap, Target, Users, TrendingUp, BarChart3, ShieldCheck, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -19,8 +19,8 @@ import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSc
 import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
-const TITLE = 'Digital Marketing Agency Vancouver | 2,400+ Leads Delivered | AP Digital';
-const DESC = 'AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches using Meta Ads & Google Ads. Month-to-month. No contracts.';
+const TITLE = 'Digital Marketing Agency Vancouver BC | Meta Ads & Google Ads Experts | AP Digital';
+const DESC = 'AP Digital is Vancouver\'s #1 performance marketing agency — 2,400+ qualified leads delivered for BC salons, realtors, trades & coaches via Meta Ads, Google Ads & content creation. 90-day results guarantee. Month-to-month, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -63,7 +63,7 @@ const HomePage = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESC} />
-        <meta name="keywords" content="digital marketing agency Canada, marketing agency Vancouver BC, lead generation Canada, salon marketing, real estate marketing, trades marketing" />
+        <meta name="keywords" content="digital marketing agency Vancouver, performance marketing agency Vancouver BC, Meta Ads agency Vancouver, Google Ads agency BC, lead generation Vancouver BC, social media marketing agency BC, Facebook ads agency Vancouver, Instagram marketing BC, paid advertising agency Lower Mainland, digital marketing for small businesses Canada, marketing agency for salons Vancouver, real estate marketing BC, trades marketing Vancouver, coaching marketing BC, SEO agency Vancouver, marketing agency Surrey, marketing agency Burnaby, marketing agency Langley, marketing agency Coquitlam, content creation agency BC, conversion rate optimization Vancouver" />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL} />
@@ -84,72 +84,142 @@ const HomePage = () => {
       </Helmet>
       <Header />
 
-      {/* Hero Section - Split layout (copy left, marketing-move card right) */}
-      <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-16 lg:py-0">
-        {/* Background image with overlay */}
+      {/* ─────────────────── HERO ─────────────────── */}
+      <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-24 lg:py-0">
+
+        {/* Background layers */}
         <div className="absolute inset-0 z-0">
           <picture>
             <source srcSet={heroImageWebp} type="image/webp" />
             <img
               src={heroImage}
-              alt="Digital marketing agency for local businesses in Vancouver BC"
-              className="absolute inset-0 w-full h-full object-cover opacity-15"
+              alt="Performance marketing agency Vancouver BC — AP Digital"
+              className="absolute inset-0 w-full h-full object-cover opacity-[0.06]"
               fetchPriority="high"
               loading="eager"
               decoding="sync"
             />
           </picture>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(20,184,166,0.18)_0%,_transparent_55%)]" />
-          <div className="absolute inset-0 bg-near-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-br from-near-black via-near-black to-charcoal-dark" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_78%_28%,_rgba(20,184,166,0.13)_0%,_transparent_65%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_8%_82%,_rgba(99,102,241,0.055)_0%,_transparent_70%)]" />
+          <div
+            className="absolute inset-0"
+            style={{
+              opacity: 0.022,
+              backgroundImage: 'radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)',
+              backgroundSize: '36px 36px',
+            }}
+          />
         </div>
 
         <div className="container-custom relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            {/* Left: Copy */}
-            <div className="text-center lg:text-left">
-              <p className="text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] sm:tracking-[0.3em] text-muted-foreground mb-5 sm:mb-8 animate-fade-up font-medium">
-                AP Digital Marketing
-              </p>
+          <div className="grid lg:grid-cols-[1fr_1.08fr] gap-10 xl:gap-16 items-center">
 
+            {/* ── Left: Copy ── */}
+            <div className="text-center lg:text-left">
+
+              {/* Eyebrow badge */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-teal/25 bg-teal/10 mb-8 sm:mb-10 animate-fade-up">
+                <span className="relative flex h-2 w-2 flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal" />
+                </span>
+                <span className="text-teal text-xs sm:text-sm font-semibold tracking-wide leading-none">
+                  Trusted by 200+ Canadian Businesses &nbsp;·&nbsp; Now Accepting New Clients
+                </span>
+              </div>
+
+              {/* H1 */}
               <h1
-                className="font-display text-[2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-primary-foreground leading-[1.1] tracking-tight mb-5 sm:mb-8 animate-fade-up"
-                style={{ animationDelay: '0.1s' }}
+                className="font-display text-[2.6rem] sm:text-[3.4rem] md:text-[4.2rem] xl:text-[5rem] font-black text-primary-foreground leading-[1.0] tracking-tight mb-7 sm:mb-9 animate-fade-up"
+                style={{ animationDelay: '0.08s' }}
               >
-                Digital Marketing That Generates Leads
+                Fill Your Calendar<br />
+                With{' '}
+                <span className="text-gradient">Qualified Clients.</span>
+                <br />
+                <span className="relative inline-block mt-1">
+                  Guaranteed.
+                  <span className="absolute -bottom-1.5 left-0 right-[15%] h-[3px] rounded-full bg-gradient-to-r from-teal via-teal-light to-transparent" />
+                </span>
               </h1>
 
+              {/* Sub */}
               <p
-                className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10 animate-fade-up leading-relaxed px-2 sm:px-0"
-                style={{ animationDelay: '0.2s' }}
+                className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 mb-9 sm:mb-11 animate-fade-up leading-relaxed"
+                style={{ animationDelay: '0.18s' }}
               >
-                We help local businesses generate leads, boost visibility, and scale revenue—guaranteed results in 90 days.
+                Vancouver's performance marketing agency for salons, realtors, trades &amp; coaches.
+                Meta Ads · Google Ads · Content Creation · SEO.{' '}
+                <span className="text-gray-200 font-semibold">
+                  2,400+ leads delivered. 90-day results guarantee.
+                </span>
               </p>
 
+              {/* CTAs */}
               <div
-                className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-up"
-                style={{ animationDelay: '0.3s' }}
+                className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-up mb-12 sm:mb-14"
+                style={{ animationDelay: '0.28s' }}
               >
-                <Button variant="hero" size="lg" asChild className="w-full sm:w-auto">
-                  <Link to="/contact" className="flex items-center justify-center gap-2">
-                    Book a Free Strategy Call
+                <Button variant="hero" size="lg" asChild>
+                  <a
+                    href="https://calendly.com/apdigital-core/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 text-base font-bold"
+                  >
+                    Book Free Strategy Call
                     <ArrowRight className="w-5 h-5" />
-                  </Link>
-                </Button>
-                <Button variant="light" size="lg" asChild className="w-full sm:w-auto">
-                  <a href="#services" className="flex items-center justify-center">
-                    See What's Included
                   </a>
+                </Button>
+                <Button variant="heroOutline" size="lg" asChild>
+                  <Link
+                    to="/pricing"
+                    className="flex items-center justify-center gap-1.5"
+                  >
+                    See Pricing &amp; Plans
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
                 </Button>
               </div>
 
-              {/* Trust bar - now inline with copy */}
-              <div className="mt-10 sm:mt-12 animate-fade-up" style={{ animationDelay: '0.5s' }}>
-                <p className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-gray-500 mb-3 text-center lg:text-left">
-                  Platforms we run
+              {/* Stats row */}
+              <div
+                className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4 pt-8 border-t border-white/[0.08] animate-fade-up"
+                style={{ animationDelay: '0.38s' }}
+              >
+                {[
+                  { value: '2,400+', label: 'Leads Delivered' },
+                  { value: '200+', label: 'BC Clients Served' },
+                  { value: '$4.2M+', label: 'Ad Spend Managed' },
+                  { value: '4.9 ★', label: 'Average Rating' },
+                ].map((s) => (
+                  <div key={s.label} className="text-center lg:text-left">
+                    <div className="font-display text-2xl sm:text-3xl font-black text-primary-foreground leading-none mb-1.5">
+                      {s.value}
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest font-semibold">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Platform bar */}
+              <div
+                className="mt-8 sm:mt-10 animate-fade-up"
+                style={{ animationDelay: '0.48s' }}
+              >
+                <p className="text-[10px] uppercase tracking-[0.3em] text-gray-600 mb-3 font-semibold text-center lg:text-left">
+                  Campaigns running on
                 </p>
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 sm:gap-x-8 opacity-50">
-                  {['Google', 'Facebook', 'Instagram', 'LinkedIn'].map(brand => (
-                    <span key={brand} className="text-primary-foreground font-display font-semibold text-xs sm:text-sm tracking-wide">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2">
+                  {['Google', 'Meta', 'Instagram', 'TikTok', 'LinkedIn'].map(brand => (
+                    <span
+                      key={brand}
+                      className="text-gray-500 hover:text-gray-300 font-display font-bold text-xs tracking-wide transition-colors duration-200 cursor-default"
+                    >
                       {brand}
                     </span>
                   ))}
@@ -157,10 +227,51 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Right: Today's Move card */}
-            <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            {/* ── Right: Today's Move card + floating badges ── */}
+            <div
+              className="relative animate-fade-up pt-12 pb-12"
+              style={{ animationDelay: '0.35s' }}
+            >
+              {/* Floating: ROAS — top-left, desktop only */}
+              <div className="hidden lg:flex absolute top-0 left-0 z-20 items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-teal/25 rounded-2xl px-3.5 py-2.5 shadow-2xl shadow-black/50">
+                <div className="w-9 h-9 rounded-xl bg-teal/15 flex items-center justify-center flex-shrink-0">
+                  <BarChart3 className="w-4 h-4 text-teal" />
+                </div>
+                <div>
+                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none mb-1">
+                    Avg. Return on Ad Spend
+                  </p>
+                  <p className="text-sm font-black text-white leading-none">4.2× ROAS</p>
+                </div>
+              </div>
+
+              {/* Floating: Active leads — bottom-right, desktop only */}
+              <div className="hidden lg:flex absolute bottom-0 right-0 z-20 items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-2xl px-3.5 py-2.5 shadow-2xl shadow-black/50">
+                <div className="w-9 h-9 rounded-xl bg-green-500/15 flex items-center justify-center flex-shrink-0">
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+                </div>
+                <div>
+                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none mb-1">
+                    New Leads This Week
+                  </p>
+                  <p className="text-sm font-black text-white leading-none">+47 qualified</p>
+                </div>
+              </div>
+
+              {/* Floating: No contracts — top-right, desktop only */}
+              <div className="hidden lg:flex absolute top-0 right-0 z-20 items-center gap-2 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-2xl px-3 py-2 shadow-xl shadow-black/50">
+                <ShieldCheck className="w-4 h-4 text-teal flex-shrink-0" />
+                <div>
+                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none mb-0.5">
+                    Contract
+                  </p>
+                  <p className="text-xs font-black text-white leading-none">Month-to-Month</p>
+                </div>
+              </div>
+
               <HeroMoveCard />
             </div>
+
           </div>
         </div>
       </section>
@@ -212,7 +323,9 @@ const HomePage = () => {
       <ProcessDark />
       <ServicesDark />
       <TestimonialsDark />
-      <DigitalArsenal />
+      <div id="digital-arsenal">
+        <DigitalArsenal />
+      </div>
       <MarketingAuditAI />
       <Pricing />
 
