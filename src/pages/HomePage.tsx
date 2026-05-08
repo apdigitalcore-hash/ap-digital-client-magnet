@@ -92,103 +92,75 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_28%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
 
-          {/* Vancouver skyline */}
+          {/* Vancouver skyline silhouette */}
           <svg
-            viewBox="0 0 1440 280"
+            viewBox="0 0 1440 320"
             preserveAspectRatio="xMidYMax slice"
-            className="absolute bottom-0 left-0 right-0 w-full h-[220px] sm:h-[280px] md:h-[340px] pointer-events-none"
+            className="absolute bottom-0 left-0 right-0 w-full h-[260px] sm:h-[320px] md:h-[380px] pointer-events-none"
             aria-hidden="true"
           >
             <defs>
               <linearGradient id="skylineMountain" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="hsl(170, 35%, 55%)" stopOpacity="0" />
-                <stop offset="100%" stopColor="hsl(170, 40%, 55%)" stopOpacity="0.13" />
+                <stop offset="0%" stopColor="hsl(170, 40%, 55%)" stopOpacity="0" />
+                <stop offset="100%" stopColor="hsl(170, 45%, 50%)" stopOpacity="0.20" />
               </linearGradient>
               <linearGradient id="skylineCity" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="hsl(170, 60%, 50%)" stopOpacity="0" />
-                <stop offset="100%" stopColor="hsl(170, 65%, 55%)" stopOpacity="0.24" />
+                <stop offset="0%" stopColor="hsl(170, 70%, 55%)" stopOpacity="0.30" />
+                <stop offset="100%" stopColor="hsl(170, 75%, 45%)" stopOpacity="0.55" />
               </linearGradient>
               <radialGradient id="skylineGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="hsl(170, 85%, 55%)" stopOpacity="0.18" />
+                <stop offset="0%" stopColor="hsl(170, 85%, 55%)" stopOpacity="0.28" />
                 <stop offset="100%" stopColor="hsl(170, 85%, 55%)" stopOpacity="0" />
               </radialGradient>
             </defs>
 
-            {/* North Shore mountains — wavy ridge */}
+            {/* North Shore mountains */}
             <path
-              d="M0 132 L70 96 L140 112 L210 76 L290 102 L360 72 L430 96 L510 60 L590 88 L670 56 L760 92 L840 66 L920 96 L1010 60 L1100 92 L1190 66 L1280 96 L1370 72 L1440 88 L1440 280 L0 280 Z"
+              d="M0 160 L120 110 L240 130 L360 80 L490 105 L620 55 L760 95 L880 60 L1020 95 L1160 55 L1290 90 L1440 70 L1440 320 L0 320 Z"
               fill="url(#skylineMountain)"
             />
 
-            {/* Horizon glow — city lights at dusk */}
-            <ellipse cx="720" cy="200" rx="700" ry="55" fill="url(#skylineGlow)" />
+            {/* Horizon glow */}
+            <ellipse cx="720" cy="220" rx="780" ry="70" fill="url(#skylineGlow)" />
 
-            {/* Downtown silhouette */}
-            <g fill="url(#skylineCity)">
-              {/* Stanley Park tree line */}
-              <path d="M0 222 Q15 204 30 218 Q45 208 60 218 Q72 210 88 218 L88 280 L0 280 Z" />
+            {/* City silhouette — single continuous path */}
+            <path
+              d="
+                M0 320
+                L0 260
+                Q 25 240 50 258 Q 75 245 100 258 L 100 200
+                L 175 200 L 175 175 L 220 175 L 220 220
+                Q 248 175 275 195 Q 302 160 332 188 Q 360 170 392 195
+                L 392 220
+                L 422 220 L 422 130
+                L 450 130 L 450 110
+                L 460 110 L 460 80 L 482 80 L 482 110 L 492 110 L 492 130
+                L 522 130 L 522 220
+                L 555 220 L 555 175 L 605 175 L 605 145 L 630 145 L 630 110 L 660 110 L 660 175 L 715 175
+                L 715 220 L 745 220
+                L 745 100 L 770 100 L 770 75 L 815 75 L 815 100 L 838 100 L 838 220
+                L 870 220 L 870 50 L 910 50 L 910 220
+                L 940 220 L 940 145 L 985 145 L 985 105 L 1025 105 L 1025 145 L 1060 145 L 1060 220
+                L 1090 220
+                Q 1130 130 1175 220
+                L 1205 220 L 1205 150 L 1245 150 L 1245 115 L 1290 115 L 1290 220
+                L 1320 220 L 1320 175 L 1370 175 L 1370 195 L 1410 195 L 1410 165 L 1440 165
+                L 1440 320 Z
+              "
+              fill="url(#skylineCity)"
+            />
 
-              {/* Coal Harbour towers */}
-              <rect x="100" y="158" width="32" height="122" />
-              <rect x="138" y="172" width="28" height="108" />
-              <rect x="172" y="146" width="38" height="134" />
-
-              {/* Convention Centre — curving sail roof */}
-              <path d="M220 200 Q240 168 260 178 Q272 156 292 172 Q304 162 316 176 L316 280 L220 280 Z" />
-
-              {/* Harbour Centre — tower with observation disc */}
-              <rect x="338" y="138" width="28" height="142" />
-              <ellipse cx="352" cy="128" rx="22" ry="9" />
-              <rect x="348" y="102" width="8" height="32" />
-
-              {/* Downtown row */}
-              <rect x="386" y="156" width="34" height="124" />
-              <rect x="426" y="122" width="30" height="158" />
-              <rect x="462" y="142" width="40" height="138" />
-              <rect x="508" y="102" width="35" height="178" />
-
-              {/* Mid-tall office tower */}
-              <rect x="550" y="82" width="42" height="198" />
-              <rect x="598" y="136" width="35" height="144" />
-
-              {/* Living Shangri-La — tall thin */}
-              <rect x="640" y="42" width="32" height="238" />
-
-              {/* Mid buildings */}
-              <rect x="680" y="126" width="40" height="154" />
-              <rect x="726" y="98" width="38" height="182" />
-              <rect x="770" y="116" width="35" height="164" />
-              <rect x="812" y="140" width="42" height="140" />
-              <rect x="860" y="92" width="32" height="188" />
-              <rect x="898" y="120" width="35" height="160" />
-
-              {/* Yaletown low-mid */}
-              <rect x="940" y="146" width="40" height="134" />
-
-              {/* BC Place dome */}
-              <path d="M998 280 L998 202 Q1040 134 1086 202 L1086 280 Z" />
-
-              {/* False Creek towers */}
-              <rect x="1100" y="106" width="33" height="174" />
-              <rect x="1140" y="132" width="38" height="148" />
-              <rect x="1184" y="86" width="30" height="194" />
-
-              {/* East side */}
-              <rect x="1222" y="136" width="36" height="144" />
-              <rect x="1264" y="116" width="42" height="164" />
-              <rect x="1314" y="156" width="36" height="124" />
-              <rect x="1356" y="172" width="40" height="108" />
-              <rect x="1402" y="148" width="38" height="132" />
-            </g>
+            {/* Harbour Centre observation disc — separate so it floats */}
+            <ellipse cx="471" cy="74" rx="20" ry="7" fill="hsl(170, 75%, 50%)" fillOpacity="0.5" />
 
             {/* Subtle horizon line */}
             <line
               x1="0"
-              y1="216"
+              y1="220"
               x2="1440"
-              y2="216"
-              stroke="hsl(170, 60%, 55%)"
-              strokeOpacity="0.08"
+              y2="220"
+              stroke="hsl(170, 70%, 55%)"
+              strokeOpacity="0.12"
               strokeWidth="1"
             />
           </svg>
