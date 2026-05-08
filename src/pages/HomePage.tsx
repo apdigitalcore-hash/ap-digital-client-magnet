@@ -248,7 +248,7 @@ const HomePage = () => {
                   <span className="text-[9px] font-semibold text-gray-600 uppercase tracking-wider">Now</span>
                 </div>
 
-                {/* Notification stack — 4 cards looping with stagger */}
+                {/* Notification stack — 3 cards looping with stagger */}
                 <div className="flex flex-col gap-1.5">
                   {[
                     {
@@ -263,28 +263,21 @@ const HomePage = () => {
                       icon: <span className="text-teal text-sm font-black leading-none">✓</span>,
                       title: 'New booking · Sarah K.',
                       meta: 'Salon · 2 min ago',
-                      delay: '1.6s',
+                      delay: '2.1s',
                     },
                     {
                       iconBg: 'bg-green-500/15',
                       icon: <span className="text-green-400 text-xs font-black leading-none">$</span>,
                       title: '+$420 in revenue',
                       meta: 'Meta Ads · today',
-                      delay: '3.2s',
-                    },
-                    {
-                      iconBg: 'bg-teal/15',
-                      icon: <span className="text-teal text-xs font-black leading-none">↑</span>,
-                      title: '12 leads this week',
-                      meta: '+47% vs last week',
-                      delay: '4.8s',
+                      delay: '4.2s',
                     },
                   ].map((n, i) => (
                     <div
                       key={i}
                       className="flex items-center gap-2.5 bg-near-black/60 border border-gray-800/60 rounded-lg px-2.5 py-2 opacity-0"
                       style={{
-                        animation: `notifCycle 6.4s ease-in-out ${n.delay} infinite`,
+                        animation: `notifCycle 6.3s ease-in-out ${n.delay} infinite`,
                       }}
                     >
                       <div className={`w-7 h-7 rounded-lg ${n.iconBg} flex items-center justify-center flex-shrink-0`}>
