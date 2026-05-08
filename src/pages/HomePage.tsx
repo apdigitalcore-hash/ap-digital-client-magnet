@@ -87,10 +87,111 @@ const HomePage = () => {
       {/* ─────────────────── HERO ─────────────────── */}
       <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-20 lg:py-0">
 
-        {/* Background — single subtle gradient */}
-        <div className="absolute inset-0 z-0">
+        {/* Background — gradient + Vancouver skyline silhouette */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_28%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
+
+          {/* Vancouver skyline */}
+          <svg
+            viewBox="0 0 1440 280"
+            preserveAspectRatio="xMidYMax slice"
+            className="absolute bottom-0 left-0 right-0 w-full h-[220px] sm:h-[280px] md:h-[340px] pointer-events-none"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="skylineMountain" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="hsl(170, 35%, 55%)" stopOpacity="0" />
+                <stop offset="100%" stopColor="hsl(170, 40%, 55%)" stopOpacity="0.13" />
+              </linearGradient>
+              <linearGradient id="skylineCity" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="hsl(170, 60%, 50%)" stopOpacity="0" />
+                <stop offset="100%" stopColor="hsl(170, 65%, 55%)" stopOpacity="0.24" />
+              </linearGradient>
+              <radialGradient id="skylineGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="hsl(170, 85%, 55%)" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="hsl(170, 85%, 55%)" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+
+            {/* North Shore mountains — wavy ridge */}
+            <path
+              d="M0 132 L70 96 L140 112 L210 76 L290 102 L360 72 L430 96 L510 60 L590 88 L670 56 L760 92 L840 66 L920 96 L1010 60 L1100 92 L1190 66 L1280 96 L1370 72 L1440 88 L1440 280 L0 280 Z"
+              fill="url(#skylineMountain)"
+            />
+
+            {/* Horizon glow — city lights at dusk */}
+            <ellipse cx="720" cy="200" rx="700" ry="55" fill="url(#skylineGlow)" />
+
+            {/* Downtown silhouette */}
+            <g fill="url(#skylineCity)">
+              {/* Stanley Park tree line */}
+              <path d="M0 222 Q15 204 30 218 Q45 208 60 218 Q72 210 88 218 L88 280 L0 280 Z" />
+
+              {/* Coal Harbour towers */}
+              <rect x="100" y="158" width="32" height="122" />
+              <rect x="138" y="172" width="28" height="108" />
+              <rect x="172" y="146" width="38" height="134" />
+
+              {/* Convention Centre — curving sail roof */}
+              <path d="M220 200 Q240 168 260 178 Q272 156 292 172 Q304 162 316 176 L316 280 L220 280 Z" />
+
+              {/* Harbour Centre — tower with observation disc */}
+              <rect x="338" y="138" width="28" height="142" />
+              <ellipse cx="352" cy="128" rx="22" ry="9" />
+              <rect x="348" y="102" width="8" height="32" />
+
+              {/* Downtown row */}
+              <rect x="386" y="156" width="34" height="124" />
+              <rect x="426" y="122" width="30" height="158" />
+              <rect x="462" y="142" width="40" height="138" />
+              <rect x="508" y="102" width="35" height="178" />
+
+              {/* Mid-tall office tower */}
+              <rect x="550" y="82" width="42" height="198" />
+              <rect x="598" y="136" width="35" height="144" />
+
+              {/* Living Shangri-La — tall thin */}
+              <rect x="640" y="42" width="32" height="238" />
+
+              {/* Mid buildings */}
+              <rect x="680" y="126" width="40" height="154" />
+              <rect x="726" y="98" width="38" height="182" />
+              <rect x="770" y="116" width="35" height="164" />
+              <rect x="812" y="140" width="42" height="140" />
+              <rect x="860" y="92" width="32" height="188" />
+              <rect x="898" y="120" width="35" height="160" />
+
+              {/* Yaletown low-mid */}
+              <rect x="940" y="146" width="40" height="134" />
+
+              {/* BC Place dome */}
+              <path d="M998 280 L998 202 Q1040 134 1086 202 L1086 280 Z" />
+
+              {/* False Creek towers */}
+              <rect x="1100" y="106" width="33" height="174" />
+              <rect x="1140" y="132" width="38" height="148" />
+              <rect x="1184" y="86" width="30" height="194" />
+
+              {/* East side */}
+              <rect x="1222" y="136" width="36" height="144" />
+              <rect x="1264" y="116" width="42" height="164" />
+              <rect x="1314" y="156" width="36" height="124" />
+              <rect x="1356" y="172" width="40" height="108" />
+              <rect x="1402" y="148" width="38" height="132" />
+            </g>
+
+            {/* Subtle horizon line */}
+            <line
+              x1="0"
+              y1="216"
+              x2="1440"
+              y2="216"
+              stroke="hsl(170, 60%, 55%)"
+              strokeOpacity="0.08"
+              strokeWidth="1"
+            />
+          </svg>
         </div>
 
         <div className="container-custom relative z-10 w-full">
