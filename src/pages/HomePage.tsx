@@ -170,7 +170,7 @@ const HomePage = () => {
                   <Instagram className="w-4 h-4" strokeWidth={2} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/company/110553927/"
+                  href="https://www.linkedin.com/company/ap-digitalmarketing/?viewAsMember=true"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Follow AP Digital on LinkedIn"
