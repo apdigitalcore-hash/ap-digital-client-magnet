@@ -237,130 +237,76 @@ const getTodaysMove = () => {
 };
 
 const HeroMoveCard = () => {
-  const { move, dropNumber, dayOfYear, dateLabel } = getTodaysMove();
-  const bars = [38, 52, 33, 68, 58, 82, 100];
+  const { move, dropNumber, dateLabel } = getTodaysMove();
 
   return (
-    <div className="relative w-full max-w-[480px] mx-auto lg:ml-auto lg:mr-0">
-      {/* Ambient glow */}
-      <div
-        aria-hidden
-        className="absolute -inset-6 rounded-[3rem] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(20,184,166,0.18) 0%, transparent 70%)',
-          filter: 'blur(20px)',
-        }}
-      />
+    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto lg:mr-0">
+      <div className="relative rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 p-7 sm:p-8">
 
-      {/* Gradient border ring */}
-      <div
-        aria-hidden
-        className="absolute -inset-[1.5px] rounded-[1.6rem] pointer-events-none"
-        style={{
-          background: 'linear-gradient(135deg, rgba(20,184,166,0.35) 0%, rgba(255,255,255,0.06) 50%, rgba(20,184,166,0.15) 100%)',
-        }}
-      />
-
-      <div className="relative rounded-[1.5rem] bg-white shadow-[0_32px_80px_-12px_rgba(0,0,0,0.35)] p-6 sm:p-8">
-
-        {/* Header row */}
-        <div className="flex items-center justify-between mb-5">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-teal to-teal-dark flex items-center justify-center">
-              <Sparkles className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
-            </div>
-            <span className="text-[11px] font-extrabold tracking-[0.2em] uppercase text-gray-800">
+            <Sparkles className="w-4 h-4 text-teal" strokeWidth={2.5} />
+            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-700">
               Today's Move
             </span>
           </div>
-          <div className="flex items-center gap-1.5 bg-gray-50 border border-gray-200 rounded-lg px-2.5 py-1">
-            <Calendar className="w-3 h-3 text-gray-400" strokeWidth={2} />
-            <span className="text-[10px] text-gray-500 font-semibold">{dateLabel}</span>
-            <span className="text-gray-300">·</span>
-            <span className="text-[10px] text-gray-400 font-medium">Day {dayOfYear}</span>
+          <div className="flex items-center gap-1.5 text-[11px] text-gray-400 font-medium">
+            <Calendar className="w-3 h-3" strokeWidth={2} />
+            <span>{dateLabel}</span>
           </div>
         </div>
 
-        {/* Tag pill */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-teal/30 bg-gradient-to-r from-teal/10 to-teal/5 mb-4">
-          <span className="w-1.5 h-1.5 rounded-full bg-teal" />
-          <span className="text-[10px] font-extrabold tracking-[0.2em] uppercase text-teal-dark">
-            {move.tag}
-          </span>
+        {/* Tag */}
+        <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-teal mb-3">
+          {move.tag}
         </div>
 
         {/* Headline */}
-        <h3 className="font-display text-[1.3rem] sm:text-[1.5rem] font-extrabold text-gray-900 leading-[1.18] mb-3.5 tracking-tight">
+        <h3 className="font-display text-[1.35rem] sm:text-[1.5rem] font-bold text-gray-900 leading-[1.2] mb-4 tracking-tight">
           {move.headline}
         </h3>
 
         {/* Body */}
-        <p className="text-[0.875rem] text-gray-500 leading-relaxed mb-5">
+        <p className="text-sm text-gray-500 leading-relaxed mb-6">
           {move.body}
         </p>
 
         {/* Divider */}
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-5" />
+        <div className="h-px bg-gray-100 mb-6" />
 
-        {/* Stat + Instagram row */}
-        <div className="flex items-end justify-between gap-4 mb-6">
+        {/* Stat + Instagram */}
+        <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-[9px] font-extrabold tracking-[0.18em] uppercase text-gray-400 mb-1">
+            <p className="text-[10px] font-bold tracking-[0.16em] uppercase text-gray-400 mb-1">
               {move.statLabel}
             </p>
-            <p className="font-display text-[2.6rem] font-black text-transparent bg-clip-text leading-none"
-              style={{ backgroundImage: 'linear-gradient(135deg, hsl(170,80%,36%) 0%, hsl(170,70%,48%) 100%)' }}>
+            <p className="font-display text-4xl font-bold text-teal leading-none">
               {move.statValue}
             </p>
           </div>
-          <div className="text-right">
-            <p className="text-[9px] font-extrabold tracking-[0.16em] uppercase text-gray-400 mb-2">
-              Daily Drop
-            </p>
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow @theapdigital on Instagram"
-              className="inline-flex items-center gap-2 group"
-            >
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-lg bg-gradient-to-br from-amber-400 via-rose-500 to-violet-600 shadow-sm group-hover:scale-110 group-hover:shadow-md transition-all duration-200">
-                <Instagram className="w-3.5 h-3.5 text-white" strokeWidth={2.5} />
-              </span>
-              <span className="text-sm font-bold text-gray-900 group-hover:text-teal-dark transition-colors duration-200">
-                @theapdigital
-              </span>
-            </a>
-          </div>
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow @theapdigital on Instagram"
+            className="inline-flex items-center gap-1.5 group pb-1"
+          >
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 group-hover:scale-110 transition-transform">
+              <Instagram className="w-3 h-3 text-white" strokeWidth={2.5} />
+            </span>
+            <span className="text-xs font-semibold text-gray-700 group-hover:text-teal transition-colors">
+              @theapdigital
+            </span>
+          </a>
         </div>
 
-        {/* Footer: drop counter + sparkline */}
-        <div className="flex items-center justify-between bg-gray-50 rounded-xl px-4 py-3">
-          <div className="flex items-center gap-2">
-            <Flame className="w-3.5 h-3.5 text-orange-500 flex-shrink-0" fill="currentColor" />
-            <span className="text-xs font-bold text-gray-700">
-              Drop {dropNumber}
-            </span>
-            <span className="text-xs text-gray-400 font-medium">/ {MOVES.length} this season</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="text-[9px] font-extrabold tracking-[0.18em] uppercase text-gray-400">
-              7d
-            </span>
-            <div className="flex items-end gap-[3px] h-5">
-              {bars.map((h, i) => (
-                <div
-                  key={i}
-                  className="w-[3px] rounded-full"
-                  style={{
-                    height: `${h}%`,
-                    background: `hsl(170, 75%, ${36 + (i / bars.length) * 16}%)`,
-                    opacity: 0.5 + (i / bars.length) * 0.5,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
+        {/* Footer drop counter */}
+        <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-1.5">
+          <Flame className="w-3 h-3 text-orange-500 flex-shrink-0" fill="currentColor" />
+          <span className="text-[11px] font-medium text-gray-400">
+            Drop {dropNumber} of {MOVES.length}
+          </span>
         </div>
       </div>
     </div>

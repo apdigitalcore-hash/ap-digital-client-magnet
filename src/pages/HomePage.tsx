@@ -1,6 +1,6 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronRight, Zap, Target, Users, TrendingUp, BarChart3, ShieldCheck, Clock } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -85,190 +85,82 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-24 lg:py-0">
+      <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-20 lg:py-0">
 
-        {/* Background layers */}
+        {/* Background — single subtle gradient */}
         <div className="absolute inset-0 z-0">
-          <picture>
-            <source srcSet={heroImageWebp} type="image/webp" />
-            <img
-              src={heroImage}
-              alt="Performance marketing agency Vancouver BC — AP Digital"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.06]"
-              fetchPriority="high"
-              loading="eager"
-              decoding="sync"
-            />
-          </picture>
-          <div className="absolute inset-0 bg-gradient-to-br from-near-black via-near-black to-charcoal-dark" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_60%_at_78%_28%,_rgba(20,184,166,0.13)_0%,_transparent_65%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_8%_82%,_rgba(99,102,241,0.055)_0%,_transparent_70%)]" />
-          <div
-            className="absolute inset-0"
-            style={{
-              opacity: 0.022,
-              backgroundImage: 'radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)',
-              backgroundSize: '36px 36px',
-            }}
-          />
+          <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
         </div>
 
         <div className="container-custom relative z-10 w-full">
-          <div className="grid lg:grid-cols-[1fr_1.08fr] gap-10 xl:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
             {/* ── Left: Copy ── */}
             <div className="text-center lg:text-left">
 
-              {/* Eyebrow badge */}
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-teal/25 bg-teal/10 mb-8 sm:mb-10 animate-fade-up">
-                <span className="relative flex h-2 w-2 flex-shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal" />
-                </span>
-                <span className="text-teal text-xs sm:text-sm font-semibold tracking-wide leading-none">
-                  Trusted by 200+ Canadian Businesses &nbsp;·&nbsp; Now Accepting New Clients
+              {/* Eyebrow */}
+              <div className="inline-flex items-center gap-2 mb-8 animate-fade-up">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal" />
+                <span className="text-teal text-xs font-semibold tracking-[0.2em] uppercase">
+                  Performance Marketing · Vancouver, BC
                 </span>
               </div>
 
               {/* H1 */}
               <h1
-                className="font-display text-[2.6rem] sm:text-[3.4rem] md:text-[4.2rem] xl:text-[5rem] font-black text-primary-foreground leading-[1.0] tracking-tight mb-7 sm:mb-9 animate-fade-up"
+                className="font-display text-[2.5rem] sm:text-5xl md:text-6xl xl:text-[4.5rem] font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-fade-up"
                 style={{ animationDelay: '0.08s' }}
               >
-                Fill Your Calendar<br />
-                With{' '}
-                <span className="text-gradient">Qualified Clients.</span>
-                <br />
-                <span className="relative inline-block mt-1">
-                  Guaranteed.
-                  <span className="absolute -bottom-1.5 left-0 right-[15%] h-[3px] rounded-full bg-gradient-to-r from-teal via-teal-light to-transparent" />
-                </span>
+                More clients.<br />
+                <span className="text-gradient">Predictably.</span>
               </h1>
 
               {/* Sub */}
               <p
-                className="text-base sm:text-lg md:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0 mb-9 sm:mb-11 animate-fade-up leading-relaxed"
-                style={{ animationDelay: '0.18s' }}
+                className="text-base sm:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 mb-10 animate-fade-up leading-relaxed"
+                style={{ animationDelay: '0.16s' }}
               >
-                Vancouver's performance marketing agency for salons, realtors, trades &amp; coaches.
-                Meta Ads · Google Ads · Content Creation · SEO.{' '}
-                <span className="text-gray-200 font-semibold">
-                  2,400+ leads delivered. 90-day results guarantee.
-                </span>
+                We build paid ad and content systems that fill your calendar with qualified clients — for salons, realtors, trades, and coaches across BC.
               </p>
 
               {/* CTAs */}
               <div
-                className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4 animate-fade-up mb-12 sm:mb-14"
-                style={{ animationDelay: '0.28s' }}
+                className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 animate-fade-up"
+                style={{ animationDelay: '0.24s' }}
               >
                 <Button variant="hero" size="lg" asChild>
                   <a
                     href="https://calendly.com/apdigital-core/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 text-base font-bold"
+                    className="flex items-center justify-center gap-2"
                   >
-                    Book Free Strategy Call
-                    <ArrowRight className="w-5 h-5" />
+                    Book a Call
+                    <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
                 <Button variant="heroOutline" size="lg" asChild>
-                  <Link
-                    to="/pricing"
-                    className="flex items-center justify-center gap-1.5"
-                  >
-                    See Pricing &amp; Plans
-                    <ChevronRight className="w-4 h-4" />
+                  <Link to="/pricing" className="flex items-center justify-center">
+                    See Pricing
                   </Link>
                 </Button>
               </div>
 
-              {/* Stats row */}
-              <div
-                className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-4 pt-8 border-t border-white/[0.08] animate-fade-up"
-                style={{ animationDelay: '0.38s' }}
+              {/* Inline trust line */}
+              <p
+                className="mt-10 text-xs text-gray-500 animate-fade-up text-center lg:text-left"
+                style={{ animationDelay: '0.32s' }}
               >
-                {[
-                  { value: '2,400+', label: 'Leads Delivered' },
-                  { value: '200+', label: 'BC Clients Served' },
-                  { value: '$4.2M+', label: 'Ad Spend Managed' },
-                  { value: '4.9 ★', label: 'Average Rating' },
-                ].map((s) => (
-                  <div key={s.label} className="text-center lg:text-left">
-                    <div className="font-display text-2xl sm:text-3xl font-black text-primary-foreground leading-none mb-1.5">
-                      {s.value}
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest font-semibold">
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Platform bar */}
-              <div
-                className="mt-8 sm:mt-10 animate-fade-up"
-                style={{ animationDelay: '0.48s' }}
-              >
-                <p className="text-[10px] uppercase tracking-[0.3em] text-gray-600 mb-3 font-semibold text-center lg:text-left">
-                  Campaigns running on
-                </p>
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2">
-                  {['Google', 'Meta', 'Instagram', 'TikTok', 'LinkedIn'].map(brand => (
-                    <span
-                      key={brand}
-                      className="text-gray-500 hover:text-gray-300 font-display font-bold text-xs tracking-wide transition-colors duration-200 cursor-default"
-                    >
-                      {brand}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                <span className="text-gray-300 font-semibold">2,400+ leads</span> delivered for <span className="text-gray-300 font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
+              </p>
             </div>
 
-            {/* ── Right: Today's Move card + floating badges ── */}
+            {/* ── Right: Today's Move card ── */}
             <div
-              className="relative animate-fade-up pt-12 pb-12"
-              style={{ animationDelay: '0.35s' }}
+              className="animate-fade-up"
+              style={{ animationDelay: '0.3s' }}
             >
-              {/* Floating: ROAS — top-left, desktop only */}
-              <div className="hidden lg:flex absolute top-0 left-0 z-20 items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-teal/25 rounded-2xl px-3.5 py-2.5 shadow-2xl shadow-black/50">
-                <div className="w-9 h-9 rounded-xl bg-teal/15 flex items-center justify-center flex-shrink-0">
-                  <BarChart3 className="w-4 h-4 text-teal" />
-                </div>
-                <div>
-                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none mb-1">
-                    Avg. Return on Ad Spend
-                  </p>
-                  <p className="text-sm font-black text-white leading-none">4.2× ROAS</p>
-                </div>
-              </div>
-
-              {/* Floating: Active leads — bottom-right, desktop only */}
-              <div className="hidden lg:flex absolute bottom-0 right-0 z-20 items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-2xl px-3.5 py-2.5 shadow-2xl shadow-black/50">
-                <div className="w-9 h-9 rounded-xl bg-green-500/15 flex items-center justify-center flex-shrink-0">
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
-                </div>
-                <div>
-                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none mb-1">
-                    New Leads This Week
-                  </p>
-                  <p className="text-sm font-black text-white leading-none">+47 qualified</p>
-                </div>
-              </div>
-
-              {/* Floating: No contracts — top-right, desktop only */}
-              <div className="hidden lg:flex absolute top-0 right-0 z-20 items-center gap-2 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-2xl px-3 py-2 shadow-xl shadow-black/50">
-                <ShieldCheck className="w-4 h-4 text-teal flex-shrink-0" />
-                <div>
-                  <p className="text-[9px] text-gray-400 font-bold uppercase tracking-wider leading-none mb-0.5">
-                    Contract
-                  </p>
-                  <p className="text-xs font-black text-white leading-none">Month-to-Month</p>
-                </div>
-              </div>
-
               <HeroMoveCard />
             </div>
 
