@@ -241,47 +241,58 @@ const HeroMoveCard = () => {
 
   return (
     <div className="relative w-full">
-      <div className="relative rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 p-5 sm:p-6">
+      <div className="relative rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 px-5 py-4 sm:px-6 sm:py-5">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-teal" strokeWidth={2.5} />
             <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-gray-700">
               Today's Move
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-[10px] text-gray-400 font-medium">
-            <Calendar className="w-3 h-3" strokeWidth={2} />
-            <span>{dateLabel}</span>
+          <div className="flex items-center gap-2 text-[10px] font-medium">
+            <span className="text-gray-400">{dateLabel}</span>
+            <span className="text-gray-200">·</span>
+            <span className="flex items-center gap-1 text-gray-400">
+              <Flame className="w-2.5 h-2.5 text-orange-500" fill="currentColor" />
+              {dropNumber}/{MOVES.length}
+            </span>
           </div>
         </div>
 
         {/* Tag */}
-        <div className="text-[9px] font-bold tracking-[0.18em] uppercase text-teal mb-2.5">
+        <div className="text-[9px] font-bold tracking-[0.18em] uppercase text-teal mb-2">
           {move.tag}
         </div>
 
         {/* Headline */}
-        <h3 className="font-display text-[1.15rem] sm:text-[1.25rem] font-bold text-gray-900 leading-[1.2] mb-3 tracking-tight">
+        <h3 className="font-display text-[1.1rem] sm:text-[1.2rem] font-bold text-gray-900 leading-[1.2] mb-2.5 tracking-tight">
           {move.headline}
         </h3>
 
-        {/* Body */}
-        <p className="text-[12px] text-gray-500 leading-relaxed mb-4">
+        {/* Body — clamped to 3 lines */}
+        <p
+          className="text-[11.5px] text-gray-500 leading-relaxed mb-3.5 overflow-hidden"
+          style={{
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+          }}
+        >
           {move.body}
         </p>
 
         {/* Divider */}
-        <div className="h-px bg-gray-100 mb-4" />
+        <div className="h-px bg-gray-100 mb-3" />
 
         {/* Stat + Instagram */}
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-400 mb-1">
+            <p className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-400 mb-0.5">
               {move.statLabel}
             </p>
-            <p className="font-display text-3xl font-bold text-teal leading-none">
+            <p className="font-display text-[1.75rem] font-bold text-teal leading-none">
               {move.statValue}
             </p>
           </div>
@@ -290,7 +301,7 @@ const HeroMoveCard = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow @theapdigital on Instagram"
-            className="inline-flex items-center gap-1.5 group pb-1"
+            className="inline-flex items-center gap-1.5 group pb-0.5"
           >
             <span className="inline-flex items-center justify-center w-5 h-5 rounded-md bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 group-hover:scale-110 transition-transform">
               <Instagram className="w-3 h-3 text-white" strokeWidth={2.5} />
@@ -299,14 +310,6 @@ const HeroMoveCard = () => {
               @theapdigital
             </span>
           </a>
-        </div>
-
-        {/* Footer drop counter */}
-        <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1.5">
-          <Flame className="w-3 h-3 text-orange-500 flex-shrink-0" fill="currentColor" />
-          <span className="text-[10px] font-medium text-gray-400">
-            Drop {dropNumber} of {MOVES.length}
-          </span>
         </div>
       </div>
     </div>
