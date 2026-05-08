@@ -92,37 +92,15 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
 
-          {/* Custom animations */}
-          <style>{`
-            @keyframes moneyFall {
-              0% { transform: translateY(-10vh) rotate(-6deg); opacity: 0; }
-              10% { opacity: 1; }
-              85% { opacity: 0.6; }
-              100% { transform: translateY(110vh) rotate(8deg); opacity: 0; }
-            }
-            @keyframes leadFlowLeft {
-              0%, 100% { transform: translateX(-140%); opacity: 0; }
-              5% { transform: translateX(0); opacity: 1; }
-              28% { transform: translateX(0); opacity: 1; }
-              35% { transform: translateX(-20%); opacity: 0; }
-            }
-            @keyframes leadFlowRight {
-              0%, 100% { transform: translateX(140%); opacity: 0; }
-              5% { transform: translateX(0); opacity: 1; }
-              28% { transform: translateX(0); opacity: 1; }
-              35% { transform: translateX(20%); opacity: 0; }
-            }
-          `}</style>
-
           {/* Money rain — falling $ symbols */}
           <div className="absolute inset-0 pointer-events-none">
-            {Array.from({ length: 18 }).map((_, i) => {
-              const sizes = [14, 18, 22, 28, 16, 20, 24, 32];
+            {Array.from({ length: 22 }).map((_, i) => {
+              const sizes = [16, 22, 28, 32, 18, 24, 30, 36];
               const size = sizes[i % sizes.length];
-              const left = (i * 5.7 + (i % 3) * 2) % 100;
-              const duration = 9 + (i % 5) * 2;
-              const delay = (i * 0.6) % 9;
-              const opacity = 0.14 + (i % 4) * 0.06;
+              const left = (i * 4.6 + (i % 3) * 1.5) % 100;
+              const duration = 8 + (i % 5) * 2;
+              const delay = (i * 0.5) % 9;
+              const opacity = 0.28 + (i % 4) * 0.08;
               return (
                 <span
                   key={i}
@@ -143,10 +121,10 @@ const HomePage = () => {
           </div>
 
           {/* Lead notifications — slide in from edges */}
-          <div className="hidden xl:block absolute inset-0 pointer-events-none">
+          <div className="hidden lg:block absolute inset-0 pointer-events-none">
             {/* Top-left: new lead */}
             <div
-              className="absolute top-[18%] left-4 2xl:left-8"
+              className="absolute top-[14%] left-2 xl:left-4 2xl:left-8"
               style={{ animation: 'leadFlowLeft 14s ease-in-out 1s infinite' }}
             >
               <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-teal/20 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
@@ -163,7 +141,7 @@ const HomePage = () => {
 
             {/* Middle-left: new booking */}
             <div
-              className="absolute top-[58%] left-2 2xl:left-6"
+              className="absolute top-[62%] left-1 xl:left-2 2xl:left-6"
               style={{ animation: 'leadFlowLeft 16s ease-in-out 6s infinite' }}
             >
               <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
@@ -179,7 +157,7 @@ const HomePage = () => {
 
             {/* Top-right: revenue ping */}
             <div
-              className="absolute top-[26%] right-4 2xl:right-8"
+              className="absolute top-[24%] right-2 xl:right-4 2xl:right-8"
               style={{ animation: 'leadFlowRight 15s ease-in-out 4s infinite' }}
             >
               <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-teal/20 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
@@ -195,7 +173,7 @@ const HomePage = () => {
 
             {/* Bottom-right: leads counter */}
             <div
-              className="absolute bottom-[18%] right-2 2xl:right-6"
+              className="absolute bottom-[14%] right-1 xl:right-2 2xl:right-6"
               style={{ animation: 'leadFlowRight 18s ease-in-out 9s infinite' }}
             >
               <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
