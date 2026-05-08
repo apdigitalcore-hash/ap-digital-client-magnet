@@ -1,6 +1,6 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -154,6 +154,45 @@ const HomePage = () => {
               >
                 <span className="text-gray-300 font-semibold">2,400+ leads</span> delivered for <span className="text-gray-300 font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
               </p>
+
+              {/* Social links */}
+              <div
+                className="mt-6 flex items-center justify-center lg:justify-start gap-3 animate-fade-up"
+                style={{ animationDelay: '0.4s' }}
+              >
+                <a
+                  href="https://www.instagram.com/theapdigital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow AP Digital on Instagram"
+                  className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
+                >
+                  <Instagram className="w-4 h-4" strokeWidth={2} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/110553927/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow AP Digital on LinkedIn"
+                  className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
+                >
+                  <Linkedin className="w-4 h-4" strokeWidth={2} />
+                </a>
+                <a
+                  href="https://share.google/BaN9E261WFEfP1lME"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View AP Digital on Google"
+                  className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
+                >
+                  <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M21.35 11.1H12v3.2h5.35c-.5 2.5-2.7 4-5.35 4-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8c1.5 0 2.85.55 3.9 1.45l2.4-2.4C16.6 4.2 14.4 3.3 12 3.3c-4.8 0-8.7 3.9-8.7 8.7s3.9 8.7 8.7 8.7c5.05 0 8.4-3.55 8.4-8.55 0-.6-.05-1.05-.15-1.55z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
 
             {/* ── Right: Today's Move card ── */}
