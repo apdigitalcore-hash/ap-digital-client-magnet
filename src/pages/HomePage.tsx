@@ -87,10 +87,128 @@ const HomePage = () => {
       {/* ─────────────────── HERO ─────────────────── */}
       <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-20 lg:py-0">
 
-        {/* Background — single subtle gradient */}
-        <div className="absolute inset-0 z-0">
+        {/* Background — gradient + money rain + lead notifications */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
+
+          {/* Custom animations */}
+          <style>{`
+            @keyframes moneyFall {
+              0% { transform: translateY(-10vh) rotate(-6deg); opacity: 0; }
+              10% { opacity: 1; }
+              85% { opacity: 0.6; }
+              100% { transform: translateY(110vh) rotate(8deg); opacity: 0; }
+            }
+            @keyframes leadFlowLeft {
+              0%, 100% { transform: translateX(-140%); opacity: 0; }
+              5% { transform: translateX(0); opacity: 1; }
+              28% { transform: translateX(0); opacity: 1; }
+              35% { transform: translateX(-20%); opacity: 0; }
+            }
+            @keyframes leadFlowRight {
+              0%, 100% { transform: translateX(140%); opacity: 0; }
+              5% { transform: translateX(0); opacity: 1; }
+              28% { transform: translateX(0); opacity: 1; }
+              35% { transform: translateX(20%); opacity: 0; }
+            }
+          `}</style>
+
+          {/* Money rain — falling $ symbols */}
+          <div className="absolute inset-0 pointer-events-none">
+            {Array.from({ length: 18 }).map((_, i) => {
+              const sizes = [14, 18, 22, 28, 16, 20, 24, 32];
+              const size = sizes[i % sizes.length];
+              const left = (i * 5.7 + (i % 3) * 2) % 100;
+              const duration = 9 + (i % 5) * 2;
+              const delay = (i * 0.6) % 9;
+              const opacity = 0.14 + (i % 4) * 0.06;
+              return (
+                <span
+                  key={i}
+                  className="absolute text-teal font-display font-black select-none"
+                  style={{
+                    left: `${left}%`,
+                    top: 0,
+                    fontSize: `${size}px`,
+                    opacity,
+                    animation: `moneyFall ${duration}s linear ${delay}s infinite`,
+                    willChange: 'transform, opacity',
+                  }}
+                >
+                  $
+                </span>
+              );
+            })}
+          </div>
+
+          {/* Lead notifications — slide in from edges */}
+          <div className="hidden xl:block absolute inset-0 pointer-events-none">
+            {/* Top-left: new lead */}
+            <div
+              className="absolute top-[18%] left-4 2xl:left-8"
+              style={{ animation: 'leadFlowLeft 14s ease-in-out 1s infinite' }}
+            >
+              <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-teal/20 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
+                <span className="relative flex h-2 w-2 flex-shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+                </span>
+                <div>
+                  <p className="text-[11px] text-white font-bold leading-none mb-0.5">+1 qualified lead</p>
+                  <p className="text-[10px] text-gray-500 font-medium leading-none">Instagram Ads · just now</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Middle-left: new booking */}
+            <div
+              className="absolute top-[58%] left-2 2xl:left-6"
+              style={{ animation: 'leadFlowLeft 16s ease-in-out 6s infinite' }}
+            >
+              <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
+                <div className="w-7 h-7 rounded-lg bg-teal/15 flex items-center justify-center flex-shrink-0">
+                  <span className="text-teal text-sm">✓</span>
+                </div>
+                <div>
+                  <p className="text-[11px] text-white font-bold leading-none mb-0.5">New booking · Sarah K.</p>
+                  <p className="text-[10px] text-gray-500 font-medium leading-none">Salon · 2 min ago</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Top-right: revenue ping */}
+            <div
+              className="absolute top-[26%] right-4 2xl:right-8"
+              style={{ animation: 'leadFlowRight 15s ease-in-out 4s infinite' }}
+            >
+              <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-teal/20 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
+                <div className="w-7 h-7 rounded-lg bg-green-500/15 flex items-center justify-center flex-shrink-0">
+                  <span className="text-green-400 text-xs font-black">$</span>
+                </div>
+                <div>
+                  <p className="text-[11px] text-white font-bold leading-none mb-0.5">+$420 in revenue</p>
+                  <p className="text-[10px] text-gray-500 font-medium leading-none">Meta Ads · today</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom-right: leads counter */}
+            <div
+              className="absolute bottom-[18%] right-2 2xl:right-6"
+              style={{ animation: 'leadFlowRight 18s ease-in-out 9s infinite' }}
+            >
+              <div className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-sm border border-gray-700/60 rounded-xl px-3 py-2 shadow-2xl shadow-black/50">
+                <div className="w-7 h-7 rounded-lg bg-teal/15 flex items-center justify-center flex-shrink-0">
+                  <span className="text-teal text-xs">↑</span>
+                </div>
+                <div>
+                  <p className="text-[11px] text-white font-bold leading-none mb-0.5">12 leads this week</p>
+                  <p className="text-[10px] text-gray-500 font-medium leading-none">+47% vs last week</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="container-custom relative z-10 w-full">
