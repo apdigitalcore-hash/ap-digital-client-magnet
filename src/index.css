@@ -342,4 +342,59 @@
       transform: translateY(-10px);
     }
   }
+
+  @keyframes moneyFall {
+    0% {
+      transform: translateY(-15vh) rotate(-6deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateY(115vh) rotate(8deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes leadFlowLeft {
+    0%, 100% {
+      transform: translateX(-140%);
+      opacity: 0;
+    }
+    5% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    28% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    35% {
+      transform: translateX(-20%);
+      opacity: 0;
+    }
+  }
+
+  @keyframes leadFlowRight {
+    0%, 100% {
+      transform: translateX(140%);
+      opacity: 0;
+    }
+    5% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    28% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    35% {
+      transform: translateX(20%);
+      opacity: 0;
+    }
+  }
 }
