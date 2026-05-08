@@ -31,6 +31,7 @@ const Surrey = lazy(() => import("./pages/locations/Surrey"));
 const Burnaby = lazy(() => import("./pages/locations/Burnaby"));
 const Langley = lazy(() => import("./pages/locations/Langley"));
 const Coquitlam = lazy(() => import("./pages/locations/Coquitlam"));
+const PricingPage = lazy(() => import("./pages/Pricing"));
 
 const queryClient = new QueryClient();
 
@@ -64,6 +65,7 @@ const App = () => (
               <Route path="/burnaby" element={<Burnaby />} />
               <Route path="/langley" element={<Langley />} />
               <Route path="/coquitlam" element={<Coquitlam />} />
+              <Route path="/pricing" element={<PricingPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
