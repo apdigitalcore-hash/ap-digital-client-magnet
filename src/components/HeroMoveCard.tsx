@@ -240,48 +240,48 @@ const HeroMoveCard = () => {
   const { move, dropNumber, dateLabel } = getTodaysMove();
 
   return (
-    <div className="relative w-full max-w-[460px] mx-auto lg:ml-auto lg:mr-0">
-      <div className="relative rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 p-7 sm:p-8">
+    <div className="relative w-full">
+      <div className="relative rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 p-5 sm:p-6">
 
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-4 h-4 text-teal" strokeWidth={2.5} />
-            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-gray-700">
+            <Sparkles className="w-3.5 h-3.5 text-teal" strokeWidth={2.5} />
+            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-gray-700">
               Today's Move
             </span>
           </div>
-          <div className="flex items-center gap-1.5 text-[11px] text-gray-400 font-medium">
+          <div className="flex items-center gap-1.5 text-[10px] text-gray-400 font-medium">
             <Calendar className="w-3 h-3" strokeWidth={2} />
             <span>{dateLabel}</span>
           </div>
         </div>
 
         {/* Tag */}
-        <div className="text-[10px] font-bold tracking-[0.18em] uppercase text-teal mb-3">
+        <div className="text-[9px] font-bold tracking-[0.18em] uppercase text-teal mb-2.5">
           {move.tag}
         </div>
 
         {/* Headline */}
-        <h3 className="font-display text-[1.35rem] sm:text-[1.5rem] font-bold text-gray-900 leading-[1.2] mb-4 tracking-tight">
+        <h3 className="font-display text-[1.15rem] sm:text-[1.25rem] font-bold text-gray-900 leading-[1.2] mb-3 tracking-tight">
           {move.headline}
         </h3>
 
         {/* Body */}
-        <p className="text-sm text-gray-500 leading-relaxed mb-6">
+        <p className="text-[12px] text-gray-500 leading-relaxed mb-4">
           {move.body}
         </p>
 
         {/* Divider */}
-        <div className="h-px bg-gray-100 mb-6" />
+        <div className="h-px bg-gray-100 mb-4" />
 
         {/* Stat + Instagram */}
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-[10px] font-bold tracking-[0.16em] uppercase text-gray-400 mb-1">
+            <p className="text-[9px] font-bold tracking-[0.16em] uppercase text-gray-400 mb-1">
               {move.statLabel}
             </p>
-            <p className="font-display text-4xl font-bold text-teal leading-none">
+            <p className="font-display text-3xl font-bold text-teal leading-none">
               {move.statValue}
             </p>
           </div>
@@ -302,9 +302,9 @@ const HeroMoveCard = () => {
         </div>
 
         {/* Footer drop counter */}
-        <div className="mt-6 pt-4 border-t border-gray-100 flex items-center gap-1.5">
+        <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-1.5">
           <Flame className="w-3 h-3 text-orange-500 flex-shrink-0" fill="currentColor" />
-          <span className="text-[11px] font-medium text-gray-400">
+          <span className="text-[10px] font-medium text-gray-400">
             Drop {dropNumber} of {MOVES.length}
           </span>
         </div>

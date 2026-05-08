@@ -92,146 +92,34 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
 
-          {/* Money rain — falling banknotes */}
+          {/* Money rain — falling dollar bills (💵 emoji) */}
           <div className="absolute inset-0 pointer-events-none">
-            {Array.from({ length: 14 }).map((_, i) => {
-              const widths = [56, 72, 64, 80, 60, 76, 68, 84];
-              const w = widths[i % widths.length];
-              const left = (i * 7.3 + (i % 3) * 2) % 96;
-              const duration = 9 + (i % 5) * 2;
-              const delay = (i * 0.7) % 9;
+            {Array.from({ length: 16 }).map((_, i) => {
+              const sizes = [28, 36, 44, 52, 32, 40, 48, 56];
+              const size = sizes[i % sizes.length];
+              const left = (i * 6.4 + (i % 3) * 1.7) % 95;
+              const duration = 10 + (i % 5) * 2;
+              const delay = (i * 0.8) % 12;
               const opacity = 0.55 + (i % 4) * 0.1;
               return (
-                <svg
+                <span
                   key={i}
-                  viewBox="0 0 80 40"
-                  width={w}
-                  height={w * 0.5}
-                  className="absolute"
+                  className="absolute select-none"
                   style={{
                     left: `${left}%`,
                     top: 0,
+                    fontSize: `${size}px`,
                     opacity,
                     animation: `moneyFall ${duration}s linear ${delay}s infinite`,
+                    animationFillMode: 'backwards',
                     willChange: 'transform, opacity',
                   }}
                   aria-hidden="true"
                 >
-                  <rect
-                    x="0.5"
-                    y="0.5"
-                    width="79"
-                    height="39"
-                    rx="3"
-                    fill="hsl(170, 55%, 28%)"
-                    stroke="hsl(170, 80%, 55%)"
-                    strokeWidth="1"
-                  />
-                  <rect
-                    x="3"
-                    y="3"
-                    width="74"
-                    height="34"
-                    rx="2"
-                    fill="none"
-                    stroke="hsl(170, 75%, 60%)"
-                    strokeWidth="0.5"
-                    opacity="0.6"
-                  />
-                  <circle cx="40" cy="20" r="9" fill="hsl(170, 75%, 50%)" opacity="0.35" />
-                  <text
-                    x="40"
-                    y="25"
-                    textAnchor="middle"
-                    fontSize="13"
-                    fontWeight="900"
-                    fill="hsl(170, 90%, 80%)"
-                    fontFamily="ui-serif, Georgia, serif"
-                  >
-                    $100
-                  </text>
-                  <text x="6" y="11" fontSize="6" fontWeight="700" fill="hsl(170, 90%, 80%)" opacity="0.7">
-                    100
-                  </text>
-                  <text x="74" y="36" fontSize="6" fontWeight="700" fill="hsl(170, 90%, 80%)" opacity="0.7" textAnchor="end">
-                    100
-                  </text>
-                </svg>
+                  💵
+                </span>
               );
             })}
-          </div>
-
-          {/* Live Activity panel — bottom-left of hero, lg+ only */}
-          <div className="hidden lg:flex absolute bottom-6 left-4 xl:bottom-10 xl:left-8 flex-col gap-2 w-[260px] z-10 pointer-events-none">
-            {/* Header */}
-            <div
-              className="flex items-center gap-2 mb-1 opacity-0"
-              style={{ animation: 'notifFadeIn 0.5s ease-out 0.2s forwards' }}
-            >
-              <span className="relative flex h-2 w-2 flex-shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
-              </span>
-              <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-gray-400">
-                Live Activity
-              </span>
-            </div>
-
-            {/* Notification 1 */}
-            <div
-              className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-md border border-teal/20 rounded-xl px-3 py-2.5 shadow-2xl shadow-black/60 opacity-0"
-              style={{ animation: 'notifFadeIn 0.5s ease-out 0.6s forwards' }}
-            >
-              <div className="w-7 h-7 rounded-lg bg-green-500/15 flex items-center justify-center flex-shrink-0">
-                <span className="w-2 h-2 rounded-full bg-green-400" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-[11px] text-white font-bold leading-none mb-0.5">+1 qualified lead</p>
-                <p className="text-[10px] text-gray-500 font-medium leading-none truncate">Instagram Ads · just now</p>
-              </div>
-            </div>
-
-            {/* Notification 2 */}
-            <div
-              className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-md border border-gray-700/60 rounded-xl px-3 py-2.5 shadow-2xl shadow-black/60 opacity-0"
-              style={{ animation: 'notifFadeIn 0.5s ease-out 1.1s forwards' }}
-            >
-              <div className="w-7 h-7 rounded-lg bg-teal/15 flex items-center justify-center flex-shrink-0">
-                <span className="text-teal text-sm font-black">✓</span>
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-[11px] text-white font-bold leading-none mb-0.5">New booking · Sarah K.</p>
-                <p className="text-[10px] text-gray-500 font-medium leading-none truncate">Salon · 2 min ago</p>
-              </div>
-            </div>
-
-            {/* Notification 3 */}
-            <div
-              className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-md border border-gray-700/60 rounded-xl px-3 py-2.5 shadow-2xl shadow-black/60 opacity-0"
-              style={{ animation: 'notifFadeIn 0.5s ease-out 1.6s forwards' }}
-            >
-              <div className="w-7 h-7 rounded-lg bg-green-500/15 flex items-center justify-center flex-shrink-0">
-                <span className="text-green-400 text-xs font-black">$</span>
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-[11px] text-white font-bold leading-none mb-0.5">+$420 in revenue</p>
-                <p className="text-[10px] text-gray-500 font-medium leading-none truncate">Meta Ads · today</p>
-              </div>
-            </div>
-
-            {/* Notification 4 */}
-            <div
-              className="flex items-center gap-2.5 bg-charcoal-light/95 backdrop-blur-md border border-gray-700/60 rounded-xl px-3 py-2.5 shadow-2xl shadow-black/60 opacity-0"
-              style={{ animation: 'notifFadeIn 0.5s ease-out 2.1s forwards' }}
-            >
-              <div className="w-7 h-7 rounded-lg bg-teal/15 flex items-center justify-center flex-shrink-0">
-                <span className="text-teal text-xs font-black">↑</span>
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-[11px] text-white font-bold leading-none mb-0.5">12 leads this week</p>
-                <p className="text-[10px] text-gray-500 font-medium leading-none truncate">+47% vs last week</p>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -337,12 +225,79 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* ── Right: Today's Move card ── */}
+            {/* ── Right: Dashboard + Live Activity panel ── */}
             <div
-              className="animate-fade-up"
+              className="animate-fade-up flex flex-col gap-4 w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-0"
               style={{ animationDelay: '0.3s' }}
             >
               <HeroMoveCard />
+
+              {/* Live Activity panel — under the dashboard */}
+              <div className="rounded-2xl bg-charcoal-light/80 backdrop-blur-md border border-gray-800/80 p-3 shadow-2xl shadow-black/40">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-2.5 px-1">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2 flex-shrink-0">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+                    </span>
+                    <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-gray-400">
+                      Live Activity
+                    </span>
+                  </div>
+                  <span className="text-[9px] font-semibold text-gray-600 uppercase tracking-wider">Now</span>
+                </div>
+
+                {/* Notification stack — 4 cards looping with stagger */}
+                <div className="flex flex-col gap-1.5">
+                  {[
+                    {
+                      iconBg: 'bg-green-500/15',
+                      icon: <span className="w-2 h-2 rounded-full bg-green-400" />,
+                      title: '+1 qualified lead',
+                      meta: 'Instagram Ads · just now',
+                      delay: '0s',
+                    },
+                    {
+                      iconBg: 'bg-teal/15',
+                      icon: <span className="text-teal text-sm font-black leading-none">✓</span>,
+                      title: 'New booking · Sarah K.',
+                      meta: 'Salon · 2 min ago',
+                      delay: '1.6s',
+                    },
+                    {
+                      iconBg: 'bg-green-500/15',
+                      icon: <span className="text-green-400 text-xs font-black leading-none">$</span>,
+                      title: '+$420 in revenue',
+                      meta: 'Meta Ads · today',
+                      delay: '3.2s',
+                    },
+                    {
+                      iconBg: 'bg-teal/15',
+                      icon: <span className="text-teal text-xs font-black leading-none">↑</span>,
+                      title: '12 leads this week',
+                      meta: '+47% vs last week',
+                      delay: '4.8s',
+                    },
+                  ].map((n, i) => (
+                    <div
+                      key={i}
+                      className="flex items-center gap-2.5 bg-near-black/60 border border-gray-800/60 rounded-lg px-2.5 py-2 opacity-0"
+                      style={{
+                        animation: `notifCycle 6.4s ease-in-out ${n.delay} infinite`,
+                      }}
+                    >
+                      <div className={`w-7 h-7 rounded-lg ${n.iconBg} flex items-center justify-center flex-shrink-0`}>
+                        {n.icon}
+                      </div>
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[11px] text-white font-bold leading-none mb-0.5 truncate">{n.title}</p>
+                        <p className="text-[10px] text-gray-500 font-medium leading-none truncate">{n.meta}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
           </div>
