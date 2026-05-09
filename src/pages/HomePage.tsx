@@ -488,6 +488,7 @@ const HomePage = () => {
         </div>
       </section>
 
+      <MarketingAuditAI />
       <ResultsProof />
       <ProcessDark />
       <ServicesDark />
@@ -495,7 +496,6 @@ const HomePage = () => {
       <div id="digital-arsenal">
         <DigitalArsenal />
       </div>
-      <MarketingAuditAI />
       <Pricing />
 
       {/* What Makes Us Different */}
