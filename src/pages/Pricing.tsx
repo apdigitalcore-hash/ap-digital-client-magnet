@@ -138,9 +138,10 @@ const serviceCards = [
   {
     icon: Search,
     name: 'SEO',
-    price: '$759',
+    marketRange: '$1,500 – $5,000/mo',
+    ourPrice: '$759',
     period: '/month',
-    href: '/services/seo',
+    savings: 'Save up to 85%',
     description: 'Rank on Google and attract buyers already searching for you.',
     includes: [
       'Technical SEO audit',
@@ -152,9 +153,10 @@ const serviceCards = [
   {
     icon: Megaphone,
     name: 'Social Media',
-    price: '$849',
+    marketRange: '$1,500 – $4,000/mo',
+    ourPrice: '$849',
     period: '/month',
-    href: '/services/social-media',
+    savings: 'Save up to 79%',
     description: 'Consistent content across your key platforms, fully managed.',
     includes: [
       '2 platforms managed',
@@ -166,9 +168,10 @@ const serviceCards = [
   {
     icon: Video,
     name: 'Content Creation',
-    price: '$939',
+    marketRange: '$2,000 – $6,000/mo',
+    ourPrice: '$939',
     period: '/month',
-    href: '/services/content-creation',
+    savings: 'Save up to 84%',
     description: 'Scroll-stopping short-form video that builds your brand and drives leads.',
     includes: [
       '4 Reels / TikToks per month',
@@ -180,9 +183,10 @@ const serviceCards = [
   {
     icon: BarChart3,
     name: 'Lead Generation',
-    price: '$1,290',
+    marketRange: '$2,500 – $6,000/mo',
+    ourPrice: '$1,290',
     period: '/month',
-    href: '/services/lead-generation',
+    savings: 'Save up to 79%',
     description: 'End-to-end systems that fill your pipeline with qualified prospects.',
     includes: [
       'Landing page build & optimization',
@@ -194,9 +198,10 @@ const serviceCards = [
   {
     icon: Target,
     name: 'Paid Ads',
-    price: '$1,470',
+    marketRange: '$2,000 – $6,000/mo',
+    ourPrice: '$1,470',
     period: '/month',
-    href: '/services/paid-ads',
+    savings: 'Save up to 75%',
     description: 'Profitable Meta & Google ad campaigns — built, managed, and optimized.',
     includes: [
       'Meta Ads (Facebook + Instagram)',
@@ -208,9 +213,10 @@ const serviceCards = [
   {
     icon: Globe,
     name: 'Web Design',
-    price: '$2,100',
+    marketRange: '$5,000 – $20,000',
+    ourPrice: '$2,100',
     period: 'one-time',
-    href: '/services/web-design',
+    savings: 'Save up to 89%',
     description: 'A fast, high-converting website built to turn visitors into paying clients.',
     includes: [
       'Mobile-first, conversion-focused design',
@@ -349,10 +355,10 @@ const Pricing = () => {
               À la carte
             </span>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
-              Pick exactly what you need.
+              What others charge vs. what we charge.
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto">
-              Every service runs as a standalone retainer. Stack them for deeper results, or start with one.
+            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
+              Canadian agencies typically charge 3–10× more for the same service. Pick exactly what your business needs — no bundles, no bloat.
             </p>
           </div>
 
@@ -367,20 +373,34 @@ const Pricing = () => {
                   <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
                     <svc.icon className="w-5 h-5 text-teal" strokeWidth={1.8} />
                   </div>
-                  <div>
-                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-teal">{svc.name}</p>
-                  </div>
-                </div>
-
-                {/* Price */}
-                <div className="flex items-baseline gap-1 mb-3">
-                  <span className="font-display text-4xl font-black text-white">{svc.price}</span>
-                  <span className="text-gray-500 text-sm">{svc.period}</span>
+                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-teal">{svc.name}</p>
                 </div>
 
                 <p className="text-sm text-gray-400 leading-relaxed mb-5">{svc.description}</p>
 
-                <div className="h-px bg-gray-800 mb-5" />
+                {/* Market vs our price comparison */}
+                <div className="rounded-xl bg-near-black/60 border border-gray-800 p-4 mb-5 space-y-3">
+                  {/* Canadian market avg */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">Canadian agencies</span>
+                    <span className="text-sm font-bold text-gray-500 line-through">{svc.marketRange}</span>
+                  </div>
+                  {/* Our price */}
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-teal mb-0.5">AP Digital</p>
+                      <div className="flex items-baseline gap-1">
+                        <span className="font-display text-3xl font-black text-white">{svc.ourPrice}</span>
+                        <span className="text-gray-500 text-xs">{svc.period}</span>
+                      </div>
+                    </div>
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-teal/10 border border-teal/20 text-teal text-[11px] font-bold">
+                      {svc.savings}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="h-px bg-gray-800 mb-4" />
 
                 <ul className="space-y-2.5 flex-1 mb-6">
                   {svc.includes.map((item) => (
