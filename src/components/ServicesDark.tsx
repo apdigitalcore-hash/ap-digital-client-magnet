@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { 
-  Target, 
-  Video, 
-  Globe, 
-  Search, 
+import { Link } from 'react-router-dom';
+import {
+  Target,
+  Video,
+  Globe,
+  Search,
   Megaphone,
   BarChart3,
-  ChevronDown
+  ChevronDown,
+  ArrowRight,
 } from 'lucide-react';
 
 
@@ -16,7 +18,6 @@ const services = [
     id: 'service-paid-ads',
     title: 'Paid Ads',
     description: 'Laser-targeted campaigns on Google & Meta that maximize your ROI.',
-    stat: '8.2x avg. ROAS',
     details: 'We build, manage, and optimize ad campaigns across Google Ads, Meta (Facebook & Instagram), and TikTok. Our data-driven approach includes audience research, creative testing, retargeting funnels, and weekly performance reporting to ensure every dollar drives measurable results.',
   },
   {
@@ -24,7 +25,6 @@ const services = [
     id: 'service-content-creation',
     title: 'Content Creation',
     description: 'Scroll-stopping short-form videos that capture attention.',
-    stat: '2.5M+ views',
     details: 'From concept to final cut—we produce high-converting Reels, TikToks, and YouTube Shorts tailored to your brand. Includes scripting, filming guidance, professional editing, captions, and trend-driven hooks designed to go viral and generate inbound leads.',
   },
   {
@@ -32,7 +32,6 @@ const services = [
     id: 'service-web-design',
     title: 'Web Design',
     description: 'High-converting websites built for speed and conversions.',
-    stat: '300% more leads',
     details: 'We design and develop fast, mobile-first websites optimized for lead capture. Every site includes conversion-focused landing pages, speed optimization, analytics integration, SEO foundations, and ongoing A/B testing to continuously improve performance.',
   },
   {
@@ -40,7 +39,6 @@ const services = [
     id: 'service-seo',
     title: 'SEO',
     description: 'Rank higher on Google and attract organic traffic.',
-    stat: 'Page 1 rankings',
     details: 'Our SEO strategy covers technical audits, on-page optimization, local SEO (Google Business Profile), keyword research, content strategy, and quality backlink building. We focus on ranking you for high-intent keywords that bring in ready-to-buy customers.',
   },
   {
@@ -48,7 +46,6 @@ const services = [
     id: 'service-social-media',
     title: 'Social Media',
     description: 'Build authority with consistent, compelling content.',
-    stat: '850+ followers/mo',
     details: 'We handle your entire social presence—content calendars, graphic design, copywriting, community management, and growth strategy across Instagram, Facebook, LinkedIn, and TikTok. Stay top-of-mind with your audience without lifting a finger.',
   },
   {
@@ -56,7 +53,6 @@ const services = [
     id: 'service-lead-gen',
     title: 'Lead Gen',
     description: 'Predictable lead flow systems that fill your calendar.',
-    stat: '25+ leads/week',
     details: 'We build end-to-end lead generation systems combining paid ads, landing pages, email/SMS follow-ups, and CRM automation. The result is a predictable pipeline of qualified prospects booking calls and appointments on autopilot.',
   },
 ];
@@ -78,15 +74,12 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
           <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center group-hover:bg-teal/20 transition-colors">
             <service.icon className="w-6 h-6 text-teal" />
           </div>
-          <span className="text-sm font-semibold text-teal">
-            {service.stat}
-          </span>
         </div>
-        
+
         <h3 className="font-display text-xl font-bold text-foreground mb-2 group-hover:text-teal transition-colors">
           {service.title}
         </h3>
-        
+
         <p className="text-muted-foreground">
           {service.description}
         </p>
@@ -103,10 +96,16 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
         className={`overflow-hidden transition-all duration-300 ease-in-out ${open ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}
       >
         <div className="px-6 lg:px-8 pb-6 lg:pb-8 pt-0">
-          <div className="border-t border-border pt-4">
+          <div className="border-t border-border pt-4 space-y-3">
             <p className="text-muted-foreground text-sm leading-relaxed">
               {service.details}
             </p>
+            <Link
+              to="/pricing"
+              className="inline-flex items-center gap-1.5 text-teal text-sm font-semibold hover:gap-2.5 transition-all duration-200"
+            >
+              View pricing <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </div>
