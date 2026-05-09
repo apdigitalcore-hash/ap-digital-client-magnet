@@ -383,7 +383,7 @@ const HomePage = () => {
             <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
               Industries We Serve
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground leading-tight">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">
               Built for your industry.
             </h2>
           </div>
