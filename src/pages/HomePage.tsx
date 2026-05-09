@@ -401,7 +401,7 @@ const HomePage = () => {
                 <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Salons</p>
-              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
                 Full bookings in 30 days
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed mb-5">
@@ -425,7 +425,7 @@ const HomePage = () => {
                 <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Real Estate</p>
-              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
                 15–30 qualified leads per month
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed mb-5">
@@ -449,7 +449,7 @@ const HomePage = () => {
                 <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Trades</p>
-              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
                 Stop relying on word-of-mouth
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed mb-5">
@@ -473,7 +473,7 @@ const HomePage = () => {
                 <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Coaching</p>
-              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
                 Calendar filled with ideal clients
               </h3>
               <p className="text-sm text-gray-400 leading-relaxed mb-5">
