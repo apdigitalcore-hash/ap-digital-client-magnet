@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Check, X, ArrowRight, Shield, Zap, Trophy } from 'lucide-react';
+import { Check, X, ArrowRight, Shield, Zap, Trophy, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -31,6 +31,7 @@ type Tier = {
   highlight?: string;
   popular?: boolean;
   cta: string;
+  href: string;
   features: string[];
 };
 
@@ -42,6 +43,7 @@ const tiers: Tier[] = [
     description: 'For local businesses ready to build a real marketing foundation.',
     highlight: 'Best for solo operators',
     cta: 'Start with Starter',
+    href: 'https://calendly.com/apdigital-core/30min',
     features: [
       'Social media management — 2 platforms',
       '12 custom posts / month',
@@ -60,6 +62,7 @@ const tiers: Tier[] = [
     highlight: 'Most chosen package',
     popular: true,
     cta: 'Book a Growth call',
+    href: 'https://calendly.com/apdigital-core/30min',
     features: [
       'Everything in Starter — plus:',
       'Paid advertising — up to $1,000 ad spend included',
@@ -79,6 +82,7 @@ const tiers: Tier[] = [
     description: 'For established operators ready to dominate their local market.',
     highlight: 'Top 5% of clients',
     cta: 'Apply for Scale',
+    href: 'https://calendly.com/apdigital-core/30min',
     features: [
       'Everything in Growth — plus:',
       'Paid advertising — up to $3,000 ad spend included',
@@ -179,7 +183,7 @@ const Cell = ({ value }: { value: boolean | string }) => {
     return <Check className="w-5 h-5 text-teal mx-auto" strokeWidth={3} />;
   }
   if (value === false) {
-    return <X className="w-4 h-4 text-gray-600 mx-auto" strokeWidth={2} />;
+    return <X className="w-4 h-4 text-gray-700 mx-auto" strokeWidth={2} />;
   }
   return <span className="text-sm text-gray-300 font-medium">{value}</span>;
 };
@@ -206,27 +210,44 @@ const Pricing = () => {
       <Header />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-24 bg-near-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(20,184,166,0.18)_0%,_transparent_60%)]" />
+      <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 bg-near-black overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,_rgba(20,184,166,0.12)_0%,_transparent_60%)]" />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal/30 to-transparent" />
+
         <div className="container-custom relative z-10 text-center max-w-3xl">
-          <p className="text-xs sm:text-sm uppercase tracking-[0.3em] text-teal font-semibold mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-bold uppercase tracking-[0.2em] mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal" />
             Pricing
-          </p>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-5 leading-[1.05] tracking-tight">
-            Transparent pricing.{' '}
+          </div>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.04] tracking-tight">
+            Transparent pricing.<br />
             <span className="text-gradient">No surprises.</span>
           </h1>
-          <p className="text-base sm:text-lg text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
             Three packages built around the size of your business and the speed you want to grow. Every plan is month-to-month and backed by our 90-day results guarantee.
           </p>
+
+          {/* Trust bar */}
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-500 mb-10">
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> No contracts</span>
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> 90-day guarantee</span>
+            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> Cancel anytime</span>
+            <span className="flex items-center gap-2">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
+              ))}
+              <span className="ml-1">200+ BC businesses</span>
+            </span>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact" className="flex items-center gap-2">
+              <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 Book a free strategy call
                 <ArrowRight className="w-5 h-5" />
-              </Link>
+              </a>
             </Button>
-            <a href="#compare" className="text-gray-400 hover:text-white text-sm font-medium underline-offset-4 hover:underline">
+            <a href="#compare" className="text-gray-400 hover:text-white text-sm font-medium transition-colors">
               Compare packages →
             </a>
           </div>
@@ -236,78 +257,91 @@ const Pricing = () => {
       {/* Pricing tiers */}
       <section className="py-12 sm:py-16 bg-near-black">
         <div className="container-custom">
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-5 lg:gap-6 max-w-6xl mx-auto items-end">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`relative rounded-3xl p-7 sm:p-8 flex flex-col ${
+                className={`relative rounded-3xl flex flex-col ${
                   tier.popular
-                    ? 'bg-gradient-to-b from-charcoal-light to-charcoal border-2 border-teal shadow-teal-lg lg:scale-[1.03]'
+                    ? 'bg-gradient-to-b from-charcoal-light to-charcoal border-2 border-teal shadow-teal-lg lg:-translate-y-3'
                     : 'bg-charcoal-light border border-gray-800'
                 }`}
               >
                 {tier.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-teal text-near-black text-xs font-extrabold uppercase tracking-wider rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 bg-teal text-near-black text-xs font-extrabold uppercase tracking-wider rounded-full whitespace-nowrap">
                     Most Popular
                   </div>
                 )}
 
-                <div className="mb-7">
-                  {tier.highlight && (
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-teal font-bold mb-2">
-                      {tier.highlight}
+                <div className={`p-7 sm:p-8 flex flex-col flex-1 ${tier.popular ? 'pt-10' : ''}`}>
+                  <div className="mb-6">
+                    {tier.highlight && (
+                      <p className="text-[10px] uppercase tracking-[0.22em] text-teal font-bold mb-2">
+                        {tier.highlight}
+                      </p>
+                    )}
+                    <h3 className="font-display text-2xl font-bold text-white mb-1">
+                      {tier.name}
+                    </h3>
+                    <div className="flex items-baseline gap-1 mb-3">
+                      <span className="font-display text-5xl font-black text-white">
+                        {tier.price}
+                      </span>
+                      <span className="text-gray-400 text-sm">{tier.period}</span>
+                    </div>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {tier.description}
                     </p>
-                  )}
-                  <h3 className="font-display text-2xl font-bold text-white mb-2">
-                    {tier.name}
-                  </h3>
-                  <div className="flex items-baseline gap-1 mb-3">
-                    <span className="font-display text-5xl font-black text-white">
-                      {tier.price}
-                    </span>
-                    <span className="text-gray-400">{tier.period}</span>
                   </div>
-                  <p className="text-sm text-gray-400 leading-relaxed">
-                    {tier.description}
-                  </p>
+
+                  <div className="h-px bg-gray-800 mb-6" />
+
+                  <ul className="space-y-3 mb-8 flex-1">
+                    {tier.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2.5">
+                        <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
+                          <Check className="w-2.5 h-2.5 text-teal" strokeWidth={3} />
+                        </span>
+                        <span className={`text-sm leading-snug ${feature.startsWith('Everything') ? 'text-teal font-semibold' : 'text-gray-300'}`}>
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button
+                    variant={tier.popular ? 'hero' : 'heroOutline'}
+                    size="lg"
+                    asChild
+                    className="w-full"
+                  >
+                    <a href={tier.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                      {tier.cta}
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </Button>
                 </div>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5">
-                      <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
-                        <Check className="w-2.5 h-2.5 text-teal" strokeWidth={3} />
-                      </span>
-                      <span className="text-sm text-gray-300 leading-snug">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  variant={tier.popular ? 'hero' : 'heroOutline'}
-                  size="lg"
-                  asChild
-                  className="w-full"
-                >
-                  <Link to="/contact" className="flex items-center justify-center gap-2">
-                    {tier.cta}
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
               </div>
             ))}
           </div>
+
+          <p className="text-center text-xs text-gray-600 mt-6">
+            All prices in CAD. Ad spend billed separately unless noted. Prices exclude applicable taxes.
+          </p>
         </div>
       </section>
 
       {/* Guarantees */}
       <section className="py-16 sm:py-20 bg-charcoal">
         <div className="container-custom">
+          <div className="text-center mb-10">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              Why clients trust us
+            </h2>
+          </div>
           <div className="grid md:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
             {guarantees.map((g) => (
-              <div key={g.title} className="p-6 rounded-2xl border border-gray-800 bg-charcoal-light/60">
+              <div key={g.title} className="p-6 sm:p-7 rounded-2xl border border-gray-800 bg-charcoal-light/60 hover:border-teal/25 transition-colors">
                 <div className="w-11 h-11 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-4">
                   <g.icon className="w-5 h-5 text-teal" />
                 </div>
@@ -325,11 +359,14 @@ const Pricing = () => {
       <section id="compare" className="py-16 sm:py-24 bg-near-black">
         <div className="container-custom max-w-5xl">
           <div className="text-center mb-12">
+            <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
+              Side by side
+            </span>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
               Compare <span className="text-gradient">packages</span>
             </h2>
             <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto">
-              Every line item, side by side.
+              Every line item, side by side. No hidden extras.
             </p>
           </div>
 
@@ -337,17 +374,17 @@ const Pricing = () => {
             <table className="w-full min-w-[640px]">
               <thead>
                 <tr className="border-b border-gray-800">
-                  <th className="text-left px-5 py-4 text-xs font-bold uppercase tracking-wider text-gray-500">
+                  <th className="text-left px-5 py-5 text-xs font-bold uppercase tracking-wider text-gray-500 w-1/2">
                     Feature
                   </th>
-                  <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-gray-300">
-                    Starter
+                  <th className="px-5 py-5 text-xs font-bold uppercase tracking-wider text-gray-300 text-center">
+                    Starter<br /><span className="text-gray-600 normal-case tracking-normal font-normal">$699/mo</span>
                   </th>
-                  <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-teal">
-                    Growth
+                  <th className="px-5 py-5 text-xs font-bold uppercase tracking-wider text-teal text-center bg-teal/5">
+                    Growth<br /><span className="text-teal/60 normal-case tracking-normal font-normal">$2,100/mo</span>
                   </th>
-                  <th className="px-5 py-4 text-xs font-bold uppercase tracking-wider text-gray-300">
-                    Scale
+                  <th className="px-5 py-5 text-xs font-bold uppercase tracking-wider text-gray-300 text-center">
+                    Scale<br /><span className="text-gray-600 normal-case tracking-normal font-normal">$4,500/mo</span>
                   </th>
                 </tr>
               </thead>
@@ -374,6 +411,15 @@ const Pricing = () => {
               </tbody>
             </table>
           </div>
+
+          <div className="mt-8 text-center">
+            <Button variant="hero" size="lg" asChild>
+              <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
+                Book a free call — pick your package together
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -381,6 +427,9 @@ const Pricing = () => {
       <section className="py-16 sm:py-24 bg-charcoal">
         <div className="container-custom max-w-3xl">
           <div className="text-center mb-10 sm:mb-12">
+            <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
+              Common questions
+            </span>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
               Pricing <span className="text-gradient">FAQ</span>
             </h2>
