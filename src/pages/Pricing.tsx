@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Check, X, ArrowRight, Shield, Zap, Trophy, Star } from 'lucide-react';
+import { Check, X, ArrowRight, Shield, Zap, Trophy, Star, Target, Video, Globe, Search, Megaphone, BarChart3 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -134,6 +134,93 @@ const guarantees = [
   },
 ];
 
+const serviceCards = [
+  {
+    icon: Search,
+    name: 'SEO',
+    price: '$759',
+    period: '/month',
+    href: '/services/seo',
+    description: 'Rank on Google and attract buyers already searching for you.',
+    includes: [
+      'Technical SEO audit',
+      'Local SEO & Google Business Profile',
+      'Keyword research & strategy',
+      'Monthly ranking report',
+    ],
+  },
+  {
+    icon: Megaphone,
+    name: 'Social Media',
+    price: '$849',
+    period: '/month',
+    href: '/services/social-media',
+    description: 'Consistent content across your key platforms, fully managed.',
+    includes: [
+      '2 platforms managed',
+      '12 custom posts / month',
+      'Captions, hashtags & scheduling',
+      'Community management',
+    ],
+  },
+  {
+    icon: Video,
+    name: 'Content Creation',
+    price: '$939',
+    period: '/month',
+    href: '/services/content-creation',
+    description: 'Scroll-stopping short-form video that builds your brand and drives leads.',
+    includes: [
+      '4 Reels / TikToks per month',
+      'Script & concept development',
+      'Professional editing & captions',
+      'Trend-driven hooks',
+    ],
+  },
+  {
+    icon: BarChart3,
+    name: 'Lead Generation',
+    price: '$1,290',
+    period: '/month',
+    href: '/services/lead-generation',
+    description: 'End-to-end systems that fill your pipeline with qualified prospects.',
+    includes: [
+      'Landing page build & optimization',
+      'Email & SMS follow-up sequences',
+      'CRM integration & automation',
+      'Weekly lead pipeline report',
+    ],
+  },
+  {
+    icon: Target,
+    name: 'Paid Ads',
+    price: '$1,470',
+    period: '/month',
+    href: '/services/paid-ads',
+    description: 'Profitable Meta & Google ad campaigns — built, managed, and optimized.',
+    includes: [
+      'Meta Ads (Facebook + Instagram)',
+      'Google Search & Performance Max',
+      'Audience research & creative testing',
+      'Weekly performance report',
+    ],
+  },
+  {
+    icon: Globe,
+    name: 'Web Design',
+    price: '$2,100',
+    period: 'one-time',
+    href: '/services/web-design',
+    description: 'A fast, high-converting website built to turn visitors into paying clients.',
+    includes: [
+      'Mobile-first, conversion-focused design',
+      'SEO foundations built in',
+      'Analytics & tracking setup',
+      '30-day post-launch support',
+    ],
+  },
+];
+
 const faqs = [
   {
     question: 'Do you require a long-term contract?',
@@ -254,8 +341,86 @@ const Pricing = () => {
         </div>
       </section>
 
+      {/* Individual service cards */}
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <div className="container-custom">
+          <div className="text-center mb-10 sm:mb-14">
+            <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
+              À la carte
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
+              Pick exactly what you need.
+            </h2>
+            <p className="text-gray-400 text-base sm:text-lg max-w-xl mx-auto">
+              Every service runs as a standalone retainer. Stack them for deeper results, or start with one.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {serviceCards.map((svc) => (
+              <div
+                key={svc.name}
+                className="group flex flex-col rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 p-6 sm:p-7"
+              >
+                {/* Icon + name */}
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
+                    <svc.icon className="w-5 h-5 text-teal" strokeWidth={1.8} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-teal">{svc.name}</p>
+                  </div>
+                </div>
+
+                {/* Price */}
+                <div className="flex items-baseline gap-1 mb-3">
+                  <span className="font-display text-4xl font-black text-white">{svc.price}</span>
+                  <span className="text-gray-500 text-sm">{svc.period}</span>
+                </div>
+
+                <p className="text-sm text-gray-400 leading-relaxed mb-5">{svc.description}</p>
+
+                <div className="h-px bg-gray-800 mb-5" />
+
+                <ul className="space-y-2.5 flex-1 mb-6">
+                  {svc.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
+                        <Check className="w-2.5 h-2.5 text-teal" strokeWidth={3} />
+                      </span>
+                      <span className="text-sm text-gray-300 leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="https://calendly.com/apdigital-core/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl border border-teal/40 text-teal text-sm font-semibold hover:bg-teal/10 transition-colors duration-200"
+                >
+                  Get started <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Bundle packages */}
+      <section className="py-10 bg-charcoal">
+        <div className="container-custom max-w-3xl text-center">
+          <p className="text-gray-400 text-sm">
+            Want everything under one roof?{' '}
+            <a href="#bundles" className="text-teal font-semibold hover:underline">
+              See our bundle packages ↓
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* Pricing tiers */}
-      <section className="py-12 sm:py-16 bg-near-black">
+      <section id="bundles" className="py-12 sm:py-16 bg-near-black">
         <div className="container-custom">
           <div className="grid md:grid-cols-3 gap-5 lg:gap-6 max-w-6xl mx-auto items-end">
             {tiers.map((tier) => (
