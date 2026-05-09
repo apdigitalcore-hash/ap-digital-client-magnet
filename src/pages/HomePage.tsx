@@ -1,7 +1,7 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, Instagram, Linkedin } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp, Instagram, Linkedin, Scissors, Home, Wrench, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -375,43 +375,114 @@ const HomePage = () => {
       </section>
 
       {/* Niche Services Sections */}
-      <section className="py-8 sm:py-16 md:py-28 bg-charcoal">
+      <section className="py-16 sm:py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-5 sm:gap-8 md:gap-12 lg:gap-16">
-            <Link to="/salon-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
-                Social Media & Paid Ads for <span className="text-gradient">Salons</span>
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Instagram and Facebook ads that bring consistent new bookings to your salon every week — without you lifting a finger. Most salon partners see a full appointment book within 30 days.
+
+          {/* Section header */}
+          <div className="text-center mb-10 sm:mb-14">
+            <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
+              Industries We Serve
+            </span>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground leading-tight">
+              Built for your industry.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-5">
+            {/* Salons */}
+            <Link
+              to="/salon-marketing"
+              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
+                  <Scissors className="w-5 h-5 text-teal" strokeWidth={1.8} />
+                </div>
+                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Salons</p>
+              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+                Full bookings in 30 days
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed mb-5">
+                Instagram & Facebook ads that fill your chair consistently — without you lifting a finger.
               </p>
+              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
+                30-day results guarantee
+              </span>
             </Link>
 
-            <Link to="/real-estate-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
-                Digital Marketing for <span className="text-gradient">Real Estate Agents</span>
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Qualified buyer and seller leads through hyper-targeted Meta and Google Ads. Spend less time chasing and more time closing — typically 15–30 new leads per month.
+            {/* Real Estate */}
+            <Link
+              to="/real-estate-marketing"
+              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
+                  <Home className="w-5 h-5 text-teal" strokeWidth={1.8} />
+                </div>
+                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Real Estate</p>
+              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+                15–30 qualified leads per month
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed mb-5">
+                Hyper-targeted Meta & Google Ads that bring serious buyers and sellers directly to you.
               </p>
+              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
+                Avg 18 leads/month
+              </span>
             </Link>
 
-            <Link to="/trades-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
-                Lead Generation for <span className="text-gradient">Trades Businesses</span>
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Plumbers, electricians, roofers, and contractors — ads that put you in front of homeowners who need you right now. Stop relying on word-of-mouth and start filling your schedule.
+            {/* Trades */}
+            <Link
+              to="/trades-marketing"
+              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
+                  <Wrench className="w-5 h-5 text-teal" strokeWidth={1.8} />
+                </div>
+                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Trades</p>
+              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+                Stop relying on word-of-mouth
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed mb-5">
+                Plumbers, electricians, roofers — ads that put you in front of homeowners who need you right now.
               </p>
+              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
+                Schedule booked solid
+              </span>
             </Link>
 
-            <Link to="/coaching-marketing" className="p-5 sm:p-7 md:p-8 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-colors block">
-              <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
-                Marketing for <span className="text-gradient">Coaches & Consultants</span>
-              </h2>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Personal trainers, life coaches, and fitness studio owners — we build ad campaigns and content systems that attract your ideal clients and keep your calendar full.
+            {/* Coaching */}
+            <Link
+              to="/coaching-marketing"
+              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
+            >
+              <div className="flex items-start justify-between mb-5">
+                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
+                  <Users className="w-5 h-5 text-teal" strokeWidth={1.8} />
+                </div>
+                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+              </div>
+              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Coaching</p>
+              <h3 className="font-display text-lg sm:text-xl font-bold text-primary-foreground mb-2 leading-snug">
+                Calendar filled with ideal clients
+              </h3>
+              <p className="text-sm text-gray-400 leading-relaxed mb-5">
+                Ad campaigns and content systems that attract and convert your perfect-fit clients — month after month.
               </p>
+              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
+                Month-to-month, no lock-in
+              </span>
             </Link>
           </div>
         </div>
