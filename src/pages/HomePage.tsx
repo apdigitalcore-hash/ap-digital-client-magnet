@@ -195,7 +195,7 @@ const HomePage = () => {
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESC} />
-        <meta name="keywords" content="digital marketing agency Vancouver, performance marketing agency Vancouver BC, Meta Ads agency Vancouver, Google Ads agency BC, lead generation Vancouver BC, social media marketing agency BC, Facebook ads agency Vancouver, Instagram marketing BC, paid advertising agency Lower Mainland, digital marketing for small businesses Canada, marketing agency for salons Vancouver, real estate marketing BC, trades marketing Vancouver, coaching marketing BC, SEO agency Vancouver, marketing agency Surrey, marketing agency Burnaby, marketing agency Langley, marketing agency Coquitlam, content creation agency BC, conversion rate optimization Vancouver" />
+        <meta name="keywords" content="digital marketing agency Vancouver, performance marketing agency Vancouver BC, Meta Ads agency Vancouver, Google Ads agency BC, lead generation Vancouver BC, social media marketing agency BC, Facebook ads agency Vancouver, Instagram marketing BC, paid advertising agency Lower Mainland, digital marketing for small businesses Canada, marketing agency for salons Vancouver, real estate marketing BC, trades marketing Vancouver, coaching marketing BC, SEO agency Vancouver, marketing agency Surrey, marketing agency Burnaby, marketing agency Langley, marketing agency Coquitlam, marketing agency Richmond BC, marketing agency North Vancouver, marketing agency Abbotsford, content creation agency BC, conversion rate optimization Vancouver" />
         <link rel="canonical" href={CANONICAL} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={CANONICAL} />
@@ -536,13 +536,17 @@ const HomePage = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {[
+              { city: 'Vancouver', href: '/contact', sub: 'Metro Vancouver' },
               { city: 'Surrey', href: '/surrey', sub: 'South Fraser' },
-              { city: 'Burnaby', href: '/burnaby', sub: 'Tri-Cities' },
-              { city: 'Langley', href: '/langley', sub: 'Fraser Valley' },
+              { city: 'Burnaby', href: '/burnaby', sub: 'Metro Vancouver' },
+              { city: 'Richmond', href: '/contact', sub: 'Metro Vancouver' },
+              { city: 'North Vancouver', href: '/contact', sub: 'North Shore' },
               { city: 'Coquitlam', href: '/coquitlam', sub: 'Tri-Cities' },
+              { city: 'Langley', href: '/langley', sub: 'Fraser Valley' },
+              { city: 'Abbotsford', href: '/contact', sub: 'Fraser Valley' },
             ].map(({ city, href, sub }) => (
               <Link
-                key={href}
+                key={city}
                 to={href}
                 className="group bg-card border border-border rounded-2xl p-4 sm:p-6 text-center hover:border-teal/40 transition-colors"
               >
