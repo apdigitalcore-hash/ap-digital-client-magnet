@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import ResultsProof from '@/components/ResultsProof';
 import ServicesDark from '@/components/ServicesDark';
-import TestimonialsDark from '@/components/TestimonialsDark';
 import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
 import DigitalArsenal from '@/components/DigitalArsenal';
@@ -491,7 +490,7 @@ const HomePage = () => {
       <ResultsProof />
       <ProcessDark />
       <ServicesDark />
-      <TestimonialsDark />
+
       <div id="digital-arsenal">
         <DigitalArsenal />
       </div>
