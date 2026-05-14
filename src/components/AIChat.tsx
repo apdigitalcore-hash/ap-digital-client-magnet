@@ -94,26 +94,8 @@ const respond = (raw: string): Msg => {
 
   const has = (...words: string[]) => words.some((w) => t.includes(w));
 
-  // PRICING
-  if (
-    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge', 'budget', 'afford', 'expensive', 'cheap')
-  ) {
-    return {
-      id,
-      role: 'bot',
-      text: "Great question. You pick the services you want — no bundles, no contracts. Pricing starts at $759/mo for SEO, and most clients spend between $759–$2,100/mo depending on what they need. Canadian agencies typically charge 3–5× that for the same scope. Want to see the full breakdown?",
-      cta: { label: 'See full pricing', to: '/pricing' },
-      suggestions: [
-        { label: 'How much for SEO?', intent: 'seo-price' },
-        { label: 'Cost of paid ads?', intent: 'ads-price' },
-        { label: 'Web design price?', intent: 'web-price' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
-
-  // SERVICE-SPECIFIC PRICING SHORTCUTS
-  if (has('seo') && has('price', 'cost', 'how much')) {
+  // SERVICE-SPECIFIC PRICING SHORTCUTS (must come before general PRICING)
+  if (has('seo') && has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')) {
     return {
       id,
       role: 'bot',
@@ -126,7 +108,10 @@ const respond = (raw: string): Msg => {
       ],
     };
   }
-  if (has('ads', 'paid ads', 'google ads', 'meta ads', 'facebook ads') && has('price', 'cost', 'how much')) {
+  if (
+    has('ad', 'ads', 'paid ads', 'google ads', 'meta ads', 'facebook ads', 'tiktok ads', 'ppc') &&
+    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
+  ) {
     return {
       id,
       role: 'bot',
@@ -139,7 +124,10 @@ const respond = (raw: string): Msg => {
       ],
     };
   }
-  if (has('web', 'website', 'site') && has('price', 'cost', 'how much')) {
+  if (
+    has('web', 'website', 'site', 'landing page') &&
+    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
+  ) {
     return {
       id,
       role: 'bot',
@@ -148,6 +136,69 @@ const respond = (raw: string): Msg => {
       suggestions: [
         { label: 'How long does it take?', intent: 'timeline' },
         { label: 'Other services', intent: 'services' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+  if (
+    has('content', 'video', 'reel', 'tiktok', 'shorts', 'ugc') &&
+    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
+  ) {
+    return {
+      id,
+      role: 'bot',
+      text: "Content Creation is $939/month. Includes concept, scripting, filming guidance, professional editing, captions, and viral-hook strategy across Reels, TikToks, and Shorts.",
+      cta: { label: 'See Content details', to: '/services/content-creation' },
+      suggestions: [
+        { label: 'Other services', intent: 'services' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+  if (
+    has('social', 'smm', 'instagram', 'linkedin') &&
+    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
+  ) {
+    return {
+      id,
+      role: 'bot',
+      text: "Social Media management is $849/month — content calendars, graphics, copywriting, community management, and growth across Instagram, Facebook, LinkedIn, and TikTok.",
+      cta: { label: 'See full pricing', to: '/pricing' },
+      suggestions: [
+        { label: 'Other services', intent: 'services' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+  if (
+    has('lead', 'leadgen', 'lead gen', 'pipeline') &&
+    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
+  ) {
+    return {
+      id,
+      role: 'bot',
+      text: "Lead Generation systems are $1,290/month — paid ads + landing pages + email/SMS follow-ups + CRM automation built end-to-end.",
+      cta: { label: 'See Lead Gen details', to: '/services/lead-generation' },
+      suggestions: [
+        { label: 'Other services', intent: 'services' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+
+  // PRICING (general — fallback when no specific service mentioned)
+  if (
+    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge', 'budget', 'afford', 'expensive', 'cheap')
+  ) {
+    return {
+      id,
+      role: 'bot',
+      text: "Great question. You pick the services you want — no bundles, no contracts. Pricing starts at $759/mo for SEO, and most clients spend between $759–$2,100/mo depending on what they need. Canadian agencies typically charge 3–5× that for the same scope. Want to see the full breakdown?",
+      cta: { label: 'See full pricing', to: '/pricing' },
+      suggestions: [
+        { label: 'How much for SEO?', intent: 'seo-price' },
+        { label: 'Cost of paid ads?', intent: 'ads-price' },
+        { label: 'Web design price?', intent: 'web-price' },
         { label: 'Book a call', intent: 'book' },
       ],
     };
