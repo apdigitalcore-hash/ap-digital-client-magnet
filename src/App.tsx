@@ -9,6 +9,7 @@ import { lazy, Suspense } from "react";
 // Eager load — shown on every visit
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
+import AIChat from "./components/AIChat";
 
 // Lazy load all other pages — loaded on demand
 const Contact = lazy(() => import("./pages/Contact"));
@@ -70,6 +71,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          <AIChat />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
