@@ -101,7 +101,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Great question. Our à la carte pricing starts at $759/mo for SEO, and most clients spend between $759–$2,100/mo depending on the services they pick. Canadian agencies typically charge 3–5× that for the same scope. Want to see the full breakdown?",
+      text: "Great question. You pick the services you want — no bundles, no contracts. Pricing starts at $759/mo for SEO, and most clients spend between $759–$2,100/mo depending on what they need. Canadian agencies typically charge 3–5× that for the same scope. Want to see the full breakdown?",
       cta: { label: 'See full pricing', to: '/pricing' },
       suggestions: [
         { label: 'How much for SEO?', intent: 'seo-price' },
