@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { MessageCircle, X, Send, Sparkles, ArrowRight } from 'lucide-react';
 
 type Suggestion = { label: string; intent: string };
@@ -10,20 +10,82 @@ type Msg = {
   text: string;
   suggestions?: Suggestion[];
   cta?: CTA;
+  streaming?: boolean;
 };
 
-const CALENDLY_URL = 'https://calendly.com/apdigital-core/30min';
-
-const greeting: Msg = {
-  id: 'g1',
-  role: 'bot',
-  text: "Hey, I'm AP — your AI marketing assistant. Ask me anything about our services, pricing, or how we get clients results. What brings you here today?",
-  suggestions: [
-    { label: 'How much do you charge?', intent: 'pricing' },
-    { label: 'What services do you offer?', intent: 'services' },
-    { label: 'Do you guarantee results?', intent: 'guarantee' },
-    { label: 'Book a free strategy call', intent: 'book' },
-  ],
+const getGreeting = (pathname: string): Msg => {
+  const base = {
+    id: 'g1',
+    role: 'bot' as const,
+  };
+  if (pathname.startsWith('/pricing')) {
+    return {
+      ...base,
+      text: "Looking at pricing? Smart move. I can break down any service, compare us to what other Canadian agencies charge, or help you pick the right mix for your goals.",
+      suggestions: [
+        { label: 'Which service do I need?', intent: 'services' },
+        { label: 'How much for SEO?', intent: 'seo-price' },
+        { label: 'Is there a guarantee?', intent: 'guarantee' },
+        { label: 'Book a free strategy call', intent: 'book' },
+      ],
+    };
+  }
+  if (pathname.startsWith('/services/seo')) {
+    return {
+      ...base,
+      text: "SEO questions? You're in the right place. Ask about timelines, local SEO, pricing, or how we'll get you ranking.",
+      suggestions: [
+        { label: 'How long until I rank?', intent: 'timeline' },
+        { label: 'How much for SEO?', intent: 'seo-price' },
+        { label: 'Do you do local SEO?', intent: 'local' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+  if (pathname.startsWith('/services/paid-ads')) {
+    return {
+      ...base,
+      text: "Thinking about paid ads? I can help — ROAS, ad spend, platforms, or how fast you'll see leads. What do you want to know?",
+      suggestions: [
+        { label: 'How much ad spend?', intent: 'ad-spend' },
+        { label: 'Service price?', intent: 'ads-price' },
+        { label: 'How fast will I see results?', intent: 'timeline' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+  if (pathname.startsWith('/contact')) {
+    return {
+      ...base,
+      text: "About to reach out? Smart move. Want me to answer something first, or are you ready to book that call?",
+      suggestions: [
+        { label: 'What happens on the call?', intent: 'call-agenda' },
+        { label: 'See pricing first', intent: 'pricing' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+  if (pathname.startsWith('/about')) {
+    return {
+      ...base,
+      text: "Hey 👋 I'm AP — the agency's AI assistant. Want to know more about how we work or what we deliver?",
+      suggestions: [
+        { label: 'What services do you offer?', intent: 'services' },
+        { label: 'See pricing', intent: 'pricing' },
+        { label: 'Your results', intent: 'results' },
+      ],
+    };
+  }
+  return {
+    ...base,
+    text: "Hey 👋 I'm AP — your AI marketing strategist. Ask me anything about our services, pricing, or how we get clients results.",
+    suggestions: [
+      { label: 'How much do you charge?', intent: 'pricing' },
+      { label: 'What services do you offer?', intent: 'services' },
+      { label: 'Do you guarantee results?', intent: 'guarantee' },
+      { label: 'Book a free strategy call', intent: 'book' },
+    ],
+  };
 };
 
 const respond = (raw: string): Msg => {
@@ -422,14 +484,17 @@ const respond = (raw: string): Msg => {
   };
 };
 
-const STORAGE_KEY = 'ap-chat-history-v1';
+const STORAGE_KEY = 'ap-chat-history-v2';
+const TEASER_DISMISSED_KEY = 'ap-chat-teaser-dismissed-v1';
 
 const AIChat = () => {
+  const location = useLocation();
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Msg[]>([greeting]);
+  const [messages, setMessages] = useState<Msg[]>(() => [getGreeting(location.pathname)]);
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
-  const [hasNew, setHasNew] = useState(true);
+  const [showTeaser, setShowTeaser] = useState(false);
+  const [streamingId, setStreamingId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -462,10 +527,45 @@ const AIChat = () => {
 
   useEffect(() => {
     if (open) {
-      setHasNew(false);
+      setShowTeaser(false);
       setTimeout(() => inputRef.current?.focus(), 250);
     }
   }, [open]);
+
+  // Teaser bubble: pops up after 6s unless dismissed this session or chat already opened
+  useEffect(() => {
+    const dismissed = sessionStorage.getItem(TEASER_DISMISSED_KEY);
+    if (dismissed || open) return;
+    const t = setTimeout(() => setShowTeaser(true), 6000);
+    return () => clearTimeout(t);
+  }, [open]);
+
+  const dismissTeaser = () => {
+    setShowTeaser(false);
+    sessionStorage.setItem(TEASER_DISMISSED_KEY, '1');
+  };
+
+  const streamReply = (full: Msg) => {
+    const placeholder: Msg = { ...full, text: '', streaming: true };
+    setMessages((m) => [...m, placeholder]);
+    setStreamingId(full.id);
+    const chars = full.text.split('');
+    let i = 0;
+    const tick = () => {
+      i = Math.min(chars.length, i + Math.max(1, Math.round(chars.length / 70)));
+      setMessages((m) =>
+        m.map((msg) =>
+          msg.id === full.id ? { ...msg, text: full.text.slice(0, i), streaming: i < chars.length } : msg
+        )
+      );
+      if (i < chars.length) {
+        setTimeout(tick, 18);
+      } else {
+        setStreamingId(null);
+      }
+    };
+    setTimeout(tick, 80);
+  };
 
   const sendUser = (text: string) => {
     if (!text.trim()) return;
@@ -479,9 +579,9 @@ const AIChat = () => {
     setTyping(true);
     setTimeout(() => {
       const botMsg = respond(text);
-      setMessages((m) => [...m, botMsg]);
       setTyping(false);
-    }, 600 + Math.random() * 400);
+      streamReply(botMsg);
+    }, 500 + Math.random() * 400);
   };
 
   const handleSuggestion = (s: Suggestion) => {
@@ -512,44 +612,80 @@ const AIChat = () => {
   };
 
   const reset = () => {
-    setMessages([greeting]);
+    setMessages([getGreeting(location.pathname)]);
     sessionStorage.removeItem(STORAGE_KEY);
   };
 
   return (
     <>
+      {/* Teaser bubble — proactive nudge */}
+      <div
+        className={`fixed bottom-24 right-5 z-[58] max-w-[260px] transition-all duration-500 ease-out ${
+          showTeaser && !open ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3 pointer-events-none'
+        }`}
+      >
+        <div className="relative bg-card border border-border rounded-2xl rounded-br-md shadow-2xl p-4 backdrop-blur">
+          <button
+            onClick={dismissTeaser}
+            aria-label="Dismiss"
+            className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-secondary border border-border text-muted-foreground hover:text-foreground flex items-center justify-center"
+          >
+            <X className="w-3 h-3" />
+          </button>
+          <div className="flex items-start gap-2.5">
+            <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-accent-foreground font-bold text-xs flex-shrink-0">
+              AP
+            </div>
+            <div>
+              <p className="text-sm text-foreground leading-snug">
+                Hey 👋 Got a question about pricing or services? I'm here to help.
+              </p>
+              <button
+                onClick={() => {
+                  setOpen(true);
+                  dismissTeaser();
+                }}
+                className="mt-2 text-xs font-semibold text-teal hover:underline"
+              >
+                Start chat →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Floating launcher */}
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? 'Close chat' : 'Open chat'}
-        className={`fixed bottom-5 right-5 z-[60] flex items-center gap-2 rounded-full shadow-2xl transition-all duration-300 ${
+        className={`fixed bottom-5 right-5 z-[60] flex items-center gap-2 rounded-full shadow-2xl transition-all duration-300 group ${
           open
             ? 'h-12 w-12 bg-card border border-border text-foreground hover:bg-secondary'
-            : 'h-14 px-5 bg-teal text-accent-foreground hover:scale-105 hover:shadow-teal'
+            : 'h-14 px-5 bg-gradient-to-br from-teal to-teal/80 text-accent-foreground hover:scale-105 hover:shadow-teal'
         }`}
       >
         {open ? (
           <X className="w-5 h-5 mx-auto" />
         ) : (
           <>
-            <MessageCircle className="w-5 h-5" />
+            <span className="relative flex items-center justify-center">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-white/40 opacity-60 animate-ping" />
+              <MessageCircle className="w-5 h-5 relative" />
+            </span>
             <span className="font-semibold text-sm hidden sm:inline">Ask AP</span>
-            {hasNew && (
-              <span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-red-500 ring-2 ring-background animate-pulse" />
-            )}
           </>
         )}
       </button>
 
       {/* Chat panel */}
       <div
-        className={`fixed z-[59] transition-all duration-300 ease-out ${
+        className={`fixed z-[59] transition-all duration-300 ease-out origin-bottom-right ${
           open
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 translate-y-4 pointer-events-none'
+            ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
+            : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
         } bottom-24 right-5 left-5 sm:left-auto sm:w-[400px] md:w-[420px] max-h-[calc(100vh-7rem)]`}
       >
-        <div className="flex flex-col bg-card border border-border rounded-2xl shadow-2xl overflow-hidden h-[600px] max-h-[calc(100vh-7rem)]">
+        <div className="flex flex-col bg-card/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden h-[600px] max-h-[calc(100vh-7rem)] ring-1 ring-teal/10">
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-teal/15 to-teal/5 border-b border-border">
             <div className="flex items-center gap-3">
@@ -594,23 +730,26 @@ const AIChat = () => {
                     <>
                       <div className="bg-secondary text-foreground rounded-2xl rounded-bl-md px-4 py-2.5 text-sm leading-relaxed">
                         {m.text}
+                        {m.streaming && (
+                          <span className="inline-block w-1.5 h-3.5 bg-teal ml-0.5 align-middle animate-pulse" />
+                        )}
                       </div>
-                      {m.cta && (
+                      {!m.streaming && m.cta && (
                         <button
                           onClick={() => handleCTA(m.cta!)}
-                          className="inline-flex items-center gap-1.5 bg-teal text-accent-foreground text-sm font-semibold px-4 py-2 rounded-full hover:gap-2.5 transition-all"
+                          className="inline-flex items-center gap-1.5 bg-teal text-accent-foreground text-sm font-semibold px-4 py-2 rounded-full hover:gap-2.5 hover:shadow-lg hover:shadow-teal/30 transition-all animate-in fade-in slide-in-from-bottom-1 duration-300"
                         >
                           {m.cta.label}
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
                       )}
-                      {m.suggestions && m.suggestions.length > 0 && (
-                        <div className="flex flex-wrap gap-2 pt-1">
+                      {!m.streaming && m.suggestions && m.suggestions.length > 0 && (
+                        <div className="flex flex-wrap gap-2 pt-1 animate-in fade-in slide-in-from-bottom-1 duration-300">
                           {m.suggestions.map((s, i) => (
                             <button
                               key={i}
                               onClick={() => handleSuggestion(s)}
-                              className="text-xs px-3 py-1.5 rounded-full border border-border bg-card text-foreground hover:border-teal hover:text-teal transition-colors"
+                              className="text-xs px-3 py-1.5 rounded-full border border-border bg-card/80 text-foreground hover:border-teal hover:text-teal hover:-translate-y-0.5 transition-all"
                             >
                               {s.label}
                             </button>
