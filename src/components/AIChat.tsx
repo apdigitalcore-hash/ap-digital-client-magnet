@@ -21,7 +21,7 @@ const getGreeting = (pathname: string): Msg => {
   if (pathname.startsWith('/pricing')) {
     return {
       ...base,
-      text: "Looking at pricing? Smart move. I can break down any service, compare us to what other Canadian agencies charge, or help you pick the right mix for your goals.",
+      text: "Looking at pricing? Smart move. I can break down any service, walk you through what's included, or help you pick the right mix for your goals.",
       suggestions: [
         { label: 'Which service do I need?', intent: 'services' },
         { label: 'How much for SEO?', intent: 'seo-price' },
@@ -99,7 +99,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "SEO is $759/month. That covers technical audits, on-page optimization, local SEO (Google Business Profile), keyword research, content strategy, and link building. Canadian agencies typically charge $1,500–$5,000/mo for this.",
+      text: "SEO is $759/month. That covers technical audits, on-page optimization, local SEO (Google Business Profile), keyword research, content strategy, and link building.",
       cta: { label: 'See SEO details', to: '/services/seo' },
       suggestions: [
         { label: 'How long until results?', intent: 'timeline' },
@@ -131,7 +131,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Web design is a one-time $2,100. You get a fast, mobile-first, conversion-focused site with SEO foundations, analytics, and A/B testing built in. Canadian agencies usually charge $5,000–$20,000 for the same.",
+      text: "Web design is a one-time $2,100. You get a fast, mobile-first, conversion-focused site with SEO foundations, analytics, and A/B testing built in.",
       cta: { label: 'See Web Design details', to: '/services/web-design' },
       suggestions: [
         { label: 'How long does it take?', intent: 'timeline' },
@@ -193,7 +193,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Great question. You pick the services you want — no bundles, no contracts. Pricing starts at $759/mo for SEO, and most clients spend between $759–$2,100/mo depending on what they need. Canadian agencies typically charge 3–5× that for the same scope. Want to see the full breakdown?",
+      text: "Great question. You pick the services you want — no bundles, no contracts. Pricing starts at $759/mo for SEO, and most clients spend between $759–$2,100/mo depending on what they need. Want to see the full breakdown?",
       cta: { label: 'See full pricing', to: '/pricing' },
       suggestions: [
         { label: 'How much for SEO?', intent: 'seo-price' },
