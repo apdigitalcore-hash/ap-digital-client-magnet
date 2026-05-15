@@ -27,7 +27,7 @@ import {
   getFAQSchema,
 } from '@/lib/structuredData';
 
-const TITLE = 'About AP Digital | Vancouver Digital Marketing Agency | Arjun Sharma';
+const TITLE = 'About AP Digital | Vancouver Marketing Agency';
 const DESC = 'AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for salons, trades, real estate & coaches.';
 const CANONICAL = 'https://ap-digital.ca/about';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

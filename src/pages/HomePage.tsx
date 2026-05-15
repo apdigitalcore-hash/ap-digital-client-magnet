@@ -18,8 +18,8 @@ import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSc
 import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
-const TITLE = 'Digital Marketing Agency Vancouver BC | Meta Ads & Google Ads Experts | AP Digital';
-const DESC = 'AP Digital is Vancouver\'s #1 performance marketing agency — 2,400+ qualified leads delivered for BC salons, realtors, trades & coaches via Meta Ads, Google Ads & content creation. 90-day results guarantee. Month-to-month, no contracts.';
+const TITLE = 'AP Digital | Vancouver Marketing — Meta & Google Ads';
+const DESC = 'Vancouver performance marketing agency. 2,400+ leads delivered for BC salons, trades, realtors & coaches. 90-day guarantee. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

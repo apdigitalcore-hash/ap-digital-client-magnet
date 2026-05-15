@@ -6,7 +6,7 @@ import { allPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Blog | AP Digital — Tips for Salons, Trades & Realtors';
+const TITLE = 'Marketing Blog | Tips for BC Salons, Trades & Realtors';
 const DESC = 'Marketing tips, ad strategies & lead generation guides for Vancouver salons, trades businesses, realtors & coaches.';
 const CANONICAL = 'https://ap-digital.ca/blog';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

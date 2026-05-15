@@ -8,7 +8,7 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'Content Creation Agency Vancouver | Short-Form Video | AP Digital';
+const TITLE = 'Content Creation Vancouver | Short-Form Video | AP Digital';
 const DESC = 'AP Digital creates short-form video content and social posts for Vancouver small businesses — salons, trades, coaches & realtors.';
 const CANONICAL = 'https://ap-digital.ca/services/content-creation';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
