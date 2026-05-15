@@ -96,12 +96,25 @@ const SalonMarketing = () => (
           Salon Marketing — Get More Bookings with Meta Ads
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
-          <p>You're an incredible stylist — but incredible work doesn't matter if no one knows about it. Most salon owners rely on word of mouth and hope, but in today's market, that's not enough to keep every chair booked. At AP DIGITAL, we specialize in salon marketing that brings a steady stream of new, high-value clients through your doors every single week.</p>
-          <p>We use a proven combination of Instagram Reels, Facebook and Instagram Ads, and short-form video content to showcase your transformations, build your brand, and drive bookings. Your best work deserves to be seen by thousands of potential clients in your area — and we make that happen.</p>
-          <p>Our approach is built specifically for salons. We know that before-and-after content outperforms everything else. We know that local targeting on Facebook can put your offer in front of women actively searching for a new stylist. And we know that a consistent, professional social media presence builds the trust that turns a follower into a loyal client.</p>
-          <p>Whether you're a solo stylist looking to fill your own book or a salon owner who wants to keep every chair occupied, our marketing systems are designed to deliver predictable, measurable results. No guesswork, no wasted ad spend — just more bookings, more revenue, and more freedom to do what you love.</p>
-          <p>We've helped salons across Canada go from relying on referrals to having a waitlist. Your transformation is next.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Most salons run on referrals and hope. We build you a system — Meta Ads, Reels, and retargeting — that fills every chair on autopilot.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-16">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Before &amp; afters convert</p>
+            <p className="text-sm text-muted-foreground">Before-and-after content drives 3× more bookings than any other format. We produce it for you.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Local targeting that works</p>
+            <p className="text-sm text-muted-foreground">We put your offer in front of women in your area who are actively searching for a new stylist — not random impressions.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">No contract, no risk</p>
+            <p className="text-sm text-muted-foreground">Month-to-month. If we don't get you new bookings within 30 days, you don't owe us a thing.</p>
+          </div>
         </div>
 
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>

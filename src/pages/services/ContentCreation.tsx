@@ -89,13 +89,25 @@ const ContentCreation = () => (
           Short-Form Content Creation for Vancouver Businesses
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">
-          <p>In today's attention economy, you have less than three seconds to make an impression. That's why short-form video content — Reels, TikToks, and YouTube Shorts — has become the most powerful tool for growing a local business online.</p>
-          <p>At AP DIGITAL, we produce thumb-stopping content that showcases your brand, tells your story, and drives action. From concept and scripting to filming and editing, we handle the entire production process so all you have to do is show up and be yourself.</p>
-          <p>We stay ahead of trends without chasing gimmicks. Every piece of content we create is strategically designed to build trust, demonstrate expertise, and move potential clients closer to booking with you.</p>
-          <p>Whether you need a month's worth of Reels, branded graphics for your feed, or a full content strategy — we deliver polished, on-brand assets that make you look like the authority you are.</p>
-          <p>Video is the dominant content format in 2026, and it is not slowing down. Algorithms on every major platform prioritize video content because it keeps users engaged longer. Businesses that invest in consistent video content see dramatically higher reach, more profile visits, and stronger brand recall than those relying on static images alone. We help you capitalize on this shift by producing a steady stream of short-form videos that are optimized for each platform — vertical format, trending audio, strong hooks within the first second, and clear calls to action that drive real business outcomes.</p>
-          <p>One of the biggest advantages of working with us is content repurposing. A single video shoot can produce content for Instagram Reels, TikTok, YouTube Shorts, Facebook, and even LinkedIn — all reformatted and optimized for each platform. This means you get maximum value from every piece of content we create. We have helped local BC businesses — from salons in Vancouver to contractors in the Fraser Valley — build their brands through consistent, high-quality content that positions them as the clear choice in their market.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Short-form video is the highest-ROI content in 2025. We script, shoot guidance, edit, and caption it — you just show up and deliver.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-12">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Viral hooks, not random posts</p>
+            <p className="text-sm text-muted-foreground">Every video opens with a proven hook designed to stop the scroll. We study what's trending and apply it to your brand.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Reels, TikToks, Shorts</p>
+            <p className="text-sm text-muted-foreground">One shoot session, multiple formats. We edit for every platform so you get maximum reach from minimum effort.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Leads, not just views</p>
+            <p className="text-sm text-muted-foreground">Every video has a clear CTA — DM, link-in-bio, or call — designed to convert views into actual inquiries.</p>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6 mb-16">

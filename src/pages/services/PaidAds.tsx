@@ -89,13 +89,25 @@ const PaidAds = () => (
           Paid Ads Management for Vancouver Small Business
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">
-          <p>Most businesses waste thousands on ads that don't convert. The problem isn't the platform — it's the strategy. At AP DIGITAL, we build paid ad campaigns on Facebook, Instagram, and Google that are designed from day one to generate qualified leads, not just impressions.</p>
-          <p>We start by understanding your ideal customer, then craft scroll-stopping creatives and laser-targeted audiences that put your offer in front of the right people at the right time. Every dollar is tracked, tested, and optimized so your cost per lead keeps dropping.</p>
-          <p>Whether you're a salon owner looking for more bookings, a real estate agent chasing buyer leads, or a trades business that needs the phone to ring — our paid ads system delivers consistent, measurable results month after month.</p>
-          <p>You'll get full transparency with weekly reports, a dedicated strategist, and campaigns that scale as your business grows. No long-term contracts, no vanity metrics — just leads that turn into revenue.</p>
-          <p>Understanding the difference between Meta Ads and Google Ads is critical to spending your budget wisely. Meta Ads (Facebook and Instagram) excel at interrupting your ideal customer with a compelling offer — they are perfect for visual businesses like salons, med spas, and real estate where stunning imagery drives clicks. Google Ads, on the other hand, capture people who are already searching for what you offer — making them ideal for trades, emergency services, and high-intent local searches. We analyze your business, competition, and margins to recommend the right mix of both platforms so every dollar works harder.</p>
-          <p>We proudly serve small businesses across Metro Vancouver and the Fraser Valley, including Surrey, Burnaby, Langley, and Coquitlam. Whether you are a contractor in Surrey looking for renovation leads, a salon owner in Burnaby trying to fill empty chairs, or a real estate agent in Langley targeting new buyers — our paid ads management is tailored to your local market. We understand the competitive landscape in each city and build geo-targeted campaigns that put your business in front of the customers who matter most.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Most businesses waste their first $5k figuring out what works. We've already done that testing — your campaigns launch with proven structure from day one.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-12">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Meta Ads for visual businesses</p>
+            <p className="text-sm text-muted-foreground">Facebook and Instagram ads that interrupt your ideal customer with an offer they can't ignore — perfect for salons, realtors, and coaches.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Google Ads for high-intent buyers</p>
+            <p className="text-sm text-muted-foreground">Capture people already searching for your service. Ideal for trades, clinics, and any business with high-intent local searches.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Weekly reports, zero fluff</p>
+            <p className="text-sm text-muted-foreground">You see exactly what you're spending, how many leads you got, and what we're doing next. No vanity metrics.</p>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
