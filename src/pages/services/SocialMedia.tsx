@@ -8,7 +8,7 @@ import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 
-const TITLE = 'Social Media Marketing Vancouver | Content & Growth | AP Digital';
+const TITLE = 'Social Media Marketing Vancouver | AP Digital';
 const DESC = 'AP Digital manages social media for Vancouver salons, trades & real estate professionals. Short-form content & organic growth.';
 const CANONICAL = 'https://ap-digital.ca/services/social-media';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
