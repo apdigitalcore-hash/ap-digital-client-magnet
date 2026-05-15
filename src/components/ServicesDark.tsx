@@ -68,6 +68,8 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
     >
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-label={`${service.title}: ${open ? 'hide' : 'show'} details`}
         className="w-full text-left p-6 lg:p-8"
       >
         <div className="flex items-start justify-between mb-4">

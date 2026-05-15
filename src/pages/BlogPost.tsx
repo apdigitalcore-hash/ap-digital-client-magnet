@@ -100,7 +100,7 @@ const BlogPost = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <Header />
-      <main className="min-h-screen bg-background pt-28 pb-20">
+      <main id="main-content" className="min-h-screen bg-background pt-28 pb-20">
         <article className="container-custom max-w-3xl">
           <Link to="/blog" className="inline-flex items-center gap-1 text-muted-foreground hover:text-teal transition-colors mb-8 text-sm">
             <ArrowLeft className="w-4 h-4" /> Back to Blog

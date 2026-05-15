@@ -83,7 +83,7 @@ const SEO = () => (
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
-    <main className="pt-24 pb-16">
+    <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
           SEO for Vancouver Small Business — Get Found on Google

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 const TermsOfService = () => {
   return (
-    <main className="min-h-screen bg-near-black">
+    <main id="main-content" className="min-h-screen bg-near-black">
       <Helmet>
         <title>Terms of Service | AP DIGITAL</title>
         <meta name="description" content="Terms of Service for AP DIGITAL - the terms governing use of our website and services." />

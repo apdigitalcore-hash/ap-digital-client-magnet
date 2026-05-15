@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 
 const PrivacyPolicy = () => {
   return (
-    <main className="min-h-screen bg-near-black">
+    <main id="main-content" className="min-h-screen bg-near-black">
       <Helmet>
         <title>Privacy Policy | AP DIGITAL</title>
         <meta name="description" content="Privacy Policy for AP DIGITAL - how we collect, use, and protect your information." />

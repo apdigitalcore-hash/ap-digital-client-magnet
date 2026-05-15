@@ -62,7 +62,7 @@ const Contact = () => {
   ];
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <Helmet>
         <title>Contact AP Digital | Book a Free Strategy Call</title>
         <meta name="description" content="Book a free 20-minute strategy call with AP Digital. We'll show you how many leads are available in your area. No pressure." />

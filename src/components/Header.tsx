@@ -273,6 +273,7 @@ const Header = () => {
                 <button
                   className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
                   onClick={() => toggleSection('services')}
+                  aria-expanded={openSection === 'services'}
                 >
                   <span>Services</span>
                   <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'services' ? 'rotate-180' : ''}`} />
@@ -299,6 +300,7 @@ const Header = () => {
                 <button
                   className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
                   onClick={() => toggleSection('industries')}
+                  aria-expanded={openSection === 'industries'}
                 >
                   <span>Industries</span>
                   <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'industries' ? 'rotate-180' : ''}`} />
@@ -339,6 +341,7 @@ const Header = () => {
                 <button
                   className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
                   onClick={() => toggleSection('locations')}
+                  aria-expanded={openSection === 'locations'}
                 >
                   <span>Locations</span>
                   <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'locations' ? 'rotate-180' : ''}`} />

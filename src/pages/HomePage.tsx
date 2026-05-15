@@ -191,7 +191,7 @@ const LiveActivityPanel = () => {
 
 const HomePage = () => {
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESC} />

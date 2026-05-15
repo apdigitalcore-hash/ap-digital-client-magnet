@@ -127,7 +127,7 @@ const Coquitlam = () => (
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
-    <main>
+    <main id="main-content">
 
       {/* Hero */}
       <section className="relative bg-near-black pt-28 pb-20">
