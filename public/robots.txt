@@ -30,17 +30,18 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# SEO research crawlers — allowed for our own analytics
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
 # Low-value scrapers
 User-agent: Bytespider
 Disallow: /
 
 User-agent: PetalBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: AhrefsBot
 Disallow: /
 
 # Sitemaps
