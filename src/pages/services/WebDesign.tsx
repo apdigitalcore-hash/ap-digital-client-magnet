@@ -89,13 +89,25 @@ const WebDesign = () => (
           Web Design for Vancouver Small Business
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">
-          <p>Your website is your digital storefront — and if it's slow, outdated, or confusing, you're losing customers before they ever reach out. At AP DIGITAL, we design websites that don't just look beautiful — they're engineered to convert visitors into leads and customers.</p>
-          <p>Every site we build starts with strategy. We research your industry, understand your ideal customer, and design a user experience that guides visitors toward taking action — whether that's booking a call, filling out a form, or making a purchase.</p>
-          <p>Our websites are built mobile-first, load lightning-fast, and are fully optimized for search engines. We handle everything from design and development to hosting and ongoing maintenance, so you never have to worry about the technical side.</p>
-          <p>Whether you need a complete website redesign or a high-converting landing page for your next campaign, we deliver polished, professional results that make your business stand out and drive measurable growth.</p>
-          <p>In 2026, your website needs to do more than look good — it needs to load in under two seconds, pass Google's Core Web Vitals, and adapt perfectly to every screen size. We build every site on modern, lightweight frameworks that score 90+ on PageSpeed Insights, which directly impacts both user experience and your Google rankings. Slow websites lose 40% of visitors before they even see your offer, which is why performance is baked into every decision we make — from image compression and lazy loading to CDN delivery and minimal third-party scripts.</p>
-          <p>We design for conversion, not just aesthetics. Every section on your homepage follows a proven framework: a clear headline, a compelling value proposition, social proof, and a single primary call to action. We have helped small businesses across Metro Vancouver — from Surrey contractors to Burnaby salons and Langley realtors — replace outdated websites that produced zero leads with modern, high-converting sites that drive bookings, phone calls, and revenue. Your website should be your hardest-working salesperson, and we make sure it is.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Your website is your #1 salesperson. We build fast, conversion-focused sites that turn visitors into booked clients — not just pretty pages no one acts on.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-12">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Built to convert, not just look good</p>
+            <p className="text-sm text-muted-foreground">Every page is designed around one goal: get the visitor to take action. CTA hierarchy, social proof, and friction removal baked in.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">SEO foundations from day one</p>
+            <p className="text-sm text-muted-foreground">Title tags, schema, site speed, mobile performance, and canonical structure built correctly from the start.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Delivered in 3–4 weeks</p>
+            <p className="text-sm text-muted-foreground">Fast delivery, 30-day post-launch support, and A/B testing setup so results keep improving after launch.</p>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6 mb-16">

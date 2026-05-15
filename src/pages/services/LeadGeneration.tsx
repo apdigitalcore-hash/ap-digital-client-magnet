@@ -89,13 +89,25 @@ const LeadGeneration = () => (
           Lead Generation — Predictable Leads Every Month
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">
-          <p>The biggest challenge local businesses face isn't delivering great work — it's getting a consistent flow of new clients. Referrals are unpredictable, and hoping for the phone to ring isn't a growth strategy.</p>
-          <p>At AP DIGITAL, we build lead generation systems that run on autopilot. From high-converting landing pages and targeted ad campaigns to automated follow-up sequences, we create a machine that attracts, qualifies, and nurtures leads until they're ready to book.</p>
-          <p>Our approach combines paid advertising, funnel optimization, and CRM automation into one seamless system. You'll know exactly how many leads are coming in, what they cost, and how they're converting — giving you full control over your business growth.</p>
-          <p>Whether you need 10 leads a week or 100, we'll design a system that scales with your capacity. No more feast-or-famine cycles — just predictable, profitable growth month after month.</p>
-          <p>Most lead generation agencies focus on one channel — usually Facebook ads — and call it a day. That is why their clients see inconsistent results. We build multi-channel systems that combine paid ads (Meta and Google), high-converting landing pages, SMS and email follow-up, lead scoring, and CRM automation into a single, integrated funnel. When one channel dips, the others keep leads flowing. This is the difference between a campaign and a system — and it is why our clients see consistent lead flow month after month, not feast-or-famine cycles tied to one platform's algorithm changes.</p>
-          <p>Speed to lead is the single most important metric in lead generation — and it is where most local businesses lose deals. Studies show that responding to a lead within five minutes makes you 21 times more likely to qualify that prospect than responding within 30 minutes. We build automated SMS and email responses that fire the instant a lead submits a form, qualify them with follow-up questions, and book them directly into your calendar — all before a human ever gets involved. This infrastructure alone is often worth the entire engagement, because it takes leads that would have gone cold and turns them into booked appointments while your competitors are still checking their inbox.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Leads don't appear by accident. We build end-to-end systems — ads → landing page → follow-up → booking — that run on autopilot.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-12">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Full-funnel build</p>
+            <p className="text-sm text-muted-foreground">We design and build every piece: ad creative, landing page, email sequence, SMS follow-up, and CRM pipeline. Done-for-you.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Qualified, not just volume</p>
+            <p className="text-sm text-muted-foreground">We optimize for lead quality — people who actually show up and buy — not raw numbers that pad a report.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Pipeline you can see</p>
+            <p className="text-sm text-muted-foreground">Weekly reports show exactly how many leads entered, where they came from, and what happened next.</p>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6 mb-16">

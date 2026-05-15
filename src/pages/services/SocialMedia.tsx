@@ -89,13 +89,25 @@ const SocialMedia = () => (
           Social Media Marketing for Vancouver Small Business
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">
-          <p>Posting randomly and hoping for the best isn't a strategy. At AP DIGITAL, we build a social media presence that positions you as the go-to expert in your industry — and drives real business results, not just likes.</p>
-          <p>We handle everything from content creation and scheduling to community engagement and analytics. Every post is crafted with purpose: to educate, inspire, and convert your audience into customers who trust you before they ever pick up the phone.</p>
-          <p>Our team stays on top of algorithm changes and platform trends so you don't have to. Whether it's Instagram Reels, TikTok, or Facebook, we know what works right now and we execute it consistently for your brand.</p>
-          <p>The result? A professional, active social presence that builds authority, attracts your ideal clients, and keeps your business top of mind — all without you spending hours on your phone.</p>
-          <p>Each platform requires a different approach, and we tailor our strategy accordingly. On Instagram, we focus on polished visuals, Reels that tap into trending audio, and story sequences that drive DMs and bookings. TikTok demands raw authenticity and hook-driven content — we create videos that feel native to the platform while still representing your brand professionally. Facebook remains the strongest platform for local community engagement, targeted groups, and driving traffic to your website. We match the right format and tone to each platform so your content performs instead of falling flat.</p>
-          <p>As a Vancouver and BC-focused agency, we understand the local market dynamics that national agencies miss. We know when Lower Mainland audiences are most active, what local trends resonate, and how to position your business within the Metro Vancouver community. Whether you are a salon in Kitsilano, a contractor in Surrey, or a coach in Burnaby, our social media management is built around your local audience and the specific way they discover and engage with businesses like yours.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Inconsistent posting kills reach. We plan, create, and publish your content every week so your brand stays top of mind — without you lifting a finger.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-12">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Content calendar, handled</p>
+            <p className="text-sm text-muted-foreground">We build a monthly content plan aligned with your business goals — no more scrambling for what to post.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Platform-native content</p>
+            <p className="text-sm text-muted-foreground">Different formats for each platform — Reels for Instagram, carousels for LinkedIn, short-form for TikTok. Everything optimized.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Community management included</p>
+            <p className="text-sm text-muted-foreground">We respond to comments and DMs so every follower interaction builds trust and keeps the algorithm happy.</p>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
