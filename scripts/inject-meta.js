@@ -38,7 +38,7 @@ const orgSchema = {
     "addressCountry": "CA"
   },
   "geo": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
-  "areaServed": ["Vancouver", "Surrey", "Burnaby", "Langley", "Coquitlam", "Metro Vancouver"],
+  "areaServed": ["Vancouver", "Surrey", "Burnaby", "Richmond", "Langley", "Coquitlam", "Abbotsford", "Metro Vancouver"],
   "sameAs": [
     "https://www.instagram.com/theapdigital/",
     "https://www.facebook.com/apdigital",
@@ -406,6 +406,104 @@ const staticRoutes = [
           "url": `${BASE_URL}/coquitlam`,
           "telephone": "+1-778-682-5772",
           "areaServed": [{ "@type": "City", "name": "Coquitlam" }]
+        }
+      ]
+    }
+  },
+  {
+    path: 'vancouver',
+    title: 'Digital Marketing Agency Vancouver BC | AP Digital',
+    description: 'AP Digital is a Vancouver digital marketing agency. Google Ads, Meta Ads & social media for BC salons, trades, realtors & coaches. Month-to-month. No contracts.',
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        orgSchema,
+        serviceSchema('Digital Marketing Vancouver BC', 'Lead generation for Vancouver small businesses using Google Ads & Meta Ads.', '/vancouver'),
+        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Vancouver', url: '/vancouver' }]),
+        webPageSchema('Digital Marketing Agency Vancouver BC | AP Digital', 'Google Ads & Meta Ads for Vancouver businesses.', '/vancouver'),
+        {
+          "@type": "LocalBusiness",
+          "@id": `${BASE_URL}/vancouver#localbusiness`,
+          "name": "AP Digital — Vancouver Digital Marketing Agency",
+          "url": `${BASE_URL}/vancouver`,
+          "telephone": "+1-778-682-5772",
+          "email": "apdigital.core@gmail.com",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Vancouver",
+            "addressRegion": "BC",
+            "postalCode": "V6B 2W9",
+            "addressCountry": "CA"
+          },
+          "geo": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
+          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "14", "bestRating": "5", "worstRating": "1" },
+          "areaServed": [
+            { "@type": "City", "name": "Vancouver" },
+            { "@type": "City", "name": "Kitsilano" },
+            { "@type": "City", "name": "Mount Pleasant" },
+            { "@type": "City", "name": "East Vancouver" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How quickly will I get leads in Vancouver?", "acceptedAnswer": { "@type": "Answer", "text": "Most Vancouver businesses see their first qualified leads within 2 weeks of launching their campaign with AP Digital." } },
+            { "@type": "Question", "name": "Do I need a long-term contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. AP Digital operates month-to-month with every Vancouver client. We earn your business every 30 days by actually delivering results." } },
+            { "@type": "Question", "name": "Should I use Google Ads or Facebook Ads in Vancouver?", "acceptedAnswer": { "@type": "Answer", "text": "Both platforms work well in Vancouver. Google Ads capture high-intent searches. Meta Ads are better for brand awareness and visual offers. We recommend the right mix after a free strategy call." } }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    path: 'richmond',
+    title: 'Digital Marketing Agency Richmond BC | AP Digital',
+    description: 'AP Digital helps Richmond BC businesses get more leads. Google Ads, Meta Ads & social media for salons, trades, realtors & coaches. Month-to-month, no contracts.',
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        orgSchema,
+        serviceSchema('Digital Marketing Richmond BC', 'Lead generation for Richmond businesses using Meta Ads & Google Ads.', '/richmond'),
+        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Richmond', url: '/richmond' }]),
+        webPageSchema('Digital Marketing Agency Richmond BC | AP Digital', 'Meta & Google Ads for Richmond businesses.', '/richmond'),
+        {
+          "@type": "LocalBusiness",
+          "@id": `${BASE_URL}/richmond#localbusiness`,
+          "name": "AP Digital — Richmond BC Digital Marketing Agency",
+          "url": `${BASE_URL}/richmond`,
+          "telephone": "+1-778-682-5772",
+          "areaServed": [
+            { "@type": "City", "name": "Richmond" },
+            { "@type": "City", "name": "Steveston" },
+            { "@type": "City", "name": "Brighouse" }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    path: 'abbotsford',
+    title: 'Digital Marketing Agency Abbotsford BC | AP Digital',
+    description: 'AP Digital helps Abbotsford businesses get more leads. Google Ads & Meta Ads for BC salons, trades, realtors & coaches. Month-to-month, no contracts.',
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        orgSchema,
+        serviceSchema('Digital Marketing Abbotsford BC', 'Lead generation for Abbotsford & Fraser Valley businesses using Meta Ads & Google Ads.', '/abbotsford'),
+        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Abbotsford', url: '/abbotsford' }]),
+        webPageSchema('Digital Marketing Agency Abbotsford BC | AP Digital', 'Meta & Google Ads for Abbotsford businesses.', '/abbotsford'),
+        {
+          "@type": "LocalBusiness",
+          "@id": `${BASE_URL}/abbotsford#localbusiness`,
+          "name": "AP Digital — Abbotsford Digital Marketing Agency",
+          "url": `${BASE_URL}/abbotsford`,
+          "telephone": "+1-778-682-5772",
+          "areaServed": [
+            { "@type": "City", "name": "Abbotsford" },
+            { "@type": "City", "name": "Mission" },
+            { "@type": "City", "name": "Chilliwack" }
+          ]
         }
       ]
     }

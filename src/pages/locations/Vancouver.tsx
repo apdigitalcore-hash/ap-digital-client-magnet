@@ -13,69 +13,69 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Surrey BC | AP Digital';
-const DESC = 'AP Digital helps Surrey businesses get more leads using Meta Ads & Google Ads. Salons, trades, real estate & coaches. Month-to-month.';
-const CANONICAL = 'https://ap-digital.ca/surrey';
+const TITLE = 'Digital Marketing Agency Vancouver BC | AP Digital';
+const DESC = 'AP Digital is a Vancouver digital marketing agency. Google Ads, Meta Ads & social media for BC salons, trades, realtors & coaches. Month-to-month. No contracts.';
+const CANONICAL = 'https://ap-digital.ca/vancouver';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
-  'Meta Ads targeting Surrey & South Fraser',
-  'Google Ads for local service searches',
-  'Google Business Profile optimization',
+  'Meta Ads targeting Vancouver & surrounding areas',
+  'Google Ads for high-intent local searches',
+  'Google Business Profile setup & optimization',
   'Review generation & reputation management',
-  'Social media content creation',
-  'High-converting landing pages',
-  'Monthly ROI reporting',
-  'Local SEO for Surrey',
+  'Short-form video content (Reels & TikTok)',
+  'High-converting landing pages for Vancouver leads',
+  'Monthly ROI reporting — leads & revenue only',
+  'Local SEO targeting Vancouver neighbourhoods',
 ];
 
 const faqs = [
   {
-    question: 'How quickly will I see leads in Surrey?',
-    answer: 'Most Surrey businesses see their first leads within 2 weeks of launching Meta Ads with AP Digital.',
+    question: 'How quickly will I get leads in Vancouver?',
+    answer: 'Most Vancouver businesses see their first qualified leads within 2 weeks of launching their campaign with AP Digital. Google Ads campaigns often produce results within days — Meta Ads typically 1–2 weeks as the algorithm optimizes.',
   },
   {
-    question: 'Do I have to sign a long-term contract?',
-    answer: 'No contracts. We work month-to-month with every client in Surrey and across Metro Vancouver.',
+    question: 'Do I need a long-term contract?',
+    answer: 'No. AP Digital operates month-to-month with every Vancouver client. We earn your business every 30 days by actually delivering results — there is no lock-in, no setup penalty, and no cancellation fee.',
   },
   {
-    question: 'How much does digital marketing cost in Surrey?',
-    answer: 'Most clients start with $500–$1,500/month in ad spend. Our management fee is transparent and quoted upfront.',
+    question: 'How much does digital marketing cost in Vancouver?',
+    answer: 'Most clients start with $500–$1,500/month in ad spend. Our management fee is quoted transparently upfront and billed separately from your ad spend. You always know exactly what you\'re paying before anything goes live.',
   },
   {
-    question: 'Will Arjun personally manage my account?',
-    answer: 'Yes. Arjun Sharma personally manages every client account at AP Digital. No outsourcing, no junior account managers.',
+    question: 'Who manages my Vancouver marketing campaign?',
+    answer: 'Arjun Sharma personally manages every AP Digital account — no outsourcing, no junior account managers, no overseas teams. When you have a question about your Vancouver campaign, you talk directly to the person running it.',
   },
   {
-    question: 'Do you run Google Ads for Surrey businesses?',
-    answer: 'Yes — we run both Google Ads and Meta Ads for Surrey businesses. Which platform we prioritize depends on your business type. For high-intent searches like "plumber Surrey" or "electrician near me," Google Ads typically delivers the best results. For awareness and retargeting — salons, coaches, and health & wellness — Meta Ads often wins. We recommend the right mix after your free strategy call.',
+    question: 'Should I use Google Ads or Facebook Ads in Vancouver?',
+    answer: 'Both platforms work well in Vancouver, but for different goals. Google Ads are ideal for capturing high-intent searchers — people actively looking for your service right now. Meta Ads (Facebook & Instagram) are better for brand awareness, retargeting, and visual offers. Salons and coaches tend to perform best on Meta; trades and real estate agents often see the strongest ROI from Google. We recommend the right mix after learning about your business on a free strategy call.',
   },
   {
-    question: 'What industries do you serve in Surrey?',
-    answer: 'We work with all service-based businesses in Surrey, BC — trades (plumbers, HVAC, electricians, roofers), hair salons & beauty studios, real estate agents, coaches & consultants, restaurants, and health & wellness businesses. If you run a local service business in Surrey, we can build a campaign for you.',
+    question: 'What industries do you serve in Vancouver?',
+    answer: 'We specialize in four verticals across Vancouver: trades and home services (plumbers, HVAC, electricians, roofers), hair salons and beauty studios, real estate agents, and coaches and consultants. If you run a local service business in Vancouver, we have a playbook that already works for your industry.',
   },
   {
-    question: 'How is AP Digital different from other Surrey marketing agencies?',
-    answer: 'The founder, Arjun Sharma, personally manages every single account — no outsourcing, no handing you off to a junior team member. We also work month-to-month with no lock-in contracts, so we earn your business every month by actually delivering results. Most Surrey marketing agencies put you through a sales team, then hand your account to a generalist. We don\'t operate that way.',
+    question: 'How is AP Digital different from other Vancouver marketing agencies?',
+    answer: 'Most Vancouver agencies put you through a sales team and then hand your account to a generalist. At AP Digital, the founder personally manages every account — so you always know exactly who is running your campaigns. We also work month-to-month, which means we have to earn your business every month by actually delivering leads.',
   },
 ];
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    getServiceSchema('Digital Marketing Surrey BC', DESC, '/surrey'),
+    getServiceSchema('Digital Marketing Vancouver BC', DESC, '/vancouver'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
-      { name: 'Surrey', url: '/surrey' },
+      { name: 'Vancouver', url: '/vancouver' },
     ]),
-    getWebPageSchema(TITLE, DESC, '/surrey'),
+    getWebPageSchema(TITLE, DESC, '/vancouver'),
     {
       "@type": "LocalBusiness",
-      "@id": "https://ap-digital.ca/surrey",
-      "name": "AP Digital — Surrey Digital Marketing Agency",
+      "@id": "https://ap-digital.ca/vancouver",
+      "name": "AP Digital — Vancouver Digital Marketing Agency",
       "description": DESC,
-      "url": "https://ap-digital.ca/surrey",
+      "url": "https://ap-digital.ca/vancouver",
       "telephone": "+1-778-682-5772",
       "email": "apdigital.core@gmail.com",
       "priceRange": "$$",
@@ -83,15 +83,21 @@ const structuredData = {
         "@type": "PostalAddress",
         "addressLocality": "Vancouver",
         "addressRegion": "BC",
-        "postalCode": "V3Y 0G3",
+        "postalCode": "V6B 2W9",
         "addressCountry": "CA"
       },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.2827,
+        "longitude": -123.1207
+      },
       "areaServed": [
-        { "@type": "City", "name": "Surrey" },
-        { "@type": "City", "name": "White Rock" },
-        { "@type": "City", "name": "Delta" },
-        { "@type": "City", "name": "Langley" },
-        { "@type": "City", "name": "Cloverdale" }
+        { "@type": "City", "name": "Vancouver" },
+        { "@type": "City", "name": "Kitsilano" },
+        { "@type": "City", "name": "Mount Pleasant" },
+        { "@type": "City", "name": "East Vancouver" },
+        { "@type": "City", "name": "Yaletown" },
+        { "@type": "City", "name": "West End" }
       ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -99,13 +105,20 @@ const structuredData = {
         "opens": "09:00",
         "closes": "18:00"
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "14",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
       "founder": { "@type": "Person", "name": "Arjun Sharma" },
       "sameAs": ["https://ap-digital.ca"]
     }
   ]
 };
 
-const Surrey = () => (
+const Vancouver = () => (
   <>
     <Helmet>
       <title>{TITLE}</title>
@@ -136,14 +149,14 @@ const Surrey = () => (
           <div className="max-w-3xl animate-fade-up">
             <div className="inline-flex items-center gap-2 border border-teal/20 rounded-full px-4 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-              <span className="text-teal text-sm font-medium">Serving Surrey & South Fraser, BC</span>
+              <span className="text-teal text-sm font-medium">Headquartered in Vancouver, BC</span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
               Digital Marketing Agency{' '}
-              <span className="text-gradient">Surrey BC</span>
+              <span className="text-gradient">Vancouver BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. Month-to-month. Managed personally by Arjun Sharma.
+              AP Digital is a Vancouver-based marketing agency helping local businesses — trades, salons, real estate agents & coaches — get consistent, qualified leads using Meta Ads & Google Ads. Month-to-month. Managed personally by founder Arjun Sharma.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
@@ -174,7 +187,7 @@ const Surrey = () => (
             </div>
             <div>
               <div className="font-display text-4xl font-bold text-teal mb-1">$500/mo</div>
-              <div className="text-muted-foreground text-sm">Starting — no contracts</div>
+              <div className="text-muted-foreground text-sm">Starting ad budget — no contracts</div>
             </div>
           </div>
         </div>
@@ -184,31 +197,31 @@ const Surrey = () => (
       <section className="bg-background py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Who We Help in <span className="text-gradient">Surrey</span>
+            Who We Help in <span className="text-gradient">Vancouver</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            From South Surrey to Guildford, we generate qualified leads for local businesses across the region.
+            From Kitsilano to Commercial Drive, we help Vancouver's local businesses get booked solid with qualified leads.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Zap className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Trades & Contractors</h3>
-              <p className="text-muted-foreground">Plumbers, HVAC, electricians, and roofers across Surrey & South Fraser getting booked solid with targeted ads.</p>
+              <p className="text-muted-foreground">Plumbers, HVAC, electricians, and roofers across Vancouver capturing high-intent job searches the moment homeowners need them.</p>
             </div>
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Star className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="text-muted-foreground">Filling chairs with consistent, reliable bookings for salons throughout Surrey and the surrounding area.</p>
+              <p className="text-muted-foreground">Filling appointment books with consistent new clients for salons in Kitsilano, Mount Pleasant, South Granville, and East Van.</p>
             </div>
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Target className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Real Estate Agents</h3>
-              <p className="text-muted-foreground">Buyer & seller leads in Surrey's competitive market — targeted campaigns that reach motivated homeowners.</p>
+              <p className="text-muted-foreground">Buyer & seller leads in Vancouver's ultra-competitive real estate market — targeted campaigns reaching motivated homeowners and investors.</p>
             </div>
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Users className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Coaches & Consultants</h3>
-              <p className="text-muted-foreground">Attracting ideal clients online and scaling coaching businesses across BC with proven ad strategies.</p>
+              <p className="text-muted-foreground">Growing coaching businesses in Vancouver's competitive professional market with proven ad strategies that attract ideal, high-value clients.</p>
             </div>
           </div>
         </div>
@@ -221,7 +234,7 @@ const Surrey = () => (
             What's Included
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            Everything your Surrey business needs to generate leads and grow — all managed under one roof.
+            Everything your Vancouver business needs to generate leads and grow — all managed under one roof.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {included.map((item) => (
@@ -234,58 +247,58 @@ const Surrey = () => (
         </div>
       </section>
 
-      {/* Why Surrey Businesses Are Investing in Paid Ads */}
+      {/* Why Vancouver Businesses Are Investing in Paid Ads */}
       <section className="bg-background py-20">
         <div className="container-custom max-w-4xl">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Why Surrey Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
+            Why Vancouver Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            Surrey is one of the fastest-growing cities in Metro Vancouver — and the competition for local customers is only intensifying.
+            Vancouver is one of Canada's most expensive and competitive markets — standing out online is no longer optional.
           </p>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              Surrey, BC is no longer just a bedroom community — it's a full economic hub with distinct neighbourhoods each carrying their own commercial energy. Newton has a dense population of service-hungry households. Guildford is a retail and service corridor where competition among trades and beauty businesses is fierce. South Surrey and White Rock attract higher-income demographics actively searching for premium service providers. Cloverdale and Whalley are home to a growing number of small business owners who need a digital marketing agency in Surrey BC that actually understands their local market. Running generic, city-wide campaigns doesn't cut it here — neighbourhood-level targeting is what separates the businesses that get booked solid from those that wonder why their ads aren't working.
+              Vancouver is one of the most densely competitive small business markets in Canada. Every neighbourhood carries its own commercial character — Kitsilano's health-conscious, high-income demographic makes it a goldmine for wellness businesses, fitness studios, and premium salons willing to target precisely. Commercial Drive and East Van have a dense, loyal local customer base that responds strongly to community-rooted brands and local-first messaging. Yaletown and the West End attract young professionals and higher spenders who discover businesses almost entirely through Instagram and Google. Mount Pleasant and South Main have become hubs for creative businesses and boutique services with clients who are extremely online. For a marketing agency in Vancouver BC, understanding these micro-markets is the difference between campaigns that fill your calendar and campaigns that burn budget with nothing to show.
             </p>
             <p>
-              The shift toward digital-first customer behaviour in Surrey has accelerated dramatically. Surrey small business marketing is no longer optional — it's the primary growth lever. When a homeowner in Guildford needs an HVAC technician, they're not flipping through a directory. They're searching on Google or scrolling Facebook and Instagram. When someone in South Surrey is looking for a new salon, they're clicking on ads they see in their feed. Lead generation in Surrey now happens almost entirely online, and the businesses that invest in Meta Ads and Google Ads are capturing that demand while competitors who rely on word-of-mouth slowly fade. The window to build a dominant local presence before your niche gets saturated is still open — but it won't stay open forever.
+              Vancouver's digital-first consumer behaviour has reached a saturation point that no local business can ignore. When someone in Kitsilano needs a plumber, they're not asking neighbours — they're Googling "plumber Vancouver" or "emergency plumber near me" within minutes of the problem appearing. When a homeowner in Point Grey is looking for a renovation contractor, they're scrolling Instagram and Facebook for before-and-after project photos from local tradespeople. When a professional in Yaletown wants to book a haircut or consult a business coach, they're clicking on an ad they saw in their feed. The businesses capturing these moments with Google Ads and Meta Ads are growing. The ones waiting for referrals are slowly getting left behind.
             </p>
             <p>
-              What makes paid advertising uniquely powerful for a marketing agency Surrey clients can trust is the precision of targeting. Unlike SEO, which takes months to compound, a well-structured Google Ads or Meta Ads campaign for a Surrey business can generate qualified leads within days of going live. We geo-target specific postal codes in Newton, Guildford, South Surrey, Cloverdale, and Whalley so your ad budget reaches the exact neighbourhoods where your ideal customers live. For trades businesses, this means fewer wasted clicks from outside your service radius. For salons, it means filling chairs with local clients who are actually within driving distance. For realtors, it means reaching motivated buyers and sellers in the specific Surrey submarkets you specialize in — not wasting impressions on people who'll never convert.
+              What makes paid advertising uniquely powerful in Vancouver's digital marketing landscape is the precision it unlocks. We geo-target campaigns to the specific Vancouver neighbourhoods where your ideal clients live — Dunbar, Kerrisdale, Fairview, Hastings-Sunrise, Riley Park — so your ad budget is never wasted on impressions from outside your service radius. For a trades business, this means every click is from someone within your callout zone. For a salon in South Granville, it means reaching women in a 5-kilometre radius who match the profile of your highest-spending existing clients. This is why Vancouver businesses that run properly structured Meta Ads and Google Ads campaigns routinely see returns that justify every dollar — while businesses relying on organic alone wait months for results that may never come.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Surrey Marketing Process */}
+      {/* Our Vancouver Marketing Process */}
       <section className="bg-charcoal py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
-            Our Surrey Marketing Process
+            Our Vancouver Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Surrey business generating leads fast — with no guesswork.
+            A clear, proven process that gets your Vancouver business generating leads fast — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">1</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Free Strategy Call</h3>
-              <p className="text-muted-foreground text-sm">We learn your Surrey market, your competition, and your goals. No cookie-cutter approach — every campaign starts with understanding your specific business.</p>
+              <p className="text-muted-foreground text-sm">We learn your Vancouver market, your neighbourhood, your competition, and your revenue goals. No cookie-cutter approach — every campaign starts with your specific business context.</p>
             </div>
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">2</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Campaign Build</h3>
-              <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Surrey and surrounding areas — Newton, Guildford, South Surrey, Cloverdale, White Rock, and beyond.</p>
+              <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting your exact Vancouver service area — from Dunbar to Hastings-Sunrise, from Yaletown to East Van — with creatives built for your audience.</p>
             </div>
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">3</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Launch & Optimize</h3>
-              <p className="text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Surrey campaign hits its stride as fast as possible.</p>
+              <p className="text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Vancouver campaign hits its stride as fast as possible.</p>
             </div>
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">4</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Scale</h3>
-              <p className="text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates.</p>
+              <p className="text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates across your Vancouver target area.</p>
             </div>
           </div>
         </div>
@@ -295,13 +308,13 @@ const Surrey = () => (
       <section className="bg-background py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Areas We Serve Near <span className="text-gradient">Surrey</span>
+            Vancouver Neighbourhoods We Target
           </h2>
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-            Our digital marketing campaigns cover all of Surrey and the surrounding South Fraser region. Whether you're based in Newton or South Surrey, we target your exact service area so every ad dollar is working as hard as possible.
+            Our campaigns cover all of Vancouver and the surrounding region. We geo-target your exact service area so every ad dollar reaches your ideal local customer.
           </p>
           <div className="flex flex-wrap gap-3 justify-center mb-16">
-            {['Newton', 'Guildford', 'South Surrey', 'Cloverdale', 'Whalley', 'White Rock', 'Delta', 'Langley'].map((area) => (
+            {['Kitsilano', 'Mount Pleasant', 'East Vancouver', 'Commercial Drive', 'Yaletown', 'West End', 'Fairview', 'South Granville', 'Kerrisdale', 'Dunbar', 'Hastings-Sunrise', 'Riley Park'].map((area) => (
               <span key={area} className="rounded-full bg-muted px-4 py-2 text-sm text-foreground">
                 {area}
               </span>
@@ -316,7 +329,7 @@ const Surrey = () => (
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
             {[
-              { city: 'Vancouver', href: '/vancouver' },
+              { city: 'Surrey', href: '/surrey' },
               { city: 'Burnaby', href: '/burnaby' },
               { city: 'Richmond', href: '/richmond' },
               { city: 'Langley', href: '/langley' },
@@ -335,7 +348,7 @@ const Surrey = () => (
       <section className="bg-charcoal py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
-            Why Surrey Businesses Choose <span className="text-gradient">AP Digital</span>
+            Why Vancouver Businesses Choose <span className="text-gradient">AP Digital</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
             We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
@@ -349,12 +362,12 @@ const Surrey = () => (
             <div className="bg-card border border-border rounded-xl p-6">
               <TrendingUp className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-lg font-bold text-foreground mb-2">No Contracts</h3>
-              <p className="text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
+              <p className="text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results you can measure.</p>
             </div>
             <div className="bg-card border border-border rounded-xl p-6">
               <Zap className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-lg font-bold text-foreground mb-2">Fast Results</h3>
-              <p className="text-muted-foreground text-sm">Most Surrey clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+              <p className="text-muted-foreground text-sm">Most Vancouver clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>
@@ -364,7 +377,7 @@ const Surrey = () => (
       <section className="bg-background py-20">
         <div className="container-custom max-w-3xl">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-            Common Questions
+            Common Questions — Vancouver Businesses
           </h2>
           <Accordion type="single" collapsible>
             {faqs.map((faq, i) => (
@@ -388,10 +401,10 @@ const Surrey = () => (
       <section className="bg-near-black py-20 text-center">
         <div className="container-custom max-w-2xl">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Grow Your <span className="text-gradient">Surrey Business?</span>
+            Ready to Grow Your <span className="text-gradient">Vancouver Business?</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Book a free 20-minute strategy call. We'll show you exactly what a campaign looks like for your business and your budget. No pitch, no pressure.
+            Book a free 20-minute strategy call. We'll show you exactly what a campaign looks like for your business and your budget — no pitch, no pressure.
           </p>
           <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
             <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">
@@ -407,5 +420,4 @@ const Surrey = () => (
   </>
 );
 
-export default Surrey;
-
+export default Vancouver;

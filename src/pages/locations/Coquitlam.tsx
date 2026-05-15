@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -299,11 +300,32 @@ const Coquitlam = () => (
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
             Our campaigns cover all of Coquitlam and the Tri-Cities region. We geo-target your exact service area so every ad dollar reaches the neighbourhoods and communities where your best customers live.
           </p>
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-3 justify-center mb-16">
             {['Port Moody', 'Port Coquitlam', 'Burnaby', 'New Westminster', 'Pitt Meadows', 'Maple Ridge'].map((area) => (
               <span key={area} className="rounded-full bg-muted px-4 py-2 text-sm text-foreground">
                 {area}
               </span>
+            ))}
+          </div>
+
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
+            Also Serving Metro Vancouver
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-8">
+            We run campaigns across Metro Vancouver and the Fraser Valley. Click your city for localized information.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
+            {[
+              { city: 'Vancouver', href: '/vancouver' },
+              { city: 'Surrey', href: '/surrey' },
+              { city: 'Burnaby', href: '/burnaby' },
+              { city: 'Richmond', href: '/richmond' },
+              { city: 'Langley', href: '/langley' },
+              { city: 'Abbotsford', href: '/abbotsford' },
+            ].map(({ city, href }) => (
+              <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
+                <span className="font-medium text-foreground">{city}</span>
+              </Link>
             ))}
           </div>
         </div>

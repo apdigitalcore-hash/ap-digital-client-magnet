@@ -324,10 +324,13 @@ const About = () => {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[
+              { city: 'Vancouver', href: '/vancouver' },
               { city: 'Surrey', href: '/surrey' },
               { city: 'Burnaby', href: '/burnaby' },
+              { city: 'Richmond', href: '/richmond' },
               { city: 'Langley', href: '/langley' },
               { city: 'Coquitlam', href: '/coquitlam' },
+              { city: 'Abbotsford', href: '/abbotsford' },
             ].map(({ city, href }) => (
               <Link
                 key={href}

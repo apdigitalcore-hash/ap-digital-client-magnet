@@ -13,69 +13,65 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Surrey BC | AP Digital';
-const DESC = 'AP Digital helps Surrey businesses get more leads using Meta Ads & Google Ads. Salons, trades, real estate & coaches. Month-to-month.';
-const CANONICAL = 'https://ap-digital.ca/surrey';
+const TITLE = 'Digital Marketing Agency Abbotsford BC | AP Digital';
+const DESC = 'AP Digital helps Abbotsford businesses get more leads. Google Ads & Meta Ads for BC salons, trades, realtors & coaches. Month-to-month, no contracts.';
+const CANONICAL = 'https://ap-digital.ca/abbotsford';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
-  'Meta Ads targeting Surrey & South Fraser',
-  'Google Ads for local service searches',
-  'Google Business Profile optimization',
+  'Meta Ads targeting Abbotsford & Fraser Valley',
+  'Google Ads for high-intent local searches',
+  'Google Business Profile setup & optimization',
   'Review generation & reputation management',
-  'Social media content creation',
-  'High-converting landing pages',
-  'Monthly ROI reporting',
-  'Local SEO for Surrey',
+  'Short-form video & social media content',
+  'Landing pages built for Abbotsford leads',
+  'Monthly ROI reporting — leads & revenue',
+  'Local SEO for Abbotsford service areas',
 ];
 
 const faqs = [
   {
-    question: 'How quickly will I see leads in Surrey?',
-    answer: 'Most Surrey businesses see their first leads within 2 weeks of launching Meta Ads with AP Digital.',
+    question: 'How quickly will I get leads as an Abbotsford business?',
+    answer: 'Most Abbotsford businesses see their first qualified leads within 2 weeks of launching. Google Ads targeting "plumber Abbotsford" or "HVAC Abbotsford BC" can produce leads the same week the campaign goes live. Meta Ads typically optimize within 1–2 weeks.',
   },
   {
-    question: 'Do I have to sign a long-term contract?',
-    answer: 'No contracts. We work month-to-month with every client in Surrey and across Metro Vancouver.',
+    question: 'Is there a contract for Abbotsford clients?',
+    answer: 'No contracts. AP Digital works month-to-month with every client in Abbotsford and across the Fraser Valley. We earn your business with results, not lock-in.',
   },
   {
-    question: 'How much does digital marketing cost in Surrey?',
-    answer: 'Most clients start with $500–$1,500/month in ad spend. Our management fee is transparent and quoted upfront.',
+    question: 'How much does digital marketing cost in Abbotsford?',
+    answer: 'Most Abbotsford clients start with $500–$1,500/month in ad spend. Our management fee is quoted transparently upfront and billed separately — no surprises.',
   },
   {
-    question: 'Will Arjun personally manage my account?',
-    answer: 'Yes. Arjun Sharma personally manages every client account at AP Digital. No outsourcing, no junior account managers.',
+    question: 'Who manages my Abbotsford marketing campaign?',
+    answer: 'Arjun Sharma personally manages every AP Digital account. No outsourcing, no junior account managers. When you have a question, you talk directly to the person running your campaign.',
   },
   {
-    question: 'Do you run Google Ads for Surrey businesses?',
-    answer: 'Yes — we run both Google Ads and Meta Ads for Surrey businesses. Which platform we prioritize depends on your business type. For high-intent searches like "plumber Surrey" or "electrician near me," Google Ads typically delivers the best results. For awareness and retargeting — salons, coaches, and health & wellness — Meta Ads often wins. We recommend the right mix after your free strategy call.',
+    question: 'What industries do you serve in Abbotsford?',
+    answer: 'We specialize in four verticals in Abbotsford and the Fraser Valley: trades and home services (plumbers, HVAC, electricians, roofers), hair salons and beauty studios, real estate agents, and coaches and consultants. If you run a local service business in Abbotsford, we have a playbook for your industry.',
   },
   {
-    question: 'What industries do you serve in Surrey?',
-    answer: 'We work with all service-based businesses in Surrey, BC — trades (plumbers, HVAC, electricians, roofers), hair salons & beauty studios, real estate agents, coaches & consultants, restaurants, and health & wellness businesses. If you run a local service business in Surrey, we can build a campaign for you.',
-  },
-  {
-    question: 'How is AP Digital different from other Surrey marketing agencies?',
-    answer: 'The founder, Arjun Sharma, personally manages every single account — no outsourcing, no handing you off to a junior team member. We also work month-to-month with no lock-in contracts, so we earn your business every month by actually delivering results. Most Surrey marketing agencies put you through a sales team, then hand your account to a generalist. We don\'t operate that way.',
+    question: 'Do you also serve Chilliwack and Mission from Abbotsford?',
+    answer: 'Yes. We run campaigns across the Fraser Valley — Abbotsford, Mission, Chilliwack, and surrounding communities. If your service area covers the eastern Fraser Valley, we can build campaigns that target the exact postal codes where your ideal customers live.',
   },
 ];
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    getServiceSchema('Digital Marketing Surrey BC', DESC, '/surrey'),
+    getServiceSchema('Digital Marketing Abbotsford BC', DESC, '/abbotsford'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
-      { name: 'Surrey', url: '/surrey' },
+      { name: 'Abbotsford', url: '/abbotsford' },
     ]),
-    getWebPageSchema(TITLE, DESC, '/surrey'),
+    getWebPageSchema(TITLE, DESC, '/abbotsford'),
     {
       "@type": "LocalBusiness",
-      "@id": "https://ap-digital.ca/surrey",
-      "name": "AP Digital — Surrey Digital Marketing Agency",
+      "@id": "https://ap-digital.ca/abbotsford",
+      "name": "AP Digital — Abbotsford Digital Marketing Agency",
       "description": DESC,
-      "url": "https://ap-digital.ca/surrey",
+      "url": "https://ap-digital.ca/abbotsford",
       "telephone": "+1-778-682-5772",
       "email": "apdigital.core@gmail.com",
       "priceRange": "$$",
@@ -83,15 +79,14 @@ const structuredData = {
         "@type": "PostalAddress",
         "addressLocality": "Vancouver",
         "addressRegion": "BC",
-        "postalCode": "V3Y 0G3",
         "addressCountry": "CA"
       },
       "areaServed": [
-        { "@type": "City", "name": "Surrey" },
-        { "@type": "City", "name": "White Rock" },
-        { "@type": "City", "name": "Delta" },
-        { "@type": "City", "name": "Langley" },
-        { "@type": "City", "name": "Cloverdale" }
+        { "@type": "City", "name": "Abbotsford" },
+        { "@type": "City", "name": "Mission" },
+        { "@type": "City", "name": "Chilliwack" },
+        { "@type": "City", "name": "Clearbrook" },
+        { "@type": "City", "name": "West Abbotsford" }
       ],
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -105,7 +100,7 @@ const structuredData = {
   ]
 };
 
-const Surrey = () => (
+const Abbotsford = () => (
   <>
     <Helmet>
       <title>{TITLE}</title>
@@ -136,14 +131,14 @@ const Surrey = () => (
           <div className="max-w-3xl animate-fade-up">
             <div className="inline-flex items-center gap-2 border border-teal/20 rounded-full px-4 py-1.5 mb-6">
               <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-              <span className="text-teal text-sm font-medium">Serving Surrey & South Fraser, BC</span>
+              <span className="text-teal text-sm font-medium">Serving Abbotsford & the Fraser Valley, BC</span>
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
               Digital Marketing Agency{' '}
-              <span className="text-gradient">Surrey BC</span>
+              <span className="text-gradient">Abbotsford BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. Month-to-month. Managed personally by Arjun Sharma.
+              AP Digital helps Abbotsford and Fraser Valley businesses generate consistent, qualified leads using Meta Ads & Google Ads. No lock-in contracts. Managed personally by founder Arjun Sharma.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
@@ -184,31 +179,31 @@ const Surrey = () => (
       <section className="bg-background py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Who We Help in <span className="text-gradient">Surrey</span>
+            Who We Help in <span className="text-gradient">Abbotsford</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            From South Surrey to Guildford, we generate qualified leads for local businesses across the region.
+            From West Abbotsford to Clearbrook to Mission, we generate qualified leads for Fraser Valley businesses.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Zap className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Trades & Contractors</h3>
-              <p className="text-muted-foreground">Plumbers, HVAC, electricians, and roofers across Surrey & South Fraser getting booked solid with targeted ads.</p>
+              <p className="text-muted-foreground">Plumbers, HVAC techs, electricians, and roofers across Abbotsford & the Fraser Valley capturing job searches from local homeowners.</p>
             </div>
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Star className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="text-muted-foreground">Filling chairs with consistent, reliable bookings for salons throughout Surrey and the surrounding area.</p>
+              <p className="text-muted-foreground">Consistent bookings for Abbotsford salons — reaching the region's large, growing residential base with targeted social media ads.</p>
             </div>
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Target className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Real Estate Agents</h3>
-              <p className="text-muted-foreground">Buyer & seller leads in Surrey's competitive market — targeted campaigns that reach motivated homeowners.</p>
+              <p className="text-muted-foreground">Qualified buyer and seller leads in Abbotsford's growing market — campaigns targeting motivated homeowners in the Fraser Valley's most active communities.</p>
             </div>
             <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
               <Users className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-xl font-bold text-foreground mb-2">Coaches & Consultants</h3>
-              <p className="text-muted-foreground">Attracting ideal clients online and scaling coaching businesses across BC with proven ad strategies.</p>
+              <p className="text-muted-foreground">Growing coaching and consulting businesses in Abbotsford and the Fraser Valley with proven digital ad strategies that attract premium clients.</p>
             </div>
           </div>
         </div>
@@ -221,7 +216,7 @@ const Surrey = () => (
             What's Included
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            Everything your Surrey business needs to generate leads and grow — all managed under one roof.
+            Everything your Abbotsford business needs to generate leads and grow — all managed under one roof.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {included.map((item) => (
@@ -234,74 +229,74 @@ const Surrey = () => (
         </div>
       </section>
 
-      {/* Why Surrey Businesses Are Investing in Paid Ads */}
+      {/* Why Abbotsford Businesses */}
       <section className="bg-background py-20">
         <div className="container-custom max-w-4xl">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Why Surrey Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
+            Why Abbotsford Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            Surrey is one of the fastest-growing cities in Metro Vancouver — and the competition for local customers is only intensifying.
+            The Fraser Valley is one of BC's fastest-growing regions — and competition for local customers is accelerating.
           </p>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              Surrey, BC is no longer just a bedroom community — it's a full economic hub with distinct neighbourhoods each carrying their own commercial energy. Newton has a dense population of service-hungry households. Guildford is a retail and service corridor where competition among trades and beauty businesses is fierce. South Surrey and White Rock attract higher-income demographics actively searching for premium service providers. Cloverdale and Whalley are home to a growing number of small business owners who need a digital marketing agency in Surrey BC that actually understands their local market. Running generic, city-wide campaigns doesn't cut it here — neighbourhood-level targeting is what separates the businesses that get booked solid from those that wonder why their ads aren't working.
+              Abbotsford is BC's third-largest city and the Fraser Valley's commercial hub — and its small business environment has changed dramatically over the past five years. Rapid population growth, new residential developments in West Abbotsford and Auguston, and a surge in young families moving from Metro Vancouver have created enormous demand for local service businesses. The challenge is visibility. When a new resident in Abbotsford needs a plumber, they search Google — not the Yellow Pages. When a homeowner in Clearbrook wants to find a new salon, they browse Instagram, not newspapers. For a digital marketing agency serving Abbotsford BC businesses, the opportunity is clear: the consumer base has grown massively, but many local businesses still rely on word-of-mouth and referrals that can't scale fast enough to capture it.
             </p>
             <p>
-              The shift toward digital-first customer behaviour in Surrey has accelerated dramatically. Surrey small business marketing is no longer optional — it's the primary growth lever. When a homeowner in Guildford needs an HVAC technician, they're not flipping through a directory. They're searching on Google or scrolling Facebook and Instagram. When someone in South Surrey is looking for a new salon, they're clicking on ads they see in their feed. Lead generation in Surrey now happens almost entirely online, and the businesses that invest in Meta Ads and Google Ads are capturing that demand while competitors who rely on word-of-mouth slowly fade. The window to build a dominant local presence before your niche gets saturated is still open — but it won't stay open forever.
+              The competitive landscape in Abbotsford is also shifting rapidly. Trades businesses, salons, and real estate agents that have moved to paid digital advertising are outpacing competitors who haven't. A well-structured Google Ads campaign targeting "HVAC Abbotsford" or "electrician Abbotsford BC" consistently captures the highest-intent searches at the moment of need — generating job leads that referral networks simply cannot match for volume and consistency. Meta Ads on Facebook and Instagram let Abbotsford businesses reach specific demographics and postal codes with offers tailored to their neighbourhood — filling appointment books for salons, generating listing inquiries for realtors, and booking service calls for trades businesses with remarkable efficiency.
             </p>
             <p>
-              What makes paid advertising uniquely powerful for a marketing agency Surrey clients can trust is the precision of targeting. Unlike SEO, which takes months to compound, a well-structured Google Ads or Meta Ads campaign for a Surrey business can generate qualified leads within days of going live. We geo-target specific postal codes in Newton, Guildford, South Surrey, Cloverdale, and Whalley so your ad budget reaches the exact neighbourhoods where your ideal customers live. For trades businesses, this means fewer wasted clicks from outside your service radius. For salons, it means filling chairs with local clients who are actually within driving distance. For realtors, it means reaching motivated buyers and sellers in the specific Surrey submarkets you specialize in — not wasting impressions on people who'll never convert.
+              What makes Abbotsford particularly interesting for paid advertising is the relative lack of saturation compared to Metro Vancouver. The cost-per-click on Google Ads for local service keywords in Abbotsford is often significantly lower than comparable searches in Vancouver or Burnaby — which means your ad budget goes further, your cost-per-lead is lower, and your return on ad spend is higher. This window of relative affordability won't stay open as more Abbotsford businesses discover digital advertising. The businesses that invest now are building a data advantage — audience insights, conversion data, and campaign history — that will compound into a lasting competitive edge in the Fraser Valley market.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Our Surrey Marketing Process */}
+      {/* Process */}
       <section className="bg-charcoal py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
-            Our Surrey Marketing Process
+            Our Abbotsford Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Surrey business generating leads fast — with no guesswork.
+            A clear, proven process that gets your Abbotsford business generating leads fast — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">1</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Free Strategy Call</h3>
-              <p className="text-muted-foreground text-sm">We learn your Surrey market, your competition, and your goals. No cookie-cutter approach — every campaign starts with understanding your specific business.</p>
+              <p className="text-muted-foreground text-sm">We learn your Abbotsford market, service area, competition, and revenue goals before recommending anything.</p>
             </div>
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">2</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Campaign Build</h3>
-              <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Surrey and surrounding areas — Newton, Guildford, South Surrey, Cloverdale, White Rock, and beyond.</p>
+              <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting your Abbotsford and Fraser Valley service area with creatives built for your specific audience.</p>
             </div>
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">3</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Launch & Optimize</h3>
-              <p className="text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Surrey campaign hits its stride as fast as possible.</p>
+              <p className="text-muted-foreground text-sm">Live within 7 days. We optimize daily in the first 2 weeks to make sure your Abbotsford campaign hits its stride fast.</p>
             </div>
             <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
               <div className="font-display text-3xl font-bold text-teal mb-3">4</div>
               <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Scale</h3>
-              <p className="text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates.</p>
+              <p className="text-muted-foreground text-sm">Once leads flow, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Areas We Serve */}
+      {/* Areas Served */}
       <section className="bg-background py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Areas We Serve Near <span className="text-gradient">Surrey</span>
+            Areas We Serve Near <span className="text-gradient">Abbotsford</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
-            Our digital marketing campaigns cover all of Surrey and the surrounding South Fraser region. Whether you're based in Newton or South Surrey, we target your exact service area so every ad dollar is working as hard as possible.
+            Our campaigns cover all of Abbotsford and the surrounding Fraser Valley — including Mission, Chilliwack, and Maple Ridge.
           </p>
           <div className="flex flex-wrap gap-3 justify-center mb-16">
-            {['Newton', 'Guildford', 'South Surrey', 'Cloverdale', 'Whalley', 'White Rock', 'Delta', 'Langley'].map((area) => (
+            {['West Abbotsford', 'Clearbrook', 'Auguston', 'Matsqui', 'Bradner', 'Mission', 'Chilliwack', 'Maple Ridge'].map((area) => (
               <span key={area} className="rounded-full bg-muted px-4 py-2 text-sm text-foreground">
                 {area}
               </span>
@@ -311,17 +306,14 @@ const Surrey = () => (
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
             Also Serving Metro Vancouver
           </h2>
-          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-8">
-            We run campaigns across Metro Vancouver and the Fraser Valley. Click your city for localized information.
-          </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-2xl mx-auto">
             {[
               { city: 'Vancouver', href: '/vancouver' },
+              { city: 'Surrey', href: '/surrey' },
               { city: 'Burnaby', href: '/burnaby' },
-              { city: 'Richmond', href: '/richmond' },
               { city: 'Langley', href: '/langley' },
               { city: 'Coquitlam', href: '/coquitlam' },
-              { city: 'Abbotsford', href: '/abbotsford' },
+              { city: 'Richmond', href: '/richmond' },
             ].map(({ city, href }) => (
               <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
                 <span className="font-medium text-foreground">{city}</span>
@@ -335,10 +327,10 @@ const Surrey = () => (
       <section className="bg-charcoal py-20">
         <div className="container-custom">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
-            Why Surrey Businesses Choose <span className="text-gradient">AP Digital</span>
+            Why Abbotsford Businesses Choose <span className="text-gradient">AP Digital</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
+            Not a big agency with account managers and hand-offs. A focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-card border border-border rounded-xl p-6">
@@ -349,12 +341,12 @@ const Surrey = () => (
             <div className="bg-card border border-border rounded-xl p-6">
               <TrendingUp className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-lg font-bold text-foreground mb-2">No Contracts</h3>
-              <p className="text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
+              <p className="text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by delivering results you can measure.</p>
             </div>
             <div className="bg-card border border-border rounded-xl p-6">
               <Zap className="w-8 h-8 text-teal mb-4" />
               <h3 className="font-display text-lg font-bold text-foreground mb-2">Fast Results</h3>
-              <p className="text-muted-foreground text-sm">Most Surrey clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+              <p className="text-muted-foreground text-sm">Most Abbotsford clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>
@@ -364,7 +356,7 @@ const Surrey = () => (
       <section className="bg-background py-20">
         <div className="container-custom max-w-3xl">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-            Common Questions
+            Common Questions — Abbotsford Businesses
           </h2>
           <Accordion type="single" collapsible>
             {faqs.map((faq, i) => (
@@ -381,17 +373,16 @@ const Surrey = () => (
         </div>
       </section>
 
-      {/* Our Services */}
       <OurServices />
 
       {/* Dark CTA */}
       <section className="bg-near-black py-20 text-center">
         <div className="container-custom max-w-2xl">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Grow Your <span className="text-gradient">Surrey Business?</span>
+            Ready to Grow Your <span className="text-gradient">Abbotsford Business?</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Book a free 20-minute strategy call. We'll show you exactly what a campaign looks like for your business and your budget. No pitch, no pressure.
+            Book a free 20-minute strategy call. We'll show you exactly what a campaign looks like for your business and budget — no pitch, no pressure.
           </p>
           <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
             <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">
@@ -407,5 +398,4 @@ const Surrey = () => (
   </>
 );
 
-export default Surrey;
-
+export default Abbotsford;
