@@ -208,8 +208,30 @@ Deno.serve(async (req) => {
     // Create Supabase client with service role for insert
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    
+
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // DB-backed rate limit by email (defense against spoofed X-Forwarded-For).
+    // Allow at most MAX_SUBMISSIONS by the same email within TIME_WINDOW.
+    const since = new Date(Date.now() - TIME_WINDOW).toISOString();
+    const { count: recentByEmail, error: countError } = await supabase
+      .from("leads")
+      .select("id", { count: "exact", head: true })
+      .eq("email", validation.data.email)
+      .gte("created_at", since);
+
+    if (countError) {
+      console.error("Rate limit check failed:", countError);
+    } else if ((recentByEmail ?? 0) >= MAX_SUBMISSIONS) {
+      console.log(`Email rate limit exceeded for: ${validation.data.email}`);
+      return new Response(
+        JSON.stringify({
+          error: "Too many submissions. Please try again later.",
+          code: "RATE_LIMITED",
+        }),
+        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
     // Insert the lead
     const { data, error } = await supabase
