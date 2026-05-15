@@ -96,12 +96,25 @@ const CoachingMarketing = () => (
           Coaching Marketing BC — Fill Your Calendar
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
-          <p>You've got the skills, the certifications, and the passion to change people's lives. But if your Instagram is inconsistent, your content isn't converting, and you're still relying on word of mouth to fill your roster — you're leaving money on the table. At AP DIGITAL, we build marketing systems specifically for coaches and personal trainers who are ready to scale.</p>
-          <p>We start with your personal brand. In the coaching world, people buy from people they trust. Our content strategy positions you as the go-to expert in your niche through consistent, high-quality short-form video content on Instagram and TikTok. Client transformations, quick tips, behind-the-scenes training — content that builds authority and makes people want to work with you.</p>
-          <p>But great content alone doesn't pay the bills. That's why we pair your organic presence with targeted Facebook and Instagram ad campaigns designed to turn viewers into leads and leads into paying clients. We build landing pages, lead capture funnels, and automated follow-up sequences that nurture prospects until they're ready to commit.</p>
-          <p>Whether you're an online coach looking to scale beyond your local area or an in-person trainer wanting to fill every slot in your schedule, our marketing systems deliver predictable client acquisition month after month. No more feast-or-famine cycles — just steady growth and a full roster.</p>
-          <p>We've helped coaches across Canada go from struggling to find clients to having a waitlist. Your expertise deserves to be seen — let us make that happen.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          You've got the skills. We get you the clients. Funnels, ads, and content that scale your coaching practice without trading more time for money.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-16">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">High-ticket lead funnels</p>
+            <p className="text-sm text-muted-foreground">We build VSL and webinar funnels that attract serious, pre-qualified prospects — not tire-kickers.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Content that builds authority</p>
+            <p className="text-sm text-muted-foreground">Short-form video, email sequences, and social content that make you the obvious choice in your niche.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">No contract, no risk</p>
+            <p className="text-sm text-muted-foreground">Month-to-month. We earn your business every month with results.</p>
+          </div>
         </div>
 
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>

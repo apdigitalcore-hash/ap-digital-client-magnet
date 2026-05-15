@@ -96,12 +96,25 @@ const TradesMarketing = () => (
           Trades Marketing for BC Contractors — Get Leads with Meta Ads
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
-          <p>You're great at what you do — roofing, plumbing, electrical, HVAC, landscaping, or general contracting. But if homeowners in your area can't find you online, they're calling your competitors instead. At AP DIGITAL, we make sure that when someone searches for your services, your business shows up first.</p>
-          <p>We build lead generation campaigns on Google and Facebook that target homeowners actively looking for trades services in your area. When someone searches "electrician near me" or "roof repair in [your city]," your ad appears at the top. When they click, they land on a page designed to get them to call you — not browse and leave.</p>
-          <p>But it's not just about ads. We also optimize your Google Business Profile so you show up in the local map pack, implement review generation strategies that build trust and social proof, and create content that showcases your best work. The result is a complete online presence that makes homeowners confident in choosing you.</p>
-          <p>We understand that trades businesses run on reputation and reliability. That's why every campaign we build is designed to generate real job leads — not tire-kickers. You'll know exactly how many leads came in, what they cost, and which ones turned into paying jobs.</p>
-          <p>Whether you're a one-person operation or a growing crew, our marketing systems scale with you. Stop relying solely on referrals and start building a predictable pipeline of new jobs every month.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          When a pipe bursts, people Google. We make sure they find you first — and that your phone keeps ringing year-round.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-16">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Google Ads for high-intent searches</p>
+            <p className="text-sm text-muted-foreground">Capture people searching 'plumber near me' or 'HVAC Vancouver' right when they're ready to book.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Local SEO that sticks</p>
+            <p className="text-sm text-muted-foreground">We get you into the Google Maps pack — where 40%+ of local clicks go — and keep you there.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">No contract, no risk</p>
+            <p className="text-sm text-muted-foreground">Month-to-month. If the phone isn't ringing more within 30 days, you pay nothing.</p>
+          </div>
         </div>
 
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>

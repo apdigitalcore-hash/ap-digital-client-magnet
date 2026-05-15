@@ -96,12 +96,25 @@ const RealEstateMarketing = () => (
           Real Estate Marketing BC — Leads for Agents &amp; Brokerages
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-16">
-          <p>The real estate market in Canada is more competitive than ever. Buyers and sellers have endless options when choosing an agent — so the one who shows up consistently on social media, runs targeted ads, and builds a recognizable personal brand is the one who wins. At AP DIGITAL, we help real estate agents do exactly that.</p>
-          <p>We build lead generation systems using Facebook and Instagram lead ads that put your services in front of people actively looking to buy or sell in your market. Every lead is captured, qualified, and delivered to your CRM so you can focus on closing deals instead of chasing cold prospects.</p>
-          <p>But leads are only part of the equation. We also build your personal brand through strategic short-form video content — listing tours, market updates, neighbourhood highlights, and behind-the-scenes content that positions you as the trusted local expert. When someone in your area is ready to make a move, your name is the first one that comes to mind.</p>
-          <p>Whether you're a new agent trying to build momentum or an experienced producer looking to scale, our marketing systems are designed to deliver a predictable pipeline of qualified leads every single month. We've helped agents across BC and Canada grow their business with marketing that actually works.</p>
-          <p>Stop competing on price and start competing on presence. Let us build the marketing engine that takes your real estate business to the next level.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          The agent who shows up first wins. We get you in front of buyers and sellers before they call anyone else — with video, ads, and SEO.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-16">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Qualified leads, delivered</p>
+            <p className="text-sm text-muted-foreground">Facebook and Instagram lead ads capture buyers and sellers in your market and push them straight to your CRM.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Build the brand people trust</p>
+            <p className="text-sm text-muted-foreground">Listing tours, market updates, and neighbourhood content that position you as the go-to local expert.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">No contract, no risk</p>
+            <p className="text-sm text-muted-foreground">Month-to-month. Most agents see their first leads within two weeks of launch.</p>
+          </div>
         </div>
 
         <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>

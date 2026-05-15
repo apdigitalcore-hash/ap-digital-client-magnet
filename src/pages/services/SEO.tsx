@@ -89,13 +89,25 @@ const SEO = () => (
           SEO for Vancouver Small Business — Get Found on Google
         </h1>
 
-        <div className="prose prose-lg max-w-none text-muted-foreground space-y-6 mb-12">
-          <p>When someone searches for the services you offer, are they finding you — or your competitors? If you're not on the first page of Google, you're invisible to the customers who are ready to buy right now.</p>
-          <p>At AP DIGITAL, we implement proven SEO strategies that move your business up the rankings and keep you there. From technical optimizations and keyword targeting to local SEO and content strategy, we cover every angle that Google cares about.</p>
-          <p>Unlike paid ads, SEO builds long-term equity for your business. Every page we optimize, every backlink we earn, and every piece of content we create compounds over time — giving you a growing stream of organic traffic that doesn't cost you per click.</p>
-          <p>We focus on the keywords that actually drive revenue for your business, not vanity rankings. You'll see exactly where you rank, how much traffic you're getting, and how it's converting — with transparent monthly reports and a clear roadmap for growth.</p>
-          <p>Local SEO is the single highest-ROI marketing investment for any Metro Vancouver small business. When someone in Surrey searches "hair salon near me" or a homeowner in Burnaby types "roofing contractor Burnaby," Google's local pack — the map and three businesses at the top of the page — captures more than 40% of all clicks. Getting into that pack is where we focus most of our local SEO work. We optimize your Google Business Profile with the right categories, service areas, photos, posts, and review strategy, then build local citations, drive authentic reviews, and earn links from Vancouver-based websites to cement your authority in the eyes of Google.</p>
-          <p>On-page and technical SEO is where most agencies cut corners — and where we go deep. We audit your site for crawl errors, broken links, duplicate content, thin pages, slow load times, and mobile usability issues. We rewrite title tags and meta descriptions to match actual search intent, structure your headings for both humans and Google, implement schema markup so your pages show up as rich results, and optimize internal linking so authority flows to your most important pages. This technical foundation is what separates sites that rank from sites that sit on page three.</p>
+        {/* Short intro */}
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Ranking on Google isn't luck — it's a system. We build it for you, from technical foundations to the content that pulls in buyers ready to act.
+        </p>
+
+        {/* 3-column why strip */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-12">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Google Maps pack priority</p>
+            <p className="text-sm text-muted-foreground">We get you into the local 3-pack where 40%+ of clicks go — and keep you there with GBP optimization, reviews, and local citations.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">On-page + technical done right</p>
+            <p className="text-sm text-muted-foreground">Title tags, schema, site speed, crawl health — the technical details most agencies skip that determine whether you rank.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">SEO that compounds</p>
+            <p className="text-sm text-muted-foreground">Unlike ads, every page we optimize keeps earning traffic. Month 6 costs the same as month 1 — results keep growing.</p>
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
