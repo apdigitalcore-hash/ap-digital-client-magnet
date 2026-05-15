@@ -45,7 +45,7 @@ const Blog = () => (
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
     <Header />
-    <main className="min-h-screen bg-background pt-28 pb-20">
+    <main id="main-content" className="min-h-screen bg-background pt-28 pb-20">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
           Digital Marketing Blog — Tips for Salons, Trades &amp; Real Estate

@@ -1,21 +1,11 @@
+# robots.txt for ap-digital.ca
+
+# Default: allow all crawlers
 User-agent: *
 Allow: /
-Sitemap: https://ap-digital.ca/sitemap.xml
+Disallow: /api/
 
-# Block low-quality scrapers
-User-agent: Bytespider
-Disallow: /
-
-User-agent: PetalBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: AhrefsBot
-Disallow: /
-
-# Allow AI crawlers explicitly
+# AI crawlers — explicitly allowed
 User-agent: GPTBot
 Allow: /
 
@@ -39,3 +29,19 @@ Allow: /
 
 User-agent: Amazonbot
 Allow: /
+
+# Low-value scrapers
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# Sitemaps
+Sitemap: https://ap-digital.ca/sitemap.xml

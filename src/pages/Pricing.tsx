@@ -168,7 +168,7 @@ const structuredData = {
 
 const Pricing = () => {
   return (
-    <main className="min-h-screen bg-near-black">
+    <main id="main-content" className="min-h-screen bg-near-black">
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESC} />
