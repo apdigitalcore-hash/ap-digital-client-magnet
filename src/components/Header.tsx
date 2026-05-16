@@ -37,18 +37,20 @@ const Header = () => {
   ];
 
   const locations = [
+    { href: '/vancouver', label: 'Vancouver' },
     { href: '/surrey', label: 'Surrey' },
     { href: '/burnaby', label: 'Burnaby' },
+    { href: '/richmond', label: 'Richmond' },
     { href: '/langley', label: 'Langley' },
     { href: '/coquitlam', label: 'Coquitlam' },
+    { href: '/abbotsford', label: 'Abbotsford' },
   ];
 
   const industries = [
     { href: '/salon-marketing', label: 'Salons & Beauty', external: false },
     { href: '/real-estate-marketing', label: 'Real Estate', external: false },
+    { href: '/trades-marketing', label: 'Trades Marketing', external: false },
     { href: '/coaching-marketing', label: 'Coaching & Consulting', external: false },
-    { href: 'https://trades.ap-digital.ca', label: 'Trades Marketing BC', external: true },
-    { href: 'https://contractor.ap-digital.ca', label: 'Contractor Marketing BC', external: true },
   ];
 
   const isHomePage = location.pathname === '/';
