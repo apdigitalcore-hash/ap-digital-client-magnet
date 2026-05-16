@@ -161,6 +161,15 @@ const Header = () => {
             </Link>
 
             <Link
+              to="/case-studies"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              Results
+            </Link>
+
+            <Link
               to="/pricing"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
@@ -237,6 +246,14 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Blog
+                </Link>
+
+                <Link
+                  to="/case-studies"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Results
                 </Link>
 
                 <Link

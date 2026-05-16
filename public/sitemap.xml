@@ -25,6 +25,9 @@
   <url><loc>https://ap-digital.ca/langley</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-05-15</lastmod></url>
   <url><loc>https://ap-digital.ca/coquitlam</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-05-15</lastmod></url>
   <url><loc>https://ap-digital.ca/abbotsford</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-05-15</lastmod></url>
+  <!-- Conversion pages -->
+  <url><loc>https://ap-digital.ca/case-studies</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-05-16</lastmod></url>
+  <url><loc>https://ap-digital.ca/how-to-choose-a-marketing-agency-vancouver</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-05-16</lastmod></url>
   <!-- Blog index -->
   <url><loc>https://ap-digital.ca/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq><lastmod>2026-05-15</lastmod></url>
   <!-- Blog posts -->
