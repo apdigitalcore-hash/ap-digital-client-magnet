@@ -15,15 +15,19 @@ const Footer = () => {
 
   const company = [
     { label: 'Home', href: '/' },
-    { label: 'Pricing', href: '/pricing' },
     { label: 'About', href: '/about' },
+    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Pricing', href: '/pricing' },
     { label: 'Contact', href: '/contact' },
   ];
 
   const nichePages = [
-    { label: 'Trades Marketing BC', href: 'https://trades.ap-digital.ca' },
-    { label: 'Contractor Marketing BC', href: 'https://contractor.ap-digital.ca' },
-    { label: 'Coaching Marketing BC', href: 'https://coach.ap-digital.ca' },
+    { label: 'Salon Marketing', href: '/salon-marketing' },
+    { label: 'Trades Marketing', href: '/trades-marketing' },
+    { label: 'Real Estate Marketing', href: '/real-estate-marketing' },
+    { label: 'Coaching Marketing', href: '/coaching-marketing' },
+    { label: 'Agency Hiring Guide', href: '/how-to-choose-a-marketing-agency-vancouver' },
   ];
 
   const legal = [
@@ -116,18 +120,16 @@ const Footer = () => {
 
           {/* Niche Pages */}
           <div>
-            <h4 className="font-semibold text-primary-foreground mb-6">Industry Pages</h4>
+            <h4 className="font-semibold text-primary-foreground mb-6">Industries</h4>
             <ul className="space-y-3">
               {nichePages.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to={link.href}
                     className="text-gray-400 hover:text-teal transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
