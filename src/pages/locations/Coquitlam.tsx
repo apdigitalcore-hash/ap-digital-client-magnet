@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Coquitlam BC | AP Digital';
-const DESC = 'AP Digital helps Coquitlam businesses generate leads. Salons, trades, realtors & coaches. Meta Ads & Google Ads. Month-to-month.';
+const TITLE = 'Coquitlam Digital Marketing Agency & Services | AP Digital BC';
+const DESC = 'Coquitlam digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.';
 const CANONICAL = 'https://ap-digital.ca/coquitlam';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Richmond BC | AP Digital';
-const DESC = 'AP Digital helps Richmond BC businesses get more leads. Google Ads, Meta Ads & social media for salons, trades, realtors & coaches. Month-to-month, no contracts.';
+const TITLE = 'Richmond Digital Marketing Agency & Services | AP Digital BC';
+const DESC = 'Richmond digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches in Richmond BC. 5-10x ROAS.';
 const CANONICAL = 'https://ap-digital.ca/richmond';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

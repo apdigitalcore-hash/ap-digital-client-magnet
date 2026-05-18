@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Abbotsford BC | AP Digital';
-const DESC = 'AP Digital helps Abbotsford businesses get more leads. Google Ads & Meta Ads for BC salons, trades, realtors & coaches. Month-to-month, no contracts.';
+const TITLE = 'Abbotsford Digital Marketing Agency & Services | AP Digital BC';
+const DESC = 'Abbotsford digital marketing agency offering Google Ads, Meta Ads & SEO services for Fraser Valley businesses. 5-10x ROAS. From $500/mo.';
 const CANONICAL = 'https://ap-digital.ca/abbotsford';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

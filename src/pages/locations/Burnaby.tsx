@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Burnaby BC | AP Digital';
-const DESC = 'AP Digital helps Burnaby businesses get more leads. Salons, trades, realtors & coaches. Meta Ads & Google Ads. Month-to-month.';
+const TITLE = 'Burnaby Digital Marketing Agency & Services | AP Digital BC';
+const DESC = 'Burnaby digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.';
 const CANONICAL = 'https://ap-digital.ca/burnaby';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

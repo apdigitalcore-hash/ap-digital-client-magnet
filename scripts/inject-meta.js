@@ -365,8 +365,8 @@ const staticRoutes = [
   },
   {
     path: 'surrey',
-    title: 'Digital Marketing Agency Surrey BC | Leads for Local Business',
-    description: 'AP Digital helps Surrey salons, trades, realtors & coaches get consistent leads with Meta & Google Ads. Month-to-month. No contracts.',
+    title: 'Surrey Digital Marketing Agency & Services | AP Digital BC',
+    description: 'Surrey digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -400,8 +400,8 @@ const staticRoutes = [
   },
   {
     path: 'burnaby',
-    title: 'Digital Marketing Agency Burnaby BC | Leads for Local Business',
-    description: 'AP Digital helps Burnaby salons, trades, realtors & coaches get more leads with Meta & Google Ads. Month-to-month. No contracts.',
+    title: 'Burnaby Digital Marketing Agency & Services | AP Digital BC',
+    description: 'Burnaby digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -422,8 +422,8 @@ const staticRoutes = [
   },
   {
     path: 'langley',
-    title: 'Digital Marketing Agency Langley BC | Leads for Local Business',
-    description: 'AP Digital helps Langley salons, trades, realtors & coaches get predictable leads with Meta & Google Ads. Month-to-month. No contracts.',
+    title: 'Langley Digital Marketing Agency & Services | AP Digital BC',
+    description: 'Langley digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -444,8 +444,8 @@ const staticRoutes = [
   },
   {
     path: 'coquitlam',
-    title: 'Digital Marketing Agency Coquitlam BC | Leads for Local Business',
-    description: 'AP Digital helps Coquitlam salons, trades, realtors & coaches generate more leads with Meta & Google Ads. Month-to-month. No contracts.',
+    title: 'Coquitlam Digital Marketing Agency & Services | AP Digital BC',
+    description: 'Coquitlam digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -466,8 +466,8 @@ const staticRoutes = [
   },
   {
     path: 'vancouver',
-    title: 'Digital Marketing Agency Vancouver BC | AP Digital',
-    description: 'AP Digital is a Vancouver digital marketing agency. Google Ads, Meta Ads & social media for BC salons, trades, realtors & coaches. Month-to-month. No contracts.',
+    title: 'Vancouver Digital Marketing Agency & Services | AP Digital',
+    description: 'Vancouver digital marketing agency offering Google Ads, Meta Ads, SEO & web design services for salons, trades, realtors & coaches. 5-10x ROAS.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -512,8 +512,8 @@ const staticRoutes = [
   },
   {
     path: 'richmond',
-    title: 'Digital Marketing Agency Richmond BC | AP Digital',
-    description: 'AP Digital helps Richmond BC businesses get more leads. Google Ads, Meta Ads & social media for salons, trades, realtors & coaches. Month-to-month, no contracts.',
+    title: 'Richmond Digital Marketing Agency & Services | AP Digital BC',
+    description: 'Richmond digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches in Richmond BC. 5-10x ROAS.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -538,8 +538,8 @@ const staticRoutes = [
   },
   {
     path: 'abbotsford',
-    title: 'Digital Marketing Agency Abbotsford BC | AP Digital',
-    description: 'AP Digital helps Abbotsford businesses get more leads. Google Ads & Meta Ads for BC salons, trades, realtors & coaches. Month-to-month, no contracts.',
+    title: 'Abbotsford Digital Marketing Agency & Services | AP Digital BC',
+    description: 'Abbotsford digital marketing agency offering Google Ads, Meta Ads & SEO services for Fraser Valley businesses. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
       "@graph": [

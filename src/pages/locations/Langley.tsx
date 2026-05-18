@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Digital Marketing Agency Langley BC | AP Digital';
-const DESC = 'AP Digital helps Langley businesses get predictable leads. Salons, trades, real estate & coaches. No contracts.';
+const TITLE = 'Langley Digital Marketing Agency & Services | AP Digital BC';
+const DESC = 'Langley digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.';
 const CANONICAL = 'https://ap-digital.ca/langley';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
