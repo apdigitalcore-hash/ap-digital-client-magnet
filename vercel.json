@@ -21,6 +21,7 @@
     { "source": "/ai-plugin.json", "destination": "/api/ai-plugin" },
     { "source": "/.well-known/ai-plugin.json", "destination": "/api/ai-plugin" },
     { "source": "/llms-full.txt", "destination": "/api/llms-full" },
+    { "source": "/submit-contact", "destination": "/api/contact" },
     { "source": "/trades-marketing", "destination": "/trades-marketing.html" },
     { "source": "/salon-marketing", "destination": "/salon-marketing.html" },
     { "source": "/real-estate-marketing", "destination": "/real-estate-marketing.html" },
