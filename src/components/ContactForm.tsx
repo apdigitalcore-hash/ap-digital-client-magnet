@@ -98,13 +98,10 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Silent rejection for bots - don't reveal detection
-    if (isBot()) {
-      // Fake success to not alert bots
-      setIsSubmitted(true);
-      return;
-    }
+
+    // Note: honeypot bot detection removed because browser autofill (Safari
+    // on iOS in particular) was filling the hidden URL field and silently
+    // rejecting real users. Spam protection is handled server-side.
 
     if (!gdprConsent) {
       toast({
