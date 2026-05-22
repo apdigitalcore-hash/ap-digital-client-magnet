@@ -126,43 +126,27 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    try {
-      // Post directly to Vercel domain — bypasses Cloudflare proxy which
-      // returns 404 on /submit-contact and /api/ paths on ap-digital.ca.
-      const response = await fetch('https://ap-digital-client-magnet.vercel.app/submit-contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: validatedData.name,
-          email: validatedData.email,
-          business: validatedData.business,
-          phone: validatedData.phone || '',
-          niche: validatedData.niche,
-        }),
-      });
+    // Redirect to Calendly with name and email pre-filled. Calendly handles
+    // the booking, email confirmations to both parties, calendar invites,
+    // and reminders automatically — no backend, no email service needed.
+    const nicheLabels: Record<string, string> = {
+      'salon': 'Salon / Beauty',
+      'real-estate': 'Real Estate',
+      'trades': 'Trades / Contractors',
+      'coaching': 'Coaching / Consulting',
+      'other': 'Other',
+    };
 
-      const result = await response.json().catch(() => ({}));
+    const params = new URLSearchParams({
+      name: validatedData.name,
+      email: validatedData.email,
+      a1: validatedData.business,
+      a2: validatedData.phone || '',
+      a3: nicheLabels[validatedData.niche] || validatedData.niche,
+    });
 
-      if (!response.ok) {
-        console.error('Contact form error:', response.status, result);
-        throw new Error(result?.error || `HTTP ${response.status}`);
-      }
-
-      setIsSubmitted(true);
-      toast({
-        title: "Success!",
-        description: "We'll be in touch within 24 hours.",
-      });
-    } catch (error) {
-      console.error('Contact form submission failed:', error);
-      toast({
-        title: "[v2] Submission failed",
-        description: error instanceof Error ? `${error.message}` : "Email us directly: apdigital.core@gmail.com",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    const calendlyUrl = `https://calendly.com/apdigital-core/30min?${params.toString()}`;
+    window.location.href = calendlyUrl;
   };
 
   if (isSubmitted) {
