@@ -130,7 +130,9 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/submit-contact', {
+      // Post directly to Vercel domain — bypasses Cloudflare proxy which
+      // returns 404 on /submit-contact and /api/ paths on ap-digital.ca.
+      const response = await fetch('https://ap-digital-client-magnet.vercel.app/submit-contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
