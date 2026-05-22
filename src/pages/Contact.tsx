@@ -1,4 +1,4 @@
-import { CheckCircle, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { CheckCircle, Phone, Mail, MapPin, Clock, Calendar, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
@@ -113,7 +113,7 @@ const Contact = () => {
                 This isn't a generic sales call. We'll take a real look at your business and give you actionable insights — whether you work with us or not.
               </p>
 
-              <ul className="space-y-4 mb-12">
+              <ul className="space-y-4 mb-8">
                 {auditIncludes.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
@@ -121,6 +121,25 @@ const Contact = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Direct Calendly link — fastest path, no form needed */}
+              <a
+                href="https://calendly.com/apdigital-core/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-between gap-4 bg-teal/10 hover:bg-teal/20 border border-teal/30 hover:border-teal/50 p-5 rounded-xl mb-12 transition-all"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-teal flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="font-display font-semibold text-foreground">Book directly on Calendly</div>
+                    <div className="text-sm text-muted-foreground">Skip the form — pick a time in 30 seconds</div>
+                  </div>
+                </div>
+                <ArrowRight className="w-5 h-5 text-teal flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+              </a>
 
               <div className="bg-secondary p-6 rounded-xl">
                 <h3 className="font-display text-lg font-semibold text-foreground mb-4">
