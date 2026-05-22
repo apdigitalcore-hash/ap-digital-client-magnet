@@ -156,8 +156,8 @@ const ContactForm = () => {
     } catch (error) {
       console.error('Contact form submission failed:', error);
       toast({
-        title: "Something went wrong",
-        description: error instanceof Error ? error.message : "Please email us directly at apdigital.core@gmail.com.",
+        title: "[v2] Submission failed",
+        description: error instanceof Error ? `${error.message}` : "Email us directly: apdigital.core@gmail.com",
         variant: "destructive",
       });
     } finally {
