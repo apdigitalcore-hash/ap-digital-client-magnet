@@ -28,7 +28,7 @@ function getCorsHeaders(origin: string | null): Record<string, string> {
 
 // In-memory rate limiting (resets on function restart, but provides basic protection)
 const rateLimits = new Map<string, number[]>();
-const MAX_SUBMISSIONS = 3; // max submissions per time window
+const MAX_SUBMISSIONS = 30; // max submissions per time window
 const TIME_WINDOW = 3600000; // 1 hour in milliseconds
 
 // Allowed niche values
@@ -259,8 +259,13 @@ Deno.serve(async (req) => {
 
     console.log(`Lead submitted successfully: ${data.id}`);
 
-    // Send email notification via Resend (non-blocking - lead is already saved)
+    // Send email notification via Resend. Surface the outcome in the
+    // response so the frontend / logs can see whether email actually sent
+    // (previously this was non-blocking and silently swallowed errors).
+    let emailStatus: "sent" | "skipped" | "failed" = "skipped";
+    let emailError: string | null = null;
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    console.log(`[submit-lead] RESEND_API_KEY present: ${resendApiKey ? "yes" : "no"}`);
     if (resendApiKey) {
       try {
         const escapeHtml = (s: string) =>
@@ -312,18 +317,25 @@ Deno.serve(async (req) => {
         if (!emailResponse.ok) {
           const errorText = await emailResponse.text();
           console.error("Resend email failed:", emailResponse.status, errorText);
+          emailStatus = "failed";
+          emailError = `Resend ${emailResponse.status}: ${errorText}`;
         } else {
-          console.log(`Email notification sent for lead ${data.id}`);
+          const resendResult = await emailResponse.json();
+          console.log(`Email notification sent for lead ${data.id}: ${JSON.stringify(resendResult)}`);
+          emailStatus = "sent";
         }
-      } catch (emailError) {
-        console.error("Email send error:", emailError);
+      } catch (err) {
+        console.error("Email send error:", err);
+        emailStatus = "failed";
+        emailError = err instanceof Error ? err.message : String(err);
       }
     } else {
       console.warn("RESEND_API_KEY not set — skipping email notification");
+      emailError = "RESEND_API_KEY not configured in Supabase secrets";
     }
 
     return new Response(
-      JSON.stringify({ success: true, id: data.id }),
+      JSON.stringify({ success: true, id: data.id, emailStatus, emailError }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
 
