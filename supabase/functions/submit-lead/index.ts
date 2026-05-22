@@ -283,7 +283,7 @@ Deno.serve(async (req) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            from: "AP Digital Leads <onboarding@resend.dev>",
+            from: "AP Digital Leads <leads@ap-digital.ca>",
             to: ["apdigital.core@gmail.com"],
             reply_to: lead.email,
             subject: `New Lead: ${lead.name} — ${lead.business}`,
