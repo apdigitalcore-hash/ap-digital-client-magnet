@@ -11,9 +11,6 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import AIChat from "./components/AIChat";
 
-// Site-wide chat assistant — eagerly loaded so the launcher button is on
-// every page from the first paint.
-import ChatWidget from "./components/ChatWidget";
 
 // Lazy load all other pages — loaded on demand
 const Contact = lazy(() => import("./pages/Contact"));
@@ -100,7 +97,6 @@ const App = () => (
             </Routes>
           </Suspense>
           <AIChat />
-          <ChatWidget />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
