@@ -1,7 +1,6 @@
 import { CheckCircle, Phone, Mail, MapPin, Clock, Calendar, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import ContactForm from '@/components/ContactForm';
 import { Helmet } from 'react-helmet-async';
 import { organizationSchema, getFAQSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 
@@ -103,77 +102,71 @@ const Contact = () => {
       {/* Main Content */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Left Column - Info */}
-            <div>
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">
-                What's Included in Your Free Audit
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                This isn't a generic sales call. We'll take a real look at your business and give you actionable insights — whether you work with us or not.
-              </p>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">
+              What's Included in Your Free Audit
+            </h2>
+            <p className="text-muted-foreground mb-10 text-center max-w-2xl mx-auto">
+              This isn't a generic sales call. We'll take a real look at your business and give you actionable insights — whether you work with us or not.
+            </p>
 
-              <ul className="space-y-4 mb-8">
-                {auditIncludes.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
-                    <span className="text-foreground">{item}</span>
-                  </li>
-                ))}
-              </ul>
+            <ul className="grid sm:grid-cols-2 gap-4 mb-12">
+              {auditIncludes.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-teal flex-shrink-0 mt-0.5" />
+                  <span className="text-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
 
-              {/* Direct Calendly link — fastest path, no form needed */}
-              <a
-                href="https://calendly.com/apdigital-core/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-4 bg-teal/10 hover:bg-teal/20 border border-teal/30 hover:border-teal/50 p-5 rounded-xl mb-12 transition-all"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-teal flex items-center justify-center flex-shrink-0">
-                    <Calendar className="w-5 h-5 text-primary-foreground" />
+            {/* Primary CTA — direct booking via Calendly */}
+            <a
+              href="https://calendly.com/apdigital-core/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-card border-2 border-teal hover:border-teal/80 p-8 md:p-10 rounded-2xl mb-12 shadow-custom-lg hover:shadow-xl transition-all"
+            >
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <div className="w-16 h-16 rounded-2xl bg-teal flex items-center justify-center flex-shrink-0">
+                  <Calendar className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <div className="flex-1">
+                  <div className="font-display text-xl md:text-2xl font-bold text-foreground mb-1">
+                    Book Your Free Strategy Call
                   </div>
-                  <div>
-                    <div className="font-display font-semibold text-foreground">Book directly on Calendly</div>
-                    <div className="text-sm text-muted-foreground">Skip the form — pick a time in 30 seconds</div>
+                  <div className="text-muted-foreground">
+                    Pick a time that works — 30 minutes, no obligation. Confirmation emails sent automatically.
                   </div>
                 </div>
-                <ArrowRight className="w-5 h-5 text-teal flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-              </a>
-
-              <div className="bg-secondary p-6 rounded-xl">
-                <h3 className="font-display text-lg font-semibold text-foreground mb-4">
-                  Contact Information
-                </h3>
-                <div className="space-y-4">
-                  {contactInfo.map((info) => (
-                    <div key={info.label} className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center">
-                        <info.icon className="w-5 h-5 text-teal" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-muted-foreground">{info.label}</div>
-                        {info.href ? (
-                          <a href={info.href} className="text-foreground font-medium hover:text-teal transition-colors">
-                            {info.value}
-                          </a>
-                        ) : (
-                          <span className="text-foreground font-medium">{info.value}</span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                <div className="flex items-center gap-2 text-teal font-semibold group-hover:translate-x-1 transition-transform">
+                  <span>Open Calendar</span>
+                  <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
-            </div>
+            </a>
 
-            {/* Right Column - Form */}
-            <div>
-              <div className="bg-card p-8 rounded-2xl border border-border shadow-custom-lg">
-                <h3 className="font-display text-xl font-bold text-foreground mb-6">
-                  Request Your Free Audit
-                </h3>
-                <ContactForm />
+            <div className="bg-secondary p-6 md:p-8 rounded-xl">
+              <h3 className="font-display text-lg font-semibold text-foreground mb-6 text-center">
+                Or reach out directly
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {contactInfo.map((info) => (
+                  <div key={info.label} className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center flex-shrink-0">
+                      <info.icon className="w-5 h-5 text-teal" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-sm text-muted-foreground">{info.label}</div>
+                      {info.href ? (
+                        <a href={info.href} className="text-foreground font-medium hover:text-teal transition-colors break-words">
+                          {info.value}
+                        </a>
+                      ) : (
+                        <span className="text-foreground font-medium">{info.value}</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
