@@ -5,12 +5,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    { label: 'Paid Ads', href: '/#service-paid-ads' },
-    { label: 'Content Creation', href: '/#service-content-creation' },
-    { label: 'Web Design', href: '/#service-web-design' },
-    { label: 'SEO', href: '/#service-seo' },
-    { label: 'Social Media', href: '/#service-social-media' },
-    { label: 'Lead Generation', href: '/#service-lead-gen' },
+    { label: 'Paid Ads', href: '/services/paid-ads' },
+    { label: 'Content Creation', href: '/services/content-creation' },
+    { label: 'Web Design', href: '/services/web-design' },
+    { label: 'SEO', href: '/services/seo' },
+    { label: 'Social Media', href: '/services/social-media' },
+    { label: 'Lead Generation', href: '/services/lead-generation' },
   ];
 
   const company = [
@@ -43,7 +43,7 @@ const Footer = () => {
     },
     {
       icon: Linkedin,
-      href: 'https://www.linkedin.com/company/ap-digitalmarketing/',
+      href: 'https://www.linkedin.com/company/110553927/',
       label: 'LinkedIn'
     }
   ];

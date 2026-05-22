@@ -25,6 +25,7 @@ import {
   getWebPageSchema,
   getPersonSchema,
   getFAQSchema,
+  apFounderSchema,
 } from '@/lib/structuredData';
 
 const TITLE = 'About AP Digital | Vancouver Marketing Agency';
@@ -63,6 +64,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     organizationSchema,
+    apFounderSchema,
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'About', url: '/about' },
@@ -75,12 +77,13 @@ const structuredData = {
       url: '/about',
       sameAs: [
         'https://www.instagram.com/theapdigital/',
-        'https://www.linkedin.com/company/apdigital',
+        'https://www.linkedin.com/company/110553927/',
       ],
     }),
-    getFAQSchema(faqs),
   ]
 };
+
+const faqSchema = { "@context": "https://schema.org", ...getFAQSchema(faqs) };
 
 const About = () => {
   const differentiators = [
@@ -155,6 +158,7 @@ const About = () => {
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <Header />
@@ -320,7 +324,7 @@ const About = () => {
         <section className="container-custom py-16 md:py-20">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Cities We Serve</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
-            AP Digital works with small businesses across Metro Vancouver and the Fraser Valley. Click your city for localized information.
+            AP Digital works with small businesses across Metro Vancouver and the Fraser Valley — including Surrey, Burnaby, Langley, Coquitlam, Port Coquitlam, Maple Ridge, New Westminster, and the City of Vancouver.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {[

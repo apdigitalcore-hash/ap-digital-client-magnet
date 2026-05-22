@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,7 +13,6 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
-  const location = useLocation();
 
   const toggleSection = (section: string) => {
     setOpenSection(prev => prev === section ? null : section);
@@ -54,9 +53,16 @@ const Header = () => {
     { href: '/how-to-choose-a-marketing-agency-vancouver', label: 'Agency Hiring Guide', external: false },
   ];
 
-  const isHomePage = location.pathname === '/';
+  // Every page hero on this site is dark (homepage = charcoal + diamond,
+  // service pages = dark backgrounds). At the top of any page the header
+  // is transparent and sits over a dark surface, so it wants LIGHT chrome
+  // (white text). Once the user scrolls past the hero, the header flips to
+  // bg-card/95 (near-white) and chrome flips to DARK (navy text) for
+  // contrast. So useDarkChrome is simply "are we scrolled".
+  const useDarkChrome = isScrolled;
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
@@ -73,18 +79,20 @@ const Header = () => {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <div className={`font-display font-bold text-xl md:text-2xl transition-colors duration-300 ${
-              isScrolled ? 'text-primary' : 'text-primary-foreground'
+              useDarkChrome ? 'text-primary' : 'text-primary-foreground'
             }`}>
               <span className="text-teal">AP</span> DIGITAL
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation — appears at lg+ (≥1024px). At md (768px tablet)
+              the full nav + 6 dropdown items + CTA crowd the bar and clip the
+              "Book Free Call" button, so tablets get the mobile menu. */}
+          <nav className="hidden lg:flex items-center gap-6">
             <Link
               to="/"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
               }`}
             >
               Home
@@ -92,7 +100,7 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
               }`}>
                 Services <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
@@ -109,7 +117,7 @@ const Header = () => {
 
             <DropdownMenu>
               <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
               }`}>
                 Industries <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
@@ -130,25 +138,19 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}>
-                Locations <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="w-48">
-                {locations.map((loc) => (
-                  <DropdownMenuItem key={loc.href} asChild>
-                    <Link to={loc.href} className="cursor-pointer">{loc.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link
+              to="/pricing"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              Pricing
+            </Link>
 
             <Link
               to="/about"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
               }`}
             >
               About
@@ -157,7 +159,7 @@ const Header = () => {
             <Link
               to="/blog"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
               }`}
             >
               Blog
@@ -184,7 +186,7 @@ const Header = () => {
             <a
               href="/#digital-arsenal"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal flex items-center gap-1.5 ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
               }`}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
@@ -194,7 +196,7 @@ const Header = () => {
             <Link
               to="/contact"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
               }`}
             >
               Contact
@@ -202,7 +204,7 @@ const Header = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button variant="hero" size="default" asChild>
               <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">Book Free Call</a>
             </Button>
@@ -210,8 +212,8 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden p-2 transition-colors ${
-              isScrolled ? 'text-foreground' : 'text-primary-foreground'
+            className={`lg:hidden p-2 transition-colors ${
+              useDarkChrome ? 'text-foreground' : 'text-primary-foreground'
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
@@ -219,11 +221,20 @@ const Header = () => {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+      </div>
+    </header>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 top-[57px] bg-card z-40 overflow-y-auto animate-fade-in">
-            <nav className="flex flex-col pb-8">
+    {/* Mobile Menu — rendered as a SIBLING of <header>, not nested inside.
+        Reason: when scrolled, the header gets `backdrop-blur-md` which
+        creates a stacking context (and on mobile Safari, can also clip
+        fixed descendants to its containing block). Hosting the menu inside
+        the blurred header caused the menu to render but stay trapped
+        within the header's tiny scrolled bounds, so tapping the hamburger
+        appeared to do nothing. As a sibling of <header> the menu's `fixed`
+        positioning is unambiguously relative to the viewport. */}
+    {isMobileMenuOpen && (
+      <div className="lg:hidden fixed inset-0 top-[57px] bg-card z-[45] overflow-y-auto animate-fade-in">
+        <nav className="flex flex-col pb-8">
 
               {/* Primary links */}
               <div className="px-4 pt-4 pb-2 space-y-1">
@@ -233,6 +244,14 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
+                </Link>
+
+                <Link
+                  to="/pricing"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
                 </Link>
 
                 <Link
@@ -392,11 +411,10 @@ const Header = () => {
                 </Button>
               </div>
 
-            </nav>
-          </div>
-        )}
+        </nav>
       </div>
-    </header>
+    )}
+    </>
   );
 };
 

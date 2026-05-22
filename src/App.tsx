@@ -11,8 +11,15 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import AIChat from "./components/AIChat";
 
+// Site-wide chat assistant — eagerly loaded so the launcher button is on
+// every page from the first paint.
+import ChatWidget from "./components/ChatWidget";
+
 // Lazy load all other pages — loaded on demand
 const Contact = lazy(() => import("./pages/Contact"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Benchmarks = lazy(() => import("./pages/Benchmarks"));
+const ChannelFramework = lazy(() => import("./pages/ChannelFramework"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const PaidAds = lazy(() => import("./pages/services/PaidAds"));
@@ -38,6 +45,7 @@ const Abbotsford = lazy(() => import("./pages/locations/Abbotsford"));
 const PricingPage = lazy(() => import("./pages/Pricing"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const HiringGuide = lazy(() => import("./pages/HiringGuide"));
+const ThankYou = lazy(() => import("./pages/ThankYou"));
 
 const queryClient = new QueryClient();
 
@@ -58,6 +66,9 @@ const App = () => (
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/benchmarks" element={<Benchmarks />} />
+              <Route path="/channel-selection-framework" element={<ChannelFramework />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/services/paid-ads" element={<PaidAds />} />
@@ -83,11 +94,13 @@ const App = () => (
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
+              <Route path="/thank-you" element={<ThankYou />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
           <AIChat />
+          <ChatWidget />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
