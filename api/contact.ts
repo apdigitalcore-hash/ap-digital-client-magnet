@@ -41,6 +41,8 @@ function jsonResponse(body: unknown, status: number) {
 }
 
 export default async function handler(req: Request) {
+  console.log(`[contact] ${req.method} request received from ${req.headers.get('origin') || 'unknown'}`);
+
   if (req.method === 'OPTIONS') {
     return new Response(null, { status: 204, headers: corsHeaders });
   }
