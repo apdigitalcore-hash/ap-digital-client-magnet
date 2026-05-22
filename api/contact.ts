@@ -78,10 +78,12 @@ export default async function handler(req: Request) {
     return jsonResponse({ error: 'Invalid industry' }, 400);
   }
 
-  const resendApiKey = (globalThis as { process?: { env: Record<string, string | undefined> } }).process?.env.RESEND_API_KEY;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore - process.env is available in Vercel Edge Runtime
+  const resendApiKey: string | undefined = typeof process !== 'undefined' ? process.env.RESEND_API_KEY : undefined;
   if (!resendApiKey) {
     console.error('RESEND_API_KEY environment variable not set');
-    return jsonResponse({ error: 'Email service not configured' }, 500);
+    return jsonResponse({ error: 'Email service not configured (missing API key)' }, 500);
   }
 
   const industryLabel = NICHE_LABELS[niche] || niche;

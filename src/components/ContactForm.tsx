@@ -142,8 +142,11 @@ const ContactForm = () => {
         }),
       });
 
+      const result = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error(`Submit failed with status ${response.status}`);
+        console.error('Contact form error:', response.status, result);
+        throw new Error(result?.error || `HTTP ${response.status}`);
       }
 
       setIsSubmitted(true);
@@ -152,9 +155,10 @@ const ContactForm = () => {
         description: "We'll be in touch within 24 hours.",
       });
     } catch (error) {
+      console.error('Contact form submission failed:', error);
       toast({
         title: "Something went wrong",
-        description: "Please try again or email us directly at apdigital.core@gmail.com.",
+        description: error instanceof Error ? error.message : "Please email us directly at apdigital.core@gmail.com.",
         variant: "destructive",
       });
     } finally {
