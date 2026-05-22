@@ -256,8 +256,71 @@ Deno.serve(async (req) => {
 
     // Record successful submission for rate limiting
     recordSubmission(clientIP);
-    
+
     console.log(`Lead submitted successfully: ${data.id}`);
+
+    // Send email notification via Resend (non-blocking - lead is already saved)
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
+    if (resendApiKey) {
+      try {
+        const escapeHtml = (s: string) =>
+          s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+
+        const lead = validation.data;
+        const nicheLabels: Record<string, string> = {
+          "salon": "Salon / Beauty",
+          "real-estate": "Real Estate",
+          "trades": "Trades / Contractors",
+          "coaching": "Coaching / Consulting",
+          "other": "Other",
+        };
+
+        const emailResponse = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${resendApiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "AP Digital Leads <onboarding@resend.dev>",
+            to: ["apdigital.core@gmail.com"],
+            reply_to: lead.email,
+            subject: `New Lead: ${lead.name} — ${lead.business}`,
+            html: `
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f9fafb;">
+                <div style="background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+                  <h2 style="margin:0 0 8px;color:#0f172a;">New Lead from ap-digital.ca</h2>
+                  <p style="margin:0 0 24px;color:#64748b;font-size:14px;">A new contact form submission just came in.</p>
+                  <table style="width:100%;border-collapse:collapse;">
+                    <tr><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#64748b;width:120px;">Name</td><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#0f172a;font-weight:600;">${escapeHtml(lead.name)}</td></tr>
+                    <tr><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#64748b;">Email</td><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#0f172a;"><a href="mailto:${escapeHtml(lead.email)}" style="color:#0d9488;">${escapeHtml(lead.email)}</a></td></tr>
+                    <tr><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#64748b;">Business</td><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#0f172a;font-weight:600;">${escapeHtml(lead.business)}</td></tr>
+                    <tr><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#64748b;">Phone</td><td style="padding:12px 0;border-bottom:1px solid #e5e7eb;color:#0f172a;">${lead.phone ? `<a href="tel:${escapeHtml(lead.phone)}" style="color:#0d9488;">${escapeHtml(lead.phone)}</a>` : '<span style="color:#94a3b8;">Not provided</span>'}</td></tr>
+                    <tr><td style="padding:12px 0;color:#64748b;">Industry</td><td style="padding:12px 0;color:#0f172a;font-weight:600;">${escapeHtml(nicheLabels[lead.niche] || lead.niche)}</td></tr>
+                  </table>
+                  <div style="margin-top:24px;padding-top:16px;border-top:1px solid #e5e7eb;">
+                    <p style="margin:0;color:#94a3b8;font-size:12px;">Lead ID: ${data.id}</p>
+                    <p style="margin:8px 0 0;color:#94a3b8;font-size:12px;">Reply directly to this email to respond to ${escapeHtml(lead.name)}.</p>
+                  </div>
+                </div>
+              </div>
+            `,
+          }),
+        });
+
+        if (!emailResponse.ok) {
+          const errorText = await emailResponse.text();
+          console.error("Resend email failed:", emailResponse.status, errorText);
+        } else {
+          console.log(`Email notification sent for lead ${data.id}`);
+        }
+      } catch (emailError) {
+        console.error("Email send error:", emailError);
+      }
+    } else {
+      console.warn("RESEND_API_KEY not set — skipping email notification");
+    }
 
     return new Response(
       JSON.stringify({ success: true, id: data.id }),
