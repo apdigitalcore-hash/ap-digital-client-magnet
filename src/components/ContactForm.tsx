@@ -13,7 +13,6 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
 
 // Allowed niche values for validation
 const ALLOWED_NICHES = ['salon', 'real-estate', 'trades', 'coaching', 'other'] as const;
@@ -130,63 +129,21 @@ const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    const nicheLabels: Record<string, string> = {
-      'salon': 'Salon / Beauty',
-      'real-estate': 'Real Estate',
-      'trades': 'Trades / Contractors',
-      'coaching': 'Coaching / Consulting',
-      'other': 'Other',
-    };
-
     try {
-      // Submit to two channels in parallel:
-      // 1. Supabase edge function (stores lead in DB for history)
-      // 2. FormSubmit.co (guaranteed email delivery to apdigital.core@gmail.com)
-      // Success if either channel works.
-      const supabasePromise = supabase.functions.invoke('submit-lead', {
-        body: {
-          name: validatedData.name,
-          email: validatedData.email,
-          business: validatedData.business,
-          phone: validatedData.phone || null,
-          niche: validatedData.niche,
-        },
-      });
-
-      const formsubmitPromise = fetch('https://formsubmit.co/ajax/apdigital.core@gmail.com', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: validatedData.name,
           email: validatedData.email,
           business: validatedData.business,
-          phone: validatedData.phone || 'Not provided',
-          industry: nicheLabels[validatedData.niche] || validatedData.niche,
-          _subject: `New Lead: ${validatedData.name} — ${validatedData.business}`,
-          _captcha: 'false',
-          _template: 'table',
-          _replyto: validatedData.email,
+          phone: validatedData.phone || '',
+          niche: validatedData.niche,
         }),
       });
 
-      const [supabaseResult, formsubmitResult] = await Promise.allSettled([
-        supabasePromise,
-        formsubmitPromise,
-      ]);
-
-      const supabaseOk =
-        supabaseResult.status === 'fulfilled' &&
-        !supabaseResult.value.error &&
-        !supabaseResult.value.data?.error;
-
-      const formsubmitOk =
-        formsubmitResult.status === 'fulfilled' && formsubmitResult.value.ok;
-
-      if (!supabaseOk && !formsubmitOk) {
-        throw new Error('Submission failed on both channels');
+      if (!response.ok) {
+        throw new Error(`Submit failed with status ${response.status}`);
       }
 
       setIsSubmitted(true);
@@ -197,7 +154,7 @@ const ContactForm = () => {
     } catch (error) {
       toast({
         title: "Something went wrong",
-        description: "Please try again or contact us directly at apdigital.core@gmail.com.",
+        description: "Please try again or email us directly at apdigital.core@gmail.com.",
         variant: "destructive",
       });
     } finally {
