@@ -147,7 +147,7 @@ const Burnaby = () => (
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
-                <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
                   Book Your Free Strategy Call
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
@@ -394,7 +394,7 @@ const Burnaby = () => (
             Book a free 20-minute strategy call. We'll show you exactly what we'd run for your business and what results to expect. No pitch, no pressure.
           </p>
           <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
-            <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
               Book Your Free Strategy Call
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
