@@ -132,7 +132,7 @@ const Pricing = () => {
                 className="w-full"
                 asChild
               >
-                <a href="#contact">
+                <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
                   Get Started
                 </a>
               </Button>
@@ -146,7 +146,9 @@ const Pricing = () => {
             Need something custom? We create tailored solutions for unique needs.
           </p>
           <a
-            href="#contact"
+            href="https://calendly.com/apdigital-core/20min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-teal font-semibold hover:underline"
           >
             Request Custom Plan

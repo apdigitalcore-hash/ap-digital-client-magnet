@@ -57,7 +57,7 @@ const Hero = () => {
           style={{ animationDelay: '0.3s' }}
         >
           <Button variant="hero" size="lg" asChild>
-            <a href="#contact" className="flex items-center gap-2">
+            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
               Book a Strategy Call
               <ArrowRight className="w-5 h-5" />
             </a>
