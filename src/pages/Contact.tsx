@@ -121,7 +121,7 @@ const Contact = () => {
 
             {/* Primary CTA — direct booking via Calendly */}
             <a
-              href="https://calendly.com/apdigital-core/30min"
+              href="https://calendly.com/apdigital-core/20min"
               target="_blank"
               rel="noopener noreferrer"
               className="group block bg-card border-2 border-teal hover:border-teal/80 p-8 md:p-10 rounded-2xl mb-12 shadow-custom-lg hover:shadow-xl transition-all"

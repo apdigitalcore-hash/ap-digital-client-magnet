@@ -154,7 +154,7 @@ const TradesMarketing = () => (
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and find out how we can keep your crew booked with quality jobs.</p>
           <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
-            <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
+            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
           </Button>
         </section>
       </div>
