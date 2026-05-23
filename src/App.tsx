@@ -15,8 +15,6 @@ import AIChat from "./components/AIChat";
 // Lazy load all other pages — loaded on demand
 const Contact = lazy(() => import("./pages/Contact"));
 const Pricing = lazy(() => import("./pages/Pricing"));
-const Benchmarks = lazy(() => import("./pages/Benchmarks"));
-const ChannelFramework = lazy(() => import("./pages/ChannelFramework"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const PaidAds = lazy(() => import("./pages/services/PaidAds"));
@@ -42,7 +40,7 @@ const Abbotsford = lazy(() => import("./pages/locations/Abbotsford"));
 const PricingPage = lazy(() => import("./pages/Pricing"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const HiringGuide = lazy(() => import("./pages/HiringGuide"));
-const ThankYou = lazy(() => import("./pages/ThankYou"));
+
 
 const queryClient = new QueryClient();
 

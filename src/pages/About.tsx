@@ -25,7 +25,6 @@ import {
   getWebPageSchema,
   getPersonSchema,
   getFAQSchema,
-  apFounderSchema,
 } from '@/lib/structuredData';
 
 const TITLE = 'About AP Digital | Vancouver Marketing Agency';
