@@ -135,7 +135,7 @@ const Testimonials = () => {
                 We implemented a comprehensive digital strategy including local SEO, social media content, 
                 and targeted Facebook ads. The results speak for themselves.
               </p>
-              <a href="#contact" className="text-teal font-semibold hover:underline inline-flex items-center gap-2">
+              <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer" className="text-teal font-semibold hover:underline inline-flex items-center gap-2">
                 Get Similar Results →
               </a>
             </div>
