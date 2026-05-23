@@ -268,7 +268,7 @@ const CaseStudies = () => (
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
-              <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
+              <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">
                 Book Your Free Strategy Call <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </Button>

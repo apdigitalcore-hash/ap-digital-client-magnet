@@ -293,7 +293,7 @@ const HomePage = () => {
               >
                 <Button variant="hero" size="lg" asChild>
                   <a
-                    href="https://calendly.com/apdigital-core/20min"
+                    href="https://calendly.com/apdigital-core/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2"

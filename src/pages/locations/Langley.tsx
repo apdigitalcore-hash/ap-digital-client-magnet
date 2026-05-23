@@ -147,7 +147,7 @@ const Langley = () => (
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
-                <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">
                   Book Your Free Strategy Call
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </a>
@@ -394,7 +394,7 @@ const Langley = () => (
             Book a free 20-minute strategy call. We'll walk you through exactly what a campaign for your Langley business would look like. No pitch, no pressure.
           </p>
           <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
-            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
+            <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer">
               Book Your Free Strategy Call
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>

@@ -35,7 +35,7 @@ const DarkCTA = ({
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
-              <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href="https://calendly.com/apdigital-core/30min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 Book a Free Strategy Call
                 <ArrowRight className="w-5 h-5" />
               </a>
