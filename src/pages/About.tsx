@@ -25,7 +25,6 @@ import {
   getWebPageSchema,
   getPersonSchema,
   getFAQSchema,
-  apFounderSchema,
 } from '@/lib/structuredData';
 
 const TITLE = 'About AP Digital | Vancouver Marketing Agency';
@@ -64,7 +63,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     organizationSchema,
-    apFounderSchema,
+    
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'About', url: '/about' },
