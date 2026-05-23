@@ -63,7 +63,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     organizationSchema,
-    apFounderSchema,
+    
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'About', url: '/about' },

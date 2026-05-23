@@ -62,8 +62,6 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/pricing" element={<Pricing />} />
-              <Route path="/benchmarks" element={<Benchmarks />} />
-              <Route path="/channel-selection-framework" element={<ChannelFramework />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/services/paid-ads" element={<PaidAds />} />
@@ -89,7 +87,7 @@ const App = () => (
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
-              <Route path="/thank-you" element={<ThankYou />} />
+              
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
