@@ -145,7 +145,7 @@ const ContactForm = () => {
       a3: nicheLabels[validatedData.niche] || validatedData.niche,
     });
 
-    const calendlyUrl = `https://calendly.com/apdigital-core/30min?${params.toString()}`;
+    const calendlyUrl = `https://calendly.com/apdigital-core/20min?${params.toString()}`;
     window.location.href = calendlyUrl;
   };
 
