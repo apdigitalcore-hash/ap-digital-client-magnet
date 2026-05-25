@@ -138,14 +138,22 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link
-              to="/pricing"
-              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}
-            >
-              Pricing
-            </Link>
+              }`}>
+                Locations <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="w-56">
+                {locations.map((loc) => (
+                  <DropdownMenuItem key={loc.href} asChild>
+                    <Link to={loc.href} className="cursor-pointer">
+                      {loc.label}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             <Link
               to="/about"
@@ -172,15 +180,6 @@ const Header = () => {
               }`}
             >
               Results
-            </Link>
-
-            <Link
-              to="/pricing"
-              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}
-            >
-              Pricing
             </Link>
 
             <a
