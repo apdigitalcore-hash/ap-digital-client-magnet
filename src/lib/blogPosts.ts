@@ -669,7 +669,7 @@ This guide will cut through the noise. We'll show you exactly what to look for i
 
 ## Why Vancouver's Marketing Landscape Is Unique
 
-Vancouver is one of the most competitive cities in Canada for small business. Whether you're a salon owner in Kitsilano, a realtor on the North Shore, a contractor in Surrey, or a fitness coach in Burnaby — you're operating in a market where consumers are digitally savvy, price-conscious, and spoiled for choice.
+Vancouver is one of the most competitive cities in Canada for small business. Whether you're a salon owner in Kitsilano, a realtor on the North Shore, a contractor in [Surrey](/surrey), or a fitness coach in [Burnaby](/burnaby) — you're operating in a market where consumers are digitally savvy, price-conscious, and spoiled for choice.
 
 Generic marketing won't cut it here. What works in a small Ontario city won't necessarily work in Metro Vancouver. You need an agency that understands:
 
@@ -753,7 +753,7 @@ Vancouver's beauty market has unique characteristics you need to understand befo
 
 **High expectations, high spend.** Vancouver clients spend more on personal care than almost any city in Canada. They're willing to pay premium prices — but they need to trust you first. Your online presence is the trust signal.
 
-**Neighbourhood identity matters.** A Kitsilano salon serves a very different client than one in Burnaby or Surrey. Your marketing needs to speak to your specific neighbourhood's demographics — age, lifestyle, income level, and aesthetic preferences.
+**Neighbourhood identity matters.** A Kitsilano salon serves a very different client than one in [Burnaby](/burnaby) or [Surrey](/surrey). Your marketing needs to speak to your specific neighbourhood's demographics — age, lifestyle, income level, and aesthetic preferences.
 
 **Instagram is non-negotiable.** Vancouver is one of the most Instagram-active cities in Canada. For salons, this isn't just a nice-to-have. It's your primary storefront. Clients will check your feed before they check your website.
 
@@ -829,7 +829,7 @@ AP DIGITAL specializes in [salon marketing](/salon-marketing) across Metro Vanco
     date: '2026-03-18',
     readTime: '6 min read',
     category: 'Trades Marketing',
-    content: `If you're a contractor in [Vancouver BC](/vancouver) — whether you're a plumber in Burnaby, an electrician in Surrey, a roofer in Coquitlam, or a general contractor anywhere in Metro Vancouver — you already know the market is competitive. New builds are slowing, homeowners are more selective, and the contractors winning the most jobs aren't necessarily the most skilled. They're the ones who show up first online.
+    content: `If you're a contractor in [Vancouver BC](/vancouver) — whether you're a plumber in [Burnaby](/burnaby), an electrician in [Surrey](/surrey), a roofer in [Coquitlam](/coquitlam), or a general contractor anywhere in Metro Vancouver — you already know the market is competitive. New builds are slowing, homeowners are more selective, and the contractors winning the most jobs aren't necessarily the most skilled. They're the ones who show up first online.
 
 Here's the exact marketing system Vancouver trades businesses are using to stay booked solid in 2026.
 
@@ -1061,7 +1061,7 @@ Here's what we see working for trades businesses across [Metro Vancouver](/vanco
 Best for: sole operators, single-trade businesses, testing the market
 Expected results: 10–20 qualified leads/month
 Cost per lead: $30–$70
-Best for: plumbers, electricians, HVAC techs in specific neighbourhoods (Burnaby, Coquitlam, North Vancouver)
+Best for: plumbers, electricians, HVAC techs in specific neighbourhoods ([Burnaby](/burnaby), [Coquitlam](/coquitlam), North Vancouver)
 
 ### Growth: $1,000–$2,500/month ad spend
 Best for: established trades businesses wanting consistent lead flow
@@ -1081,7 +1081,7 @@ Several factors affect how much each lead costs:
 
 **Trade type matters.** Emergency services (plumbing, HVAC) typically have lower cost per lead because the intent is high and decisions are fast. Renovation and construction projects have higher lead costs but much higher job values.
 
-**Competition in your area.** Surrey and Burnaby are highly competitive — expect higher costs. **Competition in your area.** Surrey and Burnaby are highly competitive — expect higher costs. Maple Ridge, or Abbotsford tend to have lower CPLs.
+**Competition in your area.** [Surrey](/surrey) and [Burnaby](/burnaby) are highly competitive — expect higher costs. Maple Ridge or Abbotsford tend to have lower CPLs.
 
 **Season.** Summer (renovation season) and winter (heating/plumbing emergencies) see higher competition and costs. Spring and fall are often more efficient.
 
@@ -1142,7 +1142,7 @@ Metro Vancouver's climate creates specific marketing opportunities:
 
 ### Google Ads: Your Emergency Call Machine
 
-When a homeowner's furnace breaks at 11pm in Burnaby, they're not asking friends for referrals. They're typing "furnace repair near me" into Google and calling whoever is at the top. Google Ads puts you there.
+When a homeowner's furnace breaks at 11pm in [Burnaby](/burnaby), they're not asking friends for referrals. They're typing "furnace repair near me" into Google and calling whoever is at the top. Google Ads puts you there.
 
 High-value keywords for Vancouver HVAC:
 - "furnace repair Vancouver"
@@ -1158,7 +1158,7 @@ A $1,500–$3,000/month Google Ads budget managed correctly can generate 30–60
 The three businesses in Google's local map pack get 50%+ of all clicks for local service searches. For HVAC in Vancouver, ranking in the map pack for your service areas is worth thousands of dollars per month in booked jobs.
 
 Optimize your GBP for:
-- Every city in your service area (Vancouver, Burnaby, Surrey, Richmond, North Van, Coquitlam)
+- Every city in your service area (Vancouver, [Burnaby](/burnaby), [Surrey](/surrey), Richmond, North Van, [Coquitlam](/coquitlam))
 - All service types (furnace, AC, heat pump, boiler, ductwork)
 - Weekly photo updates of completed jobs
 - Consistent 5-star reviews — aim for 2+ new reviews per month
@@ -1290,7 +1290,7 @@ AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We
     category: 'Trades Marketing',
     content: `Plumbing is one of the most competitive trades markets in [Metro Vancouver](/vancouver). Every neighbourhood has multiple plumbers competing for the same jobs — and the ones who consistently win aren't necessarily the most experienced. They're the ones who show up first online when a homeowner needs help.
 
-Whether you're a solo plumber in Burnaby, a two-crew operation in Surrey, or a growing plumbing company covering the entire Lower Mainland, this guide covers the digital marketing system that's working right now for Vancouver plumbers.
+Whether you're a solo plumber in [Burnaby](/burnaby), a two-crew operation in [Surrey](/surrey), or a growing plumbing company covering the entire Lower Mainland, this guide covers the digital marketing system that's working right now for Vancouver plumbers.
 
 ## The Metro Vancouver Plumbing Market in 2026
 
@@ -1406,7 +1406,7 @@ A $1,000–$2,500/month Google Ads budget generates 20–50 qualified electrical
 Ranking in Google's local map pack for electrical searches in your service area is worth thousands of dollars per month in booked jobs. The electricians who dominate local search in Metro Vancouver have invested in their Google Business Profile.
 
 Optimize your GBP for maximum results:
-- List every city in your service area — Vancouver, Burnaby, Surrey, Richmond, Coquitlam, North Vancouver, Langley, Abbotsford
+- List every city in your service area — Vancouver, [Burnaby](/burnaby), [Surrey](/surrey), Richmond, [Coquitlam](/coquitlam), North Vancouver, [Langley](/langley), Abbotsford
 - Add every service you offer — panel upgrades, EV chargers, smart home, commercial, new construction
 - Upload photos of completed jobs weekly (panel upgrades, EV charger installs, new construction work)
 - Build your review count — aim for 2+ new Google reviews per month
@@ -1463,7 +1463,7 @@ const vancouverPosts: BlogPost[] = [
 
 Vancouver's market is unique. The cost of living is high, competition is fierce across almost every industry, and consumer behaviour in the Lower Mainland is different from Toronto, Calgary, or Montreal. A generic, one-size-fits-all marketing approach won't cut it here.
 
-A local Vancouver agency understands the nuances: seasonal trends in the housing market, the competitive landscape for restaurants on Main Street versus Commercial Drive, how to target homeowners in Kitsilano differently from those in Surrey. That local knowledge translates directly into better-performing campaigns and higher ROI.
+A local Vancouver agency understands the nuances: seasonal trends in the housing market, the competitive landscape for restaurants on Main Street versus Commercial Drive, how to target homeowners in Kitsilano differently from those in [Surrey](/surrey). That local knowledge translates directly into better-performing campaigns and higher ROI.
 
 ## Red Flags to Watch For
 
@@ -1532,7 +1532,7 @@ Your Google Business Profile (GBP) is the single most important factor in local 
 
 - **Complete every field.** Business name, address, phone number, website, hours, and categories. Leave nothing blank.
 - **Choose the right categories.** Your primary category should be your core service (e.g., "Hair Salon" or "Plumber"). Add secondary categories for everything else you offer.
-- **Add Vancouver-specific service areas.** List every neighbourhood and city you serve: Vancouver, Burnaby, Richmond, North Vancouver, West Vancouver, Coquitlam, New Westminster, Surrey.
+- **Add Vancouver-specific service areas.** List every neighbourhood and city you serve: Vancouver, [Burnaby](/burnaby), Richmond, North Vancouver, West Vancouver, [Coquitlam](/coquitlam), New Westminster, [Surrey](/surrey).
 - **Upload photos weekly.** Businesses with photos get 42% more direction requests and 35% more click-throughs. Show your work, your team, and your location.
 - **Post regularly.** GBP Posts let you share updates, offers, and news directly on your profile. Post at least twice a month.
 
@@ -1621,7 +1621,7 @@ For most Vancouver service businesses, Lead Generation campaigns deliver the bes
 Here are targeting approaches that work particularly well in the Vancouver market:
 
 ### Geographic Targeting
-- Target specific municipalities: Vancouver, Burnaby, Richmond, North Vancouver, West Vancouver, New Westminster, Coquitlam, Port Moody
+- Target specific municipalities: Vancouver, [Burnaby](/burnaby), Richmond, North Vancouver, West Vancouver, New Westminster, [Coquitlam](/coquitlam), Port Moody
 - Use radius targeting around your business location (5–15 km works well for most local businesses)
 - Exclude areas you don't serve to avoid wasted spend
 
