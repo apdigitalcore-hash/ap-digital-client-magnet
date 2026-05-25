@@ -76,7 +76,7 @@ const structuredData = {
       url: '/about',
       sameAs: [
         'https://www.instagram.com/theapdigital/',
-        'https://www.linkedin.com/company/110553927/',
+        'https://www.linkedin.com/company/theapdigital/?viewAsMember=true',
       ],
     }),
   ]
