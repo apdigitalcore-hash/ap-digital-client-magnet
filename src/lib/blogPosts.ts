@@ -124,7 +124,7 @@ Aim for a steady stream of five-star reviews with detailed comments. A profile w
 
 If your trades business doesn't have a consistent online marketing strategy, you're leaving jobs — and revenue — on the table every single day. The good news is that it doesn't have to be complicated. With the right combination of Google Ads, social media content, and a strong review strategy, you can build a predictable pipeline of leads month after month.
 
-At AP DIGITAL, we specialize in helping trades businesses across Canada get more jobs through proven digital marketing strategies. We handle the ads, the content, and the strategy — so you can focus on doing what you do best. Visit our dedicated [trades marketing page for BC](/trades-marketing) or our [contractor marketing page](/services/paid-ads) to see exactly how we work.
+At AP DIGITAL, we specialize in helping trades businesses across Canada get more jobs through proven digital marketing strategies. We handle the [paid ads](/services/paid-ads), the [content creation](/services/content-creation), and the [SEO](/services/seo) — so you can focus on doing what you do best. Visit our dedicated [trades marketing page for BC](/trades-marketing) to see exactly how we work.
 
 **Book your free strategy call today** and let's build a marketing system that keeps your phone ringing in 2026 and beyond.`,
   },
@@ -191,7 +191,7 @@ The biggest mistake agents make is posting only when they have a new listing. Co
 
 Managing social media on top of showings, negotiations, and paperwork is a lot. The most successful agents either hire a dedicated marketing person or partner with an agency that understands real estate.
 
-At AP DIGITAL, we help real estate agents across Canada build powerful personal brands, create scroll-stopping content, and generate consistent buyer and seller leads through strategic social media marketing and paid advertising.
+At AP DIGITAL, we help real estate agents across Canada build powerful personal brands, create scroll-stopping [short-form video content](/services/content-creation), and generate consistent buyer and seller leads through strategic [social media marketing](/services/social-media) and [paid advertising](/services/paid-ads).
 
 **Book your free strategy call today** and let's build a social media strategy that helps you close more deals in 2026.`,
   },
@@ -631,7 +631,7 @@ A proper [paid advertising](/services/paid-ads) setup for a trades business incl
 
 - Google Ads targeting high-intent local keywords
 - Facebook/Instagram ads with before-and-after creative
-- A simple landing page designed to convert visitors into leads
+- A simple [landing page](/services/web-design) designed to convert visitors into leads
 - Call tracking and form tracking to measure real results
 - Weekly optimization to lower costs and improve lead quality
 
@@ -730,7 +730,7 @@ There's a temptation to hire a large national or US-based agency for the perceiv
 
 AP DIGITAL was built specifically to serve the kinds of businesses that drive Vancouver's economy — [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades contractors](/trades-marketing), and [coaches](/coaching-marketing). We don't take on every client. We specialize in four niches and go deep, not wide.
 
-Every client gets a custom strategy built around their specific neighbourhood, target demographic, and budget. And we measure success in one currency: leads and bookings — not impressions or followers.
+Our core services include [paid ads management](/services/paid-ads), [SEO](/services/seo), [web design](/services/web-design), [social media](/services/social-media), and [content creation](/services/content-creation). Every client gets a custom strategy built around their specific neighbourhood, target demographic, and budget. And we measure success in one currency: leads and bookings — not impressions or followers.
 
 **Ready to see if we're the right fit?** Book a free strategy call and we'll show you exactly how we'd approach your business.`,
   },
@@ -765,7 +765,7 @@ Vancouver's beauty market has unique characteristics you need to understand befo
 
 Your Instagram profile needs to function as a portfolio, a trust signal, and a lead generator all in one. For Vancouver salons, this means:
 
-- **Reels 3-5x per week.** Transformation videos, day-in-the-life content, before-and-after reveals. The Instagram algorithm rewards video heavily — even small accounts can reach thousands of local viewers.
+- **[Reels](/services/content-creation) 3-5x per week.** Transformation videos, day-in-the-life content, before-and-after reveals. The Instagram algorithm rewards video heavily — even small accounts can reach thousands of local viewers.
 - **Location tagging.** Tag your Vancouver neighbourhood in every post. Use local hashtags like #KitsilanHair, #YalettownSalon, #NorthVanBeauty alongside broader tags.
 - **Stories daily.** Behind-the-scenes content, client results, booking availability, polls — Stories keep you top of mind with followers who are one step away from booking.
 
@@ -841,7 +841,7 @@ Most contractors in Vancouver fall into one of two traps:
 
 **Trap 2: Wasting money on the wrong platforms.** We've seen Vancouver contractors spend thousands on flyers, Yellow Pages listings, or generic website packages that generate zero leads. The problem isn't the budget — it's the channel.
 
-The solution is a simple, proven system: high-intent Google Ads + local SEO + a strong Google Business Profile. When combined correctly, this system puts your business in front of homeowners in Vancouver the exact moment they need your services.
+The solution is a simple, proven system: high-intent Google Ads + [local SEO](/services/seo) + a strong Google Business Profile. When combined correctly, this system puts your business in front of homeowners in Vancouver the exact moment they need your services.
 
 ## The Vancouver Trades Marketing System
 
@@ -923,7 +923,7 @@ Based on our work with trades clients across BC:
 
 ## Ready to Get More Vancouver Jobs?
 
-AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — Google Ads, social media content, and local SEO — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) or our [contractor marketing page](/services/paid-ads) for more.
+AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — [Google Ads](/services/paid-ads), [social media content](/services/content-creation), and [local SEO](/services/seo) — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) for more.
 
 **Book your free strategy call** and get a custom plan to fill your schedule with quality Vancouver jobs.`,
   },
@@ -993,11 +993,11 @@ The most effective video formats for Vancouver realtors:
 - **Buyer and seller tip series** — "3 things every first-time buyer in Vancouver needs to know"
 - **Behind the scenes** — offer presentations, accepted offers, keys handovers (with client permission)
 
-### Step 4: Hyperlocal SEO — Own Your Neighbourhood
+### Step 4: Hyperlocal [SEO](/services/seo) — Own Your Neighbourhood
 
 When a homeowner in Kitsilano types "Kitsilano real estate agent" into Google, you want to be the first name they see. Hyperlocal SEO for Vancouver realtors involves:
 
-- A website with dedicated pages for each neighbourhood you serve
+- A [website](/services/web-design) with dedicated pages for each neighbourhood you serve
 - Blog content targeting long-tail keywords like "buying a townhouse in East Vancouver 2026" or "best neighbourhoods in Vancouver for families"
 - Google Business Profile optimized for your specific areas
 - Local citations and directory listings (REBGV, Realtor.ca, Yelp, local directories)
@@ -1187,7 +1187,7 @@ Based on results with HVAC clients in BC:
 
 ## Ready to Fill Your HVAC Schedule in Vancouver?
 
-AP DIGITAL helps HVAC companies across Metro Vancouver build lead generation systems that work year-round. We handle Google Ads, Meta Ads, and content — so your phone keeps ringing. Check out our [BC trades marketing](/trades-marketing) and [contractor marketing](/services/paid-ads) pages to learn more.
+AP DIGITAL helps HVAC companies across Metro Vancouver build [lead generation](/services/lead-generation) systems that work year-round. We handle [Google Ads](/services/paid-ads), Meta Ads, and [content](/services/content-creation) — so your phone keeps ringing. Check out our [BC trades marketing](/trades-marketing) page to learn more.
 
 **Book your free strategy call** and get a custom HVAC marketing plan for your Vancouver service area.`,
   },
@@ -1275,7 +1275,7 @@ A typical result: a BC life coach spending $800/month on ad spend generates 25�
 
 ## Ready to Get Consistent Coaching Clients in BC?
 
-AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We build your entire lead generation system — the ads, the funnel, and the follow-up strategy. Visit our [BC coaching marketing page](/coaching-marketing) to learn more.
+AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We build your entire [lead generation](/services/lead-generation) system — the ads, the funnel, and the follow-up strategy. Visit our [BC coaching marketing page](/coaching-marketing) to learn more.
 
 **Book your free strategy call** and let's map out a client acquisition system for your coaching practice.`,
   },
@@ -1355,7 +1355,7 @@ For plumbers in Metro Vancouver, social proof is your most powerful marketing as
 
 ## Ready to Get More Plumbing Jobs in Metro Vancouver?
 
-AP DIGITAL specializes in marketing for trades and contractors across the Lower Mainland. We build the full system — Google Ads, Meta Ads, content, and local SEO — and we measure success in booked jobs. See our [BC trades marketing page](/trades-marketing) and [contractor marketing page](/services/paid-ads).
+AP DIGITAL specializes in marketing for trades and contractors across the Lower Mainland. We build the full system — [Google Ads](/services/paid-ads), Meta Ads, [content](/services/content-creation), and [local SEO](/services/seo) — and we measure success in booked jobs. See our [BC trades marketing page](/trades-marketing).
 
 **Book your free strategy call** and get a custom marketing plan for your Vancouver plumbing business.`,
   },
@@ -1441,7 +1441,7 @@ You don't need to post daily. Two or three posts per week showing real local wor
 
 ## Ready to Get More Electrical Jobs in BC?
 
-AP DIGITAL builds complete digital marketing systems for electricians and trades businesses across Metro Vancouver and the Lower Mainland. We handle Google Ads, Meta Ads, and local SEO — so your phone keeps ringing and your crew stays busy. See our dedicated [BC trades marketing page](/trades-marketing) and [contractor marketing page](/services/paid-ads).
+AP DIGITAL builds complete digital marketing systems for electricians and trades businesses across Metro Vancouver and the Lower Mainland. We handle [Google Ads](/services/paid-ads), Meta Ads, and [local SEO](/services/seo) — so your phone keeps ringing and your crew stays busy. See our dedicated [BC trades marketing page](/trades-marketing).
 
 **Book your free strategy call** and get a custom lead generation plan for your BC electrical business.`,
   },
@@ -1499,7 +1499,7 @@ Businesses in highly competitive Vancouver industries — real estate, legal, ho
 
 ## Why Vancouver Businesses Choose AP DIGITAL
 
-At AP DIGITAL, we specialize in helping Vancouver small businesses and service providers generate consistent leads through proven digital marketing strategies. We don't do long-term contracts, we don't hide behind vanity metrics, and we don't run cookie-cutter campaigns.
+At AP DIGITAL, we specialize in helping Vancouver small businesses and service providers generate consistent leads through proven digital marketing strategies. Our services include [Google & Meta Ads](/services/paid-ads), [local SEO](/services/seo), [web design](/services/web-design), [content creation](/services/content-creation), and [lead generation systems](/services/lead-generation). We don't do long-term contracts, we don't hide behind vanity metrics, and we don't run cookie-cutter campaigns.
 
 Every strategy we build is tailored to your industry, your market, and your goals. Whether you're a [salon in Yaletown](/salon-marketing), a [contractor in East Vancouver](/trades-marketing), a [real estate agent](/real-estate-marketing) covering the Lower Mainland, or a [coach](/coaching-marketing) growing your practice, we build marketing systems that deliver real, measurable results.
 
@@ -1745,7 +1745,7 @@ A reasonable starting budget for most Vancouver small businesses is $1,000–$2,
 
 ## Landing Pages: Where Most Vancouver Businesses Lose Money
 
-Here's where many Vancouver businesses fail with Google Ads: they send traffic to their homepage instead of a dedicated landing page. Your homepage is designed for general browsing — not for converting ad traffic.
+Here's where many Vancouver businesses fail with Google Ads: they send traffic to their homepage instead of a dedicated [landing page](/services/web-design). Your homepage is designed for general browsing — not for converting ad traffic.
 
 A high-converting landing page for Vancouver Google Ads should include:
 
