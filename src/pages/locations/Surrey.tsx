@@ -13,8 +13,8 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Surrey Digital Marketing Agency & Services | AP Digital BC';
-const DESC = 'Surrey digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.';
+const TITLE = 'Surrey Marketing Agency — 2,400+ Leads, 90-Day Guarantee | AP Digital';
+const DESC = 'Surrey digital marketing that works. 2,400+ leads delivered for local businesses. Google Ads, Meta Ads & SEO. Month-to-month plans. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/surrey';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
