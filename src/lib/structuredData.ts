@@ -41,7 +41,7 @@ export const organizationSchema = {
     "https://share.google/lI0pYZTBgTazYNTSp",
     "https://www.instagram.com/theapdigital/",
     "https://www.facebook.com/apdigital",
-    "https://www.linkedin.com/company/apdigital"
+    "https://www.linkedin.com/company/theapdigital/?viewAsMember=true"
   ],
   "areaServed": {
     "@type": "Country",

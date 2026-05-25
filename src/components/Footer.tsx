@@ -43,7 +43,7 @@ const Footer = () => {
     },
     {
       icon: Linkedin,
-      href: 'https://www.linkedin.com/company/110553927/',
+      href: 'https://www.linkedin.com/company/theapdigital/?viewAsMember=true',
       label: 'LinkedIn'
     }
   ];
