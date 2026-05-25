@@ -277,14 +277,6 @@ const Header = () => {
                   Results
                 </Link>
 
-                <Link
-                  to="/pricing"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Pricing
-                </Link>
-
                 <a
                   href="/#digital-arsenal"
                   className="flex items-center gap-3 px-4 py-3 rounded-xl text-teal font-semibold hover:bg-teal/10 transition-colors"
