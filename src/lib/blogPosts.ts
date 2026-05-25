@@ -137,7 +137,7 @@ At AP DIGITAL, we specialize in helping trades businesses across Canada get more
     date: '2026-03-12',
     readTime: '6 min read',
     category: 'Real Estate Marketing',
-    content: `The real estate market in Canada is as competitive as it's ever been. Whether you're working in the GTA, Vancouver, Calgary, or a smaller market, one thing is clear: the agents who dominate social media are the ones closing more deals. If you're still relying solely on yard signs, open houses, and your brokerage's website, you're falling behind.
+    content: `The real estate market in Canada is as competitive as it's ever been. Whether you're working in the GTA, [Vancouver](/vancouver), Calgary, or a smaller market, one thing is clear: the agents who dominate social media are the ones closing more deals. If you're still relying solely on yard signs, open houses, and your brokerage's website, you're falling behind.
 
 Here are seven social media tips every real estate agent in Canada needs to implement in 2026 to attract more clients and close more transactions.
 
@@ -431,7 +431,7 @@ At AP DIGITAL, we run [Facebook, Instagram, and Google Ads](/services/paid-ads) 
     date: '2025-03-17',
     readTime: '5 min read',
     category: 'Real Estate Marketing',
-    content: `[Real estate](/real-estate-marketing) is one of the most competitive industries on social media. With thousands of realtors across Metro Vancouver, the GTA, and Calgary fighting for the same audience — how do you stand out? The answer isn't posting more. It's posting smarter. Here are 5 strategies consistently generating leads for Canadian realtors right now.
+    content: `[Real estate](/real-estate-marketing) is one of the most competitive industries on social media. With thousands of realtors across [Metro Vancouver](/vancouver), the GTA, and Calgary fighting for the same audience — how do you stand out? The answer isn't posting more. It's posting smarter. Here are 5 strategies consistently generating leads for Canadian realtors right now.
 
 ## 1. Lead With Local Knowledge, Not Just Listings
 
@@ -663,7 +663,7 @@ const newPosts: BlogPost[] = [
     date: '2026-03-15',
     readTime: '6 min read',
     category: 'Digital Marketing',
-    content: `If you're a local business owner in Vancouver, BC searching for a digital marketing agency, you've probably already noticed the problem: there are hundreds of agencies promising results, and almost all of them sound exactly the same. "Data-driven." "Full-service." "Results-focused." The words blur together, and it's nearly impossible to know who to trust with your marketing budget.
+    content: `If you're a local business owner in [Vancouver, BC](/vancouver) searching for a digital marketing agency, you've probably already noticed the problem: there are hundreds of agencies promising results, and almost all of them sound exactly the same. "Data-driven." "Full-service." "Results-focused." The words blur together, and it's nearly impossible to know who to trust with your marketing budget.
 
 This guide will cut through the noise. We'll show you exactly what to look for in a Vancouver marketing agency, what red flags to avoid, and why niche-focused agencies consistently outperform generalists.
 
@@ -743,7 +743,7 @@ Every client gets a custom strategy built around their specific neighbourhood, t
     date: '2026-03-17',
     readTime: '7 min read',
     category: 'Salon Marketing',
-    content: `Running a salon in Vancouver, BC is both an incredible opportunity and a serious challenge. The city has one of the highest densities of salons per capita in Canada — from Kitsilano to Yaletown to North Vancouver — and clients have endless options at their fingertips. If your marketing isn't working hard for you, your competitors are taking those bookings.
+    content: `Running a salon in [Vancouver, BC](/vancouver) is both an incredible opportunity and a serious challenge. The city has one of the highest densities of salons per capita in Canada — from Kitsilano to Yaletown to North Vancouver — and clients have endless options at their fingertips. If your marketing isn't working hard for you, your competitors are taking those bookings.
 
 The good news: most Vancouver salons are still relying on word-of-mouth and hoping Instagram followers turn into clients. The salons that build a real marketing system are the ones consistently booked out weeks in advance. Here's exactly how to do it.
 
@@ -829,7 +829,7 @@ AP DIGITAL specializes in [salon marketing](/salon-marketing) across Metro Vanco
     date: '2026-03-18',
     readTime: '6 min read',
     category: 'Trades Marketing',
-    content: `If you're a contractor in Vancouver BC — whether you're a plumber in Burnaby, an electrician in Surrey, a roofer in Coquitlam, or a general contractor anywhere in Metro Vancouver — you already know the market is competitive. New builds are slowing, homeowners are more selective, and the contractors winning the most jobs aren't necessarily the most skilled. They're the ones who show up first online.
+    content: `If you're a contractor in [Vancouver BC](/vancouver) — whether you're a plumber in Burnaby, an electrician in Surrey, a roofer in Coquitlam, or a general contractor anywhere in Metro Vancouver — you already know the market is competitive. New builds are slowing, homeowners are more selective, and the contractors winning the most jobs aren't necessarily the most skilled. They're the ones who show up first online.
 
 Here's the exact marketing system Vancouver trades businesses are using to stay booked solid in 2026.
 
@@ -936,7 +936,7 @@ AP DIGITAL specializes in marketing for trades and contractors across Metro Vanc
     date: '2026-03-19',
     readTime: '7 min read',
     category: 'Real Estate Marketing',
-    content: `Vancouver's real estate market is one of the most competitive in North America. With thousands of licensed realtors competing for a limited number of listings and buyers, the agents who win aren't always the most experienced — they're the most visible. In 2026, your personal brand and digital marketing are the difference between a thriving business and a quiet phone.
+    content: `[Vancouver's](/vancouver) real estate market is one of the most competitive in North America. With thousands of licensed realtors competing for a limited number of listings and buyers, the agents who win aren't always the most experienced — they're the most visible. In 2026, your personal brand and digital marketing are the difference between a thriving business and a quiet phone.
 
 Here's exactly how Vancouver real estate agents are using digital marketing to generate consistent leads and build a referral-worthy reputation.
 
@@ -1055,7 +1055,7 @@ Both matter. A cheap management fee with an ineffective strategy will waste your
 
 ## Realistic Meta Ads Budgets for BC Contractors
 
-Here's what we see working for trades businesses across Metro Vancouver and the Lower Mainland:
+Here's what we see working for trades businesses across [Metro Vancouver](/vancouver) and the Lower Mainland:
 
 ### Starter: $500–$1,000/month ad spend
 Best for: sole operators, single-trade businesses, testing the market
@@ -1122,7 +1122,7 @@ At AP DIGITAL, we specialize in [Meta Ads for BC contractors and trades business
     date: '2026-03-21',
     readTime: '5 min read',
     category: 'Trades Marketing',
-    content: `Running an HVAC business in Vancouver BC comes with a unique challenge: you're either slammed or slow. Furnace season hits in October and the phones ring off the hook. By March, it slows down. Summer AC demand is growing but still unpredictable. The HVAC companies that stay booked year-round are the ones who have cracked the marketing equation.
+    content: `Running an HVAC business in [Vancouver BC](/vancouver) comes with a unique challenge: you're either slammed or slow. Furnace season hits in October and the phones ring off the hook. By March, it slows down. Summer AC demand is growing but still unpredictable. The HVAC companies that stay booked year-round are the ones who have cracked the marketing equation.
 
 Here's exactly how to market your Vancouver HVAC business to generate consistent service calls in every season.
 
@@ -1202,7 +1202,7 @@ AP DIGITAL helps HVAC companies across Metro Vancouver build lead generation sys
     category: 'Coaching Marketing',
     content: `If you're a coach in BC — whether you're a life coach, business coach, fitness coach, or health coach — you already know the hardest part isn't delivering results. It's getting a consistent flow of clients in the first place.
 
-Most coaches in Metro Vancouver rely on referrals, word of mouth, or cold outreach on LinkedIn and Instagram. These methods work — but they're unpredictable. You have no control over volume, quality, or timing. One slow month can throw your entire business into a tailspin.
+Most coaches in [Metro Vancouver](/vancouver) rely on referrals, word of mouth, or cold outreach on LinkedIn and Instagram. These methods work — but they're unpredictable. You have no control over volume, quality, or timing. One slow month can throw your entire business into a tailspin.
 
 Meta Ads — Facebook and Instagram advertising — is the most reliable system for BC coaches to generate consistent, qualified leads. Here's exactly how it works.
 
@@ -1288,7 +1288,7 @@ AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We
     date: '2026-03-23',
     readTime: '5 min read',
     category: 'Trades Marketing',
-    content: `Plumbing is one of the most competitive trades markets in Metro Vancouver. Every neighbourhood has multiple plumbers competing for the same jobs — and the ones who consistently win aren't necessarily the most experienced. They're the ones who show up first online when a homeowner needs help.
+    content: `Plumbing is one of the most competitive trades markets in [Metro Vancouver](/vancouver). Every neighbourhood has multiple plumbers competing for the same jobs — and the ones who consistently win aren't necessarily the most experienced. They're the ones who show up first online when a homeowner needs help.
 
 Whether you're a solo plumber in Burnaby, a two-crew operation in Surrey, or a growing plumbing company covering the entire Lower Mainland, this guide covers the digital marketing system that's working right now for Vancouver plumbers.
 
@@ -1368,7 +1368,7 @@ AP DIGITAL specializes in marketing for trades and contractors across the Lower 
     date: '2026-03-24',
     readTime: '5 min read',
     category: 'Trades Marketing',
-    content: `Electrical work is one of the most in-demand trades in Metro Vancouver. New builds, EV charger installations, panel upgrades, smart home wiring — the demand is there. But so is the competition. There are thousands of licensed electricians in BC, and the ones consistently landing the best jobs are the ones showing up online when homeowners and project managers search.
+    content: `Electrical work is one of the most in-demand trades in [Metro Vancouver](/vancouver). New builds, EV charger installations, panel upgrades, smart home wiring — the demand is there. But so is the competition. There are thousands of licensed electricians in BC, and the ones consistently landing the best jobs are the ones showing up online when homeowners and project managers search.
 
 If you're a BC electrician relying mostly on referrals and repeat clients, this guide will show you exactly how to build a digital lead generation system that keeps your crew busy year-round.
 
@@ -1457,7 +1457,7 @@ const vancouverPosts: BlogPost[] = [
     date: '2026-04-01',
     readTime: '6 min read',
     category: 'Marketing Strategy',
-    content: `Vancouver is home to hundreds of digital marketing agencies, freelancers, and consultants — all promising to grow your business. But how do you separate the ones that deliver real results from the ones that just burn through your budget? Here's what every Vancouver business owner needs to know before hiring an agency in 2026.
+    content: `[Vancouver](/vancouver) is home to hundreds of digital marketing agencies, freelancers, and consultants — all promising to grow your business. But how do you separate the ones that deliver real results from the ones that just burn through your budget? Here's what every Vancouver business owner needs to know before hiring an agency in 2026.
 
 ## Why Vancouver Businesses Need a Local Marketing Partner
 
@@ -1514,7 +1514,7 @@ Every strategy we build is tailored to your industry, your market, and your goal
     date: '2026-04-05',
     readTime: '8 min read',
     category: 'SEO',
-    content: `If you own a small business in Vancouver and you're not showing up on the first page of Google, you're invisible to the majority of your potential customers. In 2026, local SEO isn't optional — it's the foundation of a successful digital presence. Here's your complete guide to ranking higher in Vancouver.
+    content: `If you own a small business in [Vancouver](/vancouver) and you're not showing up on the first page of Google, you're invisible to the majority of your potential customers. In 2026, local SEO isn't optional — it's the foundation of a successful digital presence. Here's your complete guide to ranking higher in Vancouver.
 
 ## Why Local SEO Matters for Vancouver Businesses
 
@@ -1592,7 +1592,7 @@ At AP DIGITAL, we help Vancouver small businesses [rank higher on Google](/servi
     date: '2026-04-08',
     readTime: '7 min read',
     category: 'Paid Ads',
-    content: `Facebook and Instagram ads remain two of the most cost-effective ways for Vancouver small businesses to generate leads and grow in 2026. But running ads without a strategy is like throwing money into the Georgia Strait. Here's how to do it right.
+    content: `Facebook and Instagram ads remain two of the most cost-effective ways for [Vancouver](/vancouver) small businesses to generate leads and grow in 2026. But running ads without a strategy is like throwing money into the Georgia Strait. Here's how to do it right.
 
 ## Why Facebook Ads Work for Vancouver Businesses
 
@@ -1686,7 +1686,7 @@ At AP DIGITAL, we build and manage high-performing [Facebook and Instagram ad ca
     date: '2026-04-10',
     readTime: '7 min read',
     category: 'Paid Ads',
-    content: `When a Vancouver homeowner needs a plumber at 10 PM on a Tuesday or a business owner searches for "web designer Vancouver" during their lunch break, they go to Google. If your business isn't showing up at the top of those search results, you're losing jobs to competitors who are. Here's how Vancouver businesses can use Google Ads to capture high-intent leads in 2026.
+    content: `When a [Vancouver](/vancouver) homeowner needs a plumber at 10 PM on a Tuesday or a business owner searches for "web designer Vancouver" during their lunch break, they go to Google. If your business isn't showing up at the top of those search results, you're losing jobs to competitors who are. Here's how Vancouver businesses can use Google Ads to capture high-intent leads in 2026.
 
 ## Why Google Ads Are Essential for Vancouver Businesses
 
@@ -1784,7 +1784,7 @@ At AP DIGITAL, we build and manage high-performance [Google Ads campaigns](/serv
     date: '2026-04-12',
     readTime: '6 min read',
     category: 'Social Media',
-    content: `Social media marketing in Vancouver is unlike any other Canadian market. The city's diversity, tech-savviness, and highly competitive business landscape mean that generic social strategies fall flat. Here's what actually works for Vancouver local businesses in 2026.
+    content: `Social media marketing in [Vancouver](/vancouver) is unlike any other Canadian market. The city's diversity, tech-savviness, and highly competitive business landscape mean that generic social strategies fall flat. Here's what actually works for Vancouver local businesses in 2026.
 
 ## The Vancouver Social Media Landscape
 
