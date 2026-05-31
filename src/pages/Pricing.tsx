@@ -98,7 +98,7 @@ const serviceCards = [
     name: 'Paid Ads',
     ourPrice: '$759',
     period: '/month',
-    description: 'Profitable Meta & Google ad campaigns — built, managed, and optimized.',
+    description: 'Profitable Meta & Google ad campaigns for BC trades — built, managed, and optimized for $759/mo.',
     includes: [
       'Meta Ads (Facebook + Instagram)',
       'Google Search & Performance Max',
