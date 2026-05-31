@@ -17,8 +17,8 @@ import {
   getFAQSchema,
 } from '@/lib/structuredData';
 
-const TITLE = 'Pricing | Transparent Marketing Services | AP Digital';
-const DESC = 'Transparent per-service pricing — SEO, paid ads, content, web design, lead gen. Month-to-month, 90-day results guarantee, no contracts.';
+const TITLE = 'Marketing Pricing Vancouver — From $759/mo, No Contracts | AP Digital';
+const DESC = 'Transparent per-service pricing for SEO, paid ads, content, web design & lead gen. Month-to-month. 90-day results guarantee. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/pricing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

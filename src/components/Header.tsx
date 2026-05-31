@@ -156,6 +156,15 @@ const Header = () => {
             </DropdownMenu>
 
             <Link
+              to="/pricing"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              Pricing
+            </Link>
+
+            <Link
               to="/about"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
