@@ -96,7 +96,7 @@ const serviceCards = [
   {
     icon: Target,
     name: 'Paid Ads',
-    ourPrice: '$1,470',
+    ourPrice: '$759',
     period: '/month',
     description: 'Profitable Meta & Google ad campaigns — built, managed, and optimized.',
     includes: [
@@ -128,7 +128,7 @@ const faqs = [
   },
   {
     question: 'Is the ad spend included in the monthly fee?',
-    answer: 'No — the $1,470/month covers management (strategy, builds, creative testing, optimization, and reporting). You pay your ad spend directly to Google or Meta and keep full control of the budget. We recommend a minimum of $1,000/month in spend to get meaningful data.',
+    answer: 'No — the $759/month covers management (strategy, builds, creative testing, optimization, and reporting). You pay your ad spend directly to Google or Meta and keep full control of the budget. We recommend a minimum of $1,000/month in spend to get meaningful data.',
   },
   {
     question: 'How does the 90-day results guarantee work?',
