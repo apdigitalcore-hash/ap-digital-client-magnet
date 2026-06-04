@@ -12,7 +12,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fallback title/meta — overridden per-page by react-helmet-async -->
+  <!-- Route-aware meta — unique title/desc per page for Googlebot initial crawl -->
+  <script>
+  (function(){
+    var m={
+      '/':'AP Digital | Vancouver Marketing — Meta & Google Ads|Vancouver performance marketing agency. 2,400+ leads delivered for BC salons, trades, realtors & coaches. 90-day guarantee. Month-to-month.',
+      '/services/paid-ads':'Google Ads Agency Vancouver | PPC & Meta Ads | AP Digital|Google Ads, PPC & Facebook Ads agency in Vancouver. AP Digital manages Meta and Google campaigns for BC salons, trades, realtors & coaches. Month-to-month.',
+      '/services/seo':'SEO Agency Vancouver | Page 1 in 90 Days | AP Digital|AP Digital provides local SEO for Vancouver salons, trades, realtors & coaches. Most clients reach page 1 within 90-180 days. Month-to-month.',
+      '/services/social-media':'Social Media Marketing Agency Vancouver | AP Digital|AP Digital manages social media for Vancouver salons, trades & real estate professionals. Short-form content & organic growth.',
+      '/services/content-creation':'Content Creation Vancouver | Short-Form Video | AP Digital|AP Digital creates short-form video content and social posts for Vancouver small businesses — salons, trades, coaches & realtors.',
+      '/services/lead-generation':'Lead Generation Agency Vancouver | 2,400+ Leads Delivered|AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches. 5-10x ROAS. First leads within 2 weeks. Month-to-month.',
+      '/services/web-design':'Web Design Vancouver | Small Business Sites | AP Digital|AP Digital builds fast, conversion-focused websites for Vancouver small businesses. Salons, trades, real estate & coaches.',
+      '/vancouver':'Vancouver Marketing Agency — 2,400+ Leads, 8.2x ROAS | AP Digital|Vancouver marketing agency delivering 2,400+ qualified leads and 8.2x ROAS for salons, trades, realtors & coaches. Month-to-month. Free strategy call.',
+      '/burnaby':'Burnaby Marketing Agency — No Contracts, 8.2x ROAS | AP Digital|Burnaby marketing agency for salons, trades, realtors & coaches. Google Ads + Meta Ads. 2,400+ leads delivered across Metro Vancouver. No contracts.',
+      '/surrey':'Surrey Marketing Agency — 2,400+ Leads, 90-Day Guarantee | AP Digital|Surrey marketing agency delivering leads for trades, salons, realtors & coaches. Google Ads + Meta Ads. 90-day results guarantee. Free strategy call.',
+      '/langley':'Langley Marketing Agency — Leads in 14 Days, No Lock-In | AP Digital|Langley marketing agency for Fraser Valley trades, salons & realtors. Google Ads + Meta Ads. First leads in 14 days. Month-to-month.',
+      '/coquitlam':'Coquitlam Marketing Agency — 5-10x ROAS, No Contracts | AP Digital|Coquitlam marketing agency for trades, salons, realtors & coaches. Google Ads + Meta Ads. 5-10x ROAS. Month-to-month. Free strategy call.',
+      '/richmond':'Richmond Marketing Agency — 5-10x ROAS, Month-to-Month | AP Digital|Richmond marketing agency for salons, trades, realtors & coaches. Google Ads + Meta Ads. 2,400+ leads delivered across Metro Vancouver. Free strategy call.',
+      '/abbotsford':'Abbotsford Marketing Agency — Fraser Valley Leads, No Contracts | AP Digital|Abbotsford marketing agency delivering 5-10x ROAS for Fraser Valley trades, salons & realtors. Google Ads + Meta Ads. Month-to-month. Free strategy call.',
+      '/pricing':'Marketing Pricing Vancouver — From $759/mo, No Contracts | AP Digital|Transparent per-service pricing for SEO, paid ads, content, web design & lead gen. Month-to-month. 90-day results guarantee. Free strategy call.',
+      '/about':'About AP Digital | Vancouver Marketing Agency|AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for salons, trades, real estate & coaches.',
+      '/contact':'Contact AP Digital | Book a Free Strategy Call|Book a free 20-minute strategy call with AP Digital. We will show you how many leads are available in your area. No pressure.',
+      '/blog':'Marketing Blog | Tips for BC Salons, Trades & Realtors|Marketing tips, ad strategies & lead generation guides for Vancouver salons, trades businesses, realtors & coaches.',
+      '/case-studies':'Case Studies | Real Results for Vancouver Small Businesses | AP Digital|See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses.',
+      '/salon-marketing':'Salon Marketing Vancouver | Fill Every Chair | AP Digital|Get 20-40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
+      '/trades-marketing':'Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital|AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20-50 qualified leads/month via Google & Meta Ads. No contracts.',
+      '/real-estate-marketing':'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital|AP Digital generates 15-30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
+      '/coaching-marketing':'Coaching Marketing BC | Get Consistent Clients | AP Digital|AP Digital helps BC life, business & fitness coaches get 20-40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.'
+    };
+    var p=location.pathname.replace(/\/$/,'') || '/';
+    var d=m[p];
+    if(d){var s=d.split('|');document.title=s[0];var el=document.querySelector('meta[name="description"]');if(el)el.setAttribute('content',s[1]);}
+  })();
+  </script>
   <title>AP Digital | Vancouver Marketing — Meta & Google Ads</title>
   <meta name="description" content="Vancouver performance marketing agency. 2,400+ leads delivered for BC salons, trades, realtors & coaches. 90-day guarantee. Month-to-month." />
 
