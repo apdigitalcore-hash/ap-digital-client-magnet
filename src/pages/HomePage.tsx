@@ -163,7 +163,7 @@ const LiveActivityPanel = () => {
             Live Activity
           </span>
         </div>
-        <span className="text-[9px] font-semibold text-gray-600 uppercase tracking-wider">Now</span>
+        <span className="text-[9px] font-semibold text-gray-400 uppercase tracking-wider">Now</span>
       </div>
 
       {/* Notification stack — content cycles via interval, animation re-triggers on key change */}
@@ -179,7 +179,7 @@ const LiveActivityPanel = () => {
               <NotifIcon type={n.type} />
               <div className="min-w-0 flex-1">
                 <p className="text-[11px] text-white font-bold leading-none mb-0.5 truncate">{n.title}</p>
-                <p className="text-[10px] text-gray-500 font-medium leading-none truncate">{n.meta}</p>
+                <p className="text-[10px] text-gray-400 font-medium leading-none truncate">{n.meta}</p>
               </div>
             </div>
           );
@@ -311,7 +311,7 @@ const HomePage = () => {
 
               {/* Inline trust line */}
               <p
-                className="mt-10 text-xs text-gray-500 animate-fade-up text-center lg:text-left"
+                className="mt-10 text-xs text-gray-400 animate-fade-up text-center lg:text-left"
                 style={{ animationDelay: '0.32s' }}
               >
                 <span className="text-gray-300 font-semibold">2,400+ leads</span> delivered for <span className="text-gray-300 font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
@@ -396,7 +396,7 @@ const HomePage = () => {
                 <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
                   <Scissors className="w-5 h-5 text-teal" strokeWidth={1.8} />
                 </div>
-                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Salons</p>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
@@ -420,7 +420,7 @@ const HomePage = () => {
                 <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
                   <Home className="w-5 h-5 text-teal" strokeWidth={1.8} />
                 </div>
-                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Real Estate</p>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
@@ -444,7 +444,7 @@ const HomePage = () => {
                 <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
                   <Wrench className="w-5 h-5 text-teal" strokeWidth={1.8} />
                 </div>
-                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Trades</p>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
@@ -468,7 +468,7 @@ const HomePage = () => {
                 <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
                   <Users className="w-5 h-5 text-teal" strokeWidth={1.8} />
                 </div>
-                <ChevronRight className="w-4 h-4 text-gray-600 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
+                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
               </div>
               <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Coaching</p>
               <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">

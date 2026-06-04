@@ -206,7 +206,7 @@ const Pricing = () => {
           </p>
 
           {/* Trust bar */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-500 mb-10">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-400 mb-10">
             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> No contracts</span>
             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> 90-day guarantee</span>
             <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> Cancel anytime</span>
@@ -264,7 +264,7 @@ const Pricing = () => {
                 <div className="rounded-xl bg-near-black/60 border border-gray-800 p-5 mb-5">
                   <div className="flex items-baseline gap-1.5">
                     <span className="font-display text-4xl font-black text-white">{svc.ourPrice}</span>
-                    <span className="text-gray-500 text-sm">{svc.period}</span>
+                    <span className="text-gray-400 text-sm">{svc.period}</span>
                   </div>
                 </div>
 

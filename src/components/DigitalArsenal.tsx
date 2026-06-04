@@ -338,7 +338,7 @@ const PromptPlayground = () => {
               />
             </div>
             {!isFilled && (
-              <p className="text-xs text-gray-600 pt-1">
+              <p className="text-xs text-gray-400 pt-1">
                 Fill all three to unlock the copy button. Works instantly — no signup, no email.
               </p>
             )}
@@ -355,7 +355,7 @@ const PromptPlayground = () => {
                     ? 'bg-teal/20 text-teal border border-teal/30'
                     : isFilled
                     ? 'bg-teal text-near-black hover:opacity-90'
-                    : 'bg-gray-800 text-gray-500 border border-gray-700 cursor-not-allowed'
+                    : 'bg-gray-800 text-gray-400 border border-gray-700 cursor-not-allowed'
                 }`}
               >
                 {copied ? (
@@ -512,7 +512,7 @@ const FreePrompts = () => {
           <div className="rounded-2xl border border-gray-700/60 bg-gray-900/60 overflow-hidden">
             <div className="flex items-center gap-2 px-4 py-3 border-b border-gray-700/60">
               <span className="text-sm font-semibold text-gray-300">Sample Output</span>
-              <span className="text-xs text-gray-500">(real Claude result)</span>
+              <span className="text-xs text-gray-400">(real Claude result)</span>
             </div>
             <div className="p-4 text-xs text-gray-300 leading-relaxed overflow-auto max-h-72 whitespace-pre-wrap">
               {active.output}
@@ -609,7 +609,7 @@ const TimeCalculator = () => {
                 aria-label="Hourly rate"
                 className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-teal"
               />
-              <div className="flex justify-between text-xs text-gray-600 mt-1">
+              <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>$25</span><span>$500</span>
               </div>
             </div>
@@ -623,7 +623,7 @@ const TimeCalculator = () => {
                   </label>
                   <span className="text-teal font-bold text-sm flex-shrink-0">{hours[key]} hrs/wk</span>
                 </div>
-                <p className="text-xs text-gray-500 mb-3">{desc}</p>
+                <p className="text-xs text-gray-400 mb-3">{desc}</p>
                 <input
                   id={`calc-${key}`}
                   type="range"
@@ -635,7 +635,7 @@ const TimeCalculator = () => {
                   aria-label={`${label} hours per week`}
                   className="w-full h-1.5 rounded-full appearance-none cursor-pointer accent-teal"
                 />
-                <div className="flex justify-between text-xs text-gray-600 mt-1">
+                <div className="flex justify-between text-xs text-gray-400 mt-1">
                   <span>0 hrs</span><span>20 hrs</span>
                 </div>
               </div>
@@ -644,7 +644,7 @@ const TimeCalculator = () => {
 
           <div className="space-y-4">
             <div className="rounded-2xl border border-gray-700/80 bg-gray-900/60 p-5 sm:p-6 space-y-3 overflow-hidden">
-              <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Where your time goes today</p>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider">Where your time goes today</p>
 
               <div className="flex items-center justify-between py-2.5 border-b border-gray-800 gap-3">
                 <span className="text-sm text-gray-400 min-w-0">Hours / week on these tasks</span>
@@ -695,7 +695,7 @@ const TimeCalculator = () => {
                 </a>
               </Button>
 
-              <p className="text-center text-xs text-gray-600 mt-3">
+              <p className="text-center text-xs text-gray-400 mt-3">
                 One-time · Works with free Claude · 30-day refund
               </p>
             </div>
@@ -733,7 +733,7 @@ const ProductCard = () => (
           <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
             The{' '}
             <span className="text-gradient">$10K AI Employee</span>{' '}
-            <span className="text-gray-500 text-xl sm:text-2xl md:text-3xl font-bold">Playbook</span>
+            <span className="text-gray-400 text-xl sm:text-2xl md:text-3xl font-bold">Playbook</span>
           </h3>
 
           <p className="text-gray-400 text-base leading-relaxed mb-6">
@@ -753,7 +753,7 @@ const ProductCard = () => (
                   <p className="text-sm font-bold text-white leading-tight">
                     {cat.count} {cat.name}
                   </p>
-                  <p className="text-[11px] text-gray-500 leading-snug mt-0.5 line-clamp-2">{cat.example}</p>
+                  <p className="text-[11px] text-gray-400 leading-snug mt-0.5 line-clamp-2">{cat.example}</p>
                 </div>
               </div>
             ))}
@@ -778,7 +778,7 @@ const ProductCard = () => (
         <div className="lg:sticky lg:top-8">
           <div className="rounded-2xl border border-gray-700/80 bg-gray-900/60 p-6 md:p-8">
             <div className="mb-2">
-              <span className="text-gray-500 text-sm">One-time · No subscription</span>
+              <span className="text-gray-400 text-sm">One-time · No subscription</span>
             </div>
             <div className="flex items-end gap-3 mb-6">
               <span className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-white leading-none">
@@ -809,7 +809,7 @@ const ProductCard = () => (
             </ul>
 
             <div className="mt-6 pt-5 border-t border-gray-700/60">
-              <p className="text-xs text-gray-500 text-center leading-relaxed">
+              <p className="text-xs text-gray-400 text-center leading-relaxed">
                 Built by AP Digital — the same prompt systems we use to run live client campaigns across trades, salon, real estate & coaching.
               </p>
             </div>

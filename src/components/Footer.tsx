@@ -63,7 +63,7 @@ const Footer = () => {
             <p className="text-gray-400 mb-4 max-w-xs">
               Performance marketing agency helping Canadian service businesses generate leads and scale revenue.
             </p>
-            <p className="text-gray-500 text-sm mb-6 flex items-center gap-2">
+            <p className="text-gray-400 text-sm mb-6 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-teal" />
               Vancouver, BC, Canada
             </p>
@@ -160,7 +160,7 @@ const Footer = () => {
       <div className="border-t border-gray-800">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               © {currentYear} AP DIGITAL. All rights reserved.
             </p>
             <div className="flex gap-6">
@@ -168,7 +168,7 @@ const Footer = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="text-gray-500 text-sm hover:text-teal transition-colors"
+                  className="text-gray-400 text-sm hover:text-teal transition-colors"
                 >
                   {link.label}
                 </Link>
