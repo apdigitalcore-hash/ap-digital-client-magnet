@@ -142,7 +142,7 @@ const Portfolio = () => {
 
                 {/* Content */}
                 <div className="p-6 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 text-gray-500 text-sm mb-3">
+                  <div className="flex items-center gap-2 text-gray-400 text-sm mb-3">
                     <span>{study.location}</span>
                   </div>
                   
@@ -178,7 +178,7 @@ const Portfolio = () => {
                         <div className="font-display text-2xl md:text-3xl font-bold text-primary-foreground">
                           {metric.value}
                         </div>
-                        <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">
+                        <div className="text-xs text-gray-400 uppercase tracking-wider mt-1">
                           {metric.label}
                         </div>
                       </div>
@@ -197,7 +197,7 @@ const Portfolio = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-500 text-sm mb-4">Want to be our next success story?</p>
+          <p className="text-gray-400 text-sm mb-4">Want to be our next success story?</p>
           <Button variant="hero" size="xl" asChild className="shadow-teal-lg">
             <Link to="/contact" className="flex items-center gap-2">
               Get Your Free Growth Audit

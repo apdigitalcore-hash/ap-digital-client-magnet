@@ -52,7 +52,7 @@ const DarkCTA = ({
           </div>
 
           {/* Trust indicators */}
-          <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-gray-500 text-sm">
+          <div className="mt-12 flex flex-wrap justify-center items-center gap-6 text-gray-400 text-sm">
             <span className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-teal" />
               No long-term contracts

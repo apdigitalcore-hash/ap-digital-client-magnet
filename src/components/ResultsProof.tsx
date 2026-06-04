@@ -106,7 +106,7 @@ const ResultsProof = () => {
                 <div className="text-teal font-semibold text-xs sm:text-sm uppercase tracking-wider mb-1">
                   {metric.label}
                 </div>
-                <p className="text-gray-500 text-xs sm:text-sm mt-auto">
+                <p className="text-gray-400 text-xs sm:text-sm mt-auto">
                   {metric.description}
                 </p>
               </div>
@@ -116,7 +116,7 @@ const ResultsProof = () => {
 
         {/* Platform logos */}
         <div className="text-center">
-          <p className="text-gray-500 text-sm mb-6 uppercase tracking-wider">
+          <p className="text-gray-400 text-sm mb-6 uppercase tracking-wider">
             Certified across major platforms
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">

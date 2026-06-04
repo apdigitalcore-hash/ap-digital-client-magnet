@@ -508,7 +508,7 @@ const MarketingAuditAI = () => {
                   </div>
                   <div>
                     <label htmlFor="audit-url" className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-1.5">
-                      Website <span className="text-gray-600 normal-case tracking-normal">(optional)</span>
+                      Website <span className="text-gray-400 normal-case tracking-normal">(optional)</span>
                     </label>
                     <input
                       id="audit-url"
@@ -550,7 +550,7 @@ const MarketingAuditAI = () => {
               className="max-w-2xl mx-auto"
             >
               <div className="mb-6">
-                <div className="flex justify-between text-xs text-gray-500 mb-2">
+                <div className="flex justify-between text-xs text-gray-400 mb-2">
                   <span>Question {currentQ + 1} of {QUESTIONS.length}</span>
                   <span className="font-semibold text-teal">{q.category}</span>
                 </div>
@@ -620,7 +620,7 @@ const MarketingAuditAI = () => {
                 >
                   <ArrowLeft className="w-4 h-4" /> Back
                 </button>
-                <span className="text-xs text-gray-600">Your answers are private</span>
+                <span className="text-xs text-gray-400">Your answers are private</span>
               </div>
             </motion.div>
           )}
@@ -690,7 +690,7 @@ const MarketingAuditAI = () => {
                   </button>
                 </div>
 
-                <p className="text-center text-xs text-gray-600 mt-5">
+                <p className="text-center text-xs text-gray-400 mt-5">
                   We use your email only to send this report. Unsubscribe anytime.
                 </p>
               </div>
@@ -765,13 +765,13 @@ const MarketingAuditAI = () => {
                 <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-start">
                   <div className="flex items-end gap-4 md:flex-col md:items-start">
                     <div>
-                      <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Your score</p>
+                      <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Your score</p>
                       <div className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-teal leading-none">
                         {result.overall}<span className="text-2xl sm:text-3xl">%</span>
                       </div>
                     </div>
                     <div className="md:mt-2">
-                      <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Benchmark</p>
+                      <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Benchmark</p>
                       <div className="font-display text-2xl sm:text-3xl font-bold text-gray-400 leading-none">
                         {result.benchmark}%
                       </div>
@@ -791,7 +791,7 @@ const MarketingAuditAI = () => {
 
               <div className="grid lg:grid-cols-5 gap-6 mb-6">
                 <div className="lg:col-span-2 rounded-3xl border border-gray-800 bg-charcoal-light/60 backdrop-blur-sm p-5 sm:p-8">
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Marketing Map</p>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Marketing Map</p>
                   <div className="w-full max-w-sm mx-auto">
                     <svg viewBox={`0 0 ${SVG_SIZE} ${SVG_SIZE}`} className="w-full" aria-hidden>
                       {[0.25, 0.5, 0.75, 1].map((f) => (
@@ -857,14 +857,14 @@ const MarketingAuditAI = () => {
                       })}
                     </svg>
                   </div>
-                  <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-500">
+                  <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-400">
                     <span className="flex items-center gap-1.5"><span className="w-3 h-0.5 bg-teal" /> You</span>
                     <span className="flex items-center gap-1.5"><span className="w-3 border-t border-dashed border-gray-500" /> Benchmark</span>
                   </div>
                 </div>
 
                 <div className="lg:col-span-3 rounded-3xl border border-gray-800 bg-charcoal-light/60 backdrop-blur-sm p-5 sm:p-8">
-                  <p className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">Channel-by-Channel</p>
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Channel-by-Channel</p>
                   <div className="space-y-3.5">
                     {result.dimensions.map((d, i) => {
                       const isWeakest = d.dimension === result.weakest;
@@ -894,7 +894,7 @@ const MarketingAuditAI = () => {
                               <span className={`font-bold text-sm ${isWeakest ? 'text-orange-400' : isStrongest ? 'text-teal' : 'text-white'}`}>
                                 {d.score}%
                               </span>
-                              <span className={`text-[10px] font-semibold ${gap >= 0 ? 'text-teal' : 'text-gray-500'}`}>
+                              <span className={`text-[10px] font-semibold ${gap >= 0 ? 'text-teal' : 'text-gray-400'}`}>
                                 {gap >= 0 ? `+${gap}` : gap} vs avg
                               </span>
                             </div>
@@ -979,13 +979,13 @@ const MarketingAuditAI = () => {
                 </button>
                 <button
                   onClick={handleReset}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-gray-500 text-sm font-semibold hover:text-gray-300 transition"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-gray-400 text-sm font-semibold hover:text-gray-200 transition"
                 >
                   <RotateCcw className="w-4 h-4" /> Retake the audit
                 </button>
               </div>
 
-              <p className="text-center text-xs text-gray-600 mt-6">
+              <p className="text-center text-xs text-gray-400 mt-6">
                 {emailed
                   ? <>Report saved. A copy has been sent to {email}. </>
                   : <>Report saved. Use the Save as PDF button above to keep a copy. </>}
