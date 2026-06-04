@@ -14,9 +14,10 @@
 
   <title>AP Digital | Vancouver Marketing — Meta & Google Ads</title>
   <meta name="description" content="Vancouver performance marketing agency. 2,400+ leads delivered for BC salons, trades, realtors & coaches. 90-day guarantee. Month-to-month." />
-  <!-- Route-aware meta — sets unique title/desc per page for Googlebot rendering -->
+  <!-- Route-aware meta: unique title, desc, canonical, OG per page -->
   <script>
   (function(){
+    var B='https://ap-digital.ca';
     var m={
       '/':'AP Digital | Vancouver Marketing — Meta & Google Ads|Vancouver performance marketing agency. 2,400+ leads delivered for BC salons, trades, realtors & coaches. 90-day guarantee. Month-to-month.',
       '/services/paid-ads':'Google Ads Agency Vancouver | PPC & Meta Ads | AP Digital|Google Ads, PPC & Facebook Ads agency in Vancouver. AP Digital manages Meta and Google campaigns for BC salons, trades, realtors & coaches. Month-to-month.',
@@ -40,11 +41,40 @@
       '/salon-marketing':'Salon Marketing Vancouver | Fill Every Chair | AP Digital|Get 20-40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
       '/trades-marketing':'Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital|AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20-50 qualified leads/month via Google & Meta Ads. No contracts.',
       '/real-estate-marketing':'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital|AP Digital generates 15-30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
-      '/coaching-marketing':'Coaching Marketing BC | Get Consistent Clients | AP Digital|AP Digital helps BC life, business & fitness coaches get 20-40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.'
+      '/coaching-marketing':'Coaching Marketing BC | Get Consistent Clients | AP Digital|AP Digital helps BC life, business & fitness coaches get 20-40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.',
+      '/blog/how-to-get-more-salon-clients':'How to Get More Salon Clients in 2026 | AP Digital|Proven strategies to get more salon clients using social media, paid ads & referrals in Vancouver, BC.',
+      '/blog/how-to-market-a-trades-business-online':'How to Market a Trades Business Online in Canada|A practical guide to online marketing for tradespeople in Canada. Google Ads, Meta Ads & SEO for plumbers, electricians & HVAC.',
+      '/blog/best-ads-platform-for-small-business-canada':'Facebook Ads vs Google Ads for Small Business Canada 2026|Meta Ads or Google Ads — which is better for your Canadian small business? Costs, niches & recommendations.',
+      '/blog/facebook-ads-vs-google-ads':'Facebook Ads vs Google Ads: Which Is Better? | AP Digital|Facebook Ads vs Google Ads — what works for Canadian small businesses? AP Digital breaks down both platforms.',
+      '/blog/best-ads-for-trades-businesses-canada':'Best Ads for Trades Businesses in Canada | AP Digital|Which ads platform works best for plumbers, HVAC, electricians & roofers in Canada? Meta Ads vs Google Ads breakdown.',
+      '/blog/digital-marketing-agency-vancouver-bc':'Digital Marketing Agency Vancouver BC | AP Digital|Looking for a digital marketing agency in Vancouver, BC? AP Digital helps local businesses get more leads. No contracts.',
+      '/blog/best-digital-marketing-agency-vancouver':'Best Digital Marketing Agency Vancouver 2026 | AP Digital|How to choose the best digital marketing agency in Vancouver. What to look for, red flags, and how to pick one that delivers.',
+      '/blog/salon-marketing-vancouver-bc':'Salon Marketing Vancouver BC: Get More Clients | AP Digital|The complete guide to salon marketing in Vancouver. Instagram ads, Google Ads & local SEO to fill your bookings.',
+      '/blog/trades-marketing-vancouver-bc':'Trades Marketing Vancouver BC: Get More Leads | AP Digital|How trades businesses in Vancouver get steady leads online. Paid ads & SEO for plumbers, HVAC, electricians & roofers.',
+      '/blog/real-estate-agent-marketing-vancouver-bc':'Real Estate Agent Marketing Vancouver BC | AP Digital|How Vancouver realtors get consistent leads using Meta Ads, social media & Google Ads.',
+      '/blog/meta-ads-cost-contractors-bc':'How Much Do Meta Ads Cost for Contractors in BC? | AP Digital|Realistic Meta Ads budgets for plumbers, HVAC, electricians & roofers in Metro Vancouver.',
+      '/blog/hvac-marketing-vancouver-bc':'HVAC Marketing Vancouver BC: Get More Leads | AP Digital|How HVAC companies in Vancouver get consistent service calls using Meta Ads, Google Ads & local SEO.',
+      '/blog/coaching-clients-bc':'How to Get More Coaching Clients in BC | AP Digital|How fitness, business & life coaches in BC use paid ads & social media to grow their practice.',
+      '/blog/plumber-marketing-metro-vancouver':'Plumber Marketing Metro Vancouver: Get More Calls | AP Digital|How plumbing companies in Metro Vancouver get more service calls with Google Ads, Meta Ads & local SEO.',
+      '/blog/electrician-leads-bc':'How Electricians Get More Leads in BC | AP Digital|Best ways for BC electricians to generate consistent leads. Paid ads, Google Business Profile & local SEO.',
+      '/blog/vancouver-small-business-seo-guide':'Vancouver Small Business SEO Guide 2026 | AP Digital|How Vancouver small businesses rank higher on Google with local SEO and Google Business Profile optimization.',
+      '/blog/facebook-ads-vancouver-small-business':'Facebook Ads for Vancouver Small Business 2026 | AP Digital|How Vancouver small businesses use Facebook & Instagram ads to generate leads. Targeting tips & budget advice.',
+      '/blog/vancouver-google-ads-guide-local-business':'Google Ads Vancouver: Local Business Guide 2026 | AP Digital|How Vancouver local businesses use Google Ads & Local Service Ads to get more calls, leads, and booked jobs.',
+      '/blog/social-media-marketing-vancouver':'Social Media Marketing Vancouver 2026 | AP Digital|What social media strategies actually work for Vancouver local businesses. Platform selection & content ideas.'
     };
     var p=location.pathname.replace(/\/$/,'') || '/';
     var d=m[p];
-    if(d){var s=d.split('|');document.title=s[0];var el=document.querySelector('meta[name="description"]');if(el)el.setAttribute('content',s[1]);}
+    if(d){
+      var s=d.split('|');
+      document.title=s[0];
+      var el=document.querySelector('meta[name="description"]');if(el)el.setAttribute('content',s[1]);
+      var og1=document.querySelector('meta[property="og:title"]');if(og1)og1.setAttribute('content',s[0]);
+      var og2=document.querySelector('meta[property="og:description"]');if(og2)og2.setAttribute('content',s[1]);
+      var og3=document.querySelector('meta[property="og:url"]');if(og3)og3.setAttribute('content',B+p);
+      var tw1=document.querySelector('meta[name="twitter:title"]');if(tw1)tw1.setAttribute('content',s[0]);
+      var tw2=document.querySelector('meta[name="twitter:description"]');if(tw2)tw2.setAttribute('content',s[1]);
+    }
+    var c=document.createElement('link');c.rel='canonical';c.href=B+p;document.head.appendChild(c);
   })();
   </script>
 
