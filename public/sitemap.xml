@@ -5,6 +5,8 @@
   <url><loc>https://ap-digital.ca/about</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-06-04</lastmod></url>
   <url><loc>https://ap-digital.ca/contact</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-06-04</lastmod></url>
   <url><loc>https://ap-digital.ca/pricing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-06-04</lastmod></url>
+  <url><loc>https://ap-digital.ca/privacy-policy</loc><priority>0.3</priority><changefreq>monthly</changefreq><lastmod>2026-06-04</lastmod></url>
+  <url><loc>https://ap-digital.ca/terms-of-service</loc><priority>0.3</priority><changefreq>monthly</changefreq><lastmod>2026-06-04</lastmod></url>
   <!-- Service pages -->
   <url><loc>https://ap-digital.ca/services/paid-ads</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-06-04</lastmod></url>
   <url><loc>https://ap-digital.ca/services/seo</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-06-04</lastmod></url>
