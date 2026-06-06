@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Zap, ArrowRight, ArrowLeft, Loader2, CheckCircle2, AlertTriangle,
-  TrendingUp, Sparkles, Share2, Download, RotateCcw, Check,
+  TrendingUp, Sparkles, Share2, Download, RotateCcw, Check, ChevronDown,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
@@ -201,6 +201,53 @@ function labelAnchor(i: number): 'middle' | 'start' | 'end' {
 }
 
 /* ────────────────────────────────────────────────────────────────────────────
+ * Grade, revenue-leak & service-recommendation helpers
+ * ────────────────────────────────────────────────────────────────────────── */
+
+function getGrade(score: number): string {
+  if (score >= 90) return 'A';
+  if (score >= 75) return 'B';
+  if (score >= 55) return 'C';
+  if (score >= 35) return 'D';
+  return 'F';
+}
+
+function getGradeStyle(grade: string): string {
+  switch (grade) {
+    case 'A': return 'text-emerald-400 bg-emerald-400/10 border-emerald-400/30';
+    case 'B': return 'text-teal bg-teal/10 border-teal/30';
+    case 'C': return 'text-yellow-400 bg-yellow-400/10 border-yellow-400/30';
+    case 'D': return 'text-orange-400 bg-orange-400/10 border-orange-400/30';
+    default:  return 'text-red-400 bg-red-400/10 border-red-400/30';
+  }
+}
+
+/* Conservative per-dimension monthly revenue-impact multipliers.
+   Based on AP Digital client data for typical BC service businesses ($15K-$40K/mo).
+   Each point of gap below benchmark × weight = estimated $ left on the table. */
+const DIM_REVENUE_WEIGHT: Record<Dimension, number> = {
+  ads: 3200, funnel: 2600, seo: 2000, website: 1600,
+  reviews: 1400, social: 1000, content: 800,
+};
+
+function estimateMonthlyLeak(dims: DimensionAnalysis[]): number {
+  return dims.reduce((sum, d) => {
+    const gap = Math.max(0, d.benchmark - d.score);
+    return sum + Math.round((gap / 100) * (DIM_REVENUE_WEIGHT[d.dimension] ?? 1000));
+  }, 0);
+}
+
+const SERVICE_REC: Record<Dimension, { label: string; path: string; pitch: string }> = {
+  ads:     { label: 'Paid Ads',         path: '/services/paid-ads',         pitch: 'Google + Meta ads managed for $759/mo — 20-50 leads/month for BC trades, salons & realtors.' },
+  seo:     { label: 'SEO',              path: '/services/seo',              pitch: 'Local SEO + Google Business Profile optimization. Most clients hit page 1 in 90-180 days.' },
+  social:  { label: 'Social Media',     path: '/services/social-media',     pitch: '12 custom posts/month, 2 platforms managed, community engagement — fully done for you.' },
+  content: { label: 'Content Creation', path: '/services/content-creation', pitch: 'Scroll-stopping short-form video + social content that builds brand and drives leads.' },
+  website: { label: 'Web Design',       path: '/services/web-design',       pitch: 'Fast, conversion-focused websites that turn visitors into paying clients. One-time $2,100.' },
+  reviews: { label: 'Lead Generation',  path: '/services/lead-generation',  pitch: 'Automated review collection + reputation systems. Part of our lead gen service.' },
+  funnel:  { label: 'Lead Generation',  path: '/services/lead-generation',  pitch: 'End-to-end lead nurture — email, SMS, CRM automation. 2,400+ leads delivered for BC businesses.' },
+};
+
+/* ────────────────────────────────────────────────────────────────────────────
  * Phases
  * ────────────────────────────────────────────────────────────────────────── */
 
@@ -237,6 +284,7 @@ const MarketingAuditAI = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const [copiedShare, setCopiedShare] = useState(false);
+  const [expandedDims, setExpandedDims] = useState<Set<Dimension>>(new Set());
 
   const sectionRef = useRef<HTMLElement>(null);
   const scrollToSelf = () => {
@@ -355,14 +403,44 @@ const MarketingAuditAI = () => {
     setResult(null);
     setSource(null);
     setErrorMsg(null);
+    setExpandedDims(new Set());
     scrollToSelf();
   };
+
+  const toggleDim = useCallback((dim: Dimension) => {
+    setExpandedDims(prev => {
+      const next = new Set(prev);
+      if (next.has(dim)) next.delete(dim); else next.add(dim);
+      return next;
+    });
+  }, []);
 
   const shareText = useMemo(() => {
     if (!result) return '';
     const biz = businessName ? ` for ${businessName}` : '';
-    return `Just scored ${result.overall}% on the AP Digital Marketing Health Audit${biz}. Industry benchmark: ${result.benchmark}%. Biggest leak: ${DIMENSION_LABELS[result.weakest]}. Take the free audit → https://ap-digital.ca/#marketing-audit`;
+    const grade = getGrade(result.overall);
+    return `Just scored ${result.overall}% (Grade: ${grade}) on the AP Digital Marketing Audit${biz}. Industry benchmark: ${result.benchmark}%. Biggest opportunity: ${DIMENSION_LABELS[result.weakest]}. Take the free audit → https://ap-digital.ca/#marketing-audit`;
   }, [result, businessName]);
+
+  const sortedDimensions = useMemo(() => {
+    if (!result) return [];
+    return [...result.dimensions].sort((a, b) => (b.benchmark - b.score) - (a.benchmark - a.score));
+  }, [result]);
+
+  const monthlyLeak = useMemo(() => {
+    if (!result) return 0;
+    return estimateMonthlyLeak(result.dimensions);
+  }, [result]);
+
+  const overallGrade = useMemo(() => {
+    if (!result) return 'C';
+    return getGrade(result.overall);
+  }, [result]);
+
+  const serviceRec = useMemo(() => {
+    if (!result) return SERVICE_REC.ads;
+    return SERVICE_REC[result.weakest] ?? SERVICE_REC.ads;
+  }, [result]);
 
   const handleCopyShare = async () => {
     try {
@@ -765,9 +843,14 @@ const MarketingAuditAI = () => {
                 <div className="grid md:grid-cols-[auto_1fr] gap-6 md:gap-8 items-start">
                   <div className="flex items-end gap-4 md:flex-col md:items-start">
                     <div>
-                      <p className="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Your score</p>
-                      <div className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-teal leading-none">
-                        {result.overall}<span className="text-2xl sm:text-3xl">%</span>
+                      <p className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-widest mb-1">Your score</p>
+                      <div className="flex items-end gap-3">
+                        <div className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-teal leading-none">
+                          {result.overall}<span className="text-2xl sm:text-3xl">%</span>
+                        </div>
+                        <span className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl border font-display text-xl sm:text-2xl font-black mb-1 ${getGradeStyle(overallGrade)}`}>
+                          {overallGrade}
+                        </span>
                       </div>
                     </div>
                     <div className="md:mt-2">
@@ -788,6 +871,41 @@ const MarketingAuditAI = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Revenue leak estimate */}
+              {monthlyLeak > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.15 }}
+                  className="rounded-2xl border border-orange-500/25 bg-orange-500/5 p-5 sm:p-6 mb-6"
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
+                        <AlertTriangle className="w-5 h-5 text-orange-400" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-orange-400 uppercase tracking-wider mb-1">Estimated revenue gap</p>
+                        <p className="text-sm text-gray-300 leading-relaxed">
+                          Based on your scores vs. industry benchmarks, you're likely leaving an estimated{' '}
+                          <span className="text-white font-bold">${monthlyLeak.toLocaleString()}/month</span>{' '}
+                          on the table from marketing gaps alone.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 text-center sm:text-right">
+                      <div className="font-display text-3xl sm:text-4xl font-black text-orange-400 leading-none">
+                        ${monthlyLeak.toLocaleString()}
+                      </div>
+                      <p className="text-[10px] text-gray-500 mt-1">est. /month</p>
+                    </div>
+                  </div>
+                  <p className="text-[11px] text-gray-600 mt-3 leading-relaxed">
+                    Estimate based on AP Digital's client data for BC service businesses. Actual impact varies by market, pricing, and competition.
+                  </p>
+                </motion.div>
+              )}
 
               <div className="grid lg:grid-cols-5 gap-6 mb-6">
                 <div className="lg:col-span-2 rounded-3xl border border-gray-800 bg-charcoal-light/60 backdrop-blur-sm p-5 sm:p-8">
@@ -864,51 +982,100 @@ const MarketingAuditAI = () => {
                 </div>
 
                 <div className="lg:col-span-3 rounded-3xl border border-gray-800 bg-charcoal-light/60 backdrop-blur-sm p-5 sm:p-8">
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Channel-by-Channel</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">Channel Breakdown</p>
+                    <p className="text-[10px] text-gray-600">Sorted by opportunity · Click to expand</p>
+                  </div>
                   <div className="space-y-3.5">
-                    {result.dimensions.map((d, i) => {
+                    {sortedDimensions.map((d, i) => {
                       const isWeakest = d.dimension === result.weakest;
                       const isStrongest = d.dimension === result.strongest;
                       const gap = d.score - d.benchmark;
+                      const grade = getGrade(d.score);
+                      const isExpanded = expandedDims.has(d.dimension);
                       return (
                         <motion.div
                           key={d.dimension}
                           initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.2 + i * 0.05 }}
-                          className={`rounded-2xl border p-4 ${
+                          className={`rounded-2xl border transition-colors ${
                             isWeakest ? 'border-orange-500/30 bg-orange-500/5'
                             : isStrongest ? 'border-teal/25 bg-teal/5'
                             : 'border-gray-800 bg-gray-900/40'
                           }`}
                         >
-                          <div className="flex items-center justify-between gap-2 mb-2">
-                            <div className="flex items-center gap-2 min-w-0">
-                              <h4 className={`font-semibold text-sm sm:text-base truncate ${isWeakest ? 'text-orange-300' : isStrongest ? 'text-teal' : 'text-white'}`}>
-                                {d.label}
-                              </h4>
-                              {isWeakest && <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 flex-shrink-0">Biggest leak</span>}
-                              {isStrongest && <span className="text-[10px] font-bold uppercase tracking-wider text-teal flex-shrink-0">Strength</span>}
+                          <button
+                            onClick={() => toggleDim(d.dimension)}
+                            className="w-full text-left p-4 focus:outline-none focus:ring-2 focus:ring-teal/30 rounded-2xl"
+                            aria-expanded={isExpanded}
+                          >
+                            <div className="flex items-center justify-between gap-2 mb-2">
+                              <div className="flex items-center gap-2.5 min-w-0">
+                                <span className={`inline-flex items-center justify-center w-8 h-8 rounded-lg border font-display text-sm font-black flex-shrink-0 ${getGradeStyle(grade)}`}>
+                                  {grade}
+                                </span>
+                                <h4 className={`font-semibold text-sm sm:text-base truncate ${isWeakest ? 'text-orange-300' : isStrongest ? 'text-teal' : 'text-white'}`}>
+                                  {d.label}
+                                </h4>
+                                {isWeakest && <span className="text-[10px] font-bold uppercase tracking-wider text-orange-400 flex-shrink-0 hidden sm:inline">#1 opportunity</span>}
+                                {isStrongest && <span className="text-[10px] font-bold uppercase tracking-wider text-teal flex-shrink-0 hidden sm:inline">Strength</span>}
+                              </div>
+                              <div className="flex items-center gap-2 flex-shrink-0">
+                                <div className="flex items-baseline gap-1.5">
+                                  <span className={`font-bold text-sm ${isWeakest ? 'text-orange-400' : isStrongest ? 'text-teal' : 'text-white'}`}>
+                                    {d.score}%
+                                  </span>
+                                  <span className={`text-[10px] font-semibold ${gap >= 0 ? 'text-teal' : 'text-gray-500'}`}>
+                                    {gap >= 0 ? `+${gap}` : gap}
+                                  </span>
+                                </div>
+                                <ChevronDown className={`w-4 h-4 text-gray-500 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+                              </div>
                             </div>
-                            <div className="flex items-baseline gap-1.5 flex-shrink-0">
-                              <span className={`font-bold text-sm ${isWeakest ? 'text-orange-400' : isStrongest ? 'text-teal' : 'text-white'}`}>
-                                {d.score}%
-                              </span>
-                              <span className={`text-[10px] font-semibold ${gap >= 0 ? 'text-teal' : 'text-gray-400'}`}>
-                                {gap >= 0 ? `+${gap}` : gap} vs avg
-                              </span>
+                            <div className="relative h-1.5 rounded-full bg-gray-800 overflow-hidden mb-3">
+                              <motion.div
+                                className={`absolute top-0 left-0 h-1.5 rounded-full ${isWeakest ? 'bg-orange-400' : 'bg-teal'}`}
+                                initial={{ width: 0 }}
+                                animate={{ width: `${d.score}%` }}
+                                transition={{ duration: 0.8, delay: 0.3 + i * 0.08 }}
+                              />
+                              <div className="absolute top-0 h-1.5 w-0.5 bg-gray-400" style={{ left: `${d.benchmark}%` }} aria-hidden />
                             </div>
-                          </div>
-                          <div className="relative h-1.5 rounded-full bg-gray-800 overflow-hidden mb-3">
-                            <motion.div
-                              className={`absolute top-0 left-0 h-1.5 rounded-full ${isWeakest ? 'bg-orange-400' : 'bg-teal'}`}
-                              initial={{ width: 0 }}
-                              animate={{ width: `${d.score}%` }}
-                              transition={{ duration: 0.8, delay: 0.3 + i * 0.08 }}
-                            />
-                            <div className="absolute top-0 h-1.5 w-0.5 bg-gray-400" style={{ left: `${d.benchmark}%` }} aria-hidden />
-                          </div>
-                          <p className="text-sm text-gray-300 leading-relaxed">{d.insight}</p>
+                            <p className="text-sm text-gray-300 leading-relaxed">{d.insight}</p>
+                          </button>
+
+                          <AnimatePresence>
+                            {isExpanded && d.actions && d.actions.length > 0 && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.25, ease: 'easeInOut' }}
+                                className="overflow-hidden"
+                              >
+                                <div className="px-4 pb-4 pt-1">
+                                  <div className="h-px bg-gray-800 mb-3" />
+                                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-2.5">
+                                    Fix it — action plan
+                                  </p>
+                                  <ol className="space-y-2">
+                                    {d.actions.map((a, ai) => (
+                                      <li key={ai} className="flex items-start gap-2.5 text-sm text-gray-300 leading-relaxed">
+                                        <span className={`flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold mt-0.5 ${
+                                          isWeakest ? 'bg-orange-500/15 border border-orange-500/25 text-orange-400'
+                                          : 'bg-teal/15 border border-teal/25 text-teal'
+                                        }`}>
+                                          {ai + 1}
+                                        </span>
+                                        <span>{a}</span>
+                                      </li>
+                                    ))}
+                                  </ol>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </motion.div>
                       );
                     })}
@@ -917,49 +1084,89 @@ const MarketingAuditAI = () => {
               </div>
 
               <div className="grid md:grid-cols-2 gap-6 mb-6">
+                {/* Next step + dynamic service recommendation */}
                 <div className="rounded-3xl border border-teal/30 bg-teal/5 p-6 sm:p-8">
                   <div className="flex items-center gap-2 mb-3">
                     <TrendingUp className="w-5 h-5 text-teal" />
-                    <p className="text-xs font-bold text-teal uppercase tracking-wider">Your one next step</p>
+                    <p className="text-xs font-bold text-teal uppercase tracking-wider">Your #1 next move</p>
                   </div>
-                  <p className="text-white font-semibold text-base sm:text-lg leading-relaxed mb-5">
+                  <p className="text-white font-semibold text-base sm:text-lg leading-relaxed mb-4">
                     {result.nextStep}
                   </p>
+
+                  {/* Dynamic service recommendation based on weakest dimension */}
+                  <div className="rounded-xl bg-near-black/40 border border-teal/15 p-4 mb-5">
+                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5">
+                      Recommended AP Digital service
+                    </p>
+                    <p className="text-sm text-white font-semibold mb-1">{serviceRec.label}</p>
+                    <p className="text-xs text-gray-400 leading-relaxed">{serviceRec.pitch}</p>
+                  </div>
+
                   <div className="flex flex-col sm:flex-row gap-2.5">
-                    <a
-                      href={STRIPE_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      to={serviceRec.path}
                       className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-teal text-near-black font-bold text-sm hover:opacity-90 transition shadow-teal-lg"
                     >
-                      Get the $9 Playbook <ArrowRight className="w-4 h-4" />
-                    </a>
-                    <Link
-                      to="/contact"
+                      Learn about {serviceRec.label} <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <a
+                      href="https://calendly.com/apdigital-core/20min"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-teal/40 text-teal font-semibold text-sm hover:bg-teal/10 transition"
                     >
                       Book a free strategy call
-                    </Link>
+                    </a>
                   </div>
                 </div>
 
+                {/* Grade summary card */}
                 <div className="rounded-3xl border border-gray-800 bg-charcoal-light/60 p-6 sm:p-8">
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-2 mb-4">
                     <Zap className="w-5 h-5 text-gold" />
-                    <p className="text-xs font-bold text-gold uppercase tracking-wider">
-                      Your 3-step action plan · {DIMENSION_LABELS[result.weakest]}
-                    </p>
+                    <p className="text-xs font-bold text-gold uppercase tracking-wider">Your scorecard</p>
                   </div>
-                  <ol className="space-y-3">
-                    {result.dimensions.find((d) => d.dimension === result.weakest)?.actions.map((a, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-gray-300 leading-relaxed">
-                        <span className="flex-shrink-0 w-6 h-6 rounded-lg bg-gold/15 border border-gold/25 text-gold font-bold text-xs flex items-center justify-center">
-                          {i + 1}
-                        </span>
-                        <span>{a}</span>
-                      </li>
-                    ))}
-                  </ol>
+                  <div className="space-y-2.5">
+                    {sortedDimensions.map((d) => {
+                      const grade = getGrade(d.score);
+                      const isWeakest = d.dimension === result.weakest;
+                      return (
+                        <div key={d.dimension} className="flex items-center justify-between gap-3 py-2 border-b border-gray-800/60 last:border-0">
+                          <div className="flex items-center gap-2.5 min-w-0">
+                            <span className={`inline-flex items-center justify-center w-7 h-7 rounded-lg border text-xs font-black flex-shrink-0 ${getGradeStyle(grade)}`}>
+                              {grade}
+                            </span>
+                            <span className={`text-sm font-medium truncate ${isWeakest ? 'text-orange-300' : 'text-gray-300'}`}>
+                              {d.label}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 flex-shrink-0">
+                            <span className="text-sm font-bold text-white">{d.score}%</span>
+                            <span className="text-[10px] text-gray-600">/ {d.benchmark}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="mt-4 pt-3 border-t border-gray-700/60 flex items-center justify-between">
+                    <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Overall</span>
+                    <div className="flex items-center gap-2">
+                      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-lg border text-xs font-black ${getGradeStyle(overallGrade)}`}>
+                        {overallGrade}
+                      </span>
+                      <span className="text-lg font-black text-white">{result.overall}%</span>
+                    </div>
+                  </div>
+
+                  <a
+                    href={STRIPE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl border border-gold/40 text-gold font-semibold text-sm hover:bg-gold/10 transition"
+                  >
+                    Get the $9 AI Playbook <ArrowRight className="w-4 h-4" />
+                  </a>
                 </div>
               </div>
 
