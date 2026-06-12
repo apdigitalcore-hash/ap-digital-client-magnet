@@ -373,6 +373,7 @@ At AP DIGITAL, we specialize in [social media marketing](/services/social-media)
   },
   {
     slug: 'facebook-ads-vs-google-ads',
+    canonicalUrl: 'https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada',
     title: 'Facebook Ads vs Google Ads: Which One Is Right for Your Business?',
     metaTitle: 'Facebook Ads vs Google Ads: Which Is Better for You?',
     metaDescription: "Facebook Ads vs Google Ads — what's the difference and which should you run? AP Digital breaks down both platforms for Canadian small businesses in 2026.",
@@ -424,6 +425,7 @@ At AP DIGITAL, we run [Facebook, Instagram, and Google Ads](/services/paid-ads) 
   },
   {
     slug: 'real-estate-social-media-tips',
+    canonicalUrl: 'https://ap-digital.ca/blog/real-estate-agent-social-media-tips',
     title: '5 Social Media Tips Every Canadian Realtor Needs in 2025',
     metaTitle: 'Real Estate Social Media Tips That Actually Work | AP Digital',
     metaDescription: "Stop posting just for likes. Here are real estate social media strategies that generate actual buyer & seller leads for Canadian realtors in 2026.",
@@ -1450,6 +1452,7 @@ AP DIGITAL builds complete digital marketing systems for electricians and trades
 const vancouverPosts: BlogPost[] = [
   {
     slug: 'best-digital-marketing-agency-vancouver',
+    canonicalUrl: 'https://ap-digital.ca/blog/digital-marketing-agency-vancouver-bc',
     title: 'How to Choose the Best Digital Marketing Agency in Vancouver in 2026',
     metaTitle: 'Best Digital Marketing Agency Vancouver 2026 | AP Digital',
     metaDescription: 'Looking for the best digital marketing agency in Vancouver? Learn what to look for, red flags to avoid, and how to pick an agency that delivers real ROI.',

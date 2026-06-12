@@ -270,8 +270,21 @@ const staticRoutes = [
     }
   },
   {
+    path: 'pricing',
+    title: 'Marketing Pricing Vancouver | From $759/mo | AP Digital',
+    description: 'Transparent per-service pricing for SEO, paid ads, content, web design & lead gen. Month-to-month. 90-day results guarantee. Free strategy call.',
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        orgSchema,
+        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Pricing', url: '/pricing' }]),
+        webPageSchema('Marketing Pricing Vancouver | From $759/mo | AP Digital', 'Transparent per-service pricing for SEO, paid ads, content, web design & lead gen.', '/pricing'),
+      ]
+    }
+  },
+  {
     path: 'case-studies',
-    title: 'Case Studies | Real Results for Vancouver Small Businesses | AP Digital',
+    title: 'Case Studies | Real Results for BC Businesses | AP Digital',
     description: 'See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses. Real results, real numbers.',
     schema: {
       "@context": "https://schema.org",
@@ -365,7 +378,7 @@ const staticRoutes = [
   },
   {
     path: 'surrey',
-    title: 'Surrey Digital Marketing Agency & Services | AP Digital BC',
+    title: 'Surrey Marketing Agency | Leads & Ads | AP Digital',
     description: 'Surrey digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
@@ -400,7 +413,7 @@ const staticRoutes = [
   },
   {
     path: 'burnaby',
-    title: 'Burnaby Digital Marketing Agency & Services | AP Digital BC',
+    title: 'Burnaby Marketing Agency | Leads & Ads | AP Digital',
     description: 'Burnaby digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
@@ -422,7 +435,7 @@ const staticRoutes = [
   },
   {
     path: 'langley',
-    title: 'Langley Digital Marketing Agency & Services | AP Digital BC',
+    title: 'Langley Marketing Agency | Leads & Ads | AP Digital',
     description: 'Langley digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
@@ -444,7 +457,7 @@ const staticRoutes = [
   },
   {
     path: 'coquitlam',
-    title: 'Coquitlam Digital Marketing Agency & Services | AP Digital BC',
+    title: 'Coquitlam Marketing Agency | Leads & Ads | AP Digital',
     description: 'Coquitlam digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
@@ -466,7 +479,7 @@ const staticRoutes = [
   },
   {
     path: 'vancouver',
-    title: 'Vancouver Digital Marketing Agency & Services | AP Digital',
+    title: 'Vancouver Marketing Agency | Leads & Ads | AP Digital',
     description: 'Vancouver digital marketing agency offering Google Ads, Meta Ads, SEO & web design services for salons, trades, realtors & coaches. 5-10x ROAS.',
     schema: {
       "@context": "https://schema.org",
@@ -512,7 +525,7 @@ const staticRoutes = [
   },
   {
     path: 'richmond',
-    title: 'Richmond Digital Marketing Agency & Services | AP Digital BC',
+    title: 'Richmond Marketing Agency | Leads & Ads | AP Digital',
     description: 'Richmond digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches in Richmond BC. 5-10x ROAS.',
     schema: {
       "@context": "https://schema.org",
@@ -538,7 +551,7 @@ const staticRoutes = [
   },
   {
     path: 'abbotsford',
-    title: 'Abbotsford Digital Marketing Agency & Services | AP Digital BC',
+    title: 'Abbotsford Marketing Agency | Leads & Ads | AP Digital',
     description: 'Abbotsford digital marketing agency offering Google Ads, Meta Ads & SEO services for Fraser Valley businesses. 5-10x ROAS. From $500/mo.',
     schema: {
       "@context": "https://schema.org",
