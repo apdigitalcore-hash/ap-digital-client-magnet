@@ -1,5 +1,5 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Target, Users, TrendingUp, Instagram, Linkedin, Scissors, Home, Wrench, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -56,138 +56,6 @@ const differentiators = [
   },
 ];
 
-// ─────────────── Live Activity panel ───────────────
-type NotifType = 'lead' | 'booking' | 'revenue' | 'metric' | 'review' | 'click' | 'view';
-
-const NOTIFICATION_POOL: Array<{ type: NotifType; title: string; meta: string }> = [
-  { type: 'lead',     title: '+1 qualified lead',         meta: 'Instagram Ads · just now' },
-  { type: 'booking',  title: 'New booking · Sarah K.',    meta: 'Salon · 2 min ago' },
-  { type: 'revenue',  title: '+$420 in revenue',          meta: 'Meta Ads · today' },
-  { type: 'metric',   title: 'CTR up 23%',                meta: 'Google Ads · 4 min ago' },
-  { type: 'booking',  title: 'New booking · Marcus R.',   meta: 'Trades · 6 min ago' },
-  { type: 'lead',     title: 'New lead · Hailey T.',      meta: 'Real Estate · 8 min ago' },
-  { type: 'view',     title: 'Reel hit 50K views',        meta: 'Instagram · 11 min ago' },
-  { type: 'metric',   title: 'ROAS hit 5.2×',             meta: 'Meta Ads · 14 min ago' },
-  { type: 'review',   title: 'New 5-star review',         meta: 'Google · 17 min ago' },
-  { type: 'booking',  title: 'Discovery call booked',     meta: 'Calendly · 21 min ago' },
-  { type: 'revenue',  title: '+$1,240 closed deal',       meta: 'Pipeline · 24 min ago' },
-  { type: 'lead',     title: 'New DM inquiry',            meta: 'Instagram · 28 min ago' },
-  { type: 'click',    title: '47 form submissions',       meta: 'Landing page · 31 min ago' },
-  { type: 'metric',   title: 'CPL dropped to $11',        meta: 'Meta Ads · 35 min ago' },
-  { type: 'booking',  title: 'New booking · Emma L.',     meta: 'Coaching · 38 min ago' },
-];
-
-const NotifIcon = ({ type }: { type: NotifType }) => {
-  switch (type) {
-    case 'lead':
-      return (
-        <div className="w-7 h-7 rounded-lg bg-green-500/15 flex items-center justify-center flex-shrink-0">
-          <span className="w-2 h-2 rounded-full bg-green-400" />
-        </div>
-      );
-    case 'booking':
-      return (
-        <div className="w-7 h-7 rounded-lg bg-teal/15 flex items-center justify-center flex-shrink-0">
-          <span className="text-teal text-sm font-black leading-none">✓</span>
-        </div>
-      );
-    case 'revenue':
-      return (
-        <div className="w-7 h-7 rounded-lg bg-green-500/15 flex items-center justify-center flex-shrink-0">
-          <span className="text-green-400 text-xs font-black leading-none">$</span>
-        </div>
-      );
-    case 'metric':
-      return (
-        <div className="w-7 h-7 rounded-lg bg-teal/15 flex items-center justify-center flex-shrink-0">
-          <span className="text-teal text-xs font-black leading-none">↑</span>
-        </div>
-      );
-    case 'review':
-      return (
-        <div className="w-7 h-7 rounded-lg bg-yellow-500/15 flex items-center justify-center flex-shrink-0">
-          <span className="text-yellow-400 text-sm leading-none">★</span>
-        </div>
-      );
-    case 'view':
-      return (
-        <div className="w-7 h-7 rounded-lg bg-purple-500/15 flex items-center justify-center flex-shrink-0">
-          <span className="text-purple-400 text-xs font-black leading-none">▶</span>
-        </div>
-      );
-    case 'click':
-      return (
-        <div className="w-7 h-7 rounded-lg bg-blue-500/15 flex items-center justify-center flex-shrink-0">
-          <span className="text-blue-400 text-xs font-black leading-none">◎</span>
-        </div>
-      );
-  }
-};
-
-const LiveActivityPanel = () => {
-  const [slots, setSlots] = useState<number[]>([0, 1, 2]);
-  const [renders, setRenders] = useState<number[]>([0, 0, 0]);
-  const stateRef = useRef({ nextSlot: 0, nextNotif: 3 });
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const { nextSlot, nextNotif } = stateRef.current;
-      setSlots((prev) => {
-        const next = [...prev];
-        next[nextSlot] = nextNotif % NOTIFICATION_POOL.length;
-        return next;
-      });
-      setRenders((prev) => {
-        const next = [...prev];
-        next[nextSlot] = next[nextSlot] + 1;
-        return next;
-      });
-      stateRef.current = {
-        nextSlot: (nextSlot + 1) % 3,
-        nextNotif: nextNotif + 1,
-      };
-    }, 2400);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="rounded-2xl bg-charcoal-light/80 backdrop-blur-md border border-gray-800/80 p-3 shadow-2xl shadow-black/40">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-2.5 px-1">
-        <div className="flex items-center gap-2">
-          <span className="relative flex h-2 w-2 flex-shrink-0">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
-          </span>
-          <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-gray-400">
-            Live Activity
-          </span>
-        </div>
-        <span className="text-[9px] font-semibold text-gray-400 uppercase tracking-wider">Now</span>
-      </div>
-
-      {/* Notification stack — content cycles via interval, animation re-triggers on key change */}
-      <div className="flex flex-col gap-1.5">
-        {slots.map((notifIdx, slotIdx) => {
-          const n = NOTIFICATION_POOL[notifIdx];
-          return (
-            <div
-              key={`${slotIdx}-${renders[slotIdx]}`}
-              className="flex items-center gap-2.5 bg-near-black/60 border border-gray-800/60 rounded-lg px-2.5 py-2"
-              style={{ animation: 'notifDropIn 0.45s ease-out' }}
-            >
-              <NotifIcon type={n.type} />
-              <div className="min-w-0 flex-1">
-                <p className="text-[11px] text-white font-bold leading-none mb-0.5 truncate">{n.title}</p>
-                <p className="text-[10px] text-gray-400 font-medium leading-none truncate">{n.meta}</p>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-};
 
 const HomePage = () => {
   return (
@@ -357,15 +225,12 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* ── Right: Dashboard + Live Activity panel ── */}
+            {/* ── Right: Dashboard card ── */}
             <div
-              className="animate-fade-up flex flex-col gap-4 w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-0"
+              className="animate-fade-up w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-0"
               style={{ animationDelay: '0.3s' }}
             >
               <HeroMoveCard />
-
-              {/* Live Activity panel — under the dashboard */}
-              <LiveActivityPanel />
             </div>
 
           </div>
