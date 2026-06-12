@@ -1,5 +1,5 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Target, Users, TrendingUp, Instagram, Linkedin, Scissors, Home, Wrench, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -225,15 +225,12 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* ── Right: Dashboard + Live Activity panel ── */}
+            {/* ── Right: Dashboard card ── */}
             <div
-              className="animate-fade-up flex flex-col gap-4 w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-0"
+              className="animate-fade-up w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-0"
               style={{ animationDelay: '0.3s' }}
             >
               <HeroMoveCard />
-
-              {/* Live Activity panel — under the dashboard */}
-              <LiveActivityPanel />
             </div>
 
           </div>
