@@ -37,7 +37,6 @@ const Coquitlam = lazy(() => import("./pages/locations/Coquitlam"));
 const Vancouver = lazy(() => import("./pages/locations/Vancouver"));
 const Richmond = lazy(() => import("./pages/locations/Richmond"));
 const Abbotsford = lazy(() => import("./pages/locations/Abbotsford"));
-const PricingPage = lazy(() => import("./pages/Pricing"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const HiringGuide = lazy(() => import("./pages/HiringGuide"));
 
@@ -84,7 +83,6 @@ const App = () => (
               <Route path="/vancouver" element={<Vancouver />} />
               <Route path="/richmond" element={<Richmond />} />
               <Route path="/abbotsford" element={<Abbotsford />} />
-              <Route path="/pricing" element={<PricingPage />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
               

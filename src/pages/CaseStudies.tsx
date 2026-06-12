@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { TrendingUp, Users, Star, Zap, ArrowRight, CheckCircle } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Case Studies | Real Results for Vancouver Small Businesses | AP Digital';
+const TITLE = 'Case Studies | Real Results for BC Businesses | AP Digital';
 const DESC = 'See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses. Real results, real numbers.';
 const CANONICAL = 'https://ap-digital.ca/case-studies';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

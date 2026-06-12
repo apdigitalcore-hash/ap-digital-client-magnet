@@ -13,6 +13,7 @@ const PrivacyPolicy = () => {
         <meta property="og:url" content="https://ap-digital.ca/privacy-policy" />
         <meta property="og:title" content="Privacy Policy | AP DIGITAL" />
         <meta property="og:description" content="Privacy Policy for AP DIGITAL - how we collect, use, and protect your information." />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
       <Header />
 

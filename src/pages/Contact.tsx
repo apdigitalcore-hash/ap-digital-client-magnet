@@ -68,10 +68,13 @@ const Contact = () => {
         <link rel="canonical" href="https://ap-digital.ca/contact" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ap-digital.ca/contact" />
-        <meta property="og:title" content="Contact AP Digital | Get a Free Strategy Call" />
+        <meta property="og:title" content="Contact AP Digital | Book a Free Strategy Call" />
         <meta property="og:description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
-        <meta name="twitter:title" content="Contact AP Digital | Get a Free Strategy Call" />
+        <meta property="og:image" content="https://ap-digital.ca/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact AP Digital | Book a Free Strategy Call" />
         <meta name="twitter:description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
+        <meta name="twitter:image" content="https://ap-digital.ca/og-image.png" />
         <meta name="robots" content="index, follow" />
         {structuredData && (
           <script type="application/ld+json">{JSON.stringify(structuredData)}</script>

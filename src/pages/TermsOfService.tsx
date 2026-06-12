@@ -13,6 +13,7 @@ const TermsOfService = () => {
         <meta property="og:url" content="https://ap-digital.ca/terms-of-service" />
         <meta property="og:title" content="Terms of Service | AP DIGITAL" />
         <meta property="og:description" content="Terms of Service for AP DIGITAL - the terms governing use of our website and services." />
+        <meta name="robots" content="noindex, follow" />
       </Helmet>
       <Header />
 

@@ -401,14 +401,14 @@ const HomePage = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {[
-              { city: 'Vancouver', href: '/contact', sub: 'Metro Vancouver' },
+              { city: 'Vancouver', href: '/vancouver', sub: 'Metro Vancouver' },
               { city: 'Surrey', href: '/surrey', sub: 'South Fraser' },
               { city: 'Burnaby', href: '/burnaby', sub: 'Metro Vancouver' },
-              { city: 'Richmond', href: '/contact', sub: 'Metro Vancouver' },
+              { city: 'Richmond', href: '/richmond', sub: 'Metro Vancouver' },
               { city: 'North Vancouver', href: '/contact', sub: 'North Shore' },
               { city: 'Coquitlam', href: '/coquitlam', sub: 'Tri-Cities' },
               { city: 'Langley', href: '/langley', sub: 'Fraser Valley' },
-              { city: 'Abbotsford', href: '/contact', sub: 'Fraser Valley' },
+              { city: 'Abbotsford', href: '/abbotsford', sub: 'Fraser Valley' },
             ].map(({ city, href, sub }) => (
               <Link
                 key={city}

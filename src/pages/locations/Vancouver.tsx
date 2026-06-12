@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
 
-const TITLE = 'Vancouver Marketing Agency — 2,400+ Leads, 8.2x ROAS | AP Digital';
+const TITLE = 'Vancouver Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Vancouver digital marketing agency. 2,400+ leads delivered for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/vancouver';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
