@@ -19,8 +19,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Hero CTA button - teal with strong glow effect
-        hero: "bg-teal text-white hover:brightness-110 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0",
-        heroOutline: "border border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30 backdrop-blur-sm",
+        hero: "border border-white/25 bg-white/10 text-white hover:bg-white/[0.18] hover:border-white/40 backdrop-blur-md shadow-lg shadow-white/5 hover:shadow-white/10 transform hover:-translate-y-0.5 active:translate-y-0",
+        heroOutline: "border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 hover:border-white/25 hover:text-white backdrop-blur-sm",
         // White/light outline for dark sections
         light: "border-2 border-primary-foreground/30 bg-primary-foreground/5 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/60",
         // Dark solid button for light backgrounds
