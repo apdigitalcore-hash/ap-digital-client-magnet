@@ -19,9 +19,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Hero CTA button - teal with strong glow effect
-        hero: "bg-teal text-accent-foreground hover:bg-teal-light shadow-teal hover:shadow-teal-lg transform hover:-translate-y-1 active:translate-y-0",
-        // Outline on dark backgrounds - teal accent
-        heroOutline: "border-2 border-teal/40 bg-transparent text-teal hover:bg-teal/10 hover:border-teal hover:shadow-teal/20 hover:shadow-lg",
+        hero: "bg-teal text-white hover:brightness-110 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0",
+        heroOutline: "border border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30 backdrop-blur-sm",
         // White/light outline for dark sections
         light: "border-2 border-primary-foreground/30 bg-primary-foreground/5 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/60",
         // Dark solid button for light backgrounds
@@ -30,7 +29,7 @@ const buttonVariants = cva(
       size: {
         default: "h-10 px-5 py-2",
         sm: "h-9 rounded-md px-4",
-        lg: "h-12 rounded-xl px-8 text-base",
+        lg: "h-12 rounded-lg px-8 text-base",
         xl: "h-14 rounded-xl px-10 text-lg font-bold",
         "2xl": "h-16 rounded-xl px-12 text-xl font-bold",
         icon: "h-10 w-10",

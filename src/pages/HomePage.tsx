@@ -148,7 +148,7 @@ const HomePage = () => {
 
               {/* Sub */}
               <p
-                className="text-base sm:text-lg text-gray-400 max-w-lg mx-auto lg:mx-0 mb-10 animate-fade-up leading-relaxed"
+                className="text-base sm:text-lg text-white/70 max-w-lg mx-auto lg:mx-0 mb-10 animate-fade-up leading-relaxed"
                 style={{ animationDelay: '0.16s' }}
               >
                 We build paid ad and content systems that fill your calendar with qualified clients — for salons, realtors, trades, and coaches across BC.
@@ -179,10 +179,10 @@ const HomePage = () => {
 
               {/* Inline trust line */}
               <p
-                className="mt-10 text-xs text-gray-400 animate-fade-up text-center lg:text-left"
+                className="mt-10 text-xs text-white/50 animate-fade-up text-center lg:text-left"
                 style={{ animationDelay: '0.32s' }}
               >
-                <span className="text-gray-300 font-semibold">2,400+ leads</span> delivered for <span className="text-gray-300 font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
+                <span className="text-white font-semibold">2,400+ leads</span> delivered for <span className="text-white font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
               </p>
 
               {/* Social links */}
