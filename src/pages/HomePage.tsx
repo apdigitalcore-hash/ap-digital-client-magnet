@@ -92,35 +92,6 @@ const HomePage = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
 
-          {/* Money rain — falling dollar bills (💵 emoji) */}
-          <div className="absolute inset-0 pointer-events-none">
-            {Array.from({ length: 16 }).map((_, i) => {
-              const sizes = [28, 36, 44, 52, 32, 40, 48, 56];
-              const size = sizes[i % sizes.length];
-              const left = (i * 6.4 + (i % 3) * 1.7) % 95;
-              const duration = 10 + (i % 5) * 2;
-              const delay = (i * 0.8) % 12;
-              const opacity = 0.55 + (i % 4) * 0.1;
-              return (
-                <span
-                  key={i}
-                  className="absolute select-none"
-                  style={{
-                    left: `${left}%`,
-                    top: 0,
-                    fontSize: `${size}px`,
-                    opacity,
-                    animation: `moneyFall ${duration}s linear ${delay}s infinite`,
-                    animationFillMode: 'backwards',
-                    willChange: 'transform, opacity',
-                  }}
-                  aria-hidden="true"
-                >
-                  💵
-                </span>
-              );
-            })}
-          </div>
         </div>
 
         <div className="container-custom relative z-10 w-full">
