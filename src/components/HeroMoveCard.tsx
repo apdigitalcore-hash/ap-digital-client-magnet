@@ -273,7 +273,7 @@ const HeroMoveCard = () => {
 
         {/* Body — clamped to 3 lines */}
         <p
-          className="text-[11.5px] text-gray-400 leading-relaxed mb-3.5 overflow-hidden"
+          className="text-[11.5px] text-gray-600 leading-relaxed mb-3.5 overflow-hidden"
           style={{
             display: '-webkit-box',
             WebkitLineClamp: 3,
