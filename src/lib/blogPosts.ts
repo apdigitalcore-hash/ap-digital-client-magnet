@@ -14,6 +14,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'how-to-get-more-salon-clients',
+    canonicalUrl: 'https://ap-digital.ca/blog/salon-marketing-vancouver-bc',
     title: 'How to Get More Salon Clients in 2026 Using Social Media and Paid Ads',
     metaTitle: 'How to Get More Salon Clients in 2026 | AP Digital',
     metaDescription: 'Struggling to fill your appointment book? Here are proven strategies to get more salon clients using social media, paid ads & referrals in Vancouver, BC.',
@@ -69,6 +70,7 @@ At AP DIGITAL, we specialize in [salon marketing](/salon-marketing) across Canad
   },
   {
     slug: 'how-to-market-a-trades-business-online',
+    canonicalUrl: 'https://ap-digital.ca/blog/trades-marketing-vancouver-bc',
     title: 'How to Market Your Trades Business Online and Get More Jobs',
     metaTitle: 'How to Market a Trades Business Online in Canada',
     metaDescription: 'A practical guide to online marketing for tradespeople in Canada. Learn how plumbers, electricians & HVAC techs get leads with Google Ads, Meta Ads & SEO.',
@@ -1588,6 +1590,7 @@ At AP DIGITAL, we help Vancouver small businesses [rank higher on Google](/servi
   },
   {
     slug: 'facebook-ads-vancouver-small-business',
+    canonicalUrl: 'https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada',
     title: 'Facebook Ads for Vancouver Small Businesses: A Complete 2026 Guide',
     metaTitle: 'Facebook Ads Vancouver Small Business Guide 2026 | AP Digital',
     metaDescription: 'Learn how Vancouver small businesses use Facebook and Instagram ads to generate leads and grow. Targeting tips, budget advice, and real campaign strategies.',
