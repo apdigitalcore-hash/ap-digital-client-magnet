@@ -1860,7 +1860,287 @@ At AP DIGITAL, we build and execute [social media marketing](/services/social-me
   },
 ];
 
-blogPosts.unshift(...extraPosts, ...vancouverPosts);
+const seoPosts: BlogPost[] = [
+  {
+    slug: 'google-ads-coaching-business-bc',
+    title: 'Google Ads for Coaching Businesses in BC: How to Get More Clients',
+    metaTitle: 'Google Ads for Coaches in BC | Get More Clients | AP Digital',
+    metaDescription: 'Learn how coaches in BC can use Google Ads to attract high-ticket clients. Keyword strategy, budget tips, and landing page advice for life coaches, business coaches, and wellness coaches.',
+    excerpt: 'A step-by-step guide to running profitable Google Ads campaigns as a coach in British Columbia.',
+    date: '2026-07-08',
+    readTime: '7 min read',
+    category: 'Coaching Marketing',
+    content: `If you're a life coach, business coach, or wellness coach in BC, you've probably tried organic social media, networking events, and referrals to find clients. Those channels work — but they're slow and unpredictable. [Google Ads](/services/paid-ads) lets you get in front of people who are actively searching for a coach right now.
+
+## Why Google Ads Works for Coaches
+
+Unlike social media ads where you interrupt someone's scrolling, Google Ads captures intent. When someone types "business coach Vancouver" or "life coach near me," they're already looking for what you offer. That intent is worth its weight in gold for high-ticket services like coaching.
+
+The average coaching package ranges from $2,000 to $10,000+. Even at a cost per lead of $30–$80 through Google Ads, you only need to close one client per month to see a massive return on your ad spend.
+
+## Best Keywords for BC Coaches
+
+Start with high-intent keywords that signal someone is ready to hire:
+
+- **"life coach Vancouver"** / **"life coach BC"**
+- **"business coach near me"**
+- **"executive coach [Surrey](/surrey)"** / **"executive coach [Burnaby](/burnaby)"**
+- **"career coach BC"**
+- **"wellness coach Vancouver"**
+
+Avoid broad keywords like "what is life coaching" — those attract researchers, not buyers. Save your budget for people ready to take action.
+
+## Budget and Expectations
+
+For coaches in BC, we recommend starting with $1,500–$3,000/month in ad spend. In the [Vancouver](/vancouver) market specifically, competition for coaching keywords is moderate compared to industries like real estate or law, which means your cost per click will typically be $3–$8.
+
+With a well-optimized campaign, expect:
+- **15–40 qualified leads per month**
+- **Cost per lead: $30–$80**
+- **Close rate: 10–20% with proper follow-up**
+
+That means 2–8 new coaching clients per month from Google Ads alone.
+
+## Landing Page Essentials
+
+Don't send Google Ads traffic to your homepage. Build a dedicated landing page that includes:
+
+- A clear headline matching the searcher's intent ("Vancouver Business Coaching That Gets Results")
+- Social proof: testimonials, certifications, years of experience
+- A simple booking form or Calendly link — reduce friction to zero
+- One clear CTA, not five competing options
+
+Your [landing page design](/services/web-design) matters as much as the ads themselves. A great ad sending traffic to a confusing page is wasted money.
+
+## Common Mistakes Coaches Make with Google Ads
+
+**Running ads without conversion tracking.** If you can't see which keywords generate booked calls, you're flying blind. Set up Google Ads conversion tracking on your booking confirmation page.
+
+**Targeting too broad.** If you coach clients in [Metro Vancouver](/vancouver), don't run ads across all of Canada. Geo-target your campaigns to your actual service area.
+
+**No follow-up system.** Most coaching leads won't book on their first visit. You need email nurturing, retargeting ads, or at minimum a fast manual follow-up within 24 hours.
+
+## How AP DIGITAL Helps Coaches Grow
+
+At AP DIGITAL, we've helped coaches across BC build predictable client acquisition systems using [Google Ads](/services/paid-ads), [content marketing](/services/content-creation), and [SEO](/services/seo). We handle the keyword research, ad copywriting, landing page design, and ongoing optimization — so you can focus on coaching.
+
+We specialize in [coaching marketing](/coaching-marketing) and understand the unique challenges of selling high-ticket services online. No long-term contracts, transparent reporting, and a 90-day results guarantee.
+
+**Book a free strategy call** and let's build a Google Ads system that fills your coaching calendar.`,
+  },
+  {
+    slug: 'salon-google-ads-vancouver',
+    title: 'Google Ads for Salons in Vancouver: Fill Every Chair',
+    metaTitle: 'Google Ads for Salons Vancouver | Fill Every Chair | AP Digital',
+    metaDescription: 'How Vancouver salons can use Google Ads to book more appointments. Keyword strategy, budget guide, and campaign tips for hair salons, nail salons, and med spas in Metro Vancouver.',
+    excerpt: 'How Vancouver salon owners can use Google Ads to fill appointment books — with real keyword and budget guidance.',
+    date: '2026-07-06',
+    readTime: '6 min read',
+    category: 'Salon Marketing',
+    content: `Most [salon marketing](/salon-marketing) advice focuses on Instagram and Facebook. And those platforms work — but they have a major limitation: you're showing ads to people who weren't looking for a salon. [Google Ads](/services/paid-ads) flips that. You show up when someone in [Vancouver](/vancouver) literally types "hair salon near me" into their phone.
+
+## Why Google Ads Is a Game-Changer for Vancouver Salons
+
+Think about how people find a new salon. They don't scroll Instagram hoping to discover one — they Google it. "Best hair salon Kitsilano," "balayage specialist Vancouver," "nail salon near me open now." These searches happen thousands of times per month across Metro Vancouver.
+
+Google Ads puts your salon at the very top of those search results — above the map pack, above organic results, above everything. For a business where each new client is worth $200–$500+ annually in repeat visits, the math works out fast.
+
+## High-Value Keywords for Vancouver Salons
+
+Focus your budget on keywords that indicate booking intent:
+
+- **"hair salon [neighbourhood]"** — Kitsilano, Yaletown, Main Street, Gastown, etc.
+- **"balayage Vancouver"** / **"highlights Vancouver"**
+- **"nail salon near me"** / **"nail salon [Burnaby](/burnaby)"**
+- **"med spa Vancouver"** / **"botox Vancouver"**
+- **"hair salon open Sunday Vancouver"**
+
+Neighbourhood-level targeting is the secret weapon for Vancouver salons. Someone searching "hair salon Yaletown" is ready to book — they're not comparison shopping across the city.
+
+## What to Budget
+
+For Vancouver salons, we recommend starting at $800–$2,000/month in ad spend. Cost per click for salon keywords in Vancouver typically runs $2–$6, which means:
+
+- **Budget $1,000/month** → roughly 200–500 clicks → 20–50 calls/bookings
+- **Average new client lifetime value**: $300–$600 (repeat visits over 12 months)
+- **ROI**: even converting 15 new clients/month at $400 LTV = $6,000 in annual revenue per month of ads
+
+## Campaign Structure That Works
+
+Set up your campaigns like this:
+
+**Campaign 1: Service-specific.** Separate ad groups for haircuts, colour, nails, facials, etc. Each ad group has keywords and ad copy matching that specific service.
+
+**Campaign 2: Location-specific.** Target specific Vancouver neighbourhoods. "Hair salon Kitsilano" gets different ad copy than "hair salon [Richmond](/richmond)."
+
+**Campaign 3: Brand + competitor.** Bid on your own salon name (cheap, high conversion) and optionally on competitor names (more expensive but effective for poaching).
+
+## Your Landing Page Matters
+
+Send Google Ads traffic to a page built for conversion, not your generic homepage. The page should have:
+
+- Your salon's name, address, and phone number prominently displayed
+- An online booking button above the fold
+- Photos of your actual work (real portfolio, not stock photos)
+- Reviews from Google or Yelp
+- Your hours and services with pricing
+
+A well-built [landing page](/services/web-design) can double your conversion rate compared to sending traffic to a standard website.
+
+## Track Everything
+
+Install Google Ads conversion tracking on your booking confirmation page. Track phone calls from ads. If you use an online booking system like Fresha, Jane, or Vagaro, connect it to your ads so you know exactly which keywords generate real bookings — not just clicks.
+
+## AP DIGITAL: Salon Marketing That Works
+
+At AP DIGITAL, we specialize in [salon marketing in Vancouver](/salon-marketing) — from [Google Ads](/services/paid-ads) and [Meta Ads](/services/paid-ads) to [social media content](/services/social-media) and [SEO](/services/seo). We've helped salons across [Metro Vancouver](/vancouver), [Surrey](/surrey), and [Burnaby](/burnaby) fill their chairs predictably.
+
+No long-term contracts. Transparent reporting. 90-day results guarantee.
+
+**Book your free strategy call** and let's fill every chair in your salon.`,
+  },
+  {
+    slug: 'digital-marketing-richmond-bc',
+    title: 'Digital Marketing in Richmond BC: How Local Businesses Get More Leads',
+    metaTitle: 'Digital Marketing Richmond BC | Local Leads | AP Digital',
+    metaDescription: 'Digital marketing strategies for Richmond BC businesses. Learn how local salons, restaurants, trades, and retailers use Google Ads, Meta Ads, and SEO to get more customers.',
+    excerpt: 'How Richmond BC businesses are using digital marketing to stand out in one of Metro Vancouver\'s most competitive markets.',
+    date: '2026-07-04',
+    readTime: '7 min read',
+    category: 'Digital Marketing',
+    content: `[Richmond](/richmond) is one of the most competitive business markets in Metro Vancouver. With a dense population, a thriving restaurant scene, a massive retail corridor, and proximity to YVR, Richmond businesses face unique challenges — and unique opportunities — when it comes to digital marketing.
+
+## Why Richmond Businesses Need Digital Marketing
+
+Richmond's demographics are distinct. It has one of the highest proportions of multilingual consumers in Canada, a strong small business ecosystem, and intense local competition in industries like dining, beauty, real estate, and retail. Traditional marketing (flyers, local newspapers, word of mouth) still plays a role, but the businesses growing fastest are the ones showing up where customers actually look — Google, Instagram, and Facebook.
+
+Whether you run a salon on No. 3 Road, a contracting company in East Richmond, or a real estate team covering Steveston and Broadmoor, [digital marketing](/services/paid-ads) is how you reach customers who are actively searching for your services.
+
+## Google Ads for Richmond Businesses
+
+When someone in Richmond types "plumber Richmond BC" or "hair salon near Aberdeen Centre," they're ready to buy. [Google Ads](/services/paid-ads) puts your business at the top of those results.
+
+For Richmond specifically, geo-targeting is crucial. You can target ads to show only to people physically in Richmond — or to people searching for Richmond-specific terms. This keeps your budget focused and your leads local.
+
+**Best keywords to target in Richmond:**
+- "[your service] Richmond BC"
+- "[your service] near me" (with Richmond geo-targeting)
+- "[your service] Steveston" / "near Aberdeen Centre" / "near Richmond Centre"
+
+## Meta Ads: Reaching Richmond's Diverse Community
+
+Facebook and Instagram ads work exceptionally well in Richmond because of the city's strong community networks. Richmond consumers are active on social media, and the visual nature of Meta Ads makes them perfect for restaurants, salons, real estate, and retail.
+
+Key strategies for Richmond Meta Ads:
+- **Multilingual ad creative** where appropriate for your audience
+- **Radius targeting** centred on your business location
+- **Lookalike audiences** based on your existing Richmond customer list
+
+## Local SEO: The Foundation
+
+Before you spend on ads, make sure your Google Business Profile is fully optimized:
+- Accurate business name, address, and phone number
+- Richmond-specific service descriptions
+- Regular posts and photo updates
+- Active review management (ask happy customers to leave Google reviews)
+
+[Local SEO](/services/seo) is the long game — but it's also the most cost-effective channel once it's working. Ranking in the "Richmond BC" map pack for your main keywords means free leads, every day.
+
+## Content Marketing for Richmond
+
+Creating Richmond-specific [content](/services/content-creation) signals to Google that you're a local authority:
+- Blog posts targeting "best [service] in Richmond BC"
+- Area guides mentioning Steveston, City Centre, Ironwood, Thompson, Broadmoor
+- Customer success stories from Richmond clients
+
+This content serves double duty: it helps your [SEO](/services/seo) and gives you material for [social media](/services/social-media).
+
+## Industries We Serve in Richmond
+
+At AP DIGITAL, we work with Richmond businesses across multiple industries:
+
+- **[Salons and med spas](/salon-marketing)** — filling chairs with targeted Meta and Google Ads
+- **[Trades and contractors](/trades-marketing)** — generating calls from homeowners in Richmond and across the Lower Mainland
+- **[Real estate agents](/real-estate-marketing)** — buyer and seller lead generation in the Richmond market
+- **[Coaches and consultants](/coaching-marketing)** — building authority and booking high-ticket clients
+
+## Get Started with AP DIGITAL
+
+We're a [Vancouver-based digital marketing agency](/vancouver) that serves businesses across Metro Vancouver — including Richmond, [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), and [Coquitlam](/coquitlam). We handle [paid ads](/services/paid-ads), [SEO](/services/seo), [content creation](/services/content-creation), [social media](/services/social-media), and [web design](/services/web-design).
+
+No long-term contracts. Transparent reporting. 90-day results guarantee.
+
+**Book your free strategy call** and let's grow your Richmond business.`,
+  },
+  {
+    slug: 'digital-marketing-langley-bc',
+    title: 'Digital Marketing for Langley BC Businesses: Get More Local Leads',
+    metaTitle: 'Digital Marketing Langley BC | More Local Leads | AP Digital',
+    metaDescription: 'Digital marketing guide for Langley BC businesses. How trades, salons, real estate agents, and local shops use Google Ads, SEO, and social media to get more customers in the Fraser Valley.',
+    excerpt: 'How Langley BC businesses are winning more local customers with Google Ads, SEO, and social media marketing.',
+    date: '2026-07-02',
+    readTime: '6 min read',
+    category: 'Digital Marketing',
+    content: `[Langley](/langley) is one of the fastest-growing communities in the Fraser Valley — and that growth means opportunity for local businesses. But it also means more competition. Whether you're in Langley City or the Township, the businesses winning right now are the ones investing in digital marketing that actually drives leads.
+
+## The Langley Market: What Makes It Different
+
+Langley's mix of suburban families, new developments, and a growing commercial sector creates a unique marketing landscape. It's not Vancouver — the audience is different, the competition is different, and the strategy should be different too.
+
+Key characteristics of the Langley market:
+- **Homeowner-heavy demographics** — perfect for trades, landscaping, and home services
+- **Growing young families** — great for salons, fitness, childcare, and local retail
+- **Less digital marketing competition** than Vancouver or [Burnaby](/burnaby) — your ad costs will be lower
+- **Strong local loyalty** — Langley residents prefer local businesses when they can find them
+
+## Google Ads: Capture Langley Buyers
+
+When a Langley homeowner needs a roofer, they Google it. When a Langley family wants a new hair salon, they search for it. [Google Ads](/services/paid-ads) puts your business at the top of those searches.
+
+The advantage of running Google Ads in Langley versus [Vancouver](/vancouver) is cost. Click costs in Langley are typically 20–40% lower than in downtown Vancouver, which means your budget goes further.
+
+**High-performing Langley keywords:**
+- "[service] Langley BC"
+- "[service] near me" (geo-targeted to Langley)
+- "[service] Fraser Valley"
+- "[service] Willoughby" / "Walnut Grove" / "Murrayville"
+
+## SEO: Own the Langley Map Pack
+
+Google's local map pack shows 3 businesses for local searches. For many Langley searches, the map pack has less competition than Vancouver — which means it's easier to rank.
+
+To dominate Langley local [SEO](/services/seo):
+- Optimize your Google Business Profile with Langley-specific descriptions
+- Get reviews from Langley customers mentioning the area
+- Create Langley-focused [content](/services/content-creation) on your website
+- Ensure your name, address, and phone number are consistent across all directories
+
+## Social Media for Langley Businesses
+
+Langley has strong community Facebook groups and active Instagram accounts focused on local businesses. [Social media marketing](/services/social-media) that taps into this community loyalty can be incredibly effective — especially when combined with [paid social ads](/services/paid-ads) targeting Langley residents.
+
+For [trades businesses](/trades-marketing) in Langley, before-and-after project photos on Instagram and Facebook consistently generate referrals and DMs. For [salons](/salon-marketing), showcasing transformations and tagging the Langley location builds local awareness fast.
+
+## Industries That Thrive with Digital Marketing in Langley
+
+- **[Trades and contractors](/trades-marketing)** — roofing, HVAC, plumbing, electrical, landscaping. Langley's housing boom means constant demand.
+- **[Salons and beauty](/salon-marketing)** — the growing population needs more stylists, and the ones showing up online win.
+- **[Real estate](/real-estate-marketing)** — Langley's market is booming. Agents who run targeted ads and SEO campaigns dominate.
+- **[Coaches](/coaching-marketing)** — wellness and business coaches in the Fraser Valley can reach a large audience with the right targeting.
+
+## AP DIGITAL: Your Fraser Valley Marketing Partner
+
+At AP DIGITAL, we help Langley businesses compete and win online. We're based in [Metro Vancouver](/vancouver) and serve businesses across the Fraser Valley — including Langley, [Abbotsford](/abbotsford), [Surrey](/surrey), and [Coquitlam](/coquitlam).
+
+Our services: [Google & Meta Ads](/services/paid-ads), [SEO](/services/seo), [content creation](/services/content-creation), [social media management](/services/social-media), [web design](/services/web-design), and [lead generation](/services/lead-generation).
+
+No long-term contracts. Month-to-month. 90-day results guarantee.
+
+**Book your free strategy call** and let's grow your Langley business.`,
+  },
+];
+
+blogPosts.unshift(...extraPosts, ...vancouverPosts, ...seoPosts);
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
