@@ -900,8 +900,6 @@ const DigitalArsenal = () => {
           className="max-w-5xl mx-auto space-y-8"
         >
           <ProductCard />
-          <PromptPlayground />
-          <FreePrompts />
           <TimeCalculator />
           <FAQSection />
         </motion.div>

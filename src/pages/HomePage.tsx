@@ -123,7 +123,7 @@ const HomePage = () => {
                 className="text-base sm:text-lg text-white/70 max-w-lg mx-auto lg:mx-0 mb-10 animate-fade-up leading-relaxed"
                 style={{ animationDelay: '0.16s' }}
               >
-                We build paid ad and content systems that fill your calendar with qualified clients — for salons, realtors, trades, and coaches across BC.
+                We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
               </p>
 
               {/* CTAs */}
