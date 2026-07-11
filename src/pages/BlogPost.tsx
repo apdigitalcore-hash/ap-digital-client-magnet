@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { getPostBySlug } from '@/lib/blogPosts';
+import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
 import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
@@ -129,6 +129,27 @@ const BlogPost = () => {
               <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
             </Button>
           </div>
+
+          {getRelatedPosts(slug!, 3).length > 0 && (
+            <div className="mt-16">
+              <h2 className="font-display text-2xl font-bold text-foreground mb-6">Keep Reading</h2>
+              <div className="grid sm:grid-cols-3 gap-6">
+                {getRelatedPosts(slug!, 3).map(related => (
+                  <Link
+                    key={related.slug}
+                    to={`/blog/${related.slug}`}
+                    className="group bg-card border border-border rounded-xl p-5 hover:border-teal/40 transition-colors"
+                  >
+                    <span className="text-xs text-teal font-medium">{related.category}</span>
+                    <h3 className="font-display text-sm font-bold text-foreground mt-1 mb-2 group-hover:text-teal transition-colors leading-snug">
+                      {related.title}
+                    </h3>
+                    <p className="text-xs text-muted-foreground line-clamp-2">{related.excerpt}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </article>
       </main>
       <Footer />

@@ -1866,3 +1866,14 @@ export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
 
 export const allPosts = [...blogPosts];
+
+export const getRelatedPosts = (currentSlug: string, count = 3): BlogPost[] => {
+  const current = getPostBySlug(currentSlug);
+  if (!current) return blogPosts.slice(0, count);
+
+  const others = blogPosts.filter(p => p.slug !== currentSlug);
+  const sameCategory = others.filter(p => p.category === current.category);
+  const different = others.filter(p => p.category !== current.category);
+
+  return [...sameCategory, ...different].slice(0, count);
+};
