@@ -13,6 +13,7 @@ import DarkCTA from '@/components/DarkCTA';
 import DigitalArsenal from '@/components/DigitalArsenal';
 import MarketingAuditAI from '@/components/MarketingAuditAI';
 import HeroMoveCard from '@/components/HeroMoveCard';
+import WhileYouScroll from '@/components/WhileYouScroll';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
@@ -207,6 +208,8 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+
+      <WhileYouScroll />
 
       {/* Niche Services Sections */}
       <section className="py-16 sm:py-20 md:py-28 bg-charcoal">
