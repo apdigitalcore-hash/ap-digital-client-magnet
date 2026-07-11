@@ -14,12 +14,12 @@ const WhileYouScroll = () => {
       const windowHeight = window.innerHeight;
       const sectionHeight = section.offsetHeight;
 
-      const visible = rect.top < windowHeight && rect.bottom > 0;
-      setInView(visible);
+      const active = rect.top <= 5 && rect.bottom > windowHeight * 0.9;
+      setInView(active);
 
-      const scrolled = windowHeight - rect.top;
-      const total = windowHeight + sectionHeight;
-      const p = Math.max(0, Math.min(1, scrolled / total));
+      const p = active
+        ? Math.max(0, Math.min(1, -rect.top / (sectionHeight - windowHeight)))
+        : rect.top > 0 ? 0 : 1;
       setProgress(p);
     };
 
@@ -74,12 +74,9 @@ const WhileYouScroll = () => {
         <div
           style={{
             position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            width: '100vw',
-            height: '100vh',
+            inset: 0,
+            width: '100%',
+            height: '100%',
             margin: 0,
             padding: 0,
             backgroundColor: 'hsl(220, 20%, 97%)',
@@ -98,9 +95,9 @@ const WhileYouScroll = () => {
             }}
           >
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground text-center leading-tight max-w-5xl">
-              Every second satisfies you.
+              Every day without ads is
               <br />
-              <span className="text-red-500">But are they seeing your ads?</span>
+              <span className="text-red-500">money lost.</span>
             </h2>
           </div>
 
@@ -137,9 +134,9 @@ const WhileYouScroll = () => {
             }}
           >
             <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground text-center leading-tight">
-              Let's make sure
+              Let's fix that
               <br />
-              <span className="text-gradient">they do.</span>
+              <span className="text-gradient">today.</span>
             </h2>
             <a
               href="#contact"
