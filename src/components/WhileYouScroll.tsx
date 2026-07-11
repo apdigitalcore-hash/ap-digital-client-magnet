@@ -134,8 +134,10 @@ const WhileYouScroll = () => {
             >
               <img
                 src="/mercedes-f1.png"
-                alt="Mercedes F1 car"
+                alt="Mercedes F1 car racing across screen — AP Digital performance marketing"
                 className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
                 draggable={false}
               />
             </div>
