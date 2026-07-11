@@ -1,9 +1,26 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
+
+const lerp = (current: number, target: number, factor: number) =>
+  current + (target - current) * factor;
 
 const WhileYouScroll = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [progress, setProgress] = useState(0);
   const [inView, setInView] = useState(false);
+  const progressRef = useRef(0);
+  const smoothProgressRef = useRef(0);
+  const rafRef = useRef<number>(0);
+  const [, forceRender] = useState(0);
+
+  const animate = useCallback(() => {
+    const prev = smoothProgressRef.current;
+    smoothProgressRef.current = lerp(prev, progressRef.current, 0.08);
+
+    if (Math.abs(smoothProgressRef.current - prev) > 0.0001) {
+      forceRender(n => n + 1);
+    }
+
+    rafRef.current = requestAnimationFrame(animate);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,22 +34,26 @@ const WhileYouScroll = () => {
       const active = rect.top <= 5 && rect.bottom > windowHeight * 0.9;
       setInView(active);
 
-      const p = active
+      progressRef.current = active
         ? Math.max(0, Math.min(1, -rect.top / (sectionHeight - windowHeight)))
         : rect.top > 0 ? 0 : 1;
-      setProgress(p);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll, { passive: true });
     handleScroll();
+
+    rafRef.current = requestAnimationFrame(animate);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
+      cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [animate]);
 
-  // First line: fade in 0.0-0.1, fade out 0.5-0.65
+  const progress = smoothProgressRef.current;
+
   const firstLineOpacity =
     progress < 0.1
       ? progress / 0.1
@@ -50,14 +71,12 @@ const WhileYouScroll = () => {
       ? -60 * ((progress - 0.5) / 0.15)
       : -60;
 
-  // Car: 0.2 -> 0.9
   const carStart = 0.2;
   const carEnd = 0.9;
   const carProgress = Math.max(0, Math.min(1, (progress - carStart) / (carEnd - carStart)));
-  const carVisible = progress >= carStart && progress <= carEnd;
+  const carVisible = progress >= carStart - 0.02 && progress <= carEnd + 0.02;
   const carX = -25 + carProgress * 125;
 
-  // Second line + CTA: fade in 0.7-0.85
   const secondLineOpacity =
     progress < 0.7 ? 0 : Math.min(1, (progress - 0.7) / 0.15);
   const secondLineY =
@@ -89,7 +108,7 @@ const WhileYouScroll = () => {
             className="absolute inset-0 flex items-center justify-center px-6"
             style={{
               opacity: firstLineOpacity,
-              transform: `translateY(${firstLineY}px)`,
+              transform: `translate3d(0, ${firstLineY}px, 0)`,
               willChange: 'transform, opacity',
               zIndex: 10,
             }}
@@ -106,11 +125,11 @@ const WhileYouScroll = () => {
             <div
               className="absolute w-[240px] sm:w-[320px] md:w-[420px] lg:w-[520px] xl:w-[620px]"
               style={{
-                left: `${carX}%`,
+                transform: `translate3d(${carX}vw, -50%, 0)`,
                 top: '50%',
-                transform: 'translateY(-50%)',
+                left: 0,
                 zIndex: 20,
-                willChange: 'transform, opacity',
+                willChange: 'transform',
               }}
             >
               <img
@@ -127,7 +146,7 @@ const WhileYouScroll = () => {
             className="absolute inset-0 flex flex-col items-center justify-center gap-8 px-6"
             style={{
               opacity: secondLineOpacity,
-              transform: `translateY(${secondLineY}px)`,
+              transform: `translate3d(0, ${secondLineY}px, 0)`,
               willChange: 'transform, opacity',
               zIndex: 10,
               pointerEvents: secondLineOpacity > 0.5 ? 'auto' : 'none',
