@@ -160,7 +160,9 @@ const WhileYouScroll = () => {
               <span className="text-gradient">today.</span>
             </h2>
             <a
-              href="#contact"
+              href="https://calendly.com/apdigital-core/20min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-teal text-white font-semibold px-8 py-3 rounded-lg hover:bg-teal-dark transition"
             >
               Book a Free Audit
