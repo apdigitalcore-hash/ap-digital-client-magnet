@@ -39,6 +39,8 @@ const Richmond = lazy(() => import("./pages/locations/Richmond"));
 const Abbotsford = lazy(() => import("./pages/locations/Abbotsford"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const HiringGuide = lazy(() => import("./pages/HiringGuide"));
+const Login = lazy(() => import("./pages/Login"));
+const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 
 const queryClient = new QueryClient();
@@ -85,6 +87,8 @@ const App = () => (
               <Route path="/abbotsford" element={<Abbotsford />} />
               <Route path="/case-studies" element={<CaseStudies />} />
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
