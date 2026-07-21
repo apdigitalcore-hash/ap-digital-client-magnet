@@ -6,11 +6,7 @@ const Footer = () => {
 
   const services = [
     { label: 'Paid Ads', href: '/services/paid-ads' },
-    { label: 'Content Creation', href: '/services/content-creation' },
-    { label: 'Web Design', href: '/services/web-design' },
-    { label: 'SEO', href: '/services/seo' },
     { label: 'Social Media', href: '/services/social-media' },
-    { label: 'Lead Generation', href: '/services/lead-generation' },
   ];
 
   const company = [

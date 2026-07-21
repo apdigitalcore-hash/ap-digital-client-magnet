@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import { Check, ArrowRight, Shield, Zap, Trophy, Star, Target, Video, Globe, Search, Megaphone, BarChart3 } from 'lucide-react';
+import { Check, ArrowRight, Shield, Zap, Trophy, Star, Target, Megaphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -17,8 +17,8 @@ import {
   getFAQSchema,
 } from '@/lib/structuredData';
 
-const TITLE = 'Marketing Pricing Vancouver | From $759/mo | AP Digital';
-const DESC = 'Transparent per-service pricing for SEO, paid ads, content, web design & lead gen. Month-to-month. 90-day results guarantee. Free strategy call.';
+const TITLE = 'Paid Ads & Social Media Pricing Vancouver | From $759/mo | AP Digital';
+const DESC = 'Transparent pricing for paid ads and social media marketing. Month-to-month. 90-day results guarantee. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/pricing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -42,58 +42,6 @@ const guarantees = [
 
 const serviceCards = [
   {
-    icon: Search,
-    name: 'SEO',
-    ourPrice: '$759',
-    period: '/month',
-    description: 'Rank on Google and attract buyers already searching for you.',
-    includes: [
-      'Technical SEO audit',
-      'Local SEO & Google Business Profile',
-      'Keyword research & strategy',
-      'Monthly ranking report',
-    ],
-  },
-  {
-    icon: Megaphone,
-    name: 'Social Media',
-    ourPrice: '$849',
-    period: '/month',
-    description: 'Consistent content across your key platforms, fully managed.',
-    includes: [
-      '2 platforms managed',
-      '12 custom posts / month',
-      'Captions, hashtags & scheduling',
-      'Community management',
-    ],
-  },
-  {
-    icon: Video,
-    name: 'Content Creation',
-    ourPrice: '$939',
-    period: '/month',
-    description: 'Scroll-stopping short-form video that builds your brand and drives leads.',
-    includes: [
-      '4 Reels / TikToks per month',
-      'Script & concept development',
-      'Professional editing & captions',
-      'Trend-driven hooks',
-    ],
-  },
-  {
-    icon: BarChart3,
-    name: 'Lead Generation',
-    ourPrice: '$1,290',
-    period: '/month',
-    description: 'End-to-end systems that fill your pipeline with qualified prospects.',
-    includes: [
-      'Landing page build & optimization',
-      'Email & SMS follow-up sequences',
-      'CRM integration & automation',
-      'Weekly lead pipeline report',
-    ],
-  },
-  {
     icon: Target,
     name: 'Paid Ads',
     ourPrice: '$759',
@@ -107,16 +55,16 @@ const serviceCards = [
     ],
   },
   {
-    icon: Globe,
-    name: 'Web Design',
-    ourPrice: '$2,100',
-    period: 'one-time',
-    description: 'A fast, high-converting website built to turn visitors into paying clients.',
+    icon: Megaphone,
+    name: 'Social Media',
+    ourPrice: '$849',
+    period: '/month',
+    description: 'Consistent content across your key platforms, fully managed.',
     includes: [
-      'Mobile-first, conversion-focused design',
-      'SEO foundations built in',
-      'Analytics & tracking setup',
-      '30-day post-launch support',
+      '2 platforms managed',
+      '12 custom posts / month',
+      'Captions, hashtags & scheduling',
+      'Community management',
     ],
   },
 ];
@@ -244,7 +192,7 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {serviceCards.map((svc) => (
               <div
                 key={svc.name}

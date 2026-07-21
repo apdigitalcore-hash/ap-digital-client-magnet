@@ -28,11 +28,7 @@ const Header = () => {
 
   const services = [
     { href: '/services/paid-ads', label: 'Paid Ads' },
-    { href: '/services/content-creation', label: 'Content Creation' },
-    { href: '/services/web-design', label: 'Web Design' },
-    { href: '/services/seo', label: 'SEO' },
     { href: '/services/social-media', label: 'Social Media' },
-    { href: '/services/lead-generation', label: 'Lead Generation' },
   ];
 
   const locations = [

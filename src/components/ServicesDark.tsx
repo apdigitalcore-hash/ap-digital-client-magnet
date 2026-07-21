@@ -2,11 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Target,
-  Video,
-  Globe,
-  Search,
   Megaphone,
-  BarChart3,
   ChevronDown,
   ArrowRight,
 } from 'lucide-react';
@@ -21,39 +17,11 @@ const services = [
     details: 'We build, manage, and optimize ad campaigns across Google Ads, Meta (Facebook & Instagram), and TikTok. Our data-driven approach includes audience research, creative testing, retargeting funnels, and weekly performance reporting to ensure every dollar drives measurable results.',
   },
   {
-    icon: Video,
-    id: 'service-content-creation',
-    title: 'Content Creation',
-    description: 'Scroll-stopping short-form videos that capture attention.',
-    details: 'From concept to final cut—we produce high-converting Reels, TikToks, and YouTube Shorts tailored to your brand. Includes scripting, filming guidance, professional editing, captions, and trend-driven hooks designed to go viral and generate inbound leads.',
-  },
-  {
-    icon: Globe,
-    id: 'service-web-design',
-    title: 'Web Design',
-    description: 'High-converting websites built for speed and conversions.',
-    details: 'We design and develop fast, mobile-first websites optimized for lead capture. Every site includes conversion-focused landing pages, speed optimization, analytics integration, SEO foundations, and ongoing A/B testing to continuously improve performance.',
-  },
-  {
-    icon: Search,
-    id: 'service-seo',
-    title: 'SEO',
-    description: 'Rank higher on Google and attract organic traffic.',
-    details: 'Our SEO strategy covers technical audits, on-page optimization, local SEO (Google Business Profile), keyword research, content strategy, and quality backlink building. We focus on ranking you for high-intent keywords that bring in ready-to-buy customers.',
-  },
-  {
     icon: Megaphone,
     id: 'service-social-media',
     title: 'Social Media',
     description: 'Build authority with consistent, compelling content.',
     details: 'We handle your entire social presence—content calendars, graphic design, copywriting, community management, and growth strategy across Instagram, Facebook, LinkedIn, and TikTok. Stay top-of-mind with your audience without lifting a finger.',
-  },
-  {
-    icon: BarChart3,
-    id: 'service-lead-gen',
-    title: 'Lead Gen',
-    description: 'Predictable lead flow systems that fill your calendar.',
-    details: 'We build end-to-end lead generation systems combining paid ads, landing pages, email/SMS follow-ups, and CRM automation. The result is a predictable pipeline of qualified prospects booking calls and appointments on autopilot.',
   },
 ];
 
@@ -130,7 +98,7 @@ const ServicesDark = () => {
         </div>
 
         {/* Services grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
           {services.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}
