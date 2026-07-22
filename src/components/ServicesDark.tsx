@@ -13,6 +13,7 @@ const services = [
     icon: Target,
     id: 'service-paid-ads',
     title: 'Paid Ads',
+    href: '/services/paid-ads',
     description: 'Laser-targeted campaigns on Google & Meta that maximize your ROI.',
     details: 'We build, manage, and optimize ad campaigns across Google Ads, Meta (Facebook & Instagram), and TikTok. Our data-driven approach includes audience research, creative testing, retargeting funnels, and weekly performance reporting to ensure every dollar drives measurable results.',
   },
@@ -20,6 +21,7 @@ const services = [
     icon: Megaphone,
     id: 'service-social-media',
     title: 'Social Media',
+    href: '/services/social-media',
     description: 'Build authority with consistent, compelling content.',
     details: 'We handle your entire social presence—content calendars, graphic design, copywriting, community management, and growth strategy across Instagram, Facebook, LinkedIn, and TikTok. Stay top-of-mind with your audience without lifting a finger.',
   },
@@ -70,12 +72,20 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
             <p className="text-muted-foreground text-sm leading-relaxed">
               {service.details}
             </p>
-            <Link
-              to="/pricing"
-              className="inline-flex items-center gap-1.5 text-teal text-sm font-semibold hover:gap-2.5 transition-all duration-200"
-            >
-              View pricing <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to={service.href}
+                className="inline-flex items-center gap-1.5 text-teal text-sm font-semibold hover:gap-2.5 transition-all duration-200"
+              >
+                Learn more <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                to="/pricing"
+                className="inline-flex items-center gap-1.5 text-muted-foreground text-sm font-semibold hover:text-teal transition-colors"
+              >
+                View pricing
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -98,12 +108,15 @@ const ServicesDark = () => {
         </div>
 
         {/* Services grid */}
-        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-3xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 mb-10 max-w-3xl mx-auto">
           {services.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}
         </div>
 
+        <p className="text-center text-muted-foreground text-sm">
+          See how we've helped other businesses — <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link> · <Link to="/blog" className="text-teal underline hover:text-teal/80">read our blog</Link>
+        </p>
       </div>
     </section>
   );
