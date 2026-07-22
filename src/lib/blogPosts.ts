@@ -2667,7 +2667,483 @@ That's why we recommend a 90-day test period. Run both platforms, measure result
   },
 ];
 
-blogPosts.unshift(...extraPosts, ...vancouverPosts, ...seoPosts, ...focusPosts);
+const deepPosts: BlogPost[] = [
+  {
+    slug: 'how-much-do-google-ads-cost-vancouver',
+    title: 'How Much Do Google Ads Cost in Vancouver? 2026 Pricing Guide',
+    metaTitle: 'How Much Do Google Ads Cost in Vancouver? 2026 Guide | AP Digital',
+    metaDescription: 'Google Ads costs in Vancouver by industry. Average CPC, monthly budgets, and what to expect for salons, trades, real estate, and coaches in BC.',
+    excerpt: 'Vancouver Google Ads costs vary by industry. Here\'s what local businesses actually pay per click, per lead, and per month in 2026.',
+    date: '2026-07-21',
+    readTime: '8 min read',
+    category: 'Paid Ads',
+    content: `One of the most common questions we get from [Vancouver](/vancouver) business owners is: "How much will Google Ads cost me?" The honest answer is: it depends on your industry, your competition, and your goals. But we can give you real numbers based on what our clients actually pay.
+
+## Average Cost Per Click in Vancouver by Industry
+
+Google Ads operates on an auction system. You bid on keywords, and you pay when someone clicks your ad. Here's what Vancouver businesses typically pay per click in 2026:
+
+### [Trades](/trades-marketing) (Plumbers, Electricians, HVAC)
+- **Average CPC**: $8–$18
+- **Emergency keywords** ("emergency plumber Vancouver"): $15–$25
+- **General keywords** ("plumber near me"): $6–$12
+- **Cost per lead**: $25–$45
+
+### [Salons](/salon-marketing) & Beauty
+- **Average CPC**: $2–$6
+- **Branded keywords** ("balayage Vancouver"): $3–$8
+- **General keywords** ("hair salon near me"): $2–$5
+- **Cost per lead**: $8–$20
+
+### [Real Estate](/real-estate-marketing)
+- **Average CPC**: $4–$12
+- **Buyer keywords** ("homes for sale Vancouver"): $5–$15
+- **Seller keywords** ("sell my house Vancouver"): $8–$20
+- **Cost per lead**: $20–$50
+
+### [Coaching](/coaching-marketing) & Consulting
+- **Average CPC**: $3–$10
+- **Niche keywords** ("business coach Vancouver"): $5–$12
+- **General keywords** ("life coach BC"): $3–$8
+- **Cost per lead**: $15–$35
+
+## Monthly Budget Recommendations
+
+Your monthly Google Ads budget should be large enough to generate meaningful data. Here's what we recommend for Vancouver businesses:
+
+- **Starting budget**: $800–$1,200/month — enough to test 10–15 keywords and generate initial leads
+- **Growth budget**: $1,500–$3,000/month — enough to compete on 20–30 keywords and scale lead volume
+- **Aggressive budget**: $3,000+/month — full keyword coverage with retargeting and display campaigns
+
+On top of ad spend, you'll need campaign management. At AP Digital, our [management fee is $759/month](/pricing) which covers strategy, keyword research, ad copywriting, bid optimization, and weekly reporting.
+
+## Why Vancouver Costs More Than Other Canadian Cities
+
+Vancouver is one of the most competitive ad markets in Canada. More businesses bidding on the same keywords drives up costs. But higher costs don't mean lower ROI — Vancouver also has higher average transaction values. A plumber in Vancouver charges more than one in Winnipeg, so even at a higher cost per lead, the return is strong.
+
+The key is targeting efficiency. We use radius targeting, negative keywords, and dayparting to ensure every dollar reaches the right person at the right time. A well-managed campaign in Vancouver typically produces a 3–5x return on ad spend.
+
+## Google Ads vs. [Meta Ads](/services/social-media): Cost Comparison
+
+For Vancouver businesses, here's how the two platforms compare:
+
+- **Google Ads**: Higher cost per click, higher intent. Best for capturing people actively searching for your service.
+- **Meta Ads**: Lower cost per click ($1–$5), lower intent. Best for awareness, retargeting, and visual services.
+
+Most of our [Vancouver clients](/vancouver) run both — Google captures the demand that exists, Meta creates new demand.
+
+## Hidden Costs to Watch For
+
+### Poorly Managed Campaigns
+
+The biggest cost isn't the clicks — it's wasted spend from bad management. Common mistakes that burn budget: targeting too broadly, not using negative keywords, sending traffic to your homepage instead of a landing page, and not tracking conversions properly.
+
+### Landing Pages
+
+Google Ads are only as effective as the page you send people to. If your website doesn't convert visitors into leads, you're paying for clicks that go nowhere. We include landing page recommendations with every campaign.
+
+### No Follow-Up System
+
+Leads are worthless without fast follow-up. If you're not calling back within 5 minutes, you're losing 80% of your leads to competitors. We set up instant notifications so you never miss a lead.
+
+## Getting an Accurate Quote
+
+Every business is different. The best way to get an accurate Google Ads cost estimate is to [book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll analyze your industry, competition, and goals, then give you a transparent quote — no hidden fees, no surprises.
+
+**AP Digital** — [Google Ads management](/services/paid-ads) for Vancouver businesses. [$759/month](/pricing), month-to-month, [90-day results guarantee](/pricing).`,
+  },
+  {
+    slug: 'meta-ads-vs-boosted-posts',
+    title: 'Meta Ads vs Boosted Posts: Why Boosting Is Wasting Your Money',
+    metaTitle: 'Meta Ads vs Boosted Posts | Stop Wasting Money | AP Digital',
+    metaDescription: 'Why boosted posts waste your ad budget and how proper Meta Ads campaigns generate 3-5x more leads. A guide for BC small business owners.',
+    excerpt: 'Boosting posts feels easy but delivers poor results. Here\'s why proper Meta Ads campaigns outperform boosted posts every time.',
+    date: '2026-07-21',
+    readTime: '6 min read',
+    category: 'Paid Ads',
+    content: `If you're a small business owner in BC and you've been "boosting" your Facebook and Instagram posts, you're almost certainly wasting money. We see this with nearly every new client who comes to AP Digital — they've been boosting posts for months, spending $200–$500, and have almost nothing to show for it.
+
+Here's why, and what to do instead.
+
+## What's the Difference?
+
+### Boosted Posts
+
+When you hit "Boost Post" on Facebook or Instagram, you're paying to show an existing post to more people. It's simple — pick a budget, pick an audience, done. But that simplicity is exactly the problem.
+
+### [Meta Ads](/services/paid-ads) (Ads Manager Campaigns)
+
+Proper Meta Ads are built in Ads Manager with full control over objectives, placements, audiences, creative testing, and conversion tracking. They're designed to drive a specific action — leads, calls, bookings — not just "engagement."
+
+## Why Boosted Posts Fail
+
+### 1. Wrong Objective
+
+Boosted posts optimize for "engagement" — likes, comments, shares. Not leads. Not calls. Not bookings. Facebook's algorithm shows your boosted post to people most likely to hit the like button, not people most likely to become paying customers.
+
+### 2. Limited Targeting
+
+Boost gives you basic targeting: location, age, gender, and a few interests. Ads Manager gives you lookalike audiences, custom audiences (your email list, website visitors, Instagram engagers), detailed exclusions, and layered targeting that dramatically improves lead quality.
+
+### 3. No Creative Testing
+
+With a boost, you're running one post to one audience. With Ads Manager, you can test 3–5 different ad creatives, headlines, and CTAs simultaneously. The algorithm automatically shifts budget to the winning version. This A/B testing is what separates profitable campaigns from money pits.
+
+### 4. No Conversion Tracking
+
+Boosted posts can't track whether someone who saw your ad actually booked an appointment, called your business, or submitted a form. Without conversion tracking, you have no idea what's working and what isn't.
+
+### 5. No Retargeting
+
+Boosted posts are one-shot — show the post, hope for the best. Proper Meta Ads include retargeting campaigns that follow up with people who visited your website or engaged with your content. Only 2–3% convert on the first touch; retargeting captures the other 97%.
+
+## The Real Numbers
+
+Here's what we typically see when a client switches from boosted posts to proper Meta Ads campaigns:
+
+- **Cost per lead drops 60–70%** — from $25–$40 (boosted) to $8–$15 (Ads Manager)
+- **Lead volume increases 3–5x** — same budget, dramatically more leads
+- **Lead quality improves** — because we're optimizing for conversions, not likes
+- **ROI becomes measurable** — every dollar tracked from click to customer
+
+## What a Proper Meta Ads Campaign Looks Like
+
+At [AP Digital](/about), here's what we build for every client:
+
+### Campaign Structure
+- **Cold campaign**: Prospecting ads reaching new potential customers in your area
+- **Warm campaign**: Retargeting people who've visited your website or engaged with your social media
+- **Lookalike campaign**: Reaching people who look like your best existing customers
+
+### Creative Testing
+- 3–5 ad variations per campaign
+- Video, carousel, and single-image formats
+- Different headlines, CTAs, and offers
+- Automatic budget optimization toward winners
+
+### Tracking & Reporting
+- Meta Pixel installed on your website
+- Conversion events tracked (form submissions, calls, bookings)
+- Weekly performance reports showing cost per lead and ROI
+- Monthly strategy reviews
+
+## What It Costs
+
+Our [paid ads management](/pricing) is $759/month. This covers the full campaign build, creative testing, optimization, and reporting. Ad spend is separate — you pay Meta directly and we recommend starting at $600–$1,000/month.
+
+Compare that to spending $300/month boosting posts and getting maybe 2 leads. The same $300 in a properly structured campaign generates 20–30 leads.
+
+## Ready to Stop Boosting and Start Growing?
+
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll audit your current Meta activity, show you exactly where you're wasting money, and build a proper campaign structure. No contracts, [90-day guarantee](/pricing).
+
+We serve [salons](/salon-marketing), [trades](/trades-marketing), [realtors](/real-estate-marketing), and [coaches](/coaching-marketing) across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), and the Lower Mainland.`,
+  },
+  {
+    slug: 'social-media-burnaby-bc',
+    title: 'Social Media Marketing for Burnaby Businesses: A Local Guide',
+    metaTitle: 'Social Media Marketing Burnaby BC | AP Digital',
+    metaDescription: 'Social media strategies for Burnaby businesses. Platform selection, content ideas, and how to grow your local following in Burnaby and the Tri-Cities.',
+    excerpt: 'Burnaby businesses can dominate locally with the right social media strategy. Here\'s what works in the Metrotown to Heights corridor.',
+    date: '2026-07-21',
+    readTime: '6 min read',
+    category: 'Social Media',
+    content: `[Burnaby](/burnaby) sits right in the heart of Metro Vancouver — bordered by Vancouver, New Westminster, Coquitlam, and the North Shore. That central location means your potential customer base is massive, but it also means competition for attention is fierce. A strong [social media presence](/services/social-media) is how Burnaby businesses stand out.
+
+## Why Social Media Matters for Burnaby Businesses
+
+Burnaby has over 250,000 residents and is one of BC's most diverse communities. Social media lets you reach this audience where they already spend their time — Instagram, Facebook, and TikTok. For local businesses, consistent social media isn't just marketing — it's how new residents discover you and existing customers remember you.
+
+## Platform Strategy
+
+### Instagram — Visual Businesses
+
+If you run a [salon](/salon-marketing), restaurant, fitness studio, or retail shop in Burnaby, Instagram is your primary platform. Post 3–5 times per week with a mix of Reels (for reach), carousels (for saves), and Stories (for engagement). Tag your location as Burnaby in every post — this signals to the algorithm that you're a local business.
+
+### Facebook — Home Services & Trades
+
+For [trades businesses](/trades-marketing) — plumbers, electricians, HVAC, landscapers — Facebook is still the most effective organic platform. Burnaby homeowners (especially 35+) use Facebook to find and recommend local services. Join Burnaby community groups, post helpful tips, and let your work speak for itself.
+
+### TikTok — Reaching Younger Demographics
+
+Burnaby has a large student population (SFU, BCIT). If your target demographic skews younger, TikTok is essential. Short, authentic videos showing your process, your team, or your results can reach thousands of local viewers without any ad spend.
+
+## Content Ideas for Burnaby Businesses
+
+### Leverage Local Landmarks
+
+Mention Burnaby landmarks in your content — Metrotown, Central Park, Deer Lake, Burnaby Mountain, the Heights. This signals local relevance to both algorithms and humans.
+
+### Community Involvement
+
+Share when you sponsor local events, participate in community initiatives, or partner with other Burnaby businesses. This builds goodwill and gets shared organically.
+
+### Behind-the-Scenes
+
+Show the humans behind your business. Your team at work, your process, a typical day in your Burnaby shop or office. People connect with people, not logos.
+
+### Client Wins
+
+With permission, share client results. A [realtor](/real-estate-marketing) could share "Just helped the Patels find their dream home in Brentwood." A salon could post a transformation with "Another happy client at our Metrotown studio."
+
+## Amplifying With [Paid Ads](/services/paid-ads)
+
+Organic social media builds your foundation, but paid ads on Meta and Google accelerate everything. For Burnaby businesses, we recommend:
+
+- **Meta Ads**: $600–$1,200/month targeting a 10–15 km radius around your Burnaby location
+- **Google Ads**: $800–$1,500/month targeting high-intent searches specific to Burnaby
+- **Retargeting**: $5–$10/day following up with website visitors and social media engagers
+
+## Getting Started
+
+Managing social media consistently takes time. If you'd rather focus on running your business, [AP Digital handles it](/services/social-media) — content calendars, posting, community management, and growth strategy starting at [$849/month](/pricing).
+
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll build a custom social media plan for your Burnaby business. Month-to-month, no contracts, [90-day guarantee](/pricing).`,
+  },
+  {
+    slug: 'how-to-choose-marketing-agency-bc',
+    title: 'How to Choose a Marketing Agency in BC: 7 Red Flags to Watch For',
+    metaTitle: 'How to Choose a Marketing Agency in BC | 7 Red Flags | AP Digital',
+    metaDescription: 'Hiring a marketing agency in BC? Watch for these 7 red flags. How to evaluate agencies, what questions to ask, and what good marketing actually costs.',
+    excerpt: 'Not all BC marketing agencies are equal. Here are 7 red flags that separate the real ones from the ones that waste your money.',
+    date: '2026-07-21',
+    readTime: '7 min read',
+    category: 'Digital Marketing',
+    content: `Choosing a marketing agency in BC is one of the most important decisions you'll make for your business. The right agency fills your calendar with qualified clients. The wrong one burns through your budget and gives you a monthly PDF of vanity metrics you can't deposit at the bank.
+
+Here are 7 red flags to watch for — and what to look for instead.
+
+## Red Flag #1: Long-Term Contracts
+
+If an agency requires a 6-month or 12-month contract, ask yourself: why do they need to lock you in? Good agencies keep clients because the campaigns are profitable, not because of a contract clause.
+
+**What to look for**: Month-to-month agreements. An agency confident in its results doesn't need a contract to keep you.
+
+At [AP Digital](/about), every engagement is month-to-month. You stay because it works, not because you're obligated.
+
+## Red Flag #2: They Can't Show You Results
+
+If an agency talks about "brand awareness" and "impressions" but can't show you actual leads generated, cost per lead, and return on ad spend — they're hiding behind vanity metrics.
+
+**What to look for**: Specific numbers. How many leads did they generate? What was the cost per lead? What was the client's ROI? If they can't answer these questions with real data, move on.
+
+## Red Flag #3: You Never Talk to the Person Running Your Campaign
+
+Many agencies have a sales team that closes you and then hands your account to a junior coordinator or overseas team. You end up playing telephone with someone who doesn't understand your business.
+
+**What to look for**: Direct access to the strategist. At AP Digital, founder Arjun Sharma personally manages every account — no handoffs, no middlemen.
+
+## Red Flag #4: They Promise #1 Rankings
+
+Anyone who guarantees you'll rank #1 on Google is either lying or using tactics that will get you penalized. Google's algorithm considers hundreds of factors, and no one can guarantee a specific ranking position.
+
+**What to look for**: Honest timelines and realistic expectations. [Paid ads](/services/paid-ads) can generate leads within 2 weeks. SEO takes 3–6 months. [Social media](/services/social-media) compounds over time. A good agency sets expectations and then exceeds them.
+
+## Red Flag #5: No Transparency on Ad Spend
+
+Some agencies bundle ad spend into their fee and mark it up 50–100%. You're paying $3,000/month but only $1,000 is actually going to ads.
+
+**What to look for**: Separation of ad spend and management fees. You should pay your ad spend directly to Google or Meta and see exactly where every dollar goes. AP Digital's [management fee is $759/month](/pricing) — your ad spend is separate and fully transparent.
+
+## Red Flag #6: They Try to Sell You Everything
+
+An agency that offers SEO, PPC, social media, web design, email marketing, branding, video production, and PR is probably mediocre at all of them. Generalists spread thin; specialists go deep.
+
+**What to look for**: A focused agency that's excellent at a few things rather than okay at everything. AP Digital specializes in two services — [paid ads](/services/paid-ads) and [social media](/services/social-media) — because that's where we deliver the strongest results for service businesses.
+
+## Red Flag #7: No Results Guarantee
+
+If an agency isn't willing to put skin in the game, that tells you something about their confidence level.
+
+**What to look for**: A performance guarantee. AP Digital offers a [90-day results guarantee](/pricing) — if we don't hit the lead targets we agree on, we work for free until we do.
+
+## Questions to Ask Before Hiring
+
+Before you sign with any agency in BC, ask these questions:
+
+- Who specifically will manage my account?
+- Can you share case studies from businesses in my industry?
+- What's your average cost per lead for businesses like mine?
+- Is there a long-term contract?
+- How is ad spend handled — bundled or separate?
+- What does your reporting look like and how often?
+- Do you offer a results guarantee?
+
+## Ready to Work With an Agency That Passes All 7 Tests?
+
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll audit your current marketing, show you exactly what's possible, and give you a transparent quote. No contracts, no surprises — just results.
+
+We serve [salons](/salon-marketing), [trades](/trades-marketing), [realtors](/real-estate-marketing), and [coaches](/coaching-marketing) across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).`,
+  },
+  {
+    slug: 'tiktok-ads-small-business-bc',
+    title: 'TikTok Ads for Small Businesses in BC: Is It Worth It in 2026?',
+    metaTitle: 'TikTok Ads for Small Businesses in BC | Worth It? | AP Digital',
+    metaDescription: 'Should your BC small business run TikTok Ads? Costs, targeting, which industries benefit, and how TikTok compares to Meta Ads for local businesses.',
+    excerpt: 'TikTok Ads are getting cheaper while Meta costs rise. Here\'s whether TikTok makes sense for your BC service business in 2026.',
+    date: '2026-07-21',
+    readTime: '7 min read',
+    category: 'Paid Ads',
+    content: `TikTok isn't just for dance videos anymore. In 2026, it's a legitimate advertising platform with over 15 million monthly active users in Canada. For BC small businesses, TikTok Ads offer something Meta and Google don't: lower costs and a younger, highly engaged audience.
+
+But is it right for YOUR business? Let's break it down.
+
+## TikTok Ads by the Numbers (Canada, 2026)
+
+- **Average CPM (cost per 1,000 views)**: $3–$8 (vs $10–$20 on Meta)
+- **Average CPC**: $0.50–$2.00 (vs $1–$5 on Meta)
+- **Average cost per lead**: $5–$20 (depending on industry)
+- **Minimum daily budget**: $20/day for campaigns
+
+The cost advantage is real — TikTok is where Meta was 3–4 years ago in terms of ad costs. But lower costs don't always mean better results. It depends on whether your audience is on the platform.
+
+## Which BC Businesses Should Use TikTok Ads?
+
+### Great Fit
+
+**[Salons](/salon-marketing) and Beauty**: TikTok was literally built for this. Before-and-after transformations, styling tutorials, and "GRWM" content perform extremely well. Salon owners who post authentic content see organic views in the thousands — add paid ads and you're reaching tens of thousands of local potential clients.
+
+**Fitness and Wellness [Coaches](/coaching-marketing)**: Workout clips, transformation stories, and quick tips are TikTok's bread and butter. Coaches who show their personality and expertise build followings fast.
+
+**Restaurants and Cafes**: Food content is endlessly popular on TikTok. Behind-the-scenes kitchen videos, new menu reveals, and "day in the life" content drives foot traffic.
+
+### Decent Fit
+
+**[Real Estate](/real-estate-marketing)**: Property tours, neighbourhood guides, and market updates can work well on TikTok, especially targeting first-time buyers (25–35). Not as effective for luxury or commercial real estate.
+
+### Not a Great Fit (Yet)
+
+**[Trades](/trades-marketing)**: Most homeowners hiring plumbers, electricians, or HVAC technicians are 35–65. TikTok's core audience skews younger. Google Ads and Facebook are still your best bet for trades leads. That said, trades content (satisfying pipe repairs, before-and-after renovations) does go viral on TikTok — it just doesn't convert to leads as well.
+
+## TikTok Ads vs Meta Ads: Which Should You Choose?
+
+### Choose Meta Ads If:
+- Your ideal customer is 30+
+- You need leads immediately (Meta's algorithm is more mature)
+- You're in trades or professional services
+- You have a proven offer and want predictable results
+
+### Choose TikTok Ads If:
+- Your ideal customer is 18–35
+- You have a visual or lifestyle business
+- You want lower CPMs and are willing to experiment
+- You can create authentic, short-form video content
+
+### Run Both If:
+- You have $1,500+/month in total ad spend
+- You want to diversify your lead sources
+- You're in beauty, fitness, or food
+
+## How to Create TikTok Ads That Work
+
+### 1. Don't Make Ads — Make TikToks
+
+The #1 rule of TikTok advertising: if your ad looks like an ad, it will fail. TikTok users scroll past polished, corporate content. What works is authentic, native-feeling content shot on a phone.
+
+### 2. Hook in the First Second
+
+You have exactly 1 second before someone swipes. Start with a bold statement, a surprising visual, or a question that creates curiosity.
+
+### 3. Use Trending Audio
+
+TikTok's algorithm favours content that uses trending sounds. Check the "trending" section in the music library before creating your ad.
+
+### 4. Show, Don't Tell
+
+A 15-second video of a stunning balayage transformation will outperform a 60-second talking head explaining your salon services. Let the work speak for itself.
+
+### 5. Include a Clear CTA
+
+"Book now — link in bio" or "DM us for a free consultation." Don't assume people know what to do next.
+
+## Budget Recommendations for BC Businesses
+
+- **Testing budget**: $300–$600/month (enough to test 3–5 ad creatives)
+- **Growth budget**: $800–$1,500/month (consistent lead flow)
+- **Management**: Included in our [paid ads package at $759/month](/pricing) — we manage TikTok alongside Meta and Google
+
+## The Bottom Line
+
+TikTok Ads are worth testing if your audience is under 35 and your business is visual. The costs are lower than Meta, the engagement is higher, and the platform is still early enough that you can establish a presence before your competitors catch on.
+
+But for most BC service businesses, [Meta Ads](/services/paid-ads) remain the primary lead generation platform. TikTok is the complement, not the replacement.
+
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll assess whether TikTok makes sense for your business. [AP Digital](/about) manages [paid ads](/services/paid-ads) and [social media](/services/social-media) for 200+ BC businesses — month-to-month, no contracts.`,
+  },
+  {
+    slug: 'google-ads-coquitlam-tri-cities',
+    title: 'Google Ads for Coquitlam & Tri-Cities Businesses: Local Guide',
+    metaTitle: 'Google Ads Coquitlam & Tri-Cities | AP Digital',
+    metaDescription: 'How Coquitlam, Port Moody, and Port Coquitlam businesses use Google Ads to get more leads. Targeting, budget, and results from Tri-Cities campaigns.',
+    excerpt: 'The Tri-Cities market is growing fast. Here\'s how Coquitlam businesses use Google Ads to capture that growth.',
+    date: '2026-07-21',
+    readTime: '6 min read',
+    category: 'Paid Ads',
+    content: `The Tri-Cities — [Coquitlam](/coquitlam), Port Moody, and Port Coquitlam — are among the fastest-growing communities in Metro Vancouver. New developments, new residents, and new businesses mean more people searching Google for local services every day. [Google Ads](/services/paid-ads) lets you be the first business they find.
+
+## Why Google Ads Work in the Tri-Cities
+
+The Tri-Cities have a combined population approaching 250,000, with thousands of new residents moving in annually from transit-oriented developments around Evergreen Extension stations. These new residents don't have established relationships with local businesses — they're Googling "plumber Coquitlam," "salon Port Moody," or "realtor Tri-Cities" to find you.
+
+Google Ads puts your business at the top of those searches the same week you launch. No waiting 6 months for SEO to kick in.
+
+## Targeting the Tri-Cities
+
+### Radius Targeting
+
+Set a 12–15 km radius centred on your business location. This captures all three cities plus parts of Burnaby, New Westminster, and Pitt Meadows. If you only serve one city, tighten the radius to 8 km.
+
+### Location-Specific Ad Copy
+
+Always mention the Tri-Cities or the specific city in your ad headlines. "Licensed Electrician in Coquitlam" outperforms "Licensed Electrician" because it signals local relevance and improves your Quality Score (which lowers your cost per click).
+
+### Negative Keywords
+
+Exclude searches that waste budget: "jobs," "careers," "salary," "free," "DIY." For [trades businesses](/trades-marketing), also exclude cities you don't serve. If you're a Coquitlam plumber who doesn't travel to Abbotsford, exclude it.
+
+## Budget for Tri-Cities Businesses
+
+The Tri-Cities market is less competitive than Vancouver proper, which means lower costs:
+
+- **Average CPC**: $4–$12 (vs $6–$18 in Vancouver)
+- **Recommended monthly spend**: $600–$1,200
+- **Expected leads per month**: 15–30 at a $600 budget
+- **Management fee**: [$759/month](/pricing) — covers everything
+
+The lower competition is an advantage right now, but it won't last. As the Tri-Cities grow, more businesses will start advertising. Getting in early means establishing your ad history and Quality Score before costs rise.
+
+## Campaign Types That Work
+
+### Search Campaigns
+
+Target high-intent keywords: "[your service] Coquitlam," "[your service] near me," "[your service] Port Moody." These capture people who need you right now.
+
+### Local Services Ads
+
+For [trades businesses](/trades-marketing), Google's Local Services Ads (LSAs) are incredibly effective. You pay per lead (not per click), you appear above regular search ads, and the Google Guarantee badge builds instant trust.
+
+### [Social Media](/services/social-media) + Google Ads Together
+
+Run [Meta Ads](/services/paid-ads) alongside Google for full-funnel coverage. Meta builds awareness in the Tri-Cities; Google captures the searches that awareness creates. Our clients who run both see 30–50% more leads than those running just one platform.
+
+## Tri-Cities Industries We Serve
+
+We've run Google Ads for Tri-Cities businesses across:
+
+- **[Trades](/trades-marketing)**: Plumbers, electricians, HVAC, roofers, and landscapers serving Coquitlam, PoCo, and Port Moody
+- **[Salons](/salon-marketing)**: Hair salons and beauty studios in Coquitlam Centre and surrounding areas
+- **[Real Estate](/real-estate-marketing)**: Realtors targeting buyers in Burke Mountain, Westwood Plateau, and Tri-Cities developments
+- **[Coaching](/coaching-marketing)**: Business and wellness coaches serving the Tri-Cities and Metro Vancouver
+
+## Getting Started
+
+If you're a Tri-Cities business owner ready to show up first on Google, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current online presence, research your competitors' ad strategies, and build a custom Google Ads plan for your market.
+
+**AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. Month-to-month, no contracts, [90-day guarantee](/pricing).`,
+  },
+];
+
+blogPosts.unshift(...extraPosts, ...vancouverPosts, ...seoPosts, ...focusPosts, ...deepPosts);
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
