@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Coquitlam Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Coquitlam digital marketing focused on getting you more leads. Google Ads, Meta Ads & local SEO for salons, trades & realtors. 90-day guarantee. No lock-in.';
@@ -63,6 +63,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Digital Marketing Coquitlam BC', DESC, '/coquitlam'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

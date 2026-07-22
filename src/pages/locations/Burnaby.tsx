@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Burnaby Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Burnaby digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO delivering 8.2x avg ROAS. Month-to-month — no lock-in.';
@@ -63,6 +63,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Digital Marketing Burnaby BC', DESC, '/burnaby'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

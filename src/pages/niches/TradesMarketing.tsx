@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Trades Marketing BC | Plumber & HVAC Leads | AP Digital';
 const DESC = 'AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20–50 qualified leads/month via Google & Meta Ads. No contracts. Starts at $500/month.';
@@ -37,26 +37,39 @@ const results = [
 
 const faqs = [
   {
-    question: 'How quickly will I get leads as a trades business?',
-    answer: 'Most trades businesses in Metro Vancouver see their first leads within 2 weeks of launching their Meta Ads campaign with AP Digital.',
+    question: 'How quickly will I get leads as a trades business in BC?',
+    answer: 'Most trades businesses in Metro Vancouver see their first qualified leads within 2 weeks of launching. Google Ads for emergency searches (plumber near me, HVAC repair) can produce calls within days. Meta Ads typically ramp up by week 3.',
   },
   {
     question: 'Is there a contract for trades marketing?',
-    answer: 'No contracts. AP Digital works month-to-month with all clients.',
+    answer: 'No. AP Digital works month-to-month with all trades clients — plumbers, electricians, HVAC techs, roofers, and landscapers. No lock-in, no cancellation fees. You stay because the leads keep coming.',
   },
   {
     question: 'How much does trades marketing cost in BC?',
-    answer: "Most BC contractors start with $500–$1,500/month in ad spend. AP Digital's management fee is separate and fully transparent.",
+    answer: 'Most BC contractors start with $800–$1,500/month in ad spend plus a $759/month management fee. This covers Google Ads, Meta Ads, creative testing, and weekly reporting. Cost per lead typically ranges from $15–$40 depending on the trade.',
   },
   {
-    question: 'Which ad platform works best for trades businesses?',
-    answer: 'It depends on your trade. Meta Ads work well for awareness. Google Ads are better for high-intent searches like emergency plumbing or HVAC repair.',
+    question: 'Should my trades business use Google Ads or Facebook Ads?',
+    answer: 'Both work, but for different reasons. Google Ads captures emergency and high-intent searches — someone whose pipe just burst is Googling, not scrolling Facebook. Meta Ads build awareness and generate leads from homeowners who need routine work. Most trades businesses get the best results running both.',
+  },
+  {
+    question: 'Do you work with plumbers, electricians, and HVAC companies in Vancouver?',
+    answer: 'Yes. We specialize in trades businesses across Metro Vancouver including plumbers, electricians, HVAC technicians, roofers, landscapers, and general contractors. We have proven playbooks for each trade that generate consistent leads.',
+  },
+  {
+    question: 'How do I get my trades business to show up on Google?',
+    answer: 'We run Google Search Ads targeting high-intent keywords specific to your trade and service area. We also optimize your Google Business Profile for local pack visibility, help generate reviews, and ensure your NAP (name, address, phone) is consistent across directories.',
+  },
+  {
+    question: 'Can you help my trades business get more reviews?',
+    answer: 'Yes. We set up automated review request sequences that go out after every completed job. More 5-star Google reviews improve your local search ranking and build trust with potential customers searching for contractors in their area.',
   },
 ];
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Trades Marketing', DESC, '/trades-marketing'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

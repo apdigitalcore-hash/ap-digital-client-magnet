@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital';
 const DESC = 'AP Digital generates 15–30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.';
@@ -38,25 +38,38 @@ const results = [
 const faqs = [
   {
     question: 'How do real estate agents get more leads in Vancouver?',
-    answer: 'Meta Ads and Google Ads targeting buyers and sellers in your farm area are the most effective. AP Digital builds and manages these campaigns for Vancouver realtors.',
+    answer: 'The most effective approach is running Meta Ads targeting buyers and sellers in your farm area combined with Google Ads capturing high-intent searches like "homes for sale [neighbourhood]." AP Digital builds, manages, and optimizes these campaigns to generate 15–30 qualified leads per month.',
   },
   {
-    question: 'How much do real estate leads cost?',
-    answer: 'Cost per lead varies by area and competition. Most realtors start with $500–$1,000/month in ad spend. AP Digital tracks cost per lead transparently.',
+    question: 'How much do real estate leads cost in BC?',
+    answer: 'Cost per lead varies by area and competition. In Metro Vancouver, buyer leads typically cost $15–$35 on Meta and $25–$50 on Google. Seller leads are more expensive — $40–$80 — because there\'s more competition. Most realtors start with $800–$1,500/month in ad spend plus a $759/month management fee.',
   },
   {
-    question: 'Is there a contract?',
-    answer: 'No long-term contracts. Month-to-month only.',
+    question: 'Is there a contract for real estate marketing?',
+    answer: 'No. AP Digital works month-to-month with all real estate clients. No lock-in contracts, no setup fees, no cancellation penalties. We earn your business every month by delivering qualified buyer and seller leads.',
   },
   {
-    question: 'Do you work with new agents?',
-    answer: 'Yes. AP Digital works with both new and experienced realtors across Metro Vancouver.',
+    question: 'Do you work with new real estate agents?',
+    answer: 'Yes. We work with both new and experienced realtors across Metro Vancouver, Surrey, Burnaby, Richmond, and the Fraser Valley. New agents especially benefit from paid ads because they build pipeline faster than organic methods alone.',
+  },
+  {
+    question: 'What social media platforms work best for realtors?',
+    answer: 'Instagram is essential for showcasing listings and building your personal brand. Facebook is powerful for running targeted lead generation ads to homeowners in specific neighbourhoods. LinkedIn works well for luxury and commercial real estate. We manage your presence across all relevant platforms.',
+  },
+  {
+    question: 'Can you help me get seller leads specifically?',
+    answer: 'Yes. We run dedicated seller lead campaigns using home valuation landing pages and targeted ads reaching homeowners in your farm area. These campaigns target people likely to sell based on home ownership duration, equity position, and life events.',
+  },
+  {
+    question: 'How is AP Digital different from other real estate marketing companies?',
+    answer: 'Most real estate marketing companies sell you a template. AP Digital builds custom campaigns managed by the founder — not a junior account manager. We focus exclusively on paid ads and social media, we work month-to-month, and we guarantee results within 90 days or we work for free until we deliver.',
   },
 ];
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Real Estate Marketing', DESC, '/real-estate-marketing'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

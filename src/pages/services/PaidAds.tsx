@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, TrendingUp, Phone, Star } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Google Ads Agency Vancouver | PPC & Meta Ads | AP Digital';
 const DESC = 'Google Ads, PPC & Facebook Ads agency in Vancouver. AP Digital manages Meta and Google campaigns for BC salons, trades, realtors & coaches. Month-to-month.';
@@ -50,6 +50,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Paid Advertising', DESC, '/services/paid-ads', '759', 'MONTH'),
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },

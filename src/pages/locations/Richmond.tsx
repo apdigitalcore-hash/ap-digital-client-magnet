@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Richmond Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Richmond marketing agency for salons, trades, realtors & coaches. Google Ads + Meta Ads. 2,400+ leads delivered across Metro Vancouver. Free strategy call.';
@@ -59,6 +59,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Digital Marketing Richmond BC', DESC, '/richmond'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

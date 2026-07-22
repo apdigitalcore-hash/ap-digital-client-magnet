@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CheckCircle, TrendingUp, Phone, Star } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Social Media Marketing Agency Vancouver | AP Digital';
 const DESC = 'AP Digital manages social media for Vancouver salons, trades & real estate professionals. Short-form content & organic growth.';
@@ -50,6 +50,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Social Media Marketing', DESC, '/services/social-media', '849', 'MONTH'),
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },

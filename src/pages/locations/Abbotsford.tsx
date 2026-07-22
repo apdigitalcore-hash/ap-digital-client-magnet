@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Abbotsford Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Abbotsford marketing agency delivering 5-10x ROAS for Fraser Valley trades, salons & realtors. Google Ads + Meta Ads. Month-to-month. Free strategy call.';
@@ -59,6 +59,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Digital Marketing Abbotsford BC', DESC, '/abbotsford'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

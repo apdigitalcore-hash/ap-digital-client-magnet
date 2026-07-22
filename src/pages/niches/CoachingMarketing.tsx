@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Coaching Marketing BC | Get Consistent Clients | AP Digital';
 const DESC = 'AP Digital helps BC life, business & fitness coaches get 20–40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.';
@@ -38,25 +38,38 @@ const results = [
 const faqs = [
   {
     question: 'How do coaches get more clients in BC?',
-    answer: 'Paid social ads on Meta targeting your ideal client avatar are the fastest way to grow a coaching practice. AP Digital builds these campaigns for coaches across BC.',
+    answer: 'The fastest path is running Instagram and Facebook ads promoting a lead magnet (free workshop, guide, or discovery call) to your ideal client avatar. AP Digital builds these funnels for coaches across BC — from ad creative to landing page to follow-up sequence — generating 20–40 leads per month.',
   },
   {
     question: 'What types of coaches do you work with?',
-    answer: 'AP Digital works with fitness coaches, business coaches, life coaches, and consultants across British Columbia.',
+    answer: 'AP Digital works with life coaches, business coaches, executive coaches, fitness coaches, wellness coaches, career coaches, and consultants across British Columbia. If you sell a service that starts with a discovery call, our system works for you.',
   },
   {
-    question: 'How much does coaching marketing cost?',
-    answer: "Most coaches start with $500/month in ad spend. AP Digital's fee is month-to-month and fully transparent.",
+    question: 'How much does coaching marketing cost in BC?',
+    answer: 'Most coaches start with $600–$1,000/month in ad spend plus a $759/month management fee. At this budget, you can expect 20–40 qualified leads per month. Social media management starts at $849/month for 2 platforms.',
   },
   {
-    question: 'Is there a contract?',
-    answer: "No. Month-to-month only. You stay because you're getting clients.",
+    question: 'Is there a contract for coaching marketing?',
+    answer: 'No. AP Digital works month-to-month with all coaching clients. No lock-in, no cancellation fees. We guarantee results within 90 days or we work for free until we deliver.',
+  },
+  {
+    question: 'Should coaches use Instagram or Facebook for marketing?',
+    answer: 'Both. Instagram is where you build your personal brand through Reels, carousels, and Stories — it creates the know-like-trust factor coaching requires. Facebook is where you run lead generation ads and build community through groups. We manage both platforms and run paid campaigns across the Meta network.',
+  },
+  {
+    question: 'How do I build a personal brand as a coach online?',
+    answer: 'Start with a consistent posting schedule (3–5 times per week) mixing teaching content, client results, and personal stories. Use Instagram Reels for reach and carousels for saves. AP Digital handles your content calendar, posting, and community management so you can focus on coaching.',
+  },
+  {
+    question: 'Can you help me fill my coaching program or group?',
+    answer: 'Yes. We run launch campaigns for group programs, courses, and masterminds using a proven sequence: awareness ads, webinar/workshop registration ads, and retargeting. Most coaches see their programs fill within 2–3 launch cycles.',
   },
 ];
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Coaching Marketing', DESC, '/coaching-marketing'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

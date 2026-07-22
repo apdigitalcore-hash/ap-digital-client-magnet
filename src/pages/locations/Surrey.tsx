@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Surrey Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Surrey digital marketing that works. 2,400+ leads delivered for local businesses. Google Ads, Meta Ads & SEO. Month-to-month plans. Free strategy call.';
@@ -63,6 +63,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Digital Marketing Surrey BC', DESC, '/surrey'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([

@@ -11,7 +11,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const TITLE = 'Salon Marketing Vancouver | Fill Every Chair | AP Digital';
 const DESC = 'Get 20–40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.';
@@ -38,25 +38,38 @@ const results = [
 const faqs = [
   {
     question: 'How do I get more salon clients in Vancouver?',
-    answer: 'The fastest way is targeted Instagram and Facebook ads reaching people in your area who are actively looking for salon services. AP Digital sets this up and manages it for you.',
+    answer: 'The fastest way is targeted Instagram and Facebook ads reaching people in your area who are actively looking for salon services. AP Digital sets up geo-targeted campaigns on Meta and Google that reach potential clients within 10–15 km of your salon, generating 20–40 new bookings per month.',
   },
   {
-    question: 'How much does salon marketing cost?',
-    answer: "Most salons start with $500/month in ad spend. AP Digital's management fee is transparent and month-to-month — no long-term contracts.",
+    question: 'How much does salon marketing cost in BC?',
+    answer: 'Most salons start with $500–$1,000/month in ad spend plus a $759/month management fee. This covers campaign strategy, creative testing, audience optimization, and weekly reporting. There are no setup fees or long-term contracts.',
   },
   {
-    question: 'How fast will I see new bookings?',
-    answer: 'Most salon clients see new bookings within the first 2 weeks of launching their campaign.',
+    question: 'How fast will I see new bookings from ads?',
+    answer: 'Most salon clients see their first new bookings within 2 weeks of campaign launch. Instagram and Facebook ads typically generate consistent lead flow by week 3 as the algorithm optimizes for your ideal client profile.',
   },
   {
-    question: 'Is there a contract?',
-    answer: 'No. AP Digital works month-to-month with all salon clients. You stay because it works.',
+    question: 'Is there a contract for salon marketing?',
+    answer: 'No. AP Digital works month-to-month with all salon clients. There are no lock-in contracts, no cancellation fees, and no setup penalties. You stay because the campaigns are profitable.',
+  },
+  {
+    question: 'What social media platforms work best for salons?',
+    answer: 'Instagram is the top platform for salons — your work is visual, and Reels drive massive organic reach. Facebook is strong for reaching women 30–55 in your local area. We manage both platforms and run paid ads across the Meta network to maximize bookings.',
+  },
+  {
+    question: 'Do you create content for my salon social media?',
+    answer: 'Yes. Our social media management package includes 12 custom posts per month across 2 platforms, including captions, hashtag research, scheduling, and community management. We also provide guidance on shooting before-and-after content that converts.',
+  },
+  {
+    question: 'Can you help my salon rank on Google?',
+    answer: 'Absolutely. We optimize your Google Business Profile, run Google Ads targeting high-intent searches like "salon near me" and "balayage Vancouver," and build your local visibility through review generation and consistent content.',
   },
 ];
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
+    founderSchema,
     getServiceSchema('Salon Marketing', DESC, '/salon-marketing'),
     getFAQSchema(faqs),
     getBreadcrumbSchema([
