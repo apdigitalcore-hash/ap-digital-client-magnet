@@ -2140,7 +2140,534 @@ No long-term contracts. Month-to-month. 90-day results guarantee.
   },
 ];
 
-blogPosts.unshift(...extraPosts, ...vancouverPosts, ...seoPosts);
+const focusPosts: BlogPost[] = [
+  {
+    slug: 'paid-ads-abbotsford-bc',
+    title: 'Paid Ads for Small Businesses in Abbotsford BC: A Complete Guide',
+    metaTitle: 'Paid Ads for Small Businesses in Abbotsford BC | AP Digital',
+    metaDescription: 'How Abbotsford small businesses use Google Ads and Meta Ads to get more leads. Local targeting tips, budget advice, and real results from Fraser Valley businesses.',
+    excerpt: 'Abbotsford businesses are using paid ads to dominate local search. Here\'s how to get started with Google and Meta Ads in the Fraser Valley.',
+    date: '2026-07-21',
+    readTime: '7 min read',
+    category: 'Paid Ads',
+    content: `If you run a small business in Abbotsford, you already know how competitive the Fraser Valley market has become. Whether you're a contractor, salon owner, coach, or realtor, paid ads on [Google](/services/paid-ads) and [Meta](/services/social-media) are the fastest way to get in front of people who are actively looking for what you offer.
+
+## Why Paid Ads Work for Abbotsford Businesses
+
+Abbotsford is growing fast. The population has surged past 160,000, and new residents are searching Google every day for local services. Unlike organic SEO, which takes months to build, paid ads put you at the top of search results the same week you launch.
+
+The biggest advantage for Abbotsford businesses is **geo-targeting**. You can show your ads only to people within a 15–25 km radius of your shop or service area. No wasted spend on people in Toronto or Calgary — every dollar goes toward reaching potential customers in [Abbotsford](/abbotsford), Mission, Chilliwack, and the surrounding Fraser Valley.
+
+### Google Ads vs Meta Ads: Which Should You Use?
+
+Both platforms work, but they serve different purposes:
+
+- **Google Ads** captures people with **high intent**. Someone searching "plumber near me Abbotsford" is ready to hire. Google Search ads and Local Services Ads put you in front of these buyers at the exact moment they need you.
+- **Meta Ads** (Facebook and Instagram) are best for **awareness and lead generation**. They're ideal for salons, coaches, and realtors who want to build a pipeline of interested prospects through compelling visuals and offers.
+
+Most Abbotsford businesses we work with run both. Google captures the demand that already exists; Meta creates new demand by reaching people who haven't started searching yet.
+
+## Budget Guidelines for the Fraser Valley
+
+You don't need a massive budget to see results. Here's what we typically recommend for Abbotsford small businesses:
+
+- **Google Ads**: $800–$1,500/month in ad spend. This is enough to compete on 10–20 high-intent keywords and generate 15–30 qualified leads monthly.
+- **Meta Ads**: $600–$1,200/month. With the right creative and targeting, this can generate 20–40 leads per month for service businesses.
+- **Management fee**: [$759/month](/pricing) covers full campaign management, creative testing, and weekly reporting.
+
+The key is consistency. The algorithm needs 2–3 weeks of data to optimize your campaigns. Businesses that commit to 90 days almost always see a strong return.
+
+## Local Targeting Tips
+
+### Use Radius Targeting, Not City Targeting
+
+Google lets you target by city, but radius targeting is usually better for Abbotsford. Set a 20 km radius from your business address — this captures Abbotsford, Clearbrook, Matsqui, and parts of Mission without overreaching into areas you don't serve.
+
+### Run Location-Specific Ad Copy
+
+Mention Abbotsford in your headlines. "Licensed Electrician in Abbotsford" outperforms "Licensed Electrician" because it signals local relevance. Google rewards this with higher Quality Scores, which means lower cost per click.
+
+### Use Call Extensions
+
+For [trades businesses](/trades-marketing), call extensions are critical. Over 60% of local searches on mobile result in a phone call. Make it easy for someone to tap and call you directly from the search result.
+
+## Real Results from Fraser Valley Clients
+
+We've helped dozens of businesses across the Fraser Valley fill their schedules with paid ads. The pattern is consistent: within 2–3 weeks of launching, our clients see qualified leads coming in daily. By month 3, most have a predictable pipeline they can scale up or down based on capacity.
+
+The businesses that win in Abbotsford are the ones that show up consistently. While your competitors rely on word-of-mouth and hope, you'll have a system that delivers leads on demand.
+
+## Getting Started
+
+If you're an Abbotsford business owner ready to stop guessing and start growing, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current marketing, identify the best channels for your industry, and build a custom plan to hit your lead targets within 90 days.
+
+**AP Digital** is a [Vancouver-based performance marketing agency](/about) that specializes in [paid ads](/services/paid-ads) and [social media](/services/social-media) for service businesses across BC — including the Fraser Valley. Month-to-month, no contracts, 90-day results guarantee.`,
+  },
+  {
+    slug: 'social-media-marketing-north-vancouver',
+    title: 'Social Media Marketing in North Vancouver: What Local Businesses Need to Know',
+    metaTitle: 'Social Media Marketing North Vancouver | AP Digital',
+    metaDescription: 'Social media strategies for North Vancouver businesses. Platform selection, content ideas, and how to turn followers into paying customers on the North Shore.',
+    excerpt: 'North Vancouver businesses can build a loyal local following with the right social media strategy. Here\'s what works on the North Shore.',
+    date: '2026-07-21',
+    readTime: '6 min read',
+    category: 'Social Media',
+    content: `North Vancouver has a unique market. The North Shore community is tight-knit, lifestyle-driven, and highly active on social media. For local businesses, that's an enormous opportunity — if you know how to show up the right way.
+
+## Why Social Media Matters on the North Shore
+
+North Vancouver residents are affluent, educated, and digitally savvy. They research businesses online before making decisions, and they trust brands they've seen consistently in their feeds. A strong [social media presence](/services/social-media) doesn't just build awareness — it builds the kind of trust that turns scrollers into paying customers.
+
+The North Shore also has a strong sense of community. Businesses that engage locally — tagging North Van locations, partnering with other local brands, and sharing community-relevant content — outperform generic accounts every time.
+
+## Platform Selection: Where to Focus
+
+Not every platform is right for every business. Here's how to choose:
+
+### Instagram
+
+Best for: [salons](/salon-marketing), fitness studios, restaurants, realtors, and any business with a visual product or service. North Van's outdoor lifestyle culture makes Instagram a natural fit — think mountain backdrops, waterfront shoots, and active lifestyle content.
+
+Post 3–5 times per week. Use Reels for reach, Stories for engagement, and carousel posts for education. Always tag your location as North Vancouver.
+
+### Facebook
+
+Best for: [trades businesses](/trades-marketing), home services, and businesses targeting homeowners 35+. North Van has a high homeownership rate, and Facebook is still where homeowners look for recommendations.
+
+Join and engage in local Facebook groups like North Shore community pages. Post helpful tips, before-and-after photos, and special offers. Facebook Ads with radius targeting around the North Shore can generate leads for under $15 each.
+
+### LinkedIn
+
+Best for: [coaches](/coaching-marketing), consultants, B2B services, and professional services. If your ideal client is a business owner or executive living on the North Shore, LinkedIn is where they spend their professional time.
+
+Post thought leadership content 2–3 times per week. Share insights, case studies, and industry perspectives that position you as the go-to expert.
+
+## Content That Works for North Van Businesses
+
+### Showcase the Community
+
+Mention North Vancouver landmarks — Grouse Mountain, Lonsdale Quay, Lynn Canyon, Deep Cove. This signals to the algorithm and to your audience that you're genuinely local, not a generic national brand.
+
+### Behind-the-Scenes Content
+
+People want to see the humans behind the business. Show your team at work, share your process, and let your personality come through. Authenticity outperforms polish every time in local markets.
+
+### Client Results and Testimonials
+
+Video testimonials from North Shore clients are gold. A 30-second clip of a happy customer explaining how you helped them carries more weight than any ad copy you could write.
+
+### Educational Content
+
+Teach your audience something useful. A [realtor](/real-estate-marketing) could share "5 things to know before buying on the North Shore." A contractor could post "How to winterize your North Van home." This positions you as an expert and keeps you top-of-mind.
+
+## Turning Followers Into Customers
+
+Social media followers are valuable, but only if they convert. Here's how to bridge the gap:
+
+- **Clear calls to action**: Every post should have a next step — book a call, DM us, visit our website, grab the free guide.
+- **Link in bio**: Use a landing page (not just your homepage) that matches your current offer.
+- **DM strategy**: When someone engages with your content, respond within an hour. Start a conversation, don't pitch immediately.
+- **Retargeting with [paid ads](/services/paid-ads)**: Run Meta Ads targeting people who've visited your profile or engaged with your posts. This warms cold followers into hot leads.
+
+## Getting Professional Help
+
+Managing social media consistently takes 8–12 hours per week. For most North Van business owners, that time is better spent serving clients. A professional [social media management](/services/social-media) service handles your content calendar, posting, community management, and growth strategy — starting at [$849/month](/pricing).
+
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll build a custom social media plan for your North Shore business. Month-to-month, no contracts.`,
+  },
+  {
+    slug: 'facebook-ads-surrey-bc',
+    title: 'Facebook Ads for Surrey BC Small Businesses: How to Get More Leads',
+    metaTitle: 'Facebook Ads for Surrey BC Small Businesses | AP Digital',
+    metaDescription: 'Facebook Ads strategies for Surrey BC businesses. Targeting, budget tips, and how to generate qualified leads in Surrey, Delta, and the surrounding areas.',
+    excerpt: 'Surrey is BC\'s fastest-growing city. Here\'s how local businesses use Facebook Ads to capture that growth and fill their calendars.',
+    date: '2026-07-21',
+    readTime: '7 min read',
+    category: 'Paid Ads',
+    content: `Surrey is the fastest-growing city in BC, and that growth means opportunity. More residents, more homeowners, more people searching for local services. But it also means more competition. [Facebook Ads](/services/paid-ads) give Surrey businesses a way to cut through the noise and reach the right people at the right time.
+
+## Why Facebook Ads Work in Surrey
+
+Surrey's population is approaching 600,000, spread across diverse communities — Fleetwood, Guildford, Newton, Cloverdale, South Surrey, and White Rock. Each area has its own demographics and needs, and Facebook's targeting lets you reach exactly the right pockets.
+
+Unlike Google Ads, which capture existing demand, Facebook Ads **create** demand. They put your business in front of people who match your ideal customer profile — even if they haven't started searching yet. For businesses in crowded markets like [trades](/trades-marketing) and [salons](/salon-marketing), this is a game-changer.
+
+## Setting Up Your Campaigns
+
+### Targeting for Surrey
+
+The most effective approach is **radius targeting** combined with **interest and demographic filters**:
+
+- Set a 15–20 km radius around your business location in [Surrey](/surrey)
+- Layer on interests relevant to your industry (e.g., "Home Improvement" for contractors, "Beauty" for salons)
+- Use age and income targeting to narrow further — Surrey has diverse demographics, so precision matters
+
+### Ad Creative That Converts
+
+Surrey residents respond to ads that feel **local and genuine**. Here's what works:
+
+- **Before-and-after photos** for trades and salons — real work, real Surrey locations
+- **Video testimonials** from local clients — 30–60 seconds, shot on a phone, mentioning Surrey by name
+- **Offer-driven ads** — "Free quote for Surrey homeowners" or "First visit 20% off at our Guildford salon"
+- **Carousel ads** showcasing multiple services or recent projects
+
+### Budget Recommendations
+
+For Surrey businesses, we recommend:
+
+- **Starting budget**: $600–$1,000/month in ad spend
+- **Sweet spot**: $1,200–$2,000/month for consistent lead flow
+- **Management**: [$759/month](/pricing) covers strategy, creative, optimization, and reporting
+
+At $1,000/month in spend, most service businesses generate 20–35 qualified leads. The cost per lead in Surrey typically ranges from $8–$25 depending on the industry.
+
+## Campaign Types That Work
+
+### Lead Generation Campaigns
+
+Facebook's native lead forms let people submit their info without leaving Facebook. For [trades businesses](/trades-marketing), this is the fastest path to booked estimates. The form pre-fills the user's name, email, and phone — reducing friction to nearly zero.
+
+### Traffic Campaigns to Landing Pages
+
+For higher-value services ([coaching](/coaching-marketing), [real estate](/real-estate-marketing)), sending traffic to a dedicated landing page often converts better. The landing page gives you space to explain your offer, show social proof, and include a booking widget.
+
+### Retargeting Campaigns
+
+Only 2–3% of people convert on the first visit. Retargeting ads follow up with people who visited your website or engaged with your Facebook page. These campaigns run on tiny budgets ($5–$10/day) and convert at 3–5x the rate of cold campaigns.
+
+## Common Mistakes Surrey Businesses Make
+
+### Targeting Too Broadly
+
+Targeting "all of Surrey" wastes budget. A plumber in Cloverdale doesn't need to reach South Surrey. Tighten your radius and layer on relevant interests.
+
+### Running Ads Without a Follow-Up System
+
+Leads are worthless if you don't follow up fast. Set up instant email notifications and respond within 5 minutes. Businesses that call leads within 5 minutes are 21x more likely to close the deal.
+
+### Giving Up Too Soon
+
+Facebook's algorithm needs 2–3 weeks and 50+ conversions to optimize. Businesses that kill campaigns after 5 days never give the algorithm a chance to learn. Commit to 90 days minimum.
+
+## Getting Started
+
+If you're a Surrey business owner ready to stop relying on word-of-mouth, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current marketing, build a custom Facebook Ads plan, and have you generating leads within 2–3 weeks.
+
+**AP Digital** is a [Vancouver-based agency](/about) specializing in [paid ads](/services/paid-ads) and [social media](/services/social-media) for service businesses across BC. No contracts, 90-day results guarantee.`,
+  },
+  {
+    slug: 'social-media-coaching-business-bc',
+    title: 'Social Media for Coaches in BC: How to Attract Clients Online',
+    metaTitle: 'Social Media for Coaches in BC | Attract More Clients | AP Digital',
+    metaDescription: 'Social media strategies for life coaches, business coaches, and wellness coaches in BC. Build your personal brand, grow your audience, and book more clients.',
+    excerpt: 'BC coaches are building thriving practices through social media. Here\'s the playbook for attracting your ideal clients online.',
+    date: '2026-07-21',
+    readTime: '7 min read',
+    category: 'Coaching Marketing',
+    content: `If you're a coach in BC — whether you focus on life coaching, business coaching, wellness, fitness, or career transitions — [social media](/services/social-media) is your most powerful tool for attracting clients. But most coaches approach it wrong. They post motivational quotes, get a few likes, and wonder why their calendar is still empty.
+
+Here's what actually works.
+
+## The Coaching Content Framework
+
+The biggest mistake coaches make on social media is posting content that **inspires** but doesn't **convert**. Inspiration is great for engagement, but it doesn't fill your calendar. You need a content mix that builds trust AND drives action.
+
+### The 60/20/20 Rule
+
+- **60% teaching content**: Share actionable insights, frameworks, and mini-lessons that showcase your expertise. A business coach might post "3 pricing mistakes I see BC entrepreneurs make." A wellness coach could share "The morning routine my North Shore clients swear by."
+- **20% proof content**: Client results, testimonials, case studies, and transformation stories. This is what converts followers into believers. Video testimonials are 3x more effective than text.
+- **20% personal content**: Your story, your values, why you coach. People hire coaches they feel connected to. Let them see the human behind the expertise.
+
+## Platform Strategy for BC Coaches
+
+### Instagram — Your Primary Platform
+
+Instagram is where BC coaches build their brand. The platform rewards consistency and authenticity — two things that play to a coach's strengths.
+
+**What to post:**
+- **Reels** (3–4 per week): 30–60 second tips, client Q&A responses, myth-busting content. Use trending audio but keep the content substantive.
+- **Carousels** (2 per week): Mini-frameworks, step-by-step guides, "save this" content. These get the highest saves and shares.
+- **Stories** (daily): Behind-the-scenes of your coaching sessions, client wins, day-in-the-life. Stories build intimacy.
+
+### LinkedIn — For Business and Executive Coaches
+
+If you coach professionals, executives, or business owners, LinkedIn is essential. The platform has lower competition than Instagram and higher-quality leads.
+
+Post 2–3 times per week. Share lessons from your coaching practice (anonymized), industry insights, and contrarian takes. Long-form text posts outperform graphics on LinkedIn.
+
+### Facebook Groups — For Community Coaches
+
+Create a free Facebook group around your coaching niche. "BC Women in Business" or "Vancouver Wellness Community" — these groups become your lead generation engine. Provide genuine value, build relationships, and your group members become your clients.
+
+## The Conversion Path
+
+Social media followers don't magically become paying clients. You need a clear path:
+
+### Step 1: Free Value (Social Content)
+Your posts demonstrate expertise and build trust. They're the top of your funnel.
+
+### Step 2: Lead Magnet
+Offer something valuable in exchange for an email — a free workshop, a downloadable framework, a quiz, or a free discovery call. Promote this in your bio link and in 1–2 posts per week.
+
+### Step 3: Nurture Sequence
+Once someone downloads your lead magnet, follow up with 3–5 emails over 2 weeks. Share more value, client stories, and a clear invitation to book a paid session.
+
+### Step 4: Discovery Call
+This is where the sale happens. By the time someone books a call, they've consumed your content, downloaded your resource, and read your emails. They're warm — the call is a formality.
+
+## Amplifying With Paid Ads
+
+Organic social media builds the foundation, but [paid ads](/services/paid-ads) accelerate everything. For BC coaches, we recommend:
+
+- **Instagram Ads** promoting your lead magnet to a lookalike audience built from your existing followers and email list
+- **Retargeting ads** that follow up with people who visited your website or watched your Reels
+- **Webinar registration ads** for coaches who use free workshops as their conversion event
+
+A [$759/month](/pricing) ad management fee plus $600–$1,000 in ad spend typically generates 30–50 leads per month for coaching businesses.
+
+## Building Your Personal Brand in BC
+
+The coaching market in [Vancouver](/vancouver) and across BC is competitive. What sets you apart is your personal brand — your unique combination of expertise, personality, and story.
+
+Be specific about who you serve. "Business coach for women entrepreneurs in BC" is 10x more compelling than "business coach." Specificity attracts; generality repels.
+
+Show up consistently. The coaches who win aren't the most talented — they're the most visible. Post daily, engage with your community, and be generous with your knowledge.
+
+## Ready to Grow Your Coaching Practice?
+
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll build a custom [social media](/services/social-media) and [paid ads](/services/paid-ads) plan to fill your coaching calendar with ideal clients. Month-to-month, no contracts, [90-day results guarantee](/pricing).`,
+  },
+  {
+    slug: 'instagram-ads-salons-vancouver',
+    title: 'Instagram Ads for Salons in Vancouver: The Complete 2026 Guide',
+    metaTitle: 'Instagram Ads for Salons in Vancouver | AP Digital',
+    metaDescription: 'How Vancouver salons use Instagram Ads to fill their chairs. Ad types, targeting, creative tips, and budget guidance from a Vancouver marketing agency.',
+    excerpt: 'Instagram Ads are the highest-ROI channel for Vancouver salons. Here\'s exactly how to set them up for maximum bookings.',
+    date: '2026-07-21',
+    readTime: '7 min read',
+    category: 'Salon Marketing',
+    content: `Instagram is the single best advertising platform for [salons in Vancouver](/salon-marketing). Your work is visual, your audience lives on Instagram, and the platform's targeting lets you reach potential clients within walking distance of your chair. If you're not running [Instagram Ads](/services/paid-ads), you're leaving bookings on the table.
+
+## Why Instagram Ads Outperform Every Other Channel for Salons
+
+Here's what makes Instagram unique for salons:
+
+- **Visual-first format**: Your before-and-afters, colour transformations, and styling work ARE your ad creative. No stock photos, no copywriting gymnastics — just your actual results.
+- **Precise local targeting**: Show your ads only to women aged 22–55 within 10 km of your salon in [Vancouver](/vancouver). No wasted spend on people who'll never visit.
+- **Low cost per lead**: Vancouver salons typically see $5–$15 per lead on Instagram — far cheaper than Google Ads for salon keywords.
+- **Booking intent**: People scrolling Instagram are in discovery mode. A stunning transformation photo at the right moment turns a scroller into a booking.
+
+## The 3 Ad Types That Work for Vancouver Salons
+
+### 1. Before-and-After Reels
+
+Short video (15–30 seconds) showing a transformation. Start with the "before" shot, quick cut to the process, reveal the "after." Add trending audio and a text overlay with your salon name and neighbourhood.
+
+These consistently outperform static images. We've seen Reels ads generate 3–4x the engagement and 2x the leads compared to photo ads.
+
+### 2. Carousel Ads
+
+Four to six slides showcasing different services or recent work. First slide is a hook ("Vancouver's #1 Rated Balayage"), middle slides show results, last slide is a clear CTA ("Book your free consultation — link in bio").
+
+Carousel ads work well for salons that offer multiple services. A potential client might not need a balayage, but the keratin treatment on slide 4 catches their eye.
+
+### 3. Offer Ads
+
+A compelling first-visit offer drives immediate action. "First balayage $50 off — New clients only" or "Free consultation + 15% off your first colour service." Keep the offer time-limited to create urgency.
+
+Offer ads have the highest conversion rate but attract more price-sensitive clients. Use them to fill slow days (Tuesdays, Wednesdays) rather than peak times.
+
+## Targeting Settings for Vancouver Salons
+
+### Location
+
+Set a radius of 8–15 km around your salon. If you're in Kitsilano, you'll reach Kits, Point Grey, Fairview, and parts of downtown. If you're in [Burnaby](/burnaby), extend to cover New Westminster and parts of East Van.
+
+### Demographics
+
+- **Age**: 22–55 (adjust based on your clientele)
+- **Gender**: Women (unless you specialize in men's grooming)
+- **Income**: Upper-middle and above (optional — useful for luxury salons)
+
+### Interests
+
+Layer on beauty-related interests: "Hair care," "Beauty salons," "Cosmetics," "Fashion." Facebook's algorithm will further refine based on who actually clicks and converts.
+
+### Lookalike Audiences
+
+Upload your existing client email list and create a 1% lookalike audience. This tells Instagram to find people who look like your best existing clients. Lookalike audiences typically outperform interest-based targeting by 30–50%.
+
+## Budget and Results
+
+### What to Spend
+
+- **Minimum**: $400/month in ad spend (enough for 1–2 campaigns)
+- **Recommended**: $800–$1,500/month for consistent results
+- **Management**: [$759/month](/pricing) covers campaign strategy, creative testing, and optimization
+
+### What to Expect
+
+At $800/month in ad spend, Vancouver salons typically see:
+- 40–80 leads per month
+- $10–$20 cost per booking (after no-shows)
+- 15–25 new clients per month
+- 3–5x return on ad spend within 90 days
+
+## Creative Tips
+
+### Shoot in Natural Light
+
+Natural light makes hair colour look its best. Shoot your transformations near a window or outdoors. Avoid harsh salon lighting for ad content.
+
+### Show Real Clients, Not Models
+
+Authenticity converts. Real clients with real results in your real salon build more trust than polished model shoots. Ask happy clients if they're comfortable being featured — most are thrilled.
+
+### Include Social Proof
+
+Add a text overlay with your Google rating: "4.9 stars, 200+ reviews." This immediately builds credibility with people who've never heard of your salon.
+
+### Use Vancouver-Specific Copy
+
+"Vancouver's best-kept balayage secret" outperforms "Amazing balayage services." Mention your neighbourhood, mention Vancouver, make it feel local.
+
+## Getting Started
+
+If you're a [Vancouver salon](/salon-marketing) owner ready to fill your chair with Instagram Ads, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll review your Instagram, audit your current marketing, and build a custom ad plan. No contracts, [90-day guarantee](/pricing).
+
+**AP Digital** specializes in [paid ads](/services/paid-ads) and [social media](/services/social-media) for salons across [Vancouver](/vancouver), [Burnaby](/burnaby), [Surrey](/surrey), and the Lower Mainland.`,
+  },
+  {
+    slug: 'google-ads-vs-meta-ads-local-business',
+    title: 'Google Ads vs Meta Ads for Local Businesses in BC: Which Is Better?',
+    metaTitle: 'Google Ads vs Meta Ads for Local Businesses in BC | AP Digital',
+    metaDescription: 'Google Ads vs Meta Ads comparison for BC local businesses. When to use each platform, budget splits, and which industries get the best ROI from each.',
+    excerpt: 'Should your BC business run Google Ads, Meta Ads, or both? Here\'s a data-driven breakdown by industry and budget.',
+    date: '2026-07-21',
+    readTime: '8 min read',
+    category: 'Paid Ads',
+    content: `Every BC business owner running [paid ads](/services/paid-ads) faces this question: should I spend my budget on Google Ads, Meta Ads (Facebook and Instagram), or both? The answer depends on your industry, your budget, and what stage of growth you're in.
+
+Here's the honest breakdown.
+
+## The Fundamental Difference
+
+**Google Ads captures existing demand.** Someone types "plumber near me Vancouver" — they need a plumber right now. Your ad appears at the top of the search results. They click, they call, they hire you. The intent is already there; Google just connects you to it.
+
+**Meta Ads creates new demand.** Someone is scrolling Instagram, sees your ad for a free home inspection, and thinks "actually, I should get that checked out." They weren't searching for you, but your ad planted a seed. Meta is about reaching people before they start searching.
+
+Both work. Neither is universally "better." The right choice depends on your business.
+
+## Google Ads: When to Use It
+
+### Best for High-Intent Services
+
+Google Ads dominates when people search for what you do at the moment they need it:
+
+- **[Trades](/trades-marketing)**: Plumbing, electrical, HVAC, roofing. When a pipe bursts, people Google "emergency plumber [city]." Google Ads puts you at the top. Cost per lead: $15–$40.
+- **[Real Estate](/real-estate-marketing)**: Buyers and sellers search Google when they're ready to move. "Homes for sale North Vancouver" or "best realtor Surrey BC." Cost per lead: $20–$50.
+- **Professional Services**: Lawyers, accountants, dentists. People search when they need you. Cost per lead: $25–$75.
+
+### Google Ads Strengths
+
+- Captures people ready to buy **right now**
+- Higher quality leads (they're actively searching)
+- Measurable ROI per keyword
+- Works immediately — leads within days
+
+### Google Ads Weaknesses
+
+- Competitive keywords are expensive ($5–$25+ per click in BC)
+- Limited creative options (mostly text ads)
+- No brand building — when you stop paying, leads stop
+- Requires ongoing optimization to maintain performance
+
+## Meta Ads: When to Use It
+
+### Best for Visual and Lifestyle Services
+
+Meta Ads excel when your service is visual, aspirational, or community-driven:
+
+- **[Salons](/salon-marketing)**: Before-and-after transformations stop the scroll. Instagram is where your ideal clients already spend their time. Cost per lead: $5–$15.
+- **[Coaching](/coaching-marketing)**: Personal brand content, free workshop promotions, and lead magnet campaigns. Meta builds the know-like-trust factor that coaching requires. Cost per lead: $8–$25.
+- **Fitness and Wellness**: Transformation stories, lifestyle content, and free trial offers. Instagram's visual format is perfect. Cost per lead: $5–$20.
+
+### Meta Ads Strengths
+
+- Lower cost per lead than Google (typically 30–50% cheaper)
+- Powerful audience targeting (interests, behaviours, lookalikes)
+- Visual creative builds brand while generating leads
+- Retargeting keeps you in front of warm prospects
+
+### Meta Ads Weaknesses
+
+- Lower intent — people aren't actively searching for you
+- Requires strong creative (photos, videos, copy)
+- Lead quality can be lower without proper qualification
+- Algorithm needs 50+ conversions to optimize (takes 2–3 weeks)
+
+## The Industry-by-Industry Breakdown
+
+### Trades (Plumbers, Electricians, HVAC, Roofers)
+
+**Primary**: Google Ads (70% of budget)
+**Secondary**: Meta Ads (30% of budget)
+
+Why: When someone's furnace dies in January, they Google it. Google captures that emergency demand. Meta runs in the background, building awareness so when they DO need you, your brand is familiar.
+
+### Salons and Beauty
+
+**Primary**: Meta Ads (70% of budget)
+**Secondary**: Google Ads (30% of budget)
+
+Why: Salon services are visual and aspirational. Instagram is the discovery platform. Google captures the smaller pool of people actively searching "salon near me."
+
+### Real Estate
+
+**Split**: 50% Google, 50% Meta
+
+Why: Google captures active buyers and sellers. Meta builds your personal brand, promotes listings, and generates seller leads through market update content. Both channels are essential.
+
+### Coaching
+
+**Primary**: Meta Ads (80% of budget)
+**Secondary**: Google Ads (20% of budget)
+
+Why: Coaching is a relationship business. Meta's content-driven approach builds trust over time. Google can capture the small volume of people searching "business coach Vancouver," but the real growth comes from Meta.
+
+## Budget Splits for BC Businesses
+
+### Under $1,500/month Total
+
+Pick one platform. If your business is search-driven (trades, professional services), go Google. If it's visual or relationship-driven (salons, coaching), go Meta.
+
+### $1,500–$3,000/month Total
+
+Run both platforms. Allocate based on the industry splits above. This gives you both demand capture (Google) and demand creation (Meta).
+
+### $3,000+/month Total
+
+Full-funnel strategy. Google captures high-intent searches. Meta runs cold prospecting AND retargeting. You're covering every stage of the buyer's journey.
+
+### Management Fees
+
+At AP Digital, our [paid ads management](/pricing) is $759/month regardless of which platform you're on. This covers strategy, campaign builds, creative testing, optimization, and weekly reporting.
+
+## The Real Answer: Test Both
+
+The truth is, no one can tell you with certainty which platform will work better for YOUR business until you test it. Market conditions, competition, and your specific offer all affect performance.
+
+That's why we recommend a 90-day test period. Run both platforms, measure results, and then shift budget toward whatever's performing best. Our [90-day results guarantee](/pricing) ensures you're not taking any risk.
+
+## Ready to Find Out What Works for Your Business?
+
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll analyze your industry, market, and goals to recommend the right platform mix. We've run [paid ads](/services/paid-ads) for 200+ BC businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford) — we know what works in your market.
+
+**AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. Month-to-month. No contracts. Results guaranteed.`,
+  },
+];
+
+blogPosts.unshift(...extraPosts, ...vancouverPosts, ...seoPosts, ...focusPosts);
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
