@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Target, Megaphone, Video } from 'lucide-react';
+import { Target, Megaphone } from 'lucide-react';
 
 const services = [
   { icon: Target, title: 'Paid Advertising', description: 'Targeted ads on Google, Facebook & Instagram that maximize ROI.', link: '/services/paid-ads' },
   { icon: Megaphone, title: 'Social Media Management', description: 'Build authority and engagement with consistent, compelling content.', link: '/services/social-media' },
-  { icon: Video, title: 'Content Creation', description: 'Scroll-stopping short-form videos and graphics that drive action.', link: '/services/content-creation' },
 ];
 
 const OurServices = () => (
   <section className="mt-16 pt-12 border-t border-border">
     <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Our Services</h2>
-    <div className="grid sm:grid-cols-3 gap-4">
+    <div className="grid sm:grid-cols-2 max-w-2xl gap-4">
       {services.map((svc) => (
         <Link
           key={svc.title}

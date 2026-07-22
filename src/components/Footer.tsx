@@ -26,6 +26,16 @@ const Footer = () => {
     { label: 'Agency Hiring Guide', href: '/how-to-choose-a-marketing-agency-vancouver' },
   ];
 
+  const locations = [
+    { label: 'Vancouver', href: '/vancouver' },
+    { label: 'Surrey', href: '/surrey' },
+    { label: 'Burnaby', href: '/burnaby' },
+    { label: 'Richmond', href: '/richmond' },
+    { label: 'Langley', href: '/langley' },
+    { label: 'Coquitlam', href: '/coquitlam' },
+    { label: 'Abbotsford', href: '/abbotsford' },
+  ];
+
   const legal = [
     { label: 'Privacy Policy', href: '/privacy-policy' },
     { label: 'Terms of Service', href: '/terms-of-service' },
@@ -48,7 +58,7 @@ const Footer = () => {
     <footer className="bg-near-black text-primary-foreground">
       {/* Main Footer */}
       <div className="container-custom py-16 md:py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="inline-block mb-6">
@@ -119,6 +129,23 @@ const Footer = () => {
             <h4 className="font-semibold text-primary-foreground mb-6">Industries</h4>
             <ul className="space-y-3">
               {nichePages.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.href}
+                    className="text-gray-400 hover:text-teal transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <h4 className="font-semibold text-primary-foreground mb-6">Locations</h4>
+            <ul className="space-y-3">
+              {locations.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.href}

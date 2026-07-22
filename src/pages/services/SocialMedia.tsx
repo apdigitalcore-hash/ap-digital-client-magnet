@@ -92,7 +92,7 @@ const SocialMedia = () => (
 
         {/* Short intro */}
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-          Inconsistent posting kills reach. We plan, create, and publish your content every week so your brand stays top of mind — without you lifting a finger.
+          Inconsistent posting kills reach. We plan, create, and publish your content every week so your brand stays top of mind — without you lifting a finger. Combine with <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">paid ads</Link> to turn followers into leads. See <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link>.
         </p>
 
         {/* 3-column why strip */}
@@ -158,10 +158,13 @@ const SocialMedia = () => (
           <p className="text-muted-foreground mb-6">We provide social media marketing for businesses across Metro Vancouver and the Fraser Valley.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
+              { city: 'Vancouver', href: '/vancouver' },
               { city: 'Surrey', href: '/surrey' },
               { city: 'Burnaby', href: '/burnaby' },
+              { city: 'Richmond', href: '/richmond' },
               { city: 'Langley', href: '/langley' },
               { city: 'Coquitlam', href: '/coquitlam' },
+              { city: 'Abbotsford', href: '/abbotsford' },
             ].map(({ city, href }) => (
               <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
                 <span className="font-medium text-foreground">{city}</span>

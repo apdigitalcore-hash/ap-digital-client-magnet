@@ -163,6 +163,26 @@ const SalonMarketing = () => (
 
         <OurServices />
 
+        <div className="mt-16 mb-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Cities We Serve</h2>
+          <p className="text-muted-foreground mb-6">We help salons across Metro Vancouver and the Fraser Valley. See our <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link>.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { city: 'Vancouver', href: '/vancouver' },
+              { city: 'Surrey', href: '/surrey' },
+              { city: 'Burnaby', href: '/burnaby' },
+              { city: 'Richmond', href: '/richmond' },
+              { city: 'Langley', href: '/langley' },
+              { city: 'Coquitlam', href: '/coquitlam' },
+              { city: 'Abbotsford', href: '/abbotsford' },
+            ].map(({ city, href }) => (
+              <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
+                <span className="font-medium text-foreground">{city}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and find out how we can fill your salon's calendar with high-value clients.</p>

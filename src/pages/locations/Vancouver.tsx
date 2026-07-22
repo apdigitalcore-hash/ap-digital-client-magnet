@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, TrendingUp, Star, Zap, Target, Users, MapPin } from 'lucide-react';
 import OurServices from '@/components/OurServices';
+import IndustriesWeServe from '@/components/IndustriesWeServe';
 import {
   Accordion,
   AccordionContent,
@@ -397,6 +398,8 @@ const Vancouver = () => (
 
       {/* Our Services */}
       <OurServices />
+
+      <IndustriesWeServe />
 
       {/* Dark CTA */}
       <section className="bg-near-black py-20 text-center">

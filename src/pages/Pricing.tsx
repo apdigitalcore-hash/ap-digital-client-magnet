@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { Check, ArrowRight, Shield, Zap, Trophy, Star, Target, Megaphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -190,7 +191,7 @@ const Pricing = () => {
               Pick what your business needs.
             </h2>
             <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-              Transparent monthly pricing per service. No bundles, no contracts — just what you need to grow.
+              Transparent monthly pricing per service. No bundles, no contracts — just what you need to grow. Learn more about our <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">paid ads</Link> and <Link to="/services/social-media" className="text-teal underline hover:text-teal/80">social media</Link> services, or see <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link>.
             </p>
           </div>
 

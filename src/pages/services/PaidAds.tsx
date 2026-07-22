@@ -95,7 +95,7 @@ const PaidAds = () => (
 
         {/* Short intro */}
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-          Most businesses waste their first $5k figuring out what works. We've already done that testing — your campaigns launch with proven structure from day one.
+          Most businesses waste their first $5k figuring out what works. We've already done that testing — your campaigns launch with proven structure from day one. Pair ads with our <Link to="/services/social-media" className="text-teal underline hover:text-teal/80">social media management</Link> for full-funnel coverage. See <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link>.
         </p>
 
         {/* 3-column why strip */}
@@ -161,10 +161,13 @@ const PaidAds = () => (
           <p className="text-muted-foreground mb-6">We provide paid ads management for businesses across Metro Vancouver and the Fraser Valley.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
+              { city: 'Vancouver', href: '/vancouver' },
               { city: 'Surrey', href: '/surrey' },
               { city: 'Burnaby', href: '/burnaby' },
+              { city: 'Richmond', href: '/richmond' },
               { city: 'Langley', href: '/langley' },
               { city: 'Coquitlam', href: '/coquitlam' },
+              { city: 'Abbotsford', href: '/abbotsford' },
             ].map(({ city, href }) => (
               <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
                 <span className="font-medium text-foreground">{city}</span>
