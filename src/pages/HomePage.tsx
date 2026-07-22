@@ -15,7 +15,7 @@ import MarketingAuditAI from '@/components/MarketingAuditAI';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
-import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema } from '@/lib/structuredData';
+import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, founderSchema } from '@/lib/structuredData';
 import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
@@ -28,6 +28,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     organizationSchema,
+    founderSchema,
     getWebSiteSchema(),
     getWebPageSchema(TITLE, DESC, '/'),
     getBreadcrumbSchema([{ name: 'Home', url: '/' }]),

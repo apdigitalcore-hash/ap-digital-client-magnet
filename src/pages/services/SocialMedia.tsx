@@ -50,7 +50,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    getServiceSchema('Social Media Marketing', DESC, '/services/social-media'),
+    getServiceSchema('Social Media Marketing', DESC, '/services/social-media', '849', 'MONTH'),
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Social Media Marketing', url: '/services/social-media' },

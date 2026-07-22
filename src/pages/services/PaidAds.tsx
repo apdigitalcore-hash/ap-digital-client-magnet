@@ -50,7 +50,7 @@ const faqs = [
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
-    getServiceSchema('Paid Advertising', DESC, '/services/paid-ads'),
+    getServiceSchema('Paid Advertising', DESC, '/services/paid-ads', '759', 'MONTH'),
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Paid Ads', url: '/services/paid-ads' },

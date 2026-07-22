@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 import DarkCTA from '@/components/DarkCTA';
 import {
   organizationSchema,
+  founderSchema,
   getBreadcrumbSchema,
   getWebPageSchema,
   getFAQSchema,
@@ -104,6 +105,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     organizationSchema,
+    founderSchema,
     getBreadcrumbSchema([
       { name: 'Home', url: '/' },
       { name: 'Pricing', url: '/pricing' },

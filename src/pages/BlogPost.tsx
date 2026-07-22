@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
-import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -20,6 +20,7 @@ const BlogPost = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
+      founderSchema,
       getArticleSchema(post),
       getBreadcrumbSchema([
         { name: 'Home', url: '/' },
