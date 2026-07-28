@@ -357,7 +357,7 @@
   }
 
   .animate-scroll-x {
-    animation: scrollX 30s linear infinite;
+    animation: scrollX 12s linear infinite;
   }
 
   @keyframes scrollX {
