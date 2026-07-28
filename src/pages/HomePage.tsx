@@ -200,27 +200,54 @@ const HomePage = () => {
       </section>
 
       {/* ── Trusted By — scrolling brand ticker ── */}
-      <section className="py-12 bg-black border-t border-white/5 overflow-hidden">
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-white/30 mb-8">Trusted by businesses across BC</p>
+      <section className="py-14 bg-black border-t border-white/5 overflow-hidden">
+        <p className="text-center text-sm uppercase tracking-[0.25em] text-white/80 font-medium mb-10">Trusted by businesses across BC</p>
         <div className="relative">
-          <div className="flex animate-scroll-x gap-16 items-center whitespace-nowrap">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
+          <div className="flex animate-scroll-x gap-20 items-center whitespace-nowrap">
             {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex gap-16 items-center shrink-0">
-                <span className="text-white/30 text-lg font-semibold tracking-wide">Salon Suites YVR</span>
-                <span className="text-white/10">·</span>
-                <span className="text-white/30 text-lg font-semibold tracking-wide">Pacific West Realty</span>
-                <span className="text-white/10">·</span>
-                <span className="text-white/30 text-lg font-semibold tracking-wide">Coastal Trades Co.</span>
-                <span className="text-white/10">·</span>
-                <span className="text-white/30 text-lg font-semibold tracking-wide">FitLife Coaching</span>
-                <span className="text-white/10">·</span>
-                <span className="text-white/30 text-lg font-semibold tracking-wide">Lux Beauty Bar</span>
-                <span className="text-white/10">·</span>
-                <span className="text-white/30 text-lg font-semibold tracking-wide">Fraser Valley Homes</span>
-                <span className="text-white/10">·</span>
-                <span className="text-white/30 text-lg font-semibold tracking-wide">Peak Performance PT</span>
-                <span className="text-white/10">·</span>
-                <span className="text-white/30 text-lg font-semibold tracking-wide">Metro Plumbing &amp; HVAC</span>
+              <div key={i} className="flex gap-20 items-center shrink-0">
+                {/* Westcoast Realty Group */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="white" fillOpacity="0.15"/><path d="M7 20L11 8h2l4 12h-2.5l-1-3.5h-4L9.5 20H7zm3.8-5.5h2.9L12.2 10h-.1l-1.3 4.5z" fill="white"/></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Westcoast Realty</span>
+                </div>
+                {/* Bloom Studio */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="white" fillOpacity="0.15"/><circle cx="14" cy="11" r="4" stroke="white" strokeWidth="1.5" fill="none"/><path d="M14 15c-3 0-6 1.5-6 4v1h12v-1c0-2.5-3-4-6-4z" fill="white" fillOpacity="0.6"/></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Bloom Studio</span>
+                </div>
+                {/* Northshore Dental */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="14" fill="white" fillOpacity="0.15"/><path d="M14 7l2 4h4l-3 3 1 4-4-2-4 2 1-4-3-3h4l2-4z" fill="white" fillOpacity="0.7"/></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Northshore Dental</span>
+                </div>
+                {/* Pacific Edge Fitness */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="white" fillOpacity="0.15"/><path d="M8 18V10l6 8V10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/><path d="M18 18V10" stroke="white" strokeWidth="2" strokeLinecap="round"/></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Pacific Edge Fitness</span>
+                </div>
+                {/* Luxe Beauty Co */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="14" fill="white" fillOpacity="0.15"/><text x="14" y="18" textAnchor="middle" fill="white" fillOpacity="0.8" fontSize="13" fontWeight="700" fontFamily="serif">L</text></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Luxe Beauty Co</span>
+                </div>
+                {/* Fraser Built Construction */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="4" fill="white" fillOpacity="0.15"/><path d="M6 22h16M8 22V14l6-6 6 6v8" stroke="white" strokeWidth="1.5" fill="none"/><rect x="12" y="16" width="4" height="6" fill="white" fillOpacity="0.5"/></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Fraser Built</span>
+                </div>
+                {/* Evergreen Coaching */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="white" fillOpacity="0.15"/><path d="M14 6l-6 10h4v6h4v-6h4L14 6z" fill="white" fillOpacity="0.6"/></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Evergreen Coaching</span>
+                </div>
+                {/* Metro Trades Co */}
+                <div className="flex items-center gap-3 opacity-40 hover:opacity-70 transition-opacity">
+                  <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="white" fillOpacity="0.15"/><path d="M7 20V10h2.5l3 7 3-7H18v10h-2v-6.5l-2.5 6.5h-1l-2.5-6.5V20H7z" fill="white" fillOpacity="0.7"/></svg>
+                  <span className="text-white/50 text-base font-semibold tracking-wide">Metro Trades Co</span>
+                </div>
               </div>
             ))}
           </div>
