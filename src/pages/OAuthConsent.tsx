@@ -134,26 +134,86 @@ export default function OAuthConsent() {
   }
 
   const clientName = details.client?.name ?? "an app";
+  const redirectUri = details.client?.redirect_uri;
+  const userEmail = undefined; // Optional: could fetch from session
+  const scopeString = details.scope?.trim();
 
   return (
     <main className="min-h-screen bg-background flex items-center justify-center px-4 py-16">
-      <div className="w-full max-w-md rounded-xl border border-border bg-card p-8 shadow-lg">
-        <h1 className="text-2xl font-bold mb-2">Connect {clientName} to AP Digital</h1>
-        <p className="text-sm text-gray-400 mb-4">
-          {clientName} will be able to call this app's enabled tools while you are signed in.
+      <div className="w-full max-w-lg rounded-2xl border border-border bg-card p-8 shadow-lg">
+        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-teal mb-4">
+          <Shield className="w-3.5 h-3.5" /> Authorization request
+        </div>
+        <h1 className="font-display text-2xl font-bold mb-2 text-foreground">
+          Connect <span className="text-teal">{clientName}</span> to AP Digital
+        </h1>
+        <p className="text-sm text-muted-foreground mb-6">
+          {clientName} is requesting access to call this app's MCP tools as you.
         </p>
-        <p className="text-xs text-gray-400 mb-6">
-          This does not bypass this app's permissions or backend policies.
-        </p>
+
+        {redirectUri && (
+          <div className="rounded-lg border border-border bg-background/50 px-3 py-2 mb-6 text-xs">
+            <span className="text-muted-foreground">Redirects to: </span>
+            <span className="font-mono text-foreground break-all">{redirectUri}</span>
+          </div>
+        )}
+
+        <div className="mb-6">
+          <h2 className="text-sm font-semibold text-foreground mb-3">
+            {clientName} will be able to:
+          </h2>
+          <ul className="space-y-3">
+            {MCP_TOOLS.map((tool) => (
+              <li key={tool.name} className="flex gap-3 rounded-lg border border-border bg-background/40 p-3">
+                <div className="w-8 h-8 rounded-lg bg-teal/10 flex items-center justify-center flex-shrink-0">
+                  <tool.icon className="w-4 h-4 text-teal" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <p className="text-sm font-semibold text-foreground">{tool.label}</p>
+                    <code className="text-[10px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-mono">
+                      {tool.name}
+                    </code>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">
+                    {tool.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="rounded-lg bg-teal/5 border border-teal/20 p-3 mb-6">
+          <div className="flex gap-2 text-xs text-muted-foreground">
+            <Check className="w-4 h-4 text-teal flex-shrink-0 mt-0.5" strokeWidth={3} />
+            <p>
+              All tools are <span className="text-foreground font-semibold">read-only</span>. This does not bypass this app's permissions or backend policies, and {clientName} cannot modify your account.
+            </p>
+          </div>
+        </div>
+
+        {scopeString && (
+          <details className="mb-6 text-xs">
+            <summary className="cursor-pointer text-muted-foreground hover:text-foreground">
+              Requested scope string
+            </summary>
+            <code className="block mt-2 p-2 rounded bg-muted font-mono text-muted-foreground break-all">
+              {scopeString}
+            </code>
+          </details>
+        )}
+
         <div className="flex gap-3">
           <Button onClick={() => decide(true)} disabled={busy} className="flex-1">
-            {busy ? "Please wait…" : "Approve"}
+            {busy ? "Please wait…" : `Approve ${clientName}`}
           </Button>
           <Button onClick={() => decide(false)} disabled={busy} variant="secondary" className="flex-1">
-            Cancel connection
+            Cancel
           </Button>
         </div>
       </div>
     </main>
   );
 }
+
