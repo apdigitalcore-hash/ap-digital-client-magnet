@@ -2,6 +2,35 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
+import { Check, List, MapPin, DollarSign, Mail, Shield } from "lucide-react";
+
+const MCP_TOOLS = [
+  {
+    icon: List,
+    name: "list_services",
+    label: "Services catalog",
+    description: "Read the list of marketing services AP Digital offers (Paid Ads, Social Media).",
+  },
+  {
+    icon: MapPin,
+    name: "list_locations",
+    label: "Service locations",
+    description: "Read the BC cities AP Digital serves (Vancouver, Surrey, Burnaby, and more).",
+  },
+  {
+    icon: DollarSign,
+    name: "get_pricing",
+    label: "Pricing tiers",
+    description: "Read per-service monthly pricing in CAD. Month-to-month, no contracts.",
+  },
+  {
+    icon: Mail,
+    name: "get_contact_info",
+    label: "Contact & booking",
+    description: "Read public contact channels (email, phone) and the Calendly booking link.",
+  },
+];
+
 
 // Beta @supabase/supabase-js auth.oauth namespace — type shim.
 type AuthorizationDetails = {
