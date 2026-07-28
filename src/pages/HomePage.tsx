@@ -1,7 +1,7 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight, Instagram, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -124,7 +124,7 @@ const HomePage = () => {
             className="text-base sm:text-lg text-white/60 max-w-xl mx-auto mb-12 animate-fade-up leading-relaxed"
             style={{ animationDelay: '0.16s' }}
           >
-            We build paid ad and content systems that fill your calendar with qualified clients — for salons, realtors, trades, and coaches across BC.
+            We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
           </p>
 
           {/* CTAs */}
@@ -157,6 +157,73 @@ const HomePage = () => {
           >
             <span className="text-white/80 font-semibold">2,400+ leads</span> delivered for <span className="text-white/80 font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
           </p>
+
+          {/* Social links */}
+          <div
+            className="mt-6 flex items-center justify-center gap-3 animate-fade-up"
+            style={{ animationDelay: '0.4s' }}
+          >
+            <a
+              href="https://www.instagram.com/theapdigital/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow AP Digital on Instagram"
+              className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
+            >
+              <Instagram className="w-4 h-4" strokeWidth={2} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/theapdigital/?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow AP Digital on LinkedIn"
+              className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
+            >
+              <Linkedin className="w-4 h-4" strokeWidth={2} />
+            </a>
+            <a
+              href="https://share.google/BaN9E261WFEfP1lME"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View AP Digital on Google"
+              className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
+            >
+              <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M21.35 11.1H12v3.2h5.35c-.5 2.5-2.7 4-5.35 4-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8c1.5 0 2.85.55 3.9 1.45l2.4-2.4C16.6 4.2 14.4 3.3 12 3.3c-4.8 0-8.7 3.9-8.7 8.7s3.9 8.7 8.7 8.7c5.05 0 8.4-3.55 8.4-8.55 0-.6-.05-1.05-.15-1.55z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trusted By — scrolling brand ticker ── */}
+      <section className="py-12 bg-black border-t border-white/5 overflow-hidden">
+        <p className="text-center text-xs uppercase tracking-[0.2em] text-white/30 mb-8">Trusted by businesses across BC</p>
+        <div className="relative">
+          <div className="flex animate-scroll-x gap-16 items-center whitespace-nowrap">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="flex gap-16 items-center shrink-0">
+                <span className="text-white/30 text-lg font-semibold tracking-wide">Salon Suites YVR</span>
+                <span className="text-white/10">·</span>
+                <span className="text-white/30 text-lg font-semibold tracking-wide">Pacific West Realty</span>
+                <span className="text-white/10">·</span>
+                <span className="text-white/30 text-lg font-semibold tracking-wide">Coastal Trades Co.</span>
+                <span className="text-white/10">·</span>
+                <span className="text-white/30 text-lg font-semibold tracking-wide">FitLife Coaching</span>
+                <span className="text-white/10">·</span>
+                <span className="text-white/30 text-lg font-semibold tracking-wide">Lux Beauty Bar</span>
+                <span className="text-white/10">·</span>
+                <span className="text-white/30 text-lg font-semibold tracking-wide">Fraser Valley Homes</span>
+                <span className="text-white/10">·</span>
+                <span className="text-white/30 text-lg font-semibold tracking-wide">Peak Performance PT</span>
+                <span className="text-white/10">·</span>
+                <span className="text-white/30 text-lg font-semibold tracking-wide">Metro Plumbing &amp; HVAC</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

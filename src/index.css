@@ -356,4 +356,17 @@
     }
   }
 
+  .animate-scroll-x {
+    animation: scrollX 30s linear infinite;
+  }
+
+  @keyframes scrollX {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
 }

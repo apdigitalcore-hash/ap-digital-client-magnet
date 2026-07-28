@@ -163,25 +163,7 @@ const Header = () => {
               About
             </Link>
 
-            <Link
-              to="/blog"
-              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}
-            >
-              Blog
-            </Link>
-
-            <Link
-              to="/case-studies"
-              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
-                isScrolled ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}
-            >
-              Results
-            </Link>
-
-            <a
+<a
               href="/#digital-arsenal"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal flex items-center gap-1.5 ${
                 useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
@@ -238,7 +220,7 @@ const Header = () => {
               <div className="px-4 pt-4 pb-2 space-y-1">
                 <Link
                   to="/"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-white font-medium hover:bg-white/10 hover:text-teal transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
@@ -246,7 +228,7 @@ const Header = () => {
 
                 <Link
                   to="/pricing"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-white font-medium hover:bg-white/10 hover:text-teal transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
@@ -254,26 +236,10 @@ const Header = () => {
 
                 <Link
                   to="/about"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-white font-medium hover:bg-white/10 hover:text-teal transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   About
-                </Link>
-
-                <Link
-                  to="/blog"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Blog
-                </Link>
-
-                <Link
-                  to="/case-studies"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Results
                 </Link>
 
                 <a
@@ -287,7 +253,7 @@ const Header = () => {
 
                 <Link
                   to="/contact"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-foreground font-medium hover:bg-muted hover:text-teal transition-colors"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-white font-medium hover:bg-white/10 hover:text-teal transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact
@@ -295,17 +261,17 @@ const Header = () => {
               </div>
 
               {/* Divider */}
-              <div className="mx-4 my-2 border-t border-border" />
+              <div className="mx-4 my-2 border-t border-white/10" />
 
               {/* Services accordion */}
               <div className="px-4 py-1">
                 <button
-                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-white font-semibold hover:bg-white/10 transition-colors"
                   onClick={() => toggleSection('services')}
                   aria-expanded={openSection === 'services'}
                 >
                   <span>Services</span>
-                  <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'services' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-white/40 transition-transform duration-200 ${openSection === 'services' ? 'rotate-180' : ''}`} />
                 </button>
                 {openSection === 'services' && (
                   <div className="mt-1 ml-2 space-y-0.5">
@@ -313,7 +279,7 @@ const Header = () => {
                       <Link
                         key={service.href}
                         to={service.href}
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-white/60 hover:text-teal hover:bg-white/5 transition-colors text-sm"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
@@ -327,12 +293,12 @@ const Header = () => {
               {/* Industries accordion */}
               <div className="px-4 py-1">
                 <button
-                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-white font-semibold hover:bg-white/10 transition-colors"
                   onClick={() => toggleSection('industries')}
                   aria-expanded={openSection === 'industries'}
                 >
                   <span>Industries</span>
-                  <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'industries' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-white/40 transition-transform duration-200 ${openSection === 'industries' ? 'rotate-180' : ''}`} />
                 </button>
                 {openSection === 'industries' && (
                   <div className="mt-1 ml-2 space-y-0.5">
@@ -343,7 +309,7 @@ const Header = () => {
                           href={industry.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-white/60 hover:text-teal hover:bg-white/5 transition-colors text-sm"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
@@ -353,7 +319,7 @@ const Header = () => {
                         <Link
                           key={industry.href}
                           to={industry.href}
-                          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-white/60 hover:text-teal hover:bg-white/5 transition-colors text-sm"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
@@ -368,12 +334,12 @@ const Header = () => {
               {/* Locations accordion */}
               <div className="px-4 py-1">
                 <button
-                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-foreground font-semibold hover:bg-muted transition-colors"
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-white font-semibold hover:bg-white/10 transition-colors"
                   onClick={() => toggleSection('locations')}
                   aria-expanded={openSection === 'locations'}
                 >
                   <span>Locations</span>
-                  <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-200 ${openSection === 'locations' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-white/40 transition-transform duration-200 ${openSection === 'locations' ? 'rotate-180' : ''}`} />
                 </button>
                 {openSection === 'locations' && (
                   <div className="mt-1 ml-2 space-y-0.5">
@@ -381,7 +347,7 @@ const Header = () => {
                       <Link
                         key={loc.href}
                         to={loc.href}
-                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-muted-foreground hover:text-teal hover:bg-teal/5 transition-colors text-sm"
+                        className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-white/60 hover:text-teal hover:bg-white/5 transition-colors text-sm"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <ChevronRight className="w-3 h-3 flex-shrink-0 opacity-50" />
