@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
-import ResultsProof from '@/components/ResultsProof';
+
 import ServicesDark from '@/components/ServicesDark';
 import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
@@ -380,7 +380,6 @@ const HomePage = () => {
       </section>
 
       <MarketingAuditAI />
-      <ResultsProof />
       <ProcessDark />
       <ServicesDark />
 
