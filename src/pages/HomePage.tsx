@@ -16,6 +16,7 @@ import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, founderSchema } from '@/lib/structuredData';
+import apLogo from '@/assets/ap-logo.png';
 import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
@@ -94,22 +95,19 @@ const HomePage = () => {
         {/* Background — Codex-inspired gradient wash */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,_rgba(120,119,198,0.25)_0%,_rgba(80,80,180,0.08)_40%,_transparent_70%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_20%,_rgba(147,130,220,0.15)_0%,_transparent_60%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_70%_60%,_rgba(100,100,200,0.1)_0%,_transparent_50%)]" />
+          {/* Center glow behind logo — soft teal wash */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_45%_35%_at_50%_38%,_rgba(45,212,191,0.12)_0%,_rgba(45,212,191,0.03)_50%,_transparent_80%)]" />
+          {/* Wide ambient glow — adds depth */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_45%,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
+          {/* Top edge light — mimics overhead studio lighting */}
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.04)_0%,_transparent_30%)]" />
         </div>
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 pt-32 pb-24 sm:pt-40 sm:pb-32 w-full max-w-3xl mx-auto">
 
           {/* Logo mark */}
-          <div
-            className="mb-10 animate-fade-up"
-          >
-            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg">
-              <span className="font-display font-bold text-2xl sm:text-3xl text-white">
-                <span className="text-teal">AP</span>
-              </span>
-            </div>
+          <div className="mb-10 animate-fade-up">
+            <img src={apLogo} alt="AP Digital Marketing" className="w-24 h-24 sm:w-32 sm:h-32 rounded-full" />
           </div>
 
           {/* H1 */}
