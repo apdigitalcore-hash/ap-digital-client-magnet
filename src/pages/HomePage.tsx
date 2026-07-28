@@ -279,102 +279,33 @@ const HomePage = () => {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-5">
-            {/* Salons */}
-            <Link
-              to="/salon-marketing"
-              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
-                  <Scissors className="w-5 h-5 text-teal" strokeWidth={1.8} />
-                </div>
-                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
-              </div>
-              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Salons</p>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
-                Full bookings in 30 days
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed mb-5">
-                Instagram & Facebook ads that fill your chair consistently — without you lifting a finger.
-              </p>
-              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
-                30-day results guarantee
-              </span>
-            </Link>
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
+            {[
+              { to: '/salon-marketing', icon: Scissors, name: 'Salons', tagline: 'Full bookings in 30 days', gradient: 'from-[#0a0a0a] to-[#111]' },
+              { to: '/real-estate-marketing', icon: Home, name: 'Real Estate', tagline: '15–30 qualified leads per month', gradient: 'from-[#0c0c0c] to-[#0a0f0f]' },
+              { to: '/trades-marketing', icon: Wrench, name: 'Trades', tagline: 'Stop relying on word-of-mouth', gradient: 'from-[#0b0b0b] to-[#0f0e0a]' },
+              { to: '/coaching-marketing', icon: Users, name: 'Coaching', tagline: 'Calendar filled with ideal clients', gradient: 'from-[#0a0a0c] to-[#0e0c10]' },
+            ].map(({ to, icon: Icon, name, tagline, gradient }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`group relative aspect-square rounded-2xl bg-gradient-to-br ${gradient} border border-white/[0.06] hover:border-teal/30 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden`}
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(45,212,191,0.04)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(45,212,191,0.08)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
-            {/* Real Estate */}
-            <Link
-              to="/real-estate-marketing"
-              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
-                  <Home className="w-5 h-5 text-teal" strokeWidth={1.8} />
+                <Icon className="w-6 h-6 text-teal/50 mb-4 group-hover:text-teal transition-colors duration-300" strokeWidth={1.5} />
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight text-center px-4">
+                  {name}
+                </h3>
+                <p className="text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 mt-3 text-center px-6 max-w-[220px] leading-snug translate-y-2 group-hover:translate-y-0">
+                  {tagline}
+                </p>
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
+                  <ChevronRight className="w-4 h-4 text-teal" />
                 </div>
-                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
-              </div>
-              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Real Estate</p>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
-                15–30 qualified leads per month
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed mb-5">
-                Hyper-targeted Meta & Google Ads that bring serious buyers and sellers directly to you.
-              </p>
-              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
-                Avg 18 leads/month
-              </span>
-            </Link>
-
-            {/* Trades */}
-            <Link
-              to="/trades-marketing"
-              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
-                  <Wrench className="w-5 h-5 text-teal" strokeWidth={1.8} />
-                </div>
-                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
-              </div>
-              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Trades</p>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
-                Stop relying on word-of-mouth
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed mb-5">
-                Plumbers, electricians, roofers — ads that put you in front of homeowners who need you right now.
-              </p>
-              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
-                Schedule booked solid
-              </span>
-            </Link>
-
-            {/* Coaching */}
-            <Link
-              to="/coaching-marketing"
-              className="group p-6 sm:p-7 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 block"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
-                  <Users className="w-5 h-5 text-teal" strokeWidth={1.8} />
-                </div>
-                <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-teal group-hover:translate-x-0.5 transition-all duration-200 mt-0.5" />
-              </div>
-              <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-teal mb-2">Coaching</p>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-2 leading-snug">
-                Calendar filled with ideal clients
-              </h3>
-              <p className="text-sm text-gray-400 leading-relaxed mb-5">
-                Ad campaigns and content systems that attract and convert your perfect-fit clients — month after month.
-              </p>
-              <span className="inline-flex items-center gap-1.5 bg-teal/10 text-teal text-[11px] font-semibold rounded-full px-3 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
-                Month-to-month, no lock-in
-              </span>
-            </Link>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
