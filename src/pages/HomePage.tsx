@@ -281,17 +281,18 @@ const HomePage = () => {
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
             {[
-              { to: '/salon-marketing', icon: Scissors, name: 'Salons', tagline: 'Full bookings in 30 days', gradient: 'from-[#0a0a0a] to-[#111]' },
-              { to: '/real-estate-marketing', icon: Home, name: 'Real Estate', tagline: '15–30 qualified leads per month', gradient: 'from-[#0c0c0c] to-[#0a0f0f]' },
-              { to: '/trades-marketing', icon: Wrench, name: 'Trades', tagline: 'Stop relying on word-of-mouth', gradient: 'from-[#0b0b0b] to-[#0f0e0a]' },
-              { to: '/coaching-marketing', icon: Users, name: 'Coaching', tagline: 'Calendar filled with ideal clients', gradient: 'from-[#0a0a0c] to-[#0e0c10]' },
-            ].map(({ to, icon: Icon, name, tagline, gradient }) => (
+              { to: '/salon-marketing', icon: Scissors, name: 'Salons', tagline: 'Full bookings in 30 days', bg: 'from-[#1a1a1f] to-[#24242b]', tint: 'bg-[radial-gradient(ellipse_at_bottom_right,_rgba(180,140,200,0.06)_0%,_transparent_60%)]' },
+              { to: '/real-estate-marketing', icon: Home, name: 'Real Estate', tagline: '15–30 qualified leads per month', bg: 'from-[#1c1e22] to-[#252830]', tint: 'bg-[radial-gradient(ellipse_at_bottom_left,_rgba(100,160,200,0.06)_0%,_transparent_60%)]' },
+              { to: '/trades-marketing', icon: Wrench, name: 'Trades', tagline: 'Stop relying on word-of-mouth', bg: 'from-[#1e1d1a] to-[#28271f]', tint: 'bg-[radial-gradient(ellipse_at_top_right,_rgba(200,170,100,0.06)_0%,_transparent_60%)]' },
+              { to: '/coaching-marketing', icon: Users, name: 'Coaching', tagline: 'Calendar filled with ideal clients', bg: 'from-[#1a1c1e] to-[#222830]', tint: 'bg-[radial-gradient(ellipse_at_top_left,_rgba(100,200,180,0.06)_0%,_transparent_60%)]' },
+            ].map(({ to, icon: Icon, name, tagline, bg, tint }) => (
               <Link
                 key={to}
                 to={to}
-                className={`group relative aspect-square rounded-2xl bg-gradient-to-br ${gradient} border border-white/[0.06] hover:border-teal/30 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden`}
+                className={`group relative aspect-square rounded-2xl bg-gradient-to-br ${bg} border border-white/[0.08] hover:border-teal/30 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden`}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(45,212,191,0.04)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className={`absolute inset-0 ${tint}`} />
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(45,212,191,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(45,212,191,0.08)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
                 <Icon className="w-6 h-6 text-teal/50 mb-4 group-hover:text-teal transition-colors duration-300" strokeWidth={1.5} />
