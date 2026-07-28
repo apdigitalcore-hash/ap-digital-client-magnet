@@ -208,14 +208,46 @@ const HomePage = () => {
           <div className="flex animate-scroll-x gap-16 sm:gap-20 items-center whitespace-nowrap">
             {[...Array(2)].map((_, i) => (
               <div key={i} className="flex gap-16 sm:gap-20 items-center shrink-0">
-                <span className="text-white/40 text-lg font-bold tracking-wider uppercase" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>AURA AESTHETICS</span>
-                <span className="text-white/40 text-lg tracking-wider" style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Harrington & Cole</span>
-                <span className="text-white/40 text-lg font-extrabold tracking-[0.15em] uppercase" style={{ fontFamily: "'Inter', sans-serif" }}>VANTAGE</span>
-                <span className="text-white/40 text-lg font-semibold tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>The Brow Atelier</span>
-                <span className="text-white/40 text-lg font-black tracking-[0.2em] uppercase" style={{ fontFamily: "'Inter', sans-serif" }}>ONYX GROUP</span>
-                <span className="text-white/40 text-lg tracking-wider" style={{ fontFamily: "Georgia, serif", fontWeight: 400 }}>Sterling Property Co.</span>
-                <span className="text-white/40 text-lg font-bold tracking-wide uppercase" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>REVIVE WELLNESS</span>
-                <span className="text-white/40 text-lg font-extrabold tracking-[0.12em] uppercase" style={{ fontFamily: "'Inter', sans-serif" }}>KINETIC</span>
+                {/* Aura Aesthetics */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" stroke="white" strokeWidth="1.2"/><path d="M9 18l4-12 4 12M10.5 14.5h5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <span className="text-white text-base font-bold tracking-wider uppercase" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>AURA AESTHETICS</span>
+                </div>
+                {/* Harrington & Cole */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="1" y="1" width="24" height="24" rx="3" stroke="white" strokeWidth="1.2"/><text x="13" y="18" textAnchor="middle" fill="white" fontSize="14" fontWeight="600" fontFamily="Georgia, serif">HC</text></svg>
+                  <span className="text-white text-base tracking-wider" style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Harrington & Cole</span>
+                </div>
+                {/* Vantage */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><polygon points="13,2 24,24 2,24" stroke="white" strokeWidth="1.2" fill="none"/><path d="M13 10v8M10 16h6" stroke="white" strokeWidth="1" strokeLinecap="round"/></svg>
+                  <span className="text-white text-base font-extrabold tracking-[0.15em] uppercase" style={{ fontFamily: "'Inter', sans-serif" }}>VANTAGE</span>
+                </div>
+                {/* The Brow Atelier */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" stroke="white" strokeWidth="1.2"/><path d="M7 11q3-4 6 0t6 0" stroke="white" strokeWidth="1.3" fill="none" strokeLinecap="round"/><path d="M7 15q3-4 6 0t6 0" stroke="white" strokeWidth="1.3" fill="none" strokeLinecap="round"/></svg>
+                  <span className="text-white text-base font-semibold tracking-wide" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>The Brow Atelier</span>
+                </div>
+                {/* Onyx Group */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="3" width="20" height="20" fill="white" fillOpacity="0.85" rx="2"/><text x="13" y="18" textAnchor="middle" fill="black" fontSize="12" fontWeight="800" fontFamily="Inter, sans-serif">O</text></svg>
+                  <span className="text-white text-base font-black tracking-[0.2em] uppercase" style={{ fontFamily: "'Inter', sans-serif" }}>ONYX GROUP</span>
+                </div>
+                {/* Sterling Property Co. */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="1" y="1" width="24" height="24" rx="12" stroke="white" strokeWidth="1.2"/><path d="M10 17c0-2 1.5-2 3-3s3-1 3-3-1.5-3-3-3-3 1-3 2" stroke="white" strokeWidth="1.3" fill="none" strokeLinecap="round"/><circle cx="13" cy="19" r="0.8" fill="white"/></svg>
+                  <span className="text-white text-base tracking-wider" style={{ fontFamily: "Georgia, serif", fontWeight: 400 }}>Sterling Property Co.</span>
+                </div>
+                {/* Revive Wellness */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="12" stroke="white" strokeWidth="1.2"/><path d="M13 7v12M9 11l4-4 4 4" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <span className="text-white text-base font-bold tracking-wide uppercase" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>REVIVE WELLNESS</span>
+                </div>
+                {/* Kinetic */}
+                <div className="flex items-center gap-2.5 opacity-40 hover:opacity-60 transition-opacity">
+                  <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M4 22L13 4l9 18" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/><path d="M8 15h10" stroke="white" strokeWidth="1.2" strokeLinecap="round"/></svg>
+                  <span className="text-white text-base font-extrabold tracking-[0.12em] uppercase" style={{ fontFamily: "'Inter', sans-serif" }}>KINETIC</span>
+                </div>
               </div>
             ))}
           </div>
