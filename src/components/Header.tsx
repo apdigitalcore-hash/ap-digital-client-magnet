@@ -49,20 +49,14 @@ const Header = () => {
     { href: '/how-to-choose-a-marketing-agency-vancouver', label: 'Agency Hiring Guide', external: false },
   ];
 
-  // Every page hero on this site is dark (homepage = charcoal + diamond,
-  // service pages = dark backgrounds). At the top of any page the header
-  // is transparent and sits over a dark surface, so it wants LIGHT chrome
-  // (white text). Once the user scrolls past the hero, the header flips to
-  // bg-card/95 (near-white) and chrome flips to DARK (navy text) for
-  // contrast. So useDarkChrome is simply "are we scrolled".
-  const useDarkChrome = isScrolled;
+  const useDarkChrome = false;
 
   return (
     <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-card/95 backdrop-blur-md shadow-custom-md py-2'
+          ? 'bg-black/60 backdrop-blur-xl border-b border-white/10 py-2'
           : 'bg-transparent py-4'
       }`}
     >
@@ -237,7 +231,7 @@ const Header = () => {
         appeared to do nothing. As a sibling of <header> the menu's `fixed`
         positioning is unambiguously relative to the viewport. */}
     {isMobileMenuOpen && (
-      <div className="lg:hidden fixed inset-0 top-[57px] bg-card z-[45] overflow-y-auto animate-fade-in">
+      <div className="lg:hidden fixed inset-0 top-[57px] bg-black/95 backdrop-blur-xl z-[45] overflow-y-auto animate-fade-in">
         <nav className="flex flex-col pb-8">
 
               {/* Primary links */}

@@ -1,7 +1,7 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, Instagram, Linkedin, Scissors, Home, Wrench, ChevronRight } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -89,125 +89,84 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="relative min-h-screen flex items-center bg-near-black overflow-hidden pt-20 sm:pt-24 pb-20 lg:py-0">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-        {/* Background — gradient + money rain + lead notifications */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-near-black to-charcoal-dark" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_75%_30%,_rgba(20,184,166,0.10)_0%,_transparent_70%)]" />
-
+        {/* Background — Codex-inspired gradient wash */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,_rgba(120,119,198,0.25)_0%,_rgba(80,80,180,0.08)_40%,_transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_20%,_rgba(147,130,220,0.15)_0%,_transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_40%_at_70%_60%,_rgba(100,100,200,0.1)_0%,_transparent_50%)]" />
         </div>
 
-        <div className="container-custom relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
+        <div className="relative z-10 flex flex-col items-center text-center px-4 pt-32 pb-24 sm:pt-40 sm:pb-32 w-full max-w-3xl mx-auto">
 
-            {/* ── Left: Copy ── */}
-            <div className="text-center lg:text-left">
-
-              {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 mb-8 animate-fade-up">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal" />
-                <span className="text-teal text-xs font-semibold tracking-[0.2em] uppercase">
-                  Performance Marketing · Vancouver, BC
-                </span>
-              </div>
-
-              {/* H1 */}
-              <h1
-                className="font-display text-[2.5rem] sm:text-5xl md:text-6xl xl:text-[4.5rem] font-bold text-primary-foreground leading-[1.05] tracking-tight mb-6 animate-fade-up"
-                style={{ animationDelay: '0.08s' }}
-              >
-                More clients.<br />
-                <span className="text-gradient">Predictably.</span>
-              </h1>
-
-              {/* Sub */}
-              <p
-                className="text-base sm:text-lg text-white/70 max-w-lg mx-auto lg:mx-0 mb-10 animate-fade-up leading-relaxed"
-                style={{ animationDelay: '0.16s' }}
-              >
-                We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
-              </p>
-
-              {/* CTAs */}
-              <div
-                className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 animate-fade-up"
-                style={{ animationDelay: '0.24s' }}
-              >
-                <Button variant="hero" size="lg" asChild>
-                  <a
-                    href="https://calendly.com/apdigital-core/20min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2"
-                  >
-                    Book a Call
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </Button>
-                <Button variant="heroOutline" size="lg" asChild>
-                  <Link to="/pricing" className="flex items-center justify-center">
-                    See Pricing
-                  </Link>
-                </Button>
-              </div>
-
-              {/* Inline trust line */}
-              <p
-                className="mt-10 text-xs text-white/50 animate-fade-up text-center lg:text-left"
-                style={{ animationDelay: '0.32s' }}
-              >
-                <span className="text-white font-semibold">2,400+ leads</span> delivered for <span className="text-white font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
-              </p>
-
-              {/* Social links */}
-              <div
-                className="mt-6 flex items-center justify-center lg:justify-start gap-3 animate-fade-up"
-                style={{ animationDelay: '0.4s' }}
-              >
-                <a
-                  href="https://www.instagram.com/theapdigital/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow AP Digital on Instagram"
-                  className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
-                >
-                  <Instagram className="w-4 h-4" strokeWidth={2} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/theapdigital/?viewAsMember=true"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Follow AP Digital on LinkedIn"
-                  className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
-                >
-                  <Linkedin className="w-4 h-4" strokeWidth={2} />
-                </a>
-                <a
-                  href="https://share.google/BaN9E261WFEfP1lME"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="View AP Digital on Google"
-                  className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
-                >
-                  <svg viewBox="0 0 24 24" className="w-4 h-4" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M21.35 11.1H12v3.2h5.35c-.5 2.5-2.7 4-5.35 4-3.2 0-5.8-2.6-5.8-5.8s2.6-5.8 5.8-5.8c1.5 0 2.85.55 3.9 1.45l2.4-2.4C16.6 4.2 14.4 3.3 12 3.3c-4.8 0-8.7 3.9-8.7 8.7s3.9 8.7 8.7 8.7c5.05 0 8.4-3.55 8.4-8.55 0-.6-.05-1.05-.15-1.55z"
-                    />
-                  </svg>
-                </a>
-              </div>
+          {/* Logo mark */}
+          <div
+            className="mb-10 animate-fade-up"
+          >
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-lg">
+              <span className="font-display font-bold text-2xl sm:text-3xl text-white">
+                <span className="text-teal">AP</span>
+              </span>
             </div>
+          </div>
 
-            {/* ── Right: Dashboard card ── */}
-            <div
-              className="animate-fade-up w-full max-w-[400px] mx-auto lg:ml-auto lg:mr-0"
-              style={{ animationDelay: '0.3s' }}
-            >
-              <HeroMoveCard />
-            </div>
+          {/* H1 */}
+          <h1
+            className="font-display text-[2.5rem] sm:text-6xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6 animate-fade-up"
+            style={{ animationDelay: '0.08s' }}
+          >
+            More clients.<br />
+            <span className="text-gradient">Predictably.</span>
+          </h1>
 
+          {/* Sub */}
+          <p
+            className="text-base sm:text-lg text-white/60 max-w-xl mx-auto mb-12 animate-fade-up leading-relaxed"
+            style={{ animationDelay: '0.16s' }}
+          >
+            We build paid ad and content systems that fill your calendar with qualified clients — for salons, realtors, trades, and coaches across BC.
+          </p>
+
+          {/* CTAs */}
+          <div
+            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 animate-fade-up w-full sm:w-auto"
+            style={{ animationDelay: '0.24s' }}
+          >
+            <Button variant="hero" size="lg" asChild>
+              <a
+                href="https://calendly.com/apdigital-core/20min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                Book a Call
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
+            <Button variant="heroOutline" size="lg" asChild>
+              <Link to="/pricing" className="flex items-center justify-center">
+                See Pricing
+              </Link>
+            </Button>
+          </div>
+
+          {/* Trust line */}
+          <p
+            className="mt-14 text-xs text-white/40 animate-fade-up"
+            style={{ animationDelay: '0.32s' }}
+          >
+            <span className="text-white/80 font-semibold">2,400+ leads</span> delivered for <span className="text-white/80 font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
+          </p>
+        </div>
+      </section>
+
+      {/* ── Today's Move card ── */}
+      <section className="py-16 sm:py-20 bg-black">
+        <div className="container-custom flex justify-center">
+          <div className="w-full max-w-[420px] animate-fade-up">
+            <HeroMoveCard />
           </div>
         </div>
       </section>
