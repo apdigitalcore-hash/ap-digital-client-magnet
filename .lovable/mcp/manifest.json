@@ -19,7 +19,7 @@
       {
         "name": "list_services",
         "title": "List services",
-        "description": "List the digital marketing services AP Digital offers.",
+        "description": "List the digital marketing services AP Digital offers with monthly CAD pricing.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
@@ -50,8 +50,8 @@
       },
       {
         "name": "get_pricing",
-        "title": "Get pricing tiers",
-        "description": "Return AP Digital's monthly pricing tiers (CAD). Month-to-month, no long-term contracts.",
+        "title": "Get pricing",
+        "description": "Return AP Digital's per-service monthly pricing (CAD). Month-to-month, no long-term contracts, 90-day results guarantee.",
         "annotations": {
           "readOnlyHint": true,
           "idempotentHint": true,
