@@ -291,9 +291,8 @@ const HomePage = () => {
                 to={to}
                 className="group relative aspect-square rounded-2xl bg-[#bdb9b4] border border-white/10 hover:border-teal/40 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden"
               >
-                <Icon className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 text-black/[0.04] group-hover:text-black/[0.07] transition-all duration-700 group-hover:scale-110" strokeWidth={0.8} />
+                <Icon className="absolute -top-4 -right-4 w-28 h-28 sm:w-36 sm:h-36 text-black/[0.10] group-hover:text-black/[0.15] transition-all duration-700 group-hover:scale-105 rotate-12" strokeWidth={0.7} />
 
-                <Icon className="w-6 h-6 text-black/30 mb-4 group-hover:text-teal-dark transition-colors duration-300 relative z-10" strokeWidth={1.5} />
                 <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4 relative z-10">
                   {name}
                 </h3>
