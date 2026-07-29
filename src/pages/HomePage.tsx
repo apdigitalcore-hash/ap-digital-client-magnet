@@ -233,7 +233,7 @@ const HomePage = () => {
               <span className={`${s} font-semibold tracking-wide`} style={{ fontFamily: "Georgia, serif" }}>The Wellness Parlour</span>,
             ];
             return (
-              <div className="flex animate-scroll-x items-center">
+              <div className="inline-flex animate-scroll-x items-center">
                 {[0, 1].map(i => (
                   <div key={i} className="flex items-center shrink-0 gap-10 sm:gap-14 pr-10 sm:pr-14">
                     {brands.map((brand, j) => <div key={j}>{brand}</div>)}
