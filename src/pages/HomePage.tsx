@@ -110,6 +110,13 @@ const HomePage = () => {
             <img src={apLogo} alt="AP Digital Marketing" className="w-24 h-24 sm:w-32 sm:h-32 rounded-full" />
           </div>
 
+          {/* Descriptor */}
+          <div className="animate-fade-up mb-5" style={{ animationDelay: '0.02s' }}>
+            <span className="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-white/50 border border-white/10 rounded-full px-4 py-1.5">
+              Performance Marketing — Vancouver, BC
+            </span>
+          </div>
+
           {/* H1 */}
           <h1
             className="font-display text-[2.5rem] sm:text-6xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6 animate-fade-up"
