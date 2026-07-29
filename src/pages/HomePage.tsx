@@ -281,19 +281,17 @@ const HomePage = () => {
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
             {[
-              { to: '/salon-marketing', icon: Sparkles, name: 'Salons', tagline: 'Full bookings in 30 days' },
-              { to: '/real-estate-marketing', icon: Building2, name: 'Real Estate', tagline: '15–30 qualified leads per month' },
-              { to: '/trades-marketing', icon: Hammer, name: 'Trades', tagline: 'Stop relying on word-of-mouth' },
-              { to: '/coaching-marketing', icon: GraduationCap, name: 'Coaching', tagline: 'Calendar filled with ideal clients' },
-            ].map(({ to, icon: Icon, name, tagline }) => (
+              { to: '/salon-marketing', name: 'Salons', tagline: 'Full bookings in 30 days' },
+              { to: '/real-estate-marketing', name: 'Real Estate', tagline: '15–30 qualified leads per month' },
+              { to: '/trades-marketing', name: 'Trades', tagline: 'Stop relying on word-of-mouth' },
+              { to: '/coaching-marketing', name: 'Coaching', tagline: 'Calendar filled with ideal clients' },
+            ].map(({ to, name, tagline }) => (
               <Link
                 key={to}
                 to={to}
                 className="group relative aspect-square rounded-2xl bg-[#bdb9b4] border border-white/10 hover:border-teal/40 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden"
               >
-                <Icon className="absolute -top-3 -left-3 w-28 h-28 sm:w-36 sm:h-36 text-black/[0.18] group-hover:text-black/[0.25] transition-all duration-700" strokeWidth={0.7} />
-
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4 relative z-10">
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4">
                   {name}
                 </h3>
                 <p className="text-sm text-black/0 group-hover:text-black/60 font-medium transition-all duration-500 mt-3 text-center px-6 max-w-[220px] leading-snug translate-y-2 group-hover:translate-y-0 relative z-10">
