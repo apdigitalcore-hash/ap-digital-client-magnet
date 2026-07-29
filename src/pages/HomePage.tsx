@@ -281,29 +281,25 @@ const HomePage = () => {
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
             {[
-              { to: '/salon-marketing', icon: Scissors, name: 'Salons', tagline: 'Full bookings in 30 days', bg: 'from-[#1a1a1f] to-[#24242b]', tint: 'bg-[radial-gradient(ellipse_at_bottom_right,_rgba(180,140,200,0.06)_0%,_transparent_60%)]' },
-              { to: '/real-estate-marketing', icon: Home, name: 'Real Estate', tagline: '15–30 qualified leads per month', bg: 'from-[#1c1e22] to-[#252830]', tint: 'bg-[radial-gradient(ellipse_at_bottom_left,_rgba(100,160,200,0.06)_0%,_transparent_60%)]' },
-              { to: '/trades-marketing', icon: Wrench, name: 'Trades', tagline: 'Stop relying on word-of-mouth', bg: 'from-[#1e1d1a] to-[#28271f]', tint: 'bg-[radial-gradient(ellipse_at_top_right,_rgba(200,170,100,0.06)_0%,_transparent_60%)]' },
-              { to: '/coaching-marketing', icon: Users, name: 'Coaching', tagline: 'Calendar filled with ideal clients', bg: 'from-[#1a1c1e] to-[#222830]', tint: 'bg-[radial-gradient(ellipse_at_top_left,_rgba(100,200,180,0.06)_0%,_transparent_60%)]' },
-            ].map(({ to, icon: Icon, name, tagline, bg, tint }) => (
+              { to: '/salon-marketing', icon: Scissors, name: 'Salons', tagline: 'Full bookings in 30 days' },
+              { to: '/real-estate-marketing', icon: Home, name: 'Real Estate', tagline: '15–30 qualified leads per month' },
+              { to: '/trades-marketing', icon: Wrench, name: 'Trades', tagline: 'Stop relying on word-of-mouth' },
+              { to: '/coaching-marketing', icon: Users, name: 'Coaching', tagline: 'Calendar filled with ideal clients' },
+            ].map(({ to, icon: Icon, name, tagline }) => (
               <Link
                 key={to}
                 to={to}
-                className={`group relative aspect-square rounded-2xl bg-gradient-to-br ${bg} border border-white/[0.08] hover:border-teal/30 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden`}
+                className="group relative aspect-square rounded-2xl bg-[#bdb9b4] border border-white/10 hover:border-teal/40 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden"
               >
-                <div className={`absolute inset-0 ${tint}`} />
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(45,212,191,0.05)_0%,_transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(45,212,191,0.08)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-
-                <Icon className="w-6 h-6 text-teal/50 mb-4 group-hover:text-teal transition-colors duration-300" strokeWidth={1.5} />
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight text-center px-4">
+                <Icon className="w-6 h-6 text-black/30 mb-4 group-hover:text-teal-dark transition-colors duration-300" strokeWidth={1.5} />
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4">
                   {name}
                 </h3>
-                <p className="text-sm text-white/0 group-hover:text-white/50 transition-all duration-500 mt-3 text-center px-6 max-w-[220px] leading-snug translate-y-2 group-hover:translate-y-0">
+                <p className="text-sm text-black/0 group-hover:text-black/40 transition-all duration-500 mt-3 text-center px-6 max-w-[220px] leading-snug translate-y-2 group-hover:translate-y-0">
                   {tagline}
                 </p>
                 <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
-                  <ChevronRight className="w-4 h-4 text-teal" />
+                  <ChevronRight className="w-4 h-4 text-black/40" />
                 </div>
               </Link>
             ))}
