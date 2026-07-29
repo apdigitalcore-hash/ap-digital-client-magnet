@@ -199,13 +199,25 @@ const ProcessDark = () => {
                         {currentStep?.deliverable}
                       </span>
 
-                      <button
-                        onClick={advance}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-teal transition-colors group"
-                      >
-                        {activeStep < steps.length - 1 ? 'Next' : 'Restart'}
-                        <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                      </button>
+                      {activeStep < steps.length - 1 ? (
+                        <button
+                          onClick={advance}
+                          className="inline-flex items-center gap-2 text-sm font-semibold text-white/60 hover:text-teal transition-colors group"
+                        >
+                          Next
+                          <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                        </button>
+                      ) : (
+                        <a
+                          href="https://calendly.com/apdigital-core/20min"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal text-black text-sm font-bold hover:bg-teal-light transition-colors"
+                        >
+                          Book Free Call
+                          <ArrowRight className="w-4 h-4" />
+                        </a>
+                      )}
                     </motion.div>
                   </div>
                 </motion.div>
