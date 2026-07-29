@@ -10,7 +10,7 @@ import { Helmet } from 'react-helmet-async';
 import ServicesDark from '@/components/ServicesDark';
 import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
-import DigitalArsenal from '@/components/DigitalArsenal';
+
 import MarketingAuditAI from '@/components/MarketingAuditAI';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
@@ -312,9 +312,6 @@ const HomePage = () => {
       <ProcessDark />
       <ServicesDark />
 
-      <div id="digital-arsenal">
-        <DigitalArsenal />
-      </div>
 
       {/* What Makes Us Different */}
       <section className="py-14 sm:py-20 md:py-28 bg-charcoal">

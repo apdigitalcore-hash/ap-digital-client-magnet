@@ -163,16 +163,6 @@ const Header = () => {
               About
             </Link>
 
-<a
-              href="/#digital-arsenal"
-              className={`text-sm font-medium transition-colors duration-200 hover:text-teal flex items-center gap-1.5 ${
-                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
-              }`}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse" />
-              Digital Arsenal
-            </a>
-
             <Link
               to="/contact"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
@@ -241,15 +231,6 @@ const Header = () => {
                 >
                   About
                 </Link>
-
-                <a
-                  href="/#digital-arsenal"
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-teal font-semibold hover:bg-teal/10 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <span className="w-2 h-2 rounded-full bg-teal animate-pulse flex-shrink-0" />
-                  Digital Arsenal
-                </a>
 
                 <Link
                   to="/contact"
