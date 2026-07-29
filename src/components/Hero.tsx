@@ -26,7 +26,7 @@ const Hero = () => {
         <div className="flex items-center justify-center gap-2 mb-8 animate-fade-up">
           <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse flex-shrink-0" />
           <p className="text-sm md:text-base uppercase tracking-[0.3em] text-teal font-semibold">
-            AP Digital Marketing
+            Vancouver • BC
           </p>
           <span className="w-1.5 h-1.5 rounded-full bg-teal animate-pulse flex-shrink-0" />
         </div>
@@ -36,9 +36,9 @@ const Hero = () => {
           className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.08] tracking-tight mb-8 animate-fade-up"
           style={{ animationDelay: '0.1s' }}
         >
-          Digital Marketing &{' '}
+          Vancouver Digital{' '}
           <br className="hidden sm:block" />
-          Lead Generation
+          Marketing Agency
         </h1>
 
         {/* Subheadline */}
@@ -46,9 +46,8 @@ const Hero = () => {
           className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up leading-relaxed"
           style={{ animationDelay: '0.2s' }}
         >
-          Marketing does not have to be complicated.
-          We help local businesses generate predictable leads and
-          scale revenue. Your job is to show up and close them.
+          We help Vancouver small businesses — salons, trades, realtors, and coaches —
+          generate predictable leads with Meta and Google Ads. Your job is to show up and close them.
         </p>
 
         {/* CTAs */}
@@ -63,8 +62,8 @@ const Hero = () => {
             </a>
           </Button>
           <Button variant="light" size="lg" asChild>
-            <a href="#services">
-              See What's Included
+            <a href="/pricing">
+              See Pricing
             </a>
           </Button>
         </div>
