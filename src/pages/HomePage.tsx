@@ -291,15 +291,17 @@ const HomePage = () => {
                 to={to}
                 className="group relative aspect-square rounded-2xl bg-[#bdb9b4] border border-white/10 hover:border-teal/40 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden"
               >
-                <Icon className="w-6 h-6 text-black/30 mb-4 group-hover:text-teal-dark transition-colors duration-300" strokeWidth={1.5} />
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4">
+                <Icon className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-40 sm:h-40 text-black/[0.04] group-hover:text-black/[0.07] transition-all duration-700 group-hover:scale-110" strokeWidth={0.8} />
+
+                <Icon className="w-6 h-6 text-black/30 mb-4 group-hover:text-teal-dark transition-colors duration-300 relative z-10" strokeWidth={1.5} />
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4 relative z-10">
                   {name}
                 </h3>
-                <p className="text-sm text-black/0 group-hover:text-black/40 transition-all duration-500 mt-3 text-center px-6 max-w-[220px] leading-snug translate-y-2 group-hover:translate-y-0">
+                <p className="text-sm text-black/0 group-hover:text-black/60 font-medium transition-all duration-500 mt-3 text-center px-6 max-w-[220px] leading-snug translate-y-2 group-hover:translate-y-0 relative z-10">
                   {tagline}
                 </p>
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
-                  <ChevronRight className="w-4 h-4 text-black/40" />
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0 z-10">
+                  <ChevronRight className="w-4 h-4 text-black/50" />
                 </div>
               </Link>
             ))}
