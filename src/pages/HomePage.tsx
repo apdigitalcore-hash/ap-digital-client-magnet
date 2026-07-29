@@ -198,24 +198,50 @@ const HomePage = () => {
         <div className="relative">
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-black to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-black to-transparent z-10" />
-          <div className="flex animate-scroll-x items-center whitespace-nowrap" style={{ gap: 0 }}>
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex items-center shrink-0" style={{ paddingRight: '5rem' }}>
-                <span className="text-white/40 text-base font-bold tracking-wider uppercase px-10" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>AURA AESTHETICS</span>
-                <span className="text-white/40 text-base tracking-wider px-10" style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Harrington & Cole</span>
-                <span className="text-white/40 text-base font-extrabold tracking-[0.15em] uppercase px-10" style={{ fontFamily: "'Inter', sans-serif" }}>VANTAGE ELECTRIC</span>
-                <span className="text-white/40 text-base font-semibold tracking-wide px-10" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>The Brow Atelier</span>
-                <span className="text-white/40 text-base font-black tracking-[0.2em] uppercase px-10" style={{ fontFamily: "'Inter', sans-serif" }}>IRONCLAD ROOFING</span>
-                <span className="text-white/40 text-base tracking-wider px-10" style={{ fontFamily: "Georgia, serif", fontWeight: 400 }}>Sterling Property Co.</span>
-                <span className="text-white/40 text-base font-bold tracking-wide uppercase px-10" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>SUMMIT PLUMBING</span>
-                <span className="text-white/40 text-base font-extrabold tracking-[0.12em] uppercase px-10" style={{ fontFamily: "'Inter', sans-serif" }}>WESTLINE HVAC</span>
-                <span className="text-white/40 text-base font-semibold tracking-wider px-10" style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Copper & Stone Builds</span>
-                <span className="text-white/40 text-base font-bold tracking-[0.18em] uppercase px-10" style={{ fontFamily: "'Inter', sans-serif" }}>NORTHSHORE DENTAL</span>
-                <span className="text-white/40 text-base font-extrabold tracking-wide uppercase px-10" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>RIDGELINE CONTRACTING</span>
-                <span className="text-white/40 text-base tracking-wider px-10" style={{ fontFamily: "Georgia, serif", fontWeight: 400 }}>Calloway & Partners</span>
+          {(() => {
+            const s = "text-white/40 text-sm whitespace-nowrap";
+            const brands = [
+              <span className={`${s} font-bold tracking-wider uppercase`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>AURA AESTHETICS</span>,
+              <span className={`${s} tracking-wider`} style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Harrington & Cole</span>,
+              <span className={`${s} font-extrabold tracking-[0.15em] uppercase`} style={{ fontFamily: "'Inter'" }}>VANTAGE ELECTRIC</span>,
+              <span className={`${s} font-semibold tracking-wide`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>The Brow Atelier</span>,
+              <span className={`${s} font-black tracking-[0.2em] uppercase`} style={{ fontFamily: "'Inter'" }}>IRONCLAD ROOFING</span>,
+              <span className={`${s} tracking-wider`} style={{ fontFamily: "Georgia, serif" }}>Sterling Property Co.</span>,
+              <span className={`${s} font-bold tracking-wide uppercase`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>SUMMIT PLUMBING</span>,
+              <span className={`${s} font-extrabold tracking-[0.12em] uppercase`} style={{ fontFamily: "'Inter'" }}>WESTLINE HVAC</span>,
+              <span className={`${s} font-semibold tracking-wider`} style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Copper & Stone Builds</span>,
+              <span className={`${s} font-bold tracking-[0.18em] uppercase`} style={{ fontFamily: "'Inter'" }}>NORTHSHORE DENTAL</span>,
+              <span className={`${s} font-extrabold tracking-wide uppercase`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>RIDGELINE CONTRACTING</span>,
+              <span className={`${s} tracking-wider`} style={{ fontFamily: "Georgia, serif" }}>Calloway & Partners</span>,
+              <span className={`${s} font-bold tracking-wider uppercase`} style={{ fontFamily: "'Inter'" }}>APEX MECHANICAL</span>,
+              <span className={`${s} font-semibold tracking-wide`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>Glow Bar Studio</span>,
+              <span className={`${s} font-black tracking-[0.15em] uppercase`} style={{ fontFamily: "'Inter'" }}>CEDAR PLUMBING CO</span>,
+              <span className={`${s} tracking-wider`} style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Monarch Realty Group</span>,
+              <span className={`${s} font-extrabold tracking-wide uppercase`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>TITAN ELECTRICAL</span>,
+              <span className={`${s} font-semibold tracking-wider`} style={{ fontFamily: "Georgia, serif" }}>Blush & Bloom Salon</span>,
+              <span className={`${s} font-bold tracking-[0.2em] uppercase`} style={{ fontFamily: "'Inter'" }}>WESTCOAST PAVING</span>,
+              <span className={`${s} tracking-wide`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>The Lash Collective</span>,
+              <span className={`${s} font-extrabold tracking-[0.12em] uppercase`} style={{ fontFamily: "'Inter'" }}>GARRISON HOMES</span>,
+              <span className={`${s} font-semibold tracking-wider`} style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Fraser Valley Builds</span>,
+              <span className={`${s} font-bold tracking-wide uppercase`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>PACIFIC RIM ELECTRIC</span>,
+              <span className={`${s} tracking-wider`} style={{ fontFamily: "Georgia, serif" }}>Elevate Coaching Co.</span>,
+              <span className={`${s} font-black tracking-[0.18em] uppercase`} style={{ fontFamily: "'Inter'" }}>BLACKROCK ROOFING</span>,
+              <span className={`${s} font-semibold tracking-wide`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>Nailed It Beauty</span>,
+              <span className={`${s} font-extrabold tracking-wider uppercase`} style={{ fontFamily: "'Inter'" }}>HARBOUR PLUMBING</span>,
+              <span className={`${s} tracking-wider`} style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}>Prestige Home Sales</span>,
+              <span className={`${s} font-bold tracking-[0.15em] uppercase`} style={{ fontFamily: "'Plus Jakarta Sans'" }}>COAST MECHANICAL</span>,
+              <span className={`${s} font-semibold tracking-wide`} style={{ fontFamily: "Georgia, serif" }}>The Wellness Parlour</span>,
+            ];
+            return (
+              <div className="flex animate-scroll-x items-center">
+                {[0, 1].map(i => (
+                  <div key={i} className="flex items-center shrink-0 gap-10 sm:gap-14 pr-10 sm:pr-14">
+                    {brands.map((brand, j) => <div key={j}>{brand}</div>)}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </div>
       </section>
 
