@@ -1,7 +1,7 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight, Instagram, Linkedin } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight, Instagram, Linkedin, Sparkles, Building2, Hammer, GraduationCap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -281,17 +281,17 @@ const HomePage = () => {
 
           <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
             {[
-              { to: '/salon-marketing', icon: Scissors, name: 'Salons', tagline: 'Full bookings in 30 days' },
-              { to: '/real-estate-marketing', icon: Home, name: 'Real Estate', tagline: '15–30 qualified leads per month' },
-              { to: '/trades-marketing', icon: Wrench, name: 'Trades', tagline: 'Stop relying on word-of-mouth' },
-              { to: '/coaching-marketing', icon: Users, name: 'Coaching', tagline: 'Calendar filled with ideal clients' },
+              { to: '/salon-marketing', icon: Sparkles, name: 'Salons', tagline: 'Full bookings in 30 days' },
+              { to: '/real-estate-marketing', icon: Building2, name: 'Real Estate', tagline: '15–30 qualified leads per month' },
+              { to: '/trades-marketing', icon: Hammer, name: 'Trades', tagline: 'Stop relying on word-of-mouth' },
+              { to: '/coaching-marketing', icon: GraduationCap, name: 'Coaching', tagline: 'Calendar filled with ideal clients' },
             ].map(({ to, icon: Icon, name, tagline }) => (
               <Link
                 key={to}
                 to={to}
                 className="group relative aspect-square rounded-2xl bg-[#bdb9b4] border border-white/10 hover:border-teal/40 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden"
               >
-                <Icon className="absolute -top-4 -right-4 w-28 h-28 sm:w-36 sm:h-36 text-black/[0.10] group-hover:text-black/[0.15] transition-all duration-700 group-hover:scale-105 rotate-12" strokeWidth={0.7} />
+                <Icon className="absolute -top-3 -left-3 w-28 h-28 sm:w-36 sm:h-36 text-black/[0.18] group-hover:text-black/[0.25] transition-all duration-700" strokeWidth={0.7} />
 
                 <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4 relative z-10">
                   {name}
