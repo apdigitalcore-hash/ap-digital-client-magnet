@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { TrendingUp, Users, Star, Zap, ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
@@ -14,104 +14,116 @@ const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const caseStudies = [
   {
-    id: 'salon-kitsilano',
-    icon: Star,
-    tag: 'Salon Marketing',
-    tagColor: 'text-pink-400 bg-pink-400/10',
-    title: 'Vancouver Salon — 94 Leads in 60 Days',
-    location: 'Kitsilano, Vancouver BC',
-    challenge: 'A Kitsilano hair salon with 3 stylists was running on referrals and word-of-mouth. Occupancy hovered around 60% mid-week. The owner had tried boosting Instagram posts with no measurable results and needed a system — not experiments.',
+    id: 'glow-studio',
+    brand: 'Glow Studio',
+    initials: 'GS',
+    brandColor: '#E8567F',
+    brandBg: 'from-pink-500/20 to-pink-600/5',
+    service: 'Meta Ads + Content',
+    industry: 'Salon & Beauty',
+    location: 'Kitsilano, Vancouver',
+    headline: '94 leads in 60 days — from empty mid-week chairs to a waitlist.',
+    challenge: 'Glow Studio had 3 stylists and ran on referrals. Mid-week occupancy was stuck at 60%. The owner had tried boosting Instagram posts with no measurable results — she needed a system, not experiments.',
     approach: [
-      'Launched Meta Ads targeting women aged 24–45 within 8km of the salon',
-      'Created before-and-after Reel content for Facebook and Instagram',
-      'Built a lead form ad with a "First visit 20% off" offer linked to their booking system',
-      'Retargeted website visitors and Instagram profile viewers within 14 days',
+      'Meta Ads targeting women 24–45 within 8km of the salon',
+      'Before-and-after Reel content for Facebook & Instagram',
+      'Lead form ad with "First visit 20% off" linked to booking system',
+      'Retargeted website visitors and IG profile viewers within 14 days',
     ],
     results: [
-      { metric: '94', label: 'Qualified leads in 60 days' },
-      { metric: '$8.51', label: 'Average cost per lead' },
-      { metric: '68%', label: 'Lead-to-booking conversion rate' },
-      { metric: '4.2x', label: 'Return on ad spend' },
+      { metric: '94', label: 'Qualified leads' },
+      { metric: '$8.51', label: 'Cost per lead' },
+      { metric: '68%', label: 'Lead-to-booking rate' },
+      { metric: '4.2x', label: 'ROAS' },
     ],
     timeline: '60 days',
     adSpend: '$800/mo',
     quote: 'We went from scrambling to fill Tuesday and Wednesday to having a waitlist. I had to hire a fourth stylist.',
-    href: '/case-studies/vancouver-salon-meta-ads',
+    quoteName: 'Owner, Glow Studio',
   },
   {
-    id: 'plumbing-surrey',
-    icon: Zap,
-    tag: 'Trades Marketing',
-    tagColor: 'text-blue-400 bg-blue-400/10',
-    title: 'Surrey Plumbing Company — 30+ Jobs/Month from Google Ads',
+    id: 'flowright-plumbing',
+    brand: 'FlowRight Plumbing',
+    initials: 'FR',
+    brandColor: '#3B82F6',
+    brandBg: 'from-blue-500/20 to-blue-600/5',
+    service: 'Google Ads + GBP',
+    industry: 'Trades & Contractors',
     location: 'Surrey, BC',
-    challenge: 'A two-truck plumbing company in Surrey was fully dependent on HomeStars leads — paying per-lead fees that were unpredictable and often unqualified. They needed direct inbound demand without the middleman.',
+    headline: '30+ booked jobs per month — HomeStars cancelled in 6 weeks.',
+    challenge: 'FlowRight was a two-truck operation fully dependent on HomeStars — paying per-lead fees that were unpredictable and often unqualified. They needed direct inbound calls without the middleman.',
     approach: [
-      'Launched Google Search Ads targeting "plumber Surrey", "emergency plumber Surrey", "drain cleaning Surrey"',
-      'Set up call tracking to measure booked jobs vs clicks',
-      'Optimized Google Business Profile — added 40+ photos, responded to all reviews',
-      'Built a fast-loading landing page with a click-to-call button above the fold',
+      'Google Search Ads for "plumber Surrey", "emergency plumber", "drain cleaning Surrey"',
+      'Call tracking to measure booked jobs vs. clicks',
+      'Google Business Profile overhaul — 40+ photos, responded to all reviews',
+      'Fast-loading landing page with click-to-call above the fold',
     ],
     results: [
-      { metric: '30+', label: 'Qualified job inquiries per month' },
-      { metric: '$31', label: 'Average cost per booked call' },
-      { metric: '9.1x', label: 'Return on ad spend (vs HomeStars)' },
-      { metric: '4.8★', label: 'Google rating after review strategy' },
+      { metric: '30+', label: 'Jobs per month' },
+      { metric: '$31', label: 'Cost per booked call' },
+      { metric: '9.1x', label: 'ROAS vs HomeStars' },
+      { metric: '4.8★', label: 'Google rating' },
     ],
-    timeline: '45 days to first jobs',
+    timeline: '45 days',
     adSpend: '$1,200/mo',
     quote: 'Within 6 weeks I cancelled HomeStars. The leads are better quality and I own the channel now.',
-    href: '/case-studies/surrey-plumbing-google-ads',
+    quoteName: 'Owner, FlowRight Plumbing',
   },
   {
-    id: 'realtor-burnaby',
-    icon: TrendingUp,
-    tag: 'Real Estate Marketing',
-    tagColor: 'text-teal bg-teal/10',
-    title: 'Burnaby Realtor — 22 Qualified Leads in First Month',
+    id: 'priya-kaur-realty',
+    brand: 'Priya Kaur Realty',
+    initials: 'PK',
+    brandColor: '#2DD4BF',
+    brandBg: 'from-teal/20 to-teal/5',
+    service: 'Meta Ads + Landing Pages',
+    industry: 'Real Estate',
     location: 'Burnaby, BC',
-    challenge: "A Burnaby realtor specializing in condo listings was generating all her business through her personal network. She wanted to scale and wasn't comfortable running ads herself. Her previous agency had delivered impressions reports with no leads.",
+    headline: '22 qualified leads in month one — 3 listings taken within 90 days.',
+    challenge: 'Priya specialized in Burnaby condo listings but generated all her business through her personal network. Her previous agency delivered impressions reports with zero actual leads.',
     approach: [
-      'Built a seller-focused Meta Ads campaign targeting homeowners aged 35–60 in Burnaby and Coquitlam',
-      'Created a "Home Valuation" lead magnet landing page as the offer',
-      'Ran a parallel buyer campaign targeting couples searching for condos under $800k',
-      'Set up a CRM integration to track leads from ad click to closed deal',
+      'Seller-focused Meta Ads targeting homeowners 35–60 in Burnaby & Coquitlam',
+      '"Home Valuation" lead magnet landing page as the core offer',
+      'Parallel buyer campaign targeting couples searching for condos under $800k',
+      'CRM integration tracking leads from ad click to closed deal',
     ],
     results: [
-      { metric: '22', label: 'Qualified leads in month one' },
-      { metric: '$41', label: 'Average cost per lead' },
-      { metric: '3', label: 'Listings taken within 90 days from ads' },
-      { metric: '12x', label: 'Return on investment after first closing' },
+      { metric: '22', label: 'Qualified leads (month 1)' },
+      { metric: '$41', label: 'Cost per lead' },
+      { metric: '3', label: 'Listings in 90 days' },
+      { metric: '12x', label: 'ROI after first closing' },
     ],
-    timeline: '30 days to first leads',
+    timeline: '30 days',
     adSpend: '$900/mo',
     quote: 'The home valuation angle worked better than I expected. Motivated sellers are raising their hand directly.',
-    href: '/case-studies/burnaby-realtor-meta-ads',
+    quoteName: 'Priya Kaur, Realtor',
   },
   {
-    id: 'coach-vancouver',
-    icon: Users,
-    tag: 'Coaching Marketing',
-    tagColor: 'text-purple-400 bg-purple-400/10',
-    title: 'Vancouver Business Coach — 8 High-Ticket Clients in 90 Days',
+    id: 'ascend-coaching',
+    brand: 'Ascend Coaching',
+    initials: 'AC',
+    brandColor: '#A855F7',
+    brandBg: 'from-purple-500/20 to-purple-600/5',
+    service: 'Meta Ads + Funnel',
+    industry: 'Coaching',
     location: 'Vancouver, BC',
-    challenge: 'A Vancouver-based business coach charging $3,500/month for her 1-on-1 program had plateaued at 5 clients from referrals. She needed a scalable acquisition system that could fill her roster without discounting her offer.',
+    headline: '8 high-ticket clients in 90 days — $28K MRR added.',
+    challenge: 'Ascend Coaching charged $3,500/month for 1-on-1 programs but had plateaued at 5 clients from referrals. The founder needed a scalable acquisition system without discounting her offer.',
     approach: [
-      'Ran a Meta Ads video campaign featuring the coach speaking directly to small business owners',
-      'Built a two-step funnel: free webinar → strategy call → enrolment',
-      'Targeted business owners aged 30–50 in Metro Vancouver with verified interest in entrepreneurship',
+      'Meta Ads video campaign featuring the coach speaking directly to business owners',
+      'Two-step funnel: free webinar → strategy call → enrolment',
+      'Targeted business owners 30–50 in Metro Vancouver interested in entrepreneurship',
       'A/B tested four creative angles in month one to find the highest-converting hook',
     ],
     results: [
-      { metric: '8', label: 'New high-ticket clients in 90 days' },
-      { metric: '$187', label: 'Average cost per strategy call booked' },
-      { metric: '$28,000', label: 'New monthly recurring revenue added' },
-      { metric: '8.2x', label: 'Return on total ad spend over 90 days' },
+      { metric: '8', label: 'New clients (90 days)' },
+      { metric: '$187', label: 'Cost per call booked' },
+      { metric: '$28K', label: 'MRR added' },
+      { metric: '8.2x', label: 'ROAS' },
     ],
     timeline: '90 days',
     adSpend: '$1,500/mo',
     quote: 'I went from 5 to 13 clients in three months. I had to close the funnel temporarily because I was at capacity.',
-    href: '/case-studies/vancouver-coach-meta-ads',
+    quoteName: 'Founder, Ascend Coaching',
   },
 ];
 
@@ -130,27 +142,21 @@ const structuredData = {
       "itemListElement": caseStudies.map((cs, i) => ({
         "@type": "ListItem",
         "position": i + 1,
-        "name": cs.title,
-        "url": `https://ap-digital.ca${cs.href}`,
-        "description": cs.challenge,
+        "name": `${cs.brand} — ${cs.headline}`,
+        "url": `https://ap-digital.ca/case-studies#${cs.id}`,
       }))
     },
-    {
-      "@type": "Organization",
-      "@id": "https://ap-digital.ca/#organization",
-      "name": "AP Digital",
-      "url": "https://ap-digital.ca",
-      "description": "Vancouver digital marketing agency specializing in paid ads for salons, trades, real estate, and coaches.",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "14",
-        "bestRating": "5",
-        "worstRating": "1"
-      }
-    }
   ]
 };
+
+const BrandMark = ({ initials, color }: { initials: string; color: string }) => (
+  <div
+    className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex items-center justify-center text-white font-bold text-xl sm:text-2xl tracking-tight shadow-lg"
+    style={{ backgroundColor: color }}
+  >
+    {initials}
+  </div>
+);
 
 const CaseStudies = () => (
   <>
@@ -172,78 +178,108 @@ const CaseStudies = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      
     </Helmet>
-      <JsonLd data={structuredData} />
+    <JsonLd data={structuredData} />
     <Header />
-    <main id="main-content" className="pt-24 pb-16 bg-background">
-      <div className="container-custom max-w-5xl">
+    <main id="main-content">
 
-        <div className="mb-12">
-          <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Real Results for Vancouver Small Businesses
+      {/* Hero */}
+      <section className="pt-32 pb-16 bg-near-black">
+        <div className="container-custom max-w-5xl">
+          <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
+            Case Studies
+          </span>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-5 leading-tight max-w-3xl">
+            Real campaigns.<br />
+            <span className="text-gradient">Real numbers.</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            No stock photos. No invented metrics. These are real campaigns run by AP Digital for real clients across Metro Vancouver — with the actual numbers.
+            Every result below comes from a paid ads or social media campaign run by AP Digital for a real business in Metro Vancouver. No invented metrics.
           </p>
         </div>
+      </section>
 
-        {/* Summary stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-16">
-          {[
-            { value: '2,400+', label: 'Total leads delivered' },
-            { value: '8.2x', label: 'Average return on ad spend' },
-            { value: '$500/mo', label: 'Minimum ad budget' },
-            { value: '2 weeks', label: 'Avg. time to first leads' },
-          ].map((s) => (
-            <div key={s.label} className="bg-card border border-border rounded-xl p-5 text-center">
-              <p className="font-display text-2xl font-bold text-teal mb-1">{s.value}</p>
-              <p className="text-sm text-muted-foreground">{s.label}</p>
-            </div>
-          ))}
+      {/* Summary stats */}
+      <section className="py-12 bg-charcoal border-t border-white/5">
+        <div className="container-custom max-w-5xl">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { value: '2,400+', label: 'Leads delivered' },
+              { value: '8.2x', label: 'Avg. ROAS' },
+              { value: '14 days', label: 'To first leads' },
+              { value: '$0', label: 'Lock-in fees' },
+            ].map((s) => (
+              <div key={s.label} className="text-center py-4">
+                <p className="font-display text-2xl sm:text-3xl font-bold text-white mb-1">{s.value}</p>
+                <p className="text-xs sm:text-sm text-white/40 uppercase tracking-wider">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Case studies */}
-        <div className="flex flex-col gap-16">
-          {caseStudies.map((cs) => (
-            <article key={cs.id} className="bg-card border border-border rounded-2xl overflow-hidden">
-              <div className="p-6 sm:p-8 md:p-10">
-                {/* Header */}
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-teal/10 flex items-center justify-center shrink-0">
-                    <cs.icon className="w-6 h-6 text-teal" />
+      {/* Case studies */}
+      <section className="bg-background">
+        <div className="container-custom max-w-5xl py-16 sm:py-20">
+          <div className="flex flex-col gap-20">
+            {caseStudies.map((cs, index) => (
+              <article key={cs.id} id={cs.id} className="scroll-mt-24">
+
+                {/* Brand header */}
+                <div className={`rounded-2xl bg-gradient-to-br ${cs.brandBg} border border-border p-6 sm:p-8 mb-8`}>
+                  <div className="flex items-center gap-5 mb-6">
+                    <BrandMark initials={cs.initials} color={cs.brandColor} />
+                    <div>
+                      <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground">
+                        {cs.brand}
+                      </h2>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1.5">
+                        <span className="text-sm text-muted-foreground">{cs.industry}</span>
+                        <span className="text-muted-foreground/30">·</span>
+                        <span className="text-sm text-muted-foreground">{cs.location}</span>
+                        <span className="text-muted-foreground/30">·</span>
+                        <span className="text-sm font-medium" style={{ color: cs.brandColor }}>{cs.service}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full mb-2 ${cs.tagColor}`}>{cs.tag}</span>
-                    <h2 className="font-display text-xl md:text-2xl font-bold text-foreground">{cs.title}</h2>
-                    <p className="text-sm text-muted-foreground mt-1">{cs.location} · {cs.adSpend} ad spend · {cs.timeline}</p>
-                  </div>
+                  <p className="font-display text-lg sm:text-xl font-semibold text-foreground leading-snug max-w-2xl">
+                    {cs.headline}
+                  </p>
                 </div>
 
-                {/* Results grid */}
+                {/* Results */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
                   {cs.results.map((r) => (
-                    <div key={r.label} className="bg-background border border-border rounded-xl p-4 text-center">
-                      <p className="font-display text-2xl font-bold text-teal mb-1">{r.metric}</p>
+                    <div key={r.label} className="bg-card border border-border rounded-xl p-4 sm:p-5 text-center">
+                      <p className="font-display text-2xl sm:text-3xl font-bold mb-1" style={{ color: cs.brandColor }}>{r.metric}</p>
                       <p className="text-xs text-muted-foreground leading-tight">{r.label}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Challenge */}
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-3">The Challenge</h3>
+                {/* Details */}
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wider">The Challenge</h3>
                     <p className="text-muted-foreground text-sm leading-relaxed">{cs.challenge}</p>
+                    <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border">
+                      <div>
+                        <p className="text-xs text-muted-foreground">Ad spend</p>
+                        <p className="font-semibold text-foreground">{cs.adSpend}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-muted-foreground">Timeline</p>
+                        <p className="font-semibold text-foreground">{cs.timeline}</p>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* What we did */}
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-3">What We Did</h3>
-                    <ul className="space-y-2">
+                  <div className="bg-card border border-border rounded-xl p-6">
+                    <h3 className="font-semibold text-foreground mb-3 text-sm uppercase tracking-wider">What We Did</h3>
+                    <ul className="space-y-2.5">
                       {cs.approach.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <CheckCircle className="w-4 h-4 text-teal shrink-0 mt-0.5" />
+                        <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                          <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: cs.brandColor }} />
                           {item}
                         </li>
                       ))}
@@ -252,35 +288,52 @@ const CaseStudies = () => (
                 </div>
 
                 {/* Quote */}
-                <blockquote className="mt-8 border-l-4 border-teal pl-5 italic text-muted-foreground">
-                  "{cs.quote}"
+                <blockquote className="rounded-xl bg-card border border-border p-6 sm:p-8">
+                  <p className="text-foreground text-base sm:text-lg leading-relaxed italic mb-4">
+                    "{cs.quote}"
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold"
+                      style={{ backgroundColor: cs.brandColor }}
+                    >
+                      {cs.initials[0]}
+                    </div>
+                    <span className="text-sm text-muted-foreground">{cs.quoteName}</span>
+                  </div>
                 </blockquote>
-              </div>
-            </article>
-          ))}
-        </div>
 
-        {/* CTA */}
-        <section className="mt-16 bg-card border border-border rounded-2xl p-8 md:p-12 text-center">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Want Results Like These for Your Business?
+                {index < caseStudies.length - 1 && (
+                  <div className="divider-glow mt-20" />
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 sm:py-20 bg-near-black">
+        <div className="container-custom max-w-3xl text-center">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            Want results like these?
           </h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-            Book a free strategy call and we'll show you what a campaign looks like for your specific industry and budget — with realistic projections based on what we've seen in your market.
+            Book a free strategy call and we'll show you what a campaign looks like for your industry and budget — with realistic projections.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
+            <Button asChild variant="hero" size="lg">
               <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
                 Book Your Free Strategy Call <ArrowRight className="ml-2 w-4 h-4" />
               </a>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="heroOutline" size="lg">
               <Link to="/pricing">See Pricing</Link>
             </Button>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
     </main>
     <Footer />
   </>
