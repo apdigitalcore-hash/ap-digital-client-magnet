@@ -86,7 +86,7 @@ const WhileYouScroll = () => {
     <section
       ref={sectionRef}
       id="while-you-scroll"
-      className="relative bg-black"
+      className="relative bg-background"
       style={{ height: '450vh' }}
     >
       {inView && (
@@ -98,7 +98,7 @@ const WhileYouScroll = () => {
             height: '100%',
             margin: 0,
             padding: 0,
-            backgroundColor: '#000',
+            backgroundColor: 'hsl(220, 20%, 97%)',
             overflow: 'hidden',
             zIndex: 30,
           }}
@@ -113,7 +113,7 @@ const WhileYouScroll = () => {
               zIndex: 10,
             }}
           >
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center leading-tight max-w-5xl">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground text-center leading-tight max-w-5xl">
               Every day without ads is
               <br />
               <span className="text-red-500">money lost.</span>
@@ -154,7 +154,7 @@ const WhileYouScroll = () => {
               pointerEvents: secondLineOpacity > 0.5 ? 'auto' : 'none',
             }}
           >
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white text-center leading-tight">
+            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground text-center leading-tight">
               Let's fix that
               <br />
               <span className="text-gradient">today.</span>
