@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 const Header = () => {
+  const { pathname } = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -49,7 +50,19 @@ const Header = () => {
     { href: '/how-to-choose-a-marketing-agency-vancouver', label: 'Agency Hiring Guide', external: false },
   ];
 
-  const useDarkChrome = false;
+  // Pages that open on a light background need dark header text until the
+  // header gains its dark scrolled chrome.
+  const lightPagePrefixes = [
+    '/blog',
+    '/case-studies',
+    '/how-to-choose-a-marketing-agency-vancouver',
+    '/login',
+    '/.lovable/oauth/consent',
+  ];
+  const isLightPage = lightPagePrefixes.some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`)
+  );
+  const useDarkChrome = isLightPage && !isScrolled;
 
   return (
     <>
