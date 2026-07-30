@@ -14,18 +14,16 @@ const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const caseStudies = [
   {
-    id: 'velvet-hair-co',
-    brand: 'Velvet Hair Co.',
-    initials: 'V',
-    brandColor: '#E8567F',
-    brandBg: 'from-pink-500/20 to-pink-600/5',
-    cardBg: 'bg-gradient-to-br from-pink-100 to-pink-50',
+    id: 'willow-hair-lounge',
+    brand: 'Willow Hair Lounge',
+    image: '/willow-hair-lounge.jpg',
+    brandColor: '#8B7355',
     service: 'Meta Ads + Content',
     industry: 'Salon & Beauty',
     location: 'Kitsilano, Vancouver',
     tagline: '94 leads in 60 days',
     headline: '94 leads in 60 days — from empty mid-week chairs to a waitlist.',
-    challenge: 'Velvet Hair Co. had 3 stylists and ran on referrals. Mid-week occupancy was stuck at 60%. The owner had tried boosting Instagram posts with no measurable results — she needed a system, not experiments.',
+    challenge: 'Willow Hair Lounge had 3 stylists and ran on referrals. Mid-week occupancy was stuck at 60%. The owner had tried boosting Instagram posts with no measurable results — she needed a system, not experiments.',
     approach: [
       'Meta Ads targeting women 24–45 within 8km of the salon',
       'Before-and-after Reel content for Facebook & Instagram',
@@ -41,21 +39,19 @@ const caseStudies = [
     timeline: '60 days',
     adSpend: '$800/mo',
     quote: 'We went from scrambling to fill Tuesday and Wednesday to having a waitlist. I had to hire a fourth stylist.',
-    quoteName: 'Owner, Velvet Hair Co.',
+    quoteName: 'Owner, Willow Hair Lounge',
   },
   {
-    id: 'clearline-plumbing',
-    brand: 'Clearline Plumbing & Drain',
-    initials: 'CL',
-    brandColor: '#3B82F6',
-    brandBg: 'from-blue-500/20 to-blue-600/5',
-    cardBg: 'bg-gradient-to-br from-blue-100 to-blue-50',
+    id: 'summit-home-services',
+    brand: 'Summit Home Services',
+    image: '/summit-home-services.jpg',
+    brandColor: '#6B7A4A',
     service: 'Google Ads + GBP',
     industry: 'Trades & Contractors',
     location: 'Surrey, BC',
     tagline: '30+ jobs/month',
     headline: '30+ booked jobs per month — HomeStars cancelled in 6 weeks.',
-    challenge: 'Clearline was a two-truck operation fully dependent on HomeStars — paying per-lead fees that were unpredictable and often unqualified. They needed direct inbound calls without the middleman.',
+    challenge: 'Summit was a two-truck operation fully dependent on HomeStars — paying per-lead fees that were unpredictable and often unqualified. They needed direct inbound calls without the middleman.',
     approach: [
       'Google Search Ads for "plumber Surrey", "emergency plumber", "drain cleaning Surrey"',
       'Call tracking to measure booked jobs vs. clicks',
@@ -71,21 +67,19 @@ const caseStudies = [
     timeline: '45 days',
     adSpend: '$1,200/mo',
     quote: 'Within 6 weeks I cancelled HomeStars. The leads are better quality and I own the channel now.',
-    quoteName: 'Owner, Clearline Plumbing',
+    quoteName: 'Owner, Summit Home Services',
   },
   {
-    id: 'west-main-realty',
-    brand: 'West & Main Realty',
-    initials: 'WM',
-    brandColor: '#2DD4BF',
-    brandBg: 'from-teal/20 to-teal/5',
-    cardBg: 'bg-gradient-to-br from-teal-100 to-teal-50',
+    id: 'pacific-oak-realty',
+    brand: 'Pacific Oak Realty',
+    image: '/pacific-oak-realty.jpg',
+    brandColor: '#7C8B8C',
     service: 'Meta Ads + Landing Pages',
     industry: 'Real Estate',
     location: 'Burnaby, BC',
     tagline: '22 leads in month one',
     headline: '22 qualified leads in month one — 3 listings taken within 90 days.',
-    challenge: 'West & Main specialized in Burnaby condo listings but generated all their business through personal networks. Their previous agency delivered impressions reports with zero actual leads.',
+    challenge: 'Pacific Oak specialized in Burnaby condo listings but generated all their business through personal networks. Their previous agency delivered impressions reports with zero actual leads.',
     approach: [
       'Seller-focused Meta Ads targeting homeowners 35–60 in Burnaby & Coquitlam',
       '"Home Valuation" lead magnet landing page as the core offer',
@@ -101,21 +95,19 @@ const caseStudies = [
     timeline: '30 days',
     adSpend: '$900/mo',
     quote: 'The home valuation angle worked better than we expected. Motivated sellers are raising their hand directly.',
-    quoteName: 'Founder, West & Main Realty',
+    quoteName: 'Founder, Pacific Oak Realty',
   },
   {
-    id: 'basecamp-strategy',
-    brand: 'Basecamp Strategy',
-    initials: 'B',
-    brandColor: '#A855F7',
-    brandBg: 'from-purple-500/20 to-purple-600/5',
-    cardBg: 'bg-gradient-to-br from-purple-100 to-purple-50',
+    id: 'momentum-coaching-group',
+    brand: 'Momentum Coaching Group',
+    image: '/momentum-coaching-group.jpg',
+    brandColor: '#2D2D2D',
     service: 'Meta Ads + Funnel',
     industry: 'Coaching',
     location: 'Vancouver, BC',
     tagline: '8 clients in 90 days',
     headline: '8 high-ticket clients in 90 days — $28K MRR added.',
-    challenge: 'Basecamp Strategy charged $3,500/month for 1-on-1 programs but had plateaued at 5 clients from referrals. The founder needed a scalable acquisition system without discounting her offer.',
+    challenge: 'Momentum Coaching Group charged $3,500/month for 1-on-1 programs but had plateaued at 5 clients from referrals. The founder needed a scalable acquisition system without discounting her offer.',
     approach: [
       'Meta Ads video campaign featuring the coach speaking directly to business owners',
       'Two-step funnel: free webinar → strategy call → enrolment',
@@ -131,7 +123,7 @@ const caseStudies = [
     timeline: '90 days',
     adSpend: '$1,500/mo',
     quote: 'I went from 5 to 13 clients in three months. I had to close the funnel temporarily because I was at capacity.',
-    quoteName: 'Founder, Basecamp Strategy',
+    quoteName: 'Founder, Momentum Coaching Group',
   },
 ];
 
@@ -155,18 +147,6 @@ const structuredData = {
       }))
     },
   ]
-};
-
-const BrandMark = ({ initials, color, size = 'lg' }: { initials: string; color: string; size?: 'sm' | 'lg' }) => {
-  const dims = size === 'lg' ? 'w-20 h-20 text-2xl rounded-2xl' : 'w-8 h-8 text-xs rounded-full';
-  return (
-    <div
-      className={`${dims} flex items-center justify-center text-white font-bold tracking-tight shadow-lg`}
-      style={{ backgroundColor: color }}
-    >
-      {initials}
-    </div>
-  );
 };
 
 // ─── Grid view (landing page) ───
@@ -240,13 +220,22 @@ const CaseStudyGrid = () => (
                 to={`/case-studies/${cs.id}`}
                 className="group block rounded-2xl overflow-hidden border border-border hover:border-gray-300 transition-all duration-300 hover:shadow-lg"
               >
-                {/* Brand banner */}
-                <div className={`${cs.cardBg} p-8 sm:p-10 flex flex-col items-center text-center min-h-[220px] justify-center relative`}>
-                  <BrandMark initials={cs.initials} color={cs.brandColor} />
-                  <h2 className="font-display text-xl sm:text-2xl font-bold text-gray-900 mt-5 group-hover:text-gray-700 transition-colors">
-                    {cs.brand}
-                  </h2>
-                  <p className="text-sm text-gray-500 mt-1">{cs.industry} · {cs.location}</p>
+                {/* Brand image */}
+                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                  <img
+                    src={cs.image}
+                    alt={`${cs.brand} — ${cs.industry} client of AP Digital`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className="absolute bottom-4 left-5 right-5">
+                    <h2 className="font-display text-xl sm:text-2xl font-bold text-white drop-shadow-lg">
+                      {cs.brand}
+                    </h2>
+                    <p className="text-sm text-white/80 mt-0.5">{cs.industry} · {cs.location}</p>
+                  </div>
                 </div>
 
                 {/* Info strip */}
@@ -258,7 +247,7 @@ const CaseStudyGrid = () => (
                     <div className="flex gap-3">
                       {cs.results.slice(0, 2).map((r) => (
                         <div key={r.label}>
-                          <p className="font-display text-lg font-bold" style={{ color: cs.brandColor }}>{r.metric}</p>
+                          <p className="font-display text-lg font-bold text-teal">{r.metric}</p>
                           <p className="text-[10px] text-muted-foreground uppercase tracking-wide">{r.label}</p>
                         </div>
                       ))}
@@ -324,14 +313,24 @@ const CaseStudyDetail = ({ study }: { study: typeof caseStudies[0] }) => (
     <Header />
     <main id="main-content">
 
-      {/* Hero banner */}
-      <section className={`pt-32 pb-16 bg-gradient-to-br ${study.brandBg} bg-near-black`}>
-        <div className="container-custom max-w-4xl">
+      {/* Hero with image */}
+      <section className="relative pt-32 pb-16 bg-near-black overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={study.image}
+            alt={study.brand}
+            className="w-full h-full object-cover opacity-20 blur-sm"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-near-black/80 to-near-black" />
+        </div>
+        <div className="container-custom max-w-4xl relative z-10">
           <Link to="/case-studies" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8">
             <ArrowLeft className="w-4 h-4" /> All Case Studies
           </Link>
           <div className="flex items-center gap-5 mb-6">
-            <BrandMark initials={study.initials} color={study.brandColor} />
+            <div className="w-20 h-20 rounded-2xl overflow-hidden shadow-lg shrink-0">
+              <img src={study.image} alt={study.brand} className="w-full h-full object-cover" />
+            </div>
             <div>
               <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-primary-foreground">
                 {study.brand}
@@ -341,7 +340,7 @@ const CaseStudyDetail = ({ study }: { study: typeof caseStudies[0] }) => (
                 <span className="text-muted-foreground/30">·</span>
                 <span className="text-sm text-muted-foreground">{study.location}</span>
                 <span className="text-muted-foreground/30">·</span>
-                <span className="text-sm font-medium" style={{ color: study.brandColor }}>{study.service}</span>
+                <span className="text-sm font-medium text-teal">{study.service}</span>
               </div>
             </div>
           </div>
@@ -389,7 +388,7 @@ const CaseStudyDetail = ({ study }: { study: typeof caseStudies[0] }) => (
               <ul className="space-y-3">
                 {study.approach.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 shrink-0 mt-0.5" style={{ color: study.brandColor }} />
+                    <CheckCircle className="w-4 h-4 shrink-0 mt-0.5 text-teal" />
                     {item}
                   </li>
                 ))}
@@ -403,7 +402,9 @@ const CaseStudyDetail = ({ study }: { study: typeof caseStudies[0] }) => (
               "{study.quote}"
             </p>
             <div className="flex items-center gap-3">
-              <BrandMark initials={study.initials[0]} color={study.brandColor} size="sm" />
+              <div className="w-8 h-8 rounded-full overflow-hidden">
+                <img src={study.image} alt={study.brand} className="w-full h-full object-cover" />
+              </div>
               <span className="text-sm text-muted-foreground font-medium">{study.quoteName}</span>
             </div>
           </blockquote>
