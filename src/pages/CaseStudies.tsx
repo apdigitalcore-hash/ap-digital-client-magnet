@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, ArrowLeft, CheckCircle } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
+import apLogo from '@/assets/ap-logo.png';
 
 const TITLE = 'Case Studies | Real Results for BC Businesses | AP Digital';
 const DESC = 'See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses. Real results, real numbers.';
@@ -178,6 +179,7 @@ const CaseStudyGrid = () => (
       {/* Hero */}
       <section className="pt-32 pb-20 bg-background">
         <div className="container-custom max-w-5xl">
+          <img src={apLogo} alt="AP Digital" className="w-16 h-16 rounded-full mb-6" />
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Work
           </h1>
