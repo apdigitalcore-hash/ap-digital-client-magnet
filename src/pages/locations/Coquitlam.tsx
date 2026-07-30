@@ -13,6 +13,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
+import apLogo from '@/assets/ap-logo.png';
 
 const TITLE = 'Coquitlam Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Coquitlam digital marketing focused on getting you more leads. Google Ads, Meta Ads & local SEO for salons, trades & realtors. 90-day guarantee. No lock-in.';
@@ -75,7 +76,7 @@ const structuredData = {
     {
       "@type": "LocalBusiness",
       "@id": "https://ap-digital.ca/coquitlam",
-      "name": "AP Digital — Coquitlam Digital Marketing Agency",
+      "name": "AP Digital — Coquitlam Performance Marketing Agency",
       "description": DESC,
       "url": "https://ap-digital.ca/coquitlam",
       "telephone": "+1-778-682-5772",
@@ -136,12 +137,11 @@ const Coquitlam = () => (
       <section className="relative bg-near-black pt-28 pb-20">
         <div className="container-custom">
           <div className="max-w-3xl animate-fade-up">
-            <div className="inline-flex items-center gap-2 border border-teal/20 rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-              <span className="text-teal text-sm font-medium">Serving Coquitlam & Tri-Cities, BC</span>
+            <div className="mb-6">
+              <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Digital Marketing Agency{' '}
+              Performance Marketing Agency{' '}
               <span className="text-gradient">Coquitlam BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
@@ -157,26 +157,6 @@ const Coquitlam = () => (
               <Button asChild variant="light" size="lg">
                 <a href="/services/paid-ads">See Our Services</a>
               </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Strip */}
-      <section className="bg-charcoal py-12">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="font-display text-4xl font-bold text-teal mb-1">2 Weeks</div>
-              <div className="text-muted-foreground text-sm">Average time to first leads</div>
-            </div>
-            <div>
-              <div className="font-display text-4xl font-bold text-teal mb-1">5–10x</div>
-              <div className="text-muted-foreground text-sm">Return on ad spend</div>
-            </div>
-            <div>
-              <div className="font-display text-4xl font-bold text-teal mb-1">$500/mo</div>
-              <div className="text-muted-foreground text-sm">Starting — no contracts</div>
             </div>
           </div>
         </div>
