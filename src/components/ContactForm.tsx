@@ -25,6 +25,54 @@ const niches = [
   { value: 'other', label: 'Other' },
 ];
 
+// Niche-specific copy: prompt shown after selection, tailored field hints and CTA
+const NICHE_DETAILS: Record<
+  string,
+  {
+    prompt: string;
+    businessLabel: string;
+    businessPlaceholder: string;
+    businessHint: string;
+    cta: string;
+  }
+> = {
+  salon: {
+    prompt: "Nice — we help Vancouver salons fill empty chairs midweek, not just on Saturdays.",
+    businessLabel: 'Salon Name *',
+    businessPlaceholder: 'e.g. Kits Hair Studio',
+    businessHint: 'Use the name clients search for on Google or Instagram.',
+    cta: 'Get My Salon Booking Plan',
+  },
+  'real-estate': {
+    prompt: "Great — we build listing and buyer lead funnels for BC agents, not generic ads.",
+    businessLabel: 'Brokerage / Team Name *',
+    businessPlaceholder: 'e.g. Chan Realty Group',
+    businessHint: 'Your brokerage or personal brand — whichever you market under.',
+    cta: 'Get My Listing Lead Plan',
+  },
+  trades: {
+    prompt: "Perfect — we get the phone ringing with local jobs worth quoting.",
+    businessLabel: 'Company Name *',
+    businessPlaceholder: 'e.g. Northshore Plumbing Ltd.',
+    businessHint: 'The name on your truck and invoices works best.',
+    cta: 'Get My Job Lead Plan',
+  },
+  coaching: {
+    prompt: "Good fit — we fill coaching rosters with clients ready to invest, not freebie seekers.",
+    businessLabel: 'Practice / Brand Name *',
+    businessPlaceholder: 'e.g. Clear Path Coaching',
+    businessHint: 'Your practice name or the brand you publish under.',
+    cta: 'Get My Client Roster Plan',
+  },
+  other: {
+    prompt: "No problem — tell us about it on the call and we'll map the fastest path to leads.",
+    businessLabel: 'Business Name *',
+    businessPlaceholder: 'Your Business',
+    businessHint: "We'll tailor the audit to your industry on the call.",
+    cta: 'Book Your Free Strategy Call',
+  },
+};
+
 // Zod schema for form validation with security-focused constraints
 const contactFormSchema = z.object({
   name: z
@@ -61,6 +109,8 @@ const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [selectedNiche, setSelectedNiche] = useState<string>('');
+  const nicheDetails = selectedNiche ? NICHE_DETAILS[selectedNiche] : null;
   // Honeypot fields - bots will fill these, real users won't see them
   const [honeypot, setHoneypot] = useState('');
   const [honeypotWebsite, setHoneypotWebsite] = useState('');
@@ -240,22 +290,54 @@ const ContactForm = () => {
         </div>
       </div>
 
+      {/* Niche */}
+      <div className="space-y-2">
+        <Label htmlFor="niche">What industry are you in? *</Label>
+        <Select name="niche" value={selectedNiche} onValueChange={setSelectedNiche}>
+          <SelectTrigger 
+            className={`bg-background ${formErrors.niche ? 'border-destructive' : ''}`}
+            aria-invalid={!!formErrors.niche}
+            aria-describedby={formErrors.niche ? 'niche-error' : 'niche-hint'}
+          >
+            <SelectValue placeholder="Select your industry" />
+          </SelectTrigger>
+          <SelectContent>
+            {niches.map((niche) => (
+              <SelectItem key={niche.value} value={niche.value}>
+                {niche.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        {formErrors.niche ? (
+          <p id="niche-error" className="text-sm text-destructive">{formErrors.niche}</p>
+        ) : nicheDetails ? (
+          <p id="niche-hint" className="text-sm text-teal">{nicheDetails.prompt}</p>
+        ) : (
+          <p id="niche-hint" className="text-sm text-muted-foreground">
+            Pick the closest match — we'll tailor the audit to your industry.
+          </p>
+        )}
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-6">
         {/* Business Name */}
         <div className="space-y-2">
-          <Label htmlFor="business">Business Name *</Label>
+          <Label htmlFor="business">{nicheDetails?.businessLabel ?? 'Business Name *'}</Label>
           <Input
             id="business"
             name="business"
-            placeholder="Your Business"
+            placeholder={nicheDetails?.businessPlaceholder ?? 'Your Business'}
             maxLength={200}
             className={`bg-background ${formErrors.business ? 'border-destructive' : ''}`}
             aria-invalid={!!formErrors.business}
-            aria-describedby={formErrors.business ? 'business-error' : undefined}
+            aria-describedby={formErrors.business ? 'business-error' : 'business-hint'}
           />
-          {formErrors.business && (
+          {formErrors.business ? (
             <p id="business-error" className="text-sm text-destructive">{formErrors.business}</p>
-          )}
+          ) : nicheDetails ? (
+            <p id="business-hint" className="text-sm text-muted-foreground">{nicheDetails.businessHint}</p>
+          ) : null}
         </div>
 
         {/* Phone */}
@@ -277,29 +359,6 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Niche */}
-      <div className="space-y-2">
-        <Label htmlFor="niche">What industry are you in? *</Label>
-        <Select name="niche">
-          <SelectTrigger 
-            className={`bg-background ${formErrors.niche ? 'border-destructive' : ''}`}
-            aria-invalid={!!formErrors.niche}
-            aria-describedby={formErrors.niche ? 'niche-error' : undefined}
-          >
-            <SelectValue placeholder="Select your industry" />
-          </SelectTrigger>
-          <SelectContent>
-            {niches.map((niche) => (
-              <SelectItem key={niche.value} value={niche.value}>
-                {niche.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        {formErrors.niche && (
-          <p id="niche-error" className="text-sm text-destructive">{formErrors.niche}</p>
-        )}
-      </div>
 
       {/* GDPR Consent */}
       <div className="flex items-start space-x-3">
@@ -329,7 +388,7 @@ const ContactForm = () => {
           'Submitting...'
         ) : (
           <>
-            Book Your Free Strategy Call
+            {nicheDetails?.cta ?? 'Book Your Free Strategy Call'}
             <Send className="w-4 h-4" />
           </>
         )}
