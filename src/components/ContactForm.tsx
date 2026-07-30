@@ -290,22 +290,54 @@ const ContactForm = () => {
         </div>
       </div>
 
+      {/* Niche */}
+      <div className="space-y-2">
+        <Label htmlFor="niche">What industry are you in? *</Label>
+        <Select name="niche" value={selectedNiche} onValueChange={setSelectedNiche}>
+          <SelectTrigger 
+            className={`bg-background ${formErrors.niche ? 'border-destructive' : ''}`}
+            aria-invalid={!!formErrors.niche}
+            aria-describedby={formErrors.niche ? 'niche-error' : 'niche-hint'}
+          >
+            <SelectValue placeholder="Select your industry" />
+          </SelectTrigger>
+          <SelectContent>
+            {niches.map((niche) => (
+              <SelectItem key={niche.value} value={niche.value}>
+                {niche.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        {formErrors.niche ? (
+          <p id="niche-error" className="text-sm text-destructive">{formErrors.niche}</p>
+        ) : nicheDetails ? (
+          <p id="niche-hint" className="text-sm text-teal">{nicheDetails.prompt}</p>
+        ) : (
+          <p id="niche-hint" className="text-sm text-muted-foreground">
+            Pick the closest match — we'll tailor the audit to your industry.
+          </p>
+        )}
+      </div>
+
       <div className="grid sm:grid-cols-2 gap-6">
         {/* Business Name */}
         <div className="space-y-2">
-          <Label htmlFor="business">Business Name *</Label>
+          <Label htmlFor="business">{nicheDetails?.businessLabel ?? 'Business Name *'}</Label>
           <Input
             id="business"
             name="business"
-            placeholder="Your Business"
+            placeholder={nicheDetails?.businessPlaceholder ?? 'Your Business'}
             maxLength={200}
             className={`bg-background ${formErrors.business ? 'border-destructive' : ''}`}
             aria-invalid={!!formErrors.business}
-            aria-describedby={formErrors.business ? 'business-error' : undefined}
+            aria-describedby={formErrors.business ? 'business-error' : 'business-hint'}
           />
-          {formErrors.business && (
+          {formErrors.business ? (
             <p id="business-error" className="text-sm text-destructive">{formErrors.business}</p>
-          )}
+          ) : nicheDetails ? (
+            <p id="business-hint" className="text-sm text-muted-foreground">{nicheDetails.businessHint}</p>
+          ) : null}
         </div>
 
         {/* Phone */}
@@ -327,29 +359,6 @@ const ContactForm = () => {
         </div>
       </div>
 
-      {/* Niche */}
-      <div className="space-y-2">
-        <Label htmlFor="niche">What industry are you in? *</Label>
-        <Select name="niche">
-          <SelectTrigger 
-            className={`bg-background ${formErrors.niche ? 'border-destructive' : ''}`}
-            aria-invalid={!!formErrors.niche}
-            aria-describedby={formErrors.niche ? 'niche-error' : undefined}
-          >
-            <SelectValue placeholder="Select your industry" />
-          </SelectTrigger>
-          <SelectContent>
-            {niches.map((niche) => (
-              <SelectItem key={niche.value} value={niche.value}>
-                {niche.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        {formErrors.niche && (
-          <p id="niche-error" className="text-sm text-destructive">{formErrors.niche}</p>
-        )}
-      </div>
 
       {/* GDPR Consent */}
       <div className="flex items-start space-x-3">
