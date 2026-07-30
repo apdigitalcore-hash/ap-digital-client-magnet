@@ -181,6 +181,15 @@ const Header = () => {
             </Link>
 
             <Link
+              to="/blog"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              Blog
+            </Link>
+
+            <Link
               to="/contact"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
@@ -247,6 +256,14 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   About
+                </Link>
+
+                <Link
+                  to="/blog"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-white font-medium hover:bg-white/10 hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Blog
                 </Link>
 
                 <Link
