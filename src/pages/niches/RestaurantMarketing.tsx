@@ -1,0 +1,215 @@
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { CheckCircle, TrendingUp, Calendar, Users } from 'lucide-react';
+import OurServices from '@/components/OurServices';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
+
+const TITLE = 'Restaurant Marketing Vancouver | Fill More Tables | AP Digital';
+const DESC = 'Get more reservations & walk-ins with Meta Ads, Google Ads & social media. AP Digital serves Vancouver restaurants & cafes. Month-to-month. No contracts.';
+const CANONICAL = 'https://ap-digital.ca/restaurant-marketing';
+const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
+
+const included = [
+  'Meta Ads with food photography & video content',
+  'Google Ads for "restaurants near me" & cuisine-specific searches',
+  'Google Business Profile optimization & review management',
+  'Instagram content strategy & Reels production guidance',
+  'Reservation & online ordering funnel optimization',
+  'Monthly performance reporting & creative testing',
+  'Event & seasonal promotion campaigns',
+  'Competitor monitoring & local positioning',
+];
+
+const results = [
+  { icon: TrendingUp, stat: '3-6x', label: 'Average return on ad spend for restaurant clients' },
+  { icon: Calendar, stat: '200+', label: 'New covers per month driven by ads' },
+  { icon: Users, stat: '$2.50', label: 'Average cost per reservation or walk-in' },
+];
+
+const faqs = [
+  {
+    question: 'How do I get more customers to my restaurant in Vancouver?',
+    answer: 'A combination of Google Business Profile optimization, Instagram content, and targeted Meta Ads. When someone searches "best sushi near me" or scrolls past a mouth-watering food Reel, your restaurant needs to be there. AP Digital runs geo-targeted campaigns that drive reservations and walk-ins from people within 5–15 km of your location.',
+  },
+  {
+    question: 'How much does restaurant marketing cost?',
+    answer: 'Most restaurants start with $500–$1,500/month in ad spend plus a management fee starting at $759/month. Restaurant ads have lower cost-per-click than most industries, so even a modest budget drives significant foot traffic. No setup fees, no contracts.',
+  },
+  {
+    question: 'How fast will I see more customers from ads?',
+    answer: 'Instagram and Facebook ads drive foot traffic within the first week — especially when promoting a limited-time offer or new menu item. Google Ads captures people actively searching for restaurants and typically generates clicks within 48 hours of launch.',
+  },
+  {
+    question: 'Should my restaurant focus on Instagram or Google?',
+    answer: 'Both, but Instagram is the primary driver. Food is visual — a great photo of your signature dish stops the scroll in a way that text ads never will. Google captures high-intent searches like "Italian restaurant Kitsilano" or "brunch near me." We run both channels to cover discovery and intent.',
+  },
+  {
+    question: 'Do you help with food photography and content?',
+    answer: 'We provide content strategy and guidance on shooting high-converting food photos and Reels with your phone. For restaurants that want professional content, we can coordinate with local food photographers. The most effective restaurant ads use authentic, well-lit photos of real dishes — not stock images.',
+  },
+  {
+    question: 'Can you help promote my restaurant events and specials?',
+    answer: 'Yes. We run targeted campaigns for happy hours, live music nights, holiday menus, new menu launches, and seasonal specials. Event-based ads create urgency and drive spikes in reservations. We plan these campaigns around your calendar.',
+  },
+  {
+    question: 'Is there a contract for restaurant marketing?',
+    answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We also offer a 90-day performance guarantee — if you don\'t see more customers, you don\'t pay.',
+  },
+  {
+    question: 'How do I compete with bigger restaurant chains on Google?',
+    answer: 'Independent restaurants actually have an advantage — people search for unique dining experiences, not chains. We optimize your Google Business Profile with professional photos, respond to every review, and run Google Ads targeting cuisine-specific and neighborhood searches where chains don\'t bid.',
+  },
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    founderSchema,
+    getServiceSchema('Restaurant Marketing', DESC, '/restaurant-marketing'),
+    getFAQSchema(faqs),
+    getBreadcrumbSchema([
+      { name: 'Home', url: '/' },
+      { name: 'Restaurant Marketing', url: '/restaurant-marketing' },
+    ]),
+    getWebPageSchema(TITLE, DESC, '/restaurant-marketing'),
+  ]
+};
+
+const RestaurantMarketing = () => (
+  <>
+    <Helmet>
+      <title>{TITLE}</title>
+      <meta name="description" content={DESC} />
+      <link rel="canonical" href={CANONICAL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={CANONICAL} />
+      <meta property="og:title" content={TITLE} />
+      <meta property="og:description" content={DESC} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="en_CA" />
+      <meta property="og:site_name" content="AP DIGITAL" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="robots" content="index, follow" />
+    </Helmet>
+    <JsonLd data={structuredData} />
+    <Header />
+    <main id="main-content" className="pt-24 pb-16">
+      <div className="container-custom max-w-4xl">
+        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
+          Restaurant Marketing — Fill More Tables with Ads &amp; Social
+        </h1>
+
+        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+          Great food isn't enough. We make sure people in your neighborhood know about it — with Instagram content that makes them hungry and Google Ads that turn searches into reservations.
+        </p>
+
+        <div className="grid sm:grid-cols-3 gap-4 mb-16">
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Food sells itself visually</p>
+            <p className="text-sm text-muted-foreground">A great food photo on Instagram has a higher engagement rate than almost any other content type. We turn your dishes into scroll-stopping ads.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">Hyper-local reach</p>
+            <p className="text-sm text-muted-foreground">People don't drive 30 minutes for dinner. We target hungry people within 5–15 km of your restaurant — the only radius that fills tables.</p>
+          </div>
+          <div className="bg-card border border-border rounded-xl p-5">
+            <p className="font-bold text-foreground mb-1">No contract, no risk</p>
+            <p className="text-sm text-muted-foreground">Month-to-month. 90-day guarantee. If we don't bring you more customers, you don't pay.</p>
+          </div>
+        </div>
+
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>
+        <ul className="grid sm:grid-cols-2 gap-4 mb-16">
+          {included.map((item) => (
+            <li key={item} className="flex items-start gap-3 text-foreground">
+              <CheckCircle className="w-5 h-5 text-teal mt-0.5 shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Restaurant Clients See</h2>
+        <div className="grid sm:grid-cols-3 gap-6 mb-16">
+          {results.map((r) => (
+            <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
+              <r.icon className="w-8 h-8 text-teal mx-auto mb-3" />
+              <div className="font-display text-3xl font-bold text-teal mb-2">{r.stat}</div>
+              <p className="text-muted-foreground text-sm">{r.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Why Instagram &amp; Google Are the Only Channels That Matter</h2>
+        <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
+          <p className="mb-4">
+            Restaurant discovery happens in two places: Instagram and Google. Instagram is where people browse, get inspired, and screenshot places to try. Google is where they search "best Thai food Burnaby" or "restaurants open now near me" when they're ready to eat.
+          </p>
+          <p className="mb-4">
+            We cover both. Instagram Reels and carousel ads showcase your food and atmosphere — building a list of people who want to visit. Google Ads capture them at the moment of decision. Your Google Business Profile (photos, reviews, menu, hours) is the final conversion point.
+          </p>
+          <p>
+            The economics work: the average table is worth $60–$150, and repeat customers visit 2–4 times per month. At $2–$5 per new customer reached, one converted diner pays for hundreds of ad impressions over their lifetime.
+          </p>
+        </div>
+
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+        <Accordion type="single" collapsible className="mb-16">
+          {faqs.map((faq, i) => (
+            <AccordionItem key={i} value={`faq-${i}`}>
+              <AccordionTrigger className="text-left text-foreground font-medium">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <OurServices />
+
+        <div className="mt-16 mb-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Cities We Serve</h2>
+          <p className="text-muted-foreground mb-6">We help restaurants and cafes across Metro Vancouver and the Fraser Valley. See our <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link>.</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { city: 'Vancouver', href: '/vancouver' },
+              { city: 'Surrey', href: '/surrey' },
+              { city: 'Burnaby', href: '/burnaby' },
+              { city: 'Richmond', href: '/richmond' },
+              { city: 'Langley', href: '/langley' },
+              { city: 'Coquitlam', href: '/coquitlam' },
+              { city: 'Abbotsford', href: '/abbotsford' },
+            ].map(({ city, href }) => (
+              <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
+                <span className="font-medium text-foreground">{city}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Fill More Tables?</h2>
+          <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and we'll show you how to drive more reservations and walk-ins every week.</p>
+          <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
+            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
+          </Button>
+        </section>
+      </div>
+    </main>
+    <Footer />
+  </>
+);
+
+export default RestaurantMarketing;

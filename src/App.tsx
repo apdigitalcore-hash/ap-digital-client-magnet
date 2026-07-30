@@ -28,6 +28,9 @@ const RealEstateMarketing = lazy(() => import("./pages/niches/RealEstateMarketin
 const TradesMarketing = lazy(() => import("./pages/niches/TradesMarketing"));
 const CoachingMarketing = lazy(() => import("./pages/niches/CoachingMarketing"));
 const DentalMarketing = lazy(() => import("./pages/niches/DentalMarketing"));
+const HVACMarketing = lazy(() => import("./pages/niches/HVACMarketing"));
+const FitnessMarketing = lazy(() => import("./pages/niches/FitnessMarketing"));
+const RestaurantMarketing = lazy(() => import("./pages/niches/RestaurantMarketing"));
 const About = lazy(() => import("./pages/About"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
@@ -77,6 +80,9 @@ const App = () => (
               <Route path="/trades-marketing" element={<TradesMarketing />} />
               <Route path="/coaching-marketing" element={<CoachingMarketing />} />
               <Route path="/dental-marketing" element={<DentalMarketing />} />
+              <Route path="/hvac-marketing" element={<HVACMarketing />} />
+              <Route path="/fitness-marketing" element={<FitnessMarketing />} />
+              <Route path="/restaurant-marketing" element={<RestaurantMarketing />} />
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
