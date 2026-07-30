@@ -176,37 +176,14 @@ const CaseStudyGrid = () => (
     <main id="main-content">
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-near-black">
+      <section className="pt-32 pb-20 bg-background">
         <div className="container-custom max-w-5xl">
-          <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
-            Case Studies
-          </span>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-5 leading-tight max-w-3xl">
-            Real campaigns.<br />
-            <span className="text-gradient">Real numbers.</span>
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Our Work
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Every result below comes from a paid ads or social media campaign run by AP Digital for a real business in Metro Vancouver.
+          <p className="text-lg text-muted-foreground max-w-xl">
+            A few campaigns we've run for businesses across Metro Vancouver.
           </p>
-        </div>
-      </section>
-
-      {/* Stats bar */}
-      <section className="py-10 bg-charcoal border-t border-white/5">
-        <div className="container-custom max-w-5xl">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {[
-              { value: '2,400+', label: 'Leads delivered' },
-              { value: '8.2x', label: 'Avg. ROAS' },
-              { value: '14 days', label: 'To first leads' },
-              { value: '$0', label: 'Lock-in fees' },
-            ].map((s) => (
-              <div key={s.label} className="text-center py-3">
-                <p className="font-display text-2xl sm:text-3xl font-bold text-white mb-1">{s.value}</p>
-                <p className="text-xs sm:text-sm text-white/40 uppercase tracking-wider">{s.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
