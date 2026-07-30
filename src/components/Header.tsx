@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 const Header = () => {
+  const { pathname } = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
