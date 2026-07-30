@@ -10,6 +10,7 @@ import { lazy, Suspense } from "react";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import AIChat from "./components/AIChat";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 // Lazy load all other pages — loaded on demand
@@ -62,6 +63,7 @@ const App = () => (
           >
             Skip to main content
           </a>
+          <ScrollToTop />
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<HomePage />} />
