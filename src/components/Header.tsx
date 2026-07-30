@@ -47,6 +47,7 @@ const Header = () => {
     { href: '/real-estate-marketing', label: 'Real Estate', external: false },
     { href: '/trades-marketing', label: 'Trades Marketing', external: false },
     { href: '/coaching-marketing', label: 'Coaching & Consulting', external: false },
+    { href: '/dental-marketing', label: 'Dental & Clinics', external: false },
     { href: '/how-to-choose-a-marketing-agency-vancouver', label: 'Agency Hiring Guide', external: false },
   ];
 
