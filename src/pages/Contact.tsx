@@ -77,9 +77,6 @@ const Contact = () => {
         <meta name="twitter:description" content="Ready to get more leads? Book a free strategy call with AP Digital. Serving salons, trades, real estate & coaches across Vancouver, BC. No contracts." />
         <meta name="twitter:image" content="https://ap-digital.ca/og-image.png" />
         <meta name="robots" content="index, follow" />
-        {structuredData && (
-          
-        )}
       </Helmet>
       <JsonLd data={structuredData} />
       <Header />

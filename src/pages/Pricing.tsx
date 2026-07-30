@@ -11,8 +11,8 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DarkCTA from '@/components/DarkCTA';
-import {
 import JsonLd from '@/components/JsonLd';
+import {
   organizationSchema,
   founderSchema,
   getBreadcrumbSchema,
