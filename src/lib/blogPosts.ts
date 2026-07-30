@@ -13,124 +13,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'how-to-get-more-salon-clients',
-    canonicalUrl: 'https://ap-digital.ca/blog/salon-marketing-vancouver-bc',
-    title: 'How to Get More Salon Clients in 2026 Using Social Media and Paid Ads',
-    metaTitle: 'How to Get More Salon Clients in 2026 | AP Digital',
-    metaDescription: 'Struggling to fill your appointment book? Here are proven strategies to get more salon clients using social media, paid ads & referrals in Vancouver, BC.',
-    excerpt: 'Learn how salons across Canada are using social media and paid ads to get consistent new bookings every week.',
-    date: '2026-03-10',
-    readTime: '5 min read',
-    category: 'Salon Marketing',
-    content: `If you own a salon in Canada and you're wondering how to get more clients through the door in 2026, you're not alone. The beauty industry is more competitive than ever, and relying solely on word-of-mouth or walk-ins just doesn't cut it anymore. The good news? Social media and paid ads are proven, scalable ways to fill your chair — and we're going to break down exactly how.
-
-## Why Instagram Works So Well for Salons
-
-Instagram is the number one platform for salons in 2026, and it's not even close. Here's why: your work is inherently visual. Every balayage, every fresh set of extensions, every bold colour transformation is content waiting to happen.
-
-When potential clients scroll through their feed, they want to see results. They want to picture themselves in that chair. Instagram gives you the perfect canvas to showcase before-and-after transformations, behind-the-scenes clips of your process, and client testimonials in video format.
-
-Short-form video content — especially Instagram Reels — is the single most effective organic tool for salons right now. The algorithm favours Reels heavily, meaning even accounts with small followings can reach thousands of local viewers. A well-shot 15-second transformation video can generate more inquiries than a month of static posts.
-
-The key is consistency. Posting three to five Reels per week, using local hashtags, tagging your location, and engaging with comments will steadily build your visibility in your area. Think of it as a digital storefront — the more active and polished it looks, the more people walk in.
-
-## Facebook Ads vs. Organic Content: What Actually Works?
-
-Here's the honest truth: you need both, but they serve different purposes.
-
-Organic content on Instagram and Facebook builds trust, authority, and brand recognition over time. It's your long game. When someone hears about your salon and looks you up online, your feed is the first impression. A strong, consistent feed tells them you're professional, talented, and in demand.
-
-But organic content alone won't fill your schedule fast enough — especially if you're a newer salon or expanding to a new location. That's where Facebook and Instagram ads come in.
-
-Paid ads let you target specific demographics in your area: women aged 25 to 45 within a 15-kilometre radius of your salon, for example. You can run promotions like "First visit 20% off" or "Free consultation for new clients" and drive them directly to a booking page or your DMs.
-
-The beauty of paid ads is the speed and precision. While organic content might take weeks or months to gain traction, a well-structured ad campaign can start generating inquiries within 48 hours. We've seen salons go from struggling to fill mid-week appointments to being fully booked within 30 days of launching targeted campaigns.
-
-The winning formula? Use organic content to build your brand and showcase your work, and use paid ads to accelerate growth and target specific offers to the right audience.
-
-## What Results Should You Expect?
-
-Let's set realistic expectations. Every salon is different, but here's what we typically see with clients at AP DIGITAL:
-
-**Month 1:** Ad campaigns are launched, content strategy is implemented, and you start seeing an increase in profile visits, DMs, and booking inquiries. Most salons see 15 to 30 new inquiries in the first month.
-
-**Month 2:** As the algorithm recognizes your consistency and your ads optimize based on data, results compound. Expect 25 to 50 inquiries per month, with a strong percentage converting to bookings.
-
-**Month 3 and beyond:** By now, your organic content is gaining momentum alongside your paid campaigns. Many of our salon clients report being fully booked and even building waitlists by the third month.
-
-The important thing to understand is that this isn't magic — it's a system. When you combine high-quality content with strategic paid advertising, you create a predictable pipeline of new clients. No more feast-or-famine months. No more hoping the phone rings.
-
-## Stop Guessing, Start Growing
-
-If you're tired of inconsistent bookings and want a proven system to bring in new salon clients every single week, it's time to talk strategy.
-
-At AP DIGITAL, we specialize in [salon marketing](/salon-marketing) across Canada — helping salons build their online presence and generate real, measurable leads through [social media](/services/social-media) and [paid ads](/services/paid-ads). We handle the content, the ads, and the strategy — so you can focus on what you do best.
-
-**Book your free strategy call today** and let's build a plan to fill your chair consistently in 2026 and beyond.`,
-  },
-  {
-    slug: 'how-to-market-a-trades-business-online',
-    canonicalUrl: 'https://ap-digital.ca/blog/trades-marketing-vancouver-bc',
-    title: 'How to Market Your Trades Business Online and Get More Jobs',
-    metaTitle: 'How to Market a Trades Business Online in Canada',
-    metaDescription: 'A practical guide to online marketing for tradespeople in Canada. Learn how plumbers, electricians & HVAC techs get leads with Google Ads, Meta Ads & SEO.',
-    excerpt: 'Discover why most trades businesses struggle with marketing and how to fix it with Google Ads, social media, and a strong review strategy.',
-    date: '2026-03-12',
-    readTime: '6 min read',
-    category: 'Trades Marketing',
-    content: `If you're a plumber, electrician, roofer, HVAC tech, or general contractor, chances are you got into your trade because you're great with your hands — not because you love marketing. And that's completely fair. But here's the reality: in 2026, the trades businesses that are winning aren't just the most skilled. They're the ones that show up online when someone needs help.
-
-Let's break down exactly how to market your trades business online, get more leads, and fill your schedule with quality jobs — without wasting money on strategies that don't work.
-
-## Why Most Trades Businesses Struggle with Marketing
-
-Most tradespeople rely on word-of-mouth, lawn signs, and maybe a listing on a directory site. While referrals are great, they're unpredictable. You can't control when they come in, and you definitely can't scale your business on hope alone.
-
-The biggest issue? Most trades businesses don't have a system for generating leads consistently. They go through busy seasons where they're turning work away, followed by slow stretches where the phone barely rings. Sound familiar?
-
-The other common problem is trusting the wrong marketing company. Too many agencies sell generic packages that aren't built for the trades industry. They'll post pretty graphics on Instagram that get likes but zero calls. What you actually need is a strategy designed to drive inquiries from homeowners in your service area who need your help right now.
-
-## Google Ads vs. Facebook Ads: Which One Works Better for Trades?
-
-The short answer? Both — but they serve very different purposes.
-
-**Google Ads** are the closest thing to a guaranteed lead machine for trades businesses. When someone searches "emergency plumber near me" or "roof repair in Calgary," they need help now. Google Ads put you at the top of those search results, right when intent is highest. This is the fastest way to generate calls from people who are actively looking for your service.
-
-Google Local Service Ads (LSAs) are especially powerful. They show your business at the very top of Google with a "Google Guaranteed" badge, your reviews, and a click-to-call button. For trades, this format converts incredibly well because it builds instant trust.
-
-**Facebook and Instagram Ads** work differently. People aren't searching for a plumber while scrolling Facebook — but that doesn't mean these platforms aren't valuable. Facebook Ads are excellent for building awareness, promoting seasonal offers (like furnace tune-ups before winter or AC servicing in spring), and staying top of mind in your community.
-
-The winning approach is to run Google Ads for immediate, high-intent leads while using Facebook Ads to build your brand and capture demand before the competition does.
-
-## The Power of Before-and-After Content on Social Media
-
-Here's a secret that most trades businesses overlook: your work is incredibly visual, and people love seeing transformations.
-
-A before-and-after photo of a bathroom renovation, a deck build, a driveway repair, or a fresh electrical panel installation is content gold. It shows your craftsmanship, builds trust, and makes potential customers imagine what you could do for them.
-
-Short-form video works even better. A 15-second time-lapse of a job from start to finish can rack up thousands of views on Instagram Reels or TikTok — and those views translate into local awareness and inbound inquiries.
-
-You don't need a professional videographer. Just pull out your phone, hit record, and show the work. Authenticity beats polish every single time in the trades space.
-
-## Why Google Reviews Are Your Most Valuable Marketing Asset
-
-If you take one thing away from this article, let it be this: your Google reviews matter more than almost anything else in your marketing.
-
-When a homeowner searches for a service in their area, they look at three things: proximity, reviews, and responsiveness. You can't always control proximity, but you can absolutely control your reviews.
-
-Make it a habit to ask every satisfied customer to leave a Google review. Send them a direct link via text right after the job is done. Most happy customers are willing — they just need to be asked.
-
-Aim for a steady stream of five-star reviews with detailed comments. A profile with 50 or more quality reviews will outperform competitors in local search results and build instant credibility with potential customers. It's free marketing that compounds over time.
-
-## Stop Leaving Money on the Table
-
-If your trades business doesn't have a consistent online marketing strategy, you're leaving jobs — and revenue — on the table every single day. The good news is that it doesn't have to be complicated. With the right combination of Google Ads, social media content, and a strong review strategy, you can build a predictable pipeline of leads month after month.
-
-At AP DIGITAL, we specialize in helping trades businesses across Canada get more jobs through proven digital marketing strategies. We handle the [paid ads](/services/paid-ads), the [content creation](/services/content-creation), and the [SEO](/services/seo) — so you can focus on doing what you do best. Visit our dedicated [trades marketing page for BC](/trades-marketing) to see exactly how we work.
-
-**Book your free strategy call today** and let's build a marketing system that keeps your phone ringing in 2026 and beyond.`,
-  },
-  {
     slug: 'real-estate-agent-social-media-tips',
     title: '7 Social Media Tips Every Real Estate Agent in Canada Needs in 2026',
     metaTitle: 'Social Media Tips for Real Estate Agents Canada | AP Digital',
@@ -324,142 +206,6 @@ If you can invest in both, that's the winning formula. Use Google Ads to capture
 At AP DIGITAL, we help small businesses across Canada build profitable [paid advertising](/services/paid-ads) strategies on both Google and Facebook. We don't believe in one-size-fits-all — we analyze your industry, your competition, and your goals to recommend the right platform mix for your budget.
 
 **Book your free strategy call today** and let's figure out exactly where your ad dollars will deliver the best return in 2026.`,
-  },
-  {
-    slug: 'social-media-marketing-cost-canada',
-    canonicalUrl: 'https://ap-digital.ca/blog/how-much-does-social-media-marketing-cost-canada',
-    title: 'How Much Does Social Media Marketing Cost in Canada? (2025 Honest Guide)',
-    metaTitle: 'Social Media Marketing Cost Canada 2026 | AP Digital',
-    metaDescription: "Full breakdown of social media marketing costs for Canadian businesses — from DIY to full-service agency. Know what you're paying for before you spend a dollar.",
-    excerpt: "An honest breakdown of social media marketing pricing for Canadian small businesses in 2025 — freelancers, in-house hires, and agencies compared.",
-    date: '2025-03-17',
-    readTime: '6 min read',
-    category: 'Marketing Strategy',
-    content: `If you've Googled "how much does social media marketing cost in Canada," you've probably found vague answers like "it depends." So let's be real. In this guide, we break down exactly what you should expect to pay in 2025 — and what actually gets results for small businesses.
-
-## The 3 Ways Canadian Businesses Pay for Social Media Marketing
-
-### 1. Hiring a Freelancer ($500–$2,000/month)
-
-Freelancers are the most affordable option. For $500–$2,000/month you get basic content creation and posting. The downside: results are inconsistent and you have to manage them closely.
-
-### 2. Hiring an In-House Employee ($4,000–$6,000/month)
-
-A full-time social media manager in Canada costs $48,000–$72,000/year in salary alone — before benefits and software. For most small businesses, this is too expensive.
-
-### 3. Working with a Digital Marketing Agency ($1,000–$5,000/month)
-
-An agency gives you a full team — strategists, content creators, and ad managers — for less than the cost of one employee. At AP DIGITAL, our packages are designed specifically for small businesses in Canada.
-
-## What's Included in Social Media Marketing?
-
-Good social media marketing isn't just posting photos. It includes content strategy, graphic design, video editing, caption writing, community management, paid advertising on Facebook and Instagram, and monthly performance reports.
-
-## How Much Should You Budget?
-
-For a local Canadian business — salon, trades, real estate, or coaching — we recommend:
-
-- Organic content + management: $1,000–$1,500/month
-- Paid ad spend: $500–$1,000/month
-- Total starting budget: $1,500–$2,500/month
-
-This is enough to generate consistent leads without breaking the bank.
-
-## What's the ROI?
-
-The real question isn't how much it costs — it's how much it brings back. A well-run Facebook and Instagram campaign for a salon can generate 20–40 new bookings per month. For a trades business, a single lead can be worth $500–$5,000 in job revenue. When marketing is done right, it pays for itself many times over.
-
-## Ready to Get Predictable Leads?
-
-At AP DIGITAL, we specialize in [social media marketing](/services/social-media) for [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades businesses](/trades-marketing), and [coaches](/coaching-marketing) across Canada. Book a free strategy call and we'll show you exactly what your investment looks like.`,
-  },
-  {
-    slug: 'facebook-ads-vs-google-ads',
-    canonicalUrl: 'https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada',
-    title: 'Facebook Ads vs Google Ads: Which One Is Right for Your Business?',
-    metaTitle: 'Facebook Ads vs Google Ads: Which Is Better for You?',
-    metaDescription: "Facebook Ads vs Google Ads — what's the difference and which should you run? AP Digital breaks down both platforms for Canadian small businesses in 2026.",
-    excerpt: "Facebook Ads or Google Ads? We compare both platforms so Canadian small businesses can choose the right one for their goals and budget.",
-    date: '2025-03-17',
-    readTime: '5 min read',
-    category: 'Paid Advertising',
-    content: `Every business owner asking about paid advertising faces the same question: Facebook Ads or Google Ads? The truth is, they're not the same tool — and using the wrong one means wasted budget and disappointing results. Here's what you need to know before spending a dollar on ads.
-
-## How Facebook Ads Work
-
-Facebook Ads (which includes Instagram) is a push marketing platform. You're showing your ad to people who fit your target audience — even if they weren't actively searching for you. Facebook Ads are best for building brand awareness, generating leads for service businesses, retargeting website visitors, and reaching specific local audiences.
-
-## How Google Ads Work
-
-Google Ads is a pull marketing platform. Your ad appears when someone actively searches for what you offer. Google Ads are best for high-intent buyers ready to purchase, trades businesses, service businesses where people search "near me," and people with immediate needs.
-
-## The Key Differences
-
-**Facebook Ads:**
-
-- Intent: Interruption-based (you reach them)
-- Best for: Awareness and lead generation
-- Cost: Lower cost per click
-- Targeting: Demographics and interests
-- Format: Image and video heavy
-
-**Google Ads:**
-
-- Intent: Search-based (they find you)
-- Best for: High-intent searches
-- Cost: Higher cost per click
-- Targeting: Keywords and location
-- Format: Text and display
-
-## Which One Should You Choose?
-
-**Choose Facebook Ads** if you run a salon, coaching business, or real estate agency, you want to reach a specific local audience, or you want leads at a lower cost per click.
-
-**Choose Google Ads** if you're in trades (plumbing, HVAC, roofing), your customers search "near me" or "emergency," or you want immediate high-intent leads.
-
-## The Best Strategy? Use Both.
-
-Facebook Ads build awareness and generate leads at scale. Google Ads capture people who are actively searching and ready to buy. Together, they cover every stage of the customer journey.
-
-## Not Sure Where to Start?
-
-At AP DIGITAL, we run [Facebook, Instagram, and Google Ads](/services/paid-ads) for businesses across Canada. We'll tell you exactly which platform makes sense for your goals and budget.`,
-  },
-  {
-    slug: 'real-estate-social-media-tips',
-    canonicalUrl: 'https://ap-digital.ca/blog/real-estate-agent-social-media-tips',
-    title: '5 Social Media Tips Every Canadian Realtor Needs in 2025',
-    metaTitle: 'Real Estate Social Media Tips That Actually Work | AP Digital',
-    metaDescription: "Stop posting just for likes. Here are real estate social media strategies that generate actual buyer & seller leads for Canadian realtors in 2026.",
-    excerpt: "5 proven social media strategies helping Canadian realtors generate more buyer and seller leads in 2025.",
-    date: '2025-03-17',
-    readTime: '5 min read',
-    category: 'Real Estate Marketing',
-    content: `[Real estate](/real-estate-marketing) is one of the most competitive industries on social media. With thousands of realtors across [Metro Vancouver](/vancouver), the GTA, and Calgary fighting for the same audience — how do you stand out? The answer isn't posting more. It's posting smarter. Here are 5 strategies consistently generating leads for Canadian realtors right now.
-
-## 1. Lead With Local Knowledge, Not Just Listings
-
-Buyers and sellers don't follow realtors for listings — they follow them for insights. Post content like "5 things to know before buying in Maple Ridge," "What $800K gets you in Burnaby vs Surrey right now," or "Why I tell all my first-time buyers to look here first." This positions you as a trusted expert, not just a salesperson.
-
-## 2. Use Short-Form Video (Reels and TikTok)
-
-Short-form video is the highest-reach content on every platform right now. A 30-second neighbourhood tour, market update, or day-in-the-life video will outperform a listing post every single time. You don't need professional equipment — your iPhone and good lighting is enough to get started.
-
-## 3. Run Facebook and Instagram Lead Ads
-
-Organic content builds trust. Paid ads generate leads now. Facebook and Instagram let you target first-time buyers in a specific city, homeowners aged 35–65 who are potential sellers, and investors looking for rental properties. A $500–$1,000/month ad budget, managed correctly, can generate 10–20 qualified leads per month.
-
-## 4. Post Consistently, Not Constantly
-
-Posting every day leads to burnout and low-quality content. You don't need to post daily — but you do need to post consistently. Three to four posts per week mixing educational content, listings, and personal story will outperform seven posts a week of just listings every time.
-
-## 5. Have a Follow-Up System
-
-Social media generates leads — but you need a system to convert them. Use a simple CRM or even a Google Sheet to track leads, set follow-up reminders, and nurture prospects over 3–6 months. Most [real estate](/real-estate-marketing) deals happen 30–90 days after first contact. The fortune is in the follow-up.
-
-## Want a Full Real Estate Marketing System?
-
-At AP DIGITAL, we build complete [real estate marketing](/real-estate-marketing) systems for Canadian realtors — from [social media](/services/social-media) content to [paid ads](/services/paid-ads) to lead follow-up. Book a free strategy call today.`,
   },
   {
     slug: 'email-marketing-vs-social-media',
@@ -1453,64 +1199,6 @@ AP DIGITAL builds complete digital marketing systems for electricians and trades
 
 const vancouverPosts: BlogPost[] = [
   {
-    slug: 'best-digital-marketing-agency-vancouver',
-    canonicalUrl: 'https://ap-digital.ca/blog/digital-marketing-agency-vancouver-bc',
-    title: 'How to Choose the Best Digital Marketing Agency in Vancouver in 2026',
-    metaTitle: 'Best Digital Marketing Agency Vancouver 2026 | AP Digital',
-    metaDescription: 'Looking for the best digital marketing agency in Vancouver? Learn what to look for, red flags to avoid, and how to pick an agency that delivers real ROI.',
-    excerpt: 'A no-BS guide to finding a Vancouver digital marketing agency that actually delivers results — not just pretty reports.',
-    date: '2026-04-01',
-    readTime: '6 min read',
-    category: 'Marketing Strategy',
-    content: `[Vancouver](/vancouver) is home to hundreds of digital marketing agencies, freelancers, and consultants — all promising to grow your business. But how do you separate the ones that deliver real results from the ones that just burn through your budget? Here's what every Vancouver business owner needs to know before hiring an agency in 2026.
-
-## Why Vancouver Businesses Need a Local Marketing Partner
-
-Vancouver's market is unique. The cost of living is high, competition is fierce across almost every industry, and consumer behaviour in the Lower Mainland is different from Toronto, Calgary, or Montreal. A generic, one-size-fits-all marketing approach won't cut it here.
-
-A local Vancouver agency understands the nuances: seasonal trends in the housing market, the competitive landscape for restaurants on Main Street versus Commercial Drive, how to target homeowners in Kitsilano differently from those in [Surrey](/surrey). That local knowledge translates directly into better-performing campaigns and higher ROI.
-
-## Red Flags to Watch For
-
-Before you sign a contract with any Vancouver marketing agency, watch out for these common red flags:
-
-- **Long-term contracts with no performance guarantees.** If an agency locks you into a 12-month contract but won't commit to specific KPIs, walk away. Good agencies earn your business month after month.
-- **Vanity metrics instead of real results.** Impressions, likes, and followers are nice — but they don't pay the bills. Ask any prospective agency: "How many leads or sales can I expect?" If they can't give you a straight answer, they're not the right fit.
-- **No transparency on ad spend.** Some agencies bundle their management fee with your ad budget and won't tell you how much is actually going to ads. You should always know exactly where your money is going.
-- **Generic strategies.** If the agency pitches you the same strategy they'd pitch a dentist, a restaurant, and a law firm, they're not thinking about your business specifically.
-
-## What to Look for in a Vancouver Digital Marketing Agency
-
-The best agencies share a few key traits:
-
-**Industry-specific experience.** An agency that's worked with businesses like yours — whether that's salons, trades, real estate, or coaching — will get results faster because they already know what works.
-
-**Transparent reporting.** You should receive clear, easy-to-understand reports showing exactly how many leads you're getting, what they cost, and what's converting. No jargon, no fluff.
-
-**A focus on ROI.** The right agency talks about revenue, leads, and booked jobs — not vanity metrics. Every dollar you spend should be traceable to a result.
-
-**Local presence and understanding.** An agency based in Vancouver that understands the Lower Mainland market will outperform a remote agency running generic campaigns every time.
-
-## How Much Should You Budget?
-
-For most small to mid-sized Vancouver businesses, a reasonable digital marketing budget ranges from $1,500 to $5,000 per month, including both agency fees and ad spend. This typically covers:
-
-- Google Ads or Meta Ads management
-- Content creation for social media
-- Monthly reporting and strategy calls
-- Landing page optimization
-
-Businesses in highly competitive Vancouver industries — real estate, legal, home services — may need to invest more to stand out. The key is to view marketing as an investment with measurable returns, not an expense.
-
-## Why Vancouver Businesses Choose AP DIGITAL
-
-At AP DIGITAL, we specialize in helping Vancouver small businesses and service providers generate consistent leads through proven digital marketing strategies. Our services include [Google & Meta Ads](/services/paid-ads), [local SEO](/services/seo), [web design](/services/web-design), [content creation](/services/content-creation), and [lead generation systems](/services/lead-generation). We don't do long-term contracts, we don't hide behind vanity metrics, and we don't run cookie-cutter campaigns.
-
-Every strategy we build is tailored to your industry, your market, and your goals. Whether you're a [salon in Yaletown](/salon-marketing), a [contractor in East Vancouver](/trades-marketing), a [real estate agent](/real-estate-marketing) covering the Lower Mainland, or a [coach](/coaching-marketing) growing your practice, we build marketing systems that deliver real, measurable results.
-
-**Book your free strategy call** and let's talk about growing your Vancouver business in 2026.`,
-  },
-  {
     slug: 'vancouver-small-business-seo-guide',
     title: 'Vancouver Small Business SEO: The Complete Guide to Ranking on Google in 2026',
     metaTitle: 'Vancouver Small Business SEO Guide 2026 | AP Digital',
@@ -1587,101 +1275,6 @@ SEO is a long game. Expect to see initial improvements in three to six months, w
 At AP DIGITAL, we help Vancouver small businesses [rank higher on Google](/services/seo), get more reviews, and generate consistent organic leads. Our [local SEO strategies](/services/seo) are built specifically for the Vancouver market — not generic templates applied to every city.
 
 **Book your free SEO audit** and let's find out exactly where your Vancouver business stands — and how to get to page one.`,
-  },
-  {
-    slug: 'facebook-ads-vancouver-small-business',
-    canonicalUrl: 'https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada',
-    title: 'Facebook Ads for Vancouver Small Businesses: A Complete 2026 Guide',
-    metaTitle: 'Facebook Ads Vancouver Small Business Guide 2026 | AP Digital',
-    metaDescription: 'Learn how Vancouver small businesses use Facebook and Instagram ads to generate leads and grow. Targeting tips, budget advice, and real campaign strategies.',
-    excerpt: 'How Vancouver small businesses can use Facebook and Instagram ads to generate leads, build awareness, and grow — with real targeting strategies and budget breakdowns.',
-    date: '2026-04-08',
-    readTime: '7 min read',
-    category: 'Paid Ads',
-    content: `Facebook and Instagram ads remain two of the most cost-effective ways for [Vancouver](/vancouver) small businesses to generate leads and grow in 2026. But running ads without a strategy is like throwing money into the Georgia Strait. Here's how to do it right.
-
-## Why Facebook Ads Work for Vancouver Businesses
-
-Meta's advertising platform (Facebook + Instagram) gives Vancouver businesses access to incredibly precise targeting. You can reach:
-
-- Homeowners in specific Vancouver neighbourhoods (Kitsilano, Mount Pleasant, Dunbar, Kerrisdale)
-- People within a specific radius of your business
-- Users based on interests, behaviours, income level, and life events
-- Lookalike audiences based on your existing customers
-
-For local businesses, this precision is invaluable. Instead of broadcasting to everyone, you're putting your message in front of the exact people most likely to become customers.
-
-## Choosing the Right Campaign Objective
-
-The biggest mistake Vancouver business owners make with Facebook Ads is choosing the wrong campaign objective. Here's a quick guide:
-
-- **Lead Generation:** Best for service businesses (salons, trades, coaches, real estate agents) that need contact information from potential clients. Meta's native lead forms convert exceptionally well on mobile.
-- **Traffic:** Best for driving visitors to a specific landing page, blog post, or offer page on your website.
-- **Awareness:** Best for new businesses or those launching in a new Vancouver neighbourhood who need to build name recognition.
-- **Conversions:** Best for e-commerce businesses or those with a clear online action (booking, purchase, sign-up).
-
-For most Vancouver service businesses, Lead Generation campaigns deliver the best cost-per-lead.
-
-## Vancouver-Specific Targeting Strategies
-
-Here are targeting approaches that work particularly well in the Vancouver market:
-
-### Geographic Targeting
-- Target specific municipalities: Vancouver, [Burnaby](/burnaby), Richmond, North Vancouver, West Vancouver, New Westminster, [Coquitlam](/coquitlam), Port Moody
-- Use radius targeting around your business location (5–15 km works well for most local businesses)
-- Exclude areas you don't serve to avoid wasted spend
-
-### Demographic Targeting
-- **Home services:** Target homeowners aged 30–65 in specific postal code areas
-- **Salons and beauty:** Target women aged 22–50 interested in beauty, skincare, and self-care
-- **Real estate:** Target renters aged 25–40 (for buyers) or homeowners aged 45+ (for sellers)
-- **Coaching and consulting:** Target professionals aged 28–50 interested in personal development and entrepreneurship
-
-### Interest-Based Targeting
-Layer interests on top of demographics for more precise targeting. For example, a Vancouver personal trainer might target: women aged 25–45 + interested in fitness + living within 10 km of their gym.
-
-## Budget: How Much Should Vancouver Businesses Spend?
-
-A realistic monthly Facebook Ads budget for Vancouver small businesses:
-
-- **Testing phase (Month 1):** $500–$1,000 to test audiences, creatives, and offers
-- **Growth phase (Month 2–3):** $1,000–$2,500 as you scale winning campaigns
-- **Established (Month 4+):** $1,500–$5,000+ depending on your industry and lead volume goals
-
-Add agency management fees on top (typically $500–$1,500/month for a good Vancouver agency).
-
-The key is to view this as an investment with measurable returns. If you're spending $2,000/month on ads and generating 40 leads that convert into $20,000 in revenue, that's a 10x return.
-
-## Creative That Converts in Vancouver
-
-Your ad creative matters as much as your targeting. What works in Vancouver:
-
-- **Authentic, local imagery.** Show real Vancouver landmarks, neighbourhoods, and scenery. Stock photos of generic cityscapes don't resonate with locals.
-- **Video over static images.** Video ads consistently outperform static images. A 15–30 second video introducing your business, showing your work, or explaining your offer drives higher engagement.
-- **Social proof.** Include review counts, testimonials, or client results in your ad copy. "Rated 4.9 stars by 200+ Vancouver clients" builds instant trust.
-- **Clear, specific offers.** "Free consultation for Vancouver homeowners" beats "Contact us today" every time.
-
-## Tracking and Measuring Results
-
-Don't just launch ads and hope for the best. Set up proper tracking:
-
-- Install the Meta Pixel on your website to track conversions
-- Use UTM parameters to attribute leads to specific campaigns
-- Review your cost-per-lead weekly and adjust accordingly
-- Track lead quality, not just quantity — 10 qualified leads beat 50 tire-kickers
-
-## Common Mistakes Vancouver Businesses Make
-
-- **Targeting too broadly.** Vancouver metro has 2.6 million people — you don't need to reach all of them. Narrow your audience.
-- **Not testing creative.** Run at least 3–4 ad variations per campaign. Let the data tell you what works.
-- **Giving up too soon.** Facebook's algorithm needs 3–7 days and at least 50 conversions to optimize. Don't kill campaigns after 48 hours.
-- **Ignoring Instagram.** Instagram placements often deliver lower costs-per-lead than Facebook alone. Always run both.
-
-## Let AP DIGITAL Run Your Vancouver Facebook Ads
-
-At AP DIGITAL, we build and manage high-performing [Facebook and Instagram ad campaigns](/services/paid-ads) for Vancouver small businesses. From targeting strategy to creative production to lead follow-up systems, we handle everything — so you can focus on serving your customers. We serve [salons](/salon-marketing), [trades businesses](/trades-marketing), [real estate agents](/real-estate-marketing), and [coaches](/coaching-marketing) across Metro Vancouver.
-
-**Book your free strategy call** and let's build a Facebook Ads campaign that generates real leads for your Vancouver business.`,
   },
   {
     slug: 'vancouver-google-ads-guide-local-business',
@@ -2537,134 +2130,6 @@ If you're a [Vancouver salon](/salon-marketing) owner ready to fill your chair w
 
 **AP Digital** specializes in [paid ads](/services/paid-ads) and [social media](/services/social-media) for salons across [Vancouver](/vancouver), [Burnaby](/burnaby), [Surrey](/surrey), and the Lower Mainland.`,
   },
-  {
-    slug: 'google-ads-vs-meta-ads-local-business',
-    title: 'Google Ads vs Meta Ads for Local Businesses in BC: Which Is Better?',
-    metaTitle: 'Google Ads vs Meta Ads for Local Businesses in BC | AP Digital',
-    metaDescription: 'Google Ads vs Meta Ads comparison for BC local businesses. When to use each platform, budget splits, and which industries get the best ROI from each.',
-    excerpt: 'Should your BC business run Google Ads, Meta Ads, or both? Here\'s a data-driven breakdown by industry and budget.',
-    date: '2026-07-21',
-    readTime: '8 min read',
-    category: 'Paid Ads',
-    content: `Every BC business owner running [paid ads](/services/paid-ads) faces this question: should I spend my budget on Google Ads, Meta Ads (Facebook and Instagram), or both? The answer depends on your industry, your budget, and what stage of growth you're in.
-
-Here's the honest breakdown.
-
-## The Fundamental Difference
-
-**Google Ads captures existing demand.** Someone types "plumber near me Vancouver" — they need a plumber right now. Your ad appears at the top of the search results. They click, they call, they hire you. The intent is already there; Google just connects you to it.
-
-**Meta Ads creates new demand.** Someone is scrolling Instagram, sees your ad for a free home inspection, and thinks "actually, I should get that checked out." They weren't searching for you, but your ad planted a seed. Meta is about reaching people before they start searching.
-
-Both work. Neither is universally "better." The right choice depends on your business.
-
-## Google Ads: When to Use It
-
-### Best for High-Intent Services
-
-Google Ads dominates when people search for what you do at the moment they need it:
-
-- **[Trades](/trades-marketing)**: Plumbing, electrical, HVAC, roofing. When a pipe bursts, people Google "emergency plumber [city]." Google Ads puts you at the top. Cost per lead: $15–$40.
-- **[Real Estate](/real-estate-marketing)**: Buyers and sellers search Google when they're ready to move. "Homes for sale North Vancouver" or "best realtor Surrey BC." Cost per lead: $20–$50.
-- **Professional Services**: Lawyers, accountants, dentists. People search when they need you. Cost per lead: $25–$75.
-
-### Google Ads Strengths
-
-- Captures people ready to buy **right now**
-- Higher quality leads (they're actively searching)
-- Measurable ROI per keyword
-- Works immediately — leads within days
-
-### Google Ads Weaknesses
-
-- Competitive keywords are expensive ($5–$25+ per click in BC)
-- Limited creative options (mostly text ads)
-- No brand building — when you stop paying, leads stop
-- Requires ongoing optimization to maintain performance
-
-## Meta Ads: When to Use It
-
-### Best for Visual and Lifestyle Services
-
-Meta Ads excel when your service is visual, aspirational, or community-driven:
-
-- **[Salons](/salon-marketing)**: Before-and-after transformations stop the scroll. Instagram is where your ideal clients already spend their time. Cost per lead: $5–$15.
-- **[Coaching](/coaching-marketing)**: Personal brand content, free workshop promotions, and lead magnet campaigns. Meta builds the know-like-trust factor that coaching requires. Cost per lead: $8–$25.
-- **Fitness and Wellness**: Transformation stories, lifestyle content, and free trial offers. Instagram's visual format is perfect. Cost per lead: $5–$20.
-
-### Meta Ads Strengths
-
-- Lower cost per lead than Google (typically 30–50% cheaper)
-- Powerful audience targeting (interests, behaviours, lookalikes)
-- Visual creative builds brand while generating leads
-- Retargeting keeps you in front of warm prospects
-
-### Meta Ads Weaknesses
-
-- Lower intent — people aren't actively searching for you
-- Requires strong creative (photos, videos, copy)
-- Lead quality can be lower without proper qualification
-- Algorithm needs 50+ conversions to optimize (takes 2–3 weeks)
-
-## The Industry-by-Industry Breakdown
-
-### Trades (Plumbers, Electricians, HVAC, Roofers)
-
-**Primary**: Google Ads (70% of budget)
-**Secondary**: Meta Ads (30% of budget)
-
-Why: When someone's furnace dies in January, they Google it. Google captures that emergency demand. Meta runs in the background, building awareness so when they DO need you, your brand is familiar.
-
-### Salons and Beauty
-
-**Primary**: Meta Ads (70% of budget)
-**Secondary**: Google Ads (30% of budget)
-
-Why: Salon services are visual and aspirational. Instagram is the discovery platform. Google captures the smaller pool of people actively searching "salon near me."
-
-### Real Estate
-
-**Split**: 50% Google, 50% Meta
-
-Why: Google captures active buyers and sellers. Meta builds your personal brand, promotes listings, and generates seller leads through market update content. Both channels are essential.
-
-### Coaching
-
-**Primary**: Meta Ads (80% of budget)
-**Secondary**: Google Ads (20% of budget)
-
-Why: Coaching is a relationship business. Meta's content-driven approach builds trust over time. Google can capture the small volume of people searching "business coach Vancouver," but the real growth comes from Meta.
-
-## Budget Splits for BC Businesses
-
-### Under $1,500/month Total
-
-Pick one platform. If your business is search-driven (trades, professional services), go Google. If it's visual or relationship-driven (salons, coaching), go Meta.
-
-### $1,500–$3,000/month Total
-
-Run both platforms. Allocate based on the industry splits above. This gives you both demand capture (Google) and demand creation (Meta).
-
-### $3,000+/month Total
-
-Full-funnel strategy. Google captures high-intent searches. Meta runs cold prospecting AND retargeting. You're covering every stage of the buyer's journey.
-
-### Management Fees
-
-At AP Digital, our [paid ads management](/pricing) is $759/month regardless of which platform you're on. This covers strategy, campaign builds, creative testing, optimization, and weekly reporting.
-
-## The Real Answer: Test Both
-
-The truth is, no one can tell you with certainty which platform will work better for YOUR business until you test it. Market conditions, competition, and your specific offer all affect performance.
-
-That's why we recommend a 90-day test period. Run both platforms, measure results, and then shift budget toward whatever's performing best. Our [90-day results guarantee](/pricing) ensures you're not taking any risk.
-
-## Ready to Find Out What Works for Your Business?
-
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll analyze your industry, market, and goals to recommend the right platform mix. We've run [paid ads](/services/paid-ads) for 200+ BC businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford) — we know what works in your market.
-
-**AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. Month-to-month. No contracts. Results guaranteed.`,
-  },
 ];
 
 const deepPosts: BlogPost[] = [
@@ -2753,93 +2218,6 @@ Every business is different. The best way to get an accurate Google Ads cost est
 **AP Digital** — [Google Ads management](/services/paid-ads) for Vancouver businesses. [$759/month](/pricing), month-to-month, [90-day results guarantee](/pricing).`,
   },
   {
-    slug: 'meta-ads-vs-boosted-posts',
-    title: 'Meta Ads vs Boosted Posts: Why Boosting Is Wasting Your Money',
-    metaTitle: 'Meta Ads vs Boosted Posts | Stop Wasting Money | AP Digital',
-    metaDescription: 'Why boosted posts waste your ad budget and how proper Meta Ads campaigns generate 3-5x more leads. A guide for BC small business owners.',
-    excerpt: 'Boosting posts feels easy but delivers poor results. Here\'s why proper Meta Ads campaigns outperform boosted posts every time.',
-    date: '2026-07-21',
-    readTime: '6 min read',
-    category: 'Paid Ads',
-    content: `If you're a small business owner in BC and you've been "boosting" your Facebook and Instagram posts, you're almost certainly wasting money. We see this with nearly every new client who comes to AP Digital — they've been boosting posts for months, spending $200–$500, and have almost nothing to show for it.
-
-Here's why, and what to do instead.
-
-## What's the Difference?
-
-### Boosted Posts
-
-When you hit "Boost Post" on Facebook or Instagram, you're paying to show an existing post to more people. It's simple — pick a budget, pick an audience, done. But that simplicity is exactly the problem.
-
-### [Meta Ads](/services/paid-ads) (Ads Manager Campaigns)
-
-Proper Meta Ads are built in Ads Manager with full control over objectives, placements, audiences, creative testing, and conversion tracking. They're designed to drive a specific action — leads, calls, bookings — not just "engagement."
-
-## Why Boosted Posts Fail
-
-### 1. Wrong Objective
-
-Boosted posts optimize for "engagement" — likes, comments, shares. Not leads. Not calls. Not bookings. Facebook's algorithm shows your boosted post to people most likely to hit the like button, not people most likely to become paying customers.
-
-### 2. Limited Targeting
-
-Boost gives you basic targeting: location, age, gender, and a few interests. Ads Manager gives you lookalike audiences, custom audiences (your email list, website visitors, Instagram engagers), detailed exclusions, and layered targeting that dramatically improves lead quality.
-
-### 3. No Creative Testing
-
-With a boost, you're running one post to one audience. With Ads Manager, you can test 3–5 different ad creatives, headlines, and CTAs simultaneously. The algorithm automatically shifts budget to the winning version. This A/B testing is what separates profitable campaigns from money pits.
-
-### 4. No Conversion Tracking
-
-Boosted posts can't track whether someone who saw your ad actually booked an appointment, called your business, or submitted a form. Without conversion tracking, you have no idea what's working and what isn't.
-
-### 5. No Retargeting
-
-Boosted posts are one-shot — show the post, hope for the best. Proper Meta Ads include retargeting campaigns that follow up with people who visited your website or engaged with your content. Only 2–3% convert on the first touch; retargeting captures the other 97%.
-
-## The Real Numbers
-
-Here's what we typically see when a client switches from boosted posts to proper Meta Ads campaigns:
-
-- **Cost per lead drops 60–70%** — from $25–$40 (boosted) to $8–$15 (Ads Manager)
-- **Lead volume increases 3–5x** — same budget, dramatically more leads
-- **Lead quality improves** — because we're optimizing for conversions, not likes
-- **ROI becomes measurable** — every dollar tracked from click to customer
-
-## What a Proper Meta Ads Campaign Looks Like
-
-At [AP Digital](/about), here's what we build for every client:
-
-### Campaign Structure
-- **Cold campaign**: Prospecting ads reaching new potential customers in your area
-- **Warm campaign**: Retargeting people who've visited your website or engaged with your social media
-- **Lookalike campaign**: Reaching people who look like your best existing customers
-
-### Creative Testing
-- 3–5 ad variations per campaign
-- Video, carousel, and single-image formats
-- Different headlines, CTAs, and offers
-- Automatic budget optimization toward winners
-
-### Tracking & Reporting
-- Meta Pixel installed on your website
-- Conversion events tracked (form submissions, calls, bookings)
-- Weekly performance reports showing cost per lead and ROI
-- Monthly strategy reviews
-
-## What It Costs
-
-Our [paid ads management](/pricing) is $759/month. This covers the full campaign build, creative testing, optimization, and reporting. Ad spend is separate — you pay Meta directly and we recommend starting at $600–$1,000/month.
-
-Compare that to spending $300/month boosting posts and getting maybe 2 leads. The same $300 in a properly structured campaign generates 20–30 leads.
-
-## Ready to Stop Boosting and Start Growing?
-
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll audit your current Meta activity, show you exactly where you're wasting money, and build a proper campaign structure. No contracts, [90-day guarantee](/pricing).
-
-We serve [salons](/salon-marketing), [trades](/trades-marketing), [realtors](/real-estate-marketing), and [coaches](/coaching-marketing) across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), and the Lower Mainland.`,
-  },
-  {
     slug: 'social-media-burnaby-bc',
     title: 'Social Media Marketing for Burnaby Businesses: A Local Guide',
     metaTitle: 'Social Media Marketing Burnaby BC | AP Digital',
@@ -2899,81 +2277,6 @@ Organic social media builds your foundation, but paid ads on Meta and Google acc
 Managing social media consistently takes time. If you'd rather focus on running your business, [AP Digital handles it](/services/social-media) — content calendars, posting, community management, and growth strategy starting at [$849/month](/pricing).
 
 [Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll build a custom social media plan for your Burnaby business. Month-to-month, no contracts, [90-day guarantee](/pricing).`,
-  },
-  {
-    slug: 'how-to-choose-marketing-agency-bc',
-    title: 'How to Choose a Marketing Agency in BC: 7 Red Flags to Watch For',
-    metaTitle: 'How to Choose a Marketing Agency in BC | 7 Red Flags | AP Digital',
-    metaDescription: 'Hiring a marketing agency in BC? Watch for these 7 red flags. How to evaluate agencies, what questions to ask, and what good marketing actually costs.',
-    excerpt: 'Not all BC marketing agencies are equal. Here are 7 red flags that separate the real ones from the ones that waste your money.',
-    date: '2026-07-21',
-    readTime: '7 min read',
-    category: 'Digital Marketing',
-    content: `Choosing a marketing agency in BC is one of the most important decisions you'll make for your business. The right agency fills your calendar with qualified clients. The wrong one burns through your budget and gives you a monthly PDF of vanity metrics you can't deposit at the bank.
-
-Here are 7 red flags to watch for — and what to look for instead.
-
-## Red Flag #1: Long-Term Contracts
-
-If an agency requires a 6-month or 12-month contract, ask yourself: why do they need to lock you in? Good agencies keep clients because the campaigns are profitable, not because of a contract clause.
-
-**What to look for**: Month-to-month agreements. An agency confident in its results doesn't need a contract to keep you.
-
-At [AP Digital](/about), every engagement is month-to-month. You stay because it works, not because you're obligated.
-
-## Red Flag #2: They Can't Show You Results
-
-If an agency talks about "brand awareness" and "impressions" but can't show you actual leads generated, cost per lead, and return on ad spend — they're hiding behind vanity metrics.
-
-**What to look for**: Specific numbers. How many leads did they generate? What was the cost per lead? What was the client's ROI? If they can't answer these questions with real data, move on.
-
-## Red Flag #3: You Never Talk to the Person Running Your Campaign
-
-Many agencies have a sales team that closes you and then hands your account to a junior coordinator or overseas team. You end up playing telephone with someone who doesn't understand your business.
-
-**What to look for**: Direct access to the strategist. At AP Digital, founder Arjun Sharma personally manages every account — no handoffs, no middlemen.
-
-## Red Flag #4: They Promise #1 Rankings
-
-Anyone who guarantees you'll rank #1 on Google is either lying or using tactics that will get you penalized. Google's algorithm considers hundreds of factors, and no one can guarantee a specific ranking position.
-
-**What to look for**: Honest timelines and realistic expectations. [Paid ads](/services/paid-ads) can generate leads within 2 weeks. SEO takes 3–6 months. [Social media](/services/social-media) compounds over time. A good agency sets expectations and then exceeds them.
-
-## Red Flag #5: No Transparency on Ad Spend
-
-Some agencies bundle ad spend into their fee and mark it up 50–100%. You're paying $3,000/month but only $1,000 is actually going to ads.
-
-**What to look for**: Separation of ad spend and management fees. You should pay your ad spend directly to Google or Meta and see exactly where every dollar goes. AP Digital's [management fee is $759/month](/pricing) — your ad spend is separate and fully transparent.
-
-## Red Flag #6: They Try to Sell You Everything
-
-An agency that offers SEO, PPC, social media, web design, email marketing, branding, video production, and PR is probably mediocre at all of them. Generalists spread thin; specialists go deep.
-
-**What to look for**: A focused agency that's excellent at a few things rather than okay at everything. AP Digital specializes in two services — [paid ads](/services/paid-ads) and [social media](/services/social-media) — because that's where we deliver the strongest results for service businesses.
-
-## Red Flag #7: No Results Guarantee
-
-If an agency isn't willing to put skin in the game, that tells you something about their confidence level.
-
-**What to look for**: A performance guarantee. AP Digital offers a [90-day results guarantee](/pricing) — if we don't hit the lead targets we agree on, we work for free until we do.
-
-## Questions to Ask Before Hiring
-
-Before you sign with any agency in BC, ask these questions:
-
-- Who specifically will manage my account?
-- Can you share case studies from businesses in my industry?
-- What's your average cost per lead for businesses like mine?
-- Is there a long-term contract?
-- How is ad spend handled — bundled or separate?
-- What does your reporting look like and how often?
-- Do you offer a results guarantee?
-
-## Ready to Work With an Agency That Passes All 7 Tests?
-
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll audit your current marketing, show you exactly what's possible, and give you a transparent quote. No contracts, no surprises — just results.
-
-We serve [salons](/salon-marketing), [trades](/trades-marketing), [realtors](/real-estate-marketing), and [coaches](/coaching-marketing) across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).`,
   },
   {
     slug: 'tiktok-ads-small-business-bc',
@@ -3143,7 +2446,252 @@ If you're a Tri-Cities business owner ready to show up first on Google, [book a 
   },
 ];
 
-blogPosts.unshift(...extraPosts, ...vancouverPosts, ...seoPosts, ...focusPosts, ...deepPosts);
+const verticalPosts: BlogPost[] = [
+  {
+    slug: 'dental-marketing-vancouver-bc',
+    title: 'Dental Marketing in Vancouver BC: How to Get More Patients in 2026',
+    metaTitle: 'Dental Marketing Vancouver BC | Get More Patients | AP Digital',
+    metaDescription: 'How Vancouver dental clinics get 30–50 new patients per month with Google Ads, local SEO, and review management. Practical strategies for dentists in Metro Vancouver.',
+    excerpt: 'Vancouver dental clinics that dominate Google get the patients. Here\'s the exact marketing system filling chairs across Metro Vancouver.',
+    date: '2026-07-15',
+    readTime: '7 min read',
+    category: 'Dental Marketing',
+    content: `The [dental market in Vancouver](/dental-marketing) is one of the most competitive in Canada. With over 1,500 dentists in Metro Vancouver, patients have endless options — and they choose based on what they find online. The clinics growing fastest aren't the ones with the fanciest offices. They're the ones showing up first on Google when someone searches "dentist near me."
+
+## Why Google Dominates Dental Marketing
+
+Unlike salons or gyms, dental patients don't find their dentist on Instagram. They Google it. "Dentist accepting new patients [Burnaby](/burnaby)," "emergency dentist Vancouver," "Invisalign cost [Surrey](/surrey)" — these are the searches that drive new patient bookings. If your clinic isn't at the top of those results, your competitors are getting those calls.
+
+Google Ads and your Google Business Profile are the two highest-ROI channels for dental clinics. Together, they capture patients at the exact moment of need.
+
+## The Vancouver Dental Marketing System
+
+### Google Ads: New Patients on Demand
+
+When someone in [Coquitlam](/coquitlam) searches "dentist accepting new patients," they're ready to book. Google Ads puts your clinic at the top of that search.
+
+High-performing keywords for Vancouver dental clinics:
+- "dentist near me" (with geo-targeting)
+- "dentist accepting new patients Vancouver"
+- "emergency dentist [neighbourhood]"
+- "Invisalign Vancouver cost"
+- "teeth whitening Burnaby"
+- "family dentist Richmond"
+- "dental implants Metro Vancouver"
+
+A $1,500–$3,000/month Google Ads budget typically generates 30–60 new patient inquiries per month in Metro Vancouver. At an average patient lifetime value of $3,000–$8,000, the ROI is exceptional.
+
+### Google Business Profile: The Trust Signal
+
+Your Google Business Profile is often the first thing a potential patient sees. It needs to be flawless:
+
+- Professional photos of your clinic, team, and equipment
+- All services listed with descriptions
+- Hours updated (especially emergency/weekend availability)
+- 50+ Google reviews with 4.7+ average
+- Weekly posts about dental tips, new services, or team updates
+- Respond to every review within 24 hours
+
+Clinics with 50+ reviews and a 4.8+ rating dominate the local map pack. Reviews are the single biggest trust factor for dental patients choosing a new provider.
+
+### Meta Ads: Cosmetic and Elective Procedures
+
+While Google captures urgent and routine dental searches, Facebook and Instagram ads work for elective procedures where patients need inspiration:
+
+- **Invisalign campaigns:** Before-and-after smile transformations targeting adults 25–45
+- **Teeth whitening promotions:** Seasonal offers tied to weddings, grad season, holidays
+- **Cosmetic dentistry awareness:** Veneers, bonding, smile makeovers for image-conscious professionals
+
+These campaigns cost $500–$1,500/month and generate 15–30 leads for high-value elective procedures.
+
+### Content That Ranks
+
+Blog content targeting dental questions drives long-term organic traffic:
+
+- "How much do dental implants cost in Vancouver?"
+- "Invisalign vs braces for adults in BC"
+- "Does MSP cover dental in BC?"
+- "Best dentist in [neighbourhood] for families"
+
+Each post targets a specific long-tail keyword and links back to your [service pages](/services/seo) and booking page.
+
+## What Vancouver Dental Clinics Can Expect
+
+- **Week 1–2:** Google Ads live, GBP optimized, first new patient calls
+- **Month 1:** 20–40 new patient inquiries, 10–25 booked appointments
+- **Month 3+:** Consistent pipeline of 40–60 new patient inquiries/month, organic traffic growing
+
+## Ready to Get More Patients?
+
+AP DIGITAL specializes in [dental marketing across Metro Vancouver](/dental-marketing). We handle [Google Ads](/services/paid-ads), Meta Ads, [local SEO](/services/seo), and review strategy — so your chairs stay full. No contracts, 90-day guarantee.
+
+**Book your free strategy call** and get a custom marketing plan for your dental clinic.`,
+  },
+  {
+    slug: 'gym-marketing-vancouver-bc',
+    title: 'Gym Marketing in Vancouver BC: How to Fill Classes and Get More Members',
+    metaTitle: 'Gym Marketing Vancouver BC | More Members | AP Digital',
+    metaDescription: 'How Vancouver gyms, studios, and personal trainers get 30–50 new members per month with Meta Ads, Google Ads, and content marketing. No contracts.',
+    excerpt: 'Vancouver fitness businesses that run ads consistently never have empty classes. Here\'s the system that keeps membership pipelines full year-round.',
+    date: '2026-07-16',
+    readTime: '7 min read',
+    category: 'Fitness Marketing',
+    content: `[Vancouver's fitness market](/fitness-marketing) is saturated. From boutique studios in Yaletown to CrossFit boxes in East Van to big-box gyms in [Surrey](/surrey), every neighbourhood has multiple options competing for the same members. The gyms that win aren't the ones with the best equipment — they're the ones with the best marketing.
+
+## Why Meta Ads Are the #1 Channel for Vancouver Gyms
+
+Joining a gym isn't an emergency — nobody Googles "gym near me" at 2am because they desperately need a treadmill. It's an aspirational decision driven by seeing someone's transformation, feeling FOMO about a class, or being inspired by a fitness Reel.
+
+That's why Instagram and Facebook ads outperform every other channel for fitness businesses. You're reaching people in the mindset where motivation strikes — scrolling through content, seeing results, imagining themselves getting those results too.
+
+### The Ads That Convert for Vancouver Gyms
+
+**Transformation content:** Before-and-after member photos are the highest-converting ad creative in fitness. Period. A real member's 90-day transformation with a caption like "Sarah joined our [Burnaby](/burnaby) studio 3 months ago — here's what happened" outperforms any stock photo or graphic.
+
+**Class highlight Reels:** 15-second clips of a packed spin class, a coach encouraging someone through a tough set, or a group high-fiving after a WOD. These build FOMO and community desire.
+
+**Free trial offers:** "Try 7 days free at our Vancouver studio" is the lowest-friction offer. It gets people through the door — and 40–60% of free trial members convert to paid memberships with good onboarding.
+
+### Targeting That Works in Metro Vancouver
+
+- Women and men aged 22–45 within 5–10 km of your location
+- Interest targeting: fitness, wellness, yoga, CrossFit, weight loss, healthy living
+- Lookalike audiences based on your current member list
+- Retargeting website visitors and Instagram engagers who didn't sign up
+
+A $800–$2,000/month ad budget generates 30–60 free trial leads per month for most Vancouver fitness businesses.
+
+## Google Ads: Capturing the Searchers
+
+While Meta drives most gym leads, Google Ads captures the 10–15% of people who do actively search:
+
+- "Yoga studio [Kitsilano]"
+- "CrossFit gym Vancouver"
+- "Personal trainer near me"
+- "Best gym [Coquitlam](/coquitlam)"
+
+These searches have lower volume than trades or dental, but the intent is real. A $500–$1,000/month Google budget adds 10–20 high-intent leads on top of your Meta campaigns.
+
+## Content Strategy: Build Community Online
+
+The gyms with the strongest organic reach in Vancouver post consistently:
+
+- **Member spotlights:** Feature a different member each week with their story
+- **Coach content:** Your coaches are your brand — let them create content showing their personality and expertise
+- **Class schedules and tips:** Practical content that serves your existing community and attracts new followers
+- **Behind-the-scenes:** Equipment arrivals, studio renovations, team workouts
+
+Post 3–5 times per week on Instagram. Use Reels for reach, Stories for engagement, and carousel posts for tips and guides.
+
+## Seasonal Campaigns That Fill Classes
+
+Vancouver fitness has clear seasonal patterns — plan your marketing around them:
+
+- **January (New Year):** Highest demand. Ramp up ads in December to capture resolution-makers before competitors
+- **March–May (Summer prep):** "Get ready for summer" campaigns targeting body composition goals
+- **September (Back-to-routine):** Target parents and professionals returning from summer breaks
+- **November–December (Gift memberships):** "Give the gift of fitness" campaigns for holiday shoppers
+
+## What Vancouver Fitness Businesses Can Expect
+
+- **Week 1:** Campaigns live, first free trial leads within 3–5 days
+- **Month 1:** 25–45 free trial leads, 10–25 new memberships
+- **Month 3+:** Consistent pipeline, seasonal campaigns compounding, retention improving through community content
+
+## Ready to Fill Your Classes?
+
+AP DIGITAL specializes in [fitness marketing across Metro Vancouver](/fitness-marketing). We build the full system — [Meta Ads](/services/paid-ads), Google Ads, [content strategy](/services/content-creation), and landing pages — so your classes stay packed. Month-to-month, no contracts, 90-day guarantee.
+
+**Book your free strategy call** and get a custom plan to grow your Vancouver gym.`,
+  },
+  {
+    slug: 'restaurant-marketing-vancouver-bc',
+    title: 'Restaurant Marketing in Vancouver BC: How to Get More Reservations and Walk-Ins',
+    metaTitle: 'Restaurant Marketing Vancouver BC | More Tables | AP Digital',
+    metaDescription: 'How Vancouver restaurants and cafes fill more tables with Instagram ads, Google Business Profile, and food content strategy. Practical marketing for Metro Vancouver restaurants.',
+    excerpt: 'The Vancouver restaurants always packed on a Tuesday aren\'t just lucky — they have a marketing system. Here\'s how it works.',
+    date: '2026-07-17',
+    readTime: '7 min read',
+    category: 'Restaurant Marketing',
+    content: `[Vancouver's food scene](/restaurant-marketing) is world-class — and brutally competitive. Over 4,000 restaurants compete for diners across Metro Vancouver, and the average restaurant lifespan is just 5 years. The ones that survive and thrive aren't always the best chefs — they're the ones people know about.
+
+## Instagram Is Your Most Important Marketing Channel
+
+Restaurant discovery in Vancouver happens on Instagram more than any other platform. When someone screenshots a food Reel, saves a post of a beautifully plated dish, or DMs a friend "we need to go here" — that's your marketing working. Food is the most visual product category on social media, and Vancouver diners are among the most Instagram-active in Canada.
+
+### What Works on Instagram for Vancouver Restaurants
+
+**Food photography that stops the scroll:** One great photo of your signature dish — close-up, natural light, steam rising — generates more bookings than a month of generic posts. Invest time in learning phone photography or hire a local food photographer quarterly.
+
+**Reels showing the kitchen in action:** A 15-second clip of a chef plating a dish, a pizza coming out of a wood-fired oven, or a cocktail being crafted. These get 3–5x the reach of static posts and build an emotional connection to your space.
+
+**Stories for daily specials:** Instagram Stories are perfect for same-day promotions — happy hour deals, chef's specials, available tables. They create urgency and drive tonight's covers.
+
+**User-generated content:** Repost customer photos and tag them. This builds community, provides free content, and encourages more people to post about your restaurant.
+
+## Google Business Profile: Your Digital Storefront
+
+When someone Googles "best Thai food [Burnaby](/burnaby)" or "restaurants open now near me," your Google Business Profile is what they see. For restaurants, GBP is often more important than your website.
+
+### Optimize Your GBP for Maximum Visibility
+
+- **Professional food photos** updated monthly — your best dishes, your space, your team
+- **Menu uploaded and current** — Google now displays menu items directly in search results
+- **Hours accurate** including holidays and special hours
+- **100+ Google reviews** with 4.5+ rating — the minimum to compete in Vancouver's food scene
+- **Respond to every review** — especially negative ones, professionally and within 24 hours
+- **Weekly posts** featuring specials, events, or new menu items
+
+Restaurants with 100+ reviews and an active GBP consistently rank in the top 3 map pack results for cuisine and neighbourhood searches.
+
+## Meta Ads: Fill Tables on Slow Nights
+
+Every restaurant has slow nights — typically Monday through Wednesday. Targeted Facebook and Instagram ads can fill those tables:
+
+**Event-based campaigns:** "Live jazz every Wednesday + $45 prix fixe" or "Taco Tuesday — $3 tacos and $6 margaritas" create a reason to visit on traditionally slow nights.
+
+**Seasonal promotions:** Valentine's Day, Mother's Day, holiday menus, patio season opening — build campaigns 3–4 weeks before each event.
+
+**Neighbourhood targeting:** Target food lovers within 5–10 km of your restaurant. People don't drive 30 minutes for dinner on a weeknight — keep your targeting tight.
+
+A $500–$1,000/month Meta Ads budget drives 100–200+ clicks to your reservation page or Google profile per month.
+
+## Google Ads: Capture High-Intent Diners
+
+Google Ads work for restaurants targeting specific cuisine and neighbourhood searches:
+
+- "Italian restaurant Kitsilano"
+- "sushi near me Vancouver"
+- "brunch [Gastown]"
+- "best ramen [Richmond](/richmond)"
+
+Cost per click for restaurant keywords in Vancouver runs $1–$4, making it one of the most affordable industries for Google Ads. A $500–$1,000/month budget generates significant reservation traffic.
+
+## Review Strategy: The Make-or-Break Factor
+
+In Vancouver's competitive food scene, reviews are everything. A restaurant with 200 reviews at 4.6 stars will outperform a competitor with 30 reviews at 4.8 — volume matters alongside quality.
+
+Build your review count:
+- Train staff to ask happy tables to leave a Google review
+- Include a QR code on receipts linking directly to your Google review page
+- Respond to every review — thank positive reviewers, address negative feedback professionally
+- Never offer incentives for reviews (against Google's terms)
+
+## What Vancouver Restaurants Can Expect
+
+- **Week 1:** GBP optimized, first ad campaigns live, food photography posted
+- **Month 1:** 15–25% increase in reservation inquiries, noticeable pickup on slow nights
+- **Month 3+:** Consistent foot traffic growth, review count climbing, Instagram following building
+
+## Ready to Fill More Tables?
+
+AP DIGITAL helps [Vancouver restaurants](/restaurant-marketing) build marketing systems that drive consistent reservations and walk-ins. We handle [Instagram content strategy](/services/social-media), [paid ads](/services/paid-ads), and Google optimization — so you can focus on the food. Month-to-month, no contracts.
+
+**Book your free strategy call** and let's fill your restaurant every night of the week.`,
+  },
+];
+
+blogPosts.unshift(...extraPosts, ...vancouverPosts, ...seoPosts, ...focusPosts, ...deepPosts, ...verticalPosts);
 
 export const getPostBySlug = (slug: string): BlogPost | undefined =>
   blogPosts.find((p) => p.slug === slug);
