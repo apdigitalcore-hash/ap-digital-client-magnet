@@ -25,6 +25,54 @@ const niches = [
   { value: 'other', label: 'Other' },
 ];
 
+// Niche-specific copy: prompt shown after selection, tailored field hints and CTA
+const NICHE_DETAILS: Record<
+  string,
+  {
+    prompt: string;
+    businessLabel: string;
+    businessPlaceholder: string;
+    businessHint: string;
+    cta: string;
+  }
+> = {
+  salon: {
+    prompt: "Nice — we help Vancouver salons fill empty chairs midweek, not just on Saturdays.",
+    businessLabel: 'Salon Name *',
+    businessPlaceholder: 'e.g. Kits Hair Studio',
+    businessHint: 'Use the name clients search for on Google or Instagram.',
+    cta: 'Get My Salon Booking Plan',
+  },
+  'real-estate': {
+    prompt: "Great — we build listing and buyer lead funnels for BC agents, not generic ads.",
+    businessLabel: 'Brokerage / Team Name *',
+    businessPlaceholder: 'e.g. Chan Realty Group',
+    businessHint: 'Your brokerage or personal brand — whichever you market under.',
+    cta: 'Get My Listing Lead Plan',
+  },
+  trades: {
+    prompt: "Perfect — we get the phone ringing with local jobs worth quoting.",
+    businessLabel: 'Company Name *',
+    businessPlaceholder: 'e.g. Northshore Plumbing Ltd.',
+    businessHint: 'The name on your truck and invoices works best.',
+    cta: 'Get My Job Lead Plan',
+  },
+  coaching: {
+    prompt: "Good fit — we fill coaching rosters with clients ready to invest, not freebie seekers.",
+    businessLabel: 'Practice / Brand Name *',
+    businessPlaceholder: 'e.g. Clear Path Coaching',
+    businessHint: 'Your practice name or the brand you publish under.',
+    cta: 'Get My Client Roster Plan',
+  },
+  other: {
+    prompt: "No problem — tell us about it on the call and we'll map the fastest path to leads.",
+    businessLabel: 'Business Name *',
+    businessPlaceholder: 'Your Business',
+    businessHint: "We'll tailor the audit to your industry on the call.",
+    cta: 'Book Your Free Strategy Call',
+  },
+};
+
 // Zod schema for form validation with security-focused constraints
 const contactFormSchema = z.object({
   name: z
