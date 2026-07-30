@@ -55,13 +55,13 @@ const ProcessDark = () => {
   };
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-background">
+    <section id="how-it-works" className="py-20 md:py-28 bg-black">
       <div className="container-custom">
         <div className="text-center mb-12">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             How It <span className="text-gradient">Works</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-white/50 text-lg max-w-xl mx-auto">
             A proven 3-step process to predictable lead generation.
           </p>
         </div>
@@ -75,7 +75,7 @@ const ProcessDark = () => {
                 onClick={() => goToStep(i)}
                 className="flex-1 group flex flex-col items-center gap-2"
               >
-                <div className="w-full h-1 rounded-full overflow-hidden bg-gray-200 dark:bg-gray-800">
+                <div className="w-full h-1 rounded-full overflow-hidden bg-white/10">
                   <motion.div
                     className="h-full bg-teal rounded-full"
                     initial={false}
@@ -84,7 +84,7 @@ const ProcessDark = () => {
                   />
                 </div>
                 <span className={`text-[11px] font-semibold tracking-wider uppercase transition-colors ${
-                  i <= activeStep ? 'text-teal' : 'text-muted-foreground/50'
+                  i <= activeStep ? 'text-teal' : 'text-white/30'
                 }`}>
                   {step.label}
                 </span>
