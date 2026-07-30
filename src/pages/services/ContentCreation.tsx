@@ -7,6 +7,7 @@ import { CheckCircle, TrendingUp, Phone, Star } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Content Creation Vancouver | Short-Form Video | AP Digital';
 const DESC = 'AP Digital creates short-form video content and social posts for Vancouver small businesses — salons, trades, coaches & realtors.';
@@ -80,8 +81,9 @@ const ContentCreation = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">

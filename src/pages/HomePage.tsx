@@ -15,15 +15,39 @@ import MarketingAuditAI from '@/components/MarketingAuditAI';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
-import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, founderSchema } from '@/lib/structuredData';
+import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 import apLogo from '@/assets/ap-logo.png';
 import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
-const TITLE = 'AP Digital | Vancouver Marketing — Meta & Google Ads';
-const DESC = 'Vancouver performance marketing agency. 2,400+ leads delivered for BC salons, trades, realtors & coaches. 90-day guarantee. Month-to-month.';
+const TITLE = 'Vancouver Digital Marketing Agency | Meta & Google Ads | AP Digital';
+const DESC = 'Vancouver marketing agency for salons, trades, realtors & coaches. Meta & Google Ads that generate predictable leads. Month-to-month, no lock-in. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
+
+const homepageFAQs = [
+  {
+    question: "How much does AP Digital charge for marketing?",
+    answer: "Our paid ads management starts at $759/month and social media management starts at $849/month. No long-term contracts — everything is month-to-month with a 90-day results guarantee."
+  },
+  {
+    question: "What industries does AP Digital work with?",
+    answer: "We specialize in service businesses across British Columbia including salons, real estate agents, trades (plumbing, HVAC, electrical), and coaches. Our strategies are tailored to each industry's unique lead generation needs."
+  },
+  {
+    question: "How quickly will I see results from paid ads?",
+    answer: "Most clients see their first leads within the first 2 weeks of campaign launch. We offer a 90-day guarantee — if you don't see measurable results, you don't pay."
+  },
+  {
+    question: "What areas does AP Digital serve?",
+    answer: "We're based in Vancouver, BC and serve businesses across Metro Vancouver and the Fraser Valley including Surrey, Burnaby, Richmond, Langley, Coquitlam, Abbotsford, and North Vancouver."
+  },
+  {
+    question: "Do I need a long-term contract?",
+    answer: "No. All our services are month-to-month with no long-term contracts. We believe in earning your business every month through results, not locking you into agreements."
+  },
+];
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -33,6 +57,7 @@ const structuredData = {
     getWebSiteSchema(),
     getWebPageSchema(TITLE, DESC, '/'),
     getBreadcrumbSchema([{ name: 'Home', url: '/' }]),
+    getFAQSchema(homepageFAQs),
   ]
 };
 
@@ -85,8 +110,8 @@ const HomePage = () => {
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
         <link rel="preload" as="image" href={heroImageWebp} type="image/webp" />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
+      <JsonLd data={structuredData} />
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}

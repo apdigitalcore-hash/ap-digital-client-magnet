@@ -7,6 +7,7 @@ import { CheckCircle, TrendingUp, Phone, Star } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered';
 const DESC = 'AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches. 5–10× ROAS. First leads within 2 weeks. Month-to-month.';
@@ -80,8 +81,9 @@ const LeadGeneration = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">

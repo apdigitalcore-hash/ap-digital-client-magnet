@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { organizationSchema, getFAQSchema, getBreadcrumbSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const Contact = () => {
   const faqData = [
@@ -77,9 +78,10 @@ const Contact = () => {
         <meta name="twitter:image" content="https://ap-digital.ca/og-image.png" />
         <meta name="robots" content="index, follow" />
         {structuredData && (
-          <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+          
         )}
       </Helmet>
+      <JsonLd data={structuredData} />
       <Header />
       
       {/* Hero Section */}

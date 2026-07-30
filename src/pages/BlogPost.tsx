@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
 import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -98,8 +99,9 @@ const BlogPost = () => {
         <meta name="twitter:title" content={post.metaTitle} />
         <meta name="twitter:description" content={post.metaDescription} />
         <meta name="twitter:image" content={OG_IMAGE} />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        
       </Helmet>
+      <JsonLd data={structuredData} />
       <Header />
       <main id="main-content" className="min-h-screen bg-background pt-28 pb-20">
         <article className="container-custom max-w-3xl">

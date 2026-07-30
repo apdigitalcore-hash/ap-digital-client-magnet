@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import apLogo from '@/assets/ap-logo.png';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Abbotsford Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Abbotsford marketing agency delivering 5-10x ROAS for Fraser Valley trades, salons & realtors. Google Ads + Meta Ads. Month-to-month. Free strategy call.';
@@ -123,8 +124,9 @@ const Abbotsford = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content">
 

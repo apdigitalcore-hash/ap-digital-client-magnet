@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { allPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Marketing Blog | Tips for BC Salons, Trades & Realtors';
 const DESC = 'Marketing tips, ad strategies & lead generation guides for Vancouver salons, trades businesses, realtors & coaches.';
@@ -42,8 +43,9 @@ const Blog = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content" className="min-h-screen bg-background pt-28 pb-20">
       <div className="container-custom max-w-4xl">

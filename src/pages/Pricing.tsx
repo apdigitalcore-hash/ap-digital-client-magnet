@@ -12,6 +12,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import DarkCTA from '@/components/DarkCTA';
 import {
+import JsonLd from '@/components/JsonLd';
   organizationSchema,
   founderSchema,
   getBreadcrumbSchema,
@@ -133,8 +134,9 @@ const Pricing = () => {
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESC} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        
       </Helmet>
+      <JsonLd data={structuredData} />
 
       <Header />
 

@@ -7,6 +7,7 @@ import { CheckCircle, TrendingUp, Phone, Star } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Google Ads Agency Vancouver | PPC & Meta Ads | AP Digital';
 const DESC = 'Google Ads, PPC & Facebook Ads agency in Vancouver. AP Digital manages Meta and Google campaigns for BC salons, trades, realtors & coaches. Month-to-month.';
@@ -81,8 +82,9 @@ const PaidAds = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">

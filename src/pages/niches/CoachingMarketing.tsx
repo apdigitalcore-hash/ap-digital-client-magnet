@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Coaching Marketing BC | Get Consistent Clients | AP Digital';
 const DESC = 'AP Digital helps BC life, business & fitness coaches get 20–40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.';
@@ -100,8 +101,9 @@ const CoachingMarketing = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">

@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import apLogo from '@/assets/ap-logo.png';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Coquitlam Marketing Agency | Leads & Ads | AP Digital';
 const DESC = 'Coquitlam digital marketing focused on getting you more leads. Google Ads, Meta Ads & local SEO for salons, trades & realtors. 90-day guarantee. No lock-in.';
@@ -128,8 +129,9 @@ const Coquitlam = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content">
 
@@ -141,8 +143,8 @@ const Coquitlam = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
-              Performance Marketing Agency{' '}
-              <span className="text-gradient">Coquitlam BC</span>
+              Marketing Agency{' '}
+              <span className="text-gradient">Coquitlam</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Coquitlam businesses — and across Port Moody & Port Coquitlam — generate qualified leads with Meta Ads, Google Ads & social media. No contracts, month-to-month.

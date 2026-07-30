@@ -38,59 +38,7 @@
   <meta name="twitter:image" content="https://ap-digital.ca/og-image.png" />
 
   <!-- Static schema — crawler-visible without JS -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": "https://ap-digital.ca/#website",
-      "url": "https://ap-digital.ca",
-      "name": "AP Digital",
-      "publisher": { "@id": "https://ap-digital.ca/#organization" },
-      "inLanguage": "en-CA"
-    },
-    {
-      "@type": ["LocalBusiness", "MarketingAgency"],
-    "@id": "https://ap-digital.ca/#organization",
-    "name": "AP Digital",
-    "description": "Digital marketing agency specializing in lead generation for salons, trades, real estate agents, and coaches in Vancouver, BC.",
-    "url": "https://ap-digital.ca",
-    "telephone": "+1-778-682-5772",
-    "email": "apdigital.core@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Vancouver",
-      "addressRegion": "BC",
-      "addressCountry": "CA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 49.2827,
-      "longitude": -123.1207
-    },
-    "areaServed": ["Vancouver", "Surrey", "Burnaby", "Langley", "Coquitlam", "Metro Vancouver", "BC"],
-    "serviceType": ["Digital Marketing", "Lead Generation", "Meta Ads", "Google Ads", "SEO", "Salon Marketing", "Trades Marketing", "Real Estate Marketing", "Coaching Marketing"],
-    "priceRange": "$$",
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "founder": {
-      "@type": "Person",
-      "name": "Arjun Sharma"
-    },
-    "sameAs": [
-      "https://www.instagram.com/theapdigital/",
-      "https://www.facebook.com/apdigital",
-      "https://www.linkedin.com/company/apdigital"
-    ]
-    }
-    ]
-  }
-  </script>
+  <!-- Structured data injected per-page via React Helmet -->
 
   <!-- AI discovery -->
   <link rel="ai-plugin" href="/api/ai-plugin" />

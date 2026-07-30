@@ -20,6 +20,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import {
+import JsonLd from '@/components/JsonLd';
   organizationSchema,
   getBreadcrumbSchema,
   getWebPageSchema,
@@ -156,9 +157,10 @@ const About = () => {
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
+      <JsonLd data={structuredData} />
 
       <Header />
 

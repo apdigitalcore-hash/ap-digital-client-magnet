@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, X, ArrowRight } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'How to Choose a Google Ads Agency in Vancouver | AP Digital';
 const DESC = 'What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver from those that don\'t.';
@@ -121,8 +122,9 @@ const HiringGuide = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content" className="pt-24 pb-16 bg-background">
       <article className="container-custom max-w-3xl">

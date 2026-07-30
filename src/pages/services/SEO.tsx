@@ -7,6 +7,7 @@ import { CheckCircle, TrendingUp, Phone, Star } from 'lucide-react';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
+import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'SEO Agency Vancouver | Page 1 in 90 Days | AP Digital';
 const DESC = 'AP Digital provides local SEO for Vancouver salons, trades, realtors & coaches. Most clients reach page 1 within 90–180 days. Month-to-month.';
@@ -80,8 +81,9 @@ const SEO = () => (
       <meta name="twitter:description" content={DESC} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
-      <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      
     </Helmet>
+      <JsonLd data={structuredData} />
     <Header />
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
