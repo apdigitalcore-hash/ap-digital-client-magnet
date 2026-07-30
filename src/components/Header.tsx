@@ -49,7 +49,19 @@ const Header = () => {
     { href: '/how-to-choose-a-marketing-agency-vancouver', label: 'Agency Hiring Guide', external: false },
   ];
 
-  const useDarkChrome = false;
+  // Pages that open on a light background need dark header text until the
+  // header gains its dark scrolled chrome.
+  const lightPagePrefixes = [
+    '/blog',
+    '/case-studies',
+    '/how-to-choose-a-marketing-agency-vancouver',
+    '/login',
+    '/.lovable/oauth/consent',
+  ];
+  const isLightPage = lightPagePrefixes.some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`)
+  );
+  const useDarkChrome = isLightPage && !isScrolled;
 
   return (
     <>
