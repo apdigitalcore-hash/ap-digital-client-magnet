@@ -388,7 +388,7 @@ const ContactForm = () => {
           'Submitting...'
         ) : (
           <>
-            Book Your Free Strategy Call
+            {nicheDetails?.cta ?? 'Book Your Free Strategy Call'}
             <Send className="w-4 h-4" />
           </>
         )}
