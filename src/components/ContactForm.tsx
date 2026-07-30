@@ -109,6 +109,8 @@ const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
+  const [selectedNiche, setSelectedNiche] = useState<string>('');
+  const nicheDetails = selectedNiche ? NICHE_DETAILS[selectedNiche] : null;
   // Honeypot fields - bots will fill these, real users won't see them
   const [honeypot, setHoneypot] = useState('');
   const [honeypotWebsite, setHoneypotWebsite] = useState('');
