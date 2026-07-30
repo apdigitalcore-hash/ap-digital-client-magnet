@@ -86,6 +86,7 @@ const App = () => (
               <Route path="/richmond" element={<Richmond />} />
               <Route path="/abbotsford" element={<Abbotsford />} />
               <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/case-studies/:studyId" element={<CaseStudies />} />
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
               <Route path="/login" element={<Login />} />
               <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
