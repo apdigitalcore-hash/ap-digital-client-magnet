@@ -21,7 +21,7 @@ import apLogo from '@/assets/ap-logo.png';
 import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
-const TITLE = 'Vancouver Digital Marketing Agency | Meta & Google Ads | AP Digital';
+const TITLE = 'Vancouver Digital Marketing Agency | AP Digital';
 const DESC = 'Vancouver marketing agency for salons, trades, realtors & coaches. Meta & Google Ads that generate predictable leads. Month-to-month, no lock-in. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
