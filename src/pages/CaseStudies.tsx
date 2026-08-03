@@ -276,8 +276,18 @@ const CaseStudyDetail = ({ study }: { study: typeof caseStudies[0] }) => (
       <title>{study.brand} Case Study | AP Digital</title>
       <meta name="description" content={study.headline} />
       <link rel="canonical" href={`https://ap-digital.ca/case-studies/${study.id}`} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={`https://ap-digital.ca/case-studies/${study.id}`} />
+      <meta property="og:title" content={`${study.brand} Case Study | AP Digital`} />
+      <meta property="og:description" content={study.headline} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={`${study.brand} Case Study | AP Digital`} />
+      <meta name="twitter:description" content={study.headline} />
+      <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="robots" content="index, follow" />
     </Helmet>
+
     <JsonLd data={{
       "@context": "https://schema.org",
       "@graph": [
