@@ -58,15 +58,17 @@ const Header = () => {
   // header gains its dark scrolled chrome.
   const lightPagePrefixes = [
     '/blog',
-    '/case-studies',
     '/how-to-choose-a-marketing-agency-vancouver',
     '/login',
     '/.lovable/oauth/consent',
   ];
-  const isLightPage = lightPagePrefixes.some(
-    (p) => pathname === p || pathname.startsWith(`${p}/`)
-  );
+  // /case-studies (grid) is light, but individual case study pages open on a
+  // near-black hero, so they keep the light header text.
+  const isLightPage =
+    pathname === '/case-studies' ||
+    lightPagePrefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`));
   const useDarkChrome = isLightPage && !isScrolled;
+
 
   return (
     <>
