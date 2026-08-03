@@ -51,6 +51,7 @@ const Header = () => {
     { href: '/hvac-marketing', label: 'HVAC', external: false },
     { href: '/fitness-marketing', label: 'Gyms & Fitness', external: false },
     { href: '/restaurant-marketing', label: 'Restaurants', external: false },
+    { href: '/law-firm-marketing', label: 'Law Firms', external: false },
     { href: '/how-to-choose-a-marketing-agency-vancouver', label: 'Agency Hiring Guide', external: false },
   ];
 

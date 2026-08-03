@@ -32,6 +32,7 @@ const DentalMarketing = lazy(() => import("./pages/niches/DentalMarketing"));
 const HVACMarketing = lazy(() => import("./pages/niches/HVACMarketing"));
 const FitnessMarketing = lazy(() => import("./pages/niches/FitnessMarketing"));
 const RestaurantMarketing = lazy(() => import("./pages/niches/RestaurantMarketing"));
+const LawFirmMarketing = lazy(() => import("./pages/niches/LawFirmMarketing"));
 const About = lazy(() => import("./pages/About"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
@@ -85,6 +86,7 @@ const App = () => (
               <Route path="/hvac-marketing" element={<HVACMarketing />} />
               <Route path="/fitness-marketing" element={<FitnessMarketing />} />
               <Route path="/restaurant-marketing" element={<RestaurantMarketing />} />
+              <Route path="/law-firm-marketing" element={<LawFirmMarketing />} />
               <Route path="/about" element={<About />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
