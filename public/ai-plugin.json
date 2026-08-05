@@ -8,8 +8,8 @@
     "type": "none"
   },
   "api": {
-    "type": "openapi",
-    "url": "https://ap-digital.ca/llms.txt"
+    "type": "none",
+    "has_user_authentication": false
   },
   "logo_url": "https://ap-digital.ca/og-image.png",
   "contact_email": "apdigital.core@gmail.com",

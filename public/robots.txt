@@ -49,5 +49,5 @@ Sitemap: https://ap-digital.ca/sitemap.xml
 
 # AI reference files
 # /llms.txt          — concise structured index
-# /api/llms-full     — comprehensive reference
-# /api/ai-plugin     — AI plugin manifest
+# /llms-full.txt     — comprehensive reference
+# /ai-plugin.json    — AI plugin manifest

@@ -8,84 +8,85 @@ const baseHtml = readFileSync(resolve(distDir, 'index.html'), 'utf-8');
 
 const BASE_URL = 'https://ap-digital.ca';
 
+// ── Shared schema fragments ─────────────────────────────────────────────────
+
+const founderSchema = {
+  "@type": "Person",
+  "@id": `${BASE_URL}/#founder`,
+  "name": "Arjun Sharma",
+  "jobTitle": "Founder & Lead Strategist",
+  "description": "Arjun Sharma is the founder of AP Digital, a performance marketing agency in Vancouver, BC. He personally manages every client account, specializing in Google Ads, Meta Ads, and social media marketing for service businesses across British Columbia.",
+  "url": `${BASE_URL}/about`,
+  "worksFor": { "@id": `${BASE_URL}/#organization` },
+  "knowsAbout": ["Google Ads", "Meta Ads", "Facebook Advertising", "Instagram Marketing", "Social Media Marketing", "Lead Generation", "Performance Marketing", "Local SEO"],
+  "sameAs": ["https://www.linkedin.com/company/theapdigital/", "https://www.instagram.com/theapdigital/"]
+};
+
 const websiteSchema = {
   "@type": "WebSite",
   "@id": `${BASE_URL}/#website`,
   "url": BASE_URL,
   "name": "AP Digital",
-  "description": "Digital marketing agency in Vancouver BC specializing in lead generation for salons, trades, real estate agents, and coaches.",
+  "description": "Vancouver performance marketing agency for trades, salons, real estate agents, coaches, dental clinics, gyms, and restaurants across BC.",
   "publisher": { "@id": `${BASE_URL}/#organization` },
-  "inLanguage": "en-CA",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": { "@type": "EntryPoint", "urlTemplate": `${BASE_URL}/blog?q={search_term_string}` },
-    "query-input": "required name=search_term_string"
-  }
+  "inLanguage": "en-CA"
 };
 
 const orgSchema = {
-  "@type": ["LocalBusiness", "MarketingAgency"],
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": `${BASE_URL}/#organization`,
-  "name": "AP Digital",
+  "name": "AP DIGITAL",
+  "alternateName": "AP Digital Marketing Agency",
   "url": BASE_URL,
-  "logo": { "@type": "ImageObject", "url": `${BASE_URL}/logo.png` },
+  "logo": { "@type": "ImageObject", "url": `${BASE_URL}/logo.png`, "width": 200, "height": 200 },
+  "image": `${BASE_URL}/og-image.png`,
   "telephone": "+1-778-682-5772",
   "email": "apdigital.core@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Vancouver",
-    "addressRegion": "BC",
-    "addressCountry": "CA"
-  },
+  "founder": { "@id": `${BASE_URL}/#founder` },
+  "foundingDate": "2024",
+  "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V5K", "addressCountry": "CA" },
   "geo": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
   "areaServed": ["Vancouver", "Surrey", "Burnaby", "Richmond", "Langley", "Coquitlam", "Abbotsford", "Metro Vancouver"],
-  "sameAs": [
-    "https://www.instagram.com/theapdigital/",
-    "https://www.facebook.com/apdigital",
-    "https://www.linkedin.com/company/apdigital"
-  ],
+  "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.facebook.com/apdigital", "https://www.linkedin.com/company/theapdigital/"],
   "priceRange": "$$",
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-    "opens": "09:00",
-    "closes": "18:00"
-  }
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "14", "bestRating": "5", "worstRating": "1" },
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
 };
 
 function breadcrumb(items) {
   return {
     "@type": "BreadcrumbList",
     "itemListElement": items.map((item, i) => ({
-      "@type": "ListItem",
-      "position": i + 1,
-      "name": item.name,
-      "item": `${BASE_URL}${item.url}`
+      "@type": "ListItem", "position": i + 1, "name": item.name, "item": `${BASE_URL}${item.url}`
     }))
   };
 }
 
 function serviceSchema(name, desc, path) {
   return {
-    "@type": "Service",
-    "name": name,
-    "description": desc,
-    "url": `${BASE_URL}${path}`,
-    "provider": { "@id": `${BASE_URL}/#organization` },
-    "areaServed": { "@type": "Country", "name": "Canada" }
+    "@type": "Service", "name": name, "description": desc,
+    "url": `${BASE_URL}${path}`, "provider": { "@id": `${BASE_URL}/#organization` },
+    "areaServed": { "@type": "AdministrativeArea", "name": "British Columbia" }
   };
 }
 
 function webPageSchema(name, desc, path) {
   return {
-    "@type": "WebPage",
-    "@id": `${BASE_URL}${path}#webpage`,
-    "url": `${BASE_URL}${path}`,
-    "name": name,
-    "description": desc,
-    "inLanguage": "en-CA",
-    "isPartOf": { "@id": `${BASE_URL}/#website` },
-    "publisher": { "@id": `${BASE_URL}/#organization` }
+    "@type": "WebPage", "@id": `${BASE_URL}${path}#webpage`,
+    "url": `${BASE_URL}${path}`, "name": name, "description": desc,
+    "inLanguage": "en-CA", "isPartOf": { "@id": `${BASE_URL}/#website` },
+    "publisher": { "@id": `${BASE_URL}/#organization` },
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", "main p:first-of-type"] }
+  };
+}
+
+function faqSchema(faqs) {
+  return {
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question", "name": faq.q,
+      "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+    }))
   };
 }
 
@@ -93,7 +94,7 @@ function articleSchema(post) {
   return {
     "@type": "BlogPosting",
     "@id": `${BASE_URL}/blog/${post.slug}#article`,
-    "headline": post.title,
+    "headline": post.metaTitle,
     "name": post.metaTitle,
     "description": post.metaDescription,
     "datePublished": post.date,
@@ -102,529 +103,346 @@ function articleSchema(post) {
     "url": `${BASE_URL}/blog/${post.slug}`,
     "image": { "@type": "ImageObject", "url": `${BASE_URL}/og-image.png`, "width": 1200, "height": 630 },
     "articleSection": post.category,
-    "author": { "@id": `${BASE_URL}/#organization` },
+    "author": { "@id": `${BASE_URL}/#founder` },
     "publisher": { "@id": `${BASE_URL}/#organization` },
     "isPartOf": { "@id": `${BASE_URL}/#website` },
-    "mainEntityOfPage": { "@id": `${BASE_URL}/blog/${post.slug}#webpage` }
+    "mainEntityOfPage": { "@id": `${BASE_URL}/blog/${post.slug}#webpage` },
+    "speakable": { "@type": "SpeakableSpecification", "cssSelector": ["h1", ".prose-custom p:first-of-type"] }
   };
 }
 
-// ── Static pages ──────────────────────────────────────────────────────────────
+// ── Static route definitions ────────────────────────────────────────────────
 
 const staticRoutes = [
+  // ─── Industry pages ───
   {
     path: 'trades-marketing',
     title: 'Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital',
-    description: 'AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20–50 qualified leads/month via Google & Meta Ads. No contracts. Starts at $500/month.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Trades Marketing', 'Lead generation for BC plumbers, electricians, HVAC & roofers using Meta Ads & Google Ads.', '/trades-marketing'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Trades Marketing', url: '/trades-marketing' }]),
-        webPageSchema('Trades Marketing Agency BC | AP Digital', 'Lead generation for BC trades businesses using Meta Ads & Google Ads.', '/trades-marketing'),
-      ]
-    }
+    description: 'AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20–50 qualified leads/month via Google & Meta Ads. No contracts. Starts at $759/month.',
+    body: '<h1>Trades &amp; Contractor Marketing — Get More Leads in BC</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades businesses — plumbers, electricians, HVAC technicians, roofers, and general contractors — get 20–50 qualified leads per month through Google Ads and Meta Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Trades & Contractor Marketing', 'Lead generation for BC plumbers, electricians, HVAC, roofers & general contractors using Google Ads & Meta Ads.', '/trades-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Trades Marketing', url: '/trades-marketing' }]),
+      webPageSchema('Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital', 'Lead generation for BC trades businesses.', '/trades-marketing'),
+      faqSchema([
+        { q: 'How much do Google Ads cost for contractors in BC?', a: 'Most trades businesses invest $500–$2,000/month in ad spend plus a management fee starting at $759/month. Cost per lead ranges from $15–$60 depending on the trade and location.' },
+        { q: 'How fast will I get leads from Google Ads?', a: 'Most contractors see their first qualified leads within 1–2 weeks of campaign launch. Google Ads captures people actively searching for services like yours.' },
+        { q: 'Should contractors use Google Ads or Facebook Ads?', a: 'Google Ads captures high-intent searches ("plumber near me"). Meta Ads builds awareness and generates leads from people who need your service but haven\'t searched yet. We recommend both for maximum coverage.' },
+        { q: 'Do you require a contract?', a: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We also offer a 90-day performance guarantee.' },
+        { q: 'What trades do you work with?', a: 'We serve plumbers, electricians, HVAC companies, roofers, general contractors, landscapers, painters, and other home service businesses across Metro Vancouver and the Fraser Valley.' }
+      ])
+    ]}
   },
   {
     path: 'salon-marketing',
     title: 'Salon Marketing Vancouver | Fill Your Chair Every Week | AP Digital',
     description: 'Get 20–40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Salon Marketing', 'Social media & paid ads for Vancouver salons. Get consistent bookings every week.', '/salon-marketing'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Salon Marketing', url: '/salon-marketing' }]),
-        webPageSchema('Salon Marketing Agency Vancouver | AP Digital', 'Meta Ads & social media for Vancouver salons.', '/salon-marketing'),
-      ]
-    }
+    body: '<h1>Salon Marketing — Fill Your Chair Every Week</h1><p>AP Digital helps hair salons, barbershops, and beauty studios in Vancouver get 20–40 new client inquiries per month with Meta Ads, Instagram content, and Google Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Salon Marketing', 'Social media & paid ads for Vancouver salons. Get consistent bookings every week.', '/salon-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Salon Marketing', url: '/salon-marketing' }]),
+      webPageSchema('Salon Marketing Vancouver | AP Digital', 'Meta Ads & social media for Vancouver salons.', '/salon-marketing'),
+    ]}
   },
   {
     path: 'real-estate-marketing',
     title: 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital',
     description: 'AP Digital generates 15–30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Real Estate Marketing', 'Buyer & seller lead generation for BC realtors using Meta Ads & Google Ads.', '/real-estate-marketing'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Real Estate Marketing', url: '/real-estate-marketing' }]),
-        webPageSchema('Real Estate Marketing Agency BC | AP Digital', 'Lead generation for BC realtors & brokerages.', '/real-estate-marketing'),
-      ]
-    }
+    body: '<h1>Real Estate Marketing — Consistent Buyer &amp; Seller Leads</h1><p>AP Digital generates 15–30 qualified buyer and seller leads per month for BC realtors using Meta Ads and Google Ads. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Real Estate Marketing', 'Lead generation for BC realtors using Meta Ads & Google Ads.', '/real-estate-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Real Estate Marketing', url: '/real-estate-marketing' }]),
+      webPageSchema('Real Estate Marketing BC | AP Digital', 'Lead generation for BC realtors.', '/real-estate-marketing'),
+    ]}
   },
   {
     path: 'coaching-marketing',
     title: 'Coaching Marketing BC | Get Consistent Clients | AP Digital',
     description: 'AP Digital helps BC life, business & fitness coaches get 20–40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Coaching Marketing', 'Meta Ads & social media marketing for coaches & consultants across BC.', '/coaching-marketing'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Coaching Marketing', url: '/coaching-marketing' }]),
-        webPageSchema('Coaching Marketing Agency BC | AP Digital', 'Lead generation for BC coaches & consultants.', '/coaching-marketing'),
-      ]
-    }
+    body: '<h1>Coaching Marketing — Get Consistent Clients in BC</h1><p>AP Digital helps life, business, and fitness coaches in BC get 20–40 new leads per month with Meta Ads funnels and social media campaigns. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Coaching Marketing', 'Meta Ads & social media for BC coaches.', '/coaching-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Coaching Marketing', url: '/coaching-marketing' }]),
+      webPageSchema('Coaching Marketing BC | AP Digital', 'Lead generation for BC coaches.', '/coaching-marketing'),
+    ]}
   },
+  {
+    path: 'dental-marketing',
+    title: 'Dental Marketing Vancouver | Get More Patients | AP Digital',
+    description: 'Get more dental patients with Google Ads & Meta Ads. AP Digital serves Vancouver dental clinics. Month-to-month. No contracts. 90-day guarantee.',
+    body: '<h1>Dental Marketing — Get More Patients Online</h1><p>AP Digital helps dental clinics in Vancouver and Metro Vancouver get more new-patient appointments through Google Ads and Meta Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Dental Marketing', 'Patient acquisition for Vancouver dental clinics via Google Ads & Meta Ads.', '/dental-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Dental Marketing', url: '/dental-marketing' }]),
+      webPageSchema('Dental Marketing Vancouver | AP Digital', 'Google Ads & Meta Ads for Vancouver dental clinics.', '/dental-marketing'),
+    ]}
+  },
+  {
+    path: 'hvac-marketing',
+    title: 'HVAC Marketing Vancouver | More Service Calls | AP Digital',
+    description: 'Get more HVAC service calls with Google Ads & Meta Ads. AP Digital serves Vancouver HVAC companies. Month-to-month. No contracts.',
+    body: '<h1>HVAC Marketing — More Service Calls, Less Downtime</h1><p>AP Digital helps HVAC companies in Metro Vancouver generate consistent service calls and installation leads through Google Ads and Meta Ads. Month-to-month. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('HVAC Marketing', 'Lead generation for HVAC companies in Metro Vancouver.', '/hvac-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'HVAC Marketing', url: '/hvac-marketing' }]),
+      webPageSchema('HVAC Marketing Vancouver | AP Digital', 'Google Ads & Meta Ads for Vancouver HVAC companies.', '/hvac-marketing'),
+    ]}
+  },
+  {
+    path: 'fitness-marketing',
+    title: 'Gym & Fitness Marketing Vancouver | More Members | AP Digital',
+    description: 'Get more gym members with Meta Ads & Google Ads. AP Digital serves Vancouver gyms & fitness studios. Month-to-month. No contracts.',
+    body: '<h1>Gym &amp; Fitness Marketing — Fill Your Membership</h1><p>AP Digital helps gyms, fitness studios, and personal trainers in Vancouver get more members and clients through Meta Ads, Google Ads, and social media marketing. Month-to-month. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Gym & Fitness Marketing', 'Membership growth for Vancouver gyms & fitness studios.', '/fitness-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Fitness Marketing', url: '/fitness-marketing' }]),
+      webPageSchema('Gym & Fitness Marketing Vancouver | AP Digital', 'Meta Ads & Google Ads for Vancouver gyms.', '/fitness-marketing'),
+    ]}
+  },
+  {
+    path: 'restaurant-marketing',
+    title: 'Restaurant Marketing Vancouver | Fill More Tables | AP Digital',
+    description: 'Get more reservations & walk-ins with Meta Ads, Google Ads & social media. AP Digital serves Vancouver restaurants & cafes. Month-to-month. No contracts.',
+    body: '<h1>Restaurant Marketing — Fill More Tables with Ads &amp; Social</h1><p>AP Digital helps restaurants and cafes in Vancouver get more reservations and walk-ins through Meta Ads, Google Ads, and Instagram content. Month-to-month. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Restaurant Marketing', 'Reservation & walk-in campaigns for Vancouver restaurants.', '/restaurant-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Restaurant Marketing', url: '/restaurant-marketing' }]),
+      webPageSchema('Restaurant Marketing Vancouver | AP Digital', 'Meta Ads & Google Ads for Vancouver restaurants.', '/restaurant-marketing'),
+    ]}
+  },
+  // ─── Service pages ───
   {
     path: 'services/paid-ads',
     title: 'Paid Ads Agency Vancouver | Meta & Google Ads | AP Digital',
-    description: 'AP Digital manages Meta & Google Ads for Vancouver salons, trades, realtors & coaches. 5–10× ROAS. First leads within 2 weeks. Month-to-month.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Paid Advertising', 'Meta Ads & Google Ads management for Vancouver small businesses.', '/services/paid-ads'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Paid Ads', url: '/services/paid-ads' }]),
-        webPageSchema('Paid Ads Agency Vancouver | AP Digital', 'Meta & Google Ads for Vancouver businesses.', '/services/paid-ads'),
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            { "@type": "Question", "name": "How much do paid ads cost in Vancouver?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients invest $500–$1,500/month in ad spend plus a management fee quoted upfront. No hidden costs." } },
-            { "@type": "Question", "name": "How fast will I see results from paid ads?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients see their first qualified leads within two weeks of campaign launch." } },
-            { "@type": "Question", "name": "Should I use Facebook Ads or Google Ads?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on your business. Meta Ads excel for brand awareness and visual offers. Google Ads capture high-intent searches. Many clients benefit from both." } },
-            { "@type": "Question", "name": "Do you require a long-term contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. All paid ads management is month-to-month. We earn your business with results, not lock-in contracts." } }
-          ]
-        }
-      ]
-    }
+    description: 'AP Digital manages Meta & Google Ads for Vancouver businesses. 5–10x ROAS. First leads within 2 weeks. Month-to-month. From $759/mo.',
+    body: '<h1>Paid Ads — Meta &amp; Google Ads Management</h1><p>AP Digital manages Meta Ads (Facebook and Instagram) and Google Ads campaigns for Vancouver businesses. We deliver 5–10x ROAS with first leads typically within 2 weeks of launch. Month-to-month, from $759/month.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Paid Advertising', 'Meta Ads & Google Ads management for Vancouver small businesses.', '/services/paid-ads'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Paid Ads', url: '/services/paid-ads' }]),
+      webPageSchema('Paid Ads Agency Vancouver | AP Digital', 'Meta & Google Ads for Vancouver businesses.', '/services/paid-ads'),
+    ]}
   },
   {
     path: 'services/social-media',
     title: 'Social Media Marketing Vancouver | Reels & Content | AP Digital',
-    description: 'AP Digital manages social media for Vancouver salons, trades & realtors. Instagram Reels, short-form video & organic growth. Month-to-month.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Social Media Marketing', 'Social media management & content creation for Vancouver small businesses.', '/services/social-media'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Social Media', url: '/services/social-media' }]),
-        webPageSchema('Social Media Marketing Vancouver | AP Digital', 'Social media management for Vancouver businesses.', '/services/social-media'),
-      ]
-    }
+    description: 'AP Digital manages social media for Vancouver businesses. Instagram Reels, short-form video & organic growth. Month-to-month. From $849/mo.',
+    body: '<h1>Social Media Marketing — Content That Drives Leads</h1><p>AP Digital manages social media for Vancouver businesses across Instagram, Facebook, and TikTok. 12+ custom posts per month, Reels production, and community management. Month-to-month, from $849/month.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/services/content-creation">Content Creation</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Social Media Marketing', 'Social media management & content creation for Vancouver businesses.', '/services/social-media'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Social Media', url: '/services/social-media' }]),
+      webPageSchema('Social Media Marketing Vancouver | AP Digital', 'Social media management for Vancouver businesses.', '/services/social-media'),
+    ]}
   },
   {
     path: 'services/content-creation',
     title: 'Content Creation Agency Vancouver | Reels & Social Video | AP Digital',
-    description: 'AP Digital creates scroll-stopping Reels, short-form video & social posts for Vancouver small businesses. Content that drives bookings and leads.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Content Creation', 'Short-form video & social content creation for Vancouver businesses.', '/services/content-creation'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Content Creation', url: '/services/content-creation' }]),
-        webPageSchema('Content Creation Agency Vancouver | AP Digital', 'Short-form video & Reels for Vancouver businesses.', '/services/content-creation'),
-      ]
-    }
+    description: 'AP Digital creates scroll-stopping Reels, short-form video & social posts for Vancouver businesses. Content that drives bookings and leads.',
+    body: '<h1>Content Creation — Reels, Video &amp; Social Posts</h1><p>AP Digital creates scroll-stopping Reels, short-form video, and social media posts for Vancouver businesses. Content designed to drive bookings and leads, not just likes.</p><nav aria-label="Quick links"><ul><li><a href="/services/social-media">Social Media</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Content Creation', 'Short-form video & social content creation for Vancouver businesses.', '/services/content-creation'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Content Creation', url: '/services/content-creation' }]),
+      webPageSchema('Content Creation Agency Vancouver | AP Digital', 'Reels & social video for Vancouver businesses.', '/services/content-creation'),
+    ]}
   },
   {
     path: 'services/seo',
-    title: 'SEO Agency Vancouver | Page 1 Rankings in 90 Days | AP Digital',
-    description: 'AP Digital provides local SEO for Vancouver salons, trades, realtors & coaches. Most clients reach page 1 within 90–180 days. Month-to-month.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Search Engine Optimization (SEO)', 'Local SEO for Vancouver small businesses. Rank higher on Google in 90–180 days.', '/services/seo'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'SEO Services', url: '/services/seo' }]),
-        webPageSchema('SEO Agency Vancouver | AP Digital', 'Local SEO for Vancouver salons, trades & realtors.', '/services/seo'),
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            { "@type": "Question", "name": "How long does SEO take to show results?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients see ranking improvements within 60–90 days and meaningful traffic growth within 4–6 months. Local SEO with Google Business Profile optimization can show results within 30 days." } },
-            { "@type": "Question", "name": "How much do SEO services cost in Vancouver?", "acceptedAnswer": { "@type": "Answer", "text": "Our SEO packages start at $750/month for local SEO. All quotes are upfront with no lock-in contracts." } },
-            { "@type": "Question", "name": "Can you guarantee first-page rankings?", "acceptedAnswer": { "@type": "Answer", "text": "No reputable SEO agency can guarantee specific rankings. We guarantee transparent monthly reporting and proven strategies. The majority of our clients reach page one within 6 months." } }
-          ]
-        }
-      ]
-    }
+    title: 'SEO Agency Vancouver | Local SEO & Rankings | AP Digital',
+    description: 'AP Digital provides local SEO for Vancouver businesses. Google Business Profile optimization, on-page SEO, and content strategy. Month-to-month.',
+    body: '<h1>SEO — Rank Higher on Google in Vancouver</h1><p>AP Digital provides local SEO for Vancouver businesses. Google Business Profile optimization, on-page SEO, keyword strategy, and content that ranks. Most clients see ranking improvements within 60–90 days.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Search Engine Optimization (SEO)', 'Local SEO for Vancouver businesses.', '/services/seo'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'SEO Services', url: '/services/seo' }]),
+      webPageSchema('SEO Agency Vancouver | AP Digital', 'Local SEO for Vancouver businesses.', '/services/seo'),
+    ]}
   },
   {
     path: 'services/lead-generation',
-    title: 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered',
-    description: 'AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches. 5–10× ROAS. First leads within 2 weeks. Month-to-month.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Lead Generation', 'Paid ads & content systems that generate consistent leads for Vancouver businesses.', '/services/lead-generation'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Lead Generation', url: '/services/lead-generation' }]),
-        webPageSchema('Lead Generation Agency Vancouver | AP Digital', 'Predictable lead generation for Vancouver businesses.', '/services/lead-generation'),
-      ]
-    }
+    title: 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered | AP Digital',
+    description: 'AP Digital has delivered 2,400+ leads for Vancouver businesses. 5–10x ROAS. First leads within 2 weeks. Month-to-month.',
+    body: '<h1>Lead Generation — Predictable Leads Every Month</h1><p>AP Digital has delivered 2,400+ qualified leads for Vancouver businesses using paid ads and content systems. First leads typically within 2 weeks. 5–10x ROAS. Month-to-month.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Lead Generation', 'Paid ads & content systems for predictable lead generation.', '/services/lead-generation'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Lead Generation', url: '/services/lead-generation' }]),
+      webPageSchema('Lead Generation Agency Vancouver | AP Digital', 'Predictable leads for Vancouver businesses.', '/services/lead-generation'),
+    ]}
   },
   {
     path: 'services/web-design',
     title: 'Web Design Agency Vancouver | Built to Generate Leads | AP Digital',
-    description: 'AP Digital builds fast, lead-generating websites for Vancouver salons, trades, realtors & coaches. Mobile-first, SEO-ready, conversion-focused.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Web Design', 'Conversion-focused websites for Vancouver small businesses.', '/services/web-design'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Web Design', url: '/services/web-design' }]),
-        webPageSchema('Web Design Agency Vancouver | AP Digital', 'Fast, lead-generating websites for Vancouver businesses.', '/services/web-design'),
-      ]
-    }
+    description: 'AP Digital builds fast, lead-generating websites for Vancouver businesses. Mobile-first, SEO-ready, conversion-focused.',
+    body: '<h1>Web Design — Built to Generate Leads</h1><p>AP Digital builds fast, mobile-first, SEO-ready websites for Vancouver businesses. Every site is designed to convert visitors into leads and booked appointments.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Web Design', 'Conversion-focused websites for Vancouver businesses.', '/services/web-design'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Web Design', url: '/services/web-design' }]),
+      webPageSchema('Web Design Agency Vancouver | AP Digital', 'Lead-generating websites for Vancouver businesses.', '/services/web-design'),
+    ]}
   },
+  // ─── Core pages ───
   {
     path: 'pricing',
     title: 'Marketing Pricing Vancouver | From $759/mo | AP Digital',
-    description: 'Transparent per-service pricing for SEO, paid ads, content, web design & lead gen. Month-to-month. 90-day results guarantee. Free strategy call.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Pricing', url: '/pricing' }]),
-        webPageSchema('Marketing Pricing Vancouver | From $759/mo | AP Digital', 'Transparent per-service pricing for SEO, paid ads, content, web design & lead gen.', '/pricing'),
-      ]
-    }
+    description: 'Transparent per-service pricing for paid ads, social media, SEO, content & web design. Month-to-month. 90-day results guarantee. Updated August 2026.',
+    body: '<h1>Transparent Pricing. No Surprises.</h1><p>Per-service pricing built around how your business actually grows. Every service is month-to-month and backed by our 90-day results guarantee. Prices last updated August 2026.</p><ul><li>Paid Ads Management — from $759/mo</li><li>Social Media Management — from $849/mo</li><li>SEO — from $750/mo</li><li>Content Creation — from $599/mo</li><li>Web Design — from $1,999 one-time</li></ul><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Pricing', url: '/pricing' }]),
+      webPageSchema('Marketing Pricing Vancouver | From $759/mo | AP Digital', 'Transparent per-service pricing. Month-to-month. 90-day guarantee.', '/pricing'),
+    ]}
   },
   {
     path: 'case-studies',
     title: 'Case Studies | Real Results for BC Businesses | AP Digital',
-    description: 'See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses. Real results, real numbers.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }]),
-        webPageSchema('Case Studies | AP Digital Vancouver', 'Real campaign results for Vancouver salons, trades, realtors & coaches.', '/case-studies'),
-        {
-          "@type": "ItemList",
-          "name": "AP Digital Client Case Studies",
-          "description": "Real results generated by AP Digital for Vancouver-area small businesses.",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Vancouver Salon — 94 Leads in 60 Days", "description": "Kitsilano hair salon generated 94 qualified leads in 60 days at $8.51 per lead using Meta Ads." },
-            { "@type": "ListItem", "position": 2, "name": "Surrey Plumbing Company — 30+ Jobs/Month from Google Ads", "description": "Surrey plumbing company generated 30+ qualified job inquiries per month at $31 per booked call." },
-            { "@type": "ListItem", "position": 3, "name": "Burnaby Realtor — 22 Qualified Leads in First Month", "description": "Burnaby realtor generated 22 qualified leads in month one at $41 per lead using Meta Ads." },
-            { "@type": "ListItem", "position": 4, "name": "Vancouver Business Coach — 8 High-Ticket Clients in 90 Days", "description": "Vancouver business coach enrolled 8 new clients at $3,500/month each via Meta Ads funnel." }
-          ]
-        }
-      ]
-    }
+    description: 'See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses.',
+    body: '<h1>Case Studies — Real Results for BC Businesses</h1><p>See how AP Digital delivers measurable results for Vancouver-area businesses. Real campaigns, real numbers, real ROI.</p><ul><li>Vancouver Salon — 94 Leads in 60 Days at $8.51/lead</li><li>Surrey Plumbing Company — 30+ Jobs/Month from Google Ads at $31/booked call</li><li>Burnaby Realtor — 22 Qualified Leads in First Month at $41/lead</li><li>Vancouver Business Coach — 8 High-Ticket Clients in 90 Days</li></ul><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }]),
+      webPageSchema('Case Studies | AP Digital Vancouver', 'Real campaign results for BC businesses.', '/case-studies'),
+    ]}
   },
   {
     path: 'how-to-choose-a-marketing-agency-vancouver',
     title: 'How to Choose a Google Ads Agency in Vancouver | AP Digital',
-    description: "What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver from those that don't.",
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'How to Choose a Marketing Agency', url: '/how-to-choose-a-marketing-agency-vancouver' }]),
-        webPageSchema("How to Choose a Google Ads Agency in Vancouver | AP Digital", "Buyer's guide: what to look for, red flags, and questions to ask when hiring a Vancouver marketing agency.", '/how-to-choose-a-marketing-agency-vancouver'),
-        {
-          "@type": "Article",
-          "headline": "How to Choose a Google Ads Agency in Vancouver BC",
-          "datePublished": "2026-05-01",
-          "dateModified": "2026-05-16",
-          "author": { "@type": "Person", "name": "Arjun Sharma", "jobTitle": "Founder, AP Digital" },
-          "publisher": { "@id": `${BASE_URL}/#organization` }
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            { "@type": "Question", "name": "How much should I pay a Google Ads agency in Vancouver?", "acceptedAnswer": { "@type": "Answer", "text": "Vancouver Google Ads agencies typically charge $500–$2,500/month in management fees, separate from your ad spend. Flat-fee models give more predictability than percentage-of-spend models." } },
-            { "@type": "Question", "name": "What questions should I ask a Vancouver marketing agency before hiring?", "acceptedAnswer": { "@type": "Answer", "text": "Ask: (1) Who specifically will manage my account day-to-day? (2) How do you measure success — leads and revenue, or impressions? (3) Can I see examples in my industry? (4) What is your policy if we don't see results in 90 days? (5) Is there a contract?" } },
-            { "@type": "Question", "name": "How long does it take to see results from a Vancouver marketing agency?", "acceptedAnswer": { "@type": "Answer", "text": "Google Ads and Meta Ads campaigns should produce first leads within 2–4 weeks of launch. SEO takes 3–6 months. Social media organic growth typically takes 60–90 days." } },
-            { "@type": "Question", "name": "What is AP Digital's guarantee?", "acceptedAnswer": { "@type": "Answer", "text": "AP Digital operates month-to-month with no lock-in contracts. If you don't see qualified leads within 90 days of campaign launch, we don't expect you to stay. Transparent reporting shows cost per lead, lead volume, and return on ad spend." } }
-          ]
-        }
-      ]
-    }
+    description: "What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver.",
+    body: '<h1>How to Choose a Marketing Agency in Vancouver</h1><p>What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver real results from those that don\'t. Written by Arjun Sharma, Founder of AP Digital.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'How to Choose a Marketing Agency', url: '/how-to-choose-a-marketing-agency-vancouver' }]),
+      webPageSchema("How to Choose a Google Ads Agency in Vancouver", "Buyer's guide for hiring a Vancouver marketing agency.", '/how-to-choose-a-marketing-agency-vancouver'),
+      { "@type": "Article", "headline": "How to Choose a Google Ads Agency in Vancouver BC", "datePublished": "2026-05-01", "dateModified": "2026-08-05", "author": { "@id": `${BASE_URL}/#founder` }, "publisher": { "@id": `${BASE_URL}/#organization` } },
+    ]}
   },
   {
     path: 'about',
     title: 'About AP Digital | Founded by Arjun Sharma | Vancouver Marketing Agency',
-    description: 'AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for salons, trades, real estate & coaches. Personal management, no contracts.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        { "@type": "Person", "@id": `${BASE_URL}/about#person`, "name": "Arjun Sharma", "jobTitle": "Founder & Lead Strategist", "worksFor": { "@id": `${BASE_URL}/#organization` }, "url": `${BASE_URL}/about` },
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }]),
-        webPageSchema('About AP Digital | Arjun Sharma', 'Founded by Arjun Sharma in Vancouver, BC.', '/about'),
-      ]
-    }
+    description: 'AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for trades, salons, real estate & coaches. No contracts.',
+    body: '<h1>About AP Digital</h1><p>AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in performance marketing and lead generation for local service businesses — trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants. Arjun personally manages every client account.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }]),
+      webPageSchema('About AP Digital | Arjun Sharma', 'Founded by Arjun Sharma in Vancouver, BC.', '/about'),
+    ]}
   },
   {
     path: 'contact',
     title: 'Book a Free Strategy Call | AP Digital Vancouver',
-    description: 'Book a free 20-minute strategy call with AP Digital. We will show you how many leads are available in your area. No pitch. No pressure. No contracts.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }]),
-        webPageSchema('Contact AP Digital | Book a Free Strategy Call', 'Book a free call with AP Digital Vancouver.', '/contact'),
-      ]
-    }
+    description: 'Book a free 20-minute strategy call with AP Digital. No pitch. No pressure. No contracts.',
+    body: '<h1>Book a Free Strategy Call</h1><p>Book a free 20-minute strategy call with Arjun Sharma at AP Digital. We\'ll show you how many leads are available in your area and what it would cost to capture them. No pitch. No pressure. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }]),
+      webPageSchema('Contact AP Digital | Book a Free Strategy Call', 'Book a free call with AP Digital Vancouver.', '/contact'),
+    ]}
   },
   {
     path: 'blog',
     title: 'Digital Marketing Blog | AP Digital Vancouver',
-    description: 'Paid ads, SEO & lead generation guides for Vancouver salons, trades businesses, realtors & coaches. Proven strategies from AP Digital.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog' }]),
-        webPageSchema('Digital Marketing Blog | AP Digital', 'Marketing guides for Vancouver salons, trades & realtors.', '/blog'),
-      ]
-    }
+    description: 'Paid ads, SEO & lead generation guides for Vancouver businesses. Proven strategies from AP Digital.',
+    body: '<h1>Digital Marketing Blog</h1><p>Paid ads, SEO, and lead generation guides for Vancouver trades businesses, salons, real estate agents, coaches, and more. Proven strategies from AP Digital, written by Arjun Sharma.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/pricing">Pricing</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog' }]),
+      webPageSchema('Digital Marketing Blog | AP Digital', 'Marketing guides for Vancouver businesses.', '/blog'),
+    ]}
   },
-  {
-    path: 'surrey',
-    title: 'Surrey Marketing Agency | Leads & Ads | AP Digital',
-    description: 'Surrey digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Digital Marketing Surrey BC', 'Lead generation for Surrey small businesses using Meta Ads & Google Ads.', '/surrey'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Surrey', url: '/surrey' }]),
-        webPageSchema('Digital Marketing Agency Surrey BC | AP Digital', 'Meta & Google Ads for Surrey businesses.', '/surrey'),
-        {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/surrey#localbusiness`,
-          "name": "AP Digital — Surrey Digital Marketing Agency",
-          "url": `${BASE_URL}/surrey`,
-          "telephone": "+1-778-682-5772",
-          "areaServed": [
-            { "@type": "City", "name": "Surrey" },
-            { "@type": "City", "name": "White Rock" },
-            { "@type": "City", "name": "Delta" },
-            { "@type": "City", "name": "Langley" }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            { "@type": "Question", "name": "How quickly will I see leads in Surrey?", "acceptedAnswer": { "@type": "Answer", "text": "Most Surrey businesses see their first leads within 2 weeks of launching Meta Ads with AP Digital." } },
-            { "@type": "Question", "name": "Do I have to sign a long-term contract?", "acceptedAnswer": { "@type": "Answer", "text": "No contracts. We work month-to-month with every Surrey client." } },
-            { "@type": "Question", "name": "How much does digital marketing cost in Surrey?", "acceptedAnswer": { "@type": "Answer", "text": "Most clients start with $500–$1,500/month in ad spend. Our management fee is transparent and quoted upfront." } }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    path: 'burnaby',
-    title: 'Burnaby Marketing Agency | Leads & Ads | AP Digital',
-    description: 'Burnaby digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Digital Marketing Burnaby BC', 'Lead generation for Burnaby small businesses using Meta Ads & Google Ads.', '/burnaby'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Burnaby', url: '/burnaby' }]),
-        webPageSchema('Digital Marketing Agency Burnaby BC | AP Digital', 'Meta & Google Ads for Burnaby businesses.', '/burnaby'),
-        {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/burnaby#localbusiness`,
-          "name": "AP Digital — Burnaby Digital Marketing Agency",
-          "url": `${BASE_URL}/burnaby`,
-          "telephone": "+1-778-682-5772",
-          "areaServed": [{ "@type": "City", "name": "Burnaby" }]
-        }
-      ]
-    }
-  },
-  {
-    path: 'langley',
-    title: 'Langley Marketing Agency | Leads & Ads | AP Digital',
-    description: 'Langley digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Digital Marketing Langley BC', 'Lead generation for Langley small businesses using Meta Ads & Google Ads.', '/langley'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Langley', url: '/langley' }]),
-        webPageSchema('Digital Marketing Agency Langley BC | AP Digital', 'Meta & Google Ads for Langley businesses.', '/langley'),
-        {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/langley#localbusiness`,
-          "name": "AP Digital — Langley Digital Marketing Agency",
-          "url": `${BASE_URL}/langley`,
-          "telephone": "+1-778-682-5772",
-          "areaServed": [{ "@type": "City", "name": "Langley" }]
-        }
-      ]
-    }
-  },
-  {
-    path: 'coquitlam',
-    title: 'Coquitlam Marketing Agency | Leads & Ads | AP Digital',
-    description: 'Coquitlam digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches. 5-10x ROAS. From $500/mo.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Digital Marketing Coquitlam BC', 'Lead generation for Coquitlam businesses using Meta Ads & Google Ads.', '/coquitlam'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Coquitlam', url: '/coquitlam' }]),
-        webPageSchema('Digital Marketing Agency Coquitlam BC | AP Digital', 'Meta & Google Ads for Coquitlam businesses.', '/coquitlam'),
-        {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/coquitlam#localbusiness`,
-          "name": "AP Digital — Coquitlam Digital Marketing Agency",
-          "url": `${BASE_URL}/coquitlam`,
-          "telephone": "+1-778-682-5772",
-          "areaServed": [{ "@type": "City", "name": "Coquitlam" }]
-        }
-      ]
-    }
-  },
-  {
-    path: 'vancouver',
-    title: 'Vancouver Marketing Agency | Leads & Ads | AP Digital',
-    description: 'Vancouver digital marketing agency offering Google Ads, Meta Ads, SEO & web design services for salons, trades, realtors & coaches. 5-10x ROAS.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Digital Marketing Vancouver BC', 'Lead generation for Vancouver small businesses using Google Ads & Meta Ads.', '/vancouver'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Vancouver', url: '/vancouver' }]),
-        webPageSchema('Digital Marketing Agency Vancouver BC | AP Digital', 'Google Ads & Meta Ads for Vancouver businesses.', '/vancouver'),
-        {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/vancouver#localbusiness`,
-          "name": "AP Digital — Vancouver Digital Marketing Agency",
-          "url": `${BASE_URL}/vancouver`,
-          "telephone": "+1-778-682-5772",
-          "email": "apdigital.core@gmail.com",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Vancouver",
-            "addressRegion": "BC",
-            "postalCode": "V6B 2W9",
-            "addressCountry": "CA"
-          },
-          "geo": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "14", "bestRating": "5", "worstRating": "1" },
-          "areaServed": [
-            { "@type": "City", "name": "Vancouver" },
-            { "@type": "City", "name": "Kitsilano" },
-            { "@type": "City", "name": "Mount Pleasant" },
-            { "@type": "City", "name": "East Vancouver" }
-          ]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            { "@type": "Question", "name": "How quickly will I get leads in Vancouver?", "acceptedAnswer": { "@type": "Answer", "text": "Most Vancouver businesses see their first qualified leads within 2 weeks of launching their campaign with AP Digital." } },
-            { "@type": "Question", "name": "Do I need a long-term contract?", "acceptedAnswer": { "@type": "Answer", "text": "No. AP Digital operates month-to-month with every Vancouver client. We earn your business every 30 days by actually delivering results." } },
-            { "@type": "Question", "name": "Should I use Google Ads or Facebook Ads in Vancouver?", "acceptedAnswer": { "@type": "Answer", "text": "Both platforms work well in Vancouver. Google Ads capture high-intent searches. Meta Ads are better for brand awareness and visual offers. We recommend the right mix after a free strategy call." } }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    path: 'richmond',
-    title: 'Richmond Marketing Agency | Leads & Ads | AP Digital',
-    description: 'Richmond digital marketing agency offering Google Ads, Meta Ads & SEO services. For salons, trades, realtors & coaches in Richmond BC. 5-10x ROAS.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Digital Marketing Richmond BC', 'Lead generation for Richmond businesses using Meta Ads & Google Ads.', '/richmond'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Richmond', url: '/richmond' }]),
-        webPageSchema('Digital Marketing Agency Richmond BC | AP Digital', 'Meta & Google Ads for Richmond businesses.', '/richmond'),
-        {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/richmond#localbusiness`,
-          "name": "AP Digital — Richmond BC Digital Marketing Agency",
-          "url": `${BASE_URL}/richmond`,
-          "telephone": "+1-778-682-5772",
-          "areaServed": [
-            { "@type": "City", "name": "Richmond" },
-            { "@type": "City", "name": "Steveston" },
-            { "@type": "City", "name": "Brighouse" }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    path: 'abbotsford',
-    title: 'Abbotsford Marketing Agency | Leads & Ads | AP Digital',
-    description: 'Abbotsford digital marketing agency offering Google Ads, Meta Ads & SEO services for Fraser Valley businesses. 5-10x ROAS. From $500/mo.',
-    schema: {
-      "@context": "https://schema.org",
-      "@graph": [
-        orgSchema,
-        serviceSchema('Digital Marketing Abbotsford BC', 'Lead generation for Abbotsford & Fraser Valley businesses using Meta Ads & Google Ads.', '/abbotsford'),
-        breadcrumb([{ name: 'Home', url: '/' }, { name: 'Abbotsford', url: '/abbotsford' }]),
-        webPageSchema('Digital Marketing Agency Abbotsford BC | AP Digital', 'Meta & Google Ads for Abbotsford businesses.', '/abbotsford'),
-        {
-          "@type": "LocalBusiness",
-          "@id": `${BASE_URL}/abbotsford#localbusiness`,
-          "name": "AP Digital — Abbotsford Digital Marketing Agency",
-          "url": `${BASE_URL}/abbotsford`,
-          "telephone": "+1-778-682-5772",
-          "areaServed": [
-            { "@type": "City", "name": "Abbotsford" },
-            { "@type": "City", "name": "Mission" },
-            { "@type": "City", "name": "Chilliwack" }
-          ]
-        }
-      ]
-    }
-  }
+  // ─── City pages ───
+  ...['vancouver', 'surrey', 'burnaby', 'richmond', 'langley', 'coquitlam', 'abbotsford'].map(city => {
+    const cap = city.charAt(0).toUpperCase() + city.slice(1);
+    return {
+      path: city,
+      title: `${cap} Marketing Agency | Leads & Ads | AP Digital`,
+      description: `${cap} digital marketing agency offering Google Ads, Meta Ads & SEO. For trades, salons, realtors & coaches. Month-to-month. From $759/mo.`,
+      body: `<h1>Digital Marketing Agency in ${cap}, BC</h1><p>AP Digital helps ${cap} businesses get more leads with Google Ads, Meta Ads, and social media marketing. We serve trades contractors, salons, real estate agents, coaches, and more. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`,
+      schema: { "@context": "https://schema.org", "@graph": [
+        orgSchema, founderSchema,
+        serviceSchema(`Digital Marketing ${cap} BC`, `Lead generation for ${cap} businesses using Google Ads & Meta Ads.`, `/${city}`),
+        breadcrumb([{ name: 'Home', url: '/' }, { name: cap, url: `/${city}` }]),
+        webPageSchema(`Digital Marketing Agency ${cap} BC | AP Digital`, `Google Ads & Meta Ads for ${cap} businesses.`, `/${city}`),
+      ]}
+    };
+  }),
 ];
 
-// ── Blog posts ────────────────────────────────────────────────────────────────
+// ── Blog posts (current as of 2026-08-05) ───────────────────────────────────
+// Only posts that exist in src/lib/blogPosts.ts — deleted posts are excluded
 
 const blogPosts = [
-  { slug: 'how-to-get-more-salon-clients', canonical: 'https://ap-digital.ca/blog/salon-marketing-vancouver-bc', metaTitle: 'How to Get More Salon Clients in 2026 | AP Digital', metaDescription: 'Struggling to fill your appointment book? Proven strategies to get more salon clients using social media, paid ads & referrals in Vancouver, BC.', date: '2026-03-10', category: 'Salon Marketing' },
-  { slug: 'how-to-market-a-trades-business-online', canonical: 'https://ap-digital.ca/blog/trades-marketing-vancouver-bc', metaTitle: 'How to Market a Trades Business Online in Canada | AP Digital', metaDescription: 'A practical guide to online marketing for tradespeople in Canada. Learn how plumbers, electricians & HVAC techs get leads with Google Ads, Meta Ads & SEO.', date: '2026-03-12', category: 'Trades Marketing' },
   { slug: 'real-estate-agent-social-media-tips', metaTitle: 'Social Media Tips for Real Estate Agents Canada | AP Digital', metaDescription: 'The top social media strategies for Canadian real estate agents that generate buyer & seller leads in 2026.', date: '2026-03-12', category: 'Real Estate Marketing' },
   { slug: 'how-much-does-social-media-marketing-cost-canada', metaTitle: 'How Much Does Social Media Marketing Cost in Canada? | AP Digital', metaDescription: 'Transparent breakdown of social media marketing costs for Canadian businesses — agency fees, ad spend & what to expect at every price point.', date: '2026-03-12', category: 'Marketing Strategy' },
   { slug: 'best-ads-platform-for-small-business-canada', metaTitle: 'Facebook Ads vs Google Ads for Small Business in Canada 2026 | AP Digital', metaDescription: 'Meta Ads or Google Ads — which is better for your Canadian small business? Head-to-head comparison with costs, niches & recommendations.', date: '2026-03-12', category: 'Paid Advertising' },
-  { slug: 'social-media-marketing-cost-canada', canonical: 'https://ap-digital.ca/blog/how-much-does-social-media-marketing-cost-canada', metaTitle: 'Social Media Marketing Cost Canada 2026 | AP Digital', metaDescription: "Full breakdown of social media marketing costs for Canadian businesses — from DIY to full-service agency. Know what you're paying for before you spend a dollar.", date: '2026-03-17', category: 'Marketing Strategy' },
-  { slug: 'facebook-ads-vs-google-ads', canonical: 'https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada', metaTitle: 'Facebook Ads vs Google Ads: Which Is Better for Canadian Business? | AP Digital', metaDescription: "Facebook Ads vs Google Ads — what's the difference and which should you run? AP Digital breaks down both platforms for Canadian small businesses.", date: '2026-03-17', category: 'Paid Advertising' },
-  { slug: 'real-estate-social-media-tips', canonical: 'https://ap-digital.ca/blog/real-estate-agent-social-media-tips', metaTitle: 'Real Estate Social Media Tips That Generate Leads | AP Digital', metaDescription: "Stop posting just for likes. Real estate social media strategies that generate actual buyer & seller leads for Canadian realtors in 2026.", date: '2026-03-17', category: 'Real Estate Marketing' },
-  { slug: 'email-marketing-vs-social-media', metaTitle: 'Email Marketing vs Social Media: What Works in 2026? | AP Digital', metaDescription: 'Email or social media — where should your business focus? We compare both channels for Canadian small businesses so you can make the smartest marketing choice.', date: '2026-07-10', category: 'Marketing Strategy' },
-  { slug: 'best-ads-for-trades-businesses-canada', metaTitle: 'Best Ads for Trades Businesses in Canada | AP Digital', metaDescription: 'Which platform works best for plumbers, HVAC, electricians & roofers in Canada? We break down Meta Ads vs Google Ads for trades businesses.', date: '2026-08-05', category: 'Trades Marketing' },
-  { slug: 'digital-marketing-agency-vancouver-bc', metaTitle: 'Digital Marketing Agency Vancouver BC | AP Digital', metaDescription: 'Looking for a digital marketing agency in Vancouver, BC? AP Digital helps local businesses get more leads with paid ads & social media. No contracts.', date: '2026-03-15', category: 'Agency' },
-  { slug: 'salon-marketing-vancouver-bc', metaTitle: 'Salon Marketing Vancouver BC: Get More Clients | AP Digital', metaDescription: 'The complete guide to salon marketing in Vancouver, BC. Instagram ads, Google Ads & local SEO strategies to fill your bookings week after week.', date: '2026-03-17', category: 'Salon Marketing' },
-  { slug: 'trades-marketing-vancouver-bc', metaTitle: 'Trades Marketing Vancouver BC: Get More Leads | AP Digital', metaDescription: 'How trades businesses in Vancouver, BC get a steady flow of leads online. Paid ads & SEO strategies for plumbers, HVAC, electricians & roofers.', date: '2026-03-18', category: 'Trades Marketing' },
-  { slug: 'real-estate-agent-marketing-vancouver-bc', metaTitle: 'Real Estate Agent Marketing Vancouver BC | AP Digital', metaDescription: 'How Vancouver realtors get consistent leads in 2026 using Meta Ads, social media & Google Ads. Practical guide for BC real estate agents.', date: '2026-03-19', category: 'Real Estate Marketing' },
-  { slug: 'meta-ads-cost-contractors-bc', metaTitle: 'How Much Do Meta Ads Cost for Contractors in BC? | AP Digital', metaDescription: 'Realistic Meta Ads budgets for plumbers, HVAC, electricians & roofers in Metro Vancouver. Know what to spend before launching your first campaign.', date: '2026-03-20', category: 'Trades Marketing' },
-  { slug: 'hvac-marketing-vancouver-bc', metaTitle: 'HVAC Marketing Vancouver BC: Get More Leads | AP Digital', metaDescription: 'How HVAC companies in Vancouver, BC get consistent service calls using Meta Ads, Google Ads & local SEO. Real strategies that work.', date: '2026-03-21', category: 'Trades Marketing' },
-  { slug: 'coaching-clients-bc', metaTitle: 'How to Get More Coaching Clients in BC | AP Digital', metaDescription: "Struggling to find coaching clients in BC? How fitness, business & life coaches use paid ads & social media to grow their practice.", date: '2026-03-22', category: 'Coaching Marketing' },
-  { slug: 'plumber-marketing-metro-vancouver', metaTitle: 'Plumber Marketing Metro Vancouver: Get More Calls | AP Digital', metaDescription: 'How plumbing companies in Metro Vancouver get more service calls with Google Ads, Meta Ads & local SEO. Lead generation guide for BC plumbers.', date: '2026-03-23', category: 'Trades Marketing' },
-  { slug: 'electrician-leads-bc', metaTitle: 'How Electricians Get More Leads in BC | AP Digital', metaDescription: 'The best ways for BC electricians to generate consistent leads online. Paid ads, Google Business Profile & local SEO for electrical contractors.', date: '2026-03-24', category: 'Trades Marketing' },
-  { slug: 'best-digital-marketing-agency-vancouver', canonical: 'https://ap-digital.ca/blog/digital-marketing-agency-vancouver-bc', metaTitle: 'Best Digital Marketing Agency Vancouver 2026 | AP Digital', metaDescription: 'Looking for the best digital marketing agency in Vancouver? What to look for, red flags to avoid, and how to pick an agency that delivers real ROI.', date: '2026-04-01', category: 'Agency' },
-  { slug: 'vancouver-small-business-seo-guide', metaTitle: 'Vancouver Small Business SEO Guide 2026 | AP Digital', metaDescription: 'How Vancouver small businesses rank higher on Google with local SEO, Google Business Profile optimization, and content strategy. Complete 2026 guide.', date: '2026-04-05', category: 'SEO' },
-  { slug: 'facebook-ads-vancouver-small-business', canonical: 'https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada', metaTitle: 'Facebook Ads for Vancouver Small Business 2026 | AP Digital', metaDescription: 'How Vancouver small businesses use Facebook & Instagram ads to generate leads and grow. Targeting tips, budget advice, and real campaign strategies.', date: '2026-04-08', category: 'Paid Advertising' },
-  { slug: 'vancouver-google-ads-guide-local-business', metaTitle: 'Google Ads Vancouver: Local Business Guide 2026 | AP Digital', metaDescription: 'How Vancouver local businesses use Google Ads & Local Service Ads to get more calls, leads, and booked jobs. Complete strategy guide.', date: '2026-04-10', category: 'Paid Advertising' },
-  { slug: 'social-media-marketing-vancouver', metaTitle: 'Social Media Marketing Vancouver 2026 | AP Digital', metaDescription: 'What social media strategies actually work for Vancouver local businesses in 2026. Platform selection, content ideas, and real growth tactics.', date: '2026-04-12', category: 'Social Media' },
+  { slug: 'email-marketing-vs-social-media', metaTitle: 'Email Marketing vs Social Media: What Works in 2026? | AP Digital', metaDescription: 'Email or social media — where should your business focus? We compare both channels for Canadian small businesses.', date: '2026-07-10', category: 'Marketing Strategy' },
+  { slug: 'best-ads-for-trades-businesses-canada', metaTitle: 'Best Ads for Trades Businesses in Canada | AP Digital', metaDescription: 'Which platform works best for plumbers, HVAC, electricians & roofers in Canada? Meta Ads vs Google Ads for trades businesses.', date: '2026-08-05', category: 'Trades Marketing' },
+  { slug: 'digital-marketing-agency-vancouver-bc', metaTitle: 'Digital Marketing Agency Vancouver BC | AP Digital', metaDescription: 'Looking for a digital marketing agency in Vancouver, BC? AP Digital helps local businesses get more leads with paid ads & social media.', date: '2026-03-15', category: 'Agency' },
+  { slug: 'salon-marketing-vancouver-bc', metaTitle: 'Salon Marketing Vancouver BC: Get More Clients | AP Digital', metaDescription: 'The complete guide to salon marketing in Vancouver, BC. Instagram ads, Google Ads & local SEO strategies.', date: '2026-03-17', category: 'Salon Marketing' },
+  { slug: 'trades-marketing-vancouver-bc', metaTitle: 'Trades Marketing Vancouver BC: Get More Leads | AP Digital', metaDescription: 'How trades businesses in Vancouver, BC get a steady flow of leads online. Paid ads & SEO strategies for contractors.', date: '2026-03-18', category: 'Trades Marketing' },
+  { slug: 'real-estate-agent-marketing-vancouver-bc', metaTitle: 'Real Estate Agent Marketing Vancouver BC | AP Digital', metaDescription: 'How Vancouver realtors get consistent leads using Meta Ads, social media & Google Ads.', date: '2026-03-19', category: 'Real Estate Marketing' },
+  { slug: 'meta-ads-cost-contractors-bc', metaTitle: 'How Much Do Meta Ads Cost for Contractors in BC? | AP Digital', metaDescription: 'Realistic Meta Ads budgets for plumbers, HVAC, electricians & roofers in Metro Vancouver.', date: '2026-03-20', category: 'Trades Marketing' },
+  { slug: 'hvac-marketing-vancouver-bc', metaTitle: 'HVAC Marketing Vancouver BC: Get More Leads | AP Digital', metaDescription: 'How HVAC companies in Vancouver, BC get consistent service calls using Meta Ads, Google Ads & local SEO.', date: '2026-03-21', category: 'Trades Marketing' },
+  { slug: 'coaching-clients-bc', metaTitle: 'How to Get More Coaching Clients in BC | AP Digital', metaDescription: "How fitness, business & life coaches use paid ads & social media to grow their practice in BC.", date: '2026-03-22', category: 'Coaching Marketing' },
+  { slug: 'plumber-marketing-metro-vancouver', metaTitle: 'Plumber Marketing Metro Vancouver: Get More Calls | AP Digital', metaDescription: 'How plumbing companies in Metro Vancouver get more service calls with Google Ads, Meta Ads & local SEO.', date: '2026-03-23', category: 'Trades Marketing' },
+  { slug: 'electrician-leads-bc', metaTitle: 'How Electricians Get More Leads in BC | AP Digital', metaDescription: 'The best ways for BC electricians to generate consistent leads online. Paid ads, Google Business Profile & local SEO.', date: '2026-03-24', category: 'Trades Marketing' },
+  { slug: 'vancouver-small-business-seo-guide', metaTitle: 'Vancouver Small Business SEO Guide 2026 | AP Digital', metaDescription: 'How Vancouver small businesses rank higher on Google with local SEO, Google Business Profile optimization, and content strategy.', date: '2026-04-05', category: 'SEO' },
+  { slug: 'vancouver-google-ads-guide-local-business', metaTitle: 'Google Ads Vancouver: Local Business Guide 2026 | AP Digital', metaDescription: 'How Vancouver local businesses use Google Ads & Local Service Ads to get more calls, leads, and booked jobs.', date: '2026-04-10', category: 'Paid Advertising' },
+  { slug: 'social-media-marketing-vancouver', metaTitle: 'Social Media Marketing Vancouver 2026 | AP Digital', metaDescription: 'What social media strategies actually work for Vancouver local businesses in 2026.', date: '2026-04-12', category: 'Social Media' },
+  { slug: 'google-ads-coaching-business-bc', metaTitle: 'Google Ads for Coaching Business in BC | AP Digital', metaDescription: 'How BC coaches use Google Ads to get discovery call bookings and high-ticket clients.', date: '2026-04-15', category: 'Coaching Marketing' },
+  { slug: 'salon-google-ads-vancouver', metaTitle: 'Google Ads for Salons in Vancouver | AP Digital', metaDescription: 'How Vancouver salons use Google Ads to fill their appointment books with new clients.', date: '2026-04-18', category: 'Salon Marketing' },
+  { slug: 'digital-marketing-richmond-bc', metaTitle: 'Digital Marketing Richmond BC | AP Digital', metaDescription: 'Digital marketing services for Richmond, BC businesses. Google Ads, Meta Ads & social media.', date: '2026-04-20', category: 'City' },
+  { slug: 'digital-marketing-langley-bc', metaTitle: 'Digital Marketing Langley BC | AP Digital', metaDescription: 'Digital marketing services for Langley, BC businesses. Paid ads, SEO & social media.', date: '2026-04-22', category: 'City' },
+  { slug: 'paid-ads-abbotsford-bc', metaTitle: 'Paid Ads Abbotsford BC | AP Digital', metaDescription: 'Paid ads management for Abbotsford & Fraser Valley businesses.', date: '2026-04-25', category: 'City' },
+  { slug: 'social-media-marketing-north-vancouver', metaTitle: 'Social Media Marketing North Vancouver | AP Digital', metaDescription: 'Social media marketing for North Vancouver businesses.', date: '2026-04-28', category: 'City' },
+  { slug: 'facebook-ads-surrey-bc', metaTitle: 'Facebook Ads Surrey BC | AP Digital', metaDescription: 'Facebook & Instagram ads for Surrey, BC businesses. Targeted ads that generate leads.', date: '2026-05-01', category: 'City' },
+  { slug: 'social-media-coaching-business-bc', metaTitle: 'Social Media for Coaching Business in BC | AP Digital', metaDescription: 'Social media strategies for BC coaches to attract clients and build authority.', date: '2026-05-05', category: 'Coaching Marketing' },
+  { slug: 'instagram-ads-salons-vancouver', metaTitle: 'Instagram Ads for Salons in Vancouver | AP Digital', metaDescription: 'How Vancouver salons use Instagram ads and Reels to fill their appointment books.', date: '2026-05-08', category: 'Salon Marketing' },
+  { slug: 'how-much-do-google-ads-cost-vancouver', metaTitle: 'How Much Do Google Ads Cost in Vancouver? | AP Digital', metaDescription: 'Realistic Google Ads budgets and cost-per-click data for Vancouver businesses.', date: '2026-05-10', category: 'Paid Advertising' },
+  { slug: 'social-media-burnaby-bc', metaTitle: 'Social Media Marketing Burnaby BC | AP Digital', metaDescription: 'Social media marketing for Burnaby, BC businesses.', date: '2026-05-12', category: 'City' },
+  { slug: 'tiktok-ads-small-business-bc', metaTitle: 'TikTok Ads for Small Business in BC | AP Digital', metaDescription: 'Should your BC small business run TikTok ads? Costs, strategies, and when it makes sense.', date: '2026-05-15', category: 'Paid Advertising' },
+  { slug: 'google-ads-coquitlam-tri-cities', metaTitle: 'Google Ads Coquitlam & Tri-Cities | AP Digital', metaDescription: 'Google Ads for Coquitlam, Port Moody & Port Coquitlam businesses.', date: '2026-05-18', category: 'City' },
+  { slug: 'dental-marketing-vancouver-bc', metaTitle: 'Dental Marketing Vancouver BC: Get More Patients | AP Digital', metaDescription: 'How dental clinics in Vancouver get more new-patient appointments with Google Ads and Meta Ads.', date: '2026-08-05', category: 'Dental Marketing' },
+  { slug: 'gym-marketing-vancouver-bc', metaTitle: 'Gym Marketing Vancouver BC: More Members | AP Digital', metaDescription: 'How gyms and fitness studios in Vancouver grow membership with Meta Ads and social media.', date: '2026-08-05', category: 'Fitness Marketing' },
+  { slug: 'restaurant-marketing-vancouver-bc', metaTitle: 'Restaurant Marketing Vancouver BC: Fill More Tables | AP Digital', metaDescription: 'How Vancouver restaurants get more reservations and walk-ins with Meta Ads and Instagram.', date: '2026-08-05', category: 'Restaurant Marketing' },
 ];
 
-// ── HTML generation helpers ───────────────────────────────────────────────────
+// ── HTML generation helpers ─────────────────────────────────────────────────
 
-function injectIntoHtml(html, { title, description, canonical, schema }) {
+function injectIntoHtml(html, { title, description, canonical, schema, body }) {
+  // Replace title
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
 
-  if (html.includes('<meta name="description"')) {
-    html = html.replace(/<meta name="description"[^>]*\/?>/, `<meta name="description" content="${description}" />`);
-  } else {
-    html = html.replace('</head>', `<meta name="description" content="${description}" />\n</head>`);
-  }
+  // Replace meta description
+  html = html.replace(/<meta name="description"[^>]*\/?>/, `<meta name="description" content="${escapeAttr(description)}" />`);
 
+  // Add canonical
   if (html.includes('rel="canonical"')) {
     html = html.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${canonical}" />`);
   } else {
-    html = html.replace('</head>', `<link rel="canonical" href="${canonical}" />\n</head>`);
+    html = html.replace('</head>', `  <link rel="canonical" href="${canonical}" />\n</head>`);
   }
 
+  // Replace OG tags
+  html = html.replace(/<meta property="og:url"[^>]*\/?>/, `<meta property="og:url" content="${canonical}" />`);
+  html = html.replace(/<meta property="og:title"[^>]*\/?>/, `<meta property="og:title" content="${escapeAttr(title)}" />`);
+  html = html.replace(/<meta property="og:description"[^>]*\/?>/, `<meta property="og:description" content="${escapeAttr(description)}" />`);
+
+  // Replace Twitter tags
+  html = html.replace(/<meta name="twitter:title"[^>]*\/?>/, `<meta name="twitter:title" content="${escapeAttr(title)}" />`);
+  html = html.replace(/<meta name="twitter:description"[^>]*\/?>/, `<meta name="twitter:description" content="${escapeAttr(description)}" />`);
+
+  // Inject JSON-LD schema
   if (schema) {
-    // Ensure every page's @graph includes the WebSite node so #website references resolve
     if (schema['@graph'] && !schema['@graph'].some(n => n['@type'] === 'WebSite')) {
       schema['@graph'].unshift(websiteSchema);
     }
@@ -632,23 +450,29 @@ function injectIntoHtml(html, { title, description, canonical, schema }) {
     html = html.replace('</head>', `${scriptTag}\n</head>`);
   }
 
+  // Inject semantic body content (visible to crawlers, replaced by React hydration)
+  if (body) {
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="root"><main id="main-content">${body}</main></div>`
+    );
+  }
+
   return html;
 }
 
-function writeRoute(path, html) {
-  const parts = path.split('/');
-  const filename = parts.pop();
-  const parentDir = parts.length > 0 ? resolve(distDir, ...parts) : distDir;
-  if (!existsSync(parentDir)) mkdirSync(parentDir, { recursive: true });
-  writeFileSync(resolve(parentDir, `${filename}.html`), html);
-  console.log(`  ✓ dist/${path}.html`);
+function escapeAttr(str) {
+  return str.replace(/"/g, '&quot;').replace(/&(?!amp;|quot;|lt;|gt;)/g, '&amp;');
+}
 
+function writeRoute(path, html) {
   const indexDir = resolve(distDir, path);
   if (!existsSync(indexDir)) mkdirSync(indexDir, { recursive: true });
   writeFileSync(resolve(indexDir, 'index.html'), html);
+  console.log(`  ✓ dist/${path}/index.html`);
 }
 
-// ── Generate static pages ─────────────────────────────────────────────────────
+// ── Generate static pages ───────────────────────────────────────────────────
 
 console.log('\n📄 Generating static page HTML...');
 for (const route of staticRoutes) {
@@ -657,35 +481,43 @@ for (const route of staticRoutes) {
     description: route.description,
     canonical: `${BASE_URL}/${route.path}`,
     schema: route.schema,
+    body: route.body || '',
   });
   writeRoute(route.path, html);
 }
 
-// ── Generate blog post HTML ───────────────────────────────────────────────────
+// ── Generate blog post HTML ─────────────────────────────────────────────────
 
 console.log('\n📝 Generating blog post HTML...');
 for (const post of blogPosts) {
-  const canonical = post.canonical || `${BASE_URL}/blog/${post.slug}`;
+  const canonical = `${BASE_URL}/blog/${post.slug}`;
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      orgSchema,
+      orgSchema, founderSchema,
       articleSchema(post),
       breadcrumb([
         { name: 'Home', url: '/' },
         { name: 'Blog', url: '/blog' },
-        { name: post.metaTitle, url: `/blog/${post.slug}` },
+        { name: post.metaTitle.split(' | ')[0], url: `/blog/${post.slug}` },
       ]),
       webPageSchema(post.metaTitle, post.metaDescription, `/blog/${post.slug}`),
     ]
   };
+  const body = `<h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p><p>By <a href="/about">Arjun Sharma</a>, AP Digital. Published ${post.date}.</p><nav aria-label="Quick links"><ul><li><a href="/blog">All Articles</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`;
   const html = injectIntoHtml(baseHtml, {
     title: post.metaTitle,
     description: post.metaDescription,
     canonical,
     schema,
+    body,
   });
   writeRoute(`blog/${post.slug}`, html);
 }
 
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 console.log('\n✅ Meta injection complete.');
+console.log(`   ${staticRoutes.length} pages + ${blogPosts.length} blog posts generated.`);

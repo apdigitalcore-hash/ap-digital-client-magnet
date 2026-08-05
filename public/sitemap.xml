@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core pages -->
-  <url><loc>https://ap-digital.ca/</loc><priority>1.0</priority><changefreq>weekly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/about</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/contact</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/pricing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
+  <url><loc>https://ap-digital.ca/</loc><priority>1.0</priority><changefreq>weekly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/about</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/contact</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/pricing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
   <url><loc>https://ap-digital.ca/privacy-policy</loc><priority>0.3</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/terms-of-service</loc><priority>0.3</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <!-- Service pages -->
-  <url><loc>https://ap-digital.ca/services/paid-ads</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/services/social-media</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <!-- Niche pages -->
-  <url><loc>https://ap-digital.ca/salon-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/real-estate-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/trades-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/coaching-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/law-firm-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://ap-digital.ca/services/paid-ads</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/services/social-media</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/services/content-creation</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/services/seo</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/services/lead-generation</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/services/web-design</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <!-- Industry pages -->
+  <url><loc>https://ap-digital.ca/salon-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/real-estate-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/trades-marketing</loc><priority>1.0</priority><changefreq>weekly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/coaching-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/dental-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/hvac-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/fitness-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/restaurant-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/law-firm-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
   <!-- City pages -->
-  <url><loc>https://ap-digital.ca/vancouver</loc><priority>1.0</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/surrey</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/burnaby</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/richmond</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/langley</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/coquitlam</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/abbotsford</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
+  <url><loc>https://ap-digital.ca/vancouver</loc><priority>1.0</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/surrey</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/burnaby</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/richmond</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/langley</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/coquitlam</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/abbotsford</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
   <!-- Conversion pages -->
-  <url><loc>https://ap-digital.ca/case-studies</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/how-to-choose-a-marketing-agency-vancouver</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
+  <url><loc>https://ap-digital.ca/case-studies</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/how-to-choose-a-marketing-agency-vancouver</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
   <!-- Blog index -->
-  <url><loc>https://ap-digital.ca/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq><lastmod>2026-07-21</lastmod></url>
+  <url><loc>https://ap-digital.ca/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq><lastmod>2026-08-05</lastmod></url>
   <!-- Blog posts -->
-  <url><loc>https://ap-digital.ca/blog/how-to-get-more-salon-clients</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/how-to-market-a-trades-business-online</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/real-estate-agent-social-media-tips</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/how-much-does-social-media-marketing-cost-canada</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/social-media-marketing-cost-canada</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/facebook-ads-vs-google-ads</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/real-estate-social-media-tips</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/email-marketing-vs-social-media</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/best-ads-for-trades-businesses-canada</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/digital-marketing-agency-vancouver-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
@@ -49,9 +52,7 @@
   <url><loc>https://ap-digital.ca/blog/coaching-clients-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/plumber-marketing-metro-vancouver</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/electrician-leads-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/best-digital-marketing-agency-vancouver</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/vancouver-small-business-seo-guide</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/facebook-ads-vancouver-small-business</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/vancouver-google-ads-guide-local-business</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/social-media-marketing-vancouver</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/google-ads-coaching-business-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
@@ -63,11 +64,11 @@
   <url><loc>https://ap-digital.ca/blog/facebook-ads-surrey-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/social-media-coaching-business-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/instagram-ads-salons-vancouver</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/google-ads-vs-meta-ads-local-business</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/how-much-do-google-ads-cost-vancouver</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/meta-ads-vs-boosted-posts</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/social-media-burnaby-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
-  <url><loc>https://ap-digital.ca/blog/how-to-choose-marketing-agency-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/tiktok-ads-small-business-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/google-ads-coquitlam-tri-cities</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
+  <url><loc>https://ap-digital.ca/blog/dental-marketing-vancouver-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/blog/gym-marketing-vancouver-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/blog/restaurant-marketing-vancouver-bc</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
 </urlset>
