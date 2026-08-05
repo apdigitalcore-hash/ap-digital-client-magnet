@@ -222,6 +222,14 @@ const About = () => {
               <p>
                 Outside of AP Digital, Arjun is deeply embedded in the Vancouver small business community — from Surrey and Burnaby to Langley, Coquitlam, and the Fraser Valley. He understands how local markets behave, what kind of creative resonates with Canadian audiences, and how to build campaigns that feel native to the Lower Mainland rather than imported from Silicon Valley.
               </p>
+              <div className="flex flex-wrap gap-3 pt-4">
+                <a href="https://www.linkedin.com/in/arjun-sharma-9b2520395/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal text-sm font-medium hover:bg-teal/20 transition-colors">
+                  LinkedIn
+                </a>
+                <Link to="/about/arjun-sharma" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal text-sm font-medium hover:bg-teal/20 transition-colors">
+                  Full Bio
+                </Link>
+              </div>
             </div>
           </div>
         </section>
