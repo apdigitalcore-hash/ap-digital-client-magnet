@@ -126,6 +126,35 @@ const caseStudies = [
     quote: 'I went from 5 to 13 clients in three months. I had to close the funnel temporarily because I was at capacity.',
     quoteName: 'Founder, Momentum Coaching Group',
   },
+  {
+    id: 'westcoast-electric',
+    brand: 'Westcoast Electric',
+    image: '/westcoast-electric.jpg',
+    brandColor: '#3A5A8C',
+    service: 'Google Ads + LSA',
+    industry: 'Trades & Contractors',
+    location: 'Langley, BC',
+    tagline: '45 jobs in 90 days',
+    headline: '45 booked electrical jobs in 90 days — HomeStars dependency eliminated.',
+    challenge: 'Westcoast Electric was a 3-person residential electrical company in Langley relying entirely on HomeStars and word-of-mouth. Lead quality was inconsistent, they were paying $40–$60 per shared lead, and they had zero visibility on Google outside of HomeStars listings.',
+    approach: [
+      'Google Search Ads targeting "electrician Langley," "panel upgrade Surrey," "EV charger installation"',
+      'Local Service Ads with Google Guaranteed badge for trust and top placement',
+      'Google Business Profile overhaul — 30+ project photos, responded to all reviews, added service categories',
+      'Dedicated landing page with before-and-after project gallery and click-to-call',
+      'Call tracking with recorded calls to verify lead quality and measure booked-estimate rate',
+    ],
+    results: [
+      { metric: '45', label: 'Booked jobs (90 days)' },
+      { metric: '$34', label: 'Cost per booked call' },
+      { metric: '7.8x', label: 'ROAS' },
+      { metric: '4.9★', label: 'Google rating (28 reviews)' },
+    ],
+    timeline: '90 days',
+    adSpend: '$1,400/mo',
+    quote: 'We cancelled HomeStars after month two. The Google leads are better quality, we don\'t share them with three other electricians, and the cost per job is half what we were paying.',
+    quoteName: 'Owner, Westcoast Electric',
+  },
 ];
 
 const structuredData = {

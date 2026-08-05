@@ -163,6 +163,33 @@ const TradesMarketing = () => (
           ))}
         </Accordion>
 
+        <div className="mb-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Marketing by Trade</h2>
+          <p className="text-muted-foreground mb-6">We build trade-specific campaigns with keyword targeting, ad copy, and benchmarks tuned to each vertical.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link to="/plumber-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+              <p className="font-bold text-foreground">Plumber Marketing</p>
+              <p className="text-sm text-muted-foreground">30+ calls/mo · $31/call · 9.1x ROAS</p>
+            </Link>
+            <Link to="/electrician-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+              <p className="font-bold text-foreground">Electrician Marketing</p>
+              <p className="text-sm text-muted-foreground">25+ jobs/mo · $38/lead · EV charger specialists</p>
+            </Link>
+            <Link to="/hvac-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+              <p className="font-bold text-foreground">HVAC Marketing</p>
+              <p className="text-sm text-muted-foreground">40+ calls/mo · $28/call · Seasonal campaigns</p>
+            </Link>
+            <Link to="/roofer-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+              <p className="font-bold text-foreground">Roofer Marketing</p>
+              <p className="text-sm text-muted-foreground">15–25 leads/mo · $65/lead · Storm-response ads</p>
+            </Link>
+            <Link to="/contractor-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+              <p className="font-bold text-foreground">General Contractor Marketing</p>
+              <p className="text-sm text-muted-foreground">20+ leads/mo · $55/lead · Reno & ADU specialists</p>
+            </Link>
+          </div>
+        </div>
+
         <OurServices />
 
         <div className="mt-16 mb-16">

@@ -33,7 +33,12 @@ const HVACMarketing = lazy(() => import("./pages/niches/HVACMarketing"));
 const FitnessMarketing = lazy(() => import("./pages/niches/FitnessMarketing"));
 const RestaurantMarketing = lazy(() => import("./pages/niches/RestaurantMarketing"));
 const LawFirmMarketing = lazy(() => import("./pages/niches/LawFirmMarketing"));
+const PlumberMarketing = lazy(() => import("./pages/niches/PlumberMarketing"));
+const ElectricianMarketing = lazy(() => import("./pages/niches/ElectricianMarketing"));
+const RooferMarketing = lazy(() => import("./pages/niches/RooferMarketing"));
+const ContractorMarketing = lazy(() => import("./pages/niches/ContractorMarketing"));
 const About = lazy(() => import("./pages/About"));
+const FounderBio = lazy(() => import("./pages/FounderBio"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Surrey = lazy(() => import("./pages/locations/Surrey"));
@@ -88,7 +93,12 @@ const App = () => (
               <Route path="/fitness-marketing" element={<FitnessMarketing />} />
               <Route path="/restaurant-marketing" element={<RestaurantMarketing />} />
               <Route path="/law-firm-marketing" element={<LawFirmMarketing />} />
+              <Route path="/plumber-marketing" element={<PlumberMarketing />} />
+              <Route path="/electrician-marketing" element={<ElectricianMarketing />} />
+              <Route path="/roofer-marketing" element={<RooferMarketing />} />
+              <Route path="/contractor-marketing" element={<ContractorMarketing />} />
               <Route path="/about" element={<About />} />
+              <Route path="/about/arjun-sharma" element={<FounderBio />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/surrey" element={<Surrey />} />

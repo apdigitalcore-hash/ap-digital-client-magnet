@@ -26,7 +26,7 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": `${BASE_URL}/#website`,
   "url": BASE_URL,
-  "name": "AP Digital",
+  "name": "AP DIGITAL",
   "description": "Vancouver performance marketing agency for trades, salons, real estate agents, coaches, dental clinics, gyms, and restaurants across BC.",
   "publisher": { "@id": `${BASE_URL}/#organization` },
   "inLanguage": "en-CA"
@@ -230,6 +230,64 @@ const staticRoutes = [
       webPageSchema('Law Firm Marketing Vancouver | AP Digital', 'Google Ads & Meta Ads for Vancouver law firms.', '/law-firm-marketing'),
     ]}
   },
+  // ─── Trades sub-niche pages ───
+  {
+    path: 'plumber-marketing',
+    title: 'Plumber Marketing Vancouver | Get More Service Calls | AP Digital',
+    description: 'Get 30+ plumbing service calls/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver plumbers. Month-to-month. No contracts. 90-day guarantee.',
+    body: '<h1>Plumber Marketing — Get More Service Calls with Google Ads</h1><p>When a pipe bursts at 2am, homeowners Google it. AP Digital builds booked-estimate systems for BC plumbers using Google Ads, Local Service Ads, and Google Business Profile optimization. 30+ service calls/month. $31 average cost per booked call. 9.1x ROAS.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Plumber Marketing', 'Google Ads & lead generation for plumbing companies in Metro Vancouver.', '/plumber-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Trades Marketing', url: '/trades-marketing' }, { name: 'Plumber Marketing', url: '/plumber-marketing' }]),
+      webPageSchema('Plumber Marketing Vancouver | AP Digital', 'Google Ads for Metro Vancouver plumbers.', '/plumber-marketing'),
+      faqSchema([
+        { q: 'How much do Google Ads cost for plumbers in Metro Vancouver?', a: 'Most plumbing companies invest $1,000–$2,500/month in ad spend plus a $759/month management fee. Plumbing keywords cost $8–$25 per click in Metro Vancouver.' },
+        { q: 'How fast will I get calls from Google Ads?', a: 'Most plumbers see their first inbound calls within 48 hours. Emergency plumbing searches convert immediately.' },
+        { q: 'Should plumbers use Google Ads or Local Service Ads?', a: 'Both. LSAs appear at the top with a Google Guaranteed badge and you pay per lead. Standard Google Search Ads capture the rest of the first page.' },
+      ])
+    ]}
+  },
+  {
+    path: 'electrician-marketing',
+    title: 'Electrician Marketing Vancouver | Get More Jobs | AP Digital',
+    description: 'Get 25+ qualified electrical jobs/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver electricians. Month-to-month. No contracts. 90-day guarantee.',
+    body: '<h1>Electrician Marketing — Get More Jobs with Google Ads</h1><p>Panel upgrades, EV charger installs, emergency rewiring — AP Digital builds booked-estimate systems for BC electricians using Google Ads, Local Service Ads, and Google Business Profile optimization. EV charger installation is up 140% YoY in BC.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Electrician Marketing', 'Google Ads & lead generation for electricians in Metro Vancouver.', '/electrician-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Trades Marketing', url: '/trades-marketing' }, { name: 'Electrician Marketing', url: '/electrician-marketing' }]),
+      webPageSchema('Electrician Marketing Vancouver | AP Digital', 'Google Ads for Metro Vancouver electricians.', '/electrician-marketing'),
+      faqSchema([
+        { q: 'How much do Google Ads cost for electricians in BC?', a: 'Most electrical companies invest $1,000–$2,000/month in ad spend plus a $759/month management fee. Electrical keywords cost $10–$30 per click.' },
+        { q: 'Is EV charger installation worth advertising for?', a: 'Yes — it\'s the fastest-growing electrical keyword in BC, up 140% year-over-year. Average Level 2 charger install: $1,500–$3,000.' },
+      ])
+    ]}
+  },
+  {
+    path: 'roofer-marketing',
+    title: 'Roofer Marketing Vancouver | Get More Roofing Jobs | AP Digital',
+    description: 'Get 15–25 qualified roofing leads/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver roofers. Month-to-month. No contracts. 90-day guarantee.',
+    body: '<h1>Roofer Marketing — Get More Roofing Jobs with Google Ads</h1><p>BC\'s rainy season means roofing searches spike every fall. AP Digital builds booked-estimate systems for Metro Vancouver roofing companies using Google Ads, Local Service Ads, storm-response campaigns, and Google Business Profile optimization. 12x average ROAS. $65/qualified lead.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Roofer Marketing', 'Google Ads & lead generation for roofing companies in Metro Vancouver.', '/roofer-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Trades Marketing', url: '/trades-marketing' }, { name: 'Roofer Marketing', url: '/roofer-marketing' }]),
+      webPageSchema('Roofer Marketing Vancouver | AP Digital', 'Google Ads for Metro Vancouver roofers.', '/roofer-marketing'),
+    ]}
+  },
+  {
+    path: 'contractor-marketing',
+    title: 'General Contractor Marketing Vancouver | More Renovation Jobs | AP Digital',
+    description: 'Get 20+ qualified renovation leads/month with Google Ads & Meta Ads. AP Digital serves Metro Vancouver general contractors. Month-to-month. No contracts.',
+    body: '<h1>General Contractor Marketing — Get More Renovation Jobs</h1><p>Kitchen renos, bathroom remodels, basement finishing, laneway houses — AP Digital builds booked-estimate systems for general contractors using Google Ads, Meta Ads, and portfolio-driven landing pages. 8x average ROAS. $55/qualified lead.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('General Contractor Marketing', 'Google Ads & Meta Ads for general contractors in Metro Vancouver.', '/contractor-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Trades Marketing', url: '/trades-marketing' }, { name: 'Contractor Marketing', url: '/contractor-marketing' }]),
+      webPageSchema('General Contractor Marketing Vancouver | AP Digital', 'Lead generation for Metro Vancouver GCs.', '/contractor-marketing'),
+    ]}
+  },
   // ─── Service pages ───
   {
     path: 'services/paid-ads',
@@ -369,6 +427,74 @@ const staticRoutes = [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Blog', url: '/blog' }]),
       webPageSchema('Digital Marketing Blog | AP Digital', 'Marketing guides for Vancouver businesses.', '/blog'),
+    ]}
+  },
+  // ─── Founder bio ───
+  {
+    path: 'about/arjun-sharma',
+    title: 'Arjun Sharma | Founder & Lead Strategist | AP Digital Vancouver',
+    description: 'Arjun Sharma is the founder of AP Digital, a Vancouver performance marketing agency. He personally manages every client account, specializing in Google Ads and Meta Ads for trades contractors across BC.',
+    body: '<h1>Arjun Sharma — Founder &amp; Lead Strategist</h1><p>Arjun Sharma founded AP Digital in Vancouver, BC to help trades contractors, salons, real estate agents, and coaches get predictable leads through Google Ads and Meta Ads. He personally manages every client account and has delivered 2,400+ qualified leads with an 8.2x average ROAS.</p><nav aria-label="Quick links"><ul><li><a href="/about">About AP Digital</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/blog">Articles by Arjun</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }, { name: 'Arjun Sharma', url: '/about/arjun-sharma' }]),
+      webPageSchema('Arjun Sharma | Founder & Lead Strategist | AP Digital', 'Founder bio and methodology.', '/about/arjun-sharma'),
+    ]}
+  },
+  // ─── Case study detail pages ───
+  {
+    path: 'case-studies/summit-home-services',
+    title: 'Summit Home Services Case Study | 30+ Jobs/Month | AP Digital',
+    description: '30+ booked plumbing jobs per month at $31/call. Surrey plumbing company. Google Ads + GBP. HomeStars cancelled in 6 weeks.',
+    body: '<h1>Summit Home Services — 30+ Booked Jobs Per Month</h1><p>How a Surrey plumbing company went from HomeStars dependency to 30+ direct inbound jobs per month via Google Ads. $31/booked call. 9.1x ROAS. HomeStars cancelled after 6 weeks.</p><ul><li>Ad spend: $1,200/mo</li><li>Timeline: 45 days</li><li>30+ jobs/month</li><li>$31 cost per booked call</li><li>9.1x ROAS vs HomeStars</li></ul><nav aria-label="Quick links"><ul><li><a href="/case-studies">All Case Studies</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }, { name: 'Summit Home Services', url: '/case-studies/summit-home-services' }]),
+      webPageSchema('Summit Home Services Case Study | AP Digital', 'Surrey plumbing company case study.', '/case-studies/summit-home-services'),
+    ]}
+  },
+  {
+    path: 'case-studies/westcoast-electric',
+    title: 'Westcoast Electric Case Study | 45 Jobs in 90 Days | AP Digital',
+    description: '45 booked electrical jobs in 90 days at $34/call. Langley electrician. Google Ads + LSA. HomeStars dependency eliminated.',
+    body: '<h1>Westcoast Electric — 45 Booked Jobs in 90 Days</h1><p>How a Langley electrical company eliminated HomeStars dependency and booked 45 jobs in 90 days via Google Ads and Local Service Ads. $34/booked call. 7.8x ROAS.</p><ul><li>Ad spend: $1,400/mo</li><li>Timeline: 90 days</li><li>45 booked jobs</li><li>$34 cost per booked call</li><li>7.8x ROAS</li></ul><nav aria-label="Quick links"><ul><li><a href="/case-studies">All Case Studies</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }, { name: 'Westcoast Electric', url: '/case-studies/westcoast-electric' }]),
+      webPageSchema('Westcoast Electric Case Study | AP Digital', 'Langley electrician case study.', '/case-studies/westcoast-electric'),
+    ]}
+  },
+  {
+    path: 'case-studies/willow-hair-lounge',
+    title: 'Willow Hair Lounge Case Study | 94 Leads in 60 Days | AP Digital',
+    description: '94 qualified salon leads in 60 days at $8.51/lead. Vancouver salon. Meta Ads + Content. 68% booking rate.',
+    body: '<h1>Willow Hair Lounge — 94 Leads in 60 Days</h1><p>How a Vancouver salon went from empty mid-week chairs to a waitlist with Meta Ads. 94 leads at $8.51/lead. 68% booking rate. 4.2x ROAS.</p><ul><li>Ad spend: $800/mo</li><li>94 qualified leads</li><li>$8.51 cost per lead</li><li>68% lead-to-booking rate</li></ul><nav aria-label="Quick links"><ul><li><a href="/case-studies">All Case Studies</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }, { name: 'Willow Hair Lounge', url: '/case-studies/willow-hair-lounge' }]),
+      webPageSchema('Willow Hair Lounge Case Study | AP Digital', 'Vancouver salon case study.', '/case-studies/willow-hair-lounge'),
+    ]}
+  },
+  {
+    path: 'case-studies/pacific-oak-realty',
+    title: 'Pacific Oak Realty Case Study | 22 Leads in Month 1 | AP Digital',
+    description: '22 qualified real estate leads in month 1 at $41/lead. Burnaby realtor. Meta Ads + Landing Pages. 3 listings in 90 days.',
+    body: '<h1>Pacific Oak Realty — 22 Qualified Leads in Month One</h1><p>How a Burnaby realtor went from zero online leads to 22 in month one via Meta Ads. $41/lead. 3 listings taken in 90 days. 12x ROI.</p><nav aria-label="Quick links"><ul><li><a href="/case-studies">All Case Studies</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }, { name: 'Pacific Oak Realty', url: '/case-studies/pacific-oak-realty' }]),
+      webPageSchema('Pacific Oak Realty Case Study | AP Digital', 'Burnaby realtor case study.', '/case-studies/pacific-oak-realty'),
+    ]}
+  },
+  {
+    path: 'case-studies/momentum-coaching-group',
+    title: 'Momentum Coaching Group Case Study | $28K MRR in 90 Days | AP Digital',
+    description: '8 high-ticket coaching clients in 90 days. $28K MRR added. Vancouver coaching group. Meta Ads + Funnel. 8.2x ROAS.',
+    body: '<h1>Momentum Coaching Group — $28K MRR in 90 Days</h1><p>How a Vancouver coaching business added 8 high-ticket clients and $28K MRR in 90 days via Meta Ads. $187/booked call. 8.2x ROAS.</p><nav aria-label="Quick links"><ul><li><a href="/case-studies">All Case Studies</a></li><li><a href="/coaching-marketing">Coaching Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Case Studies', url: '/case-studies' }, { name: 'Momentum Coaching Group', url: '/case-studies/momentum-coaching-group' }]),
+      webPageSchema('Momentum Coaching Group Case Study | AP Digital', 'Vancouver coaching case study.', '/case-studies/momentum-coaching-group'),
     ]}
   },
   // ─── City pages ───
