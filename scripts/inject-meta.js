@@ -218,6 +218,18 @@ const staticRoutes = [
       webPageSchema('Restaurant Marketing Vancouver | AP Digital', 'Meta Ads & Google Ads for Vancouver restaurants.', '/restaurant-marketing'),
     ]}
   },
+  {
+    path: 'law-firm-marketing',
+    title: 'Law Firm Marketing Vancouver | Get More Clients | AP Digital',
+    description: 'Get more legal clients with Google Ads & Meta Ads. AP Digital serves Vancouver law firms. Month-to-month. No contracts. 90-day guarantee.',
+    body: '<h1>Law Firm Marketing — Get More Clients Online</h1><p>AP Digital helps law firms in Vancouver and Metro Vancouver attract more clients through Google Ads and Meta Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Law Firm Marketing', 'Client acquisition for Vancouver law firms via Google Ads & Meta Ads.', '/law-firm-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Law Firm Marketing', url: '/law-firm-marketing' }]),
+      webPageSchema('Law Firm Marketing Vancouver | AP Digital', 'Google Ads & Meta Ads for Vancouver law firms.', '/law-firm-marketing'),
+    ]}
+  },
   // ─── Service pages ───
   {
     path: 'services/paid-ads',
@@ -471,6 +483,23 @@ function writeRoute(path, html) {
   writeFileSync(resolve(indexDir, 'index.html'), html);
   console.log(`  ✓ dist/${path}/index.html`);
 }
+
+// ── Homepage (highest-value SEO/GEO page) ──────────────────────────────────
+
+const homepageHtml = injectIntoHtml(baseHtml, {
+  title: 'Vancouver Digital Marketing Agency | AP Digital',
+  description: 'Vancouver marketing agency for trades, salons, realtors & coaches. Meta & Google Ads that generate predictable leads. Month-to-month, from $759/mo.',
+  canonical: BASE_URL + '/',
+  schema: { "@context": "https://schema.org", "@graph": [
+    websiteSchema, orgSchema, founderSchema,
+    webPageSchema('Vancouver Digital Marketing Agency | AP Digital', 'Performance marketing agency for BC small businesses.', '/'),
+    breadcrumb([{ name: 'Home', url: '/' }]),
+  ]},
+  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>8.2x average ROAS</li><li>2,400+ qualified leads delivered</li><li>5.0 Google rating (14+ reviews)</li><li>From $759/month — no lock-in contracts</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/services/seo">SEO</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
+});
+// Write homepage as dist/index.html (overwrite the SPA shell)
+writeFileSync(resolve(distDir, 'index.html'), homepageHtml);
+console.log('  ✓ dist/index.html (homepage)');
 
 // ── Generate static pages ───────────────────────────────────────────────────
 
