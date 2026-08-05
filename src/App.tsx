@@ -46,6 +46,7 @@ const Abbotsford = lazy(() => import("./pages/locations/Abbotsford"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const HiringGuide = lazy(() => import("./pages/HiringGuide"));
 const Login = lazy(() => import("./pages/Login"));
+const AdminSeo = lazy(() => import("./pages/AdminSeo"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 
