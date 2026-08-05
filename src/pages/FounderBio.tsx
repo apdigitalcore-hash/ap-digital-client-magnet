@@ -102,7 +102,7 @@ const FounderBio = () => (
             Founder of AP Digital. Personally manages every client account. Specializes in building booked-estimate systems for trades contractors and local service businesses across British Columbia using Google Ads, Meta Ads, and performance marketing.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
-            <a href="https://www.linkedin.com/company/theapdigital/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm hover:bg-white/20 transition-colors">
+            <a href="https://www.linkedin.com/in/arjun-sharma-9b2520395/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm hover:bg-white/20 transition-colors">
               LinkedIn
             </a>
             <a href="https://www.instagram.com/theapdigital/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-sm hover:bg-white/20 transition-colors">
