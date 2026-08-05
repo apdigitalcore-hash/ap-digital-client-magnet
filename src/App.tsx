@@ -102,6 +102,7 @@ const App = () => (
               <Route path="/case-studies/:studyId" element={<CaseStudies />} />
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/admin/seo" element={<AdminSeo />} />
               <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
