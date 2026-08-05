@@ -207,7 +207,7 @@ const About = () => {
               <span className="text-sm font-semibold uppercase tracking-wider">Meet the Founder</span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              <Link to="/about/arjun-sharma" className="hover:text-teal transition-colors">Arjun Sharma</Link> — Founder & Marketing Strategist
+              <Link to="/about/arjun-sharma" className="text-teal underline decoration-teal/40 underline-offset-4 hover:decoration-teal transition-colors">Arjun Sharma</Link> — Founder & Marketing Strategist
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed max-w-3xl">
               <p>
