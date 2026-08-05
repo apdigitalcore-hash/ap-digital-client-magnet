@@ -44,6 +44,45 @@ export type Database = {
         }
         Relationships: []
       }
+      seo_snapshots: {
+        Row: {
+          authority_score: number | null
+          backlinks: number | null
+          created_at: string
+          gsc_avg_position: number | null
+          gsc_clicks: number | null
+          gsc_impressions: number | null
+          id: string
+          organic_leads: number | null
+          referring_domains: number | null
+          snapshot_date: string
+        }
+        Insert: {
+          authority_score?: number | null
+          backlinks?: number | null
+          created_at?: string
+          gsc_avg_position?: number | null
+          gsc_clicks?: number | null
+          gsc_impressions?: number | null
+          id?: string
+          organic_leads?: number | null
+          referring_domains?: number | null
+          snapshot_date?: string
+        }
+        Update: {
+          authority_score?: number | null
+          backlinks?: number | null
+          created_at?: string
+          gsc_avg_position?: number | null
+          gsc_clicks?: number | null
+          gsc_impressions?: number | null
+          id?: string
+          organic_leads?: number | null
+          referring_domains?: number | null
+          snapshot_date?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
