@@ -16,7 +16,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Surrey Marketing Agency | Leads & Ads | AP Digital';
+const TITLE = 'Digital Marketing Agency Surrey BC | Google Ads & Meta Ads | AP Digital';
 const DESC = 'Surrey digital marketing that works. Google Ads, Meta Ads & SEO for local businesses. Month-to-month plans. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/surrey';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

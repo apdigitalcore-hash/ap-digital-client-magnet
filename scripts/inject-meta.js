@@ -502,8 +502,8 @@ const staticRoutes = [
     const cap = city.charAt(0).toUpperCase() + city.slice(1);
     return {
       path: city,
-      title: `${cap} Marketing Agency | Leads & Ads | AP Digital`,
-      description: `${cap} digital marketing agency offering Google Ads, Meta Ads & SEO. For trades, salons, realtors & coaches. Month-to-month. From $759/mo.`,
+      title: `Digital Marketing Agency ${cap} BC | Google Ads & Meta Ads | AP Digital`,
+      description: `${cap} digital marketing agency for trades, salons, realtors & coaches. Google Ads, Meta Ads & local SEO. Month-to-month. No contracts. Free strategy call.`,
       body: `<h1>Digital Marketing Agency in ${cap}, BC</h1><p>AP Digital helps ${cap} businesses get more leads with Google Ads, Meta Ads, and social media marketing. We serve trades contractors, salons, real estate agents, coaches, and more. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`,
       schema: { "@context": "https://schema.org", "@graph": [
         orgSchema, founderSchema,

@@ -16,7 +16,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Coquitlam Marketing Agency | Leads & Ads | AP Digital';
+const TITLE = 'Digital Marketing Agency Coquitlam & Tri-Cities | Google Ads & Meta Ads | AP Digital';
 const DESC = 'Coquitlam digital marketing focused on getting you more leads. Google Ads, Meta Ads & local SEO for salons, trades & realtors. 90-day guarantee. No lock-in.';
 const CANONICAL = 'https://ap-digital.ca/coquitlam';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
