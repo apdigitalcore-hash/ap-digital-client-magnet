@@ -56,7 +56,7 @@ const Process = () => {
             <span className="text-gradient">Effective.</span>
           </h2>
           <p className="text-primary-foreground/70 text-lg">
-            Our 3-step framework has helped 150+ businesses achieve predictable, 
+            Our 3-step framework helps local businesses achieve predictable,
             sustainable growth. Here's how it works.
           </p>
         </div>

@@ -17,7 +17,7 @@ import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Burnaby Marketing Agency | Leads & Ads | AP Digital';
-const DESC = 'Burnaby digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO delivering 8.2x avg ROAS. Month-to-month — no lock-in.';
+const DESC = 'Burnaby digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month — no lock-in.';
 const CANONICAL = 'https://ap-digital.ca/burnaby';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

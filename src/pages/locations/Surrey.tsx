@@ -17,7 +17,7 @@ import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Surrey Marketing Agency | Leads & Ads | AP Digital';
-const DESC = 'Surrey digital marketing that works. 2,400+ leads delivered for local businesses. Google Ads, Meta Ads & SEO. Month-to-month plans. Free strategy call.';
+const DESC = 'Surrey digital marketing that works. Google Ads, Meta Ads & SEO for local businesses. Month-to-month plans. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/surrey';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

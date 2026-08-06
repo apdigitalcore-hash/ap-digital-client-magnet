@@ -3,24 +3,24 @@ import { motion } from 'framer-motion';
 
 const metrics = [
   {
-    value: '2,400+',
-    label: 'Leads Generated',
-    description: 'Qualified leads delivered to clients',
+    value: 'Google Ads',
+    label: 'Search & LSA',
+    description: 'High-intent campaigns for local service businesses',
   },
   {
-    value: '8.2x',
-    label: 'Avg. ROAS',
-    description: 'Return on ad spend',
+    value: 'Meta Ads',
+    label: 'Facebook & IG',
+    description: 'Lead gen funnels for trades, salons & coaches',
   },
   {
-    value: '340%',
-    label: 'Traffic Growth',
-    description: 'Average organic increase',
+    value: 'No Lock-in',
+    label: 'Month-to-Month',
+    description: 'Cancel anytime — you stay because it works',
   },
   {
-    value: '500+',
-    label: 'Content Pieces',
-    description: 'Videos & graphics created',
+    value: '90-Day',
+    label: 'Guarantee',
+    description: 'If we don\'t deliver, you don\'t pay',
   },
 ];
 

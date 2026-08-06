@@ -339,9 +339,9 @@ const staticRoutes = [
   },
   {
     path: 'services/lead-generation',
-    title: 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered | AP Digital',
-    description: 'AP Digital has delivered 2,400+ leads for Vancouver businesses. 5–10x ROAS. First leads within 2 weeks. Month-to-month.',
-    body: '<h1>Lead Generation — Predictable Leads Every Month</h1><p>AP Digital has delivered 2,400+ qualified leads for Vancouver businesses using paid ads and content systems. First leads typically within 2 weeks. 5–10x ROAS. Month-to-month.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    title: 'Lead Generation Agency Vancouver | AP Digital',
+    description: 'AP Digital generates predictable leads for Vancouver businesses. First leads within 2 weeks. Month-to-month. 90-day guarantee.',
+    body: '<h1>Lead Generation — Predictable Leads Every Month</h1><p>AP Digital generates predictable leads for Vancouver businesses using paid ads and content systems. First leads typically within 2 weeks. Month-to-month. 90-day guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Lead Generation', 'Paid ads & content systems for predictable lead generation.', '/services/lead-generation'),
@@ -376,7 +376,7 @@ const staticRoutes = [
   {
     path: 'case-studies',
     title: 'Case Studies | Real Results for BC Businesses | AP Digital',
-    description: 'See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses.',
+    description: 'See how AP Digital generates leads for BC businesses — salons, plumbers, electricians, realtors, and coaches. Real campaigns, real numbers.',
     body: '<h1>Case Studies — Real Results for BC Businesses</h1><p>See how AP Digital delivers measurable results for Vancouver-area businesses. Real campaigns, real numbers, real ROI.</p><ul><li>Vancouver Salon — 94 Leads in 60 Days at $8.51/lead</li><li>Surrey Plumbing Company — 30+ Jobs/Month from Google Ads at $31/booked call</li><li>Burnaby Realtor — 22 Qualified Leads in First Month at $41/lead</li><li>Vancouver Business Coach — 8 High-Ticket Clients in 90 Days</li></ul><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
@@ -434,7 +434,7 @@ const staticRoutes = [
     path: 'about/arjun-sharma',
     title: 'Arjun Sharma | Founder & Lead Strategist | AP Digital Vancouver',
     description: 'Arjun Sharma is the founder of AP Digital, a Vancouver performance marketing agency. He personally manages every client account, specializing in Google Ads and Meta Ads for trades contractors across BC.',
-    body: '<h1>Arjun Sharma — Founder &amp; Lead Strategist</h1><p>Arjun Sharma founded AP Digital in Vancouver, BC to help trades contractors, salons, real estate agents, and coaches get predictable leads through Google Ads and Meta Ads. He personally manages every client account and has delivered 2,400+ qualified leads with an 8.2x average ROAS.</p><nav aria-label="Quick links"><ul><li><a href="/about">About AP Digital</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/blog">Articles by Arjun</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Arjun Sharma — Founder &amp; Lead Strategist</h1><p>Arjun Sharma founded AP Digital in Vancouver, BC to help trades contractors, salons, real estate agents, and coaches get predictable leads through Google Ads and Meta Ads. He personally manages every client account.</p><nav aria-label="Quick links"><ul><li><a href="/about">About AP Digital</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/blog">Articles by Arjun</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }, { name: 'Arjun Sharma', url: '/about/arjun-sharma' }]),
@@ -621,7 +621,7 @@ const homepageHtml = injectIntoHtml(baseHtml, {
     webPageSchema('Vancouver Digital Marketing Agency | AP Digital', 'Performance marketing agency for BC small businesses.', '/'),
     breadcrumb([{ name: 'Home', url: '/' }]),
   ]},
-  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>8.2x average ROAS</li><li>2,400+ qualified leads delivered</li><li>5.0 Google rating (14+ reviews)</li><li>From $759/month — no lock-in contracts</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/services/seo">SEO</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
+  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>Google Ads &amp; Meta Ads specialists</li><li>Trades contractors are our primary niche</li><li>From $759/month — no lock-in contracts</li><li>90-day results guarantee</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/services/seo">SEO</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
 });
 // Write homepage as dist/index.html (overwrite the SPA shell)
 writeFileSync(resolve(distDir, 'index.html'), homepageHtml);

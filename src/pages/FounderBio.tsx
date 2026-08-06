@@ -44,15 +44,15 @@ const structuredData = {
 const specialties = [
   { icon: Wrench, title: 'Trades & Contractor Lead Gen', desc: 'Built booked-estimate systems for plumbers, electricians, HVAC, roofers, and general contractors across Metro Vancouver. Primary niche.' },
   { icon: Target, title: 'Google Ads & Local Service Ads', desc: 'Manages $50K+/month in Google Ads spend for local service businesses. Specialist in high-intent keyword targeting and call-based conversion tracking.' },
-  { icon: BarChart3, title: 'Meta Ads for Service Businesses', desc: 'Designs Meta Ads funnels that generate leads for salons, coaches, real estate agents, and contractors. Average 8.2x ROAS across all accounts.' },
+  { icon: BarChart3, title: 'Meta Ads for Service Businesses', desc: 'Designs Meta Ads funnels that generate leads for salons, coaches, real estate agents, and contractors across Metro Vancouver.' },
   { icon: Users, title: 'Google Business Profile & Local SEO', desc: 'Optimizes GBP listings, builds review generation systems, and manages NAP consistency for Local Pack visibility across BC service areas.' },
 ];
 
 const stats = [
-  { icon: TrendingUp, value: '2,400+', label: 'Qualified leads delivered' },
-  { icon: Star, value: '5.0', label: 'Google rating (14+ reviews)' },
-  { icon: Award, value: '8.2x', label: 'Average ROAS' },
-  { icon: Users, value: '50+', label: 'Canadian businesses served' },
+  { icon: TrendingUp, value: 'Trades', label: 'Primary niche — contractors across BC' },
+  { icon: Star, value: 'Hands-on', label: 'Personally manages every account' },
+  { icon: Award, value: '90-day', label: 'Results guarantee on every engagement' },
+  { icon: Users, value: 'Local', label: 'Metro Vancouver & Fraser Valley' },
 ];
 
 const articles = [

@@ -112,10 +112,10 @@ const About = () => {
   ];
 
   const stats = [
-    { icon: TrendingUp, value: '2,400+', label: 'Qualified leads delivered' },
-    { icon: Users, value: '50+', label: 'Canadian businesses served' },
-    { icon: Star, value: '5.0', label: 'Google rating from 14+ reviews' },
-    { icon: Award, value: '8.2x', label: 'Average return on ad spend' },
+    { icon: TrendingUp, value: 'Trades', label: 'Primary niche — plumbers, electricians, HVAC, roofers' },
+    { icon: Users, value: 'Local', label: 'Metro Vancouver & Fraser Valley' },
+    { icon: Star, value: 'No lock-in', label: 'Month-to-month contracts only' },
+    { icon: Award, value: '90 days', label: 'Results guarantee on every engagement' },
   ];
 
   const values = [
@@ -246,7 +246,7 @@ const About = () => {
                 We built AP Digital with one mission: help Canadian small businesses get predictable, measurable leads using the strategies that actually work today — short-form video content and targeted paid advertising. Every dollar our clients spend is tied to a result. Every campaign is built to generate leads, not just impressions. Every report maps back to real dollars in the bank.
               </p>
               <p>
-                Since launching, we have delivered more than 2,400 qualified leads to Canadian small businesses, produced over 500 pieces of short-form video content, and earned a 5.0-star Google rating from 14+ real clients. We have helped salons fill their chairs, contractors fill their calendars, and realtors close more deals — all through one philosophy: marketing is only valuable if it makes the phone ring.
+                Since launching, we have helped salons fill their chairs, contractors fill their calendars, and realtors close more deals — all through one philosophy: marketing is only valuable if it makes the phone ring.
               </p>
               <p>
                 Today, AP Digital is the go-to marketing partner for small businesses across Metro Vancouver and the Fraser Valley. And we are just getting started.

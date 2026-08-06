@@ -9,7 +9,7 @@ import JsonLd from '@/components/JsonLd';
 import apLogo from '@/assets/ap-logo.png';
 
 const TITLE = 'Case Studies | Real Results for BC Businesses | AP Digital';
-const DESC = 'See how AP Digital generated 94 salon leads in 60 days, 30+ plumbing jobs/month, and 8.2x ROAS for BC businesses. Real results, real numbers.';
+const DESC = 'See how AP Digital generates leads for BC businesses — salons, plumbers, electricians, realtors, and coaches. Real campaigns, real numbers.';
 const CANONICAL = 'https://ap-digital.ca/case-studies';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

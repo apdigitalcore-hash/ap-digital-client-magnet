@@ -244,7 +244,7 @@ const SERVICE_REC: Record<Dimension, { label: string; path: string; pitch: strin
   content: { label: 'Content Creation', path: '/services/content-creation', pitch: 'Scroll-stopping short-form video + social content that builds brand and drives leads.' },
   website: { label: 'Web Design',       path: '/services/web-design',       pitch: 'Fast, conversion-focused websites that turn visitors into paying clients. One-time $2,100.' },
   reviews: { label: 'Lead Generation',  path: '/services/lead-generation',  pitch: 'Automated review collection + reputation systems. Part of our lead gen service.' },
-  funnel:  { label: 'Lead Generation',  path: '/services/lead-generation',  pitch: 'End-to-end lead nurture — email, SMS, CRM automation. 2,400+ leads delivered for BC businesses.' },
+  funnel:  { label: 'Lead Generation',  path: '/services/lead-generation',  pitch: 'End-to-end lead nurture — email, SMS, CRM automation. Built for BC service businesses.' },
 };
 
 /* ────────────────────────────────────────────────────────────────────────────

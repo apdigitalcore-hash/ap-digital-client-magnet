@@ -9,8 +9,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Lead Generation Agency Vancouver | 2,400+ Leads Delivered';
-const DESC = 'AP Digital has delivered 2,400+ leads for Vancouver salons, trades, realtors & coaches. 5–10× ROAS. First leads within 2 weeks. Month-to-month.';
+const TITLE = 'Lead Generation Agency Vancouver | AP Digital';
+const DESC = 'AP Digital generates predictable leads for Vancouver salons, trades, realtors & coaches. First leads within 2 weeks. Month-to-month. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/services/lead-generation';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

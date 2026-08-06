@@ -187,7 +187,7 @@ const HomePage = () => {
             className="mt-14 text-xs text-white/40 animate-fade-up"
             style={{ animationDelay: '0.32s' }}
           >
-            <span className="text-white/80 font-semibold">2,400+ leads</span> delivered for <span className="text-white/80 font-semibold">200+ BC businesses</span> &nbsp;·&nbsp; 90-day guarantee
+Month-to-month &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; 90-day guarantee
           </p>
 
           {/* Social links */}
