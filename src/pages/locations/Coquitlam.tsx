@@ -61,6 +61,10 @@ const faqs = [
     question: 'What\'s the best platform for Coquitlam service businesses?',
     answer: 'It depends on your business type. For high-intent searches — someone actively looking for "plumber Coquitlam" or "electrician Port Moody" — Google Ads is typically the highest-converting channel. For awareness, retargeting, and businesses where customers need to see you multiple times before booking (salons, coaches, health & wellness), Meta Ads on Facebook and Instagram work exceptionally well. Most Coquitlam service businesses benefit from both platforms running together. We assess your specific situation on the strategy call and recommend the right starting point.',
   },
+  {
+    question: 'How do I find a digital marketing agency near me in Coquitlam?',
+    answer: 'AP Digital serves the Tri-Cities — Coquitlam, Port Coquitlam, and Port Moody. We run Google Ads, Meta Ads, and local SEO for trades, salons, realtors, and coaches. Month-to-month with no contracts.',
+  },
 ];
 
 const structuredData = {
@@ -147,7 +151,7 @@ const Coquitlam = () => (
               <span className="text-gradient">Coquitlam</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Coquitlam businesses — and across Port Moody & Port Coquitlam — generate qualified leads with Meta Ads, Google Ads & social media. No contracts, month-to-month.
+              AP Digital helps Coquitlam businesses — and across Port Moody & Port Coquitlam — generate qualified leads with Meta Ads, Google Ads & social media. Searching for a digital marketing agency near you in the Tri-Cities? We specialize in local businesses. No contracts, month-to-month.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">

@@ -69,6 +69,10 @@ const faqs = [
     question: 'Can you help my HVAC company rank on Google Maps?',
     answer: 'Yes. We optimize your Google Business Profile with service categories, photos of your team and trucks, response to every review, and consistent NAP (name, address, phone) across all directories. Combined with Google Ads, this gets you into the Maps 3-pack for HVAC searches in your area.',
   },
+  {
+    question: 'How do I find an HVAC marketing agency near me?',
+    answer: 'AP Digital runs HVAC marketing campaigns across Metro Vancouver and the Fraser Valley. We target seasonal searches like "AC repair near me" and "furnace installation" with Google Ads, plus homeowner awareness campaigns on Meta. No contracts.',
+  },
 ];
 
 const structuredData = {

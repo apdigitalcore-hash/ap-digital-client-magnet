@@ -69,6 +69,10 @@ const faqs = [
     question: 'Is there a contract?',
     answer: 'No. AP Digital works month-to-month with all plumbing clients. No lock-in contracts, no cancellation fees. We also offer a 90-day performance guarantee — if we don\'t deliver service calls, you don\'t pay.',
   },
+  {
+    question: 'How do I find a plumber marketing agency near me?',
+    answer: 'AP Digital runs plumber marketing campaigns across Metro Vancouver and the Fraser Valley — Vancouver, Surrey, Burnaby, Richmond, Langley, Coquitlam, and Abbotsford. We specialize in Google Ads for emergency plumbing searches and Meta Ads for routine service work.',
+  },
 ];
 
 const structuredData = {

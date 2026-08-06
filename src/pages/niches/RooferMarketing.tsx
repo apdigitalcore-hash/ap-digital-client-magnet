@@ -69,6 +69,10 @@ const faqs = [
     question: 'Is there a contract?',
     answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. 90-day performance guarantee included.',
   },
+  {
+    question: 'How do I find a roofer marketing agency near me?',
+    answer: 'AP Digital serves roofing companies across Metro Vancouver and the Fraser Valley. We run Google Ads for storm-response and re-roofing searches, plus Meta Ads for seasonal lead generation. Month-to-month, no contracts.',
+  },
 ];
 
 const structuredData = {

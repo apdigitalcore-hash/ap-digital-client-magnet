@@ -57,6 +57,10 @@ const faqs = [
     question: 'Do you also serve Chilliwack and Mission from Abbotsford?',
     answer: 'Yes. We run campaigns across the Fraser Valley — Abbotsford, Mission, Chilliwack, and surrounding communities. If your service area covers the eastern Fraser Valley, we can build campaigns that target the exact postal codes where your ideal customers live.',
   },
+  {
+    question: 'How do I find a digital marketing agency near me in Abbotsford?',
+    answer: 'AP Digital serves Abbotsford and the eastern Fraser Valley — including Mission and Chilliwack. We run Google Ads, Meta Ads, and local SEO for trades, salons, realtors, and coaches. No contracts, month-to-month.',
+  },
 ];
 
 const structuredData = {
@@ -142,7 +146,7 @@ const Abbotsford = () => (
               <span className="text-gradient">Abbotsford BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Abbotsford and Fraser Valley businesses generate consistent, qualified leads using Meta Ads & Google Ads. No lock-in contracts. Managed personally by founder Arjun Sharma.
+              AP Digital helps Abbotsford and Fraser Valley businesses generate consistent, qualified leads using Meta Ads & Google Ads. If you're looking for a marketing agency near you in Abbotsford, we specialize in local service businesses. No lock-in contracts. Managed personally by founder Arjun Sharma.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">

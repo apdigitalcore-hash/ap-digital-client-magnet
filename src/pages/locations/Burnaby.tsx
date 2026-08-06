@@ -61,6 +61,10 @@ const faqs = [
     question: 'Can you help a new Burnaby business with no online presence?',
     answer: 'Yes — we build from scratch. If your Burnaby business doesn\'t yet have a Google Business Profile, landing page, or social media presence, we handle all of it. We set up your GBP, build a high-converting landing page, launch your ads, and establish your social media foundation. You don\'t need to have everything in place before working with us.',
   },
+  {
+    question: 'How do I find a digital marketing agency near me in Burnaby?',
+    answer: 'AP Digital is a local agency serving Burnaby businesses across Metrotown, Brentwood, Lougheed, and Edmonds. We specialize in trades, salons, realtors, and coaches — with month-to-month service and no outsourcing.',
+  },
 ];
 
 const structuredData = {
@@ -147,7 +151,7 @@ const Burnaby = () => (
               <span className="text-gradient">Burnaby BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Burnaby businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. No lock-in contracts. Personal service from founder Arjun Sharma.
+              AP Digital helps Burnaby businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Searching for a marketing agency near you in Burnaby? You just found one. No lock-in contracts. Personal service from founder Arjun Sharma.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">

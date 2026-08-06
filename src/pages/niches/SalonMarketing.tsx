@@ -65,6 +65,10 @@ const faqs = [
     question: 'Can you help my salon rank on Google?',
     answer: 'Absolutely. We optimize your Google Business Profile, run Google Ads targeting high-intent searches like "salon near me" and "balayage Vancouver," and build your local visibility through review generation and consistent content.',
   },
+  {
+    question: 'How do I find a salon marketing agency near me?',
+    answer: 'AP Digital works with hair salons, spas, and beauty studios across Metro Vancouver and the Fraser Valley. We run Instagram and Facebook ads for bookings, plus Google Ads for searches like "hair salon near me." Month-to-month, no contracts.',
+  },
 ];
 
 const structuredData = {

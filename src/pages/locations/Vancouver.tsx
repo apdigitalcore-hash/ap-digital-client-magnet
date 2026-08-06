@@ -61,6 +61,10 @@ const faqs = [
     question: 'How is AP Digital different from other Vancouver marketing agencies?',
     answer: 'Most Vancouver agencies put you through a sales team and then hand your account to a generalist. At AP Digital, the founder personally manages every account — so you always know exactly who is running your campaigns. We also work month-to-month, which means we have to earn your business every month by actually delivering leads.',
   },
+  {
+    question: 'How do I find a digital marketing agency near me in Vancouver?',
+    answer: 'If you\'re searching for a marketing agency near you in Vancouver, look for one that specializes in your industry and works month-to-month. AP Digital is based in Vancouver and serves local businesses across Metro Vancouver — trades, salons, realtors, and coaches. No contracts, no outsourcing.',
+  },
 ];
 
 const structuredData = {
@@ -160,7 +164,7 @@ const Vancouver = () => (
               <span className="text-gradient">Vancouver BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital is a Vancouver-based marketing agency helping local businesses — trades, salons, real estate agents & coaches — get consistent, qualified leads using Meta Ads & Google Ads. Month-to-month. Managed personally by founder Arjun Sharma.
+              AP Digital is a Vancouver-based marketing agency helping local businesses — trades, salons, real estate agents & coaches — get consistent, qualified leads using Meta Ads & Google Ads. When someone searches "digital marketing near me" in Vancouver, we make sure they find you first. Month-to-month. Managed personally by founder Arjun Sharma.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">

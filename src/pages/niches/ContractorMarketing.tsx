@@ -69,6 +69,10 @@ const faqs = [
     question: 'Is there a contract?',
     answer: 'No. AP Digital works month-to-month with all contractor clients. No lock-in, no cancellation fees. 90-day performance guarantee included.',
   },
+  {
+    question: 'How do I find a contractor marketing agency near me?',
+    answer: 'AP Digital serves general contractors across Metro Vancouver and the Fraser Valley. We run Google Ads for renovation and new build searches, plus Meta Ads for homeowner targeting. No contracts, month-to-month.',
+  },
 ];
 
 const structuredData = {

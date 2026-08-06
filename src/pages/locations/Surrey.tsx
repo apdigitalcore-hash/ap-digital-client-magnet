@@ -61,6 +61,10 @@ const faqs = [
     question: 'How is AP Digital different from other Surrey marketing agencies?',
     answer: 'The founder, Arjun Sharma, personally manages every single account — no outsourcing, no handing you off to a junior team member. We also work month-to-month with no lock-in contracts, so we earn your business every month by actually delivering results. Most Surrey marketing agencies put you through a sales team, then hand your account to a generalist. We don\'t operate that way.',
   },
+  {
+    question: 'How do I find a digital marketing agency near me in Surrey?',
+    answer: 'AP Digital serves Surrey businesses across all neighbourhoods — Fleetwood, Guildford, Newton, Cloverdale, South Surrey, and White Rock. We specialize in trades, salons, realtors, and coaches. No contracts, and the founder manages your account personally.',
+  },
 ];
 
 const structuredData = {
@@ -147,7 +151,7 @@ const Surrey = () => (
               <span className="text-gradient">Surrey BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. Month-to-month. Managed personally by Arjun Sharma.
+              AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. When someone searches "marketing agency near me" in Surrey, we put you in front of them. Month-to-month. Managed personally by Arjun Sharma.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">

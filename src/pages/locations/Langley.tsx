@@ -61,6 +61,10 @@ const faqs = [
     question: 'What results can Langley trades businesses expect?',
     answer: 'Most Langley contractors — plumbers, HVAC, electricians, roofers — see 10 to 30 qualified leads per month within 60 days of launching with AP Digital. Results depend on your service area, budget, and niche, but trades businesses in Langley consistently perform well because local search intent is high and the competition, while present, is beatable with a well-structured campaign.',
   },
+  {
+    question: 'How do I find a digital marketing agency near me in Langley?',
+    answer: 'AP Digital serves businesses across Langley City, Langley Township, Walnut Grove, Willoughby, and Aldergrove. We run Google Ads, Meta Ads, and local SEO for trades, salons, realtors, and coaches. No contracts.',
+  },
 ];
 
 const structuredData = {
@@ -147,7 +151,7 @@ const Langley = () => (
               <span className="text-gradient">Langley BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Langley businesses get more leads using Meta Ads, Google Ads & social media. From Langley City to the Township — trades, salons, realtors & coaches. Month-to-month.
+              AP Digital helps Langley businesses get more leads using Meta Ads, Google Ads & social media. From Langley City to the Township — trades, salons, realtors & coaches. If you're searching for a marketing agency near you in Langley, we've got you covered. Month-to-month.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">

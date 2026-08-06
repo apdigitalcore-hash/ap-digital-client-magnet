@@ -57,6 +57,10 @@ const faqs = [
     question: 'Can you run bilingual ads for my Richmond business?',
     answer: 'Yes. Richmond has a large Mandarin and Cantonese-speaking demographic, and we can build campaigns that reach both English-speaking and Chinese-Canadian audiences effectively. We advise on targeting and messaging to maximize reach across Richmond\'s diverse community.',
   },
+  {
+    question: 'How do I find a digital marketing agency near me in Richmond?',
+    answer: 'AP Digital serves Richmond businesses across Steveston, City Centre, Ironwood, and Bridgeport. We run Google Ads, Meta Ads, and local SEO for trades, salons, realtors, and coaches. Month-to-month, no contracts.',
+  },
 ];
 
 const structuredData = {
@@ -142,7 +146,7 @@ const Richmond = () => (
               <span className="text-gradient">Richmond BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Richmond businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. No lock-in contracts. Personal service from founder Arjun Sharma.
+              AP Digital helps Richmond businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Looking for a digital marketing agency near you in Richmond? We're local and we specialize in your industry. No lock-in contracts. Personal service from founder Arjun Sharma.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild variant="hero" size="xl" className="shadow-teal-lg">

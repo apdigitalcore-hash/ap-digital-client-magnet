@@ -65,6 +65,10 @@ const faqs = [
     question: 'Can you help my trades business get more reviews?',
     answer: 'Yes. We set up automated review request sequences that go out after every completed job. More 5-star Google reviews improve your local search ranking and build trust with potential customers searching for contractors in their area.',
   },
+  {
+    question: 'How do I find a trades marketing agency near me in BC?',
+    answer: 'AP Digital specializes in marketing for trades businesses across Metro Vancouver and the Fraser Valley. We serve plumbers, electricians, HVAC techs, roofers, and contractors in Vancouver, Surrey, Burnaby, Richmond, Langley, Coquitlam, and Abbotsford. No contracts, month-to-month.',
+  },
 ];
 
 const structuredData = {

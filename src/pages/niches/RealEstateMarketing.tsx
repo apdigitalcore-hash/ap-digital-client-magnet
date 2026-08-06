@@ -65,6 +65,10 @@ const faqs = [
     question: 'How is AP Digital different from other real estate marketing companies?',
     answer: 'Most real estate marketing companies sell you a template. AP Digital builds custom campaigns managed by the founder — not a junior account manager. We focus exclusively on paid ads and social media, we work month-to-month, and we guarantee results within 90 days or we work for free until we deliver.',
   },
+  {
+    question: 'How do I find a real estate marketing agency near me?',
+    answer: 'AP Digital works with real estate agents, teams, and brokerages across Metro Vancouver and the Fraser Valley. We run Meta Ads for buyer and seller leads, plus Google Ads for high-intent searches like "realtor near me." No contracts.',
+  },
 ];
 
 const structuredData = {

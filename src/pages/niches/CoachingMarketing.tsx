@@ -65,6 +65,10 @@ const faqs = [
     question: 'Can you help me fill my coaching program or group?',
     answer: 'Yes. We run launch campaigns for group programs, courses, and masterminds using a proven sequence: awareness ads, webinar/workshop registration ads, and retargeting. Most coaches see their programs fill within 2–3 launch cycles.',
   },
+  {
+    question: 'How do I find a coaching marketing agency near me?',
+    answer: 'AP Digital works with life coaches, business coaches, and consultants across BC. We run Meta Ads for lead generation and Google Ads for high-intent searches like "business coach near me." Month-to-month, no contracts.',
+  },
 ];
 
 const structuredData = {

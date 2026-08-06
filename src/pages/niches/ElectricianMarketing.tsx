@@ -69,6 +69,10 @@ const faqs = [
     question: 'Is there a contract?',
     answer: 'No. AP Digital works month-to-month with all electrical clients. No lock-in, no cancellation fees. We also offer a 90-day performance guarantee.',
   },
+  {
+    question: 'How do I find an electrician marketing agency near me?',
+    answer: 'AP Digital serves electricians across Metro Vancouver and the Fraser Valley. We run Google Ads targeting "electrician near me" searches and Meta Ads for residential and commercial lead generation. Month-to-month, no contracts.',
+  },
 ];
 
 const structuredData = {
