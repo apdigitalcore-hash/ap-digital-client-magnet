@@ -147,8 +147,8 @@ const HomePage = () => {
             className="font-display text-[2.5rem] sm:text-6xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6 animate-fade-up"
             style={{ animationDelay: '0.08s' }}
           >
-            More clients.<br />
-            <span className="text-gradient">Predictably.</span>
+            Vancouver Performance<br />
+            <span className="text-gradient">Marketing Agency</span>
           </h1>
 
           {/* Sub */}
