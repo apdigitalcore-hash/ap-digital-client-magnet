@@ -161,25 +161,30 @@ const HomePage = () => {
 
           {/* CTAs */}
           <div
-            className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 animate-fade-up w-full sm:w-auto"
+            className="flex flex-col items-center gap-4 animate-fade-up w-full sm:w-auto"
             style={{ animationDelay: '0.24s' }}
           >
-            <Button variant="hero" size="lg" asChild>
-              <a
-                href="https://calendly.com/apdigital-core/20min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2"
-              >
-                Book a Call
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
-            <Button variant="heroOutline" size="lg" asChild>
-              <Link to="/pricing" className="flex items-center justify-center">
-                See Pricing
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full sm:w-auto">
+              <Button variant="hero" size="lg" asChild>
+                <a
+                  href="https://calendly.com/apdigital-core/20min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  Book a Call
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </Button>
+              <Button variant="heroOutline" size="lg" asChild>
+                <a href="#how-it-works" className="flex items-center justify-center">
+                  How It Works
+                </a>
+              </Button>
+            </div>
+            <Link to="/pricing" className="text-sm text-white/50 hover:text-white/80 transition-colors underline underline-offset-4">
+              See Pricing
+            </Link>
           </div>
 
           {/* Trust line */}
