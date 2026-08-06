@@ -5,7 +5,14 @@ const lerp = (current: number, target: number, factor: number) =>
 
 const WhileYouScroll = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  const [inView, setInView] = useState(false);
+  // Mobile browsers change innerHeight when the URL bar hides/shows. Using
+  // `vh`/live innerHeight made the 450vh track resize mid-scroll, which the
+  // browser compensated for by jumping the scroll position. Lock the viewport
+  // height once and only update it when the WIDTH changes (real orientation /
+  // resize), never on height-only chrome collapse.
+  const [vh, setVh] = useState(() =>
+    typeof window !== 'undefined' ? window.innerHeight : 800
+  );
   const progressRef = useRef(0);
   const smoothProgressRef = useRef(0);
   const rafRef = useRef<number>(0);
@@ -28,29 +35,32 @@ const WhileYouScroll = () => {
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
       const sectionHeight = section.offsetHeight;
+      const travel = Math.max(1, sectionHeight - vh);
 
-      const active = rect.top <= 5 && rect.bottom > windowHeight * 0.9;
-      setInView(active);
+      progressRef.current = Math.max(0, Math.min(1, -rect.top / travel));
+    };
 
-      progressRef.current = active
-        ? Math.max(0, Math.min(1, -rect.top / (sectionHeight - windowHeight)))
-        : rect.top > 0 ? 0 : 1;
+    let lastWidth = window.innerWidth;
+    const handleResize = () => {
+      if (window.innerWidth === lastWidth) return; // ignore URL-bar height changes
+      lastWidth = window.innerWidth;
+      setVh(window.innerHeight);
+      handleScroll();
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize, { passive: true });
     handleScroll();
 
     rafRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(rafRef.current);
     };
-  }, [animate]);
+  }, [animate, vh]);
 
   const progress = smoothProgressRef.current;
 
@@ -87,15 +97,14 @@ const WhileYouScroll = () => {
       ref={sectionRef}
       id="while-you-scroll"
       className="relative bg-background"
-      style={{ height: '450vh' }}
+      style={{ height: vh * 4.5, overflowAnchor: 'none' }}
     >
-      {inView && (
-        <div
+      <div
           style={{
-            position: 'fixed',
-            inset: 0,
+            position: 'sticky',
+            top: 0,
             width: '100%',
-            height: '100%',
+            height: vh,
             margin: 0,
             padding: 0,
             backgroundColor: 'hsl(220, 20%, 97%)',
@@ -168,8 +177,8 @@ const WhileYouScroll = () => {
               Book a Free Audit
             </a>
           </div>
-        </div>
-      )}
+      </div>
+
     </section>
   );
 };
