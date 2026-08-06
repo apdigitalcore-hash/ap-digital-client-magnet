@@ -497,6 +497,18 @@ const staticRoutes = [
       webPageSchema('Momentum Coaching Group Case Study | AP Digital', 'Vancouver coaching case study.', '/case-studies/momentum-coaching-group'),
     ]}
   },
+  {
+    path: 'digital-marketing-near-me',
+    title: 'Digital Marketing Agency Near Me | BC Local Ads | AP Digital',
+    description: 'Looking for a digital marketing agency near you in BC? AP Digital runs Google Ads & Meta Ads for trades, salons, realtors & coaches across Metro Vancouver. No contracts.',
+    body: '<h1>Digital Marketing Agency Near You — Metro Vancouver & Fraser Valley</h1><p>AP Digital is a local digital marketing agency serving trades, salons, realtors, and coaches across Metro Vancouver and the Fraser Valley. Google Ads, Meta Ads, local SEO. Month-to-month. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Digital Marketing Near Me', 'Local digital marketing agency for BC businesses.', '/digital-marketing-near-me'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Digital Marketing Near Me', url: '/digital-marketing-near-me' }]),
+      webPageSchema('Digital Marketing Agency Near Me | AP Digital', 'Local digital marketing for Metro Vancouver & Fraser Valley businesses.', '/digital-marketing-near-me'),
+    ]}
+  },
   // ─── City pages ───
   ...['vancouver', 'surrey', 'burnaby', 'richmond', 'langley', 'coquitlam', 'abbotsford'].map(city => {
     const cap = city.charAt(0).toUpperCase() + city.slice(1);
