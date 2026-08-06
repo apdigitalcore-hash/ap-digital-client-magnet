@@ -151,8 +151,8 @@ const Pricing = () => {
             Pricing
           </div>
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.04] tracking-tight">
-            Transparent pricing.<br />
-            <span className="text-gradient">No surprises.</span>
+            Marketing Service<br />
+            <span className="text-gradient">Packages &amp; Pricing</span>
           </h1>
           <p className="text-base sm:text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
             Per-service pricing built around how your business actually grows. Every service is month-to-month and backed by our 90-day results guarantee.
