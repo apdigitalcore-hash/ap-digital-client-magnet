@@ -22,7 +22,7 @@ import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
 const TITLE = 'Vancouver Digital Marketing Agency | AP Digital';
-const DESC = 'Vancouver marketing agency for salons, trades, realtors & coaches. Meta & Google Ads that generate predictable leads. Month-to-month, no lock-in. 90-day guarantee.';
+const DESC = 'Vancouver marketing agency for salons, trades, realtors & coaches. Meta & Google Ads that deliver predictable leads. Month-to-month, 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -147,8 +147,8 @@ const HomePage = () => {
             className="font-display text-[2.5rem] sm:text-6xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6 animate-fade-up"
             style={{ animationDelay: '0.08s' }}
           >
-            More clients.<br />
-            <span className="text-gradient">Predictably.</span>
+            Vancouver Performance<br />
+            <span className="text-gradient">Marketing Agency</span>
           </h1>
 
           {/* Sub */}
