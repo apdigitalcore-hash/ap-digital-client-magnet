@@ -16,7 +16,9 @@ const WhileYouScroll = () => {
   const progressRef = useRef(0);
   const smoothProgressRef = useRef(0);
   const rafRef = useRef<number>(0);
+  const [inView, setInView] = useState(false);
   const [, forceRender] = useState(0);
+
 
   const animate = useCallback(() => {
     const prev = smoothProgressRef.current;
