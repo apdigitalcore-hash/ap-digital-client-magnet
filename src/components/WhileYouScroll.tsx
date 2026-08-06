@@ -99,8 +99,7 @@ const WhileYouScroll = () => {
       className="relative bg-background"
       style={{ height: vh * 4.5, overflowAnchor: 'none' }}
     >
-      {(
-        <div
+      <div
           style={{
             position: 'sticky',
             top: 0,
