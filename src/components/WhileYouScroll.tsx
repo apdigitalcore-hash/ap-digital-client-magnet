@@ -177,8 +177,8 @@ const WhileYouScroll = () => {
               Book a Free Audit
             </a>
           </div>
-        </div>
-      )}
+      </div>
+
     </section>
   );
 };
