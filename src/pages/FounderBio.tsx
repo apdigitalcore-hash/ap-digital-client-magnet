@@ -209,33 +209,6 @@ const FounderBio = () => (
         </div>
       </section>
 
-      {/* Case Studies link */}
-      <section className="container-custom py-16 md:py-20 max-w-4xl">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Client Results</h2>
-        <p className="text-muted-foreground text-lg mb-8">Real campaigns Arjun has managed for Vancouver-area businesses.</p>
-        <div className="grid sm:grid-cols-2 gap-4">
-          <div className="bg-card border border-border rounded-xl p-6">
-            <p className="font-display text-2xl font-bold text-teal mb-1">30+ jobs/mo</p>
-            <p className="text-muted-foreground text-sm">Surrey plumbing company — $31/booked call, 9.1x ROAS</p>
-          </div>
-          <div className="bg-card border border-border rounded-xl p-6">
-            <p className="font-display text-2xl font-bold text-teal mb-1">94 leads in 60 days</p>
-            <p className="text-muted-foreground text-sm">Vancouver salon — $8.51/lead, 68% booking rate</p>
-          </div>
-          <div className="bg-card border border-border rounded-xl p-6">
-            <p className="font-display text-2xl font-bold text-teal mb-1">22 leads in month 1</p>
-            <p className="text-muted-foreground text-sm">Burnaby realtor — $41/lead, 3 listings in 90 days</p>
-          </div>
-          <div className="bg-card border border-border rounded-xl p-6">
-            <p className="font-display text-2xl font-bold text-teal mb-1">$28K MRR added</p>
-            <p className="text-muted-foreground text-sm">Vancouver coaching group — 8 clients in 90 days</p>
-          </div>
-        </div>
-        <Link to="/case-studies" className="inline-flex items-center gap-2 text-teal hover:text-teal/80 mt-6 font-medium">
-          View all case studies <ArrowRight className="w-4 h-4" />
-        </Link>
-      </section>
-
       {/* CTA */}
       <section className="bg-near-black py-16 md:py-20">
         <div className="container-custom text-center max-w-3xl">
