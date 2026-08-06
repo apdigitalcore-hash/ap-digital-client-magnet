@@ -105,8 +105,9 @@ const WhileYouScroll = () => {
     >
       <div
           style={{
-            position: 'sticky',
+            position: 'fixed',
             top: 0,
+            left: 0,
             width: '100%',
             height: vh,
             margin: 0,
@@ -114,8 +115,12 @@ const WhileYouScroll = () => {
             backgroundColor: 'hsl(220, 20%, 97%)',
             overflow: 'hidden',
             zIndex: 30,
+            opacity: inView ? 1 : 0,
+            visibility: inView ? 'visible' : 'hidden',
+            pointerEvents: inView ? 'auto' : 'none',
           }}
         >
+
           {/* First line */}
           <div
             className="absolute inset-0 flex items-center justify-center px-6"
