@@ -41,7 +41,9 @@ const WhileYouScroll = () => {
       const travel = Math.max(1, sectionHeight - vh);
 
       progressRef.current = Math.max(0, Math.min(1, -rect.top / travel));
+      setInView(rect.top <= 0 && rect.bottom >= vh);
     };
+
 
     let lastWidth = window.innerWidth;
     const handleResize = () => {
