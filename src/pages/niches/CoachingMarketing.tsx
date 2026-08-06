@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, TrendingUp, Users, Video } from 'lucide-react';
+import { CheckCircle, Share2, Users, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import {
   Accordion,
@@ -15,7 +15,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Coaching Marketing BC | Get Consistent Clients | AP Digital';
-const DESC = 'AP Digital helps BC life, business & fitness coaches get 20–40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.';
+const DESC = 'Coaching marketing with Meta Ads funnels & social media for BC life, business & fitness coaches. Month-to-month. No lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -31,15 +31,15 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '2-4x', label: 'Client roster growth in first 6 months' },
-  { icon: Users, stat: '15-30', label: 'New client inquiries per month from ads' },
-  { icon: Video, stat: '500%', label: 'Average increase in content engagement' },
+  { icon: Users, stat: 'Meta Ads', label: 'Facebook & Instagram lead campaigns' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
 const faqs = [
   {
     question: 'How do coaches get more clients in BC?',
-    answer: 'The fastest path is running Instagram and Facebook ads promoting a lead magnet (free workshop, guide, or discovery call) to your ideal client avatar. AP Digital builds these funnels for coaches across BC — from ad creative to landing page to follow-up sequence — generating 20–40 leads per month.',
+    answer: 'The fastest path is running Instagram and Facebook ads promoting a lead magnet (free workshop, guide, or discovery call) to your ideal client avatar. AP Digital builds these funnels for coaches across BC — from ad creative to landing page to follow-up sequence.',
   },
   {
     question: 'What types of coaches do you work with?',
@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     question: 'How much does coaching marketing cost in BC?',
-    answer: 'Most coaches start with $600–$1,000/month in ad spend plus a $759/month management fee. At this budget, you can expect 20–40 qualified leads per month. Social media management starts at $849/month for 2 platforms.',
+    answer: 'Most coaches start with $600–$1,000/month in ad spend plus a $759/month management fee. Social media management starts at $849/month for 2 platforms.',
   },
   {
     question: 'Is there a contract for coaching marketing?',
@@ -142,7 +142,7 @@ const CoachingMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Coaching Clients See</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">

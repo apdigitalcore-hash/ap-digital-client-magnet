@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, TrendingUp, Phone, DollarSign } from 'lucide-react';
+import { CheckCircle, Search, Share2, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import {
   Accordion,
@@ -15,7 +15,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Plumber Marketing Vancouver | Get More Service Calls | AP Digital';
-const DESC = 'Get 30+ plumbing service calls/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver plumbers. Month-to-month. No contracts. 90-day guarantee.';
+const DESC = 'Plumber marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/plumber-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -31,9 +31,9 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '9.1x', label: 'Average ROAS for plumbing clients' },
-  { icon: Phone, stat: '30+', label: 'Booked service calls per month' },
-  { icon: DollarSign, stat: '$31', label: 'Average cost per booked call' },
+  { icon: Search, stat: 'Google Ads', label: 'Search campaigns targeting plumbing keywords' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
 const faqs = [
@@ -126,7 +126,7 @@ const PlumberMarketing = () => (
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">High job values</p>
-            <p className="text-sm text-muted-foreground">The average plumbing service call is $200–$800. Drain cleaning, water heater replacement, and re-pipes can be $2K–$15K. At $31/lead, the math is obvious.</p>
+            <p className="text-sm text-muted-foreground">The average plumbing service call is $200–$800. Drain cleaning, water heater replacement, and re-pipes can be $2K–$15K. The math works in your favour.</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">90-day guarantee</p>
@@ -144,7 +144,7 @@ const PlumberMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Plumbing Clients See</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
@@ -164,7 +164,7 @@ const PlumberMarketing = () => (
             The BC plumbing market has clear seasonal patterns: frozen pipe emergencies spike from November to February, drain cleaning peaks in spring after winter debris, and water heater replacements are year-round. We build campaigns that match these cycles so your budget tracks real demand.
           </p>
           <p>
-            Our plumbing clients in Surrey, Burnaby, and Vancouver typically see $31/booked call with a 9.1x return on ad spend. The key is targeting emergency and high-intent keywords, not broad terms like "plumber" — and tracking all the way to booked estimates, not just form fills.
+            The key is targeting emergency and high-intent keywords, not broad terms like "plumber" — and tracking all the way to booked estimates, not just form fills.
           </p>
         </div>
 

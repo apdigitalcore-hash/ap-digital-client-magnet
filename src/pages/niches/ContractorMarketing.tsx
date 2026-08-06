@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, TrendingUp, Phone, DollarSign } from 'lucide-react';
+import { CheckCircle, Search, Share2, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import {
   Accordion,
@@ -15,7 +15,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'General Contractor Marketing Vancouver | More Renovation Jobs | AP Digital';
-const DESC = 'Get 20+ qualified renovation leads/month with Google Ads & Meta Ads. AP Digital serves Metro Vancouver general contractors. Month-to-month. No contracts.';
+const DESC = 'General contractor marketing with Google Ads & Meta Ads for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/contractor-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -31,15 +31,15 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '8x', label: 'Average ROAS for GC clients' },
-  { icon: Phone, stat: '20+', label: 'Qualified renovation leads per month' },
-  { icon: DollarSign, stat: '$55', label: 'Average cost per qualified lead' },
+  { icon: Search, stat: 'Google + Meta', label: 'Full-funnel ad campaigns' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
 const faqs = [
   {
     question: 'How much do Google Ads cost for general contractors in BC?',
-    answer: 'Most general contractors invest $1,500–$3,000/month in ad spend plus a $759/month management fee. Renovation keywords cost $12–$35 per click in Metro Vancouver. With average job values of $15K–$100K+, even at $55/lead the ROI is outstanding — one closed kitchen renovation can cover a year of ad spend.',
+    answer: 'Most general contractors invest $1,500–$3,000/month in ad spend plus a $759/month management fee. Renovation keywords cost $12–$35 per click in Metro Vancouver. With average job values of $15K–$100K+, the ROI is outstanding — one closed kitchen renovation can cover a year of ad spend.',
   },
   {
     question: 'Should general contractors use Google Ads or Meta Ads?',
@@ -144,7 +144,7 @@ const ContractorMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our GC Clients See</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
@@ -164,7 +164,7 @@ const ContractorMarketing = () => (
             The challenge for general contractors is that renovation leads have a longer sales cycle than emergency trades. A homeowner researching a kitchen renovation may take 2–8 weeks from first search to signed contract. That's why running both Google Ads (for active searchers) and Meta Ads (for planners and dreamers) is critical — Google closes deals now, Meta fills your pipeline for next month.
           </p>
           <p>
-            Our GC clients see an average 8x ROAS at $55/qualified lead. The contractors who convert best have strong before-and-after portfolios, fast response times (calling within 5 minutes of a lead), and competitive but not lowball pricing. We optimize for booked estimates, not just form fills.
+            The contractors who convert best have strong before-and-after portfolios, fast response times (calling within 5 minutes of a lead), and competitive but not lowball pricing. We optimize for booked estimates, not just form fills.
           </p>
         </div>
 

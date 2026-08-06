@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, TrendingUp, Calendar, Users } from 'lucide-react';
+import { CheckCircle, Search, Share2, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import {
   Accordion,
@@ -15,7 +15,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'HVAC Marketing Vancouver | Get More Service Calls | AP Digital';
-const DESC = 'Get 40+ HVAC service calls/month with Google Ads & Local SEO. AP Digital serves Vancouver HVAC companies. Month-to-month. No contracts. 90-day guarantee.';
+const DESC = 'HVAC marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/hvac-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -31,15 +31,15 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '6-10x', label: 'Average return on ad spend for HVAC clients' },
-  { icon: Calendar, stat: '40+', label: 'Service calls per month from Google Ads' },
-  { icon: Users, stat: '$28', label: 'Average cost per inbound service call' },
+  { icon: Search, stat: 'Google Ads', label: 'Search campaigns for HVAC keywords' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
 const faqs = [
   {
     question: 'How do I get more HVAC leads in Vancouver?',
-    answer: 'Google Ads and Local Service Ads are the fastest channels. When someone\'s furnace breaks at 11pm, they Google "emergency furnace repair near me." AP Digital runs campaigns that put your company at the top of those searches, generating 40+ calls per month.',
+    answer: 'Google Ads and Local Service Ads are the fastest channels. When someone\'s furnace breaks at 11pm, they Google "emergency furnace repair near me." AP Digital runs campaigns that put your company at the top of those searches.',
   },
   {
     question: 'How much does HVAC marketing cost?',
@@ -125,7 +125,7 @@ const HVACMarketing = () => (
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">High job values</p>
-            <p className="text-sm text-muted-foreground">A furnace install is $5K–$15K. Even at $30–$50 per lead, your ROI is 10x+. HVAC is one of the most profitable verticals for paid ads.</p>
+            <p className="text-sm text-muted-foreground">A furnace install is $5K–$15K. High job values make HVAC one of the most profitable verticals for paid ads.</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">90-day guarantee</p>
@@ -143,7 +143,7 @@ const HVACMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our HVAC Clients See</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">

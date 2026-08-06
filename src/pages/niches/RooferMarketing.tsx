@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, TrendingUp, Phone, DollarSign } from 'lucide-react';
+import { CheckCircle, Search, Share2, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import {
   Accordion,
@@ -15,7 +15,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Roofer Marketing Vancouver | Get More Roofing Jobs | AP Digital';
-const DESC = 'Get 15–25 qualified roofing leads/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver roofers. Month-to-month. No contracts. 90-day guarantee.';
+const DESC = 'Roofer marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/roofer-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -31,15 +31,15 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '12x', label: 'Average ROAS for roofing clients' },
-  { icon: Phone, stat: '15–25', label: 'Qualified roofing leads per month' },
-  { icon: DollarSign, stat: '$65', label: 'Average cost per qualified lead' },
+  { icon: Search, stat: 'Google Ads', label: 'Search campaigns for roofing keywords' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
 const faqs = [
   {
     question: 'How much do Google Ads cost for roofers in Metro Vancouver?',
-    answer: 'Roofing is one of the most competitive trades keywords — expect $15–$45 per click for terms like "roof replacement Vancouver." Most roofing companies invest $1,500–$3,000/month in ad spend plus a $759/month management fee. But with average job values of $8K–$25K, even at $65/lead the ROI is exceptional.',
+    answer: 'Roofing is one of the most competitive trades keywords — expect $15–$45 per click for terms like "roof replacement Vancouver." Most roofing companies invest $1,500–$3,000/month in ad spend plus a $759/month management fee. With average job values of $8K–$25K, the ROI is exceptional.',
   },
   {
     question: 'How fast will I get roofing leads from Google Ads?',
@@ -122,7 +122,7 @@ const RooferMarketing = () => (
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">Highest job values in trades</p>
-            <p className="text-sm text-muted-foreground">Average roof replacement: $8K–$25K. Even at $65/lead, a single closed job can return 100x+ your ad spend. No other trade has this ratio.</p>
+            <p className="text-sm text-muted-foreground">Average roof replacement: $8K–$25K. A single closed job can easily cover months of ad spend. No other trade has this ratio.</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">Storm-response campaigns</p>
@@ -144,7 +144,7 @@ const RooferMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Roofing Clients See</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
@@ -164,7 +164,7 @@ const RooferMarketing = () => (
             Roofing has the highest average job value of any residential trade. A full re-roof in Metro Vancouver runs $8K–$25K depending on size and material. That means even at higher cost-per-lead ($50–$80), closing one job covers months of ad spend. The roofers who win are the ones showing up consistently in Google Search and Local Service Ads.
           </p>
           <p>
-            Our roofing clients see an average 12x ROAS with $65/qualified lead. The key differentiator is storm-response campaigns — pre-built ad sets we activate within 24 hours of major weather events, capturing the surge of "roof leak emergency" and "storm damage repair" searches before your competitors react.
+            The key differentiator is storm-response campaigns — pre-built ad sets we activate within 24 hours of major weather events, capturing the surge of "roof leak emergency" and "storm damage repair" searches before your competitors react.
           </p>
         </div>
 

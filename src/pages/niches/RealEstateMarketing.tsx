@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, TrendingUp, Home, Users } from 'lucide-react';
+import { CheckCircle, Share2, Home, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import {
   Accordion,
@@ -15,7 +15,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital';
-const DESC = 'AP Digital generates 15–30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.';
+const DESC = 'Real estate marketing with Meta Ads & Google Ads for BC realtors. Serving Vancouver, Surrey & Burnaby. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/real-estate-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -31,15 +31,15 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '$15-25', label: 'Average cost per qualified real estate lead' },
-  { icon: Home, stat: '50+', label: 'Leads per month for top-performing agents' },
-  { icon: Users, stat: '300%', label: 'Average social media growth in 6 months' },
+  { icon: Home, stat: 'Meta Ads', label: 'Facebook & Instagram lead campaigns' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
 const faqs = [
   {
     question: 'How do real estate agents get more leads in Vancouver?',
-    answer: 'The most effective approach is running Meta Ads targeting buyers and sellers in your farm area combined with Google Ads capturing high-intent searches like "homes for sale [neighbourhood]." AP Digital builds, manages, and optimizes these campaigns to generate 15–30 qualified leads per month.',
+    answer: 'The most effective approach is running Meta Ads targeting buyers and sellers in your farm area combined with Google Ads capturing high-intent searches like "homes for sale [neighbourhood]." AP Digital builds, manages, and optimizes these campaigns for consistent qualified leads.',
   },
   {
     question: 'How much do real estate leads cost in BC?',
@@ -142,7 +142,7 @@ const RealEstateMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Real Estate Clients See</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">

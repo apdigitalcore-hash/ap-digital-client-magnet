@@ -77,6 +77,8 @@ Managing social media on top of showings, negotiations, and paperwork is a lot. 
 
 At AP DIGITAL, we help real estate agents across Canada build powerful personal brands, create scroll-stopping [short-form video content](/services/content-creation), and generate consistent buyer and seller leads through strategic [social media marketing](/services/social-media) and [paid advertising](/services/paid-ads).
 
+We serve real estate agents across Metro Vancouver including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
+
 **Book your free strategy call today** and let's build a social media strategy that helps you close more deals in 2026.`,
   },
   {
@@ -142,13 +144,52 @@ Not all agencies are created equal. Here's what you should look for before signi
 
 **No long-term lock-in contracts.** Be cautious of agencies that require twelve-month commitments upfront. A confident agency earns your business month after month through results, not contracts.
 
+## Social Media Marketing Cost Comparison Table
+
+| Service Level | Monthly Cost | What You Get | Best For |
+|---|---|---|---|
+| DIY / Freelancer | $200–$500 | Basic posts, no strategy | Solopreneurs with time to spare |
+| Budget Agency | $500–$1,000 | 4–8 posts/mo, basic captions | Businesses wanting a basic presence |
+| Growth Agency | $1,500–$3,000 | Strategy, 12–20 posts, paid ads, reporting | Small businesses serious about leads |
+| Full-Service | $3,000–$5,000+ | Dedicated team, video, multi-platform, CRO | Scaling businesses ready to invest |
+
+**Note:** These are management fees only. Ad spend is separate and typically ranges from $500–$5,000/month depending on your market and goals.
+
+## How Much Should You Spend on Ad Budget?
+
+Your ad budget depends on your industry and location. Here's what we typically recommend for Canadian businesses:
+
+- **Salons & beauty studios:** $500–$1,500/month — Meta Ads targeting local clients within 10–15 km
+- **Trades & contractors:** $800–$2,500/month — Google Ads for high-intent searches like "plumber near me"
+- **Real estate agents:** $1,000–$3,000/month — Meta Ads for buyer/seller leads in specific neighbourhoods
+- **Coaches & consultants:** $500–$2,000/month — Meta Ads targeting ideal client demographics
+- **Restaurants & cafés:** $300–$1,000/month — Instagram and Facebook ads for foot traffic
+
+The right budget puts your business in front of enough people to generate consistent leads without overspending. We help you find that sweet spot during your [free strategy call](https://calendly.com/apdigital-core/20min).
+
+## Frequently Asked Questions About Social Media Marketing Costs
+
+**How much does a social media manager cost in Canada?**
+A freelance social media manager in Canada typically charges $500–$2,000/month depending on experience and scope. An agency with strategy, paid ads, and reporting will cost $1,500–$5,000/month. The difference is usually in the quality of strategy and whether paid advertising is included.
+
+**Is social media marketing worth it for small businesses?**
+Yes — if it's done strategically. Random posting without a plan is a waste of money. But a well-structured campaign with targeted paid ads and consistent organic content can generate a measurable return within the first month. The key is working with someone who tracks leads, not just likes.
+
+**How much do Facebook Ads cost in Canada?**
+Facebook (Meta) Ads in Canada typically cost $5–$15 per thousand impressions (CPM) and $0.50–$3.00 per click, depending on your targeting and industry. For lead generation campaigns, expect $10–$50 per lead for most service businesses. Learn more in our [Meta Ads vs Google Ads comparison](/blog/best-ads-platform-for-small-business-canada).
+
+**What's the difference between organic social media and paid social media?**
+Organic social media is free content you post to your followers. Paid social media is advertising — you pay to show your content to people who don't follow you yet. Most businesses need both: organic builds trust, paid generates leads. We cover this in detail in our [email marketing vs social media guide](/blog/email-marketing-vs-social-media).
+
 ## Get a Custom Quote for Your Business
 
 Every business is different, and cookie-cutter packages rarely deliver the best results. The right investment depends on your goals, your industry, your competition, and where you currently stand with your online presence.
 
 At AP DIGITAL, we work with businesses across Canada to build custom [social media marketing](/services/social-media) and [lead generation](/services/lead-generation) strategies that fit your budget and deliver measurable results. Whether you're just getting started or ready to scale, we'll build a plan that makes sense for you.
 
-**Book your free strategy call today** and let's figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
+We serve businesses across Metro Vancouver including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
+
+**[Book your free strategy call today](https://calendly.com/apdigital-core/20min)** and let's figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
   },
   {
     slug: 'best-ads-platform-for-small-business-canada',
@@ -204,6 +245,8 @@ If you can invest in both, that's the winning formula. Use Google Ads to capture
 ## Let's Find the Right Strategy for Your Business
 
 At AP DIGITAL, we help small businesses across Canada build profitable [paid advertising](/services/paid-ads) strategies on both Google and Facebook. We don't believe in one-size-fits-all — we analyze your industry, your competition, and your goals to recommend the right platform mix for your budget.
+
+We serve businesses across Metro Vancouver and the Fraser Valley including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
 **Book your free strategy call today** and let's figure out exactly where your ad dollars will deliver the best return in 2026.`,
   },
@@ -290,7 +333,7 @@ This funnel approach combines the reach of social media with the conversion powe
 
 ## Need Help Building Your Marketing System?
 
-At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/lead-generation). Book a free strategy call and we'll map out the right mix for your business.`,
+At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/lead-generation). We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). Book a free strategy call and we'll map out the right mix for your business.`,
   },
   {
     slug: 'best-ads-for-trades-businesses-canada',
@@ -397,7 +440,7 @@ A single job from a qualified lead can be worth $500–$10,000+. Even at the sta
 
 ## Ready to Fill Your Schedule With Jobs?
 
-At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) specifically for trades businesses across Canada. We handle everything — strategy, creative, targeting, and optimization — so you can focus on doing the work. Check out our dedicated [BC trades marketing page](/trades-marketing) or our [contractor marketing page](/services/paid-ads) to learn more. Book a free strategy call and we'll show you exactly what to expect.`,
+At AP DIGITAL, we run [Google and Facebook ad campaigns](/services/paid-ads) specifically for trades businesses across Canada. We handle everything — strategy, creative, targeting, and optimization — so you can focus on doing the work. Check out our dedicated [BC trades marketing page](/trades-marketing) to learn more. We serve contractors across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). Book a free strategy call and we'll show you exactly what to expect.`,
   },
 ];
 
@@ -481,6 +524,8 @@ There's a temptation to hire a large national or US-based agency for the perceiv
 AP DIGITAL was built specifically to serve the kinds of businesses that drive Vancouver's economy — [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades contractors](/trades-marketing), and [coaches](/coaching-marketing). We don't take on every client. We specialize in four niches and go deep, not wide.
 
 Our core services include [paid ads management](/services/paid-ads), [SEO](/services/seo), [web design](/services/web-design), [social media](/services/social-media), and [content creation](/services/content-creation). Every client gets a custom strategy built around their specific neighbourhood, target demographic, and budget. And we measure success in one currency: leads and bookings — not impressions or followers.
+
+We serve businesses across Metro Vancouver and the Fraser Valley including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
 **Ready to see if we're the right fit?** Book a free strategy call and we'll show you exactly how we'd approach your business.`,
   },
@@ -1946,7 +1991,7 @@ Facebook's algorithm needs 2–3 weeks and 50+ conversions to optimize. Business
 
 If you're a Surrey business owner ready to stop relying on word-of-mouth, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current marketing, build a custom Facebook Ads plan, and have you generating leads within 2–3 weeks.
 
-**AP Digital** is a [Vancouver-based agency](/about) specializing in [paid ads](/services/paid-ads) and [social media](/services/social-media) for service businesses across BC. No contracts, 90-day results guarantee.`,
+**AP Digital** is a [Vancouver-based agency](/about) specializing in [paid ads](/services/paid-ads) and [social media](/services/social-media) for service businesses across BC. We also serve [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). No contracts, 90-day results guarantee.`,
   },
   {
     slug: 'social-media-coaching-business-bc',
@@ -2442,7 +2487,7 @@ We've run Google Ads for Tri-Cities businesses across:
 
 If you're a Tri-Cities business owner ready to show up first on Google, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current online presence, research your competitors' ad strategies, and build a custom Google Ads plan for your market.
 
-**AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. Month-to-month, no contracts, [90-day guarantee](/pricing).`,
+**AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. We also serve [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), and [Abbotsford](/abbotsford). Month-to-month, no contracts, [90-day guarantee](/pricing).`,
   },
 ];
 

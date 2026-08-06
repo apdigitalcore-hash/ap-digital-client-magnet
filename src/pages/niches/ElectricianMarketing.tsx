@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { CheckCircle, TrendingUp, Phone, DollarSign } from 'lucide-react';
+import { CheckCircle, Search, Share2, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import {
   Accordion,
@@ -15,7 +15,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Electrician Marketing Vancouver | Get More Jobs | AP Digital';
-const DESC = 'Get 25+ qualified electrical jobs/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver electricians. Month-to-month. No contracts. 90-day guarantee.';
+const DESC = 'Electrician marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/electrician-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -31,9 +31,9 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '7.5x', label: 'Average ROAS for electrical clients' },
-  { icon: Phone, stat: '25+', label: 'Qualified jobs per month' },
-  { icon: DollarSign, stat: '$38', label: 'Average cost per qualified lead' },
+  { icon: Search, stat: 'Google Ads', label: 'Search campaigns for electrical keywords' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
 const faqs = [
@@ -126,7 +126,7 @@ const ElectricianMarketing = () => (
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">High job values</p>
-            <p className="text-sm text-muted-foreground">Panel upgrades run $2K–$5K. Rewiring can be $8K–$15K. Even at $38/lead, you're looking at 50x+ ROI on your best jobs.</p>
+            <p className="text-sm text-muted-foreground">Panel upgrades run $2K–$5K. Rewiring can be $8K–$15K. High job values mean strong ROI on your ad spend.</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">90-day guarantee</p>
@@ -144,7 +144,7 @@ const ElectricianMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Results Our Electrical Clients See</h2>
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
@@ -164,7 +164,7 @@ const ElectricianMarketing = () => (
             Metro Vancouver has 500+ licensed electrical contractors. The ones showing up in Google's Local Service Ads and Search Ads are getting 70%+ of inbound calls. The rest depend on word-of-mouth and HomeStars — which means inconsistent volume and shared leads.
           </p>
           <p>
-            Our electrical clients typically see $38/qualified lead with a 7.5x ROAS. The highest-converting campaigns focus on specific services (panel upgrades, EV chargers, knob-and-tube replacement) rather than generic "electrician" keywords — specificity wins in this vertical.
+            The highest-converting campaigns focus on specific services (panel upgrades, EV chargers, knob-and-tube replacement) rather than generic "electrician" keywords — specificity wins in this vertical.
           </p>
         </div>
 

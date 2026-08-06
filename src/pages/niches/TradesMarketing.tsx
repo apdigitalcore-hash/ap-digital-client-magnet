@@ -31,9 +31,9 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '5-10x', label: 'Return on ad spend for trades clients' },
-  { icon: Phone, stat: '30+', label: 'Qualified job leads per month' },
-  { icon: Star, stat: '4.8★', label: 'Average Google rating after review strategy' },
+  { icon: TrendingUp, stat: 'Google Ads', label: 'High-intent search campaigns for emergency & service calls' },
+  { icon: Phone, stat: 'Meta Ads', label: 'Homeowner targeting for routine jobs & seasonal work' },
+  { icon: Star, stat: 'No Contract', label: 'Month-to-month with 90-day results guarantee' },
 ];
 
 const faqs = [
@@ -169,23 +169,23 @@ const TradesMarketing = () => (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <Link to="/plumber-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
               <p className="font-bold text-foreground">Plumber Marketing</p>
-              <p className="text-sm text-muted-foreground">30+ calls/mo · $31/call · 9.1x ROAS</p>
+              <p className="text-sm text-muted-foreground">Emergency & service call campaigns across BC</p>
             </Link>
             <Link to="/electrician-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
               <p className="font-bold text-foreground">Electrician Marketing</p>
-              <p className="text-sm text-muted-foreground">25+ jobs/mo · $38/lead · EV charger specialists</p>
+              <p className="text-sm text-muted-foreground">Residential & commercial lead generation</p>
             </Link>
             <Link to="/hvac-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
               <p className="font-bold text-foreground">HVAC Marketing</p>
-              <p className="text-sm text-muted-foreground">40+ calls/mo · $28/call · Seasonal campaigns</p>
+              <p className="text-sm text-muted-foreground">Seasonal campaigns for heating & cooling</p>
             </Link>
             <Link to="/roofer-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
               <p className="font-bold text-foreground">Roofer Marketing</p>
-              <p className="text-sm text-muted-foreground">15–25 leads/mo · $65/lead · Storm-response ads</p>
+              <p className="text-sm text-muted-foreground">Storm-response & re-roofing lead campaigns</p>
             </Link>
             <Link to="/contractor-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
               <p className="font-bold text-foreground">General Contractor Marketing</p>
-              <p className="text-sm text-muted-foreground">20+ leads/mo · $55/lead · Reno & ADU specialists</p>
+              <p className="text-sm text-muted-foreground">Renovation & new build lead generation</p>
             </Link>
           </div>
         </div>
