@@ -16,7 +16,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Digital Marketing Agency Vancouver BC | Google Ads & Meta Ads | AP Digital';
+const TITLE = 'Digital Marketing Agency Vancouver BC | Google Ads | AP Digital';
 const DESC = 'Vancouver digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/vancouver';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

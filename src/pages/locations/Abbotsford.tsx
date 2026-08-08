@@ -16,7 +16,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Digital Marketing Agency Abbotsford BC | Google Ads & Meta Ads | AP Digital';
+const TITLE = 'Digital Marketing Agency Abbotsford BC | Google Ads | AP Digital';
 const DESC = 'Abbotsford marketing agency for Fraser Valley trades, salons & realtors. Google Ads + Meta Ads. Month-to-month. No contracts. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/abbotsford';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
