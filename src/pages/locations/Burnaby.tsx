@@ -16,7 +16,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Digital Marketing Agency Burnaby BC | Google Ads | AP Digital';
+const TITLE = 'Digital Marketing Agency Burnaby BC | AP Digital';
 const DESC = 'Burnaby digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month — no lock-in.';
 const CANONICAL = 'https://ap-digital.ca/burnaby';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
