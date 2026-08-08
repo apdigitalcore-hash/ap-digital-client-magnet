@@ -36,12 +36,15 @@ const WhileYouScroll = () => {
       const section = sectionRef.current;
       if (!section) return;
 
+      // Measure against the LIVE viewport height so the reveal timing stays in
+      // sync while mobile browser chrome collapses/expands. The locked `vh` is
+      // only used for the track height (avoids layout-driven scroll jumps).
+      const winH = window.innerHeight;
       const rect = section.getBoundingClientRect();
-      const sectionHeight = section.offsetHeight;
-      const travel = Math.max(1, sectionHeight - vh);
+      const travel = Math.max(1, section.offsetHeight - winH);
 
       progressRef.current = Math.max(0, Math.min(1, -rect.top / travel));
-      setInView(rect.top <= 0 && rect.bottom >= vh);
+      setInView(rect.top <= 5 && rect.bottom > winH * 0.9);
     };
 
 
@@ -64,7 +67,7 @@ const WhileYouScroll = () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(rafRef.current);
     };
-  }, [animate, vh]);
+  }, [animate]);
 
   const progress = smoothProgressRef.current;
 
