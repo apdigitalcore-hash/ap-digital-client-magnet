@@ -20,7 +20,7 @@ import {
   getFAQSchema,
 } from '@/lib/structuredData';
 
-const TITLE = 'Paid Ads & Social Media Pricing Vancouver | From $759/mo | AP Digital';
+const TITLE = 'Marketing Pricing Vancouver | From $759/mo | AP Digital';
 const DESC = 'Transparent pricing for paid ads and social media marketing. Month-to-month. 90-day results guarantee. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/pricing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
