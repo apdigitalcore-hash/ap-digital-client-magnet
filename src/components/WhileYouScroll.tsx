@@ -112,7 +112,7 @@ const WhileYouScroll = () => {
             top: 0,
             left: 0,
             width: '100%',
-            height: vh,
+            height: '100dvh',
             margin: 0,
             padding: 0,
             backgroundColor: 'hsl(220, 20%, 97%)',
