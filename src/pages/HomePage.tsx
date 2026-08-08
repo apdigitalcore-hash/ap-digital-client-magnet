@@ -182,7 +182,7 @@ const HomePage = () => {
                 </a>
               </Button>
             </div>
-            <Link to="/pricing" className="text-sm text-white/50 hover:text-white/80 transition-colors underline underline-offset-4">
+            <Link to="/pricing" className="text-base text-white/60 hover:text-white transition-colors underline underline-offset-4 font-medium">
               See Pricing
             </Link>
           </div>
