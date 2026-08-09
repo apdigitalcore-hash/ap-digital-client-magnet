@@ -7,6 +7,8 @@ import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
 import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
+import SocialMediaBudgetCalculator from '@/components/SocialMediaBudgetCalculator';
+
 
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
