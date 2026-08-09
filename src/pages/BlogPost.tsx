@@ -38,8 +38,42 @@ const BlogPost = () => {
   const renderBlock = (block: string, key: number) => {
     const trimmed = block.trim();
     if (!trimmed) return null;
+    if (trimmed === '[LEAD_MAGNET:social-media-budget]') {
+      return <SocialMediaBudgetCalculator key={key} />;
+    }
     if (trimmed.startsWith('### ')) {
       return <h3 key={key} className="font-display text-xl font-bold text-foreground mt-8 mb-3">{trimmed.slice(4)}</h3>;
+    }
+    if (trimmed.startsWith('|') && trimmed.endsWith('|') && trimmed.includes('\n|')) {
+      const rows = trimmed.split('\n').filter(line => line.trim().startsWith('|'));
+      if (rows.length < 2) return <p key={key} className="text-foreground/80 leading-relaxed mb-6">{renderInline(trimmed)}</p>;
+      const [headerRow, ...rest] = rows;
+      const separatorIndex = rest.findIndex(r => /^\|[-\s|]+\|?$/.test(r.trim()));
+      const dataRows = separatorIndex >= 0 ? rest.slice(separatorIndex + 1) : rest;
+      const headers = headerRow.split('|').map(h => h.trim()).filter(Boolean);
+      const cells = (row: string) => row.split('|').map(c => c.trim()).filter((_, i) => i > 0 && i <= headers.length);
+      return (
+        <div key={key} className="overflow-x-auto mb-6">
+          <table className="w-full text-sm text-left border-collapse border border-border">
+            <thead>
+              <tr className="bg-muted/50">
+                {headers.map((h, idx) => (
+                  <th key={idx} className="border border-border px-4 py-3 font-semibold text-foreground">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {dataRows.map((row, ridx) => (
+                <tr key={ridx} className={ridx % 2 === 1 ? 'bg-muted/30' : ''}>
+                  {cells(row).map((cell, cidx) => (
+                    <td key={cidx} className="border border-border px-4 py-3 text-foreground/80">{renderInline(cell)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
     }
     if (trimmed.startsWith('- ')) {
       const items = trimmed.split('\n').filter(l => l.startsWith('- '));
