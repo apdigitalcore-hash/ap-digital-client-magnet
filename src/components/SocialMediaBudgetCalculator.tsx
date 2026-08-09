@@ -13,12 +13,12 @@ import {
 import { useToast } from '@/hooks/use-toast';
 
 const industries = [
-  { value: 'salon', label: 'Salon / Beauty', baseFee: 1800, adSpend: 800, label: 'Growth Package' },
-  { value: 'real-estate', label: 'Real Estate', baseFee: 2200, adSpend: 1500, label: 'Growth + Listings' },
-  { value: 'trades', label: 'Trades / Contractor', baseFee: 2000, adSpend: 1200, label: 'Lead Generation' },
-  { value: 'coaching', label: 'Coaching / Consulting', baseFee: 1600, adSpend: 700, label: 'Lead Generation' },
-  { value: 'restaurant', label: 'Restaurant / Café', baseFee: 1400, adSpend: 500, label: 'Local Foot Traffic' },
-  { value: 'other', label: 'Other Service Business', baseFee: 1800, adSpend: 800, label: 'Growth Package' },
+  { value: 'salon', label: 'Salon / Beauty', baseFee: 1800, adSpend: 800, packageName: 'Growth Package' },
+  { value: 'real-estate', label: 'Real Estate', baseFee: 2200, adSpend: 1500, packageName: 'Growth + Listings' },
+  { value: 'trades', label: 'Trades / Contractor', baseFee: 2000, adSpend: 1200, packageName: 'Lead Generation' },
+  { value: 'coaching', label: 'Coaching / Consulting', baseFee: 1600, adSpend: 700, packageName: 'Lead Generation' },
+  { value: 'restaurant', label: 'Restaurant / Café', baseFee: 1400, adSpend: 500, packageName: 'Local Foot Traffic' },
+  { value: 'other', label: 'Other Service Business', baseFee: 1800, adSpend: 800, packageName: 'Growth Package' },
 ];
 
 const budgetLevels = [
