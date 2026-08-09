@@ -170,7 +170,7 @@ const SocialMediaBudgetCalculator = () => {
             <div>
               <p className="text-muted-foreground mb-1">Management Fee</p>
               <p className="font-display text-2xl font-bold text-foreground">${managementFee.toLocaleString()}</p>
-              <p className="text-xs text-muted-foreground">{selectedIndustry.label}</p>
+              <p className="text-xs text-muted-foreground">{selectedIndustry.packageName}</p>
             </div>
             <div>
               <p className="text-muted-foreground mb-1">Recommended Ad Spend</p>
