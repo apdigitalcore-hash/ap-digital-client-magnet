@@ -252,6 +252,7 @@ Deno.serve(async (req) => {
         business: validation.data.business,
         phone: validation.data.phone,
         niche: validation.data.niche,
+        source: validation.data.source,
       })
       .select("id")
       .single();
