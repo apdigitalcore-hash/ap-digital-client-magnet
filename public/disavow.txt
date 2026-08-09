@@ -1,0 +1,20 @@
+# Disavow file for ap-digital.ca
+# Generated: 2026-08-09
+# Purpose: These domains are linking with spam/PBN anchor text (e.g. "high quality dofollow backlinks da 50 pa 40 premium pbn network service ap-digital.ca rank first page google fast seo link building buy backlinks online cheap"). Disavowing them removes the risk they carry in Google's link graph.
+
+# Spam/PBN referring domains detected by Semrush backlink analysis
+domain:cindylaup.com
+domain:bisprofit.com
+domain:clifflisting.com
+domain:daechul.co.com
+domain:digitalseotool.com
+domain:directorylinkservice.com
+domain:dupurgeniefr.com
+domain:exotichealths.com
+domain:fletcherrld.com
+domain:ggmap.us.com
+
+# Upload this file to Google Search Console > Links > Disavow links
+# for the https://ap-digital.ca/ property. Keep monitoring the
+# "Links" report and Semrush backlink profile for new spam domains
+# and re-upload an updated version quarterly.
