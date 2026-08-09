@@ -23,6 +23,7 @@ export type Database = {
           name: string
           niche: string
           phone: string | null
+          source: string | null
         }
         Insert: {
           business: string
@@ -32,6 +33,7 @@ export type Database = {
           name: string
           niche: string
           phone?: string | null
+          source?: string | null
         }
         Update: {
           business?: string
@@ -41,6 +43,7 @@ export type Database = {
           name?: string
           niche?: string
           phone?: string | null
+          source?: string | null
         }
         Relationships: []
       }

@@ -45,6 +45,7 @@ interface LeadData {
   business: string;
   phone?: string | null;
   niche: string;
+  source?: string | null;
 }
 
 function validateLeadData(data: unknown): { valid: boolean; data?: LeadData; errors?: string[] } {
@@ -103,13 +104,22 @@ function validateLeadData(data: unknown): { valid: boolean; data?: LeadData; err
     errors.push("Invalid industry selection");
   }
 
+  // Source tracking (optional)
+  let source: string | null = null;
+  if (input.source !== undefined && input.source !== null && input.source !== "") {
+    source = typeof input.source === "string" ? input.source.trim() : null;
+    if (source && source.length > 100) {
+      errors.push("Source must be less than 100 characters");
+    }
+  }
+
   if (errors.length > 0) {
     return { valid: false, errors };
   }
 
   return {
     valid: true,
-    data: { name, email, business, phone, niche },
+    data: { name, email, business, phone, niche, source },
   };
 }
 
@@ -242,6 +252,7 @@ Deno.serve(async (req) => {
         business: validation.data.business,
         phone: validation.data.phone,
         niche: validation.data.niche,
+        source: validation.data.source,
       })
       .select("id")
       .single();
