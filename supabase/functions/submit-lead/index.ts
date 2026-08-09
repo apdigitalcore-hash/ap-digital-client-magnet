@@ -45,6 +45,7 @@ interface LeadData {
   business: string;
   phone?: string | null;
   niche: string;
+  source?: string | null;
 }
 
 function validateLeadData(data: unknown): { valid: boolean; data?: LeadData; errors?: string[] } {
