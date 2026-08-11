@@ -345,8 +345,54 @@ Deno.serve(async (req) => {
       emailError = "RESEND_API_KEY not configured in Supabase secrets";
     }
 
+    // Send confirmation email to the user
+    let userEmailStatus: "sent" | "skipped" | "failed" = "skipped";
+    if (resendApiKey && emailStatus === "sent") {
+      try {
+        const lead = validation.data;
+        const firstName = lead.name.split(" ")[0];
+        const userEmailResponse = await fetch("https://api.resend.com/emails", {
+          method: "POST",
+          headers: {
+            "Authorization": `Bearer ${resendApiKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            from: "Arjun from AP Digital <arjun@ap-digital.ca>",
+            to: [lead.email],
+            subject: `${firstName}, here's your custom marketing breakdown`,
+            html: `
+              <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:600px;margin:0 auto;padding:24px;background:#f9fafb;">
+                <div style="background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+                  <h2 style="margin:0 0 16px;color:#0f172a;">Hey ${firstName} 👋</h2>
+                  <p style="color:#334155;line-height:1.6;margin:0 0 16px;">Thanks for using the AP Digital budget calculator. I'll personally review your details and send you a custom budget breakdown within 24 hours.</p>
+                  <p style="color:#334155;line-height:1.6;margin:0 0 16px;">In the meantime, here are some resources that might help:</p>
+                  <ul style="color:#334155;line-height:1.8;margin:0 0 24px;padding-left:20px;">
+                    <li><a href="https://ap-digital.ca/pricing" style="color:#0d9488;">Our pricing packages</a></li>
+                    <li><a href="https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada" style="color:#0d9488;">Facebook Ads vs Google Ads — which is right for you?</a></li>
+                    <li><a href="https://ap-digital.ca/case-studies" style="color:#0d9488;">Client case studies</a></li>
+                  </ul>
+                  <p style="color:#334155;line-height:1.6;margin:0 0 24px;">If you'd like to skip ahead and chat directly, you can <a href="https://calendly.com/apdigital-core/20min" style="color:#0d9488;font-weight:600;">book a free strategy call here</a>.</p>
+                  <p style="color:#334155;line-height:1.6;margin:0;">— Arjun Sharma<br/><span style="color:#64748b;font-size:14px;">Founder, AP Digital</span></p>
+                </div>
+                <p style="text-align:center;color:#94a3b8;font-size:12px;margin:16px 0 0;">AP Digital · Vancouver, BC · <a href="https://ap-digital.ca" style="color:#94a3b8;">ap-digital.ca</a></p>
+              </div>
+            `,
+          }),
+        });
+
+        userEmailStatus = userEmailResponse.ok ? "sent" : "failed";
+        if (!userEmailResponse.ok) {
+          console.error("User confirmation email failed:", await userEmailResponse.text());
+        }
+      } catch (err) {
+        console.error("User email error:", err);
+        userEmailStatus = "failed";
+      }
+    }
+
     return new Response(
-      JSON.stringify({ success: true, id: data.id, emailStatus, emailError }),
+      JSON.stringify({ success: true, id: data.id, emailStatus, emailError, userEmailStatus }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
 

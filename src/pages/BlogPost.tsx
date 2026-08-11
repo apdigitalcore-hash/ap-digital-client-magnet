@@ -7,8 +7,9 @@ import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
 import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
-import SocialMediaBudgetCalculator from '@/components/SocialMediaBudgetCalculator';
+import { lazy, Suspense } from 'react';
 
+const SocialMediaBudgetCalculator = lazy(() => import('@/components/SocialMediaBudgetCalculator'));
 
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -39,7 +40,11 @@ const BlogPost = () => {
     const trimmed = block.trim();
     if (!trimmed) return null;
     if (trimmed === '[LEAD_MAGNET:social-media-budget]') {
-      return <SocialMediaBudgetCalculator key={key} />;
+      return (
+        <Suspense fallback={null} key={key}>
+          <SocialMediaBudgetCalculator />
+        </Suspense>
+      );
     }
     if (trimmed.startsWith('### ')) {
       return <h3 key={key} className="font-display text-xl font-bold text-foreground mt-8 mb-3">{trimmed.slice(4)}</h3>;
@@ -135,7 +140,7 @@ const BlogPost = () => {
         <meta name="twitter:title" content={post.metaTitle} />
         <meta name="twitter:description" content={post.metaDescription} />
         <meta name="twitter:image" content={OG_IMAGE} />
-        
+
       </Helmet>
       <JsonLd data={structuredData} />
       <Header />
@@ -158,6 +163,12 @@ const BlogPost = () => {
           <div className="prose-custom">
             {renderContent(post.content)}
           </div>
+
+          {slug === 'how-much-does-social-media-marketing-cost-canada' && (
+            <Suspense fallback={null}>
+              <SocialMediaBudgetCalculator />
+            </Suspense>
+          )}
 
           <div className="mt-16 bg-card border border-border rounded-2xl p-8 text-center">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Ready to Fill Your Schedule?</h2>
