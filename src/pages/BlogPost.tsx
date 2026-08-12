@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
-import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
+import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 import { lazy, Suspense } from 'react';
 
@@ -32,6 +32,7 @@ const BlogPost = () => {
         { name: post.title, url: `/blog/${post.slug}` },
       ]),
       getWebPageSchema(post.metaTitle, post.metaDescription, `/blog/${post.slug}`),
+      ...(post.faqs?.length ? [getFAQSchema(post.faqs)] : []),
     ]
   };
 
