@@ -11,7 +11,8 @@ import ServicesDark from '@/components/ServicesDark';
 import ProcessDark from '@/components/ProcessDark';
 import DarkCTA from '@/components/DarkCTA';
 
-import MarketingAuditAI from '@/components/MarketingAuditAI';
+import { lazy, Suspense } from 'react';
+const SocialMediaBudgetCalculator = lazy(() => import('@/components/SocialMediaBudgetCalculator'));
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
@@ -275,7 +276,9 @@ Month-to-month &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; 90-day guarantee
         </div>
       </section>
 
-      <MarketingAuditAI />
+      <Suspense fallback={null}>
+        <SocialMediaBudgetCalculator />
+      </Suspense>
       <ProcessDark />
       <ServicesDark />
 
