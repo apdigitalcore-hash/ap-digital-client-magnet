@@ -64,21 +64,25 @@ const SocialMediaBudgetCalculator = () => {
     setError('');
 
     try {
-      const niche = ['salon', 'real-estate', 'trades', 'coaching', 'other'].includes(industry)
-        ? industry
-        : 'other';
+      const industryLabel = INDUSTRIES.find((i) => i.value === industry)?.label ?? industry;
 
-      const { error: fnError } = await supabase.functions.invoke('submit-lead', {
-        body: {
+      const res = await fetch('https://formsubmit.co/ajax/apdigital.core@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
           business: business.trim(),
-          niche,
-          source: 'social-media-budget-calculator',
-        },
+          industry: industryLabel,
+          'ad-spend': `$${adSpend.toLocaleString()}/mo`,
+          'estimated-total': estimate ? `$${estimate.totalMonthly.toLocaleString()}/mo` : '',
+          'estimated-leads': estimate ? `${estimate.leadsLow}–${estimate.leadsHigh}/mo` : '',
+          _subject: `Budget Calculator Lead: ${name.trim()} — ${industryLabel}`,
+          _template: 'table',
+        }),
       });
 
-      if (fnError) throw fnError;
+      if (!res.ok) throw new Error('Request failed');
       setSubmitted(true);
     } catch {
       setError('Something went wrong. Please try again.');
