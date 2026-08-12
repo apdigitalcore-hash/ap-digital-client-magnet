@@ -164,11 +164,6 @@ const BlogPost = () => {
             {renderContent(post.content)}
           </div>
 
-          {slug === 'how-much-does-social-media-marketing-cost-canada' && (
-            <Suspense fallback={null}>
-              <SocialMediaBudgetCalculator />
-            </Suspense>
-          )}
 
           <div className="mt-16 bg-card border border-border rounded-2xl p-8 text-center">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Ready to Fill Your Schedule?</h2>
