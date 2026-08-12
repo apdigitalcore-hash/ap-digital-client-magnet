@@ -393,7 +393,37 @@ This funnel approach combines the reach of social media with the conversion powe
 
 ## Need Help Building Your Marketing System?
 
-At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/lead-generation). We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). Book a free strategy call and we'll map out the right mix for your business.`,
+At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/lead-generation). We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). Book a free strategy call and we'll map out the right mix for your business.
+
+## Frequently Asked Questions
+
+### Is email marketing still effective in 2026?
+
+Yes — email marketing remains the highest-ROI digital channel, returning $36–$42 for every $1 spent. Unlike social media, you own your email list and aren't subject to algorithm changes.
+
+### How much does email marketing cost for a small business in Canada?
+
+Most small businesses spend $0–$100/month on email marketing tools like Mailchimp or ConvertKit. If you outsource strategy and copywriting, expect to add $500–$1,500/month.
+
+### Can I use both email and social media marketing together?
+
+Absolutely — the best approach is using social media ads to capture leads, then nurturing them with automated email sequences. This combines social media's reach with email's conversion power.
+
+### How do I build an email list from scratch?
+
+Offer a lead magnet (free guide, discount, or consultation) through your website or social media ads. Use a landing page to capture emails, then nurture subscribers with a welcome sequence.
+
+### Which social media platform is best for Canadian small businesses?
+
+It depends on your industry. Instagram and Facebook work well for visual businesses like salons and real estate. LinkedIn is better for B2B and professional services. TikTok is growing fast for reaching younger audiences.`,
+    dateModified: '2026-08-12',
+    faqs: [
+      { question: 'Is email marketing still effective in 2026?', answer: 'Yes — email marketing remains the highest-ROI digital channel, returning $36–$42 for every $1 spent. Unlike social media, you own your email list and aren\'t subject to algorithm changes.' },
+      { question: 'How much does email marketing cost for a small business in Canada?', answer: 'Most small businesses spend $0–$100/month on email marketing tools like Mailchimp or ConvertKit. If you outsource strategy and copywriting, expect to add $500–$1,500/month.' },
+      { question: 'Can I use both email and social media marketing together?', answer: 'Absolutely — the best approach is using social media ads to capture leads, then nurturing them with automated email sequences. This combines social media\'s reach with email\'s conversion power.' },
+      { question: 'How do I build an email list from scratch?', answer: 'Offer a lead magnet (free guide, discount, or consultation) through your website or social media ads. Use a landing page to capture emails, then nurture subscribers with a welcome sequence.' },
+      { question: 'Which social media platform is best for Canadian small businesses?', answer: 'It depends on your industry. Instagram and Facebook work well for visual businesses like salons and real estate. LinkedIn is better for B2B and professional services. TikTok is growing fast for reaching younger audiences.' },
+    ],
   },
   {
     slug: 'best-ads-for-trades-businesses-canada',
@@ -673,7 +703,37 @@ Based on our work with salon clients across BC:
 
 AP DIGITAL specializes in [salon marketing](/salon-marketing) across Metro Vancouver and BC. We handle your [social media content](/services/social-media), your [paid ads](/services/paid-ads), and your strategy — so you can focus on your clients.
 
-**Book your free strategy call** and we'll show you exactly how we'd fill your chair within the first 30 days.`,
+**Book your free strategy call** and we'll show you exactly how we'd fill your chair within the first 30 days.
+
+## Frequently Asked Questions
+
+### How much does salon marketing cost in Vancouver?
+
+Most Vancouver salons spend $1,500–$3,500/month on a complete marketing system: $500–$1,000 in Meta ad spend, $500–$1,500 for social media management, and $500–$1,000 for Google Ads. The return is typically 20–60 new client inquiries per month.
+
+### What's the best social media platform for salons in Vancouver?
+
+Instagram is the #1 platform for Vancouver salons. It functions as your portfolio, trust signal, and lead generator. Reels and Stories drive the most engagement. TikTok is a strong secondary platform, especially for reaching clients aged 18–35.
+
+### How long does it take to see results from salon marketing?
+
+Most Vancouver salons see their first new client inquiries within 1–2 weeks of launching paid ads. By month 3, you should have a consistent pipeline of 40–60+ monthly inquiries with returning clients building your base.
+
+### Do I need Google Ads or just social media for my salon?
+
+Both work differently. Social media builds brand awareness and fills your chair with new clients. Google Ads capture people actively searching "hair salon near me" — these are the highest-intent leads. The best results come from running both.
+
+### How many Google reviews does my salon need to compete in Vancouver?
+
+Aim for 50+ Google reviews with a 4.7-star average or higher. Reviews are the single biggest trust factor for new Vancouver clients choosing a salon. Ask every happy client for a review immediately after their appointment.`,
+    dateModified: '2026-08-12',
+    faqs: [
+      { question: 'How much does salon marketing cost in Vancouver?', answer: 'Most Vancouver salons spend $1,500–$3,500/month on a complete marketing system: $500–$1,000 in Meta ad spend, $500–$1,500 for social media management, and $500–$1,000 for Google Ads. The return is typically 20–60 new client inquiries per month.' },
+      { question: "What's the best social media platform for salons in Vancouver?", answer: 'Instagram is the #1 platform for Vancouver salons. It functions as your portfolio, trust signal, and lead generator. Reels and Stories drive the most engagement. TikTok is a strong secondary platform, especially for reaching clients aged 18–35.' },
+      { question: 'How long does it take to see results from salon marketing?', answer: 'Most Vancouver salons see their first new client inquiries within 1–2 weeks of launching paid ads. By month 3, you should have a consistent pipeline of 40–60+ monthly inquiries with returning clients building your base.' },
+      { question: 'Do I need Google Ads or just social media for my salon?', answer: 'Both work differently. Social media builds brand awareness and fills your chair with new clients. Google Ads capture people actively searching "hair salon near me" — these are the highest-intent leads. The best results come from running both.' },
+      { question: 'How many Google reviews does my salon need to compete in Vancouver?', answer: 'Aim for 50+ Google reviews with a 4.7-star average or higher. Reviews are the single biggest trust factor for new Vancouver clients choosing a salon. Ask every happy client for a review immediately after their appointment.' },
+    ],
   },
   {
     slug: 'trades-marketing-vancouver-bc',
@@ -780,7 +840,37 @@ Based on our work with trades clients across BC:
 
 AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — [Google Ads](/services/paid-ads), [social media content](/services/content-creation), and [local SEO](/services/seo) — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) for more.
 
-**Book your free strategy call** and get a custom plan to fill your schedule with quality Vancouver jobs.`,
+**Book your free strategy call** and get a custom plan to fill your schedule with quality Vancouver jobs.
+
+## Frequently Asked Questions
+
+### How much should a Vancouver contractor spend on marketing?
+
+Most trades businesses in Metro Vancouver spend $1,500–$3,500/month on marketing: $1,000–$2,000 on Google Ads, $500–$1,000 on Meta Ads, plus management fees. This typically generates 20–40 qualified leads per month.
+
+### What's the best advertising platform for contractors in Vancouver?
+
+Google Ads is the #1 platform for trades businesses because it captures high-intent searches like "emergency plumber Vancouver." Meta Ads (Facebook/Instagram) are better for larger renovation projects where you need to reach homeowners before they start searching.
+
+### How long does it take for a contractor to get leads from Google Ads?
+
+Most Vancouver contractors see their first leads within 7–10 days of launching Google Ads. By month 2, you should be getting 20–40 qualified leads per month with a consistent campaign.
+
+### How many Google reviews does a contractor need in Vancouver?
+
+Aim for 30+ Google reviews with a 4.5-star average as a minimum. Contractors with 50+ reviews and a 4.8+ rating consistently win more calls than competitors. Request 1–2 new reviews per week from satisfied clients.
+
+### Is SEO or Google Ads better for trades businesses?
+
+Both serve different purposes. Google Ads deliver immediate leads from day one. SEO builds long-term organic visibility that compounds over time. The best strategy is running Google Ads for instant results while building SEO for sustained lead flow.`,
+    dateModified: '2026-08-12',
+    faqs: [
+      { question: 'How much should a Vancouver contractor spend on marketing?', answer: 'Most trades businesses in Metro Vancouver spend $1,500–$3,500/month on marketing: $1,000–$2,000 on Google Ads, $500–$1,000 on Meta Ads, plus management fees. This typically generates 20–40 qualified leads per month.' },
+      { question: "What's the best advertising platform for contractors in Vancouver?", answer: 'Google Ads is the #1 platform for trades businesses because it captures high-intent searches like "emergency plumber Vancouver." Meta Ads (Facebook/Instagram) are better for larger renovation projects where you need to reach homeowners before they start searching.' },
+      { question: 'How long does it take for a contractor to get leads from Google Ads?', answer: 'Most Vancouver contractors see their first leads within 7–10 days of launching Google Ads. By month 2, you should be getting 20–40 qualified leads per month with a consistent campaign.' },
+      { question: 'How many Google reviews does a contractor need in Vancouver?', answer: 'Aim for 30+ Google reviews with a 4.5-star average as a minimum. Contractors with 50+ reviews and a 4.8+ rating consistently win more calls than competitors. Request 1–2 new reviews per week from satisfied clients.' },
+      { question: 'Is SEO or Google Ads better for trades businesses?', answer: 'Both serve different purposes. Google Ads deliver immediate leads from day one. SEO builds long-term organic visibility that compounds over time. The best strategy is running Google Ads for instant results while building SEO for sustained lead flow.' },
+    ],
   },
   {
     slug: 'real-estate-agent-marketing-vancouver-bc',
@@ -966,7 +1056,37 @@ Make sure you have a system to respond fast: a dedicated phone number on your ad
 
 At AP DIGITAL, we specialize in [Meta Ads for BC contractors and trades businesses](/services/paid-ads). We handle the targeting, creative, and optimization — you focus on answering the phone.
 
-**Book a free strategy call** and get a custom budget recommendation for your trade and service area.`,
+**Book a free strategy call** and get a custom budget recommendation for your trade and service area.
+
+## Frequently Asked Questions
+
+### How much do Meta Ads cost per lead for contractors in BC?
+
+Cost per lead ranges from $20–$70 depending on your trade, location, and ad quality. Emergency services like plumbing and HVAC tend to have lower CPLs ($25–$45), while renovation projects are higher ($50–$70) but carry much larger job values.
+
+### What's the minimum Meta Ads budget for a BC contractor?
+
+We recommend starting with at least $500/month in ad spend plus management fees. This is enough to test your market and generate 10–20 leads per month. Most contractors scale to $1,000–$2,500/month once they see the ROI.
+
+### Are Facebook Ads or Instagram Ads better for contractors?
+
+Both run through the same Meta Ads platform. Facebook tends to reach older homeowners (35–65) who are decision-makers for larger projects. Instagram works well for showcasing visual before-and-after content. Running ads on both platforms simultaneously gives the best results.
+
+### How fast will I get leads from Meta Ads?
+
+Most BC contractors see their first leads within 3–5 days of launching a campaign. It takes 2–4 weeks for the Meta algorithm to fully optimize your targeting, after which cost per lead typically drops by 20–30%.
+
+### What's the ROI on Meta Ads for contractors in BC?
+
+For a typical plumber spending $1,500/month (ad spend + management), expect 20–30 leads, 6–12 booked jobs, and $2,400–$9,600 in revenue. Even at the low end, that's a 1.6x return on investment.`,
+    dateModified: '2026-08-12',
+    faqs: [
+      { question: 'How much do Meta Ads cost per lead for contractors in BC?', answer: 'Cost per lead ranges from $20–$70 depending on your trade, location, and ad quality. Emergency services like plumbing and HVAC tend to have lower CPLs ($25–$45), while renovation projects are higher ($50–$70) but carry much larger job values.' },
+      { question: "What's the minimum Meta Ads budget for a BC contractor?", answer: 'We recommend starting with at least $500/month in ad spend plus management fees. This is enough to test your market and generate 10–20 leads per month. Most contractors scale to $1,000–$2,500/month once they see the ROI.' },
+      { question: 'Are Facebook Ads or Instagram Ads better for contractors?', answer: 'Both run through the same Meta Ads platform. Facebook tends to reach older homeowners (35–65) who are decision-makers for larger projects. Instagram works well for showcasing visual before-and-after content. Running ads on both platforms simultaneously gives the best results.' },
+      { question: 'How fast will I get leads from Meta Ads?', answer: 'Most BC contractors see their first leads within 3–5 days of launching a campaign. It takes 2–4 weeks for the Meta algorithm to fully optimize your targeting, after which cost per lead typically drops by 20–30%.' },
+      { question: "What's the ROI on Meta Ads for contractors in BC?", answer: 'For a typical plumber spending $1,500/month (ad spend + management), expect 20–30 leads, 6–12 booked jobs, and $2,400–$9,600 in revenue. Even at the low end, that\'s a 1.6x return on investment.' },
+    ],
   },
   {
     slug: 'hvac-marketing-vancouver-bc',
@@ -1379,7 +1499,37 @@ SEO is a long game. Expect to see initial improvements in three to six months, w
 
 At AP DIGITAL, we help Vancouver small businesses [rank higher on Google](/services/seo), get more reviews, and generate consistent organic leads. Our [local SEO strategies](/services/seo) are built specifically for the Vancouver market — not generic templates applied to every city.
 
-**Book your free SEO audit** and let's find out exactly where your Vancouver business stands — and how to get to page one.`,
+**Book your free SEO audit** and let's find out exactly where your Vancouver business stands — and how to get to page one.
+
+## Frequently Asked Questions
+
+### How much does SEO cost for a small business in Vancouver?
+
+Most Vancouver small businesses spend $750–$2,500/month on SEO services. This typically includes Google Business Profile optimization, on-page SEO, content creation, and local citation building. DIY SEO is free but requires significant time investment.
+
+### How long does it take to rank on Google in Vancouver?
+
+Expect initial improvements in 3–6 months, with significant results by month 6–12. Competitive industries like real estate and legal take longer. Consistent optimization always outperforms one-time efforts.
+
+### What's more important — Google Ads or SEO for a Vancouver business?
+
+Google Ads deliver immediate visibility and leads from day one. SEO builds long-term organic traffic that compounds over time. The best strategy is running Google Ads for instant results while investing in SEO for sustainable growth.
+
+### How many Google reviews do I need to rank in Vancouver?
+
+Aim for at least 30+ reviews with a 4.5-star average to compete in the Map Pack. Businesses with 50+ reviews consistently outrank competitors. Focus on getting 1–2 new reviews per week through direct requests after service.
+
+### Do I need a blog for SEO in Vancouver?
+
+Yes — blog content targeting Vancouver-specific long-tail keywords (like "how much does a kitchen renovation cost in Vancouver") builds authority and drives organic traffic. Aim for 2–4 posts per month covering questions your local customers actually ask.`,
+    dateModified: '2026-08-12',
+    faqs: [
+      { question: 'How much does SEO cost for a small business in Vancouver?', answer: 'Most Vancouver small businesses spend $750–$2,500/month on SEO services. This typically includes Google Business Profile optimization, on-page SEO, content creation, and local citation building. DIY SEO is free but requires significant time investment.' },
+      { question: 'How long does it take to rank on Google in Vancouver?', answer: 'Expect initial improvements in 3–6 months, with significant results by month 6–12. Competitive industries like real estate and legal take longer. Consistent optimization always outperforms one-time efforts.' },
+      { question: "What's more important — Google Ads or SEO for a Vancouver business?", answer: 'Google Ads deliver immediate visibility and leads from day one. SEO builds long-term organic traffic that compounds over time. The best strategy is running Google Ads for instant results while investing in SEO for sustainable growth.' },
+      { question: 'How many Google reviews do I need to rank in Vancouver?', answer: 'Aim for at least 30+ reviews with a 4.5-star average to compete in the Map Pack. Businesses with 50+ reviews consistently outrank competitors. Focus on getting 1–2 new reviews per week through direct requests after service.' },
+      { question: 'Do I need a blog for SEO in Vancouver?', answer: 'Yes — blog content targeting Vancouver-specific long-tail keywords (like "how much does a kitchen renovation cost in Vancouver") builds authority and drives organic traffic. Aim for 2–4 posts per month covering questions your local customers actually ask.' },
+    ],
   },
   {
     slug: 'vancouver-google-ads-guide-local-business',
