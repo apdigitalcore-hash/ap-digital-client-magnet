@@ -7,6 +7,10 @@ const Footer = () => {
   const services = [
     { label: 'Paid Ads', href: '/services/paid-ads' },
     { label: 'Social Media', href: '/services/social-media' },
+    { label: 'SEO', href: '/services/seo' },
+    { label: 'Web Design', href: '/services/web-design' },
+    { label: 'Content Creation', href: '/services/content-creation' },
+    { label: 'Lead Generation', href: '/services/lead-generation' },
   ];
 
   const company = [
@@ -23,8 +27,18 @@ const Footer = () => {
     { label: 'Trades Marketing', href: '/trades-marketing' },
     { label: 'Real Estate Marketing', href: '/real-estate-marketing' },
     { label: 'Coaching Marketing', href: '/coaching-marketing' },
+    { label: 'Dental Marketing', href: '/dental-marketing' },
+    { label: 'HVAC Marketing', href: '/hvac-marketing' },
+    { label: 'Fitness Marketing', href: '/fitness-marketing' },
+    { label: 'Restaurant Marketing', href: '/restaurant-marketing' },
+    { label: 'Law Firm Marketing', href: '/law-firm-marketing' },
+    { label: 'Plumber Marketing', href: '/plumber-marketing' },
+    { label: 'Electrician Marketing', href: '/electrician-marketing' },
+    { label: 'Roofer Marketing', href: '/roofer-marketing' },
+    { label: 'Contractor Marketing', href: '/contractor-marketing' },
     { label: 'Agency Hiring Guide', href: '/how-to-choose-a-marketing-agency-vancouver' },
   ];
+
 
   const locations = [
     { label: 'Vancouver', href: '/vancouver' },
