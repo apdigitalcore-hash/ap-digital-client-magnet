@@ -233,8 +233,6 @@ Month-to-month &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; 90-day guarantee
         </div>
       </section>
 
-      <WhileYouScroll />
-
       {/* Niche Services Sections */}
       <section className="py-16 sm:py-20 md:py-28 bg-charcoal">
         <div className="container-custom">
@@ -345,6 +343,8 @@ Month-to-month &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; 90-day guarantee
           </div>
         </div>
       </section>
+
+      <WhileYouScroll />
 
       <DarkCTA
         headline="Ready to Get Predictable Leads?"
