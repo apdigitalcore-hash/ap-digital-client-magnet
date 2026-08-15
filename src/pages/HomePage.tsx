@@ -18,9 +18,6 @@ import WhileYouScroll from '@/components/WhileYouScroll';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
-import apLogo from '@/assets/ap-logo.png';
-import heroImage from '@/assets/hero-split.jpg';
-import heroImageWebp from '@/assets/hero-split.webp';
 
 const TITLE = 'Vancouver Performance Marketing Agency | AP Digital';
 const DESC = 'Vancouver marketing agency for salons, trades, realtors & coaches. Meta & Google Ads that deliver predictable leads. Month-to-month, 90-day guarantee.';
