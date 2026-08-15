@@ -16,7 +16,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Digital Marketing Agency Langley BC | AP Digital';
+const TITLE = 'Performance Marketing Agency Langley BC | AP Digital';
 const DESC = 'Langley marketing agency for salons, trades, realtors & coaches. Most clients see leads within 2 weeks. Google Ads, Meta Ads & local SEO. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/langley';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

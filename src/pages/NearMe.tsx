@@ -15,7 +15,7 @@ import {
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Digital Marketing Agency Near Me | BC Local Ads | AP Digital';
+const TITLE = 'Performance Marketing Agency Near Me | BC Local Ads | AP Digital';
 const DESC = 'Looking for a digital marketing agency near you in BC? AP Digital runs Google Ads & Meta Ads for trades, salons, realtors & coaches across Metro Vancouver. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/digital-marketing-near-me';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -82,7 +82,7 @@ const structuredData = {
     {
       "@type": "LocalBusiness",
       "@id": "https://ap-digital.ca/digital-marketing-near-me",
-      "name": "AP Digital — Local Digital Marketing Agency",
+      "name": "AP Digital — Local Performance Marketing Agency",
       "description": DESC,
       "url": "https://ap-digital.ca/digital-marketing-near-me",
       "telephone": "+1-778-682-5772",
@@ -145,7 +145,7 @@ const NearMe = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Digital Marketing Agency Near You — Metro Vancouver & Fraser Valley
+          Performance Marketing Agency Near You — Metro Vancouver & Fraser Valley
         </h1>
 
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">

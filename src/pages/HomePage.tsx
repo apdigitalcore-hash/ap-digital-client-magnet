@@ -22,7 +22,7 @@ import apLogo from '@/assets/ap-logo.png';
 import heroImage from '@/assets/hero-split.jpg';
 import heroImageWebp from '@/assets/hero-split.webp';
 
-const TITLE = 'Vancouver Digital Marketing Agency | AP Digital';
+const TITLE = 'Vancouver Performance Marketing Agency | AP Digital';
 const DESC = 'Vancouver marketing agency for salons, trades, realtors & coaches. Meta & Google Ads that deliver predictable leads. Month-to-month, 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -345,7 +345,6 @@ Month-to-month &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; 90-day guarantee
       </section>
 
       <WhileYouScroll />
-
       <DarkCTA
         headline="Ready to Get Predictable Leads?"
         subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."

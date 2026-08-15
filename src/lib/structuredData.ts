@@ -89,7 +89,7 @@ export const organizationSchema = {
   "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": `${BASE_URL}/#organization`,
   "name": ORG_NAME,
-  "alternateName": "AP Digital Marketing Agency",
+  "alternateName": "AP Digital Performance Marketing Agency",
   "url": BASE_URL,
   "logo": {
     "@type": "ImageObject",
