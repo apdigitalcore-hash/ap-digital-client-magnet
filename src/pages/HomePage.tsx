@@ -131,31 +131,28 @@ const HomePage = () => {
           <div className="w-full md:max-w-[45%] text-center md:text-left mx-auto md:mx-0">
 
             {/* Eyebrow */}
-            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-white/60 mb-6 animate-fade-up">
+            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-white/60 mb-6">
               Performance Marketing — Vancouver, BC
             </p>
 
             {/* H1 */}
             <h1
-              className="font-display text-[2.5rem] sm:text-6xl md:text-[4.25rem] font-bold text-white leading-[1.03] tracking-tight mb-6 animate-fade-up"
-              style={{ animationDelay: '0.08s' }}
+              className="font-display text-[2.5rem] sm:text-6xl md:text-[4.25rem] font-bold text-white leading-[1.03] tracking-tight mb-6"
             >
               Vancouver Performance{' '}
-              <span className="text-gradient">Marketing Agency</span>
+              <span className="text-teal">Marketing Agency</span>
             </h1>
 
             {/* Sub */}
             <p
-              className="text-base sm:text-lg text-white/60 max-w-[480px] mx-auto md:mx-0 mb-10 animate-fade-up leading-relaxed"
-              style={{ animationDelay: '0.16s' }}
+              className="text-base sm:text-lg text-white/60 max-w-[480px] mx-auto md:mx-0 mb-10 leading-relaxed"
             >
               We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
             </p>
 
             {/* CTAs */}
             <div
-              className="flex flex-col sm:flex-row items-center md:items-center justify-center md:justify-start gap-4 sm:gap-6 animate-fade-up"
-              style={{ animationDelay: '0.24s' }}
+              className="flex flex-col sm:flex-row items-center md:items-center justify-center md:justify-start gap-4 sm:gap-6"
             >
               <Button variant="hero" size="lg" asChild>
                 <a
@@ -180,7 +177,7 @@ const HomePage = () => {
         </div>
 
         {/* Trust bar */}
-        <div className="absolute bottom-8 left-0 right-0 z-10 container-custom animate-fade-up" style={{ animationDelay: '0.32s' }}>
+        <div className="absolute bottom-8 left-0 right-0 z-10 container-custom">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3 text-white/60">
             {[
               { icon: CalendarDays, label: 'Month-to-Month' },
