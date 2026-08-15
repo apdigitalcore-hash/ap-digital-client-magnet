@@ -1,7 +1,7 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight, Instagram, Linkedin, Sparkles, Building2, Hammer, GraduationCap } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight, Instagram, Linkedin, Sparkles, Building2, Hammer, GraduationCap, PlayCircle, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
