@@ -110,7 +110,7 @@ const HomePage = () => {
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
-        <link rel="preload" as="image" href={heroImageWebp} type="image/webp" />
+        <link rel="preload" as="image" href="/hero-bg.webp" type="image/webp" fetchPriority="high" />
       </Helmet>
       <JsonLd data={structuredData} />
       <Header />
