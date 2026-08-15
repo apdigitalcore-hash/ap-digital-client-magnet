@@ -116,112 +116,92 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
 
-        {/* Background — Codex-inspired gradient wash */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black" />
-          {/* Center glow behind logo — soft teal wash */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_45%_35%_at_50%_38%,_rgba(45,212,191,0.12)_0%,_rgba(45,212,191,0.03)_50%,_transparent_80%)]" />
-          {/* Wide ambient glow — adds depth */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_45%,_rgba(255,255,255,0.03)_0%,_transparent_70%)]" />
-          {/* Top edge light — mimics overhead studio lighting */}
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(255,255,255,0.04)_0%,_transparent_30%)]" />
-        </div>
+        {/* Background image */}
+        <img
+          src="/hero-bg.webp"
+          alt="Vancouver performance marketing agency"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
+        />
+        {/* Gradient overlay — uniform/darker on mobile, left-to-right on desktop */}
+        <div className="absolute inset-0 bg-black/70 md:bg-[linear-gradient(90deg,_rgba(0,0,0,0.85)_0%,_rgba(0,0,0,0.65)_40%,_rgba(0,0,0,0.2)_100%)]" />
 
-        <div className="relative z-10 flex flex-col items-center text-center px-4 pt-32 pb-24 sm:pt-40 sm:pb-32 w-full max-w-3xl mx-auto">
+        <div className="relative z-10 w-full container-custom pt-32 pb-28 md:py-32">
+          <div className="w-full md:max-w-[45%] text-center md:text-left mx-auto md:mx-0">
 
-          {/* Logo mark */}
-          <div className="mb-10 animate-fade-up">
-            <img src={apLogo} alt="AP Digital Marketing" className="w-24 h-24 sm:w-32 sm:h-32 rounded-full" />
-          </div>
-
-          {/* Descriptor */}
-          <div className="animate-fade-up mb-5" style={{ animationDelay: '0.02s' }}>
-            <span className="inline-block text-[11px] font-semibold tracking-[0.25em] uppercase text-white/50 border border-white/10 rounded-full px-4 py-1.5">
+            {/* Eyebrow */}
+            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-white/60 mb-6 animate-fade-up">
               Performance Marketing — Vancouver, BC
-            </span>
-          </div>
+            </p>
 
-          {/* H1 */}
-          <h1
-            className="font-display text-[2.5rem] sm:text-6xl md:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6 animate-fade-up"
-            style={{ animationDelay: '0.08s' }}
-          >
-            Vancouver Performance<br />
-            <span className="text-gradient">Marketing Agency</span>
-          </h1>
+            {/* H1 */}
+            <h1
+              className="font-display text-[2.5rem] sm:text-6xl md:text-[4.25rem] font-bold text-white leading-[1.03] tracking-tight mb-6 animate-fade-up"
+              style={{ animationDelay: '0.08s' }}
+            >
+              Vancouver Performance{' '}
+              <span className="text-gradient">Marketing Agency</span>
+            </h1>
 
-          {/* Sub */}
-          <p
-            className="text-base sm:text-lg text-white/60 max-w-xl mx-auto mb-12 animate-fade-up leading-relaxed"
-            style={{ animationDelay: '0.16s' }}
-          >
-            We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
-          </p>
+            {/* Sub */}
+            <p
+              className="text-base sm:text-lg text-white/60 max-w-[480px] mx-auto md:mx-0 mb-10 animate-fade-up leading-relaxed"
+              style={{ animationDelay: '0.16s' }}
+            >
+              We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
+            </p>
 
-          {/* CTAs */}
-          <div
-            className="flex flex-col items-center gap-4 animate-fade-up w-full sm:w-auto"
-            style={{ animationDelay: '0.24s' }}
-          >
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full sm:w-auto">
+            {/* CTAs */}
+            <div
+              className="flex flex-col sm:flex-row items-center md:items-center justify-center md:justify-start gap-4 sm:gap-6 animate-fade-up"
+              style={{ animationDelay: '0.24s' }}
+            >
               <Button variant="hero" size="lg" asChild>
                 <a
                   href="https://calendly.com/apdigital-core/20min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center gap-2 tracking-[0.12em] uppercase text-xs font-semibold"
                 >
                   Book a Call
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
-              <Button variant="heroOutline" size="lg" asChild>
-                <a href="#how-it-works" className="flex items-center justify-center">
-                  How It Works
-                </a>
-              </Button>
+              <a
+                href="#how-it-works"
+                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+              >
+                <PlayCircle className="w-7 h-7" strokeWidth={1.5} />
+                <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
+              </a>
             </div>
-            <Link to="/pricing" className="text-base text-white/60 hover:text-white transition-colors underline underline-offset-4 font-medium">
-              See Pricing
-            </Link>
           </div>
+        </div>
 
-          {/* Trust line */}
-          <p
-            className="mt-14 text-xs text-white/40 animate-fade-up"
-            style={{ animationDelay: '0.32s' }}
-          >
-Month-to-month &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; 90-day guarantee
-          </p>
-
-          {/* Social links */}
-          <div
-            className="mt-6 flex items-center justify-center gap-3 animate-fade-up"
-            style={{ animationDelay: '0.4s' }}
-          >
-            <a
-              href="https://www.instagram.com/theapdigital/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow AP Digital on Instagram"
-              className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
-            >
-              <Instagram className="w-4 h-4" strokeWidth={2} />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/theapdigital/?viewAsMember=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow AP Digital on LinkedIn"
-              className="w-9 h-9 rounded-full border border-white/10 text-gray-400 hover:text-teal hover:border-teal/40 flex items-center justify-center transition-colors duration-200"
-            >
-              <Linkedin className="w-4 h-4" strokeWidth={2} />
-            </a>
+        {/* Trust bar */}
+        <div className="absolute bottom-8 left-0 right-0 z-10 container-custom animate-fade-up" style={{ animationDelay: '0.32s' }}>
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3 text-white/60">
+            {[
+              { icon: CalendarDays, label: 'Month-to-Month' },
+              { icon: ShieldCheck, label: 'No Contracts' },
+              { icon: Clock, label: '90-Day Guarantee' },
+            ].map(({ icon: Icon, label }, i) => (
+              <div key={label} className="flex items-center gap-6">
+                {i > 0 && <span className="hidden sm:block h-4 w-px bg-white/20" />}
+                <span className="flex items-center gap-2">
+                  <Icon className="w-4 h-4" strokeWidth={1.5} />
+                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
+
 
 
       {/* ── Today's Move card ── */}
