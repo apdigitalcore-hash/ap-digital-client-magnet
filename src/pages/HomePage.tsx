@@ -137,7 +137,7 @@ const HomePage = () => {
 
             {/* H1 */}
             <h1
-              className="font-display text-[2.5rem] sm:text-6xl md:text-[4.25rem] font-bold text-white leading-[1.03] tracking-tight mb-6"
+              className="font-display text-[2rem] sm:text-6xl md:text-[4.25rem] font-bold text-white leading-[1.05] tracking-tight mb-6"
             >
               Vancouver Performance{' '}
               <span className="text-teal">Marketing Agency</span>
@@ -178,7 +178,7 @@ const HomePage = () => {
 
         {/* Trust bar */}
         <div className="absolute bottom-8 left-0 right-0 z-10 container-custom">
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3 text-white/60">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 sm:gap-y-3 text-white/60">
             {[
               { icon: CalendarDays, label: 'Month-to-Month' },
               { icon: ShieldCheck, label: 'No Contracts' },
