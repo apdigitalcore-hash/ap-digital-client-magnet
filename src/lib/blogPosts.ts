@@ -2737,7 +2737,7 @@ If you're a Tri-Cities business owner ready to show up first on Google, [book a 
     date: "2026-08-11",
     readTime: "9 min read",
     category: "SEO",
-    canonicalUrl: "https://apdigital.ca/blog/how-much-does-seo-cost-canada",
+    
     faqs: [
       {
         question: "How much should a small business spend on SEO in Canada?",
