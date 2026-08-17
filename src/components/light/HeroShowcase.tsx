@@ -36,86 +36,88 @@ export const HeroLightFan = () => (
   </div>
 );
 
-/** Dark glossy object anchoring the base of the hero. */
+/**
+ * Hero object — a single glossy black sphere resting on the base of the hero.
+ * A sphere is the one form that reads as a deliberate, physically-lit object
+ * rather than an ambiguous piece of hardware: one light source, one specular
+ * highlight, one terminator, one contact shadow.
+ */
 export const HeroObject = () => (
   <div
     aria-hidden="true"
     className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] flex justify-center"
   >
-    <div className="relative w-[74vw] max-w-[720px] translate-y-[26%] sm:w-[88vw] sm:translate-y-[20%]">
-      {/* Contact shadow grounding the form. */}
+    <div className="relative mb-[9vh] w-[42vw] max-w-[300px] sm:mb-[7vh] sm:w-[26vw]">
+      {/* Contact shadow — tight and dark where the sphere meets the ground,
+          spreading and softening outward. This is what sells the weight. */}
       <div
-        className="absolute inset-x-[8%] bottom-[22%] h-[42%] rounded-[50%]"
+        className="absolute inset-x-[-14%] bottom-[6%] h-[16%]"
         style={{
+          borderRadius: '50%',
           background:
-            'radial-gradient(50% 50% at 50% 50%, hsl(220 25% 12% / 0.30) 0%, transparent 72%)',
-          filter: 'blur(34px)',
+            'radial-gradient(50% 50% at 50% 50%, hsl(220 28% 10% / 0.42) 0%, hsl(220 28% 10% / 0.18) 42%, transparent 72%)',
+          filter: 'blur(26px)',
+        }}
+      />
+      {/* Core occlusion — the near-black kiss directly under the sphere. */}
+      <div
+        className="absolute inset-x-[24%] bottom-[9%] h-[7%]"
+        style={{
+          borderRadius: '50%',
+          background:
+            'radial-gradient(50% 50% at 50% 50%, hsl(220 30% 8% / 0.55) 0%, transparent 70%)',
+          filter: 'blur(10px)',
         }}
       />
 
-      {/* Body — a wide visor form, dark and glossy. */}
+      {/* Sphere */}
       <div
-        className="relative aspect-[780/430] w-full overflow-hidden"
+        className="relative aspect-square w-full rounded-full"
         style={{
-          borderRadius: '46% 46% 30% 30% / 58% 58% 24% 24%',
           background:
-            'linear-gradient(178deg, #33383F 0%, #1E2228 22%, #101317 52%, #090B0E 78%, #06080A 100%)',
+            'radial-gradient(circle at 34% 24%, #6E757E 0%, #3A4048 12%, #1E2229 32%, #101317 54%, #08090C 76%, #050608 100%)',
           boxShadow:
-            '0 40px 90px -30px hsl(220 30% 8% / 0.55), inset 0 -20px 50px hsl(0 0% 0% / 0.6)',
+            '0 60px 90px -40px hsl(220 30% 8% / 0.55), inset -16px -20px 60px hsl(0 0% 0% / 0.75)',
         }}
       >
-        {/* Broad specular sweep across the crown. */}
+        {/* Specular highlight — small, bright, offset toward the light. */}
         <span
-          className="absolute inset-x-[6%] top-[3%] h-[46%]"
+          className="absolute left-[26%] top-[16%] h-[19%] w-[25%]"
           style={{
             borderRadius: '50%',
             background:
-              'linear-gradient(to bottom, hsl(220 20% 92% / 0.42) 0%, hsl(220 20% 88% / 0.14) 42%, transparent 78%)',
-            filter: 'blur(2px)',
+              'radial-gradient(50% 50% at 42% 38%, hsl(0 0% 100% / 0.95) 0%, hsl(0 0% 100% / 0.45) 38%, transparent 72%)',
+            filter: 'blur(5px)',
           }}
         />
-
-        {/* Tight highlight — the hard glint that sells the gloss. */}
+        {/* Secondary sheen spreading from the highlight. */}
         <span
-          className="absolute left-1/2 top-[6%] h-[13%] w-[42%] -translate-x-1/2"
+          className="absolute inset-0 rounded-full"
           style={{
-            borderRadius: '50%',
             background:
-              'radial-gradient(60% 100% at 50% 40%, hsl(0 0% 100% / 0.75) 0%, hsl(0 0% 100% / 0.18) 55%, transparent 80%)',
-            filter: 'blur(6px)',
+              'radial-gradient(42% 38% at 32% 22%, hsl(210 20% 88% / 0.20) 0%, transparent 66%)',
           }}
         />
-
-        {/* Rim light along the upper edge. */}
+        {/* Rim light along the lower-right edge — bounce off the ground. */}
         <span
-          className="absolute inset-x-[3%] top-[1.5%] h-[2px]"
+          className="absolute inset-0 rounded-full"
           style={{
-            borderRadius: '50%',
             background:
-              'linear-gradient(90deg, transparent 0%, hsl(0 0% 100% / 0.55) 26%, hsl(0 0% 100% / 0.8) 50%, hsl(0 0% 100% / 0.55) 74%, transparent 100%)',
-            filter: 'blur(0.6px)',
+              'radial-gradient(72% 72% at 78% 84%, hsl(214 24% 76% / 0.26) 0%, transparent 46%)',
           }}
         />
-
-        {/* Inset lens band — gives the form structure instead of a blank blob. */}
+        {/* Cool bounce along the left silhouette. */}
         <span
-          className="absolute left-1/2 top-[46%] h-[34%] w-[54%] -translate-x-1/2"
+          className="absolute inset-0 rounded-full"
           style={{
-            borderRadius: '50% 50% 44% 44% / 46% 46% 54% 54%',
             background:
-              'radial-gradient(70% 80% at 50% 22%, hsl(220 14% 30% / 0.85) 0%, hsl(220 16% 12% / 0.9) 55%, hsl(220 20% 6% / 0.95) 100%)',
-            boxShadow:
-              'inset 0 2px 10px hsl(0 0% 100% / 0.10), inset 0 -8px 22px hsl(0 0% 0% / 0.7)',
+              'radial-gradient(48% 60% at 3% 58%, hsl(214 30% 74% / 0.16) 0%, transparent 52%)',
           }}
         />
-
-        {/* Cool bounce from the left, warm-neutral from the right. */}
+        {/* Crisp edge so the silhouette stays clean against the light fan. */}
         <span
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(38% 60% at 6% 46%, hsl(215 30% 70% / 0.16) 0%, transparent 62%), radial-gradient(38% 60% at 94% 46%, hsl(220 12% 78% / 0.13) 0%, transparent 62%)',
-          }}
+          className="absolute inset-0 rounded-full"
+          style={{ boxShadow: 'inset 0 0 0 1px hsl(220 20% 60% / 0.10)' }}
         />
       </div>
     </div>

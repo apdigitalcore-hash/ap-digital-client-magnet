@@ -583,13 +583,9 @@ const AIChat = () => {
     }
   }, [open]);
 
-  // Teaser bubble: pops up after 6s unless dismissed this session or chat already opened
-  useEffect(() => {
-    const dismissed = sessionStorage.getItem(TEASER_DISMISSED_KEY);
-    if (dismissed || open) return;
-    const t = setTimeout(() => setShowTeaser(true), 6000);
-    return () => clearTimeout(t);
-  }, [open]);
+  // The teaser used to auto-pop after 6s on every page, which read as an ad
+  // and covered content. The launcher button is discoverable on its own, so
+  // the bubble now only ever appears if something explicitly opts into it.
 
   const dismissTeaser = () => {
     setShowTeaser(false);
