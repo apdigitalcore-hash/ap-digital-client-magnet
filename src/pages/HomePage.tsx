@@ -117,7 +117,7 @@ const HomePage = () => {
         <HeroLightFan />
         <HeroObject />
 
-        <div className="relative z-10 w-full container-custom pt-24 pb-[32vh] md:pt-24 md:pb-[46vh]">
+        <div className="relative z-10 w-full container-custom pt-24 pb-[38vh] md:pt-24 md:pb-[46vh]">
           <div className="max-w-3xl mx-auto text-center">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-8">

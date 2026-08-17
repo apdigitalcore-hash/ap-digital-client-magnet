@@ -1,16 +1,25 @@
 import { Link } from 'react-router-dom';
-import { Target, Megaphone, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import SectionLabel from './SectionLabel';
+import { MARKS, type MarkKey } from './BrandMarks';
 
-const services = [
+const services: {
+  id: string;
+  title: string;
+  href: string;
+  description: string;
+  details: string;
+  platforms: MarkKey[];
+  stats: { value: string; label: string }[];
+}[] = [
   {
-    icon: Target,
     id: 'service-paid-ads',
     title: 'Paid Ads',
     href: '/services/paid-ads',
     description: 'Laser-targeted campaigns on Google & Meta that maximize your ROI.',
     details:
       'We build, manage, and optimize ad campaigns across Google Ads, Meta (Facebook & Instagram), and TikTok — audience research, creative testing, retargeting funnels, and weekly performance reporting.',
+    platforms: ['google', 'meta', 'facebook', 'tiktok'],
     stats: [
       { value: '5–10x', label: 'Avg ROAS' },
       { value: '14', label: 'Days to launch' },
@@ -18,13 +27,13 @@ const services = [
     ],
   },
   {
-    icon: Megaphone,
     id: 'service-social-media',
     title: 'Social Media',
     href: '/services/social-media',
     description: 'Build authority with consistent, compelling content.',
     details:
       'Your entire social presence handled — content calendars, design, copywriting, community management, and growth strategy across Instagram, Facebook, LinkedIn, and TikTok.',
+    platforms: ['instagram', 'facebook', 'tiktok', 'meta'],
     stats: [
       { value: '12+', label: 'Posts / month' },
       { value: '340%', label: 'Avg growth' },
@@ -33,49 +42,52 @@ const services = [
   },
 ];
 
-/* Dark glossy tile — the anchor object in each card, per the reference. */
-const GlossObject = ({ Icon }: { Icon: typeof Target }) => (
+/* Dark tile carrying the platform marks — the logos are the point of interest,
+   so the tile stays plain and the chips supply the colour. */
+const PlatformTile = ({ platforms }: { platforms: MarkKey[] }) => (
   <div className="relative mx-auto aspect-square w-full max-w-[240px] shrink-0 sm:mx-0 sm:w-[38%] sm:max-w-none">
     <div
-      className="relative h-full w-full overflow-hidden rounded-[2rem]"
+      className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2rem] p-5"
       style={{
         background:
-          'linear-gradient(160deg, #3A3F47 0%, #22262C 26%, #12151A 58%, #0A0C0F 100%)',
+          'linear-gradient(160deg, #2E333A 0%, #1B1F25 30%, #101318 62%, #0A0C0F 100%)',
         boxShadow:
-          '0 26px 60px -22px hsl(220 30% 8% / 0.5), inset 0 -14px 34px hsl(0 0% 0% / 0.55)',
+          '0 26px 60px -22px hsl(220 30% 8% / 0.5), inset 0 -14px 34px hsl(0 0% 0% / 0.5)',
       }}
     >
       {/* Corner light source. */}
       <span
-        className="absolute inset-0"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(58% 48% at 26% 12%, hsl(0 0% 100% / 0.24) 0%, transparent 68%)',
+            'radial-gradient(58% 48% at 26% 10%, hsl(0 0% 100% / 0.20) 0%, transparent 68%)',
         }}
       />
-      {/* Glossy droplet at centre. */}
-      <span
-        className="absolute left-1/2 top-1/2 h-[48%] w-[48%] -translate-x-1/2 -translate-y-1/2"
-        style={{
-          borderRadius: '52% 48% 46% 54% / 48% 52% 48% 52%',
-          background:
-            'radial-gradient(48% 44% at 34% 26%, hsl(0 0% 100% / 0.62) 0%, hsl(220 12% 42% / 0.36) 24%, #14171B 58%, #07090B 100%)',
-          boxShadow:
-            '0 16px 30px -10px hsl(0 0% 0% / 0.7), inset 0 -6px 16px hsl(0 0% 0% / 0.6)',
-        }}
-      />
-      {/* Icon reads over the object so the tile still says what it is. */}
-      <span className="absolute inset-0 flex items-center justify-center">
-        <Icon className="h-7 w-7 text-white/85" strokeWidth={1.5} />
-      </span>
       {/* Top rim light. */}
       <span
-        className="absolute inset-x-[10%] top-px h-px"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-[10%] top-px h-px"
         style={{
           background:
-            'linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.5), transparent)',
+            'linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.45), transparent)',
         }}
       />
+
+      <div className="relative grid grid-cols-2 gap-3.5">
+        {platforms.map((key) => {
+          const { Mark, label } = MARKS[key];
+          return (
+            <span
+              key={key}
+              title={label}
+              className="flex h-[3.25rem] w-[3.25rem] items-center justify-center rounded-2xl bg-white shadow-[0_6px_16px_-6px_hsl(220_30%_5%/0.6)]"
+            >
+              <Mark className="h-7 w-7" />
+            </span>
+          );
+        })}
+      </div>
     </div>
   </div>
 );
@@ -101,7 +113,7 @@ const ServicesLight = () => (
             className="elev-2 hover:elev-3 group scroll-mt-24 rounded-[2rem] bg-[#F4F6F8] p-4 transition-shadow duration-300 sm:p-5"
           >
             <div className="flex flex-col gap-6 sm:flex-row sm:items-stretch sm:gap-7">
-              <GlossObject Icon={service.icon} />
+              <PlatformTile platforms={service.platforms} />
 
               <div className="flex flex-1 flex-col justify-center py-2 pr-1 sm:py-4">
                 <h3 className="font-serif text-2xl font-medium text-foreground sm:text-[1.75rem]">

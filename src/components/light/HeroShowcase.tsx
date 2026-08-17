@@ -37,44 +37,41 @@ export const HeroLightFan = () => (
 );
 
 /**
- * Hero object — a raytraced glossy torus rendered for this site
+ * Hero object — a raytraced glossy yin-yang sphere rendered for this site
  * (scripts/render-hero-object.py), lit to match the hero's overhead light fan.
- * The ring's hole lets the fan show through, which seats the object in the
- * scene instead of pasting it on top.
  */
 export const HeroObject = () => (
   <div
     aria-hidden="true"
     className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] flex justify-center"
   >
-    <div className="relative mb-[10vh] w-[76vw] max-w-[560px] sm:mb-[8vh] sm:w-[46vw]">
-      {/* Contact shadow — tight and dark under the ring, spreading outward.
-          The render has no floor, so the grounding is composited here. */}
+    <div className="relative mb-[9vh] w-[52vw] max-w-[330px] sm:mb-[7vh] sm:w-[27vw]">
+      {/* Contact shadow — the render has no floor, so grounding is composited
+          here: a wide soft spread plus a tight core where it meets the base. */}
       <div
-        className="absolute inset-x-[2%] bottom-[2%] h-[26%]"
+        className="absolute inset-x-[-10%] bottom-[1%] h-[15%]"
         style={{
           borderRadius: '50%',
           background:
-            'radial-gradient(50% 50% at 50% 50%, hsl(220 28% 10% / 0.34) 0%, hsl(220 28% 10% / 0.14) 46%, transparent 74%)',
-          filter: 'blur(30px)',
+            'radial-gradient(50% 50% at 50% 50%, hsl(220 28% 10% / 0.32) 0%, hsl(220 28% 10% / 0.13) 45%, transparent 74%)',
+          filter: 'blur(26px)',
         }}
       />
-      {/* Core occlusion — the near-black kiss where it meets the ground. */}
       <div
-        className="absolute inset-x-[16%] bottom-[7%] h-[10%]"
+        className="absolute inset-x-[26%] bottom-[4%] h-[6%]"
         style={{
           borderRadius: '50%',
           background:
-            'radial-gradient(50% 50% at 50% 50%, hsl(220 30% 8% / 0.42) 0%, transparent 70%)',
-          filter: 'blur(16px)',
+            'radial-gradient(50% 50% at 50% 50%, hsl(220 30% 8% / 0.45) 0%, transparent 70%)',
+          filter: 'blur(11px)',
         }}
       />
 
       <img
         src="/hero-object.webp"
         alt=""
-        width={1442}
-        height={755}
+        width={1314}
+        height={1314}
         className="relative w-full"
         fetchPriority="high"
         decoding="async"
