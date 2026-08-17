@@ -89,10 +89,10 @@ const PaidAds = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-          Google Ads Agency Vancouver
+          Google &amp; Meta Ads Agency Vancouver
         </h1>
         <p className="text-base text-teal font-semibold mb-6">
-          PPC management, Facebook Ads & Meta campaigns for BC businesses.
+          Google Ads, Facebook &amp; Instagram campaigns managed end-to-end for BC businesses.
         </p>
 
         {/* Short intro */}

@@ -55,21 +55,28 @@ const Header = () => {
     { href: '/how-to-choose-a-marketing-agency-vancouver', label: 'Agency Hiring Guide', external: false },
   ];
 
-  // Pages that open on a light background need dark header text until the
-  // header gains its dark scrolled chrome.
-  const lightPagePrefixes = [
-    '/blog',
-    '/how-to-choose-a-marketing-agency-vancouver',
-    '/login',
-    '/.lovable/oauth/consent',
+  // This used to be an allowlist of LIGHT pages, which meant every light page
+  // not on the list rendered white nav text on a white hero — invisible. Most
+  // of the site is light now, so the list tracks the DARK heroes instead and
+  // anything unlisted safely defaults to dark, readable chrome.
+  const darkHeroPrefixes = [
+    '/about',            // covers /about/arjun-sharma
+    '/pricing',
+    '/privacy-policy',
+    '/terms-of-service',
+    '/vancouver',
+    '/surrey',
+    '/burnaby',
+    '/richmond',
+    '/langley',
+    '/coquitlam',
+    '/abbotsford',
   ];
-  // /case-studies (grid) is light, but individual case study pages open on a
-  // near-black hero, so they keep the light header text.
-  const isLightPage =
-    pathname === '/' ||
-    pathname === '/case-studies' ||
-    lightPagePrefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`));
-  const useDarkChrome = isLightPage;
+  const hasDarkHero = darkHeroPrefixes.some(
+    (p) => pathname === p || pathname.startsWith(`${p}/`)
+  );
+  const useDarkChrome = !hasDarkHero;
+  const isLightPage = useDarkChrome;
 
 
   return (
