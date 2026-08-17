@@ -45,7 +45,10 @@ export const HeroObject = () => (
     aria-hidden="true"
     className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] flex justify-center"
   >
-    <div className="relative mb-[9vh] w-[52vw] max-w-[330px] sm:mb-[7vh] sm:w-[27vw]">
+    {/* Width is capped against viewport HEIGHT as well as width. Sizing purely
+        in vw made the sphere outgrow its vh-based clearance on wide-but-short
+        laptop screens, where it collided with the trust bar. */}
+    <div className="relative mb-[5vh] w-[min(52vw,23vh)] max-w-[330px] sm:mb-[5vh] sm:w-[min(26vw,24vh)]">
       {/* Contact shadow — the render has no floor, so grounding is composited
           here: a wide soft spread plus a tight core where it meets the base. */}
       <div
