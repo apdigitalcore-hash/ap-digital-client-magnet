@@ -66,9 +66,10 @@ const Header = () => {
   // /case-studies (grid) is light, but individual case study pages open on a
   // near-black hero, so they keep the light header text.
   const isLightPage =
+    pathname === '/' ||
     pathname === '/case-studies' ||
     lightPagePrefixes.some((p) => pathname === p || pathname.startsWith(`${p}/`));
-  const useDarkChrome = isLightPage && !isScrolled;
+  const useDarkChrome = isLightPage;
 
 
   return (
@@ -76,7 +77,9 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-black/60 backdrop-blur-xl border-b border-white/10 py-2'
+          ? isLightPage
+            ? 'bg-white/80 backdrop-blur-xl border-b border-black/5 py-2'
+            : 'bg-black/60 backdrop-blur-xl border-b border-white/10 py-2'
           : 'bg-transparent py-4'
       }`}
     >
@@ -91,7 +94,7 @@ const Header = () => {
             <div className={`font-display font-bold text-xl md:text-2xl transition-colors duration-300 ${
               useDarkChrome ? 'text-primary' : 'text-primary-foreground'
             }`}>
-              <span className="text-teal">AP</span> DIGITAL
+              <span className={useDarkChrome ? 'text-foreground' : 'text-teal'}>AP</span> DIGITAL
             </div>
           </Link>
 
@@ -204,7 +207,7 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button variant="hero" size="default" asChild>
+            <Button variant={useDarkChrome ? 'pill' : 'hero'} size="default" asChild>
               <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Free Call</a>
             </Button>
           </div>

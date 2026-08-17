@@ -1,20 +1,18 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, Scissors, Home, Wrench, ChevronRight, Instagram, Linkedin, Sparkles, Building2, Hammer, GraduationCap, PlayCircle, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { ArrowRight, Zap, Target, Users, TrendingUp, ChevronRight, CalendarDays, ShieldCheck, Clock, PlayCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 
-import ServicesDark from '@/components/ServicesDark';
-import ProcessDark from '@/components/ProcessDark';
-import DarkCTA from '@/components/DarkCTA';
+import SectionLabel from '@/components/light/SectionLabel';
+import ProcessLight from '@/components/light/ProcessLight';
+import ServicesLight from '@/components/light/ServicesLight';
+import FaqLight from '@/components/light/FaqLight';
+import PastelCTA from '@/components/light/PastelCTA';
 
 import { lazy, Suspense } from 'react';
 const SocialMediaBudgetCalculator = lazy(() => import('@/components/SocialMediaBudgetCalculator'));
-import HeroMoveCard from '@/components/HeroMoveCard';
-import WhileYouScroll from '@/components/WhileYouScroll';
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
@@ -85,7 +83,7 @@ const differentiators = [
 
 const HomePage = () => {
   return (
-    <main id="main-content" className="min-h-screen">
+    <main id="main-content" className="min-h-screen bg-background">
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESC} />
@@ -107,69 +105,44 @@ const HomePage = () => {
         <meta name="twitter:description" content={DESC} />
         <meta name="twitter:image" content={OG_IMAGE} />
         <meta name="robots" content="index, follow" />
-        <link rel="preload" as="image" href="/hero-bg.webp" type="image/webp" fetchPriority="high" />
       </Helmet>
       <JsonLd data={structuredData} />
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+        <div className="relative z-10 w-full container-custom pt-32 pb-28 md:py-40">
+          <div className="max-w-3xl mx-auto text-center">
 
-        {/* Background image */}
-        <img
-          src="/hero-bg.webp"
-          alt="Vancouver performance marketing agency"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          fetchPriority="high"
-          loading="eager"
-          decoding="sync"
-        />
-        {/* Gradient overlay — uniform/darker on mobile, left-to-right on desktop */}
-        <div className="absolute inset-0 bg-black/70 md:bg-[linear-gradient(90deg,_rgba(0,0,0,0.85)_0%,_rgba(0,0,0,0.65)_40%,_rgba(0,0,0,0.2)_100%)]" />
-
-        <div className="relative z-10 w-full container-custom pt-32 pb-28 md:py-32">
-          <div className="w-full md:max-w-[45%] text-center md:text-left mx-auto md:mx-0">
-
-            {/* Eyebrow */}
-            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-white/60 mb-6">
+            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-8">
               Performance Marketing — Vancouver, BC
             </p>
 
-            {/* H1 */}
-            <h1
-              className="font-display text-[2rem] sm:text-6xl md:text-[4.25rem] font-bold text-white leading-[1.05] tracking-tight mb-6"
-            >
-              Vancouver Performance{' '}
-              <span className="text-teal">Marketing Agency</span>
+            <h1 className="font-serif text-[2.5rem] sm:text-6xl md:text-[5rem] font-medium text-foreground leading-[1.05] tracking-tight mb-7">
+              Vancouver{' '}
+              <span className="italic">Performance</span>{' '}
+              Marketing Agency
             </h1>
 
-            {/* Sub */}
-            <p
-              className="text-base sm:text-lg text-white/60 max-w-[480px] mx-auto md:mx-0 mb-10 leading-relaxed"
-            >
+            <p className="text-base sm:text-lg text-muted-foreground max-w-[520px] mx-auto mb-10 leading-relaxed">
               We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
             </p>
 
-            {/* CTAs */}
-            <div
-              className="flex flex-col sm:flex-row items-center md:items-center justify-center md:justify-start gap-4 sm:gap-6"
-            >
-              <Button variant="hero" size="lg" asChild>
-                <a
-                  href="https://calendly.com/apdigital-core/20min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 tracking-[0.12em] uppercase text-xs font-semibold"
-                >
-                  Book a Call
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
+              <a
+                href="https://calendly.com/apdigital-core/20min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
+              >
+                Book a Call
+                <ArrowRight className="w-4 h-4" />
+              </a>
               <a
                 href="#how-it-works"
-                className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
+                className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
               >
-                <PlayCircle className="w-7 h-7" strokeWidth={1.5} />
+                <PlayCircle className="w-6 h-6" strokeWidth={1.5} />
                 <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
               </a>
             </div>
@@ -177,15 +150,15 @@ const HomePage = () => {
         </div>
 
         {/* Trust bar */}
-        <div className="absolute bottom-8 left-0 right-0 z-10 container-custom">
-          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 sm:gap-y-3 text-white/60">
+        <div className="absolute bottom-10 left-0 right-0 z-10 container-custom">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-muted-foreground">
             {[
               { icon: CalendarDays, label: 'Month-to-Month' },
               { icon: ShieldCheck, label: 'No Contracts' },
               { icon: Clock, label: '90-Day Guarantee' },
             ].map(({ icon: Icon, label }, i) => (
-              <div key={label} className="flex items-center gap-6">
-                {i > 0 && <span className="hidden sm:block h-4 w-px bg-white/20" />}
+              <div key={label} className="flex items-center gap-8">
+                {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/10" />}
                 <span className="flex items-center gap-2">
                   <Icon className="w-4 h-4" strokeWidth={1.5} />
                   <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
@@ -196,32 +169,17 @@ const HomePage = () => {
         </div>
       </section>
 
-
-
-      {/* ── Today's Move card ── */}
-      <section className="py-16 sm:py-20 bg-black">
-        <div className="container-custom flex justify-center">
-          <div className="w-full max-w-[420px] animate-fade-up">
-            <HeroMoveCard />
-          </div>
-        </div>
-      </section>
-
-      {/* Niche Services Sections */}
-      <section className="py-16 sm:py-20 md:py-28 bg-charcoal">
+      {/* ─────────────────── INDUSTRIES ─────────────────── */}
+      <section className="py-24 md:py-32 bg-secondary">
         <div className="container-custom">
-
-          {/* Section header */}
-          <div className="text-center mb-10 sm:mb-14">
-            <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
-              Industries We Serve
-            </span>
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-tight">
-              Built for your industry.
+          <div className="text-center mb-14">
+            <SectionLabel number="001" label="Industries" />
+            <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
+              Built for your <span className="italic">industry.</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto">
             {[
               { to: '/salon-marketing', name: 'Salons', tagline: 'Full bookings in 30 days' },
               { to: '/real-estate-marketing', name: 'Real Estate', tagline: '15–30 qualified leads per month' },
@@ -231,16 +189,16 @@ const HomePage = () => {
               <Link
                 key={to}
                 to={to}
-                className="group relative aspect-square rounded-2xl bg-[#bdb9b4] border border-white/10 hover:border-teal/40 transition-all duration-500 flex flex-col items-center justify-center overflow-hidden"
+                className="group relative aspect-square rounded-3xl bg-background shadow-custom-sm hover:shadow-custom-lg transition-all duration-300 flex flex-col items-center justify-center overflow-hidden"
               >
-                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-black/80 tracking-tight text-center px-4">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight text-center px-4">
                   {name}
                 </h3>
-                <p className="text-sm text-black/0 group-hover:text-black/60 font-medium transition-all duration-500 mt-3 text-center px-6 max-w-[220px] leading-snug translate-y-2 group-hover:translate-y-0 relative z-10">
+                <p className="text-sm text-muted-foreground font-medium transition-all duration-300 mt-3 text-center px-6 max-w-[220px] leading-snug opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                   {tagline}
                 </p>
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0 z-10">
-                  <ChevronRight className="w-4 h-4 text-black/50" />
+                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
+                  <ChevronRight className="w-4 h-4 text-muted-foreground" />
                 </div>
               </Link>
             ))}
@@ -248,53 +206,61 @@ const HomePage = () => {
         </div>
       </section>
 
-      <Suspense fallback={null}>
-        <SocialMediaBudgetCalculator />
-      </Suspense>
-      <ProcessDark />
-      <ServicesDark />
-
-
-      {/* What Makes Us Different */}
-      <section className="py-14 sm:py-20 md:py-28 bg-charcoal">
+      <section className="py-24 md:py-32 bg-background">
         <div className="container-custom">
-          <div className="text-center mb-10 sm:mb-14 md:mb-16">
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-3 sm:mb-4 leading-tight">
-              Why <span className="text-gradient">Choose Us</span>
+          <div className="mx-auto max-w-3xl">
+            <Suspense fallback={null}>
+              <SocialMediaBudgetCalculator />
+            </Suspense>
+          </div>
+        </div>
+      </section>
+
+      <ProcessLight />
+      <ServicesLight />
+
+      {/* ─────────────────── WHY CHOOSE US ─────────────────── */}
+      <section className="py-24 md:py-32 bg-background">
+        <div className="container-custom">
+          <div className="text-center mb-14">
+            <SectionLabel number="004" label="Why Us" />
+            <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
+              Why <span className="italic">Choose</span> Us
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-2">
+            <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
               No fluff. No buzzwords. Just results.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 md:gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {differentiators.map((item) => (
-              <div key={item.title} className="p-4 sm:p-6 rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-teal/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-teal" />
-                </div>
-                <h3 className="font-display text-base sm:text-lg font-semibold text-primary-foreground mb-1.5 sm:mb-2 leading-tight">
+              <div key={item.title} className="p-6 sm:p-8 rounded-3xl bg-secondary transition-shadow duration-300 hover:shadow-custom-sm">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-background shadow-custom-sm mb-5">
+                  <item.icon className="w-5 h-5 text-foreground" strokeWidth={1.5} />
+                </span>
+                <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-2 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{item.description}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Cities We Serve */}
-      <section className="py-14 sm:py-20 md:py-28 bg-background">
+      {/* ─────────────────── CITIES ─────────────────── */}
+      <section className="py-24 md:py-32 bg-secondary">
         <div className="container-custom">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4 leading-tight">
-              Cities We <span className="text-gradient">Serve</span>
+          <div className="text-center mb-14">
+            <SectionLabel number="005" label="Locations" />
+            <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
+              Cities We <span className="italic">Serve</span>
             </h2>
-            <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto px-2">
+            <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
               Based in the Lower Mainland, we serve local businesses across Metro Vancouver and the Fraser Valley.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { city: 'Vancouver', href: '/vancouver', sub: 'Metro Vancouver' },
               { city: 'Surrey', href: '/surrey', sub: 'South Fraser' },
@@ -308,9 +274,9 @@ const HomePage = () => {
               <Link
                 key={city}
                 to={href}
-                className="group bg-card border border-border rounded-2xl p-4 sm:p-6 text-center hover:border-teal/40 transition-colors"
+                className="group bg-background rounded-2xl p-5 sm:p-7 text-center transition-shadow duration-300 hover:shadow-custom-sm"
               >
-                <div className="font-display text-lg sm:text-xl font-bold text-foreground group-hover:text-teal transition-colors mb-1">{city}</div>
+                <div className="font-serif text-lg sm:text-xl font-medium text-foreground group-hover:text-foreground/70 transition-colors mb-1">{city}</div>
                 <div className="text-muted-foreground text-xs sm:text-sm">{sub}</div>
               </Link>
             ))}
@@ -318,8 +284,9 @@ const HomePage = () => {
         </div>
       </section>
 
-      <WhileYouScroll />
-      <DarkCTA
+      <FaqLight faqs={homepageFAQs} />
+
+      <PastelCTA
         headline="Ready to Get Predictable Leads?"
         subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
       />

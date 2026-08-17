@@ -684,7 +684,7 @@ const AIChat = () => {
             <X className="w-3 h-3" />
           </button>
           <div className="flex items-start gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-teal flex items-center justify-center text-accent-foreground font-bold text-xs flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center text-background font-bold text-xs flex-shrink-0">
               AP
             </div>
             <div>
@@ -696,7 +696,7 @@ const AIChat = () => {
                   setOpen(true);
                   dismissTeaser();
                 }}
-                className="mt-2 text-xs font-semibold text-teal hover:underline"
+                className="mt-2 text-xs font-semibold text-foreground hover:underline"
               >
                 Start chat →
               </button>
@@ -712,7 +712,7 @@ const AIChat = () => {
         className={`fixed bottom-5 right-5 z-[60] flex items-center gap-2 rounded-full shadow-2xl transition-all duration-300 group ${
           open
             ? 'h-12 w-12 bg-card border border-border text-foreground hover:bg-secondary'
-            : 'h-14 px-5 bg-gradient-to-br from-teal to-teal/80 text-accent-foreground hover:scale-105 hover:shadow-teal'
+            : 'h-14 px-5 bg-foreground text-background hover:scale-105'
         }`}
       >
         {open ? (
@@ -736,12 +736,12 @@ const AIChat = () => {
             : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
         } bottom-24 right-5 left-5 sm:left-auto sm:w-[400px] md:w-[420px] max-h-[calc(100vh-7rem)]`}
       >
-        <div className="flex flex-col bg-card/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden h-[600px] max-h-[calc(100vh-7rem)] ring-1 ring-teal/10">
+        <div className="flex flex-col bg-card/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden h-[600px] max-h-[calc(100vh-7rem)] ring-1 ring-foreground/5">
           {/* Header */}
-          <div className="flex items-center justify-between px-5 py-4 bg-gradient-to-r from-teal/15 to-teal/5 border-b border-border">
+          <div className="flex items-center justify-between px-5 py-4 bg-secondary border-b border-border">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-teal flex items-center justify-center text-accent-foreground font-bold text-sm">
+                <div className="w-10 h-10 rounded-full bg-foreground flex items-center justify-center text-background font-bold text-sm">
                   AP
                 </div>
                 <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-500 ring-2 ring-card" />
@@ -749,14 +749,14 @@ const AIChat = () => {
               <div>
                 <div className="font-display font-bold text-foreground flex items-center gap-1.5">
                   AP Assistant
-                  <Sparkles className="w-3.5 h-3.5 text-teal" />
+                  <Sparkles className="w-3.5 h-3.5 text-foreground" />
                 </div>
                 <div className="text-xs text-muted-foreground">Online · Replies instantly</div>
               </div>
             </div>
             <button
               onClick={reset}
-              className="text-xs text-muted-foreground hover:text-teal transition-colors"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Reset conversation"
             >
               Reset
@@ -773,7 +773,7 @@ const AIChat = () => {
                 <div
                   className={`max-w-[85%] ${
                     m.role === 'user'
-                      ? 'bg-teal text-accent-foreground rounded-2xl rounded-br-md px-4 py-2.5'
+                      ? 'bg-foreground text-background rounded-2xl rounded-br-md px-4 py-2.5'
                       : 'space-y-3'
                   }`}
                 >
@@ -782,13 +782,13 @@ const AIChat = () => {
                       <div className="bg-secondary text-foreground rounded-2xl rounded-bl-md px-4 py-2.5 text-sm leading-relaxed">
                         {m.text}
                         {m.streaming && (
-                          <span className="inline-block w-1.5 h-3.5 bg-teal ml-0.5 align-middle animate-pulse" />
+                          <span className="inline-block w-1.5 h-3.5 bg-foreground ml-0.5 align-middle animate-pulse" />
                         )}
                       </div>
                       {!m.streaming && m.cta && (
                         <button
                           onClick={() => handleCTA(m.cta!)}
-                          className="inline-flex items-center gap-1.5 bg-teal text-accent-foreground text-sm font-semibold px-4 py-2 rounded-full hover:gap-2.5 hover:shadow-lg hover:shadow-teal/30 transition-all animate-in fade-in slide-in-from-bottom-1 duration-300"
+                          className="inline-flex items-center gap-1.5 bg-foreground text-background text-sm font-semibold px-4 py-2 rounded-full hover:gap-2.5 hover:shadow-lg transition-all animate-in fade-in slide-in-from-bottom-1 duration-300"
                         >
                           {m.cta.label}
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -800,7 +800,7 @@ const AIChat = () => {
                             <button
                               key={i}
                               onClick={() => handleSuggestion(s)}
-                              className="text-xs px-3 py-1.5 rounded-full border border-border bg-card/80 text-foreground hover:border-teal hover:text-teal hover:-translate-y-0.5 transition-all"
+                              className="text-xs px-3 py-1.5 rounded-full border border-border bg-card/80 text-foreground hover:border-foreground/30 hover:text-foreground hover:-translate-y-0.5 transition-all"
                             >
                               {s.label}
                             </button>
@@ -839,19 +839,19 @@ const AIChat = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask anything about pricing, services…"
-              className="flex-1 bg-secondary text-foreground placeholder:text-muted-foreground text-sm rounded-full px-4 py-2.5 outline-none focus:ring-2 focus:ring-teal/40"
+              className="flex-1 bg-secondary text-foreground placeholder:text-muted-foreground text-sm rounded-full px-4 py-2.5 outline-none focus:ring-2 focus:ring-foreground/20"
             />
             <button
               type="submit"
               disabled={!input.trim()}
               aria-label="Send"
-              className="w-10 h-10 rounded-full bg-teal text-accent-foreground flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:scale-105 transition-transform"
+              className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:scale-105 transition-transform"
             >
               <Send className="w-4 h-4" />
             </button>
           </form>
           <div className="text-[10px] text-muted-foreground text-center pb-2">
-            Powered by AP Digital · For complex questions, <a href="/contact" className="text-teal hover:underline">book a call</a>
+            Powered by AP Digital · For complex questions, <a href="/contact" className="text-foreground hover:underline">book a call</a>
           </div>
         </div>
       </div>
