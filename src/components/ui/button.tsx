@@ -25,6 +25,10 @@ const buttonVariants = cva(
         light: "border-2 border-primary-foreground/30 bg-primary-foreground/5 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/60",
         // Dark solid button for light backgrounds
         dark: "bg-charcoal text-primary-foreground hover:bg-charcoal-light shadow-dark hover:shadow-xl transform hover:-translate-y-0.5",
+        // Minimal monochrome pill for the light editorial layout
+        pill: "rounded-full bg-foreground text-background hover:bg-foreground/85",
+        pillOutline: "rounded-full border border-foreground/15 bg-transparent text-foreground hover:bg-foreground/5",
+
       },
       size: {
         default: "h-10 px-5 py-2",
