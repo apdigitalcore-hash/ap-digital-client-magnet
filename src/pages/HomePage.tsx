@@ -176,17 +176,21 @@ const HomePage = () => {
       {/* ─────────────────── TODAY'S MOVE ─────────────────── */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
-          <div className="text-center mb-14">
-            <SectionLabel label="Daily Insight" />
-            <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
-              Today's <span className="italic">Move</span>
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
-              One actionable marketing insight, every single day.
-            </p>
-          </div>
-          <div className="mx-auto max-w-[480px]">
-            <HeroMoveCard />
+          {/* Grey panel holds the whole section, so the dark card sits on grey
+              on white — three layers of depth instead of a card floating alone. */}
+          <div className="mx-auto max-w-4xl rounded-[2.25rem] bg-[#EDEFF2] px-6 py-14 sm:px-12 sm:py-16">
+            <div className="text-center mb-12">
+              <SectionLabel label="Daily Insight" />
+              <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-medium leading-[1.05] tracking-tight text-foreground">
+                Today's <span className="italic">Move</span>
+              </h2>
+              <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
+                One actionable marketing insight, every single day.
+              </p>
+            </div>
+            <div className="mx-auto max-w-[480px]">
+              <HeroMoveCard />
+            </div>
           </div>
         </div>
       </section>
