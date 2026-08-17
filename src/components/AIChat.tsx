@@ -1,6 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MessageCircle, X, Send, Sparkles, ArrowRight } from 'lucide-react';
+import {
+  PAID_ADS,
+  SOCIAL_MEDIA,
+  STARTING_PRICE,
+  COMBINED_PRICE,
+  TERMS,
+  TIMELINES,
+  CONTACT,
+} from '@/lib/companyFacts';
 
 type Suggestion = { label: string; intent: string };
 type CTA = { label: string; to: string };
@@ -21,10 +30,10 @@ const getGreeting = (pathname: string): Msg => {
   if (pathname.startsWith('/pricing')) {
     return {
       ...base,
-      text: "Looking at pricing? Smart move. I can break down any service, walk you through what's included, or help you pick the right mix for your goals.",
+      text: "Looking at pricing? I can break down what's in each service, or help you work out which one fits your goals.",
       suggestions: [
-        { label: 'Which service do I need?', intent: 'services' },
-        { label: 'How much for SEO?', intent: 'seo-price' },
+        { label: 'Cost of paid ads?', intent: 'ads-price' },
+        { label: 'Social media pricing?', intent: 'social-price' },
         { label: 'Is there a guarantee?', intent: 'guarantee' },
         { label: 'Book a free strategy call', intent: 'book' },
       ],
@@ -33,11 +42,11 @@ const getGreeting = (pathname: string): Msg => {
   if (pathname.startsWith('/services/seo')) {
     return {
       ...base,
-      text: "SEO questions? You're in the right place. Ask about timelines, local SEO, pricing, or how we'll get you ranking.",
+      text: "SEO questions? Ask about timelines, local SEO, or how we'd approach ranking your business. SEO is scoped on a call rather than sold at a list price.",
       suggestions: [
         { label: 'How long until I rank?', intent: 'timeline' },
-        { label: 'How much for SEO?', intent: 'seo-price' },
         { label: 'Do you do local SEO?', intent: 'local' },
+        { label: 'Cost of paid ads?', intent: 'ads-price' },
         { label: 'Book a call', intent: 'book' },
       ],
     };
@@ -78,7 +87,7 @@ const getGreeting = (pathname: string): Msg => {
   }
   return {
     ...base,
-    text: "Hey 👋 I'm AP — your AI marketing strategist. Ask me anything about our services, pricing, or how we get clients results.",
+    text: "Hey 👋 I'm AP — AP Digital's assistant. Ask me about our two core services, what they cost, or how we get clients results.",
     suggestions: [
       { label: 'How much do you charge?', intent: 'pricing' },
       { label: 'What services do you offer?', intent: 'services' },
@@ -94,111 +103,67 @@ const respond = (raw: string): Msg => {
 
   const has = (...words: string[]) => words.some((w) => t.includes(w));
 
-  // SERVICE-SPECIFIC PRICING SHORTCUTS (must come before general PRICING)
-  if (has('seo') && has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')) {
-    return {
-      id,
-      role: 'bot',
-      text: "SEO is $759/month. That covers technical audits, on-page optimization, local SEO (Google Business Profile), keyword research, content strategy, and link building.",
-      cta: { label: 'See SEO details', to: '/services/seo' },
-      suggestions: [
-        { label: 'How long until results?', intent: 'timeline' },
-        { label: 'Compare to other services', intent: 'pricing' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
+  // ── PRICING ────────────────────────────────────────────────────────────
+  // We list a price for the two core services only. Everything else is
+  // scoped on a call, so the bot must not invent a figure for it.
+  const asksPrice = has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge');
+
   if (
-    has('ad', 'ads', 'paid ads', 'google ads', 'meta ads', 'facebook ads', 'tiktok ads', 'ppc') &&
-    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
+    asksPrice &&
+    has('ad', 'ads', 'paid ads', 'google ads', 'meta ads', 'facebook ads', 'tiktok ads', 'ppc')
   ) {
     return {
       id,
       role: 'bot',
-      text: "Paid Ads management is $1,470/month. That includes campaign builds on Google, Meta, and TikTok, audience research, creative testing, retargeting funnels, and weekly performance reporting. Ad spend is separate and you control the budget.",
-      cta: { label: 'See Paid Ads details', to: '/services/paid-ads' },
+      text: `Paid Ads management is ${PAID_ADS.price}${PAID_ADS.period}. That covers ${PAID_ADS.summary} ${TERMS.adSpendSeparate}`,
+      cta: { label: 'See Paid Ads details', to: PAID_ADS.href },
       suggestions: [
         { label: 'What ad spend do I need?', intent: 'ad-spend' },
-        { label: 'Compare to other services', intent: 'pricing' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
-  if (
-    has('web', 'website', 'site', 'landing page') &&
-    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
-  ) {
-    return {
-      id,
-      role: 'bot',
-      text: "Web design is a one-time $2,100. You get a fast, mobile-first, conversion-focused site with SEO foundations, analytics, and A/B testing built in.",
-      cta: { label: 'See Web Design details', to: '/services/web-design' },
-      suggestions: [
-        { label: 'How long does it take?', intent: 'timeline' },
-        { label: 'Other services', intent: 'services' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
-  if (
-    has('content', 'video', 'reel', 'tiktok', 'shorts', 'ugc') &&
-    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
-  ) {
-    return {
-      id,
-      role: 'bot',
-      text: "Content Creation is $939/month. Includes concept, scripting, filming guidance, professional editing, captions, and viral-hook strategy across Reels, TikToks, and Shorts.",
-      cta: { label: 'See Content details', to: '/services/content-creation' },
-      suggestions: [
-        { label: 'Other services', intent: 'services' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
-  if (
-    has('social', 'smm', 'instagram', 'linkedin') &&
-    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
-  ) {
-    return {
-      id,
-      role: 'bot',
-      text: "Social Media management is $849/month — content calendars, graphics, copywriting, community management, and growth across Instagram, Facebook, LinkedIn, and TikTok.",
-      cta: { label: 'See full pricing', to: '/pricing' },
-      suggestions: [
-        { label: 'Other services', intent: 'services' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
-  if (
-    has('lead', 'leadgen', 'lead gen', 'pipeline') &&
-    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge')
-  ) {
-    return {
-      id,
-      role: 'bot',
-      text: "Lead Generation systems are $1,290/month — paid ads + landing pages + email/SMS follow-ups + CRM automation built end-to-end.",
-      cta: { label: 'See Lead Gen details', to: '/services/lead-generation' },
-      suggestions: [
-        { label: 'Other services', intent: 'services' },
+        { label: 'Social media pricing?', intent: 'social-price' },
         { label: 'Book a call', intent: 'book' },
       ],
     };
   }
 
-  // PRICING (general — fallback when no specific service mentioned)
-  if (
-    has('price', 'pricing', 'cost', 'how much', 'fee', 'rate', 'charge', 'budget', 'afford', 'expensive', 'cheap')
-  ) {
+  if (asksPrice && has('social', 'smm', 'instagram', 'linkedin', 'content', 'posts')) {
     return {
       id,
       role: 'bot',
-      text: "Great question. You pick the services you want — no bundles, no contracts. Pricing starts at $759/mo for SEO, and most clients spend between $759–$2,100/mo depending on what they need. Want to see the full breakdown?",
+      text: `Social Media management is ${SOCIAL_MEDIA.price}${SOCIAL_MEDIA.period} — ${SOCIAL_MEDIA.includes.join(', ').toLowerCase()}.`,
+      cta: { label: 'See Social Media details', to: SOCIAL_MEDIA.href },
+      suggestions: [
+        { label: 'Paid ads pricing?', intent: 'ads-price' },
+        { label: 'Do you do contracts?', intent: 'contract' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+
+  // Anything else priced — quote nothing, route to a call.
+  if (asksPrice && has('seo', 'web', 'website', 'site', 'landing page', 'lead gen', 'leadgen')) {
+    return {
+      id,
+      role: 'bot',
+      text: `Our two core services are Paid Ads (${PAID_ADS.price}${PAID_ADS.period}) and Social Media (${SOCIAL_MEDIA.price}${SOCIAL_MEDIA.period}). Anything beyond those we scope on a call so the quote actually matches what you need — no list price, no guessing.`,
+      cta: { label: 'Book a free call', to: '/contact' },
+      suggestions: [
+        { label: 'Paid ads pricing?', intent: 'ads-price' },
+        { label: 'Social media pricing?', intent: 'social-price' },
+        { label: 'Book a call', intent: 'book' },
+      ],
+    };
+  }
+
+  // General pricing.
+  if (asksPrice || has('budget', 'afford', 'expensive', 'cheap')) {
+    return {
+      id,
+      role: 'bot',
+      text: `Two core services, priced separately — no bundles, no contracts. Paid Ads is ${PAID_ADS.price}${PAID_ADS.period}, Social Media is ${SOCIAL_MEDIA.price}${SOCIAL_MEDIA.period}. Both together is ${COMBINED_PRICE}. ${TERMS.contract}`,
       cta: { label: 'See full pricing', to: '/pricing' },
       suggestions: [
-        { label: 'How much for SEO?', intent: 'seo-price' },
-        { label: 'Cost of paid ads?', intent: 'ads-price' },
-        { label: 'Web design price?', intent: 'web-price' },
+        { label: 'What is in Paid Ads?', intent: 'ads' },
+        { label: 'What is in Social Media?', intent: 'social' },
         { label: 'Book a call', intent: 'book' },
       ],
     };
@@ -209,27 +174,11 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "We're a full-stack digital marketing agency. We do: SEO, Paid Ads (Google/Meta/TikTok), Content Creation (Reels/TikToks/Shorts), Social Media management, Web Design, and Lead Generation systems. Pick one and I'll go deeper.",
-      cta: { label: 'See all services', to: '/#services' },
+      text: `We focus on two things and do them properly: Paid Ads (${PAID_ADS.price}${PAID_ADS.period}) and Social Media management (${SOCIAL_MEDIA.price}${SOCIAL_MEDIA.period}). Which one do you want to dig into?`,
+      cta: { label: 'See services', to: '/#services' },
       suggestions: [
-        { label: 'Tell me about SEO', intent: 'seo' },
         { label: 'Tell me about Paid Ads', intent: 'ads' },
-        { label: 'Tell me about Web Design', intent: 'web' },
-        { label: 'Tell me about Lead Gen', intent: 'leadgen' },
-      ],
-    };
-  }
-
-  // SEO
-  if (has('seo', 'rank', 'google search', 'organic', 'keyword')) {
-    return {
-      id,
-      role: 'bot',
-      text: "Our SEO service ranks you for high-intent keywords that bring in ready-to-buy customers. Includes technical audits, on-page optimization, local SEO, keyword research, content strategy, and quality backlinks. Starts at $759/month.",
-      cta: { label: 'Full SEO breakdown', to: '/services/seo' },
-      suggestions: [
-        { label: 'How long until I rank?', intent: 'timeline' },
-        { label: 'Do you do local SEO?', intent: 'local' },
+        { label: 'Tell me about Social Media', intent: 'social' },
         { label: 'See pricing', intent: 'pricing' },
       ],
     };
@@ -240,8 +189,8 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "We run laser-targeted paid campaigns on Google, Meta, and TikTok. Includes audience research, creative testing, retargeting funnels, and weekly reporting. Our clients average 8.2× ROAS. Service is $1,470/month — ad spend is separate.",
-      cta: { label: 'Full Paid Ads breakdown', to: '/services/paid-ads' },
+      text: `${PAID_ADS.summary} ${PAID_ADS.price}${PAID_ADS.period} for management — ad spend is separate and stays under your control. ${TIMELINES.firstLeads}`,
+      cta: { label: 'Full Paid Ads breakdown', to: PAID_ADS.href },
       suggestions: [
         { label: 'How much ad spend?', intent: 'ad-spend' },
         { label: 'See pricing', intent: 'pricing' },
@@ -250,60 +199,31 @@ const respond = (raw: string): Msg => {
     };
   }
 
-  // CONTENT
-  if (has('content', 'video', 'reel', 'tiktok', 'shorts', 'ugc')) {
-    return {
-      id,
-      role: 'bot',
-      text: "We produce scroll-stopping short-form video — Reels, TikToks, YouTube Shorts. From concept and scripting to filming and editing with viral hooks. Content creation is $939/month.",
-      cta: { label: 'Full Content breakdown', to: '/services/content-creation' },
-      suggestions: [
-        { label: 'See samples', intent: 'samples' },
-        { label: 'See pricing', intent: 'pricing' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
-
   // SOCIAL MEDIA
-  if (has('social media', 'smm', 'instagram', 'linkedin', 'facebook ', 'social ')) {
+  if (has('social media', 'smm', 'instagram', 'linkedin', 'facebook ', 'social ', 'content', 'reel', 'posts')) {
     return {
       id,
       role: 'bot',
-      text: "Full social media management — content calendars, graphics, copywriting, community management, and growth strategy across Instagram, Facebook, LinkedIn, and TikTok. $849/month.",
-      cta: { label: 'See pricing', to: '/pricing' },
+      text: `${SOCIAL_MEDIA.summary} ${SOCIAL_MEDIA.price}${SOCIAL_MEDIA.period}, covering ${SOCIAL_MEDIA.includes.join(', ').toLowerCase()}.`,
+      cta: { label: 'Full Social Media breakdown', to: SOCIAL_MEDIA.href },
       suggestions: [
-        { label: 'See all services', intent: 'services' },
+        { label: 'See pricing', intent: 'pricing' },
+        { label: 'Do you do contracts?', intent: 'contract' },
         { label: 'Book a call', intent: 'book' },
       ],
     };
   }
 
-  // LEAD GEN
-  if (has('lead', 'leadgen', 'lead gen', 'pipeline', 'appointment', 'booking')) {
+  // SEO / WEB / LEAD GEN — real capabilities, but scoped on a call.
+  if (has('seo', 'rank', 'organic', 'keyword', 'web design', 'website', 'landing page', 'lead gen', 'leadgen', 'pipeline')) {
     return {
       id,
       role: 'bot',
-      text: "We build end-to-end lead generation systems — paid ads + landing pages + email/SMS follow-ups + CRM automation. Result: a predictable pipeline of qualified prospects booking calls on autopilot. $1,290/month.",
-      cta: { label: 'Full Lead Gen breakdown', to: '/services/lead-generation' },
+      text: `We do handle that, but it is scoped per project rather than sold at a list price — our two packaged services are Paid Ads (${PAID_ADS.price}${PAID_ADS.period}) and Social Media (${SOCIAL_MEDIA.price}${SOCIAL_MEDIA.period}). Quickest path is a short call where we scope it properly.`,
+      cta: { label: 'Book a free call', to: '/contact' },
       suggestions: [
-        { label: 'How fast can I see leads?', intent: 'timeline' },
-        { label: 'See pricing', intent: 'pricing' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
-
-  // WEB DESIGN
-  if (has('web design', 'website', 'landing page', 'redesign', 'build a site')) {
-    return {
-      id,
-      role: 'bot',
-      text: "We build fast, mobile-first websites optimized for lead capture — conversion-focused pages, speed optimization, analytics, SEO foundations, and A/B testing. One-time $2,100.",
-      cta: { label: 'Full Web Design breakdown', to: '/services/web-design' },
-      suggestions: [
-        { label: 'How long does it take?', intent: 'timeline' },
-        { label: 'See pricing', intent: 'pricing' },
+        { label: 'Tell me about Paid Ads', intent: 'ads' },
+        { label: 'Tell me about Social Media', intent: 'social' },
         { label: 'Book a call', intent: 'book' },
       ],
     };
@@ -314,7 +234,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Yes — every plan includes our 90-day results guarantee. If we don't move the needle in 90 days, we keep working for free until we do. No long-term contracts.",
+      text: `Yes. ${TERMS.guarantee} ${TERMS.contract}`,
       cta: { label: 'See guarantee details', to: '/pricing' },
       suggestions: [
         { label: 'Do you do contracts?', intent: 'contract' },
@@ -328,7 +248,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "No long-term contracts — month-to-month. Cancel anytime. We earn your business every month with results.",
+      text: `${TERMS.contract} ${TERMS.notice} We earn your business every month with results, not lock-in.`,
       suggestions: [
         { label: 'See pricing', intent: 'pricing' },
         { label: 'Book a call', intent: 'book' },
@@ -341,7 +261,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Let's set it up. Free 30-minute strategy call — we'll audit your current marketing and give you a custom growth plan, no obligation.",
+      text: "Let's set it up. Free 20-minute strategy call — we'll look at your current marketing and give you a straight read on what's available in your area. No obligation.",
       cta: { label: 'Book free strategy call', to: '/contact' },
       suggestions: [
         { label: 'What will we discuss?', intent: 'call-agenda' },
@@ -353,7 +273,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Easiest way is to book a free 30-min strategy call or send a message via the contact page. We reply within 24 hours.",
+      text: `Easiest way is to book a free 20-minute strategy call, or reach us at ${CONTACT.email} or ${CONTACT.phone}. We reply within 24 hours.`,
       cta: { label: 'Go to contact page', to: '/contact' },
       suggestions: [
         { label: 'Book a call', intent: 'book' },
@@ -377,11 +297,11 @@ const respond = (raw: string): Msg => {
   }
 
   // ABOUT
-  if (has('about', 'who are you', 'founder', 'team', 'arjun', 'who runs')) {
+  if (has('about', 'who are you', 'founder', 'found', 'team', 'arjun', 'who runs', 'who owns')) {
     return {
       id,
       role: 'bot',
-      text: "AP Digital was founded by Arjun Sharma — a Vancouver-based marketer who built the agency around one promise: personal account management, no contracts, real results. We work with 200+ BC businesses.",
+      text: "AP Digital was founded by Arjun Sharma — a Vancouver-based marketer who built the agency around one promise: he personally runs strategy on every account. No contracts, no handing you off to an intern.",
       cta: { label: 'Read founder story', to: '/about' },
       suggestions: [
         { label: 'See your results', intent: 'results' },
@@ -459,8 +379,8 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Our clients average 8.2× ROAS on paid ads, 2.5M+ views on content campaigns, and 3× lead volume within 90 days. 200+ BC businesses trust us.",
-      cta: { label: 'See full results', to: '/#results' },
+      text: "Across managed accounts we typically see 5–10x ROAS on paid ads, with first qualified leads inside 2 weeks. The real numbers are in the case studies — a Surrey plumber at $31 per booked call, a Vancouver salon at $8.51 per lead.",
+      cta: { label: 'See case studies', to: '/case-studies' },
       suggestions: [
         { label: 'See pricing', intent: 'pricing' },
         { label: 'Book a call', intent: 'book' },

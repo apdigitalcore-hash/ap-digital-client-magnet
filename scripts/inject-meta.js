@@ -365,8 +365,8 @@ const staticRoutes = [
   {
     path: 'pricing',
     title: 'Marketing Pricing Vancouver | From $759/mo | AP Digital',
-    description: 'Transparent per-service pricing for paid ads, social media, SEO, content & web design. Month-to-month. 90-day results guarantee. Updated August 2026.',
-    body: '<h1>Transparent Pricing. No Surprises.</h1><p>Per-service pricing built around how your business actually grows. Every service is month-to-month and backed by our 90-day results guarantee. Prices last updated August 2026.</p><ul><li>Paid Ads Management — from $759/mo</li><li>Social Media Management — from $849/mo</li><li>SEO — from $750/mo</li><li>Content Creation — from $599/mo</li><li>Web Design — from $1,999 one-time</li></ul><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    description: 'Transparent pricing for paid ads and social media management. Month-to-month. 90-day results guarantee. Updated August 2026.',
+    body: '<h1>Transparent Pricing. No Surprises.</h1><p>Per-service pricing built around how your business actually grows. Every service is month-to-month and backed by our 90-day results guarantee. Prices last updated August 2026.</p><ul><li>Paid Ads Management — $759/mo</li><li>Social Media Management — $849/mo</li></ul><p>Additional work (SEO, web design, lead-generation systems) is scoped per project on a free strategy call.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Pricing', url: '/pricing' }]),
