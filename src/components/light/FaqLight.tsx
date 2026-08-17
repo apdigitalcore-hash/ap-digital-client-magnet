@@ -12,10 +12,10 @@ const FaqLight = ({ faqs }: { faqs: FaqItem[] }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   return (
-    <section className="bg-secondary py-24 md:py-32">
+    <section className="bg-white py-24 md:py-32">
       <div className="container-custom">
         <div className="mb-14 text-center">
-          <SectionLabel number="006" label="FAQs" />
+          <SectionLabel number="007" label="FAQs" />
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Common <span className="italic">Questions</span>
           </h2>
@@ -29,8 +29,8 @@ const FaqLight = ({ faqs }: { faqs: FaqItem[] }) => {
                 key={faq.question}
                 className={`rounded-2xl transition-all duration-300 ${
                   isOpen
-                    ? 'bg-background ring-1 ring-indigo-300/70 shadow-[0_0_0_6px_hsl(250_80%_70%/0.08),0_18px_40px_-24px_hsl(250_60%_40%/0.35)]'
-                    : 'bg-background/60 hover:bg-background'
+                    ? 'bg-white ring-1 ring-indigo-300/70 shadow-[0_0_0_6px_hsl(250_80%_70%/0.08),0_18px_40px_-24px_hsl(250_60%_40%/0.35)]'
+                    : 'bg-[#EDEFF2] hover:bg-[#E6E9ED]'
                 }`}
               >
                 <button

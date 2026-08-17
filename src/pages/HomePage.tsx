@@ -10,6 +10,9 @@ import ProcessLight from '@/components/light/ProcessLight';
 import ServicesLight from '@/components/light/ServicesLight';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import HeroShowcase from '@/components/light/HeroShowcase';
+import HeroMoveCard from '@/components/HeroMoveCard';
+import WhileYouScroll from '@/components/WhileYouScroll';
 
 import { lazy, Suspense } from 'react';
 const SocialMediaBudgetCalculator = lazy(() => import('@/components/SocialMediaBudgetCalculator'));
@@ -110,7 +113,7 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-background">
+      <section className="spotlight-top texture-rules relative min-h-screen flex items-center overflow-hidden bg-[#EDEFF2]">
         <div className="relative z-10 w-full container-custom pt-32 pb-28 md:py-40">
           <div className="max-w-3xl mx-auto text-center">
 
@@ -146,6 +149,8 @@ const HomePage = () => {
                 <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
               </a>
             </div>
+
+            <HeroShowcase />
           </div>
         </div>
 
@@ -169,11 +174,29 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ─────────────────── INDUSTRIES ─────────────────── */}
-      <section className="py-24 md:py-32 bg-secondary">
+      {/* ─────────────────── TODAY'S MOVE ─────────────────── */}
+      <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <SectionLabel number="001" label="Industries" />
+            <SectionLabel number="001" label="Daily Insight" />
+            <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
+              Today's <span className="italic">Move</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
+              One actionable marketing insight, every single day.
+            </p>
+          </div>
+          <div className="mx-auto max-w-[480px]">
+            <HeroMoveCard />
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────── INDUSTRIES ─────────────────── */}
+      <section className="py-24 md:py-32 bg-[#EDEFF2]">
+        <div className="container-custom">
+          <div className="text-center mb-14">
+            <SectionLabel number="002" label="Industries" />
             <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
               Built for your <span className="italic">industry.</span>
             </h2>
@@ -189,24 +212,26 @@ const HomePage = () => {
               <Link
                 key={to}
                 to={to}
-                className="group relative aspect-square rounded-3xl bg-background shadow-custom-sm hover:shadow-custom-lg transition-all duration-300 flex flex-col items-center justify-center overflow-hidden"
+                className="group relative aspect-square rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden"
               >
-                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground tracking-tight text-center px-4">
+                {/* Dark wash sweeps up on hover — the card becomes the anchor. */}
+                <span className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                <h3 className="relative z-10 font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground group-hover:text-white transition-colors duration-500 tracking-tight text-center px-4">
                   {name}
                 </h3>
-                <p className="text-sm text-muted-foreground font-medium transition-all duration-300 mt-3 text-center px-6 max-w-[220px] leading-snug opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+                <p className="relative z-10 text-sm text-white/60 font-medium transition-all duration-300 delay-100 mt-3 text-center px-6 max-w-[220px] leading-snug opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                   {tagline}
                 </p>
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
-                  <ChevronRight className="w-4 h-4 text-muted-foreground" />
-                </div>
+                <span className="absolute bottom-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
+                  <ChevronRight className="w-4 h-4 text-white/70" />
+                </span>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <div className="mx-auto max-w-3xl">
             <Suspense fallback={null}>
@@ -220,10 +245,10 @@ const HomePage = () => {
       <ServicesLight />
 
       {/* ─────────────────── WHY CHOOSE US ─────────────────── */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-24 md:py-32 bg-[#EDEFF2]">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <SectionLabel number="004" label="Why Us" />
+            <SectionLabel number="005" label="Why Us" />
             <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
               Why <span className="italic">Choose</span> Us
             </h2>
@@ -232,27 +257,50 @@ const HomePage = () => {
             </p>
           </div>
 
+          {/* First tile runs dark so the row has an anchor instead of reading
+              as four identical light blocks. */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {differentiators.map((item) => (
-              <div key={item.title} className="p-6 sm:p-8 rounded-3xl bg-secondary transition-shadow duration-300 hover:shadow-custom-sm">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-background shadow-custom-sm mb-5">
-                  <item.icon className="w-5 h-5 text-foreground" strokeWidth={1.5} />
-                </span>
-                <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-2 leading-tight">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-              </div>
-            ))}
+            {differentiators.map((item, i) => {
+              const isDark = i === 0;
+              return (
+                <div
+                  key={item.title}
+                  className={`p-6 sm:p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 ${
+                    isDark ? 'bg-[#0C0E11] elev-3' : 'bg-white elev-2 hover:elev-3'
+                  }`}
+                >
+                  <span
+                    className={`flex h-12 w-12 items-center justify-center rounded-2xl mb-5 ${
+                      isDark ? 'bg-white/10' : 'bg-secondary'
+                    }`}
+                  >
+                    <item.icon
+                      className={`w-5 h-5 ${isDark ? 'text-white' : 'text-foreground'}`}
+                      strokeWidth={1.5}
+                    />
+                  </span>
+                  <h3
+                    className={`font-serif text-lg sm:text-xl font-medium mb-2 leading-tight ${
+                      isDark ? 'text-white' : 'text-foreground'
+                    }`}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? 'text-white/50' : 'text-muted-foreground'}`}>
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* ─────────────────── CITIES ─────────────────── */}
-      <section className="py-24 md:py-32 bg-secondary">
+      <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <SectionLabel number="005" label="Locations" />
+            <SectionLabel number="006" label="Locations" />
             <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
               Cities We <span className="italic">Serve</span>
             </h2>
@@ -274,15 +322,17 @@ const HomePage = () => {
               <Link
                 key={city}
                 to={href}
-                className="group bg-background rounded-2xl p-5 sm:p-7 text-center transition-shadow duration-300 hover:shadow-custom-sm"
+                className="group bg-white rounded-2xl p-5 sm:p-7 text-center elev-1 hover:elev-2 hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="font-serif text-lg sm:text-xl font-medium text-foreground group-hover:text-foreground/70 transition-colors mb-1">{city}</div>
+                <div className="font-serif text-lg sm:text-xl font-medium text-foreground mb-1">{city}</div>
                 <div className="text-muted-foreground text-xs sm:text-sm">{sub}</div>
               </Link>
             ))}
           </div>
         </div>
       </section>
+
+      <WhileYouScroll />
 
       <FaqLight faqs={homepageFAQs} />
 

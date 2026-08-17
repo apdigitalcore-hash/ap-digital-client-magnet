@@ -78,10 +78,10 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => {
 };
 
 const ServicesLight = () => (
-  <section id="services" className="bg-secondary py-24 md:py-32">
+  <section id="services" className="bg-white py-24 md:py-32">
     <div className="container-custom">
       <div className="mb-16 text-center">
-        <SectionLabel number="003" label="Services" />
+        <SectionLabel number="004" label="Services" />
         <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
           What We <span className="italic">Deliver</span>
         </h2>

@@ -103,7 +103,7 @@ const WhileYouScroll = () => {
     <section
       ref={sectionRef}
       id="while-you-scroll"
-      className="relative bg-background"
+      className="relative bg-[#EDEFF2]"
       style={{ height: vh * 4.5, overflowAnchor: 'none' }}
     >
       <div
@@ -115,7 +115,7 @@ const WhileYouScroll = () => {
             height: '100dvh',
             margin: 0,
             padding: 0,
-            backgroundColor: 'hsl(220, 20%, 97%)',
+            backgroundColor: '#EDEFF2',
             overflow: 'hidden',
             zIndex: 30,
             opacity: inView ? 1 : 0,
@@ -134,10 +134,10 @@ const WhileYouScroll = () => {
               zIndex: 10,
             }}
           >
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground text-center leading-tight max-w-5xl">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-foreground text-center leading-[1.05] tracking-tight max-w-5xl">
               Every day without ads is
               <br />
-              <span className="text-red-500">money lost.</span>
+              <span className="italic">money lost.</span>
             </h2>
           </div>
 
@@ -175,16 +175,16 @@ const WhileYouScroll = () => {
               pointerEvents: secondLineOpacity > 0.5 ? 'auto' : 'none',
             }}
           >
-            <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground text-center leading-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium text-foreground text-center leading-[1.05] tracking-tight">
               Let's fix that
               <br />
-              <span className="text-gradient">today.</span>
+              <span className="italic">today.</span>
             </h2>
             <a
               href="https://calendly.com/apdigital-core/20min"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-teal text-white font-semibold px-8 py-3 rounded-lg hover:bg-teal-dark transition"
+              className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
             >
               Book a Free Audit
             </a>

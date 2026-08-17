@@ -285,6 +285,66 @@
 }
 
 @layer utilities {
+  /* ── Editorial depth system ──────────────────────────────────────────────
+     The light layout reads as flat unless sections carry their own light.
+     These give each surface a light source, a texture, and real elevation. */
+
+  /* Soft overhead spotlight — a light source behind the content. */
+  .spotlight-top::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 50% at 50% 0%, hsl(0 0% 100% / 0.9) 0%, transparent 70%),
+      radial-gradient(40% 35% at 50% 8%, hsl(220 30% 88% / 0.55) 0%, transparent 75%);
+  }
+
+  /* Spotlight tuned for near-black surfaces. */
+  .spotlight-dark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(55% 45% at 50% -5%, hsl(0 0% 100% / 0.16) 0%, transparent 70%),
+      radial-gradient(35% 30% at 50% 0%, hsl(0 0% 100% / 0.10) 0%, transparent 80%);
+  }
+
+  /* Fine vertical rule texture — the faint architectural lines in the refs. */
+  .texture-rules::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+      90deg,
+      hsl(220 20% 50% / 0.05) 0 1px,
+      transparent 1px 88px
+    );
+    mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
+    -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, #000 0%, transparent 100%);
+  }
+
+  /* Elevation for floating cards — layered, soft, believable. */
+  .elev-1 {
+    box-shadow:
+      0 1px 2px hsl(220 30% 10% / 0.04),
+      0 4px 12px -2px hsl(220 30% 10% / 0.06);
+  }
+  .elev-2 {
+    box-shadow:
+      0 1px 2px hsl(220 30% 10% / 0.05),
+      0 8px 24px -4px hsl(220 30% 10% / 0.08),
+      0 2px 6px -2px hsl(220 30% 10% / 0.04);
+  }
+  .elev-3 {
+    box-shadow:
+      0 2px 4px hsl(220 30% 10% / 0.06),
+      0 18px 44px -10px hsl(220 30% 10% / 0.14),
+      0 6px 14px -6px hsl(220 30% 10% / 0.06);
+  }
+
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
   }
