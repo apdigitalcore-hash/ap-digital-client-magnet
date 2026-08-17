@@ -2655,7 +2655,7 @@ TikTok Ads are worth testing if your audience is under 35 and your business is v
 
 But for most BC service businesses, [Meta Ads](/services/paid-ads) remain the primary lead generation platform. TikTok is the complement, not the replacement.
 
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll assess whether TikTok makes sense for your business. [AP Digital](/about) manages [paid ads](/services/paid-ads) and [social media](/services/social-media) for 200+ BC businesses — month-to-month, no contracts.`,
+[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll assess whether TikTok makes sense for your business. [AP Digital](/about) manages [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses — month-to-month, no contracts.`,
   },
   {
     slug: 'google-ads-coquitlam-tri-cities',
