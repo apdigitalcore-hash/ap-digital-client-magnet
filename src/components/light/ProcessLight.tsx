@@ -57,15 +57,14 @@ const ProcessLight = () => {
     >
       <div className="container-custom relative z-10">
         <div className="mb-14 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/50">
-            <span className="text-white/30">002</span>
-            <span className="h-1 w-1 rounded-full bg-white/60" />
-            <span className="text-white/70">Process</span>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.04] px-4 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70">
+            <span className="h-1 w-1 rounded-full bg-white/70" />
+            <span className="text-white/75">Process</span>
           </span>
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl">
             How It <span className="italic">Works</span>
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-base text-white/45">
+          <p className="mx-auto mt-5 max-w-xl text-base text-white/65">
             A proven 3-step process to predictable lead generation.
           </p>
         </div>
@@ -90,7 +89,7 @@ const ProcessLight = () => {
                 </span>
                 <span
                   className={`text-[10px] font-semibold uppercase tracking-[0.2em] transition-colors ${
-                    i <= activeStep ? 'text-white' : 'text-white/30 group-hover:text-white/55'
+                    i <= activeStep ? 'text-white' : 'text-white/45 group-hover:text-white/70'
                   }`}
                 >
                   {step.label}
@@ -125,7 +124,7 @@ const ProcessLight = () => {
                     <h3 className="mb-3 font-serif text-3xl font-medium text-white sm:text-4xl">
                       Ready to <span className="italic">grow?</span>
                     </h3>
-                    <p className="mb-7 text-base text-white/45">
+                    <p className="mb-7 text-base text-white/65">
                       See our 3-step process in action.
                     </p>
                     <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-all group-hover:gap-3">
@@ -149,14 +148,14 @@ const ProcessLight = () => {
                         <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#0C0E11]">
                           {currentStep && <currentStep.icon className="h-5 w-5" strokeWidth={1.75} />}
                         </span>
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/50">
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70">
                           {currentStep?.number} / {currentStep?.label}
                         </span>
                       </div>
                       {currentStep && (
                         <div className="text-right">
                           <p className="font-serif text-2xl text-white">{currentStep.stat}</p>
-                          <p className="text-[10px] uppercase tracking-[0.18em] text-white/40">
+                          <p className="text-[10px] uppercase tracking-[0.18em] text-white/60">
                             {currentStep.statLabel}
                           </p>
                         </div>
@@ -167,7 +166,7 @@ const ProcessLight = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.15, duration: 0.4 }}
-                      className="mb-2 font-serif text-sm italic text-white/35"
+                      className="mb-2 font-serif text-sm italic text-white/55"
                     >
                       {currentStep?.teaser}
                     </motion.p>
@@ -185,7 +184,7 @@ const ProcessLight = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.35, duration: 0.4 }}
-                      className="mb-7 flex-1 text-sm leading-relaxed text-white/50 sm:text-base"
+                      className="mb-7 flex-1 text-sm leading-relaxed text-white/70 sm:text-base"
                     >
                       {currentStep?.description}
                     </motion.p>

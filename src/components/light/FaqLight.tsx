@@ -15,7 +15,7 @@ const FaqLight = ({ faqs }: { faqs: FaqItem[] }) => {
     <section className="bg-white py-24 md:py-32">
       <div className="container-custom">
         <div className="mb-14 text-center">
-          <SectionLabel number="007" label="FAQs" />
+          <SectionLabel label="FAQs" />
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Common <span className="italic">Questions</span>
           </h2>
@@ -38,7 +38,7 @@ const FaqLight = ({ faqs }: { faqs: FaqItem[] }) => {
                   aria-expanded={isOpen}
                   className="flex w-full items-center gap-4 px-5 py-5 text-left sm:px-7"
                 >
-                  <span className="w-5 shrink-0 text-xs text-muted-foreground">{i + 1}</span>
+                  <span className="w-5 shrink-0 text-xs text-foreground/45">{i + 1}</span>
                   <span className="flex-1 text-sm font-medium text-foreground sm:text-base">
                     {faq.question}
                   </span>
@@ -52,7 +52,7 @@ const FaqLight = ({ faqs }: { faqs: FaqItem[] }) => {
                 </button>
 
                 <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <p className="px-5 pb-6 pl-14 pr-14 text-sm leading-relaxed text-muted-foreground sm:px-7 sm:pl-16">
+                  <p className="px-5 pb-6 pl-14 pr-14 text-sm leading-relaxed text-foreground/70 sm:px-7 sm:pl-16">
                     {faq.answer}
                   </p>
                 </div>

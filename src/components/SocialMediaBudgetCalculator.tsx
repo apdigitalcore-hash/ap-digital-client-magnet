@@ -93,7 +93,7 @@ const SocialMediaBudgetCalculator = () => {
 
   if (submitted) {
     return (
-      <div className="bg-background shadow-custom-sm rounded-3xl p-8 my-10 text-center">
+      <div className="bg-[#E4E7EB] elev-2 rounded-3xl p-8 my-10 text-center">
         <CheckCircle className="w-12 h-12 text-foreground mx-auto mb-4" />
         <h3 className="font-display text-xl font-bold text-foreground mb-2">You're all set!</h3>
         <p className="text-muted-foreground">
@@ -104,10 +104,10 @@ const SocialMediaBudgetCalculator = () => {
   }
 
   return (
-    <div className="bg-background shadow-custom-sm rounded-3xl p-6 md:p-8 my-10">
+    <div className="bg-[#E4E7EB] elev-2 rounded-3xl p-6 md:p-8 my-10">
       <div className="flex items-center gap-3 mb-6">
         <Calculator className="w-6 h-6 text-foreground" />
-        <h3 className="font-serif text-2xl font-medium text-foreground">Social Media Budget Calculator</h3>
+        <h3 className="font-serif text-2xl font-medium text-foreground">Social Media & Ads Budget Calculator</h3>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-4 mb-6">
@@ -116,7 +116,7 @@ const SocialMediaBudgetCalculator = () => {
           <select
             value={industry}
             onChange={(e) => setIndustry(e.target.value)}
-            className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-foreground text-sm"
+            className="w-full rounded-lg border border-black/10 bg-white px-3 py-2.5 text-foreground text-sm"
           >
             <option value="">Select industry</option>
             {INDUSTRIES.map((i) => (
@@ -129,7 +129,7 @@ const SocialMediaBudgetCalculator = () => {
           <select
             value={adSpend}
             onChange={(e) => setAdSpend(Number(e.target.value))}
-            className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-foreground text-sm"
+            className="w-full rounded-lg border border-black/10 bg-white px-3 py-2.5 text-foreground text-sm"
           >
             <option value={0}>Select budget</option>
             {AD_SPEND_TIERS.map((t) => (
@@ -142,15 +142,15 @@ const SocialMediaBudgetCalculator = () => {
       {estimate && (
         <>
           <div className="grid grid-cols-3 gap-3 mb-6">
-            <div className="bg-secondary rounded-2xl p-4 text-center">
+            <div className="bg-white rounded-2xl p-4 text-center">
               <div className="text-2xl font-bold text-foreground">${estimate.totalMonthly.toLocaleString()}</div>
               <div className="text-xs text-muted-foreground mt-1">Total / month</div>
             </div>
-            <div className="bg-secondary rounded-2xl p-4 text-center">
+            <div className="bg-white rounded-2xl p-4 text-center">
               <div className="text-2xl font-bold text-foreground">{estimate.leadsLow}–{estimate.leadsHigh}</div>
               <div className="text-xs text-muted-foreground mt-1">Est. leads / month</div>
             </div>
-            <div className="bg-secondary rounded-2xl p-4 text-center">
+            <div className="bg-white rounded-2xl p-4 text-center">
               <div className="text-2xl font-bold text-foreground">${estimate.cplLow}–${estimate.cplHigh}</div>
               <div className="text-xs text-muted-foreground mt-1">Cost per lead</div>
             </div>
@@ -169,21 +169,21 @@ const SocialMediaBudgetCalculator = () => {
                 placeholder="Your name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground"
+                className="rounded-lg border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground"
               />
               <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground"
+                className="rounded-lg border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground"
               />
               <input
                 type="text"
                 placeholder="Business name"
                 value={business}
                 onChange={(e) => setBusiness(e.target.value)}
-                className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground"
+                className="rounded-lg border border-black/10 bg-white px-3 py-2.5 text-sm text-foreground placeholder:text-muted-foreground"
               />
               <div className="sm:col-span-3">
                 <Button type="submit" disabled={loading} className="w-full bg-foreground hover:bg-foreground/85 text-background rounded-full">

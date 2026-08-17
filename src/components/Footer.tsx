@@ -80,10 +80,10 @@ const Footer = () => {
                 <span className="text-foreground">AP</span> DIGITAL
               </span>
             </Link>
-            <p className="text-muted-foreground mb-4 max-w-xs">
+            <p className="text-foreground/70 mb-4 max-w-xs">
               Performance marketing agency helping Canadian service businesses generate leads and scale revenue.
             </p>
-            <p className="text-muted-foreground text-sm mb-6 flex items-center gap-2">
+            <p className="text-foreground/70 text-sm mb-6 flex items-center gap-2">
               <MapPin className="w-4 h-4 text-foreground" />
               Vancouver, BC, Canada
             </p>
@@ -112,7 +112,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-foreground/70 hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -129,7 +129,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-foreground/70 hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -146,7 +146,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-foreground/70 hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -163,7 +163,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-foreground/70 hover:text-foreground transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -175,7 +175,7 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-semibold text-foreground mb-6">Contact</h4>
-            <ul className="space-y-4 text-muted-foreground">
+            <ul className="space-y-4 text-foreground/70">
               <li>
                 <a href="tel:+17786825772" className="flex items-center gap-3 hover:text-foreground transition-colors">
                   <Phone className="w-4 h-4 text-foreground" />
@@ -197,7 +197,7 @@ const Footer = () => {
       <div className="border-t border-foreground/10">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
+            <p className="text-foreground/70 text-sm">
               © {currentYear} AP DIGITAL. All rights reserved.
             </p>
             <div className="flex gap-6">
@@ -205,7 +205,7 @@ const Footer = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="text-muted-foreground text-sm hover:text-foreground transition-colors"
+                  className="text-foreground/70 text-sm hover:text-foreground transition-colors"
                 >
                   {link.label}
                 </Link>

@@ -465,9 +465,9 @@ const HeroMoveCard = () => {
               </span>
             </div>
             <div className="flex items-center gap-2 text-[10px] font-medium">
-              <span className="text-white/35">{dateLabel}</span>
-              <span className="text-white/15">·</span>
-              <span className="flex items-center gap-1 text-white/35">
+              <span className="text-white/60">{dateLabel}</span>
+              <span className="text-white/25">·</span>
+              <span className="flex items-center gap-1 text-white/60">
                 <Flame className="h-2.5 w-2.5" fill="currentColor" />
                 {dropNumber}/{MOVES.length}
               </span>
@@ -475,7 +475,7 @@ const HeroMoveCard = () => {
           </div>
 
           {/* Tag */}
-          <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/40">
+          <div className="mb-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/65">
             {move.tag}
           </div>
 
@@ -486,7 +486,7 @@ const HeroMoveCard = () => {
 
           {/* Body — clamped to 3 lines */}
           <p
-            className="mb-5 overflow-hidden text-[12.5px] leading-relaxed text-white/45"
+            className="mb-5 overflow-hidden text-[12.5px] leading-relaxed text-white/75"
             style={{
               display: '-webkit-box',
               WebkitLineClamp: 3,
@@ -502,7 +502,7 @@ const HeroMoveCard = () => {
           {/* Stat + Instagram */}
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="mb-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/35">
+              <p className="mb-1 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/60">
                 {move.statLabel}
               </p>
               <p className="font-serif text-[2rem] leading-none text-white">
@@ -519,7 +519,7 @@ const HeroMoveCard = () => {
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-white/10 transition-colors group-hover:bg-white/20">
                 <Instagram className="h-3 w-3 text-white" strokeWidth={2.25} />
               </span>
-              <span className="text-xs font-medium text-white/60 transition-colors group-hover:text-white">
+              <span className="text-xs font-medium text-white/75 transition-colors group-hover:text-white">
                 @theapdigital
               </span>
             </a>

@@ -10,7 +10,7 @@ import ProcessLight from '@/components/light/ProcessLight';
 import ServicesLight from '@/components/light/ServicesLight';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
-import HeroShowcase from '@/components/light/HeroShowcase';
+import HeroObject, { HeroLightFan } from '@/components/light/HeroShowcase';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
@@ -113,8 +113,11 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="spotlight-top texture-rules relative min-h-screen flex items-center overflow-hidden bg-[#EDEFF2]">
-        <div className="relative z-10 w-full container-custom pt-32 pb-28 md:py-40">
+      <section className="texture-rules relative min-h-screen flex items-center overflow-hidden bg-[#E4E7EB]">
+        <HeroLightFan />
+        <HeroObject />
+
+        <div className="relative z-10 w-full container-custom pt-28 pb-[26vh] md:pt-32 md:pb-[40vh]">
           <div className="max-w-3xl mx-auto text-center">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-8">
@@ -150,26 +153,22 @@ const HomePage = () => {
               </a>
             </div>
 
-            <HeroShowcase />
-          </div>
-        </div>
-
-        {/* Trust bar */}
-        <div className="absolute bottom-10 left-0 right-0 z-10 container-custom">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-muted-foreground">
-            {[
-              { icon: CalendarDays, label: 'Month-to-Month' },
-              { icon: ShieldCheck, label: 'No Contracts' },
-              { icon: Clock, label: '90-Day Guarantee' },
-            ].map(({ icon: Icon, label }, i) => (
-              <div key={label} className="flex items-center gap-8">
-                {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/10" />}
-                <span className="flex items-center gap-2">
-                  <Icon className="w-4 h-4" strokeWidth={1.5} />
-                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
-                </span>
-              </div>
-            ))}
+            {/* Trust bar — sits with the copy, above the object. */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-foreground/55">
+              {[
+                { icon: CalendarDays, label: 'Month-to-Month' },
+                { icon: ShieldCheck, label: 'No Contracts' },
+                { icon: Clock, label: '90-Day Guarantee' },
+              ].map(({ icon: Icon, label }, i) => (
+                <div key={label} className="flex items-center gap-8">
+                  {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/15" />}
+                  <span className="flex items-center gap-2">
+                    <Icon className="w-4 h-4" strokeWidth={1.5} />
+                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -178,7 +177,7 @@ const HomePage = () => {
       <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <SectionLabel number="001" label="Daily Insight" />
+            <SectionLabel label="Daily Insight" />
             <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
               Today's <span className="italic">Move</span>
             </h2>
@@ -196,7 +195,7 @@ const HomePage = () => {
       <section className="py-24 md:py-32 bg-[#EDEFF2]">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <SectionLabel number="002" label="Industries" />
+            <SectionLabel label="Industries" />
             <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
               Built for your <span className="italic">industry.</span>
             </h2>
@@ -248,7 +247,7 @@ const HomePage = () => {
       <section className="py-24 md:py-32 bg-[#EDEFF2]">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <SectionLabel number="005" label="Why Us" />
+            <SectionLabel label="Why Us" />
             <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
               Why <span className="italic">Choose</span> Us
             </h2>
@@ -257,41 +256,29 @@ const HomePage = () => {
             </p>
           </div>
 
-          {/* First tile runs dark so the row has an anchor instead of reading
-              as four identical light blocks. */}
+          {/* Same dark-wash reveal as the industry tiles. */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {differentiators.map((item, i) => {
-              const isDark = i === 0;
-              return (
-                <div
-                  key={item.title}
-                  className={`p-6 sm:p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1 ${
-                    isDark ? 'bg-[#0C0E11] elev-3' : 'bg-white elev-2 hover:elev-3'
-                  }`}
-                >
-                  <span
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl mb-5 ${
-                      isDark ? 'bg-white/10' : 'bg-secondary'
-                    }`}
-                  >
-                    <item.icon
-                      className={`w-5 h-5 ${isDark ? 'text-white' : 'text-foreground'}`}
-                      strokeWidth={1.5}
-                    />
-                  </span>
-                  <h3
-                    className={`font-serif text-lg sm:text-xl font-medium mb-2 leading-tight ${
-                      isDark ? 'text-white' : 'text-foreground'
-                    }`}
-                  >
-                    {item.title}
-                  </h3>
-                  <p className={`text-sm leading-relaxed ${isDark ? 'text-white/50' : 'text-muted-foreground'}`}>
-                    {item.description}
-                  </p>
-                </div>
-              );
-            })}
+            {differentiators.map((item) => (
+              <div
+                key={item.title}
+                className="group relative overflow-hidden rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8"
+              >
+                <span className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+
+                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl mb-5 bg-[#EDEFF2] group-hover:bg-white/10 transition-colors duration-500">
+                  <item.icon
+                    className="w-5 h-5 text-foreground group-hover:text-white transition-colors duration-500"
+                    strokeWidth={1.5}
+                  />
+                </span>
+                <h3 className="relative z-10 font-serif text-lg sm:text-xl font-medium mb-2 leading-tight text-foreground group-hover:text-white transition-colors duration-500">
+                  {item.title}
+                </h3>
+                <p className="relative z-10 text-sm leading-relaxed text-muted-foreground group-hover:text-white/65 transition-colors duration-500">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -300,7 +287,7 @@ const HomePage = () => {
       <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <div className="text-center mb-14">
-            <SectionLabel number="006" label="Locations" />
+            <SectionLabel label="Locations" />
             <h2 className="mt-6 font-serif text-4xl sm:text-5xl md:text-6xl font-medium leading-[1.05] tracking-tight text-foreground">
               Cities We <span className="italic">Serve</span>
             </h2>
@@ -308,26 +295,71 @@ const HomePage = () => {
               Based in the Lower Mainland, we serve local businesses across Metro Vancouver and the Fraser Valley.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {/* Vancouver leads as a wide dark tile; the rest are light rows that
+              slide to dark on hover. Breaks the eight-identical-boxes grid. */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { city: 'Vancouver', href: '/vancouver', sub: 'Metro Vancouver' },
-              { city: 'Surrey', href: '/surrey', sub: 'South Fraser' },
-              { city: 'Burnaby', href: '/burnaby', sub: 'Metro Vancouver' },
-              { city: 'Richmond', href: '/richmond', sub: 'Metro Vancouver' },
-              { city: 'North Vancouver', href: '/contact', sub: 'North Shore' },
-              { city: 'Coquitlam', href: '/coquitlam', sub: 'Tri-Cities' },
-              { city: 'Langley', href: '/langley', sub: 'Fraser Valley' },
-              { city: 'Abbotsford', href: '/abbotsford', sub: 'Fraser Valley' },
-            ].map(({ city, href, sub }) => (
-              <Link
-                key={city}
-                to={href}
-                className="group bg-white rounded-2xl p-5 sm:p-7 text-center elev-1 hover:elev-2 hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <div className="font-serif text-lg sm:text-xl font-medium text-foreground mb-1">{city}</div>
-                <div className="text-muted-foreground text-xs sm:text-sm">{sub}</div>
-              </Link>
-            ))}
+              { city: 'Vancouver', href: '/vancouver', sub: 'Metro Vancouver', pop: 'HQ', feature: true },
+              { city: 'Surrey', href: '/surrey', sub: 'South Fraser', pop: '02' },
+              { city: 'Burnaby', href: '/burnaby', sub: 'Metro Vancouver', pop: '03' },
+              { city: 'Richmond', href: '/richmond', sub: 'Metro Vancouver', pop: '04' },
+              { city: 'North Vancouver', href: '/contact', sub: 'North Shore', pop: '05' },
+              { city: 'Coquitlam', href: '/coquitlam', sub: 'Tri-Cities', pop: '06' },
+              { city: 'Langley', href: '/langley', sub: 'Fraser Valley', pop: '07' },
+              { city: 'Abbotsford', href: '/abbotsford', sub: 'Fraser Valley', pop: '08' },
+            ].map(({ city, href, sub, pop, feature }) =>
+              feature ? (
+                <Link
+                  key={city}
+                  to={href}
+                  className="group relative overflow-hidden rounded-3xl bg-[#0C0E11] elev-3 p-7 sm:col-span-2 sm:p-9 lg:col-span-2 lg:row-span-2"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        'radial-gradient(70% 90% at 84% 0%, hsl(0 0% 100% / 0.16) 0%, transparent 66%)',
+                    }}
+                  />
+                  <div className="relative flex h-full items-end justify-between gap-6">
+                    <div>
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/45">
+                        {pop} · {sub}
+                      </span>
+                      <p className="mt-3 font-serif text-3xl font-medium text-white sm:text-4xl">
+                        {city}
+                      </p>
+                      <p className="mt-2 text-sm text-white/50">
+                        Where we're based — and where most of our clients are.
+                      </p>
+                    </div>
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0C0E11] transition-transform duration-300 group-hover:translate-x-1">
+                      <ArrowRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </Link>
+              ) : (
+                <Link
+                  key={city}
+                  to={href}
+                  className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl bg-white elev-1 hover:elev-2 px-6 py-5 transition-all duration-300"
+                >
+                  <span className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <span className="relative z-10">
+                    <span className="block font-serif text-lg font-medium text-foreground transition-colors duration-500 group-hover:text-white sm:text-xl">
+                      {city}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-muted-foreground transition-colors duration-500 group-hover:text-white/55">
+                      {sub}
+                    </span>
+                  </span>
+                  <span className="relative z-10 text-[10px] font-semibold tracking-[0.18em] text-foreground/25 transition-colors duration-500 group-hover:text-white/40">
+                    {pop}
+                  </span>
+                </Link>
+              )
+            )}
           </div>
         </div>
       </section>
