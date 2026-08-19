@@ -11,6 +11,7 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import AIChat from "./components/AIChat";
 import ScrollToTop from "./components/ScrollToTop";
+import PageViewTracker from "./components/PageViewTracker";
 
 
 // Lazy load all other pages — loaded on demand
@@ -52,6 +53,7 @@ const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const HiringGuide = lazy(() => import("./pages/HiringGuide"));
 const NearMe = lazy(() => import("./pages/NearMe"));
 const FreePilot = lazy(() => import("./pages/FreePilot"));
+const ThankYou = lazy(() => import("./pages/ThankYou"));
 const Login = lazy(() => import("./pages/Login"));
 const AdminSeo = lazy(() => import("./pages/AdminSeo"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
@@ -73,6 +75,7 @@ const App = () => (
             Skip to main content
           </a>
           <ScrollToTop />
+          <PageViewTracker />
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -115,6 +118,7 @@ const App = () => (
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
               <Route path="/digital-marketing-near-me" element={<NearMe />} />
               <Route path="/free-pilot" element={<FreePilot />} />
+              <Route path="/thank-you" element={<ThankYou />} />
               <Route path="/login" element={<Login />} />
               <Route path="/admin/seo" element={<AdminSeo />} />
               <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />

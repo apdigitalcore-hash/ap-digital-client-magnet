@@ -14,6 +14,7 @@ import {
   getFAQSchema,
 } from '@/lib/structuredData';
 import { CONTACT, PAID_ADS } from '@/lib/companyFacts';
+import { track } from '@/lib/pixel';
 
 const CANONICAL = 'https://ap-digital.ca/free-pilot';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -136,6 +137,7 @@ const MinimalHeader = () => (
         href={CONTACT.calendly}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => track('Contact', { content_name: 'free-pilot', content_category: 'header' })}
         className="hidden rounded-full bg-foreground px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85 sm:inline-flex"
       >
         Book a Call
@@ -168,11 +170,31 @@ const MinimalFooter = () => (
   </footer>
 );
 
-const CtaButton = ({ children = 'Claim a Spot' }: { children?: string }) => (
+/**
+ * Contact fires on click — it measures intent even when the booking is
+ * abandoned, which is most of them. The actual conversion (Lead) only fires on
+ * /thank-you, so a click is never mistaken for a booking.
+ *
+ * content_category carries the ?for= vertical, so Events Manager can show
+ * which niche actually converts.
+ */
+const CtaButton = ({
+  children = 'Claim a Spot',
+  niche,
+}: {
+  children?: string;
+  niche?: string | null;
+}) => (
   <a
     href={CONTACT.calendly}
     target="_blank"
     rel="noopener noreferrer"
+    onClick={() =>
+      track('Contact', {
+        content_name: 'free-pilot',
+        content_category: niche || 'general',
+      })
+    }
     className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
   >
     {children}
@@ -260,7 +282,7 @@ const FreePilot = () => {
             </p>
 
             <div className="mt-9">
-              <CtaButton />
+              <CtaButton niche={niche} />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               15 minute call. If it's not a fit we'll tell you on the call.
@@ -391,7 +413,7 @@ const FreePilot = () => {
                 15 minute call. If it's not a fit we'll tell you on the call.
               </p>
               <div className="mt-8">
-                <CtaButton />
+                <CtaButton niche={niche} />
               </div>
               <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/70">
                 No contract · No setup fee · Cancel anytime
@@ -407,6 +429,12 @@ const FreePilot = () => {
             href={CONTACT.calendly}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              track('Contact', {
+                content_name: 'free-pilot',
+                content_category: niche || 'general',
+              })
+            }
             className="flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-background"
           >
             Claim a Spot

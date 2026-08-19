@@ -509,6 +509,18 @@ const staticRoutes = [
       webPageSchema('Digital Marketing Agency Near Me | AP Digital', 'Local digital marketing for Metro Vancouver & Fraser Valley businesses.', '/digital-marketing-near-me'),
     ]}
   },
+  // ─── Calendly redirect target — must never be indexed ───
+  {
+    path: 'thank-you',
+    robots: 'noindex, nofollow',
+    title: "You're booked in | AP Digital",
+    description: 'Your call is booked. Check your email for the calendar invite.',
+    body: '<h1>You&rsquo;re booked in</h1><p>Check your email for the calendar invite. If it hasn&rsquo;t arrived in a few minutes, look in spam.</p>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema,
+      webPageSchema("You're booked in | AP Digital", 'Booking confirmation.', '/thank-you'),
+    ]}
+  },
   // ─── Offer page (outbound only, kept out of the index) ───
   {
     path: 'free-pilot',
