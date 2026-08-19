@@ -15,6 +15,7 @@ import {
 } from '@/lib/structuredData';
 import { CONTACT, PAID_ADS } from '@/lib/companyFacts';
 import { track } from '@/lib/pixel';
+import { useCalendlyPopup } from '@/lib/calendly';
 
 const CANONICAL = 'https://ap-digital.ca/free-pilot';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -137,7 +138,10 @@ const MinimalHeader = () => (
         href={CONTACT.calendly}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => track('Contact', { content_name: 'free-pilot', content_category: 'header' })}
+        onClick={(e) => {
+          track('Contact', { content_name: 'free-pilot', content_category: 'header' });
+          if (openPopup(CONTACT.calendly)) e.preventDefault();
+        }}
         className="hidden rounded-full bg-foreground px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85 sm:inline-flex"
       >
         Book a Call
@@ -181,20 +185,26 @@ const MinimalFooter = () => (
 const CtaButton = ({
   children = 'Claim a Spot',
   niche,
+  openPopup,
 }: {
   children?: string;
   niche?: string | null;
+  openPopup: (url: string) => boolean;
 }) => (
   <a
     href={CONTACT.calendly}
     target="_blank"
     rel="noopener noreferrer"
-    onClick={() =>
+    onClick={(e) => {
       track('Contact', {
         content_name: 'free-pilot',
         content_category: niche || 'general',
-      })
-    }
+      });
+      // Popup keeps the booking on-page so calendly.event_scheduled can fire
+      // Lead. If Calendly's script has not loaded, fall through to the href
+      // rather than trapping the click.
+      if (openPopup(CONTACT.calendly)) e.preventDefault();
+    }}
     className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
   >
     {children}
@@ -210,6 +220,10 @@ const FreePilot = () => {
     const key = raw.toLowerCase().replace(/[^a-z]/g, '').slice(0, 24);
     return NICHE_MAP[key] ?? null;
   }, [params]);
+
+  // Passed the niche so the Lead conversion is attributed to the same vertical
+  // as the Contact click that preceded it.
+  const openPopup = useCalendlyPopup(niche);
 
   const yourAds = niche ? `your ${niche} ads` : 'your ads';
   const title = niche
@@ -282,7 +296,7 @@ const FreePilot = () => {
             </p>
 
             <div className="mt-9">
-              <CtaButton niche={niche} />
+              <CtaButton niche={niche} openPopup={openPopup} />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
               15 minute call. If it's not a fit we'll tell you on the call.
@@ -413,7 +427,7 @@ const FreePilot = () => {
                 15 minute call. If it's not a fit we'll tell you on the call.
               </p>
               <div className="mt-8">
-                <CtaButton niche={niche} />
+                <CtaButton niche={niche} openPopup={openPopup} />
               </div>
               <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/70">
                 No contract · No setup fee · Cancel anytime
@@ -429,12 +443,13 @@ const FreePilot = () => {
             href={CONTACT.calendly}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() =>
+            onClick={(e) => {
               track('Contact', {
                 content_name: 'free-pilot',
                 content_category: niche || 'general',
-              })
-            }
+              });
+              if (openPopup(CONTACT.calendly)) e.preventDefault();
+            }}
             className="flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-background"
           >
             Claim a Spot
