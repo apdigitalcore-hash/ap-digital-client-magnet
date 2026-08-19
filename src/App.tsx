@@ -51,6 +51,7 @@ const Abbotsford = lazy(() => import("./pages/locations/Abbotsford"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const HiringGuide = lazy(() => import("./pages/HiringGuide"));
 const NearMe = lazy(() => import("./pages/NearMe"));
+const FreePilot = lazy(() => import("./pages/FreePilot"));
 const Login = lazy(() => import("./pages/Login"));
 const AdminSeo = lazy(() => import("./pages/AdminSeo"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
@@ -113,6 +114,7 @@ const App = () => (
               <Route path="/case-studies/:studyId" element={<CaseStudies />} />
               <Route path="/how-to-choose-a-marketing-agency-vancouver" element={<HiringGuide />} />
               <Route path="/digital-marketing-near-me" element={<NearMe />} />
+              <Route path="/free-pilot" element={<FreePilot />} />
               <Route path="/login" element={<Login />} />
               <Route path="/admin/seo" element={<AdminSeo />} />
               <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />

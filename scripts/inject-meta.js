@@ -509,6 +509,25 @@ const staticRoutes = [
       webPageSchema('Digital Marketing Agency Near Me | AP Digital', 'Local digital marketing for Metro Vancouver & Fraser Valley businesses.', '/digital-marketing-near-me'),
     ]}
   },
+  // ─── Offer page (outbound only, kept out of the index) ───
+  {
+    path: 'free-pilot',
+    robots: 'noindex, follow',
+    title: 'Free 14-Day Ad Pilot | AP Digital',
+    description: 'We run your Meta ads free for 14 days. You pay the ad budget directly to Meta. We charge nothing. A few spots available this month.',
+    body: '<h1>We&rsquo;ll run your ads free for 14 days</h1><p>You pay the ad budget straight to Meta on your own card. We charge you nothing. No contract, no setup fee, no catch. Shut it off whenever you want. 15 minute call &mdash; if it&rsquo;s not a fit we&rsquo;ll tell you on the call.</p><ul><li>$0 paid to us during the pilot</li><li>14 days, then you decide &mdash; no obligation</li><li>Ad budget never touches our account</li></ul><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Free 14-Day Pilot', url: '/free-pilot' }]),
+      webPageSchema('Free 14-Day Ad Pilot | AP Digital', 'A free 14-day managed Meta ads pilot for BC businesses.', '/free-pilot'),
+      faqSchema([
+        { q: 'What\'s the catch?', a: 'There isn\'t one, but there is a reason. We need case studies to sell to other businesses like yours. If it goes well we\'ll ask you to continue as a paying client, and you\'re completely free to say no.' },
+        { q: 'How much do I need to spend on ads?', a: 'Whatever you\'re comfortable with. $30 a day for the 14 days is enough to get real data. It goes to Meta on your card, we never touch it, and you can pause it at any moment.' },
+        { q: 'What does it cost if I want to continue?', a: 'Paid ads management starts at $759 a month, month to month, no long contracts. Plenty of people take the 14 days and stop, and that\'s a legitimate outcome.' },
+        { q: 'What happens to my ad account afterward?', a: 'It\'s yours and it always was. We work through partner access, which you can revoke with two clicks. Everything we build stays in your account whether you continue with us or not.' },
+      ])
+    ]}
+  },
   // ─── City pages ───
   ...['vancouver', 'surrey', 'burnaby', 'richmond', 'langley', 'coquitlam', 'abbotsford'].map(city => {
     const cap = city.charAt(0).toUpperCase() + city.slice(1);
@@ -573,7 +592,7 @@ const blogPosts = [
 
 // ── HTML generation helpers ─────────────────────────────────────────────────
 
-function injectIntoHtml(html, { title, description, canonical, schema, body }) {
+function injectIntoHtml(html, { title, description, canonical, schema, body, robots }) {
   // Replace title
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
 
@@ -585,6 +604,15 @@ function injectIntoHtml(html, { title, description, canonical, schema, body }) {
     html = html.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${canonical}" />`);
   } else {
     html = html.replace('</head>', `  <link rel="canonical" href="${canonical}" />\n</head>`);
+  }
+
+  // Per-route robots override (the shell defaults to "index, follow")
+  if (robots) {
+    if (/<meta name="robots"/.test(html)) {
+      html = html.replace(/<meta name="robots"[^>]*\/?>/, `<meta name="robots" content="${robots}" />`);
+    } else {
+      html = html.replace('</head>', `  <meta name="robots" content="${robots}" />\n</head>`);
+    }
   }
 
   // Replace OG tags
@@ -654,6 +682,7 @@ for (const route of staticRoutes) {
     canonical: `${BASE_URL}/${route.path}`,
     schema: route.schema,
     body: route.body || '',
+    robots: route.robots,
   });
   writeRoute(route.path, html);
 }
