@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { ArrowRight, Check, X } from 'lucide-react';
@@ -193,6 +193,15 @@ const FreePilot = () => {
   const title = niche
     ? `Free 14-Day Ad Pilot for ${niche.charAt(0).toUpperCase() + niche.slice(1)} Companies | AP Digital`
     : 'Free 14-Day Ad Pilot | AP Digital';
+
+  // Helmet alone does not win here: the route ships prerendered HTML with a
+  // baked-in <title>, and on the deployed build Helmet was not taking
+  // ownership of it — the H1 swapped but the tab title stayed generic. Setting
+  // it directly after hydration is the reliable path. Helmet still supplies
+  // the crawler-facing tags in the static HTML.
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   const structuredData = {
     '@context': 'https://schema.org',
