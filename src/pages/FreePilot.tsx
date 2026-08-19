@@ -15,7 +15,12 @@ import {
 } from '@/lib/structuredData';
 import { CONTACT, PAID_ADS } from '@/lib/companyFacts';
 import { track } from '@/lib/pixel';
-import { useCalendlyPopup } from '@/lib/calendly';
+import { useCalendlyLeadTracking } from '@/lib/calendly';
+
+/** All CTAs now scroll to the inline Calendly embed instead of leaving the page. */
+const scrollToBook = () => {
+  document.getElementById('book')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 
 const CANONICAL = 'https://ap-digital.ca/free-pilot';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -115,7 +120,7 @@ const FAQS = [
   {
     question: 'Am I going to get spammed forever if I book a call?',
     answer:
-      "No. It's a 15 minute call, and if we don't think we can help you we'll say so on the call rather than pitching you anyway.",
+      "No. It's a 20 minute call, and if we don't think we can help you we'll say so on the call rather than pitching you anyway.",
   },
 ];
 
@@ -135,12 +140,11 @@ const MinimalHeader = () => (
         AP DIGITAL
       </Link>
       <a
-        href={CONTACT.calendly}
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#book"
         onClick={(e) => {
           track('Contact', { content_name: 'free-pilot', content_category: 'header' });
-          if (openPopup(CONTACT.calendly)) e.preventDefault();
+          e.preventDefault();
+          scrollToBook();
         }}
         className="hidden rounded-full bg-foreground px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85 sm:inline-flex"
       >
@@ -176,8 +180,9 @@ const MinimalFooter = () => (
 
 /**
  * Contact fires on click — it measures intent even when the booking is
- * abandoned, which is most of them. The actual conversion (Lead) only fires on
- * /thank-you, so a click is never mistaken for a booking.
+ * abandoned, which is most of them. The actual conversion (Lead) only fires
+ * when the inline Calendly embed reports a completed booking, so a click is
+ * never mistaken for a booking.
  *
  * content_category carries the ?for= vertical, so Events Manager can show
  * which niche actually converts.
@@ -185,25 +190,19 @@ const MinimalFooter = () => (
 const CtaButton = ({
   children = 'Claim a Spot',
   niche,
-  openPopup,
 }: {
   children?: string;
   niche?: string | null;
-  openPopup: (url: string) => boolean;
 }) => (
   <a
-    href={CONTACT.calendly}
-    target="_blank"
-    rel="noopener noreferrer"
+    href="#book"
     onClick={(e) => {
       track('Contact', {
         content_name: 'free-pilot',
         content_category: niche || 'general',
       });
-      // Popup keeps the booking on-page so calendly.event_scheduled can fire
-      // Lead. If Calendly's script has not loaded, fall through to the href
-      // rather than trapping the click.
-      if (openPopup(CONTACT.calendly)) e.preventDefault();
+      e.preventDefault();
+      scrollToBook();
     }}
     className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
   >
@@ -223,7 +222,7 @@ const FreePilot = () => {
 
   // Passed the niche so the Lead conversion is attributed to the same vertical
   // as the Contact click that preceded it.
-  const openPopup = useCalendlyPopup(niche);
+  useCalendlyLeadTracking(niche);
 
   const yourAds = niche ? `your ${niche} ads` : 'your ads';
   const title = niche
@@ -267,9 +266,7 @@ const FreePilot = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={DESC} />
-        {/* Offer page for outbound — keep it out of the index so it doesn't
-            compete with the service pages or age badly between campaigns. */}
-        <meta name="robots" content="noindex, follow" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <JsonLd data={structuredData} />
 
@@ -296,10 +293,10 @@ const FreePilot = () => {
             </p>
 
             <div className="mt-9">
-              <CtaButton niche={niche} openPopup={openPopup} />
+              <CtaButton niche={niche} />
             </div>
             <p className="mt-4 text-sm text-muted-foreground">
-              15 minute call. If it's not a fit we'll tell you on the call.
+              20 minute call. If it's not a fit we'll tell you on the call.
             </p>
 
             <div className="mt-12 grid gap-4 sm:grid-cols-3">
@@ -416,6 +413,32 @@ const FreePilot = () => {
 
         <FaqLight faqs={FAQS} />
 
+        {/* ── INLINE CALENDLY EMBED ── */}
+        <section id="book" className="scroll-mt-20 bg-[#EDEFF2] py-20 md:py-24">
+          <div className="container-custom max-w-4xl">
+            <div className="text-center">
+              <SectionLabel label="Book your spot" />
+              <h2 className="mt-6 font-serif text-3xl font-medium leading-[1.08] tracking-tight text-foreground sm:text-4xl">
+                Pick a time <span className="italic">that works</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-[48ch] text-sm text-muted-foreground sm:text-base">
+                20 minute call. If it's not a fit we'll tell you on the call.
+              </p>
+            </div>
+
+            <div
+              className="calendly-inline-widget mt-10 overflow-hidden rounded-3xl bg-white elev-1"
+              data-url={`${CONTACT.calendly}?hide_gdpr_banner=1`}
+              style={{ minWidth: '320px', height: '700px' }}
+            />
+            <noscript>
+              <a href={CONTACT.calendly} target="_blank" rel="noopener noreferrer">
+                Book a call on Calendly
+              </a>
+            </noscript>
+          </div>
+        </section>
+
         {/* ── CLOSING CTA ── */}
         <section className="bg-white py-20 md:py-28">
           <div className="container-custom">
@@ -424,10 +447,10 @@ const FreePilot = () => {
                 A few spots this month
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-sm text-foreground/80 sm:text-base">
-                15 minute call. If it's not a fit we'll tell you on the call.
+                20 minute call. If it's not a fit we'll tell you on the call.
               </p>
               <div className="mt-8">
-                <CtaButton niche={niche} openPopup={openPopup} />
+                <CtaButton niche={niche} />
               </div>
               <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/70">
                 No contract · No setup fee · Cancel anytime
@@ -440,15 +463,14 @@ const FreePilot = () => {
             has scrolled away. */}
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-black/5 bg-white/90 p-3 backdrop-blur-md sm:hidden">
           <a
-            href={CONTACT.calendly}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#book"
             onClick={(e) => {
               track('Contact', {
                 content_name: 'free-pilot',
                 content_category: niche || 'general',
               });
-              if (openPopup(CONTACT.calendly)) e.preventDefault();
+              e.preventDefault();
+              scrollToBook();
             }}
             className="flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-background"
           >
