@@ -64,6 +64,7 @@ const Header = () => {
     '/pricing',
     '/privacy-policy',
     '/terms-of-service',
+    '/contact',
     '/vancouver',
     '/surrey',
     '/burnaby',
@@ -74,6 +75,10 @@ const Header = () => {
   ];
   const hasDarkHero = darkHeroPrefixes.some(
     (p) => pathname === p || pathname.startsWith(`${p}/`)
+  ) || (
+    // Case studies index is light, but a specific case study detail page
+    // (/case-studies/:studyId) opens on a near-black hero.
+    pathname.startsWith('/case-studies/') && pathname !== '/case-studies'
   );
   const useDarkChrome = !hasDarkHero;
   const isLightPage = useDarkChrome;
