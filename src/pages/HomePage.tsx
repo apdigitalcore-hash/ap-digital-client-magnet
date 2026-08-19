@@ -113,11 +113,11 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="texture-rules relative min-h-screen flex items-center overflow-hidden bg-[#E4E7EB]">
+      <section className="texture-rules relative min-h-[100svh] flex items-center overflow-hidden bg-[#E4E7EB]">
         <HeroLightFan />
         <HeroObject />
 
-        <div className="relative z-10 w-full container-custom pt-24 pb-[30vh] md:pt-20 md:pb-[31vh]">
+        <div className="relative z-10 w-full container-custom pt-24 pb-[30svh] md:pt-20 md:pb-[31svh]">
           <div className="max-w-3xl mx-auto text-center">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-8">

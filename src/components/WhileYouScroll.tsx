@@ -5,14 +5,11 @@ const lerp = (current: number, target: number, factor: number) =>
 
 const WhileYouScroll = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  // Mobile browsers change innerHeight when the URL bar hides/shows. Using
-  // `vh`/live innerHeight made the 450vh track resize mid-scroll, which the
-  // browser compensated for by jumping the scroll position. Lock the viewport
-  // height once and only update it when the WIDTH changes (real orientation /
-  // resize), never on height-only chrome collapse.
-  const [vh, setVh] = useState(() =>
-    typeof window !== 'undefined' ? window.innerHeight : 800
-  );
+  // The scroll track is sized in CSS with lvh rather than a JS pixel value.
+  // Measuring innerHeight once captured whichever state the URL bar happened
+  // to be in at mount, which could disagree with the 100lvh panel below and
+  // let the track run out before the reveal finished. lvh is the same fixed
+  // reference for both, and never re-measures mid-scroll.
   const progressRef = useRef(0);
   const smoothProgressRef = useRef(0);
   const rafRef = useRef<number>(0);
@@ -50,9 +47,10 @@ const WhileYouScroll = () => {
 
     let lastWidth = window.innerWidth;
     const handleResize = () => {
-      if (window.innerWidth === lastWidth) return; // ignore URL-bar height changes
+      // Ignore height-only changes: on mobile those are just the URL bar
+      // collapsing, and reacting to them is what caused the scroll to jump.
+      if (window.innerWidth === lastWidth) return;
       lastWidth = window.innerWidth;
-      setVh(window.innerHeight);
       handleScroll();
     };
 
@@ -104,15 +102,25 @@ const WhileYouScroll = () => {
       ref={sectionRef}
       id="while-you-scroll"
       className="relative bg-[#EDEFF2]"
-      style={{ height: vh * 4.5, overflowAnchor: 'none' }}
+      style={{ height: '450lvh', overflowAnchor: 'none' }}
     >
+      {/*
+        Height is 100lvh, not 100dvh. `dvh` re-measures continuously while the
+        mobile URL bar collapses, so this fixed panel resized during the scroll
+        and its centred content visibly slid — the "snapping back to centre"
+        glitch. `lvh` is pinned to the bar-hidden viewport and never changes.
+
+        lvh rather than svh because this is a full-bleed background: svh is the
+        smaller value, so once the bar hid, the panel would fall short of the
+        viewport and expose the page behind it.
+      */}
       <div
           style={{
             position: 'fixed',
             top: 0,
             left: 0,
             width: '100%',
-            height: '100dvh',
+            height: '100lvh',
             margin: 0,
             padding: 0,
             backgroundColor: '#EDEFF2',

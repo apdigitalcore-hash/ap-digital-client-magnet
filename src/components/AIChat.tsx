@@ -650,9 +650,9 @@ const AIChat = () => {
           open
             ? 'opacity-100 translate-y-0 scale-100 pointer-events-auto'
             : 'opacity-0 translate-y-4 scale-95 pointer-events-none'
-        } bottom-24 right-5 left-5 sm:left-auto sm:w-[400px] md:w-[420px] max-h-[calc(100vh-7rem)]`}
+        } bottom-24 right-5 left-5 sm:left-auto sm:w-[400px] md:w-[420px] max-h-[calc(100svh-7rem)]`}
       >
-        <div className="flex flex-col bg-card/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden h-[600px] max-h-[calc(100vh-7rem)] ring-1 ring-foreground/5">
+        <div className="flex flex-col bg-card/95 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden h-[600px] max-h-[calc(100svh-7rem)] ring-1 ring-foreground/5">
           {/* Header */}
           <div className="flex items-center justify-between px-5 py-4 bg-secondary border-b border-border">
             <div className="flex items-center gap-3">
