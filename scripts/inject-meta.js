@@ -527,7 +527,7 @@ const staticRoutes = [
     robots: 'noindex, follow',
     title: 'Free 14-Day Ad Pilot | AP Digital',
     description: 'We run your Meta ads free for 14 days. You pay the ad budget directly to Meta. We charge nothing. A few spots available this month.',
-    body: '<h1>We&rsquo;ll run your ads free for 14 days</h1><p>You pay the ad budget straight to Meta on your own card. We charge you nothing. No contract, no setup fee, no catch. Shut it off whenever you want. 15 minute call &mdash; if it&rsquo;s not a fit we&rsquo;ll tell you on the call.</p><ul><li>$0 paid to us during the pilot</li><li>14 days, then you decide &mdash; no obligation</li><li>Ad budget never touches our account</li></ul><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>We&rsquo;ll run your ads free for 14 days</h1><p>You pay the ad budget straight to Meta on your own card. We charge you nothing. No contract, no setup fee, no catch. Shut it off whenever you want. 20 minute call &mdash; if it&rsquo;s not a fit we&rsquo;ll tell you on the call.</p><ul><li>$0 paid to us during the pilot</li><li>14 days, then you decide &mdash; no obligation</li><li>Ad budget never touches our account</li></ul><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Free 14-Day Pilot', url: '/free-pilot' }]),
