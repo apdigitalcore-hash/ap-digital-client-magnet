@@ -21,14 +21,28 @@ declare global {
 
 const ready = () => typeof window !== 'undefined' && typeof window.fbq === 'function';
 
-/** Standard Meta event (PageView, Contact, Lead, …). */
-export function track(event: string, params: PixelParams = {}) {
+/**
+ * Standard Meta event (PageView, Contact, Lead, …).
+ *
+ * Params are omitted entirely when empty rather than sent as `{}` — Events
+ * Manager was tagging a bare PageView as "Custom event", and an empty payload
+ * is the most likely reason fbq would not match it to the standard signature.
+ */
+export function track(event: string, params?: PixelParams) {
   if (!ready()) return;
-  window.fbq!('track', event, params);
+  if (params && Object.keys(params).length > 0) {
+    window.fbq!('track', event, params);
+  } else {
+    window.fbq!('track', event);
+  }
 }
 
 /** Custom event — use for anything that is not a real conversion. */
-export function trackCustom(event: string, params: PixelParams = {}) {
+export function trackCustom(event: string, params?: PixelParams) {
   if (!ready()) return;
-  window.fbq!('trackCustom', event, params);
+  if (params && Object.keys(params).length > 0) {
+    window.fbq!('trackCustom', event, params);
+  } else {
+    window.fbq!('trackCustom', event);
+  }
 }
