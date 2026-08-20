@@ -3,19 +3,28 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 const lerp = (current: number, target: number, factor: number) =>
   current + (target - current) * factor;
 
+const MOBILE_QUERY = '(max-width: 767px)';
+
 const WhileYouScroll = () => {
   const sectionRef = useRef<HTMLElement>(null);
-  // The scroll track is sized in CSS with lvh rather than a JS pixel value.
-  // Measuring innerHeight once captured whichever state the URL bar happened
-  // to be in at mount, which could disagree with the 100lvh panel below and
-  // let the track run out before the reveal finished. lvh is the same fixed
-  // reference for both, and never re-measures mid-scroll.
   const progressRef = useRef(0);
   const smoothProgressRef = useRef(0);
   const rafRef = useRef<number>(0);
   const [inView, setInView] = useState(false);
   const [, forceRender] = useState(0);
 
+  // Match the live device, not a desktop responsive mode. The URL-bar
+  // collapsing/expanding is what breaks `vh` overlays on phones, and that only
+  // happens on a real mobile viewport. On mobile we never mount the fixed
+  // overlay or start the rAF loop — the section scrolls as a normal block.
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const mql = window.matchMedia(MOBILE_QUERY);
+    const onChange = () => setIsMobile(mql.matches);
+    onChange();
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
 
   const animate = useCallback(() => {
     const prev = smoothProgressRef.current;
@@ -29,13 +38,12 @@ const WhileYouScroll = () => {
   }, []);
 
   useEffect(() => {
+    if (isMobile) return; // no scroll-tracking / rAF on phones
+
     const handleScroll = () => {
       const section = sectionRef.current;
       if (!section) return;
 
-      // Measure against the LIVE viewport height so the reveal timing stays in
-      // sync while mobile browser chrome collapses/expands. The locked `vh` is
-      // only used for the track height (avoids layout-driven scroll jumps).
       const winH = window.innerHeight;
       const rect = section.getBoundingClientRect();
       const travel = Math.max(1, section.offsetHeight - winH);
@@ -44,11 +52,8 @@ const WhileYouScroll = () => {
       setInView(rect.top <= 5 && rect.bottom > winH * 0.9);
     };
 
-
     let lastWidth = window.innerWidth;
     const handleResize = () => {
-      // Ignore height-only changes: on mobile those are just the URL bar
-      // collapsing, and reacting to them is what caused the scroll to jump.
       if (window.innerWidth === lastWidth) return;
       lastWidth = window.innerWidth;
       handleScroll();
@@ -65,7 +70,7 @@ const WhileYouScroll = () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(rafRef.current);
     };
-  }, [animate]);
+  }, [animate, isMobile]);
 
   const progress = smoothProgressRef.current;
 
@@ -97,6 +102,50 @@ const WhileYouScroll = () => {
   const secondLineY =
     progress < 0.7 ? 40 : 40 * (1 - Math.min(1, (progress - 0.7) / 0.15));
 
+  // Mobile: render the copy and CTA as a normal document-flow section. No fixed
+  // overlay, no 450lvh track, no car animation — just the messaging stacked in
+  // plain blocks so it scrolls without any snapping.
+  if (isMobile) {
+    return (
+      <section
+        ref={sectionRef}
+        id="while-you-scroll"
+        className="relative bg-[#EDEFF2] px-6 py-24"
+      >
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-10 text-center">
+          <h2 className="font-serif text-3xl font-medium text-foreground leading-[1.05] tracking-tight sm:text-4xl">
+            Every day without ads is
+            <br />
+            <span className="italic">money lost.</span>
+          </h2>
+
+          <img
+            src="/mercedes-f1.png"
+            alt="Mercedes F1 car racing across screen — AP Digital performance marketing"
+            className="w-full max-w-[320px] h-auto"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+          />
+
+          <h2 className="font-serif text-4xl font-medium text-foreground leading-[1.05] tracking-tight sm:text-5xl">
+            Let's fix that
+            <br />
+            <span className="italic">today.</span>
+          </h2>
+          <a
+            href="https://calendly.com/apdigital-core/20min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
+          >
+            Book a Free Audit
+          </a>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       ref={sectionRef}
@@ -104,16 +153,6 @@ const WhileYouScroll = () => {
       className="relative bg-[#EDEFF2]"
       style={{ height: '450lvh', overflowAnchor: 'none' }}
     >
-      {/*
-        Height is 100lvh, not 100dvh. `dvh` re-measures continuously while the
-        mobile URL bar collapses, so this fixed panel resized during the scroll
-        and its centred content visibly slid — the "snapping back to centre"
-        glitch. `lvh` is pinned to the bar-hidden viewport and never changes.
-
-        lvh rather than svh because this is a full-bleed background: svh is the
-        smaller value, so once the bar hid, the panel would fall short of the
-        viewport and expose the page behind it.
-      */}
       <div
           style={{
             position: 'fixed',
