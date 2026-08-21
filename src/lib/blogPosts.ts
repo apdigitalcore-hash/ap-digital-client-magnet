@@ -90,7 +90,8 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
     metaDescription: 'Real 2026 prices for Canadian social media marketing: agency fees, ad spend, and what each budget actually gets you. Plus a free budget calculator and downloadable template.',
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
-    readTime: '10 min read',
+    readTime: '13 min read',
+    dateModified: '2026-08-20',
     category: 'Marketing Strategy',
     content: `One of the most common questions we hear from Canadian business owners is straightforward: "How much does social media marketing actually cost?" It's a fair question — and most agencies answer with vague ranges that leave you more confused than when you started. At AP DIGITAL, we believe in transparency, so this guide breaks down real 2026 pricing for every budget tier in Canada, including what you get, what you don't, and how to choose the right investment for your business.
 
@@ -167,6 +168,42 @@ Your ad budget should match your industry and location. Here are the ranges we t
 
 Vancouver businesses often land at the higher end of these ranges because of higher competition and cost-per-click. Learn more in our [Meta Ads vs Google Ads comparison](/blog/best-ads-platform-for-small-business-canada).
 
+## Social Media Agency Rates: How Canadian Agencies Actually Bill
+
+Monthly retainers are the most common arrangement, but they are not the only one — and the billing model changes what you actually pay for. Here are the four structures you will be quoted in Canada, with real 2026 ranges.
+
+| Billing Model | Typical Rate (CAD) | What It Suits | Watch For |
+|---|---|---|---|
+| Monthly retainer | $500 – $5,000/mo | Ongoing management, most businesses | Confirm what is in scope before you sign |
+| Per post | $50 – $250/post | Topping up an in-house effort | Adds up fast; no strategy attached |
+| Hourly | $75 – $200/hr | Consulting, audits, one-off fixes | Hard to forecast; you pay for slow work |
+| Percentage of ad spend | 10 – 20% of spend | Ad-heavy accounts over $10k/mo | Rewards spending more, not performing better |
+
+A few things worth knowing about how these play out.
+
+**Per-post pricing looks cheap and rarely is.** At $150 a post, twelve posts a month is $1,800 — more than most growth retainers, and you get no strategy, no reporting, and no one watching whether any of it produces leads.
+
+**Hourly billing punishes efficiency.** An agency that has run two hundred campaigns in your industry will build yours faster than one learning on your account, and hourly billing charges you less for the better outcome. It suits audits and consulting, not ongoing work.
+
+**Percentage-of-spend has a built-in conflict.** If the agency earns more when you spend more, nothing in the arrangement rewards them for getting your cost per lead down. It is workable at high spend where the percentage is negotiated down, but for most small businesses a flat retainer aligns better.
+
+**Flat retainers are the safest default** for a small business, because your cost is predictable and the agency's incentive is to keep you long enough to be worth the acquisition — which means producing results.
+
+## How Much Do Social Media Ads Cost in Canada?
+
+Management fees and ad spend are two different bills, and the ads themselves are the one that goes to Meta or Google rather than to your agency. Typical 2026 costs for Canadian businesses:
+
+| Platform | Cost per Click | Cost per 1,000 Impressions | Typical Cost per Lead |
+|---|---|---|---|
+| Facebook / Instagram | $0.50 – $3.50 | $6 – $15 | $10 – $60 |
+| TikTok | $0.30 – $2.00 | $4 – $10 | $8 – $45 |
+| LinkedIn | $4.00 – $12.00 | $25 – $60 | $50 – $200 |
+| Google Search | $1.00 – $15.00 | n/a | $15 – $120 |
+
+Costs swing with your industry, your targeting, and — more than most people expect — your creative. A strong hook can cut cost per lead in half on the same budget and the same audience, which is why creative testing is worth more than micro-optimising bids.
+
+Below roughly $500/month in spend, most platforms cannot gather enough conversion data to optimise. That is the practical floor, not an agency upsell.
+
 ## What to Look for in a Canadian Social Media Agency
 
 Before signing a contract, evaluate the agency on these criteria:
@@ -218,6 +255,8 @@ At AP DIGITAL, we build custom [social media marketing](/services/social-media) 
 **[Book your free strategy call today](https://calendly.com/apdigital-core/20min)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
     dateModified: '2026-08-11',
     faqs: [
+      { question: 'What are typical social media agency rates in Canada?', answer: 'Most Canadian agencies bill a monthly retainer between $500 and $5,000 depending on scope. Per-post pricing runs $50–$250, hourly consulting $75–$200, and percentage-of-ad-spend deals 10–20%. For a small business a flat retainer is usually the safest: your cost is predictable, and unlike percentage-of-spend it does not reward the agency for spending more of your money.' },
+      { question: 'How much do social media ads cost in Canada?', answer: 'Facebook and Instagram ads run $0.50–$3.50 per click and $10–$60 per lead. TikTok is cheaper at $0.30–$2.00 per click, LinkedIn far more expensive at $4–$12. This is ad spend paid directly to the platform and is separate from any agency management fee. Below about $500/month the platforms cannot gather enough conversion data to optimise properly.' },
       { question: 'How much does a social media manager cost in Canada?', answer: 'A freelance social media manager in Canada typically charges $500–$2,000/month depending on experience and scope. An agency with strategy, paid ads, and reporting will usually cost $1,500–$5,000/month.' },
       { question: 'Is social media marketing worth it for small businesses?', answer: 'Yes — when done strategically. A well-structured campaign with targeted paid ads and consistent organic content can generate measurable leads within the first month. The key is tracking leads, not just likes.' },
       { question: 'How much do Facebook Ads cost in Canada?', answer: 'Facebook (Meta) Ads in Canada typically cost $5–$15 per thousand impressions (CPM) and $0.50–$3.00 per click. Lead generation campaigns usually cost $10–$50 per lead for most service businesses.' },

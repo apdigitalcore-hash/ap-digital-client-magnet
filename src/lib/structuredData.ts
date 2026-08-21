@@ -337,7 +337,11 @@ export const getArticleSchema = (post: {
   "name": post.metaTitle,
   "description": post.metaDescription,
   "datePublished": post.date,
-  "dateModified": post.date,
+  // Falls back to the publish date, but a refreshed post should
+  // report when it was actually refreshed — Google reads this for
+  // freshness, and hardcoding it to datePublished made every update
+  // invisible.
+  "dateModified": post.dateModified ?? post.date,
   "inLanguage": "en-CA",
   "url": `${BASE_URL}/blog/${post.slug}`,
   "image": {
