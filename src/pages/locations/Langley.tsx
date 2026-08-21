@@ -11,8 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Performance Marketing Agency Langley BC | AP Digital';
-const DESC = 'Langley marketing agency for salons, trades, realtors & coaches. Most clients see leads within 2 weeks. Google Ads, Meta Ads & local SEO. No contracts.';
+const TITLE = 'Digital Marketing Agency Langley BC | AP Digital';
+const DESC = 'Digital marketing agency in Langley BC for trades, salons, realtors & coaches. Google Ads, Meta Ads & local SEO. Most clients see leads within 2 weeks. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/langley';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -28,6 +28,18 @@ const included = [
 ];
 
 const faqs = [
+  {
+    question: 'Who is the best digital marketing agency in Langley for contractors?',
+    answer: 'For Langley trades — plumbers, HVAC, electricians, roofers — the right agency is one that geo-targets at the neighbourhood level rather than blanketing Metro Vancouver, and that can show you cost per booked job rather than impressions. AP Digital runs Google Ads and Meta Ads for Langley contractors across Willoughby, Walnut Grove, Murrayville and Aldergrove, month-to-month with no lock-in. Arjun Sharma manages every account personally, so the person building your campaign is the person you speak to.',
+  },
+  {
+    question: 'Is there a Langley marketing company that works month-to-month?',
+    answer: 'Yes. AP Digital is a Langley marketing company with no lock-in contracts — you can pause or cancel with 30 days\' notice. Most agencies ask for six or twelve months up front because it protects them during a slow start. We would rather earn the next month by producing leads in this one.',
+  },
+  {
+    question: 'How much does a marketing agency in Langley cost?',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes directly to Google or Meta — you keep control of the budget. Most Langley businesses start between $1,000 and $2,000/month all in, including spend.',
+  },
   {
     question: 'How quickly will I see leads in Langley?',
     answer: 'Most Langley businesses see their first leads within 2 weeks of launching Meta Ads with AP Digital.',
@@ -71,7 +83,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Langley', url: '/langley' },
     ]),
     getWebPageSchema(TITLE, DESC, '/langley'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/langley","name":"AP Digital — Langley Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/langley","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/langley","name":"AP Digital — Langley Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/langley","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
       },"areaServed": [
         {"@type":"City","name":"Langley" },
         {"@type":"City","name":"Langley City" },
@@ -118,11 +130,11 @@ const Langley = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Performance Marketing Agency{' '}
+              Digital Marketing Agency{' '}
               <span className="italic">Langley BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Langley businesses get more leads using Meta Ads, Google Ads & social media. From Langley City to the Township — trades, salons, realtors & coaches. If you're searching for a marketing agency near you in Langley, we've got you covered. Month-to-month.
+              AP Digital is a Langley marketing company that gets local businesses more leads using Meta Ads, Google Ads and local SEO. From Langley City to the Township — trades, salons, realtors and coaches. If you're searching for a marketing agency near you in Langley, this is it. Month-to-month, managed personally by Arjun Sharma.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
               <a

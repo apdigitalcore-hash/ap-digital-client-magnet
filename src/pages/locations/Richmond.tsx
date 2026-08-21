@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Performance Marketing Agency Richmond BC | AP Digital';
+const TITLE = 'Digital Marketing Agency Richmond BC | AP Digital';
 const DESC = 'Richmond marketing agency for salons, trades, realtors & coaches. Google Ads + Meta Ads. Month-to-month. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/richmond';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -67,7 +67,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Richmond', url: '/richmond' },
     ]),
     getWebPageSchema(TITLE, DESC, '/richmond'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/richmond","name":"AP Digital — Richmond BC Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/richmond","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/richmond","name":"AP Digital — Richmond BC Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/richmond","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
       },"areaServed": [
         {"@type":"City","name":"Richmond" },
         {"@type":"City","name":"Steveston" },
@@ -114,7 +114,7 @@ const Richmond = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Performance Marketing Agency{' '}
+              Digital Marketing Agency{' '}
               <span className="italic">Richmond BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">

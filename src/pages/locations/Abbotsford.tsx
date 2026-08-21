@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Performance Marketing Agency Abbotsford BC | AP Digital';
+const TITLE = 'Digital Marketing Agency Abbotsford BC | AP Digital';
 const DESC = 'Abbotsford marketing agency for Fraser Valley trades, salons & realtors. Google Ads + Meta Ads. Month-to-month. No contracts. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/abbotsford';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -67,7 +67,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Abbotsford', url: '/abbotsford' },
     ]),
     getWebPageSchema(TITLE, DESC, '/abbotsford'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/abbotsford","name":"AP Digital — Abbotsford Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/abbotsford","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/abbotsford","name":"AP Digital — Abbotsford Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/abbotsford","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
       },"areaServed": [
         {"@type":"City","name":"Abbotsford" },
         {"@type":"City","name":"Mission" },
@@ -114,7 +114,7 @@ const Abbotsford = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Performance Marketing Agency{' '}
+              Digital Marketing Agency{' '}
               <span className="italic">Abbotsford BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">

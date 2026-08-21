@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Performance Marketing Agency Vancouver BC | AP Digital';
+const TITLE = 'Digital Marketing Agency Vancouver BC | AP Digital';
 const DESC = 'Vancouver digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month. Free strategy call.';
 const CANONICAL = 'https://ap-digital.ca/vancouver';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -71,7 +71,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Vancouver', url: '/vancouver' },
     ]),
     getWebPageSchema(TITLE, DESC, '/vancouver'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/vancouver","name":"AP Digital — Vancouver Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/vancouver","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V6B 2W9","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/vancouver","name":"AP Digital — Vancouver Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/vancouver","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V6B 2W9","addressCountry":"CA"
       },"geo": {"@type":"GeoCoordinates","latitude": 49.2827,"longitude": -123.1207
       },"areaServed": [
         {"@type":"City","name":"Vancouver" },
@@ -121,7 +121,7 @@ const Vancouver = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Performance Marketing Agency{' '}
+              Digital Marketing Agency{' '}
               <span className="italic">Vancouver BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">

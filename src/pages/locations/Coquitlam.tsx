@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Performance Marketing Agency Coquitlam BC | AP Digital';
+const TITLE = 'Digital Marketing Agency Coquitlam BC | AP Digital';
 const DESC = 'Coquitlam digital marketing focused on getting you more leads. Google Ads, Meta Ads & local SEO for salons, trades & realtors. 90-day guarantee. No lock-in.';
 const CANONICAL = 'https://ap-digital.ca/coquitlam';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -71,7 +71,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Coquitlam', url: '/coquitlam' },
     ]),
     getWebPageSchema(TITLE, DESC, '/coquitlam'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/coquitlam","name":"AP Digital — Coquitlam Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/coquitlam","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/coquitlam","name":"AP Digital — Coquitlam Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/coquitlam","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
       },"areaServed": [
         {"@type":"City","name":"Coquitlam" },
         {"@type":"City","name":"Port Moody" },
