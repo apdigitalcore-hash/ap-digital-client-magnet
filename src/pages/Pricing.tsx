@@ -167,7 +167,7 @@ const Pricing = () => {
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
               ))}
-              <span className="ml-1">5.0 from 14 reviews</span>
+              <span className="ml-1">5.0 on Google</span>
             </span>
           </div>
 

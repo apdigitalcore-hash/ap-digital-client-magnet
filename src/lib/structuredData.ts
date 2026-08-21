@@ -127,7 +127,6 @@ export const organizationSchema = {
   "sameAs": [
     "https://share.google/lI0pYZTBgTazYNTSp",
     "https://www.instagram.com/theapdigital/",
-    "https://www.facebook.com/apdigital",
     "https://www.linkedin.com/company/theapdigital/"
   ],
   "areaServed": serviceAreaCities,
@@ -201,7 +200,7 @@ export const organizationSchema = {
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
-    "reviewCount": "14",
+    "reviewCount": "2",
     "bestRating": "5",
     "worstRating": "1"
   },

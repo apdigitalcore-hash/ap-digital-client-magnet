@@ -47,9 +47,9 @@ const orgSchema = {
   "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V5K", "addressCountry": "CA" },
   "geo": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
   "areaServed": ["Vancouver", "Surrey", "Burnaby", "Richmond", "Langley", "Coquitlam", "Abbotsford", "Metro Vancouver"],
-  "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.facebook.com/apdigital", "https://www.linkedin.com/company/theapdigital/"],
+  "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.linkedin.com/company/theapdigital/"],
   "priceRange": "$$",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "14", "bestRating": "5", "worstRating": "1" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2", "bestRating": "5", "worstRating": "1" },
   "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
 };
 
