@@ -65,13 +65,8 @@ const Header = () => {
     '/privacy-policy',
     '/terms-of-service',
     '/contact',
-    '/vancouver',
-    '/surrey',
-    '/burnaby',
-    '/richmond',
-    '/langley',
-    '/coquitlam',
-    '/abbotsford',
+    // The city pages moved to the light editorial theme, so they are no longer
+    // listed here — leaving them would render white nav text on a white hero.
   ];
   const hasDarkHero = darkHeroPrefixes.some(
     (p) => pathname === p || pathname.startsWith(`${p}/`)

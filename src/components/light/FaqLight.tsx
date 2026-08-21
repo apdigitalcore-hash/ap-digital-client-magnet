@@ -8,7 +8,13 @@ interface FaqItem {
   answer: string;
 }
 
-const FaqLight = ({ faqs }: { faqs: FaqItem[] }) => {
+/**
+ * `cityName` appends the locality to the heading, e.g. "Common Questions —
+ * Surrey Businesses". The location pages carried that in their own markup
+ * before adopting this component, and it is localized content on pages whose
+ * whole purpose is local search — so it is preserved rather than flattened.
+ */
+const FaqLight = ({ faqs, cityName }: { faqs: FaqItem[]; cityName?: string }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   return (
@@ -18,6 +24,11 @@ const FaqLight = ({ faqs }: { faqs: FaqItem[] }) => {
           <SectionLabel label="FAQs" />
           <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
             Common <span className="italic">Questions</span>
+            {cityName && (
+              <span className="mt-2 block text-2xl text-foreground/60 sm:text-3xl">
+                {cityName} Businesses
+              </span>
+            )}
           </h2>
         </div>
 

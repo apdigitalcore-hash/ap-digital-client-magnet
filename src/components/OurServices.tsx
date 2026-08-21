@@ -7,19 +7,19 @@ const services = [
 ];
 
 const OurServices = () => (
-  <section className="mt-16 pt-12 border-t border-border">
-    <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">Our Services</h2>
+  <section className="bg-white py-24">
+    <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-10 text-center">Our Services</h2>
     <div className="grid sm:grid-cols-2 max-w-2xl gap-4">
       {services.map((svc) => (
         <Link
           key={svc.title}
           to={svc.link}
-          className="bg-card border border-border rounded-xl p-5 group hover:border-teal/30 transition-colors"
+          className="bg-white elev-2 hover:elev-3 rounded-3xl p-6 group transition-shadow duration-300"
         >
           <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center mb-3 group-hover:bg-teal/20 transition-colors">
-            <svc.icon className="w-5 h-5 text-teal" />
+            <svc.icon className="w-5 h-5 text-foreground" />
           </div>
-          <h3 className="font-display text-base font-bold text-foreground mb-1 group-hover:text-teal transition-colors">{svc.title}</h3>
+          <h3 className="font-serif text-base font-medium text-foreground mb-1">{svc.title}</h3>
           <p className="text-muted-foreground text-sm">{svc.description}</p>
         </Link>
       ))}

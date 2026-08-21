@@ -2,19 +2,14 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle, TrendingUp, Star, Zap, Target, Users, MapPin } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
+import FaqLight from '@/components/light/FaqLight';
+import PastelCTA from '@/components/light/PastelCTA';
 
 const TITLE = 'Performance Marketing Agency Vancouver BC | AP Digital';
 const DESC = 'Vancouver digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month. Free strategy call.';
@@ -153,62 +148,68 @@ const Vancouver = () => (
     <main id="main-content">
 
       {/* Hero */}
-      <section className="relative bg-near-black pt-28 pb-20">
+      <section className="relative bg-[#E4E7EB] pt-32 pb-24">
         <div className="container-custom">
           <div className="max-w-3xl animate-fade-up">
             <div className="mb-6">
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
               Performance Marketing Agency{' '}
-              <span className="text-gradient">Vancouver BC</span>
+              <span className="italic">Vancouver BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital is a Vancouver-based marketing agency helping local businesses — trades, salons, real estate agents & coaches — get consistent, qualified leads using Meta Ads & Google Ads. When someone searches "digital marketing near me" in Vancouver, we make sure they find you first. Month-to-month. Managed personally by founder Arjun Sharma.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
-                <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
-                  Book Your Free Strategy Call
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-              </Button>
-              <Button asChild variant="light" size="lg">
-                <a href="/services/paid-ads">See Our Services</a>
-              </Button>
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+              <a
+                href="https://calendly.com/apdigital-core/20min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
+              >
+                Book Your Free Strategy Call
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <Link
+                to="/services/paid-ads"
+                className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
+              >
+                See Our Services
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Who We Help */}
-      <section className="bg-background py-20">
+      <section className="bg-white py-24">
         <div className="container-custom">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Who We Help in <span className="text-gradient">Vancouver</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground text-center mb-4">
+            Who We Help in <span className="italic">Vancouver</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
             From Kitsilano to Commercial Drive, we help Vancouver's local businesses get booked solid with qualified leads.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
-              <Zap className="w-8 h-8 text-teal mb-4" />
-              <h3 className="font-display text-xl font-bold text-foreground mb-2">Trades & Contractors</h3>
+            <div className="bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-shadow duration-300">
+              <Zap className="w-8 h-8 text-foreground mb-4" />
+              <h3 className="font-serif text-xl font-medium text-foreground mb-2">Trades & Contractors</h3>
               <p className="text-muted-foreground">Plumbers, HVAC, electricians, and roofers across Vancouver capturing high-intent job searches the moment homeowners need them.</p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
-              <Star className="w-8 h-8 text-teal mb-4" />
-              <h3 className="font-display text-xl font-bold text-foreground mb-2">Hair Salons & Beauty Studios</h3>
+            <div className="bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-shadow duration-300">
+              <Star className="w-8 h-8 text-foreground mb-4" />
+              <h3 className="font-serif text-xl font-medium text-foreground mb-2">Hair Salons & Beauty Studios</h3>
               <p className="text-muted-foreground">Filling appointment books with consistent new clients for salons in Kitsilano, Mount Pleasant, South Granville, and East Van.</p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
-              <Target className="w-8 h-8 text-teal mb-4" />
-              <h3 className="font-display text-xl font-bold text-foreground mb-2">Real Estate Agents</h3>
+            <div className="bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-shadow duration-300">
+              <Target className="w-8 h-8 text-foreground mb-4" />
+              <h3 className="font-serif text-xl font-medium text-foreground mb-2">Real Estate Agents</h3>
               <p className="text-muted-foreground">Buyer & seller leads in Vancouver's ultra-competitive real estate market — targeted campaigns reaching motivated homeowners and investors.</p>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-teal/30 transition-colors">
-              <Users className="w-8 h-8 text-teal mb-4" />
-              <h3 className="font-display text-xl font-bold text-foreground mb-2">Coaches & Consultants</h3>
+            <div className="bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-shadow duration-300">
+              <Users className="w-8 h-8 text-foreground mb-4" />
+              <h3 className="font-serif text-xl font-medium text-foreground mb-2">Coaches & Consultants</h3>
               <p className="text-muted-foreground">Growing coaching businesses in Vancouver's competitive professional market with proven ad strategies that attract ideal, high-value clients.</p>
             </div>
           </div>
@@ -216,9 +217,9 @@ const Vancouver = () => (
       </section>
 
       {/* What You Get */}
-      <section className="bg-charcoal py-20">
+      <section className="bg-[#EDEFF2] py-24">
         <div className="container-custom">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground text-center mb-4">
             What's Included
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
@@ -227,8 +228,8 @@ const Vancouver = () => (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {included.map((item) => (
               <div key={item} className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-teal mt-0.5 shrink-0" />
-                <span className="text-primary-foreground">{item}</span>
+                <CheckCircle className="w-5 h-5 text-foreground mt-0.5 shrink-0" />
+                <span className="text-foreground">{item}</span>
               </div>
             ))}
           </div>
@@ -236,10 +237,10 @@ const Vancouver = () => (
       </section>
 
       {/* Why Vancouver Businesses Are Investing in Paid Ads */}
-      <section className="bg-background py-20">
+      <section className="bg-white py-24">
         <div className="container-custom max-w-4xl">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
-            Why Vancouver Businesses Are Investing in <span className="text-gradient">Paid Ads</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground text-center mb-4">
+            Why Vancouver Businesses Are Investing in <span className="italic">Paid Ads</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
             Vancouver is one of Canada's most expensive and competitive markets — standing out online is no longer optional.
@@ -259,33 +260,33 @@ const Vancouver = () => (
       </section>
 
       {/* Our Vancouver Marketing Process */}
-      <section className="bg-charcoal py-20">
+      <section className="bg-[#EDEFF2] py-24">
         <div className="container-custom">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground text-center mb-4">
             Our Vancouver Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
             A clear, proven process that gets your Vancouver business generating leads fast — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
-              <div className="font-display text-3xl font-bold text-teal mb-3">1</div>
-              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Free Strategy Call</h3>
+            <div className="bg-white elev-2 rounded-3xl p-7">
+              <div className="font-serif text-3xl font-medium text-foreground/25 mb-3">1</div>
+              <h3 className="font-serif text-lg font-medium text-foreground mb-2">Free Strategy Call</h3>
               <p className="text-muted-foreground text-sm">We learn your Vancouver market, your neighbourhood, your competition, and your revenue goals. No cookie-cutter approach — every campaign starts with your specific business context.</p>
             </div>
-            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
-              <div className="font-display text-3xl font-bold text-teal mb-3">2</div>
-              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Campaign Build</h3>
+            <div className="bg-white elev-2 rounded-3xl p-7">
+              <div className="font-serif text-3xl font-medium text-foreground/25 mb-3">2</div>
+              <h3 className="font-serif text-lg font-medium text-foreground mb-2">Campaign Build</h3>
               <p className="text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting your exact Vancouver service area — from Dunbar to Hastings-Sunrise, from Yaletown to East Van — with creatives built for your audience.</p>
             </div>
-            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
-              <div className="font-display text-3xl font-bold text-teal mb-3">3</div>
-              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Launch & Optimize</h3>
+            <div className="bg-white elev-2 rounded-3xl p-7">
+              <div className="font-serif text-3xl font-medium text-foreground/25 mb-3">3</div>
+              <h3 className="font-serif text-lg font-medium text-foreground mb-2">Launch & Optimize</h3>
               <p className="text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Vancouver campaign hits its stride as fast as possible.</p>
             </div>
-            <div className="bg-charcoal-light border border-gray-800 rounded-xl p-6">
-              <div className="font-display text-3xl font-bold text-teal mb-3">4</div>
-              <h3 className="font-display text-lg font-bold text-primary-foreground mb-2">Scale</h3>
+            <div className="bg-white elev-2 rounded-3xl p-7">
+              <div className="font-serif text-3xl font-medium text-foreground/25 mb-3">4</div>
+              <h3 className="font-serif text-lg font-medium text-foreground mb-2">Scale</h3>
               <p className="text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates across your Vancouver target area.</p>
             </div>
           </div>
@@ -293,9 +294,9 @@ const Vancouver = () => (
       </section>
 
       {/* Areas We Serve */}
-      <section className="bg-background py-20">
+      <section className="bg-white py-24">
         <div className="container-custom">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-4">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground text-center mb-4">
             Vancouver Neighbourhoods We Target
           </h2>
           <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
@@ -303,13 +304,13 @@ const Vancouver = () => (
           </p>
           <div className="flex flex-wrap gap-3 justify-center mb-16">
             {['Kitsilano', 'Mount Pleasant', 'East Vancouver', 'Commercial Drive', 'Yaletown', 'West End', 'Fairview', 'South Granville', 'Kerrisdale', 'Dunbar', 'Hastings-Sunrise', 'Riley Park'].map((area) => (
-              <span key={area} className="rounded-full bg-muted px-4 py-2 text-sm text-foreground">
+              <span key={area} className="rounded-full bg-white elev-1 px-4 py-2 text-sm text-foreground">
                 {area}
               </span>
             ))}
           </div>
 
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground text-center mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground text-center mb-4">
             Also Serving Metro Vancouver
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-8">
@@ -324,7 +325,7 @@ const Vancouver = () => (
               { city: 'Coquitlam', href: '/coquitlam' },
               { city: 'Abbotsford', href: '/abbotsford' },
             ].map(({ city, href }) => (
-              <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
+              <Link key={href} to={href} className="bg-white elev-1 hover:elev-2 rounded-2xl p-4 text-center transition-shadow duration-300">
                 <span className="font-medium text-foreground">{city}</span>
               </Link>
             ))}
@@ -333,77 +334,45 @@ const Vancouver = () => (
       </section>
 
       {/* Why AP Digital */}
-      <section className="bg-charcoal py-20">
+      <section className="bg-[#EDEFF2] py-24">
         <div className="container-custom">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground text-center mb-4">
-            Why Vancouver Businesses Choose <span className="text-gradient">AP Digital</span>
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground text-center mb-4">
+            Why Vancouver Businesses Choose <span className="italic">AP Digital</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
             We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-card border border-border rounded-xl p-6">
-              <MapPin className="w-8 h-8 text-teal mb-4" />
-              <h3 className="font-display text-lg font-bold text-foreground mb-2">Personal Management</h3>
+            <div className="bg-white elev-2 rounded-3xl p-7">
+              <MapPin className="w-8 h-8 text-foreground mb-4" />
+              <h3 className="font-serif text-lg font-medium text-foreground mb-2">Personal Management</h3>
               <p className="text-muted-foreground text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <TrendingUp className="w-8 h-8 text-teal mb-4" />
-              <h3 className="font-display text-lg font-bold text-foreground mb-2">No Contracts</h3>
+            <div className="bg-white elev-2 rounded-3xl p-7">
+              <TrendingUp className="w-8 h-8 text-foreground mb-4" />
+              <h3 className="font-serif text-lg font-medium text-foreground mb-2">No Contracts</h3>
               <p className="text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results you can measure.</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <Zap className="w-8 h-8 text-teal mb-4" />
-              <h3 className="font-display text-lg font-bold text-foreground mb-2">Fast Results</h3>
+            <div className="bg-white elev-2 rounded-3xl p-7">
+              <Zap className="w-8 h-8 text-foreground mb-4" />
+              <h3 className="font-serif text-lg font-medium text-foreground mb-2">Fast Results</h3>
               <p className="text-muted-foreground text-sm">Most Vancouver clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-background py-20">
-        <div className="container-custom max-w-3xl">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground text-center mb-12">
-            Common Questions — Vancouver Businesses
-          </h2>
-          <Accordion type="single" collapsible>
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border-gray-800">
-                <AccordionTrigger className="text-left text-foreground font-medium hover:text-teal">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
+            <FaqLight faqs={faqs} cityName="Vancouver" />
 
       {/* Our Services */}
       <OurServices />
 
       <IndustriesWeServe />
 
-      {/* Dark CTA */}
-      <section className="bg-near-black py-20 text-center">
-        <div className="container-custom max-w-2xl">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Grow Your <span className="text-gradient">Vancouver Business?</span>
-          </h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Book a free 20-minute strategy call. We'll show you exactly what a campaign looks like for your business and your budget — no pitch, no pressure.
-          </p>
-          <Button asChild variant="hero" size="xl" className="shadow-teal-lg">
-            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
-              Book Your Free Strategy Call
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </a>
-          </Button>
-        </div>
-      </section>
+            <PastelCTA
+        headline="Ready to Grow Your Vancouver Business?"
+        subheadline="Book a free 20-minute strategy call. We'll show you exactly what a campaign looks like for your business and your budget. No pitch, no pressure."
+      />
 
     </main>
     <Footer />
