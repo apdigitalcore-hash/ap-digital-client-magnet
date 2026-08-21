@@ -113,7 +113,7 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="texture-rules relative min-h-[100svh] flex items-center overflow-hidden bg-[#E4E7EB]">
+      <section className="texture-rules relative flex items-center overflow-hidden bg-[#E4E7EB] sm:min-h-[100svh]">
         <HeroLightFan />
         <HeroObject />
 
