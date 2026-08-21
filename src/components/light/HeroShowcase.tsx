@@ -45,14 +45,19 @@ export const HeroObject = () => (
     aria-hidden="true"
     className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] flex justify-center"
   >
-    {/* Width is capped against viewport height as well as width — sizing purely
-        in vw made the sphere outgrow its clearance on wide-but-short laptop
-        screens and collide with the trust bar.
+    {/*
+      Mobile uses FIXED PIXEL sizing with no viewport unit of any kind.
 
-        The cap uses svh, not vh. On mobile, `vh` tracks the URL bar hiding and
-        showing, so a vh-sized element visibly resizes mid-scroll. `svh` is
-        pinned to the small (bar-visible) viewport and never changes. */}
-    <div className="relative mb-[5svh] w-[min(52vw,23svh)] max-w-[330px] sm:mb-[5svh] sm:w-[min(26vw,24svh)]">
+      Two previous attempts (vh -> svh) both still resized mid-scroll on a real
+      phone. Rather than keep guessing which viewport unit misbehaves on which
+      mobile browser, this removes the variable entirely: a px width cannot be
+      changed by the URL bar, the visual viewport, or anything else the browser
+      does while scrolling.
+
+      Desktop keeps the height-aware cap, which is needed there so the sphere
+      does not outgrow its clearance on wide-but-short laptop screens.
+    */}
+    <div className="relative mb-10 w-[190px] sm:mb-[5svh] sm:w-[min(26vw,24svh)] sm:max-w-[330px]">
       {/* Contact shadow — the render has no floor, so grounding is composited
           here: a wide soft spread plus a tight core where it meets the base. */}
       <div
