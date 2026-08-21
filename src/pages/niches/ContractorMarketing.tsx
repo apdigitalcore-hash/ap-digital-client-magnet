@@ -5,14 +5,10 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Search, Share2, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
+import FaqLight from '@/components/light/FaqLight';
+import PastelCTA from '@/components/light/PastelCTA';
 
 const TITLE = 'General Contractor Marketing Vancouver | More Renovation Jobs | AP Digital';
 const DESC = 'General contractor marketing with Google Ads & Meta Ads for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
@@ -115,7 +111,7 @@ const ContractorMarketing = () => (
     <Header />
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
-        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
           General Contractor Marketing — Get More Renovation Jobs
         </h1>
 
@@ -124,42 +120,46 @@ const ContractorMarketing = () => (
         </p>
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="bg-card border border-border rounded-xl p-5">
-            <p className="font-bold text-foreground mb-1">Highest job values in home services</p>
-            <p className="text-sm text-muted-foreground">Kitchen renovations: $25K–$80K. Basement finishing: $30K–$60K. Laneway houses: $150K–$350K. One closed deal can return 100x+ your monthly ad spend.</p>
+          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Highest job values in home services</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Kitchen renovations: $25K–$80K. Basement finishing: $30K–$60K. Laneway houses: $150K–$350K. One closed deal can return 100x+ your monthly ad spend.</p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-5">
-            <p className="font-bold text-foreground mb-1">Google + Meta: full funnel</p>
-            <p className="text-sm text-muted-foreground">Google captures homeowners searching now. Meta reaches homeowners dreaming and planning. Running both fills your estimate calendar with qualified projects.</p>
+          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Google + Meta: full funnel</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google captures homeowners searching now. Meta reaches homeowners dreaming and planning. Running both fills your estimate calendar with qualified projects.</p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-5">
-            <p className="font-bold text-foreground mb-1">90-day guarantee</p>
-            <p className="text-sm text-muted-foreground">No contracts. If we don't deliver qualified renovation leads in 90 days, you don't pay. Month-to-month, always.</p>
+          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">No contracts. If we don't deliver qualified renovation leads in 90 days, you don't pay. Month-to-month, always.</p>
           </div>
         </div>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-6">What You Get</h2>
         <ul className="grid sm:grid-cols-2 gap-4 mb-16">
           {included.map((item) => (
             <li key={item} className="flex items-start gap-3 text-foreground">
-              <CheckCircle className="w-5 h-5 text-teal mt-0.5 shrink-0" />
+              <CheckCircle className="w-5 h-5 text-foreground mt-0.5 shrink-0" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
-              <r.icon className="w-8 h-8 text-teal mx-auto mb-3" />
-              <div className="font-display text-3xl font-bold text-teal mb-2">{r.stat}</div>
-              <p className="text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">BC Renovation Market: What You're Competing For</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">BC Renovation Market: What You're Competing For</h2>
         <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
           <p className="mb-4">
             Metro Vancouver's renovation market is booming. High home prices mean more homeowners are renovating instead of moving. BC's new ADU and laneway house policies are creating an entirely new category of $150K–$350K projects. And aging housing stock (60%+ of Vancouver homes are pre-1990) means a steady flow of kitchen, bathroom, and whole-home renovation demand.
@@ -172,34 +172,26 @@ const ContractorMarketing = () => (
           </p>
         </div>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
-        <Accordion type="single" collapsible className="mb-16">
-          {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`}>
-              <AccordionTrigger className="text-left text-foreground font-medium">{faq.question}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <FaqLight faqs={faqs} />
 
         <div className="mb-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Related Pages</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Related Pages</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link to="/trades-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+            <Link to="/trades-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Trades & Contractor Marketing</p>
-              <p className="text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
+              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
             </Link>
-            <Link to="/plumber-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+            <Link to="/plumber-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Plumber Marketing</p>
-              <p className="text-sm text-muted-foreground">Google Ads & lead gen for plumbing companies in BC.</p>
+              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads & lead gen for plumbing companies in BC.</p>
             </Link>
-            <Link to="/electrician-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+            <Link to="/electrician-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Electrician Marketing</p>
-              <p className="text-sm text-muted-foreground">Lead generation for BC electricians.</p>
+              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Lead generation for BC electricians.</p>
             </Link>
-            <Link to="/roofer-marketing" className="bg-card border border-border rounded-xl p-5 hover:border-teal/50 transition-colors">
+            <Link to="/roofer-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Roofer Marketing</p>
-              <p className="text-sm text-muted-foreground">Google Ads for roofing companies in BC.</p>
+              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads for roofing companies in BC.</p>
             </Link>
           </div>
         </div>
@@ -207,7 +199,7 @@ const ContractorMarketing = () => (
         <OurServices />
 
         <div className="mt-16 mb-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Cities We Serve</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-6">Cities We Serve</h2>
           <p className="text-muted-foreground mb-6">We help general contractors across Metro Vancouver and the Fraser Valley.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
@@ -219,20 +211,14 @@ const ContractorMarketing = () => (
               { city: 'Coquitlam', href: '/coquitlam' },
               { city: 'Abbotsford', href: '/abbotsford' },
             ].map(({ city, href }) => (
-              <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
+              <Link key={href} to={href} className="bg-white elev-1 hover:elev-2 hover:-translate-y-0.5 rounded-2xl p-4 text-center transition-all duration-300">
                 <span className="font-medium text-foreground">{city}</span>
               </Link>
             ))}
           </div>
         </div>
 
-        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get More Renovation Jobs?</h2>
-          <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and we'll show you how many renovation searches are happening in your area right now.</p>
-          <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
-            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
-          </Button>
-        </section>
+        <PastelCTA />
       </div>
     </main>
     <Footer />

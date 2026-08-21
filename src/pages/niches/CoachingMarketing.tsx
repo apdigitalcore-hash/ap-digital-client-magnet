@@ -5,14 +5,10 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { CheckCircle, Share2, Users, ShieldCheck } from 'lucide-react';
 import OurServices from '@/components/OurServices';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
+import FaqLight from '@/components/light/FaqLight';
+import PastelCTA from '@/components/light/PastelCTA';
 
 const TITLE = 'Coaching Marketing BC | Get Consistent Clients | AP Digital';
 const DESC = 'Coaching marketing with Meta Ads funnels & social media for BC life, business & fitness coaches. Month-to-month. No lock-in contracts.';
@@ -111,7 +107,7 @@ const CoachingMarketing = () => (
     <Header />
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
-        <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
+        <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
           Coaching Marketing BC — Fill Your Calendar
         </h1>
 
@@ -122,56 +118,52 @@ const CoachingMarketing = () => (
 
         {/* 3-column why strip */}
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="bg-card border border-border rounded-xl p-5">
-            <p className="font-bold text-foreground mb-1">High-ticket lead funnels</p>
-            <p className="text-sm text-muted-foreground">We build VSL and webinar funnels that attract serious, pre-qualified prospects — not tire-kickers.</p>
+          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">High-ticket lead funnels</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">We build VSL and webinar funnels that attract serious, pre-qualified prospects — not tire-kickers.</p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-5">
-            <p className="font-bold text-foreground mb-1">Content that builds authority</p>
-            <p className="text-sm text-muted-foreground">Short-form video, email sequences, and social content that make you the obvious choice in your niche.</p>
+          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Content that builds authority</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Short-form video, email sequences, and social content that make you the obvious choice in your niche.</p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-5">
-            <p className="font-bold text-foreground mb-1">No contract, no risk</p>
-            <p className="text-sm text-muted-foreground">Month-to-month. We earn your business every month with results.</p>
+          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. We earn your business every month with results.</p>
           </div>
         </div>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">What You Get</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-6">What You Get</h2>
         <ul className="grid sm:grid-cols-2 gap-4 mb-16">
           {included.map((item) => (
             <li key={item} className="flex items-start gap-3 text-foreground">
-              <CheckCircle className="w-5 h-5 text-teal mt-0.5 shrink-0" />
+              <CheckCircle className="w-5 h-5 text-foreground mt-0.5 shrink-0" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-8">What Sets Us Apart</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="bg-card border border-border rounded-xl p-6 text-center">
-              <r.icon className="w-8 h-8 text-teal mx-auto mb-3" />
-              <div className="font-display text-3xl font-bold text-teal mb-2">{r.stat}</div>
-              <p className="text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>
 
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
-        <Accordion type="single" collapsible className="mb-16">
-          {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`}>
-              <AccordionTrigger className="text-left text-foreground font-medium">{faq.question}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        <FaqLight faqs={faqs} />
 
         <OurServices />
 
         <div className="mt-16 mb-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Cities We Serve</h2>
-          <p className="text-muted-foreground mb-6">We help coaches across Metro Vancouver and the Fraser Valley. See our <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link>.</p>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-6">Cities We Serve</h2>
+          <p className="text-muted-foreground mb-6">We help coaches across Metro Vancouver and the Fraser Valley. See our <Link to="/pricing" className="text-foreground underline underline-offset-4 hover:text-foreground/70">pricing</Link> or browse <Link to="/case-studies" className="text-foreground underline underline-offset-4 hover:text-foreground/70">client results</Link>.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { city: 'Vancouver', href: '/vancouver' },
@@ -182,20 +174,14 @@ const CoachingMarketing = () => (
               { city: 'Coquitlam', href: '/coquitlam' },
               { city: 'Abbotsford', href: '/abbotsford' },
             ].map(({ city, href }) => (
-              <Link key={href} to={href} className="bg-muted rounded-xl p-4 text-center hover:bg-muted/80 transition-colors">
+              <Link key={href} to={href} className="bg-white elev-1 hover:elev-2 hover:-translate-y-0.5 rounded-2xl p-4 text-center transition-all duration-300">
                 <span className="font-medium text-foreground">{city}</span>
               </Link>
             ))}
           </div>
         </div>
 
-        <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
-          <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and let us build a marketing system that fills your roster with dream clients.</p>
-          <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
-            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
-          </Button>
-        </section>
+        <PastelCTA />
       </div>
     </main>
     <Footer />
