@@ -16,13 +16,14 @@ const IndustriesWeServe = () => (
         <Link
           key={ind.title}
           to={ind.link}
-          className="bg-white elev-2 hover:elev-3 rounded-3xl p-6 group transition-shadow duration-300"
+          className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300"
         >
-          <div className="w-10 h-10 rounded-lg bg-teal/10 flex items-center justify-center mb-3 group-hover:bg-teal/20 transition-colors">
-            <ind.icon className="w-5 h-5 text-foreground" />
+          <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+          <div className="relative z-10 w-10 h-10 rounded-lg bg-[#EDEFF2] group-hover:bg-white/10 flex items-center justify-center mb-3 transition-colors duration-500">
+            <ind.icon className="w-5 h-5 text-foreground group-hover:text-white transition-colors duration-500" />
           </div>
-          <h3 className="font-serif text-base font-medium text-foreground mb-1">{ind.title}</h3>
-          <p className="text-muted-foreground text-sm">{ind.description}</p>
+          <h3 className="relative z-10 font-serif text-base font-medium text-foreground group-hover:text-white transition-colors duration-500 mb-1">{ind.title}</h3>
+          <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500 text-sm">{ind.description}</p>
         </Link>
       ))}
     </div>
