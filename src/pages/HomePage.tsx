@@ -215,14 +215,14 @@ const HomePage = () => {
               <Link
                 key={to}
                 to={to}
-                className="group relative aspect-square rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden"
+                className="group reveal-card relative aspect-square rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden"
               >
                 {/* Dark wash sweeps up on hover — the card becomes the anchor. */}
-                <span className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                <h3 className="relative z-10 font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground group-hover:text-white transition-colors duration-500 tracking-tight text-center px-4">
+                <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+                <h3 className="relative z-10 font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground reveal-ink tracking-tight text-center px-4">
                   {name}
                 </h3>
-                <p className="relative z-10 text-sm text-white/60 font-medium transition-all duration-300 delay-100 mt-3 text-center px-6 max-w-[220px] leading-snug opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+                <p className="reveal-fade relative z-10 text-sm text-white/60 font-medium mt-3 text-center px-6 max-w-[220px] leading-snug">
                   {tagline}
                 </p>
                 <span className="absolute bottom-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
@@ -265,20 +265,20 @@ const HomePage = () => {
             {differentiators.map((item) => (
               <div
                 key={item.title}
-                className="group relative overflow-hidden rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8"
+                className="group reveal-card relative overflow-hidden rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8"
               >
-                <span className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
 
-                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl mb-5 bg-[#EDEFF2] group-hover:bg-white/10 transition-colors duration-500">
+                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl mb-5 bg-[#EDEFF2] reveal-chip">
                   <item.icon
-                    className="w-5 h-5 text-foreground group-hover:text-white transition-colors duration-500"
+                    className="w-5 h-5 text-foreground reveal-ink"
                     strokeWidth={1.5}
                   />
                 </span>
-                <h3 className="relative z-10 font-serif text-lg sm:text-xl font-medium mb-2 leading-tight text-foreground group-hover:text-white transition-colors duration-500">
+                <h3 className="relative z-10 font-serif text-lg sm:text-xl font-medium mb-2 leading-tight text-foreground reveal-ink">
                   {item.title}
                 </h3>
-                <p className="relative z-10 text-sm leading-relaxed text-muted-foreground group-hover:text-white/65 transition-colors duration-500">
+                <p className="relative z-10 text-sm leading-relaxed text-muted-foreground reveal-body">
                   {item.description}
                 </p>
               </div>
@@ -349,16 +349,16 @@ const HomePage = () => {
                   to={href}
                   className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl bg-white elev-1 hover:elev-2 px-6 py-5 transition-all duration-300"
                 >
-                  <span className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
                   <span className="relative z-10">
-                    <span className="block font-serif text-lg font-medium text-foreground transition-colors duration-500 group-hover:text-white sm:text-xl">
+                    <span className="block font-serif text-lg font-medium text-foreground reveal-ink sm:text-xl">
                       {city}
                     </span>
-                    <span className="mt-0.5 block text-xs text-muted-foreground transition-colors duration-500 group-hover:text-white/55">
+                    <span className="mt-0.5 block text-xs text-muted-foreground reveal-ink/55">
                       {sub}
                     </span>
                   </span>
-                  <span className="relative z-10 text-[10px] font-semibold tracking-[0.18em] text-foreground/25 transition-colors duration-500 group-hover:text-white/40">
+                  <span className="relative z-10 text-[10px] font-semibold tracking-[0.18em] text-foreground/25 reveal-ink/40">
                     {pop}
                   </span>
                 </Link>

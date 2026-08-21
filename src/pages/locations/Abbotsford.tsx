@@ -30,7 +30,7 @@ const included = [
 const faqs = [
   {
     question: 'How quickly will I get leads as an Abbotsford business?',
-    answer: 'Most Abbotsford businesses see their first qualified leads within 2 weeks of launching. Google Ads targeting "plumber Abbotsford" or "HVAC Abbotsford BC" can produce leads the same week the campaign goes live. Meta Ads typically optimize within 1–2 weeks.',
+    answer: 'Most Abbotsford businesses see their first qualified leads within 2 weeks of launching. Google Ads targeting"plumber Abbotsford" or"HVAC Abbotsford BC" can produce leads the same week the campaign goes live. Meta Ads typically optimize within 1–2 weeks.',
   },
   {
     question: 'Is there a contract for Abbotsford clients?',
@@ -58,9 +58,7 @@ const faqs = [
   },
 ];
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
+const structuredData = {"@context":"https://schema.org","@graph": [
     founderSchema,
     getServiceSchema('Digital Marketing Abbotsford BC', DESC, '/abbotsford'),
     getFAQSchema(faqs),
@@ -69,36 +67,15 @@ const structuredData = {
       { name: 'Abbotsford', url: '/abbotsford' },
     ]),
     getWebPageSchema(TITLE, DESC, '/abbotsford'),
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://ap-digital.ca/abbotsford",
-      "name": "AP Digital — Abbotsford Performance Marketing Agency",
-      "description": DESC,
-      "url": "https://ap-digital.ca/abbotsford",
-      "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vancouver",
-        "addressRegion": "BC",
-        "addressCountry": "CA"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Abbotsford" },
-        { "@type": "City", "name": "Mission" },
-        { "@type": "City", "name": "Chilliwack" },
-        { "@type": "City", "name": "Clearbrook" },
-        { "@type": "City", "name": "West Abbotsford" }
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "founder": { "@type": "Person", "name": "Arjun Sharma" },
-      "sameAs": ["https://ap-digital.ca"]
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/abbotsford","name":"AP Digital — Abbotsford Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/abbotsford","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
+      },"areaServed": [
+        {"@type":"City","name":"Abbotsford" },
+        {"@type":"City","name":"Mission" },
+        {"@type":"City","name":"Chilliwack" },
+        {"@type":"City","name":"Clearbrook" },
+        {"@type":"City","name":"West Abbotsford" }
+      ],"openingHoursSpecification": {"@type":"OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"
+      },"founder": {"@type":"Person","name":"Arjun Sharma" },"sameAs": ["https://ap-digital.ca"]
     }
   ]
 };
@@ -174,29 +151,29 @@ const Abbotsford = () => (
             From West Abbotsford to Clearbrook to Mission, we generate qualified leads for Fraser Valley businesses.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Trades & Contractors</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Plumbers, HVAC techs, electricians, and roofers across Abbotsford & the Fraser Valley capturing job searches from local homeowners.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Trades & Contractors</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Plumbers, HVAC techs, electricians, and roofers across Abbotsford & the Fraser Valley capturing job searches from local homeowners.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Star className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Consistent bookings for Abbotsford salons — reaching the region's large, growing residential base with targeted social media ads.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Consistent bookings for Abbotsford salons — reaching the region's large, growing residential base with targeted social media ads.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Target className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Real Estate Agents</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Qualified buyer and seller leads in Abbotsford's growing market — campaigns targeting motivated homeowners in the Fraser Valley's most active communities.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Target className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Real Estate Agents</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Qualified buyer and seller leads in Abbotsford's growing market — campaigns targeting motivated homeowners in the Fraser Valley's most active communities.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Users className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Growing coaching and consulting businesses in Abbotsford and the Fraser Valley with proven digital ad strategies that attract premium clients.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching and consulting businesses in Abbotsford and the Fraser Valley with proven digital ad strategies that attract premium clients.</p>
             </div>
           </div>
         </div>
@@ -236,7 +213,7 @@ const Abbotsford = () => (
               Abbotsford is BC's third-largest city and the Fraser Valley's commercial hub — and its small business environment has changed dramatically over the past five years. Rapid population growth, new residential developments in West Abbotsford and Auguston, and a surge in young families moving from Metro Vancouver have created enormous demand for local service businesses. The challenge is visibility. When a new resident in Abbotsford needs a plumber, they search Google — not the Yellow Pages. When a homeowner in Clearbrook wants to find a new salon, they browse Instagram, not newspapers. For a digital marketing agency serving Abbotsford BC businesses, the opportunity is clear: the consumer base has grown massively, but many local businesses still rely on word-of-mouth and referrals that can't scale fast enough to capture it.
             </p>
             <p>
-              The competitive landscape in Abbotsford is also shifting rapidly. Trades businesses, salons, and real estate agents that have moved to paid digital advertising are outpacing competitors who haven't. A well-structured Google Ads campaign targeting "HVAC Abbotsford" or "electrician Abbotsford BC" consistently captures the highest-intent searches at the moment of need — generating job leads that referral networks simply cannot match for volume and consistency. Meta Ads on Facebook and Instagram let Abbotsford businesses reach specific demographics and postal codes with offers tailored to their neighbourhood — filling appointment books for salons, generating listing inquiries for realtors, and booking service calls for trades businesses with remarkable efficiency.
+              The competitive landscape in Abbotsford is also shifting rapidly. Trades businesses, salons, and real estate agents that have moved to paid digital advertising are outpacing competitors who haven't. A well-structured Google Ads campaign targeting"HVAC Abbotsford" or"electrician Abbotsford BC" consistently captures the highest-intent searches at the moment of need — generating job leads that referral networks simply cannot match for volume and consistency. Meta Ads on Facebook and Instagram let Abbotsford businesses reach specific demographics and postal codes with offers tailored to their neighbourhood — filling appointment books for salons, generating listing inquiries for realtors, and booking service calls for trades businesses with remarkable efficiency.
             </p>
             <p>
               What makes Abbotsford particularly interesting for paid advertising is the relative lack of saturation compared to Metro Vancouver. The cost-per-click on Google Ads for local service keywords in Abbotsford is often significantly lower than comparable searches in Vancouver or Burnaby — which means your ad budget goes further, your cost-per-lead is lower, and your return on ad spend is higher. This window of relative affordability won't stay open as more Abbotsford businesses discover digital advertising. The businesses that invest now are building a data advantage — audience insights, conversion data, and campaign history — that will compound into a lasting competitive edge in the Fraser Valley market.
@@ -255,29 +232,29 @@ const Abbotsford = () => (
             A clear, proven process that gets your Abbotsford business generating leads fast — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">1</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Free Strategy Call</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">We learn your Abbotsford market, service area, competition, and revenue goals before recommending anything.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">1</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Free Strategy Call</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We learn your Abbotsford market, service area, competition, and revenue goals before recommending anything.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">2</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Campaign Build</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">We build your Meta Ads or Google Ads campaign targeting your Abbotsford and Fraser Valley service area with creatives built for your specific audience.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">2</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Campaign Build</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We build your Meta Ads or Google Ads campaign targeting your Abbotsford and Fraser Valley service area with creatives built for your specific audience.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">3</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Launch & Optimize</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Live within 7 days. We optimize daily in the first 2 weeks to make sure your Abbotsford campaign hits its stride fast.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">3</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Launch & Optimize</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Live within 7 days. We optimize daily in the first 2 weeks to make sure your Abbotsford campaign hits its stride fast.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">4</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Scale</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Once leads flow, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">4</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Scale</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads flow, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures.</p>
             </div>
           </div>
         </div>
@@ -330,23 +307,23 @@ const Abbotsford = () => (
             Not a big agency with account managers and hand-offs. A focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <MapPin className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Personal Management</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <MapPin className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Personal Management</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <TrendingUp className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">No Contracts</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Month-to-month with zero lock-in. We earn your business every single month by delivering results you can measure.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <TrendingUp className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">No Contracts</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Month-to-month with zero lock-in. We earn your business every single month by delivering results you can measure.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Fast Results</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Most Abbotsford clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Fast Results</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Most Abbotsford clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>

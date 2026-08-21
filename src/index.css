@@ -431,3 +431,65 @@
   }
 
 }
+
+/* ── Reveal cards ──────────────────────────────────────────────────────────
+   Deliberately OUTSIDE @layer utilities. Inside it, Tailwind reorders custom
+   rules and the bare `.reveal-wash` base ended up beating the more specific
+   `.reveal-card.is-active .reveal-wash`, so the state never applied. Unlayered
+   CSS resolves by normal specificity and wins over Tailwind's layers. */
+/* ── Reveal cards ────────────────────────────────────────────────────────
+   Cards fill with the near-black ground and flip their text to white.
+
+   Driven by BOTH :hover and an .is-active class rather than Tailwind's
+   group-hover alone: hover does not exist on touch, so a tap has to be able
+   to trigger the same state. The class is toggled by a single delegated
+   listener (see useRevealCards), so this scales to every card without
+   per-card state. */
+.reveal-wash {
+  transform: translateY(100%);
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-card:hover .reveal-wash,
+.reveal-card.is-active .reveal-wash {
+  transform: translateY(0);
+}
+
+.reveal-ink,
+.reveal-body {
+  transition: color 400ms ease;
+}
+.reveal-card:hover .reveal-ink,
+.reveal-card.is-active .reveal-ink {
+  color: #fff;
+}
+.reveal-card:hover .reveal-body,
+.reveal-card.is-active .reveal-body {
+  color: hsl(0 0% 100% / 0.65);
+}
+
+/* Copy that fades and rises in with the wash. */
+.reveal-fade {
+  opacity: 0;
+  transform: translateY(0.5rem);
+  transition: opacity 300ms ease 100ms, transform 300ms ease 100ms;
+}
+.reveal-card:hover .reveal-fade,
+.reveal-card.is-active .reveal-fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icon chips invert with the card. */
+.reveal-chip { transition: background-color 400ms ease; }
+.reveal-card:hover .reveal-chip,
+.reveal-card.is-active .reveal-chip {
+  background-color: hsl(0 0% 100% / 0.10);
+}
+
+/* Non-link cards are tappable, so say so. */
+.reveal-card:not(a) { cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-wash { transition: none; }
+  .reveal-ink, .reveal-body { transition: none; }
+}

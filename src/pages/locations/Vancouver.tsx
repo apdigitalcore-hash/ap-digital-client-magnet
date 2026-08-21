@@ -62,9 +62,7 @@ const faqs = [
   },
 ];
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
+const structuredData = {"@context":"https://schema.org","@graph": [
     founderSchema,
     getServiceSchema('Digital Marketing Vancouver BC', DESC, '/vancouver'),
     getFAQSchema(faqs),
@@ -73,50 +71,18 @@ const structuredData = {
       { name: 'Vancouver', url: '/vancouver' },
     ]),
     getWebPageSchema(TITLE, DESC, '/vancouver'),
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://ap-digital.ca/vancouver",
-      "name": "AP Digital — Vancouver Performance Marketing Agency",
-      "description": DESC,
-      "url": "https://ap-digital.ca/vancouver",
-      "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vancouver",
-        "addressRegion": "BC",
-        "postalCode": "V6B 2W9",
-        "addressCountry": "CA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 49.2827,
-        "longitude": -123.1207
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Vancouver" },
-        { "@type": "City", "name": "Kitsilano" },
-        { "@type": "City", "name": "Mount Pleasant" },
-        { "@type": "City", "name": "East Vancouver" },
-        { "@type": "City", "name": "Yaletown" },
-        { "@type": "City", "name": "West End" }
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "14",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "founder": { "@type": "Person", "name": "Arjun Sharma" },
-      "sameAs": ["https://ap-digital.ca"]
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/vancouver","name":"AP Digital — Vancouver Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/vancouver","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V6B 2W9","addressCountry":"CA"
+      },"geo": {"@type":"GeoCoordinates","latitude": 49.2827,"longitude": -123.1207
+      },"areaServed": [
+        {"@type":"City","name":"Vancouver" },
+        {"@type":"City","name":"Kitsilano" },
+        {"@type":"City","name":"Mount Pleasant" },
+        {"@type":"City","name":"East Vancouver" },
+        {"@type":"City","name":"Yaletown" },
+        {"@type":"City","name":"West End" }
+      ],"openingHoursSpecification": {"@type":"OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"
+      },"aggregateRating": {"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"14","bestRating":"5","worstRating":"1"
+      },"founder": {"@type":"Person","name":"Arjun Sharma" },"sameAs": ["https://ap-digital.ca"]
     }
   ]
 };
@@ -159,7 +125,7 @@ const Vancouver = () => (
               <span className="italic">Vancouver BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital is a Vancouver-based marketing agency helping local businesses — trades, salons, real estate agents & coaches — get consistent, qualified leads using Meta Ads & Google Ads. When someone searches "digital marketing near me" in Vancouver, we make sure they find you first. Month-to-month. Managed personally by founder Arjun Sharma.
+              AP Digital is a Vancouver-based marketing agency helping local businesses — trades, salons, real estate agents & coaches — get consistent, qualified leads using Meta Ads & Google Ads. When someone searches"digital marketing near me" in Vancouver, we make sure they find you first. Month-to-month. Managed personally by founder Arjun Sharma.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
               <a
@@ -192,29 +158,29 @@ const Vancouver = () => (
             From Kitsilano to Commercial Drive, we help Vancouver's local businesses get booked solid with qualified leads.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Trades & Contractors</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Plumbers, HVAC, electricians, and roofers across Vancouver capturing high-intent job searches the moment homeowners need them.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Trades & Contractors</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Plumbers, HVAC, electricians, and roofers across Vancouver capturing high-intent job searches the moment homeowners need them.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Star className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Filling appointment books with consistent new clients for salons in Kitsilano, Mount Pleasant, South Granville, and East Van.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Filling appointment books with consistent new clients for salons in Kitsilano, Mount Pleasant, South Granville, and East Van.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Target className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Real Estate Agents</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Buyer & seller leads in Vancouver's ultra-competitive real estate market — targeted campaigns reaching motivated homeowners and investors.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Target className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Real Estate Agents</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Buyer & seller leads in Vancouver's ultra-competitive real estate market — targeted campaigns reaching motivated homeowners and investors.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Users className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Growing coaching businesses in Vancouver's competitive professional market with proven ad strategies that attract ideal, high-value clients.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses in Vancouver's competitive professional market with proven ad strategies that attract ideal, high-value clients.</p>
             </div>
           </div>
         </div>
@@ -254,7 +220,7 @@ const Vancouver = () => (
               Vancouver is one of the most densely competitive small business markets in Canada. Every neighbourhood carries its own commercial character — Kitsilano's health-conscious, high-income demographic makes it a goldmine for wellness businesses, fitness studios, and premium salons willing to target precisely. Commercial Drive and East Van have a dense, loyal local customer base that responds strongly to community-rooted brands and local-first messaging. Yaletown and the West End attract young professionals and higher spenders who discover businesses almost entirely through Instagram and Google. Mount Pleasant and South Main have become hubs for creative businesses and boutique services with clients who are extremely online. For a marketing agency in Vancouver BC, understanding these micro-markets is the difference between campaigns that fill your calendar and campaigns that burn budget with nothing to show.
             </p>
             <p>
-              Vancouver's digital-first consumer behaviour has reached a saturation point that no local business can ignore. When someone in Kitsilano needs a plumber, they're not asking neighbours — they're Googling "plumber Vancouver" or "emergency plumber near me" within minutes of the problem appearing. When a homeowner in Point Grey is looking for a renovation contractor, they're scrolling Instagram and Facebook for before-and-after project photos from local tradespeople. When a professional in Yaletown wants to book a haircut or consult a business coach, they're clicking on an ad they saw in their feed. The businesses capturing these moments with Google Ads and Meta Ads are growing. The ones waiting for referrals are slowly getting left behind.
+              Vancouver's digital-first consumer behaviour has reached a saturation point that no local business can ignore. When someone in Kitsilano needs a plumber, they're not asking neighbours — they're Googling"plumber Vancouver" or"emergency plumber near me" within minutes of the problem appearing. When a homeowner in Point Grey is looking for a renovation contractor, they're scrolling Instagram and Facebook for before-and-after project photos from local tradespeople. When a professional in Yaletown wants to book a haircut or consult a business coach, they're clicking on an ad they saw in their feed. The businesses capturing these moments with Google Ads and Meta Ads are growing. The ones waiting for referrals are slowly getting left behind.
             </p>
             <p>
               What makes paid advertising uniquely powerful in Vancouver's digital marketing landscape is the precision it unlocks. We geo-target campaigns to the specific Vancouver neighbourhoods where your ideal clients live — Dunbar, Kerrisdale, Fairview, Hastings-Sunrise, Riley Park — so your ad budget is never wasted on impressions from outside your service radius. For a trades business, this means every click is from someone within your callout zone. For a salon in South Granville, it means reaching women in a 5-kilometre radius who match the profile of your highest-spending existing clients. This is why Vancouver businesses that run properly structured Meta Ads and Google Ads campaigns routinely see returns that justify every dollar — while businesses relying on organic alone wait months for results that may never come.
@@ -273,29 +239,29 @@ const Vancouver = () => (
             A clear, proven process that gets your Vancouver business generating leads fast — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">1</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Free Strategy Call</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">We learn your Vancouver market, your neighbourhood, your competition, and your revenue goals. No cookie-cutter approach — every campaign starts with your specific business context.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">1</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Free Strategy Call</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We learn your Vancouver market, your neighbourhood, your competition, and your revenue goals. No cookie-cutter approach — every campaign starts with your specific business context.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">2</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Campaign Build</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">We build your Meta Ads or Google Ads campaign targeting your exact Vancouver service area — from Dunbar to Hastings-Sunrise, from Yaletown to East Van — with creatives built for your audience.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">2</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Campaign Build</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We build your Meta Ads or Google Ads campaign targeting your exact Vancouver service area — from Dunbar to Hastings-Sunrise, from Yaletown to East Van — with creatives built for your audience.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">3</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Launch & Optimize</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Vancouver campaign hits its stride as fast as possible.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">3</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Launch & Optimize</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Vancouver campaign hits its stride as fast as possible.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">4</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Scale</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates across your Vancouver target area.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">4</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Scale</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates across your Vancouver target area.</p>
             </div>
           </div>
         </div>
@@ -351,23 +317,23 @@ const Vancouver = () => (
             We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <MapPin className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Personal Management</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <MapPin className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Personal Management</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <TrendingUp className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">No Contracts</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results you can measure.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <TrendingUp className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">No Contracts</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results you can measure.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Fast Results</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Most Vancouver clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Fast Results</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Most Vancouver clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>

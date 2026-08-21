@@ -62,9 +62,7 @@ const faqs = [
   },
 ];
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
+const structuredData = {"@context":"https://schema.org","@graph": [
     founderSchema,
     getServiceSchema('Digital Marketing Langley BC', DESC, '/langley'),
     getFAQSchema(faqs),
@@ -73,37 +71,15 @@ const structuredData = {
       { name: 'Langley', url: '/langley' },
     ]),
     getWebPageSchema(TITLE, DESC, '/langley'),
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://ap-digital.ca/langley",
-      "name": "AP Digital — Langley Performance Marketing Agency",
-      "description": DESC,
-      "url": "https://ap-digital.ca/langley",
-      "telephone": "+1-778-682-5772",
-      "email": "apdigital.core@gmail.com",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Vancouver",
-        "addressRegion": "BC",
-        "postalCode": "V3Y 0G3",
-        "addressCountry": "CA"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Langley" },
-        { "@type": "City", "name": "Langley City" },
-        { "@type": "City", "name": "Aldergrove" },
-        { "@type": "City", "name": "Walnut Grove" },
-        { "@type": "City", "name": "Abbotsford" }
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "founder": { "@type": "Person", "name": "Arjun Sharma" },
-      "sameAs": ["https://ap-digital.ca"]
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/langley","name":"AP Digital — Langley Performance Marketing Agency","description": DESC,"url":"https://ap-digital.ca/langley","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
+      },"areaServed": [
+        {"@type":"City","name":"Langley" },
+        {"@type":"City","name":"Langley City" },
+        {"@type":"City","name":"Aldergrove" },
+        {"@type":"City","name":"Walnut Grove" },
+        {"@type":"City","name":"Abbotsford" }
+      ],"openingHoursSpecification": {"@type":"OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"
+      },"founder": {"@type":"Person","name":"Arjun Sharma" },"sameAs": ["https://ap-digital.ca"]
     }
   ]
 };
@@ -179,29 +155,29 @@ const Langley = () => (
             From Willowbrook to Murrayville, we help Langley businesses generate leads and fill their calendars.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Trades & Contractors</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Contractors across Langley City, Township & Fraser Valley staying booked with targeted Meta and Google ad campaigns.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Trades & Contractors</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Contractors across Langley City, Township & Fraser Valley staying booked with targeted Meta and Google ad campaigns.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Star className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Filling appointment books in Willowbrook & Murrayville — consistent bookings that keep your salon running at full capacity.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Filling appointment books in Willowbrook & Murrayville — consistent bookings that keep your salon running at full capacity.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Target className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Real Estate Agents</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Buyer & seller leads across Langley's growing market — targeted campaigns that capture demand from a rapidly expanding region.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Target className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Real Estate Agents</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Buyer & seller leads across Langley's growing market — targeted campaigns that capture demand from a rapidly expanding region.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Users className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500">Attracting ideal clients from Langley and across BC with ad strategies built specifically for service-based coaches.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body">Attracting ideal clients from Langley and across BC with ad strategies built specifically for service-based coaches.</p>
             </div>
           </div>
         </div>
@@ -260,29 +236,29 @@ const Langley = () => (
             A clear, proven process that gets your Langley business generating leads fast — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">1</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Free Strategy Call</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">We learn your Langley market, your competition, and your goals. Whether you serve Langley City, the Township, or both — we build around your actual service area.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">1</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Free Strategy Call</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We learn your Langley market, your competition, and your goals. Whether you serve Langley City, the Township, or both — we build around your actual service area.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">2</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Campaign Build</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">We build your Meta Ads or Google Ads campaign targeting Langley and surrounding areas — Willowbrook, Walnut Grove, Murrayville, Aldergrove, Cloverdale, and Abbotsford.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">2</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Campaign Build</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We build your Meta Ads or Google Ads campaign targeting Langley and surrounding areas — Willowbrook, Walnut Grove, Murrayville, Aldergrove, Cloverdale, and Abbotsford.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">3</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Launch & Optimize</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Langley campaign is generating real, qualified leads.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">3</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Launch & Optimize</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Langley campaign is generating real, qualified leads.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 group-hover:text-white transition-colors duration-500">4</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Scale</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Once leads are flowing, we scale what's working and cut what isn't. Most Langley clients see cost-per-lead improve significantly within the first 90 days.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">4</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Scale</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads are flowing, we scale what's working and cut what isn't. Most Langley clients see cost-per-lead improve significantly within the first 90 days.</p>
             </div>
           </div>
         </div>
@@ -338,23 +314,23 @@ const Langley = () => (
             We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <MapPin className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Personal Management</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <MapPin className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Personal Management</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <TrendingUp className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">No Contracts</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <TrendingUp className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">No Contracts</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
             </div>
-            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground group-hover:text-white mb-4 transition-colors duration-500" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground group-hover:text-white mb-2 transition-colors duration-500">Fast Results</h3>
-              <p className="relative z-10 text-muted-foreground group-hover:text-white/65 text-sm transition-colors duration-500">Most Langley clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Fast Results</h3>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Most Langley clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>

@@ -14,14 +14,14 @@ const OurServices = () => (
         <Link
           key={svc.title}
           to={svc.link}
-          className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300"
+          className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300"
         >
-          <span aria-hidden="true" className="absolute inset-0 bg-[#0C0E11] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-          <div className="relative z-10 w-10 h-10 rounded-lg bg-[#EDEFF2] group-hover:bg-white/10 flex items-center justify-center mb-3 transition-colors duration-500">
-            <svc.icon className="w-5 h-5 text-foreground group-hover:text-white transition-colors duration-500" />
+          <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
+          <div className="relative z-10 w-10 h-10 rounded-lg bg-[#EDEFF2] reveal-chip flex items-center justify-center mb-3">
+            <svc.icon className="w-5 h-5 text-foreground reveal-ink" />
           </div>
-          <h3 className="relative z-10 font-serif text-base font-medium text-foreground group-hover:text-white transition-colors duration-500 mb-1">{svc.title}</h3>
-          <p className="relative z-10 text-muted-foreground group-hover:text-white/65 transition-colors duration-500 text-sm">{svc.description}</p>
+          <h3 className="relative z-10 font-serif text-base font-medium text-foreground reveal-ink mb-1">{svc.title}</h3>
+          <p className="relative z-10 text-muted-foreground reveal-body text-sm">{svc.description}</p>
         </Link>
       ))}
     </div>
