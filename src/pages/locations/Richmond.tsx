@@ -29,6 +29,18 @@ const included = [
 
 const faqs = [
   {
+    question: 'Who is the best digital marketing agency in Richmond for contractors?',
+    answer: 'For Richmond trades — plumbers, HVAC, electricians, roofers — the agency worth hiring is the one that targets at neighbourhood level rather than blanketing Metro Vancouver, and that reports cost per booked job rather than impressions. AP Digital runs Google Ads and Meta Ads for Richmond contractors across City Centre, Steveston, Broadmoor and Brighouse, month-to-month with no lock-in. Arjun Sharma manages every account personally, so the person building your campaign is the person you talk to.',
+  },
+  {
+    question: 'Is there a Richmond marketing company that works month-to-month?',
+    answer: 'Yes. AP Digital works month-to-month with every Richmond client — pause or cancel with 30 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
+  },
+  {
+    question: 'How much does a marketing agency in Richmond cost?',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Richmond businesses start between $1,000 and $2,000/month all in.',
+  },
+  {
     question: 'How quickly will I see leads as a Richmond business?',
     answer: 'Most Richmond businesses see their first qualified leads within 2 weeks of launching their campaign. Google Ads can produce results within days for high-intent searches like"plumber Richmond BC" — Meta Ads typically optimize within 1–2 weeks.',
   },

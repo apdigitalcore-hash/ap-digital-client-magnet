@@ -29,6 +29,18 @@ const included = [
 
 const faqs = [
   {
+    question: 'Who is the best digital marketing agency in Coquitlam for contractors?',
+    answer: 'For Coquitlam trades — plumbers, HVAC, electricians, roofers — the agency worth hiring is the one that targets at neighbourhood level rather than blanketing Metro Vancouver, and that reports cost per booked job rather than impressions. AP Digital runs Google Ads and Meta Ads for Coquitlam contractors across Port Moody, Port Coquitlam and the wider Tri-Cities, month-to-month with no lock-in. Arjun Sharma manages every account personally, so the person building your campaign is the person you talk to.',
+  },
+  {
+    question: 'Is there a Coquitlam marketing company that works month-to-month?',
+    answer: 'Yes. AP Digital works month-to-month with every Coquitlam client — pause or cancel with 30 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
+  },
+  {
+    question: 'How much does a marketing agency in Coquitlam cost?',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Coquitlam businesses start between $1,000 and $2,000/month all in.',
+  },
+  {
     question: 'How quickly will I see leads in Coquitlam?',
     answer: 'Most Coquitlam businesses see their first qualified leads within 2 weeks of launching Meta Ads with AP Digital.',
   },

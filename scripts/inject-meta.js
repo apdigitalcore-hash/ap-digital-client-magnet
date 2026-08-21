@@ -543,7 +543,17 @@ const staticRoutes = [
     ]}
   },
   // ─── City pages ───
-  ...['vancouver', 'surrey', 'burnaby', 'richmond', 'langley', 'coquitlam', 'abbotsford'].map(city => {
+  // Neighbourhoods per city, so the prerendered FAQ answers match what the
+  // rendered page says rather than being generic.
+  ...[
+    ['vancouver',  'Kitsilano, Mount Pleasant, East Vancouver and Yaletown'],
+    ['surrey',     'Newton, Guildford, South Surrey and Cloverdale'],
+    ['burnaby',    'Metrotown, Brentwood, North Burnaby and Edmonds'],
+    ['richmond',   'City Centre, Steveston, Broadmoor and Brighouse'],
+    ['langley',    'Willoughby, Walnut Grove, Murrayville and Aldergrove'],
+    ['coquitlam',  'Port Moody, Port Coquitlam and the wider Tri-Cities'],
+    ['abbotsford', 'West Abbotsford, Clearbrook, Auguston and Matsqui'],
+  ].map(([city, areas]) => {
     const cap = city.charAt(0).toUpperCase() + city.slice(1);
     return {
       path: city,
@@ -555,6 +565,17 @@ const staticRoutes = [
         serviceSchema(`Digital Marketing ${cap} BC`, `Lead generation for ${cap} businesses using Google Ads & Meta Ads.`, `/${city}`),
         breadcrumb([{ name: 'Home', url: '/' }, { name: cap, url: `/${city}` }]),
         webPageSchema(`Digital Marketing Agency ${cap} BC | AP Digital`, `Google Ads & Meta Ads for ${cap} businesses.`, `/${city}`),
+        // The city pages carry FAQs in the rendered page but the prerendered
+        // HTML had no FAQPage node at all, so crawlers reading the static
+        // markup never saw them. These mirror the page's leading questions.
+        faqSchema([
+          { q: `Who is the best digital marketing agency in ${cap} for contractors?`,
+            a: `For ${cap} trades — plumbers, HVAC, electricians, roofers — the agency worth hiring is the one that targets at neighbourhood level rather than blanketing Metro Vancouver, and that reports cost per booked job rather than impressions. AP Digital runs Google Ads and Meta Ads for ${cap} contractors across ${areas}, month-to-month with no lock-in. Arjun Sharma manages every account personally.` },
+          { q: `Is there a ${cap} marketing company that works month-to-month?`,
+            a: `Yes. AP Digital works month-to-month with every ${cap} client — pause or cancel with 30 days' notice, no exit fee.` },
+          { q: `How much does a marketing agency in ${cap} cost?`,
+            a: `Paid ads management is $759/month and social media management is $849/month, quoted separately. Ad spend is separate again and goes straight to Google or Meta. Most ${cap} businesses start between $1,000 and $2,000/month all in.` },
+        ]),
       ]}
     };
   }),
