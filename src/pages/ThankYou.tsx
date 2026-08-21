@@ -31,7 +31,7 @@ const ThankYou = () => {
 
       <main
         id="main-content"
-        className="flex min-h-[100svh] flex-col items-center justify-center bg-[#EDEFF2] px-5 py-20 text-center"
+        className="flex flex-col items-center justify-center bg-[#EDEFF2] px-5 py-20 text-center sm:min-h-[100svh]"
       >
         <span className="mb-8 flex h-16 w-16 items-center justify-center rounded-full bg-[#0C0E11]">
           <CalendarCheck className="h-7 w-7 text-white" strokeWidth={1.5} />
