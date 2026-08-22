@@ -11,8 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Digital Marketing Agency Coquitlam BC | AP Digital';
-const DESC = 'Coquitlam digital marketing focused on getting you more leads. Google Ads, Meta Ads & local SEO for salons, trades & realtors. 90-day guarantee. No lock-in.';
+const TITLE = 'Coquitlam Google & Meta Ads From $759/mo — No Lock-In';
+const DESC = 'Google Ads and Meta Ads for Coquitlam, Port Moody and Port Coquitlam businesses. From $759/month with no lock-in contract. Book a 20-minute call.';
 const CANONICAL = 'https://ap-digital.ca/coquitlam';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

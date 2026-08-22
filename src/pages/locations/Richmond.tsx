@@ -11,8 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Digital Marketing Agency Richmond BC | AP Digital';
-const DESC = 'Richmond marketing agency for salons, trades, realtors & coaches. Google Ads + Meta Ads. Month-to-month. Free strategy call.';
+const TITLE = 'Richmond Google Ads for Local Business — No Contract';
+const DESC = 'Richmond businesses in City Centre, Steveston and Brighouse: Google Ads and Meta Ads from $759/month. No contract, cancel with 30 days\' notice.';
 const CANONICAL = 'https://ap-digital.ca/richmond';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

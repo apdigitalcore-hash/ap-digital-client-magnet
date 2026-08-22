@@ -91,7 +91,7 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
     readTime: '13 min read',
-    dateModified: '2026-08-20',
+    dateModified: '2026-08-21',
     category: 'Marketing Strategy',
     content: `One of the most common questions we hear from Canadian business owners is straightforward: "How much does social media marketing actually cost?" It's a fair question — and most agencies answer with vague ranges that leave you more confused than when you started. At AP DIGITAL, we believe in transparency, so this guide breaks down real 2026 pricing for every budget tier in Canada, including what you get, what you don't, and how to choose the right investment for your business.
 
@@ -106,6 +106,8 @@ Three factors drive the price:
 - **Scope of work:** Organic posting, content creation, community management, paid ads, and reporting each add cost.
 - **Experience level:** Junior freelancers charge less; senior strategists and agencies with proven results charge more.
 - **Industry competition:** Salons and restaurants in Vancouver, Toronto, or Calgary often need more competitive ad budgets than smaller towns.
+
+Social is only one line in a wider budget. If you are planning the whole thing rather than this channel alone, our guide to [setting a digital marketing budget for a small business](/blog/digital-marketing-budget-small-business-canada) puts the channels side by side.
 
 ## Budget Tier: $500 – $1,000 per Month
 
@@ -143,7 +145,7 @@ You've seen the ads: "Social media management for $299/month." It sounds temptin
 - **High client loads:** A freelancer managing forty clients cannot give you real attention.
 - **No measurement:** Vanity metrics like likes don't pay the bills — leads do.
 
-We've spoken with dozens of Canadian business owners who spent six to twelve months with a cheap provider and ended up with flat engagement and zero leads. Effective marketing is an investment, not an expense. The right partner pays for themselves by generating revenue, not just posting content.
+We've spoken with dozens of Canadian business owners who spent six to twelve months with a cheap provider and ended up with flat engagement and zero leads. Effective marketing is an investment, not an expense. The right partner pays for themselves by generating revenue, not just posting content. The same arithmetic applies anywhere you are really buying specialist hours rather than software, which is why [what SEO actually costs in Canada](/blog/how-much-does-seo-cost-canada) has a similar floor below which very little happens.
 
 ## Social Media Marketing Cost Comparison Table
 
@@ -161,12 +163,12 @@ Note: Management fees are separate from ad spend. Ad spend is paid directly to M
 Your ad budget should match your industry and location. Here are the ranges we typically recommend for Canadian service businesses in 2026:
 
 - **Salons & beauty studios:** $500 – $1,500/month on Meta Ads targeting local clients within 10–15 km
-- **Trades & contractors:** $800 – $2,500/month on Google Ads for high-intent searches like "plumber near me"
+- **Trades & contractors:** $800 – $2,500/month on Google Ads for high-intent searches like "plumber near me" — see [what Meta Ads cost for BC contractors](/blog/meta-ads-cost-contractors-bc)
 - **Real estate agents:** $1,000 – $3,000/month on Meta Ads for buyer and seller leads in specific neighbourhoods
 - **Coaches & consultants:** $500 – $2,000/month on Meta Ads targeting ideal client demographics
 - **Restaurants & cafés:** $300 – $1,000/month on Instagram and Facebook ads for foot traffic
 
-Vancouver businesses often land at the higher end of these ranges because of higher competition and cost-per-click. Learn more in our [Meta Ads vs Google Ads comparison](/blog/best-ads-platform-for-small-business-canada).
+Vancouver businesses often land at the higher end of these ranges because of higher competition and cost-per-click — we break the local numbers down in [how much Google Ads cost in Vancouver](/blog/how-much-do-google-ads-cost-vancouver). Learn more in our [Meta Ads vs Google Ads comparison](/blog/best-ads-platform-for-small-business-canada).
 
 ## Social Media Agency Rates: How Canadian Agencies Actually Bill
 
@@ -191,7 +193,7 @@ A few things worth knowing about how these play out.
 
 ## How Much Do Social Media Ads Cost in Canada?
 
-Management fees and ad spend are two different bills, and the ads themselves are the one that goes to Meta or Google rather than to your agency. Typical 2026 costs for Canadian businesses:
+Management fees and ad spend are two different bills, and the ads themselves are the one that goes to Meta or Google rather than to your agency. If paid search is the larger part of your mix, we cover [what Google Ads cost a small business in Canada](/blog/google-ads-cost-small-business-canada) separately. Typical 2026 costs for Canadian businesses:
 
 | Platform | Cost per Click | Cost per 1,000 Impressions | Typical Cost per Lead |
 |---|---|---|---|
@@ -200,9 +202,9 @@ Management fees and ad spend are two different bills, and the ads themselves are
 | LinkedIn | $4.00 – $12.00 | $25 – $60 | $50 – $200 |
 | Google Search | $1.00 – $15.00 | n/a | $15 – $120 |
 
-Costs swing with your industry, your targeting, and — more than most people expect — your creative. A strong hook can cut cost per lead in half on the same budget and the same audience, which is why creative testing is worth more than micro-optimising bids.
+Costs swing with your industry, your targeting, and — more than most people expect — your creative. A strong hook can cut cost per lead in half on the same budget and the same audience, which is why creative testing is worth more than micro-optimising bids. Instagram rewards creative over targeting more than any other placement, and we go deeper on [what Instagram ads cost in Canada](/blog/how-much-do-instagram-ads-cost-canada).
 
-Below roughly $500/month in spend, most platforms cannot gather enough conversion data to optimise. That is the practical floor, not an agency upsell.
+Below roughly $500/month in spend, most platforms cannot gather enough conversion data to optimise. That is the practical floor, not an agency upsell. It is worth checking the other end of the funnel too — paid traffic landing on a page that does not convert wastes more money than the ads cost, and [what a website costs in Canada](/blog/how-much-does-a-website-cost-canada) covers when a rebuild is and is not worth it.
 
 ## What to Look for in a Canadian Social Media Agency
 
@@ -218,7 +220,7 @@ Before signing a contract, evaluate the agency on these criteria:
 
 **No long-term contracts.** A confident agency earns your business month after month. Be cautious of twelve-month lock-ins.
 
-At AP DIGITAL, we work with [salons](/industries/salons), [real estate agents](/industries/real-estate), [trades](/industries/trades), [coaches](/industries/coaching), and other service businesses across Canada. We serve clients in Metro Vancouver including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford), as well as businesses across Toronto, Calgary, and the rest of Canada.
+At AP DIGITAL, we work with [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades](/trades-marketing), [coaches](/coaching-marketing), and other service businesses across Canada. We serve clients in Metro Vancouver including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford), as well as businesses across Toronto, Calgary, and the rest of Canada.
 
 ## Free Social Media Budget Calculator
 
@@ -238,7 +240,7 @@ Yes — when done strategically. Random posting without a plan is usually a wast
 Facebook (Meta) Ads in Canada typically cost $5–$15 per thousand impressions (CPM) and $0.50–$3.00 per click. Lead generation campaigns usually cost $10–$50 per lead for most service businesses. Read our full [Meta Ads vs Google Ads comparison](/blog/best-ads-platform-for-small-business-canada).
 
 **What's the difference between organic and paid social media?**
-Organic social media is free content you post to your followers. Paid social media is advertising — you pay to show content to people who don't follow you yet. Most businesses need both: organic builds trust, paid generates leads. We cover this in our [email marketing vs social media guide](/blog/email-marketing-vs-social-media).
+Organic social media is free content you post to your followers. Paid social media is advertising — you pay to show content to people who don't follow you yet. Most businesses need both: organic builds trust, paid generates leads. We cover this in our [email marketing vs social media guide](/blog/email-marketing-vs-social-media), and break down [what email marketing costs in Canada](/blog/how-much-does-email-marketing-cost-canada) separately.
 
 **Should I hire a freelancer or an agency?**
 Freelancers are cheaper but usually handle execution only. Agencies provide strategy, creative, ad management, and reporting. If you need leads and measurable ROI, an agency is usually the better fit.
@@ -2768,486 +2770,6 @@ If you're a Tri-Cities business owner ready to show up first on Google, [book a 
 **AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. We also serve [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), and [Abbotsford](/abbotsford). Month-to-month, no contracts, [90-day guarantee](/pricing).`,
   },
   {
-    slug: "how-much-does-seo-cost-canada",
-    title: "How Much Does SEO Cost in Canada: 2026 Price Guide",
-    metaTitle: "How Much Does SEO Cost in Canada? 2026 Pricing Guide | AP Digital",
-    metaDescription: "Real 2026 SEO pricing for Canadian businesses. Monthly costs by tier, service type breakdown, and what to expect from local SEO to full-service packages.",
-    excerpt: "A transparent 2026 guide to SEO costs in Canada — from budget packages to full-service retainers, with pricing tables and red flags to avoid.",
-    date: "2026-08-11",
-    readTime: "9 min read",
-    category: "SEO",
-    
-    faqs: [
-      {
-        question: "How much should a small business spend on SEO in Canada?",
-        answer: "Most small businesses in Canada should budget between $1,500 and $3,000 per month for effective SEO. This range covers a full technical audit, ongoing content creation, link building, and monthly reporting. Spending less than $1,000/month typically only covers basic on-page optimization, which won't move the needle in competitive markets."
-      },
-      {
-        question: "Is SEO worth it for local businesses in BC?",
-        answer: "Absolutely. Local SEO is one of the highest-ROI marketing channels for BC businesses. When someone searches 'plumber near me' or 'best coffee shop in Vancouver,' they're ready to buy. Ranking in the local pack and organic results puts you in front of high-intent customers without paying per click. Unlike ads, the traffic keeps coming even after you stop actively investing."
-      },
-      {
-        question: "What's the difference between local SEO and national SEO?",
-        answer: "Local SEO focuses on ranking in a specific geographic area — optimizing your Google Business Profile, building local citations, earning reviews, and targeting location-based keywords. National SEO targets broader, non-geographic keywords and requires more aggressive content production and link building. Local SEO typically costs $500–$1,500/month, while national campaigns start at $3,000+/month."
-      },
-      {
-        question: "Should I do SEO or Google Ads?",
-        answer: "They serve different purposes and work best together. Google Ads delivers immediate traffic but stops the moment you pause spending. SEO takes 3–6 months to gain traction but compounds over time, delivering free organic traffic for years. If you need leads now, start with Google Ads. If you're building for long-term growth, invest in SEO. The ideal strategy combines both."
-      },
-      {
-        question: "How much does local SEO cost in Vancouver?",
-        answer: "Local SEO in Vancouver typically costs between $1,000 and $2,500 per month depending on your industry's competitiveness. Highly competitive sectors like real estate, legal, and dental may require $2,000–$3,000/month. Less competitive niches can see results with $800–$1,500/month. The cost reflects Vancouver's competitive digital landscape compared to smaller BC markets."
-      },
-      {
-        question: "Can I do SEO myself?",
-        answer: "You can handle basic SEO yourself — claiming your Google Business Profile, writing blog posts, and optimizing title tags. However, technical SEO, link building, and competitive keyword strategy require specialized tools and expertise. Most business owners find that the time investment of DIY SEO (10–20 hours/month) is better spent on their core business, making professional SEO services a better ROI."
-      }
-    ],
-    content: `If you're a Canadian business owner researching SEO pricing, here's the direct answer: **SEO in Canada costs $500–$5,000+ per month** depending on the scope of work, your industry's competitiveness, and whether you hire a freelancer or agency. This guide breaks down real 2026 pricing so you can budget with confidence.
-
-Whether you're a [Vancouver](/vancouver) startup or an established [Surrey](/surrey) business, understanding what you're paying for — and what you should expect in return — is the first step to making a smart investment in organic search.
-
-## SEO Costs in Canada: The Big Picture
-
-Three factors drive SEO pricing more than anything else:
-
-1. **Scope of work** — Are you looking for basic on-page optimization, or a full-service strategy including content, link building, and technical SEO?
-2. **Competition level** — Ranking a plumber in [Abbotsford](/abbotsford) costs less than ranking a real estate agent in downtown [Vancouver](/vancouver).
-3. **Agency experience** — Solo freelancers charge less than established agencies, but may lack the team depth for complex campaigns.
-
-**Local SEO vs. national SEO** is the biggest cost divider. A local campaign targeting "[Burnaby](/burnaby) dentist" might cost $1,000/month, while a national campaign targeting "best CRM software Canada" could require $5,000+/month in content and link building alone.
-
-## Budget Tier: $500 – $1,000 per Month
-
-At this level, you're getting foundational SEO work:
-
-- Basic on-page optimization (title tags, meta descriptions, header structure)
-- Google Business Profile setup and optimization
-- 2–4 blog posts per month
-- Basic monthly reporting
-
-**Best for:** New businesses establishing their initial online presence, or companies in low-competition niches.
-
-**Limitations:** This budget won't move the needle in competitive markets like Vancouver real estate or Toronto legal services. You'll see slow, incremental improvements but shouldn't expect page-one rankings for high-value keywords within the first year.
-
-## Growth Tier: $1,500 – $3,000 per Month
-
-This is where SEO starts delivering real business results:
-
-- Full technical SEO audit and ongoing fixes
-- Content strategy aligned with search intent
-- 4–8 optimized blog posts per month
-- Strategic link building (outreach-based, not purchased)
-- Monthly reporting with lead tracking and revenue attribution
-
-**Best for:** Small businesses serious about ranking in competitive local markets. If you're a [Richmond](/richmond) contractor, [Langley](/langley) dental practice, or [Surrey](/surrey) law firm, this tier gives you the firepower to compete.
-
-This is where most Vancouver and BC businesses should start. You get a dedicated strategist, consistent content production, and the link building necessary to outrank established competitors. Learn more about our [SEO services](/services/seo).
-
-## Full-Service Tier: $3,000 – $5,000+ per Month
-
-Enterprise-level SEO for businesses that need to dominate their market:
-
-- Dedicated SEO strategist with regular strategy calls
-- Aggressive content production (8–12+ pieces per month)
-- Advanced link building campaigns targeting high-authority sites
-- Conversion rate optimization (CRO) for landing pages
-- Competitor monitoring and gap analysis
-- Multi-location SEO management
-
-**Best for:** Established businesses in highly competitive markets, multi-location brands, and companies where organic search is a primary revenue channel.
-
-## SEO Cost Comparison Table
-
-| Service Level | Monthly Cost | Deliverables | Timeline to Results | Best For |
-|---|---|---|---|---|
-| DIY | $0–$200 | Self-managed, basic tools | 12–18 months | Bootstrapped startups |
-| Freelancer | $500–$1,500 | On-page SEO, basic content | 6–12 months | Low-competition niches |
-| Boutique Agency | $1,500–$3,000 | Full strategy, content, links | 3–6 months | Competitive local markets |
-| Full-Service Agency | $3,000–$5,000+ | Everything above + CRO, dedicated strategist | 2–4 months for initial wins | Established businesses, multi-location |
-
-## SEO Cost by Service Type
-
-| Service | Typical Cost | What's Included |
-|---|---|---|
-| Local SEO | $500–$1,500/mo | GBP optimization, local citations, review strategy, local content |
-| Technical SEO | $1,000–$3,000 (one-time) | Site audit, speed optimization, schema markup, crawl fixes |
-| Content SEO | $1,000–$3,000/mo | Keyword research, blog strategy, content creation, on-page optimization |
-| Link Building | $500–$2,000/mo | Outreach campaigns, guest posting, digital PR, citation building |
-| Full-Service SEO | $2,000–$5,000+/mo | All of the above combined with strategy and reporting |
-
-## Red Flags in Cheap SEO Packages
-
-If an SEO provider offers any of the following, walk away:
-
-- **Guaranteed rankings** — Nobody can guarantee Google rankings. Google's algorithm uses hundreds of factors and changes constantly. Any agency promising "#1 in 30 days" is either lying or using tactics that will get your site penalized.
-- **No reporting or vague metrics** — If they can't show you exactly what they're doing and how it's impacting your traffic, leads, and revenue, you're flying blind.
-- **Black hat tactics** — Buying links from PBNs, keyword stuffing, cloaking, or any shortcut that violates Google's guidelines. These might work short-term but will destroy your rankings when Google catches on.
-- **Long-term contracts with no performance benchmarks** — Reputable agencies offer month-to-month agreements or short commitments with clear KPIs. If they need to lock you into a 12-month contract, ask why.
-- **Outsourced content that doesn't match your brand voice** — Generic, AI-generated blog posts stuffed with keywords won't convert visitors into customers. Your content should sound like your business.
-
-Read our [Vancouver small business SEO guide](/blog/vancouver-small-business-seo-guide) for more on choosing the right SEO partner.
-
-## How Long Does SEO Take to Work?
-
-SEO is a long-game strategy. Here's a realistic timeline:
-
-- **Months 1–3:** Technical fixes implemented, initial on-page optimization complete, content strategy developed and first pieces published. You may see minor ranking improvements for low-competition keywords.
-- **Months 3–6:** Content gaining traction in search results, rankings improving for target keywords, organic traffic beginning to climb. Google is starting to trust your site's authority.
-- **Months 6–12:** Significant organic traffic growth, rankings established for competitive keywords, consistent lead flow from organic search. Your content library is compounding.
-
-The key insight: **SEO compounds over time.** Unlike [Google Ads](/services/paid-ads) where traffic stops the moment you stop paying, SEO builds lasting assets. A blog post that ranks today will continue driving traffic for years with minimal maintenance.
-
-## Frequently Asked Questions
-
-**How much should a small business spend on SEO in Canada?**
-
-Most small businesses in Canada should budget between $1,500 and $3,000 per month for effective SEO. This range covers a full technical audit, ongoing content creation, link building, and monthly reporting. Spending less than $1,000/month typically only covers basic on-page optimization, which won't move the needle in competitive markets.
-
-**Is SEO worth it for local businesses in BC?**
-
-Absolutely. Local SEO is one of the highest-ROI marketing channels for BC businesses. When someone searches "plumber near me" or "best coffee shop in Vancouver," they're ready to buy. Ranking in the local pack and organic results puts you in front of high-intent customers without paying per click. Unlike ads, the traffic keeps coming even after you stop actively investing.
-
-**What's the difference between local SEO and national SEO?**
-
-Local SEO focuses on ranking in a specific geographic area — optimizing your Google Business Profile, building local citations, earning reviews, and targeting location-based keywords. National SEO targets broader, non-geographic keywords and requires more aggressive content production and link building. Local SEO typically costs $500–$1,500/month, while national campaigns start at $3,000+/month.
-
-**Should I do SEO or Google Ads?**
-
-They serve different purposes and work best together. [Google Ads](/services/paid-ads) delivers immediate traffic but stops the moment you pause spending. SEO takes 3–6 months to gain traction but compounds over time, delivering free organic traffic for years. If you need leads now, start with ads. If you're building for long-term growth, invest in SEO. The ideal strategy combines both.
-
-**How much does local SEO cost in Vancouver?**
-
-Local SEO in Vancouver typically costs between $1,000 and $2,500 per month depending on your industry's competitiveness. Highly competitive sectors like real estate, legal, and dental may require $2,000–$3,000/month. Less competitive niches can see results with $800–$1,500/month. The cost reflects [Vancouver's](/vancouver) competitive digital landscape compared to smaller BC markets.
-
-**Can I do SEO myself?**
-
-You can handle basic SEO yourself — claiming your Google Business Profile, writing blog posts, and optimizing title tags. However, technical SEO, link building, and competitive keyword strategy require specialized tools and expertise. Most business owners find that the time investment of DIY SEO (10–20 hours/month) is better spent on their core business, making professional [SEO services](/services/seo) a better ROI.
-
-## Ready to Invest in SEO That Actually Works?
-
-Stop guessing what SEO should cost and start getting results. At AP Digital, we offer transparent, month-to-month SEO packages with no long-term contracts and a [90-day guarantee](/pricing).
-
-**[Book your free 20-minute strategy call](https://calendly.com/apdigital-core/20min)** — we'll audit your current SEO performance, analyze your competitors, and recommend the right investment level for your goals.
-
-We specialize in [SEO services](/services/seo) and [paid ads](/services/paid-ads) for businesses across BC — including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), and [Abbotsford](/abbotsford). Month-to-month, no contracts.`,
-  },
-  {
-    slug: "how-much-does-email-marketing-cost-canada",
-    title: "How Much Does Email Marketing Cost in Canada: 2026 Guide",
-    metaTitle: "How Much Does Email Marketing Cost in Canada? 2026 Guide | AP Digital",
-    metaDescription: "Email marketing costs in Canada: platform pricing, agency fees, and ROI benchmarks. Compare Mailchimp, Klaviyo, and more in this 2026 guide.",
-    excerpt: "What does email marketing cost in Canada? Platform pricing compared, agency fees, and ROI data — everything you need to budget for 2026.",
-    date: "2026-08-11",
-    readTime: "7 min read",
-    category: "Strategy",
-    faqs: [
-      {
-        question: "How much should I budget for email marketing in Canada?",
-        answer: "Most Canadian small businesses spend $100–$500/month on email marketing platforms alone. If you add agency management, expect $500–$3,000/month depending on the scope. A reasonable starting budget for a small business is $200–$800/month total.",
-      },
-      {
-        question: "What is the best email marketing platform for small businesses in Canada?",
-        answer: "Mailchimp and ConvertKit are excellent for small businesses just getting started — both offer free tiers and intuitive interfaces. If you run an e-commerce store, Klaviyo is the top choice for its advanced segmentation and revenue tracking. HubSpot is ideal if you need CRM integration.",
-      },
-      {
-        question: "How often should I send marketing emails?",
-        answer: "For most Canadian businesses, 1–4 emails per month is the sweet spot. E-commerce brands can send more frequently (2–3 per week) during promotions. The key is consistency and value — every email should give the reader a reason to open it.",
-      },
-      {
-        question: "Is email marketing still worth it in 2026?",
-        answer: "Absolutely. Email marketing delivers an average ROI of $36–$42 per dollar spent, making it the highest-ROI digital marketing channel. Unlike social media, you own your email list — no algorithm changes can take away your audience.",
-      },
-      {
-        question: "What is CASL and how does it affect email marketing in Canada?",
-        answer: "CASL (Canada's Anti-Spam Legislation) requires businesses to obtain explicit consent before sending commercial emails to Canadian recipients. You must include an unsubscribe mechanism in every email, identify yourself clearly, and keep records of consent. Penalties for non-compliance can reach $10 million per violation.",
-      },
-      {
-        question: "Should I do email marketing myself or hire an agency?",
-        answer: "DIY works well if you have a small list (under 2,000 subscribers) and basic needs like a monthly newsletter. Hire an agency when you need advanced automation, segmentation, A/B testing, or when your list exceeds 5,000 subscribers and the revenue opportunity justifies professional management.",
-      },
-    ],
-    content: `Email marketing in Canada costs anywhere from $0 to $3,000+ per month, depending on your list size, platform choice, and whether you manage campaigns in-house or hire an agency. Platform fees range from free (for small lists) to $300+ per month for advanced features. Agency management adds $500–$2,000 per month on top of that.
-
-Despite the costs, email marketing delivers the highest ROI of any digital channel — $36–$42 per dollar spent on average. That makes it one of the smartest investments a Canadian business can make. Here's exactly what you should expect to pay and how to get the most from your budget.
-
-## Email Marketing Platform Cost Comparison
-
-Choosing the right platform is the single biggest cost decision you'll make. Here's how the major options stack up in 2026:
-
-| Platform | Free Tier | Growth Plan | Pro Plan | Best For |
-|---|---|---|---|---|
-| **Mailchimp** | Up to 500 contacts | $13–$45/mo (500–2,500 contacts) | $87–$350/mo (advanced features) | Small businesses, beginners |
-| **Klaviyo** | Up to 250 contacts | $20–$100/mo (500–5,000 contacts) | $150–$700/mo (advanced analytics) | E-commerce, Shopify stores |
-| **Constant Contact** | No free tier | $12–$45/mo (basic) | $80–$300/mo (automation) | Local businesses, nonprofits |
-| **HubSpot** | Up to 2,000 contacts (limited) | $50–$180/mo (starter) | $890+/mo (professional) | Businesses needing CRM integration |
-| **ConvertKit** | Up to 1,000 contacts | $25–$50/mo (1,000–3,000 contacts) | $50–$140/mo (advanced automation) | Creators, coaches, consultants |
-
-Most Canadian small businesses find their sweet spot with Mailchimp or ConvertKit for basic campaigns, and Klaviyo if they're running an online store.
-
-## Agency Email Marketing Costs
-
-Managing email marketing yourself is affordable but time-consuming. Hiring an agency gives you strategy, design, and optimization — but at a higher price point. Here's what Canadian agencies typically charge:
-
-### Basic Tier — $500–$1,000/month
-- 2–4 email campaigns per month
-- Template-based email design
-- Basic automation (welcome series, abandoned cart)
-- Monthly performance reporting
-- Best for: Small businesses with lists under 5,000
-
-### Growth Tier — $1,000–$2,000/month
-- Full email strategy and content calendar
-- A/B testing on subject lines, send times, and content
-- Advanced segmentation (behavior, purchase history, engagement)
-- Multi-step automation flows
-- Best for: Growing businesses with 5,000–25,000 subscribers
-
-### Full-Service Tier — $2,000–$3,000+/month
-- Dedicated email marketing strategist
-- Custom email design (not templates)
-- Advanced automation flows (re-engagement, win-back, post-purchase)
-- CRM integration and data management
-- Detailed analytics and revenue attribution
-- Best for: Established businesses with 25,000+ subscribers or significant e-commerce revenue
-
-## Cost Per Subscriber Benchmarks
-
-Your total email marketing cost scales directly with your list size. Here's what to expect across platforms as your subscriber count grows:
-
-- **1,000 subscribers:** $15–$50/month on most platforms. Free on Mailchimp and ConvertKit.
-- **5,000 subscribers:** $50–$150/month. This is where costs start to separate between platforms — Klaviyo and HubSpot charge more but offer stronger automation.
-- **10,000 subscribers:** $100–$300/month. You'll likely need a paid plan on every platform at this level.
-- **25,000 subscribers:** $200–$500/month. Advanced segmentation and automation become essential to manage this list size effectively.
-- **50,000+ subscribers:** $350–$1,000+/month. At this scale, platform choice matters enormously — deliverability, analytics, and support quality justify paying more.
-
-The cost per subscriber decreases as your list grows, but only if you maintain list hygiene. A clean, engaged 10,000-subscriber list will outperform a bloated 50,000-subscriber list every time.
-
-## Email Marketing ROI
-
-Email marketing's ROI is unmatched. Here's how it compares to other digital marketing channels:
-
-- **Email marketing:** $36–$42 return per $1 spent
-- **SEO:** $22 return per $1 spent (long-term)
-- **Social media marketing:** $2.80 return per $1 spent
-- **Paid ads (Google/Meta):** $2–$8 return per $1 spent
-
-Why does email outperform everything else? You own the channel. There's no algorithm deciding who sees your message. When someone gives you their email address, you have a direct line to their inbox. Compare that to [social media marketing](/blog/email-marketing-vs-social-media), where organic reach on Instagram and Facebook sits at 2–5% of your followers.
-
-For a Canadian business spending $500/month on email marketing (platform + basic agency management), a 36x ROI means $18,000 in monthly revenue attributed to email. Even at half that benchmark, it's a strong return.
-
-## What to Look for in an Email Marketing Provider
-
-Not all platforms are created equal. Here's what matters most when choosing one for your Canadian business:
-
-### Deliverability
-The most important metric is whether your emails actually reach the inbox. Look for platforms with deliverability rates above 95%. Mailchimp and Klaviyo consistently score well here. Poor deliverability means you're paying to send emails nobody sees.
-
-### Automation
-Modern email marketing runs on automation. At minimum, you need welcome sequences, abandoned cart emails, and re-engagement campaigns. More advanced platforms offer behavioral triggers, dynamic content, and predictive send-time optimization.
-
-### Templates and Design
-Unless you're hiring a designer, you'll need solid templates. Look for mobile-responsive designs that match your brand. Drag-and-drop editors save hours of work.
-
-### Analytics
-You need to track open rates, click-through rates, conversion rates, and revenue per email. Platforms like Klaviyo and HubSpot offer revenue attribution out of the box — essential for proving ROI.
-
-### CASL Compliance
-Canadian businesses must comply with CASL (Canada's Anti-Spam Legislation). Your platform should support double opt-in, easy unsubscribe mechanisms, and consent tracking. Non-compliance penalties can reach $10 million per violation — this isn't optional.
-
-Look for platforms that automatically manage consent records and make it easy to prove when and how each subscriber opted in.
-
-## Frequently Asked Questions
-
-**How much should I budget for email marketing in Canada?**
-Most Canadian small businesses spend $100–$500/month on platforms alone. Add agency management for $500–$3,000/month depending on scope. A reasonable starting budget is $200–$800/month total.
-
-**What is the best email marketing platform for small businesses in Canada?**
-Mailchimp and ConvertKit are excellent for beginners with free tiers and simple interfaces. Klaviyo is the top choice for e-commerce. HubSpot works best if you need CRM integration.
-
-**How often should I send marketing emails?**
-1–4 emails per month works for most businesses. E-commerce brands can send 2–3 per week during promotions. Consistency and value matter more than frequency.
-
-**Is email marketing still worth it in 2026?**
-Yes. Email delivers $36–$42 per dollar spent — the highest ROI of any digital channel. Unlike [social media](/services/social-media), you own your list and no algorithm can reduce your reach.
-
-**What is CASL and how does it affect my email marketing?**
-CASL requires explicit consent before sending commercial emails to Canadians. Every email must include an unsubscribe link, clear sender identification, and you must keep consent records. Penalties reach $10 million per violation.
-
-**Should I do email marketing myself or hire an agency?**
-DIY works for small lists under 2,000 subscribers with basic needs. Hire an agency when you need advanced automation, segmentation, or when your list and revenue justify professional management.
-
-## Ready to Build an Email Marketing Strategy That Pays for Itself?
-
-At AP Digital, we help Canadian businesses build email marketing systems that generate measurable revenue — from platform selection and list building to automation and ongoing campaign management.
-
-**[Book your free 20-minute strategy call](https://calendly.com/apdigital-core/20min)** — we'll review your current email setup, identify quick wins, and recommend the right investment level for your business.
-
-We also offer [social media management](/services/social-media) and [paid advertising](/services/paid-ads) for businesses across BC — including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), and [Abbotsford](/abbotsford). Month-to-month, no contracts.`,
-  },
-  {
-    slug: "how-much-does-a-website-cost-canada",
-    title: "How Much Does a Website Cost in Canada: 2026 Pricing Guide",
-    metaTitle: "How Much Does a Website Cost in Canada? 2026 Guide | AP Digital",
-    metaDescription: "Website costs in Canada range from $0 to $25,000+. This 2026 guide breaks down pricing by type, ongoing costs, and what small businesses actually need.",
-    excerpt: "A transparent 2026 guide to website costs in Canada — from DIY builders to custom agency builds, with real pricing and ongoing cost breakdowns.",
-    date: "2026-08-11",
-    readTime: "8 min read",
-    category: "Digital Marketing",
-    content: `# How Much Does a Website Cost in Canada: 2026 Pricing Guide
-
-A website in Canada costs anywhere from $0 (DIY builder) to $25,000+ (custom agency build). Most small businesses spend **$2,000–$8,000** for a professional site that actually generates leads. This guide breaks down what you'll actually pay — by website type, ongoing costs, and hidden expenses most businesses don't see coming.
-
-Whether you're launching a new business or redesigning an outdated site, understanding real pricing helps you budget properly and avoid overpaying.
-
-## Website Cost by Type
-
-### DIY / Website Builder ($0–$500)
-
-Platforms like Wix, Squarespace, and WordPress.com let you build a basic website yourself. Monthly plans range from free (with platform branding) to about $40/month for business-level features.
-
-**Best for:** Testing a business idea, personal portfolios, or hobby sites.
-
-**Limitations:** Template-based designs with limited customization, basic SEO capabilities, and restricted functionality. You'll spend significant time learning the platform, and the result often looks generic.
-
-### Freelance Web Designer ($1,500–$5,000)
-
-A freelance designer builds a custom WordPress or Squarespace site tailored to your brand. You typically get 4–8 pages, mobile-responsive design, basic SEO setup, and a content management system you can update yourself.
-
-**Best for:** Small businesses that need a professional online presence without a massive budget.
-
-**What's included:** Custom design, contact forms, Google Analytics setup, basic on-page SEO, and mobile responsiveness.
-
-### Agency Website ($5,000–$15,000)
-
-A [professional web design agency](/services/web-design) delivers a fully custom site built for conversions. This includes strategic planning, custom design, conversion optimization, SEO-ready architecture, CMS training, and ongoing support.
-
-**Best for:** Established businesses that need their website to actively generate leads and revenue.
-
-**What's included:** Discovery and strategy, custom UI/UX design, conversion-optimized layouts, full [SEO setup](/services/seo), CMS training, and post-launch support.
-
-### Custom / E-commerce ($15,000–$25,000+)
-
-Enterprise-level websites, Shopify Plus stores, custom web applications, and sites with complex integrations (booking systems, membership portals, API connections) fall into this tier.
-
-**Best for:** E-commerce businesses, SaaS companies, and organizations with complex functionality requirements.
-
-## Website Cost Comparison Table
-
-| Type | Cost Range | Timeline | Maintenance | Best For |
-|---|---|---|---|---|
-| DIY / Website Builder | $0–$500 | 1–2 weeks | Self-managed | Testing ideas, hobby sites |
-| Freelance Designer | $1,500–$5,000 | 3–6 weeks | Limited or self-managed | Small businesses on a budget |
-| Agency Website | $5,000–$15,000 | 6–12 weeks | Ongoing support included | Lead generation, professional services |
-| Custom / E-commerce | $15,000–$25,000+ | 8–16+ weeks | Dedicated support required | Online stores, complex applications |
-
-## Ongoing Website Costs Most Businesses Forget
-
-Building the site is only the upfront cost. Every website has recurring expenses that add up over the year:
-
-- **Domain name:** $15–$25/year for a .ca or .com domain
-- **Hosting:** $10–$50/month for shared hosting, or $50–$200/month for managed WordPress hosting
-- **SSL certificate:** Free with most modern hosts (Let's Encrypt), or $50–$200/year for extended validation
-- **Maintenance and updates:** $50–$200/month for plugin updates, security patches, and backups
-- **Content updates:** $500–$2,000/month if you outsource blog writing, page updates, or image changes
-
-**Total ongoing cost for most small businesses: $100–$500/month.** Factor this into your budget from day one.
-
-## Hidden Costs That Add Up
-
-Beyond the build and monthly maintenance, several one-time costs catch businesses off guard:
-
-- **Stock photography:** $200–$500 for a set of professional, non-generic images
-- **Professional copywriting:** $500–$2,000 for website copy that actually converts visitors into leads
-- **Custom functionality:** $500–$3,000 for booking systems, payment processing, custom forms, or calculators
-- **SEO setup:** $500–$1,500 one-time for keyword research, meta tags, schema markup, and site structure optimization
-- **Email setup and integration:** $200–$500 for business email, newsletter integration, and automated responses
-
-These aren't optional extras — they're what separates a website that sits there from one that generates business.
-
-## What Canadian Small Businesses Actually Need
-
-For most service-based businesses in Canada, you don't need a 50-page website with every feature imaginable. Here's what actually moves the needle:
-
-- **5–7 pages:** Home, Services (with individual service pages), About, Contact, and Blog
-- **Mobile-first design:** Over 60% of Canadian web traffic comes from mobile devices. Your site must look and work perfectly on phones
-- **Fast loading speed:** Under 3 seconds. Every additional second of load time increases bounce rates by roughly 30%
-- **Clear calls to action:** Every page should guide visitors toward contacting you or booking a consultation
-- **Local SEO foundation:** Google Business Profile integration, local schema markup, and city-specific content
-
-A well-built [5–7 page website](/services/web-design) with these fundamentals will outperform a bloated, expensive site that tries to do everything.
-
-## Red Flags When Hiring a Web Designer
-
-Not every web designer or agency delivers equal value. Watch for these warning signs:
-
-- **No portfolio or case studies** — If they can't show you past work, proceed with caution
-- **No mention of mobile responsiveness** — In 2026, this is non-negotiable. If they don't bring it up, they're behind
-- **Domain and hosting ownership not transferred to you** — You should always own your domain name and have full access to your hosting account
-- **No SEO basics included** — Any professional website should include on-page SEO fundamentals. If SEO is a costly add-on for basic meta tags and site structure, look elsewhere
-- **Long-term hosting lock-in contracts** — Avoid agencies that require multi-year hosting contracts. Month-to-month or annual agreements are standard
-
-## Frequently Asked Questions
-
-**How much does a basic website cost for a small business in Canada?**
-
-A basic professional website for a small business in Canada typically costs $2,000–$8,000. This gets you a custom-designed, mobile-responsive site with 5–7 pages, contact forms, and basic SEO. DIY builders can cost under $500, but the quality and conversion potential are significantly lower.
-
-**Should I use WordPress or Squarespace?**
-
-WordPress offers more flexibility, customization, and SEO capabilities — it's the better choice for businesses that plan to grow their online presence, add a blog, or need custom functionality. Squarespace is simpler and easier to maintain but more limited. For most Canadian small businesses focused on lead generation, WordPress is the stronger long-term investment.
-
-**How long does it take to build a website?**
-
-A DIY website can be ready in 1–2 weeks. A freelance-designed site takes 3–6 weeks. An agency-built website typically takes 6–12 weeks from discovery to launch. Custom e-commerce or web applications can take 8–16+ weeks. The biggest variable is how quickly you provide content (copy, images, brand assets).
-
-**Do I need a website if I have social media?**
-
-Yes. Social media is rented space — you don't control the algorithm, the platform, or your reach. A website is the only digital asset you fully own. It's where serious buyers go to evaluate your business, and it's the foundation of your [SEO strategy](/services/seo). Social media drives awareness; your website closes the deal.
-
-**How much does website maintenance cost per month?**
-
-Website maintenance for a small business in Canada runs $50–$200/month for basic upkeep (updates, backups, security monitoring). If you add content updates, that can increase to $500–$2,000/month depending on frequency. Many agencies, including ours, include maintenance in their [service packages](/services/web-design).
-
-**Is it cheaper to redesign or build a new website?**
-
-It depends on your current site's foundation. If your existing site uses a modern CMS (WordPress, Shopify) with decent hosting, a redesign is usually 20–40% cheaper than a full rebuild. If your site is on an outdated platform, uses custom code that no one can maintain, or has fundamental structural issues, building new is often more cost-effective in the long run.
-
-## Get a Transparent Website Quote
-
-At AP Digital, we believe in transparent pricing with no surprises. We build conversion-focused websites for Canadian small businesses — [web design](/services/web-design) that's built to generate leads, not just look pretty. Paired with [SEO](/services/seo) and [paid ads](/services/paid-ads) to drive traffic from day one.
-
-We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), and [Abbotsford](/abbotsford). Month-to-month, no contracts, [90-day guarantee](/pricing).
-
-**[Book your free 20-minute strategy call](https://calendly.com/apdigital-core/20min)** and we'll give you an honest quote based on exactly what your business needs.`,
-    faqs: [
-      {
-        question: "How much does a basic website cost for a small business in Canada?",
-        answer: "A basic professional website for a small business in Canada typically costs $2,000–$8,000. This gets you a custom-designed, mobile-responsive site with 5–7 pages, contact forms, and basic SEO. DIY builders can cost under $500, but the quality and conversion potential are significantly lower."
-      },
-      {
-        question: "Should I use WordPress or Squarespace?",
-        answer: "WordPress offers more flexibility, customization, and SEO capabilities — it's the better choice for businesses that plan to grow their online presence, add a blog, or need custom functionality. Squarespace is simpler and easier to maintain but more limited. For most Canadian small businesses focused on lead generation, WordPress is the stronger long-term investment."
-      },
-      {
-        question: "How long does it take to build a website?",
-        answer: "A DIY website can be ready in 1–2 weeks. A freelance-designed site takes 3–6 weeks. An agency-built website typically takes 6–12 weeks from discovery to launch. Custom e-commerce or web applications can take 8–16+ weeks. The biggest variable is how quickly you provide content (copy, images, brand assets)."
-      },
-      {
-        question: "Do I need a website if I have social media?",
-        answer: "Yes. Social media is rented space — you don't control the algorithm, the platform, or your reach. A website is the only digital asset you fully own. It's where serious buyers go to evaluate your business, and it's the foundation of your SEO strategy. Social media drives awareness; your website closes the deal."
-      },
-      {
-        question: "How much does website maintenance cost per month?",
-        answer: "Website maintenance for a small business in Canada runs $50–$200/month for basic upkeep (updates, backups, security monitoring). If you add content updates, that can increase to $500–$2,000/month depending on frequency."
-      },
-      {
-        question: "Is it cheaper to redesign or build a new website?",
-        answer: "It depends on your current site's foundation. If your existing site uses a modern CMS with decent hosting, a redesign is usually 20–40% cheaper than a full rebuild. If your site is on an outdated platform or has fundamental structural issues, building new is often more cost-effective in the long run."
-      }
-    ],
-  },
-  {
     slug: 'how-much-do-instagram-ads-cost-canada',
     title: 'How Much Do Instagram Ads Cost in Canada: 2026 Guide',
     metaTitle: 'How Much Do Instagram Ads Cost in Canada? 2026 Guide | AP Digital',
@@ -3932,6 +3454,443 @@ We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby]
       { question: 'Do Google reviews help SEO?', answer: 'Yes — significantly. Google considers review quantity, recency, average rating, and responses as local search ranking factors.' },
       { question: 'How do I remove fake Google reviews?', answer: 'Flag the review through your Google Business Profile. If Google doesn\'t act, escalate through support with evidence the reviewer was never a customer.' },
       { question: "What's the best time to ask for a Google review?", answer: 'Immediately after delivering great service — within minutes if possible, or within 24 hours at most.' },
+    ],
+  },
+  {
+    slug: 'how-much-does-seo-cost-canada',
+    title: 'How Much Does SEO Cost in Canada: 2026 Price Guide',
+    metaTitle: 'How Much Does SEO Cost in Canada? 2026 Price Guide',
+    metaDescription: 'Real 2026 SEO pricing in Canada: monthly retainers, one-off project costs, hourly rates, and what each budget actually buys you. No vague ranges.',
+    excerpt: 'Canadian SEO runs $750 to $3,500 a month for most small businesses, with one-off projects between $1,500 and $7,500. Here is what each tier actually includes, what drives the price up, and how long before it pays for itself.',
+    date: '2026-08-11',
+    dateModified: '2026-08-21',
+    readTime: '12 min read',
+    category: 'SEO',
+    content: `Most Canadian small businesses pay between **$750 and $3,500 per month** for ongoing SEO in 2026. One-off projects — a technical audit, a local SEO setup, a migration cleanup — run **$1,500 to $7,500** depending on the size of the site. Freelancers and independent consultants bill **$75 to $200 per hour**, and agencies serving competitive national markets routinely quote **$5,000 to $15,000 per month**.
+
+That is the direct answer, and most articles on this subject will not give it to you. They hedge, because a real number invites comparison. This guide breaks down what each tier buys, what pushes your price up or down, and how to tell whether a quote is fair before you sign anything.
+
+## SEO Costs in Canada: The Big Picture
+
+SEO pricing is driven by labour, not software. When you pay an agency $2,000 a month, you are buying somewhere between 10 and 20 hours of specialist time — strategy, content, technical fixes, and link acquisition. That is why the cheap end of the market struggles to deliver: at $400 a month, nobody can afford to spend meaningful hours on your site.
+
+Three factors set the price:
+
+- **Competition in your market.** Ranking a plumber in Abbotsford is a different job from ranking a law firm in downtown Toronto. More competitors means more content and more links to move the same distance.
+- **The state of your site.** A five-page site built last year needs less remediation than a 400-page site with a decade of accumulated technical debt, duplicate pages, and broken redirects.
+- **Scope.** Local SEO for one location is the cheapest meaningful engagement. Add multiple locations, e-commerce, or national keywords and the hours multiply.
+
+## Budget Tier: $750 – $1,500 per Month
+
+This is where most Canadian small businesses start, and for a single-location local business it is often genuinely enough.
+
+**What you should get at this price:**
+
+- Google Business Profile optimization and ongoing management
+- Local citation building and NAP consistency cleanup
+- On-page optimization for 10–20 core pages
+- One to two pieces of new content per month
+- Basic technical fixes — page speed, mobile usability, broken links
+- Monthly reporting on rankings, traffic, and calls
+
+**What you will not get:** aggressive link building, large content volume, or fast movement on competitive head terms. This tier wins on local intent — "plumber near me", "salon in Kitsilano" — not on broad national keywords.
+
+**Best for:** single-location service businesses, trades, salons, clinics, and restaurants competing within one city.
+
+## Growth Tier: $1,500 – $3,500 per Month
+
+The most common tier for businesses that have outgrown local-only visibility.
+
+**What you should get:**
+
+- Everything in the budget tier
+- Four to eight pieces of content per month, researched against actual search demand
+- Ongoing link acquisition through digital PR, partnerships, or outreach
+- Conversion rate work on the pages that already get traffic
+- Multi-location or multi-service-page architecture
+- Competitor gap analysis and quarterly strategy revision
+
+**Best for:** businesses in competitive metros, companies with several service lines, or anyone who has plateaued on local results and needs to compete for higher-volume terms.
+
+## Competitive Tier: $3,500 – $8,000+ per Month
+
+At this level you are usually paying for a team rather than an individual, and for markets where the top three results are held by well-funded incumbents.
+
+**What you should get:**
+
+- A dedicated strategist plus content and technical specialists
+- 8–20 pieces of content per month
+- Serious link acquisition budget
+- Custom technical development — schema, site architecture, Core Web Vitals engineering
+- Integration with paid search so the two channels stop competing for the same terms
+
+**Best for:** e-commerce, SaaS, multi-location franchises, legal, finance, and medical — categories where a single new customer is worth thousands.
+
+## One-Off SEO Projects and Audits
+
+Not every SEO engagement is a retainer. Common project pricing in Canada:
+
+| Project | Typical Cost | Timeline |
+|---|---|---|
+| Technical SEO audit | $1,500 – $4,000 | 2 – 4 weeks |
+| Local SEO setup (1 location) | $1,000 – $2,500 | 2 – 3 weeks |
+| Keyword research and content plan | $1,000 – $3,000 | 2 – 3 weeks |
+| Site migration / redirect mapping | $2,500 – $7,500 | 3 – 6 weeks |
+| One-time on-page optimization | $1,500 – $5,000 | 3 – 5 weeks |
+
+A project is the right choice when you have in-house capacity to implement the recommendations. If nobody on your team will action the audit, a retainer is better value — an unread audit is the most expensive document in marketing.
+
+## SEO Cost Comparison Table
+
+| Service Level | Monthly Fee | Hours/Month | What You Get | Best For |
+|---|---|---|---|---|
+| Cheap / offshore | $200 – $600 | Unclear | Templated reports, low-quality links | Almost nobody |
+| Freelancer | $750 – $1,500 | 8 – 15 | Focused local work, one specialist | Single-location local business |
+| Growth agency | $1,500 – $3,500 | 15 – 30 | Content, links, technical, strategy | Competitive local or multi-service |
+| Full-service agency | $3,500 – $8,000+ | 30 – 60+ | Dedicated team, custom development | E-commerce, national, high-value niches |
+
+## What Actually Drives Your SEO Price Up or Down
+
+**Pushes the price up:** a large existing site with technical debt, multiple locations, multiple languages, e-commerce with thousands of SKUs, a competitive category, a history of penalties or spammy link building, and any requirement for regulated-industry content review.
+
+**Pulls the price down:** a small clean site, a single location, a niche with low competition, existing brand authority, and an in-house team that can implement recommendations without the agency doing the work.
+
+The single biggest cost driver is competition. If the businesses ranking above you are spending $8,000 a month, $1,000 a month will not close that gap — not because the work is bad, but because the arithmetic does not work.
+
+## Local SEO vs National SEO: Why the Price Differs
+
+Local SEO is cheaper because the competitive field is smaller and Google Business Profile does much of the heavy lifting. You are competing against businesses in your city, and proximity is a ranking factor you get for free by being located where your customers are.
+
+National SEO removes that advantage. You compete against every business in the country, proximity no longer helps you, and the winning strategy shifts toward content volume and domain authority — both of which are expensive and slow.
+
+Expect local SEO to cost roughly a third to a half of what the same business would pay to compete nationally.
+
+## Why Cheap SEO Is Usually More Expensive
+
+The $299-a-month offers are not a smaller version of good SEO. They are a different activity. At that price the provider cannot afford human hours, so the deliverable is automated: directory submissions, spun content, and links from private blog networks.
+
+Three things typically happen. Nothing moves for six months, and you have spent $1,800 learning that. Or low-quality links accumulate and you eventually pay someone $2,000 to disavow them. Or content gets published under your domain that is thin enough to drag down pages that were previously fine.
+
+The honest floor for SEO that does anything is around $750 a month, or roughly 8–10 hours of competent specialist time. Below that, you are buying reports, not results.
+
+## How Canadian SEO Agencies Bill
+
+- **Monthly retainer** — the most common model. Predictable, and the agency has an incentive to keep you past month three.
+- **Hourly** — $75 to $200 per hour. Good for advisory work, awkward for ongoing execution because it penalizes thoroughness.
+- **Per project** — a fixed scope with a fixed price. Clean, but SEO rarely finishes.
+- **Performance-based** — payment tied to rankings or traffic. Sounds appealing, but agencies protect themselves by targeting easy keywords that were going to rank anyway. Read the keyword list before agreeing to anything performance-based.
+
+For most small businesses a flat monthly retainer is the safest structure: your cost is predictable, and you can leave if it is not working — provided the contract lets you.
+
+## How Long Before SEO Pays Off?
+
+SEO is slower than paid ads, and any agency that tells you otherwise is selling something. A realistic timeline:
+
+- **Months 1–2:** technical fixes, Google Business Profile work, content foundation. Little visible movement.
+- **Months 3–4:** long-tail and question-shaped keywords begin ranking. First measurable traffic increase.
+- **Months 5–8:** competitive local terms start moving. Leads become attributable.
+- **Months 9–12:** compounding. The content published in month three is now earning links and ranking for terms it was not written for.
+
+Budget for a minimum of six months. If you need leads next month, SEO is the wrong tool — that is what paid search is for, and the two work best together rather than as alternatives.
+
+## What to Look For in a Canadian SEO Agency
+
+- **They ask about your margins before quoting.** An agency that does not know what a customer is worth to you cannot tell you what to spend.
+- **They report on leads, not rankings.** Position 3 for a keyword nobody searches is not a result.
+- **They will show you the actual work.** Ask what was published, what was fixed, and what links were earned last month for another client.
+- **The contract lets you leave.** Twelve-month lock-ins protect the agency through a slow start. Month-to-month means they have to keep earning it.
+- **They are honest about timelines.** Anyone promising page one in 30 days is either misleading you or targeting keywords that do not matter.
+
+## What We Charge
+
+For transparency: AP Digital's paid ads management starts at **$759 per month** and social media management at **$849 per month**, both month-to-month with no lock-in contract. SEO scope varies enough between a five-page local site and a multi-location one that we quote it on a call rather than publishing a list price we would have to caveat.
+
+Ad spend, where relevant, is always separate and paid directly to Google or Meta, so you keep control of the budget and see the real numbers.
+
+## Frequently Asked Questions About SEO Costs in Canada
+
+Below are the questions we get asked most often about SEO pricing.
+
+## Get a Quote for Your Business
+
+If you want a straight answer on what SEO would cost for your specific site and market, book a 20-minute call. We will tell you what we would do, what it would cost, and — genuinely — whether paid ads would serve you better in the short term.`,
+    faqs: [
+      { question: 'How much does SEO cost per month in Canada?', answer: 'Most Canadian small businesses pay $750 to $3,500 per month. Single-location local businesses typically sit at the $750 to $1,500 end, competitive multi-service or multi-location businesses at $1,500 to $3,500, and national or e-commerce campaigns at $3,500 to $8,000 or more. The price reflects specialist hours, not software, so a $2,000 retainer is roughly 15 to 30 hours of work per month.' },
+      { question: 'Is SEO worth it for a small business in Canada?', answer: 'It depends on whether people search for what you sell. If there is meaningful search volume for your service in your city, SEO usually produces a lower cost per lead than paid ads within 9 to 12 months, because the traffic keeps arriving after you stop paying. If your category has little search demand, or you need leads this month, paid ads are the better investment. Most local service businesses benefit from running both.' },
+      { question: 'How much does local SEO cost in Canada?', answer: 'Local SEO for a single location runs $750 to $1,500 per month as a retainer, or $1,000 to $2,500 as a one-time setup project. It is cheaper than national SEO because the competitive field is limited to your city and proximity works in your favour as a ranking factor. Multi-location businesses should expect to add roughly $300 to $600 per additional location.' },
+      { question: 'Why is cheap SEO a bad idea?', answer: 'SEO cost is mostly specialist hours. At $299 per month a provider cannot afford meaningful human time, so the work becomes automated: directory submissions, spun content, and low-quality links. The usual outcomes are six months of no movement, a cleanup bill to disavow bad links, or thin content that drags down pages which were previously fine. The practical floor for SEO that does anything is around $750 per month.' },
+      { question: 'How long does SEO take to work in Canada?', answer: 'Expect little visible movement in months one and two while technical fixes and content foundations are built. Long-tail and question-shaped keywords typically begin ranking in months three and four, competitive local terms move in months five to eight, and compounding returns arrive around months nine to twelve. Budget for a minimum of six months. Any agency promising page one in 30 days is either misleading you or targeting keywords with no commercial value.' },
+      { question: 'Should I pay for SEO monthly or as a one-off project?', answer: 'A one-off project makes sense when you have someone in-house who will actually implement the recommendations — an audit nobody actions is wasted money. A monthly retainer makes sense when you need the agency to do the work as well as identify it, and because SEO rarely finishes: competitors keep publishing, and Google keeps changing. For most small businesses without in-house marketing capacity, a month-to-month retainer is the better structure.' },
+      { question: 'What hourly rate do SEO consultants charge in Canada?', answer: 'Independent SEO consultants in Canada typically bill $75 to $200 per hour, with senior specialists in competitive niches charging at the top of that range or above. Hourly billing works well for advisory work, audits, and training, but is an awkward fit for ongoing execution because it effectively penalizes the consultant for being thorough.' },
+    ],
+  },
+  {
+    slug: 'how-much-does-email-marketing-cost-canada',
+    title: 'How Much Does Email Marketing Cost in Canada: 2026 Guide',
+    metaTitle: 'Email Marketing Cost in Canada: 2026 Price Guide',
+    metaDescription: 'What email marketing actually costs in Canada in 2026 — software by list size, freelancer rates, agency retainers, and one-off setup fees. Real numbers.',
+    excerpt: 'Software runs $30 to $500 a month depending on list size. Having someone run it costs $500 to $4,000 more. Here is the full breakdown, and why email still returns more per dollar than any other channel.',
+    date: '2026-08-11',
+    dateModified: '2026-08-21',
+    readTime: '11 min read',
+    category: 'Strategy',
+    content: `Email marketing in Canada has two separate costs, and conflating them is why most pricing articles are useless. The **software** costs $30 to $500 per month for most small businesses, scaling with the size of your list. **Having someone run it** costs $500 to $1,500 per month for a freelancer, or $1,500 to $4,000 per month for an agency.
+
+If you do it yourself with a list under 2,500 people, your total cost is roughly **$30 to $60 per month**. If you hand the whole thing to an agency with a list of 10,000, expect **$2,000 to $4,500 per month** all in. Everything else falls between those two points, and this guide shows you exactly where.
+
+## Email Marketing Costs in Canada: The Big Picture
+
+Email is unusual among marketing channels because the platform cost is small and predictable, while the labour cost is the real variable. A campaign that takes four hours to write, design, segment, and test costs the same to send to 500 people as to 50,000.
+
+That is the core economics of the channel: costs rise slowly as your list grows, but revenue rises roughly in proportion. It is why email consistently outperforms other channels on return per dollar, and why it is usually the first thing we tell a business to fix before spending more on ads.
+
+Three factors set your total cost:
+
+- **List size.** Every platform prices by number of contacts, and the jumps between tiers are where budgets get surprised.
+- **Send volume.** Some platforms charge per email sent rather than per contact, which matters if you mail frequently.
+- **Who does the work.** This is the biggest line item by a wide margin once you stop doing it yourself.
+
+## What the Software Actually Costs by List Size
+
+Platform pricing is tiered by contact count. Approximate monthly costs in Canadian dollars:
+
+| Contacts | Entry platform | Mid-tier platform | E-commerce platform |
+|---|---|---|---|
+| Under 500 | Free – $20 | $25 – $40 | $30 – $50 |
+| 1,000 | $20 – $35 | $40 – $65 | $50 – $80 |
+| 5,000 | $60 – $100 | $100 – $160 | $130 – $200 |
+| 10,000 | $110 – $180 | $180 – $280 | $250 – $400 |
+| 25,000 | $230 – $350 | $350 – $550 | $500 – $800 |
+| 50,000+ | $400 – $700 | $600 – $1,000 | $900 – $1,800 |
+
+Entry platforms cover basic broadcasts and simple automation. Mid-tier adds proper segmentation, behavioural triggers, and better reporting. E-commerce platforms cost more because they integrate with your store and attribute revenue per email — worth it if you sell online, wasted money if you do not.
+
+Platform pricing changes often, so treat these as planning figures and confirm current rates before you commit.
+
+## Doing It Yourself: $30 – $150 per Month
+
+Realistic if you have a list under 5,000, send once or twice a month, and someone on your team writes well.
+
+**Your costs:** platform subscription only, plus your own time — budget three to five hours per campaign for writing, building, testing, and reviewing results.
+
+**Where it goes wrong:** most businesses start here, send consistently for two months, then stop. An email list that gets mailed quarterly performs far worse than one mailed weekly, because subscribers forget who you are and mark you as spam. Inconsistency is more damaging than doing nothing.
+
+## Hiring a Freelancer: $500 – $1,500 per Month
+
+The most cost-effective option for most small businesses that want email done properly without agency overhead.
+
+**What this typically covers:** two to four campaigns per month, basic segmentation, subject line testing, and a monthly performance summary. At the higher end, automated sequences — welcome, abandoned cart, re-engagement — built once and left running.
+
+**What to check before hiring:** ask to see open and click rates from their current clients, and ask specifically about deliverability. A freelancer who has never dealt with a domain reputation problem will not know what to do when your open rate collapses.
+
+## Agency Management: $1,500 – $4,000 per Month
+
+Appropriate when email is a primary revenue channel rather than a supporting one.
+
+**What you should get:** strategy, four to eight campaigns per month, full automation architecture, list growth work, A/B testing, deliverability monitoring, and revenue attribution reporting that ties emails to actual sales.
+
+**Best for:** e-commerce, businesses with a large existing customer base to re-activate, and anyone whose list is above 25,000 contacts where small percentage improvements are worth real money.
+
+## Email Marketing Cost Comparison Table
+
+| Approach | Monthly Cost | Campaigns/Month | Includes | Best For |
+|---|---|---|---|---|
+| DIY | $30 – $150 | 1 – 2 | Software only, your own time | Lists under 5,000 |
+| Freelancer | $500 – $1,500 | 2 – 4 | Writing, sending, basic automation | Most small businesses |
+| Agency | $1,500 – $4,000 | 4 – 8 | Strategy, automation, deliverability, attribution | E-commerce, large lists |
+| In-house hire | $4,500 – $7,000 | Unlimited | Full-time salary plus software | Lists above 100,000 |
+
+Software is separate in every row except DIY. Note that a full-time coordinator only makes financial sense at significant scale — below that, a freelancer delivers more output per dollar.
+
+## One-Off Costs You Should Budget For
+
+Ongoing management is not the only spend. Common project costs in Canada:
+
+| Project | Typical Cost |
+|---|---|
+| Branded template design | $500 – $2,500 |
+| Platform migration | $1,000 – $4,000 |
+| Welcome sequence build (4 – 6 emails) | $800 – $3,000 |
+| Full automation architecture | $2,500 – $8,000 |
+| List cleaning and deliverability audit | $500 – $1,500 |
+
+Automation is the one worth paying for properly. A welcome sequence built once runs for years, and for most businesses it produces more revenue per email than anything sent manually.
+
+## What Drives Your Cost Up or Down
+
+**Pushes it up:** a large list, frequent sending, heavy segmentation, e-commerce integration, multiple languages, and any regulated industry where content needs compliance review.
+
+**Pulls it down:** a small engaged list, a simple template used repeatedly, and automation that replaces manual campaigns. Counterintuitively, cleaning your list reduces cost twice — you pay for fewer contacts and your deliverability improves, so the emails you do send actually arrive.
+
+## Why Email Returns More Per Dollar Than Other Channels
+
+You already own the audience. Every other channel charges you repeatedly for access to the same people — paid ads bill you again for each impression, and social platforms limit how many of your followers see a post. Email has neither problem.
+
+The practical implication: a business spending $2,000 a month on ads and nothing on email is usually leaving money on the table. The people who visited the site, did not buy, and gave you an address are the warmest audience you will ever have, and reaching them again costs cents.
+
+## Where Email Budgets Get Wasted
+
+- **Paying for contacts who never open.** If 40% of your list has not opened anything in a year, you are paying a tier premium to mail people who are actively hurting your deliverability.
+- **Buying an enterprise platform for a 3,000-person list.** Feature sets scale past what most small businesses will ever use.
+- **Designing elaborate templates.** Plain-text-style emails frequently outperform heavily designed ones, and cost nothing to produce.
+- **Sending without segmenting.** One message to everyone underperforms three messages to three groups, and takes barely more time.
+
+## How Email Compares to Paid Ads and Social
+
+Email is the cheapest channel to operate but the slowest to start, because you need a list before it does anything. Paid ads are the reverse — expensive per lead, but they work the week you turn them on.
+
+The sensible sequence for most local businesses is to run paid ads to generate leads and build the list, then use email to convert and retain them. Treating the two as alternatives is the common mistake; they solve different halves of the same problem.
+
+## What We Charge
+
+For transparency: AP Digital's two list-priced services are **paid ads management at $759 per month** and **social media management at $849 per month**, both month-to-month with no lock-in contract. Ad spend is separate and paid directly to Google or Meta, so you keep control of the budget.
+
+We do not sell email marketing as a standalone package. Where it makes sense as part of a lead-generation setup, we scope it on a call rather than quoting a list price we would immediately have to caveat.
+
+## Frequently Asked Questions About Email Marketing Costs
+
+Below are the questions Canadian business owners ask us most often about email budgets.
+
+## Work Out What You Actually Need
+
+If you are not sure whether email is worth investing in before your ads are working — or the other way round — book a 20-minute call. We will tell you which one to fix first for your situation, even when the answer is not something we sell.`,
+    faqs: [
+      { question: 'How much does email marketing cost per month in Canada?', answer: 'Software costs $30 to $500 per month depending on list size, and having someone run it costs $500 to $1,500 for a freelancer or $1,500 to $4,000 for an agency. A business doing it themselves with a list under 2,500 contacts spends roughly $30 to $60 per month in total. A business handing everything to an agency with a 10,000-contact list should budget $2,000 to $4,500 per month all in.' },
+      { question: 'Is email marketing worth it for a small business?', answer: 'For most businesses with an existing customer base, yes — it is typically the cheapest channel per dollar returned, because you already own the audience and are not paying a platform for access to it each time. The exception is a business with no list yet: email does nothing until you have subscribers, so if you are starting from zero, paid ads or another lead source needs to come first.' },
+      { question: 'How much does an email marketing agency charge in Canada?', answer: 'Canadian agencies typically charge $1,500 to $4,000 per month for full email management, which should include strategy, four to eight campaigns, automation architecture, deliverability monitoring, and revenue attribution. Below roughly $1,500 you are usually buying campaign sending without the strategy, which a freelancer can do for less.' },
+      { question: 'What does email marketing software cost?', answer: 'Pricing is tiered by number of contacts. Expect free to $35 per month under 1,000 contacts, $60 to $200 at 5,000 contacts, $110 to $400 at 10,000, and $400 to $1,800 at 50,000 or more. E-commerce-focused platforms sit at the top of each range because they attribute revenue per email, which is worth paying for if you sell online and wasted otherwise.' },
+      { question: 'How much does it cost to set up email automation?', answer: 'A welcome sequence of four to six emails typically costs $800 to $3,000 to build, and a full automation architecture covering welcome, abandoned cart, re-engagement and post-purchase flows runs $2,500 to $8,000. Automation is usually the highest-return one-off spend in email, because a sequence built once continues producing revenue for years without further labour.' },
+      { question: 'Should I clean my email list?', answer: 'Yes, and it saves money twice. Platforms charge by contact count, so removing subscribers who have not opened anything in 12 months lowers your tier. It also improves deliverability — mailbox providers judge your sender reputation partly on engagement, so a list full of people who never open makes your emails less likely to reach the people who would.' },
+      { question: 'Is email marketing cheaper than paid ads?', answer: 'Per message delivered, dramatically cheaper, because you are not paying for access to an audience you already own. But email is slower to start, since it does nothing until you have built a list. Most local businesses get the best result by running paid ads to generate leads and build the list, then using email to convert and retain them, rather than treating the two as alternatives.' },
+    ],
+  },
+  {
+    slug: 'how-much-does-a-website-cost-canada',
+    title: 'How Much Does a Website Cost in Canada: 2026 Pricing Guide',
+    metaTitle: 'How Much Does a Website Cost in Canada? 2026 Guide',
+    metaDescription: 'Real 2026 website costs in Canada: DIY builders, freelancers, agencies and custom builds — plus the ongoing fees most quotes leave out.',
+    excerpt: 'A small business website in Canada costs $2,000 to $8,000 from a freelancer and $8,000 to $25,000 from an agency. Here is what each tier includes, the ongoing costs nobody quotes, and how to tell whether you need a new site at all.',
+    date: '2026-08-11',
+    dateModified: '2026-08-21',
+    readTime: '12 min read',
+    category: 'Digital Marketing',
+    content: `A professional small business website in Canada costs **$2,000 to $8,000** from a freelancer and **$8,000 to $25,000** from an agency in 2026. A DIY site built on a template platform costs **$200 to $600 per year** and nothing but your time. Custom builds and e-commerce start around **$15,000** and run past **$75,000** for anything genuinely complex.
+
+Then there are the costs almost nobody puts in the quote: hosting, domain, SSL, plugin licences, and maintenance, which together add **$300 to $3,000 per year** for the life of the site. This guide covers all of it, and finishes with the question most articles avoid — whether you need a new website at all, or just a better version of the one you have.
+
+## Website Costs in Canada: The Big Picture
+
+You are not paying for pages. You are paying for decisions: what the site needs to make a visitor do, how it is structured so search engines can read it, and how quickly it loads on a phone on mobile data.
+
+That is why two five-page sites can differ by $20,000. The cheap one is a template with your logo dropped in. The expensive one had someone research what your customers actually search for, write copy that answers it, and build a page structure that converts. The page count is identical; the work is not.
+
+Three factors set the price:
+
+- **Custom design versus template.** A template costs hundreds. A custom design costs thousands, because someone is designing rather than configuring.
+- **Functionality.** A brochure site is straightforward. Booking systems, payments, customer accounts, and integrations each add real development hours.
+- **Content.** If you supply the copy and photos, you save thousands. If the agency writes and shoots it, you pay for that properly.
+
+## DIY Website Builders: $200 – $600 per Year
+
+Platform subscriptions run $20 to $50 per month, usually including hosting, SSL, and a domain in the first year.
+
+**Genuinely fine for:** a new business validating an idea, a single-location service business that mainly needs to look legitimate and list a phone number, or anyone whose customers arrive by referral rather than search.
+
+**Where it falls down:** template sites are hard to optimize for search beyond the basics, page speed is often mediocre, and you will hit a wall the moment you need something the platform does not offer. Migrating away later costs more than building properly would have.
+
+**Your real cost:** the subscription plus 20 to 40 hours of your own time. If your time is worth $75 an hour, the "cheap" option is a $2,000 to $3,500 project.
+
+## Freelance Web Designer: $2,000 – $8,000
+
+The best value for most Canadian small businesses, and where the majority of five-to-fifteen-page sites should land.
+
+**What this typically includes:** custom design on a proven platform, mobile-responsive build, basic on-page SEO, contact forms, Google Analytics setup, and a handover session so you can make small edits yourself.
+
+**What is usually extra:** copywriting, photography, logo design, and ongoing maintenance. Ask explicitly, because these are the most common reasons a $4,000 quote becomes a $7,000 invoice.
+
+**How to hire well:** ask to see three sites they built more than a year ago and check whether those businesses still use them. Portfolios show launches; they rarely show what survived.
+
+## Agency Website: $8,000 – $25,000
+
+Appropriate when the website is a primary revenue channel rather than a business card.
+
+**What you should get:** discovery and strategy before design, custom design across all breakpoints, professional copywriting, technical SEO built in rather than bolted on, conversion-focused page structure, analytics and tracking configured properly, and a testing period before launch.
+
+**Best for:** businesses in competitive markets, multi-location or multi-service companies, and anyone spending meaningfully on paid ads — because sending paid traffic to a poorly converting site wastes far more money than the site cost.
+
+## Custom and E-Commerce Builds: $15,000 – $75,000+
+
+Custom development territory: bespoke functionality, complex integrations, large product catalogues, customer accounts, or anything with a database behind it.
+
+**Cost drivers here:** number of products and variants, payment and shipping logic, inventory or CRM integration, multi-language requirements, and accessibility compliance. E-commerce specifically carries ongoing platform fees and transaction percentages that a brochure site does not.
+
+## Website Cost Comparison Table
+
+| Type | Upfront Cost | Timeline | What You Get | Best For |
+|---|---|---|---|---|
+| DIY builder | $200 – $600/year | 1 – 4 weeks | Template, your own labour | Validating a new business |
+| Freelancer | $2,000 – $8,000 | 3 – 8 weeks | Custom design, basic SEO | Most small businesses |
+| Agency | $8,000 – $25,000 | 6 – 14 weeks | Strategy, copy, technical SEO, CRO | Competitive markets, ad spenders |
+| Custom / e-commerce | $15,000 – $75,000+ | 3 – 9 months | Bespoke development, integrations | Online retail, complex requirements |
+
+## The Ongoing Costs Nobody Quotes You
+
+| Item | Annual Cost |
+|---|---|
+| Domain registration | $15 – $50 |
+| Hosting | $120 – $1,200 |
+| SSL certificate | $0 – $200 |
+| Premium plugins or theme licences | $100 – $600 |
+| Maintenance and security updates | $600 – $3,000 |
+| Content updates | $0 – $2,400 |
+
+Budget **$300 to $600 per year** for a simple site you maintain yourself, and **$1,500 to $3,000** for a site on an agency care plan. A website is not a one-time purchase, and treating it as one is how businesses end up with a four-year-old site running outdated software.
+
+## What Drives the Price Up or Down
+
+**Pushes it up:** custom design, copywriting and photography, e-commerce, bookings or payments, integrations with other systems, multiple languages, accessibility compliance, and a large page count.
+
+**Pulls it down:** supplying your own copy and images, accepting a customised template rather than a bespoke design, keeping the page count tight, and having a clear idea of what you want before the project starts. Indecision is genuinely expensive — revision rounds are where budgets overrun.
+
+## Why the Cheapest Website Usually Costs More
+
+A $600 website is not a smaller version of a $6,000 website. It is a different thing, built by someone who cannot afford to spend hours on it.
+
+The typical sequence: the site launches, looks acceptable, and converts poorly because nobody thought about what visitors should do. Traffic arrives from ads and leaves. Eighteen months later you rebuild properly, having paid twice and lost a year and a half of leads in between.
+
+If your budget is genuinely under $2,000, a well-configured template you build yourself will outperform a cheap custom build. Spend the money on getting traffic instead, and rebuild when the business can support it.
+
+## Do You Need a New Website, or a Better One?
+
+Worth asking honestly before spending anything, because a rebuild is often the most expensive way to solve a problem that is not really about the site.
+
+**You probably need a rebuild if:** the site is not mobile-responsive, it takes more than four seconds to load, you cannot edit it yourself, it runs software that no longer receives security updates, or the business has changed enough that the content is simply wrong.
+
+**You probably do not if:** the site looks dated but works, and your actual problem is that nobody is visiting it. A beautiful site with no traffic produces exactly as many leads as an ugly site with no traffic. In that situation the money is better spent on getting in front of people, and the site can wait.
+
+We say this to prospects regularly, including when it means a smaller project for us. Rebuilding a site that already converts, to fix a traffic problem, is the most common expensive mistake we see.
+
+## What We Charge
+
+For transparency: AP Digital's two list-priced services are **paid ads management at $759 per month** and **social media management at $849 per month**, both month-to-month with no lock-in contract. Ad spend is separate and paid directly to Google or Meta.
+
+Web design is scoped per project rather than list-priced, because a five-page local site and a multi-location build are not the same job and quoting a single number for both would be dishonest.
+
+## Frequently Asked Questions About Website Costs in Canada
+
+Below are the questions Canadian business owners ask us most often about website budgets.
+
+## Find Out What You Actually Need
+
+If you are weighing a rebuild against putting the same money into getting traffic, book a 20-minute call. We will give you a straight answer about which one will move your revenue further — including when the answer is that your website is fine.`,
+    faqs: [
+      { question: 'How much does a website cost in Canada in 2026?', answer: 'A professional small business website costs $2,000 to $8,000 from a freelancer and $8,000 to $25,000 from an agency. DIY template builders run $200 to $600 per year. Custom builds and e-commerce start around $15,000 and can exceed $75,000. On top of the build, budget $300 to $3,000 per year for hosting, domain, licences and maintenance.' },
+      { question: 'How much does a small business website cost?', answer: 'Most Canadian small businesses should budget $2,000 to $8,000 for a five-to-fifteen-page site built by a competent freelancer, including custom design, mobile-responsive build, basic on-page SEO and contact forms. Copywriting and photography are usually quoted separately, which is the most common reason a quote grows before invoicing.' },
+      { question: 'What are the ongoing costs of a website?', answer: 'Domain registration is $15 to $50 per year, hosting $120 to $1,200, SSL from free to $200, plugin or theme licences $100 to $600, and maintenance $600 to $3,000. Budget $300 to $600 per year for a simple site you maintain yourself, or $1,500 to $3,000 for a site on an agency care plan. A website is not a one-time purchase.' },
+      { question: 'Is it cheaper to build my own website?', answer: 'In cash, yes — $200 to $600 per year on a template builder. In real terms it is closer than it looks, because a DIY build takes most owners 20 to 40 hours. If your time is worth $75 an hour, that is a $2,000 to $3,500 project. DIY makes sense for validating a new business or when customers arrive by referral rather than search.' },
+      { question: 'How long does it take to build a website?', answer: 'A DIY template site takes one to four weeks. A freelance build runs three to eight weeks, an agency project six to fourteen weeks, and a custom or e-commerce build three to nine months. The most common cause of delay is not development but content — projects stall waiting on copy and photos from the client.' },
+      { question: 'Do I need a new website or better marketing?', answer: 'Rebuild if the site is not mobile-responsive, loads in more than four seconds, cannot be edited, runs unsupported software, or has content that is simply wrong. If the site looks dated but works and your real problem is that nobody visits it, the money is better spent on traffic. A beautiful site with no visitors produces the same number of leads as an ugly one with no visitors.' },
+      { question: 'Why do website quotes vary so much?', answer: 'Because you are not paying for pages, you are paying for decisions and hours. A cheap site is a template with your logo added. An expensive one involved research into what your customers search for, copy written to answer it, and a page structure built to convert. Page count can be identical while the underlying work differs by tens of thousands of dollars.' },
     ],
   },
 ];

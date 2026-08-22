@@ -11,8 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Digital Marketing Agency Abbotsford BC | AP Digital';
-const DESC = 'Abbotsford marketing agency for Fraser Valley trades, salons & realtors. Google Ads + Meta Ads. Month-to-month. No contracts. Free strategy call.';
+const TITLE = 'Abbotsford Marketing for Trades — $759/mo, No Contract';
+const DESC = 'Marketing for Abbotsford contractors, trades and salons across the Fraser Valley. Google and Meta Ads from $759/month. Month-to-month, no contract.';
 const CANONICAL = 'https://ap-digital.ca/abbotsford';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

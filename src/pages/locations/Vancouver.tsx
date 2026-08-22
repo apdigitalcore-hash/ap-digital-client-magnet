@@ -11,8 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Digital Marketing Agency Vancouver BC | AP Digital';
-const DESC = 'Vancouver digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month. Free strategy call.';
+const TITLE = 'Vancouver Marketing Agency — From $759/mo, No Contract';
+const DESC = 'Google Ads and Meta Ads managed for Vancouver businesses — Kitsilano, Mount Pleasant, Yaletown, East Van. From $759/month, month-to-month, no lock-in.';
 const CANONICAL = 'https://ap-digital.ca/vancouver';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

@@ -11,8 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Digital Marketing Agency Langley BC | AP Digital';
-const DESC = 'Digital marketing agency in Langley BC for trades, salons, realtors & coaches. Google Ads, Meta Ads & local SEO. Most clients see leads within 2 weeks. No contracts.';
+const TITLE = 'Langley Marketing — First Leads in 2 Weeks, No Contract';
+const DESC = 'Langley trades, salons and realtors: most clients see their first qualified leads within 2 weeks. Ads from $759/month, month-to-month, no contract.';
 const CANONICAL = 'https://ap-digital.ca/langley';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

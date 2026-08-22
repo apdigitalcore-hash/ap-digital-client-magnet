@@ -546,25 +546,25 @@ const staticRoutes = [
   // Neighbourhoods per city, so the prerendered FAQ answers match what the
   // rendered page says rather than being generic.
   ...[
-    ['vancouver',  'Kitsilano, Mount Pleasant, East Vancouver and Yaletown'],
-    ['surrey',     'Newton, Guildford, South Surrey and Cloverdale'],
-    ['burnaby',    'Metrotown, Brentwood, North Burnaby and Edmonds'],
-    ['richmond',   'City Centre, Steveston, Broadmoor and Brighouse'],
-    ['langley',    'Willoughby, Walnut Grove, Murrayville and Aldergrove'],
-    ['coquitlam',  'Port Moody, Port Coquitlam and the wider Tri-Cities'],
-    ['abbotsford', 'West Abbotsford, Clearbrook, Auguston and Matsqui'],
-  ].map(([city, areas]) => {
+    ['vancouver',  'Kitsilano, Mount Pleasant, East Vancouver and Yaletown', 'Vancouver Marketing Agency — From $759/mo, No Contract', 'Google Ads and Meta Ads managed for Vancouver businesses — Kitsilano, Mount Pleasant, Yaletown, East Van. From $759/month, month-to-month, no lock-in.'],
+    ['surrey',     'Newton, Guildford, South Surrey and Cloverdale', 'Surrey Lead Generation: Google & Meta Ads, No Lock-In', 'Paid ads for Surrey businesses in Newton, Guildford, South Surrey and Cloverdale. $759/month, cancel with 30 days\' notice. No long-term contract.'],
+    ['burnaby',    'Metrotown, Brentwood, North Burnaby and Edmonds', 'Burnaby Ads Management — $759/mo, Cancel Anytime', 'Meta and Google campaigns for Burnaby businesses near Metrotown, Brentwood and Edmonds. Management from $759/month. Month-to-month, no lock-in.'],
+    ['richmond',   'City Centre, Steveston, Broadmoor and Brighouse', 'Richmond Google Ads for Local Business — No Contract', 'Richmond businesses in City Centre, Steveston and Brighouse: Google Ads and Meta Ads from $759/month. No contract, cancel with 30 days\' notice.'],
+    ['langley',    'Willoughby, Walnut Grove, Murrayville and Aldergrove', 'Langley Marketing — First Leads in 2 Weeks, No Contract', 'Langley trades, salons and realtors: most clients see their first qualified leads within 2 weeks. Ads from $759/month, month-to-month, no contract.'],
+    ['coquitlam',  'Port Moody, Port Coquitlam and the wider Tri-Cities', 'Coquitlam Google & Meta Ads From $759/mo — No Lock-In', 'Google Ads and Meta Ads for Coquitlam, Port Moody and Port Coquitlam businesses. From $759/month with no lock-in contract. Book a 20-minute call.'],
+    ['abbotsford', 'West Abbotsford, Clearbrook, Auguston and Matsqui', 'Abbotsford Marketing for Trades — $759/mo, No Contract', 'Marketing for Abbotsford contractors, trades and salons across the Fraser Valley. Google and Meta Ads from $759/month. Month-to-month, no contract.'],
+  ].map(([city, areas, metaTitle, metaDesc]) => {
     const cap = city.charAt(0).toUpperCase() + city.slice(1);
     return {
       path: city,
-      title: `Digital Marketing Agency ${cap} BC | Google Ads & Meta Ads | AP Digital`,
-      description: `${cap} digital marketing agency for trades, salons, realtors & coaches. Google Ads, Meta Ads & local SEO. Month-to-month. No contracts. Free strategy call.`,
+      title: metaTitle,
+      description: metaDesc,
       body: `<h1>Digital Marketing Agency in ${cap}, BC</h1><p>AP Digital helps ${cap} businesses get more leads with Google Ads, Meta Ads, and social media marketing. We serve trades contractors, salons, real estate agents, coaches, and more. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`,
       schema: { "@context": "https://schema.org", "@graph": [
         orgSchema, founderSchema,
         serviceSchema(`Digital Marketing ${cap} BC`, `Lead generation for ${cap} businesses using Google Ads & Meta Ads.`, `/${city}`),
         breadcrumb([{ name: 'Home', url: '/' }, { name: cap, url: `/${city}` }]),
-        webPageSchema(`Digital Marketing Agency ${cap} BC | AP Digital`, `Google Ads & Meta Ads for ${cap} businesses.`, `/${city}`),
+        webPageSchema(metaTitle, `Google Ads & Meta Ads for ${cap} businesses.`, `/${city}`),
         // The city pages carry FAQs in the rendered page but the prerendered
         // HTML had no FAQPage node at all, so crawlers reading the static
         // markup never saw them. These mirror the page's leading questions.
@@ -586,7 +586,7 @@ const staticRoutes = [
 
 const blogPosts = [
   { slug: 'real-estate-agent-social-media-tips', contentExcerpt: 'The real estate market in Canada is as competitive as it\'s ever been. Whether you\'re working in the GTA, Vancouver, Calgary, or a smaller market, one thing is clear: the agents who dominate social media are the ones closing more deals. If you\'re still relying solely on yard signs, open houses, and your brokerage\'s website, you\'re falling behind.', metaTitle: 'Social Media Tips for Real Estate Agents Canada | AP Digital', metaDescription: 'The top social media strategies for Canadian real estate agents that generate buyer & seller leads in 2026.', date: '2026-03-12', category: 'Real Estate Marketing' },
-  { slug: 'how-much-does-social-media-marketing-cost-canada', dateModified: '2026-08-20', contentExcerpt: 'One of the most common questions we hear from business owners across Canada is simple: "How much does social media marketing actually cost?" It\'s a fair question — and unfortunately, the answer you\'ll get from most agencies is vague at best. At AP DIGITAL, we believe in transparency, so let\'s break it down honestly.', metaTitle: 'Social Media Marketing Cost in Canada: 2026 Price Guide', metaDescription: 'Real 2026 prices for Canadian social media marketing: agency fees, ad spend, and what each budget actually gets you. Plus a free budget calculator.', date: '2026-08-09', category: 'Marketing Strategy' },
+  { slug: 'how-much-does-social-media-marketing-cost-canada', dateModified: '2026-08-21', contentExcerpt: 'One of the most common questions we hear from business owners across Canada is simple: "How much does social media marketing actually cost?" It\'s a fair question — and unfortunately, the answer you\'ll get from most agencies is vague at best. At AP DIGITAL, we believe in transparency, so let\'s break it down honestly.', metaTitle: 'Social Media Marketing Cost in Canada: 2026 Price Guide', metaDescription: 'Real 2026 prices for Canadian social media marketing: agency fees, ad spend, and what each budget actually gets you. Plus a free budget calculator.', date: '2026-08-09', category: 'Marketing Strategy' },
   { slug: 'best-ads-platform-for-small-business-canada', contentExcerpt: 'If you\'re a small business owner in Canada trying to figure out where to spend your advertising budget, you\'ve probably asked yourself this question: should I run Facebook Ads or Google Ads? It\'s one of the most common debates in digital marketing — and the answer isn\'t as simple as picking one over the other.', metaTitle: 'Facebook Ads vs Google Ads for Small Business in Canada 2026 | AP Digital', metaDescription: 'Meta Ads or Google Ads — which is better for your Canadian small business? Head-to-head comparison with costs, niches & recommendations.', date: '2026-03-12', category: 'Paid Advertising' },
   { slug: 'email-marketing-vs-social-media', contentExcerpt: 'Every small business owner has a limited marketing budget — so where should you put your money? Email marketing and social media marketing are two of the most effective digital channels, but they work very differently. Here\'s an honest comparison to help you decide.  What Is Email Marketing? Email marketing means sending targeted messages directly to a list of subscribers.', metaTitle: 'Email Marketing vs Social Media: What Works in 2026? | AP Digital', metaDescription: 'Email or social media — where should your business focus? We compare both channels for Canadian small businesses.', date: '2026-07-10', category: 'Marketing Strategy' },
   { slug: 'best-ads-for-trades-businesses-canada', contentExcerpt: 'If you\'re a plumber, electrician, roofer, HVAC tech, or general contractor in Canada — you already know that word-of-mouth only goes so far. The businesses booking $50K–$100K+ per month in jobs are the ones running ads. Here\'s exactly how to do it right.', metaTitle: 'Best Ads for Trades Businesses in Canada | AP Digital', metaDescription: 'Which platform works best for plumbers, HVAC, electricians & roofers in Canada? Meta Ads vs Google Ads for trades businesses.', date: '2026-08-05', category: 'Trades Marketing' },
@@ -623,7 +623,64 @@ const blogPosts = [
   { slug: 'digital-marketing-budget-small-business-canada', contentExcerpt: 'Most Canadian small businesses should spend 5–15% of their gross revenue on marketing. For a business making $250,000/year, that\'s $12,500–$37,500/year — or roughly $1,000–$3,100/month. This guide breaks down exactly how to allocate that budget across channels for maximum ROI in 2026.', metaTitle: 'Digital Marketing Budget Guide for Canadian Small Business 2026 | AP Digital', metaDescription: 'How much should a Canadian small business spend on marketing? Budget breakdowns by revenue, channel allocation, and industry-specific recommendations for 2026.', date: '2026-08-11', category: 'Marketing Strategy' },
   { slug: 'best-crm-small-business-canada', contentExcerpt: 'A CRM (Customer Relationship Management) tool helps you track leads, follow up faster, and close more deals. With dozens of options available, picking the right one matters. This guide compares the top CRMs for Canadian small businesses with real 2026 pricing.', metaTitle: 'Best CRM for Small Business in Canada 2026 | AP Digital', metaDescription: 'Compare the best CRMs for Canadian small businesses in 2026. Pricing in CAD, features, and which CRM fits your industry — from free to enterprise.', date: '2026-08-11', category: 'Strategy' },
   { slug: 'how-to-get-more-google-reviews-canada', contentExcerpt: 'Google reviews are the single most important factor in local search rankings and the first thing potential customers check before contacting a business. Businesses with 50+ reviews get 266% more leads than those with fewer than 10. This guide gives you 10 proven methods to consistently generate more reviews for your Canadian business.', metaTitle: 'How to Get More Google Reviews in Canada (2026 Guide) | AP Digital', metaDescription: '10 proven methods to get more Google reviews for your Canadian business. Includes review request templates, response scripts, and what Google allows.', date: '2026-08-11', category: 'SEO' },
+  { slug: 'how-much-does-seo-cost-canada', contentExcerpt: 'Most Canadian small businesses pay between $750 and $3,500 per month for ongoing SEO in 2026. One-off projects — a technical audit, a local SEO setup, a migration cleanup — run $1,500 to $7,500 depending on the size of the site. Freelancers and independent consultants bill $75 to $200 per hour, and agencies serving competitive national markets routinely quote $5,000 to $15,000 per month. That is the direct answer, and most articles on this subject will not give it to you.', metaTitle: 'How Much Does SEO Cost in Canada? 2026 Price Guide', metaDescription: 'Real 2026 SEO pricing in Canada: monthly retainers, one-off project costs, hourly rates, and what each budget actually buys you. No vague ranges.', date: '2026-08-21', dateModified: '2026-08-21', category: 'SEO' },
+  { slug: 'how-much-does-email-marketing-cost-canada', contentExcerpt: 'Email marketing in Canada has two separate costs, and conflating them is why most pricing articles are useless. The software costs $30 to $500 per month for most small businesses, scaling with the size of your list. Having someone run it costs $500 to $1,500 per month for a freelancer, or $1,500 to $4,000 per month for an agency.', metaTitle: 'Email Marketing Cost in Canada: 2026 Price Guide', metaDescription: 'What email marketing actually costs in Canada in 2026 — software by list size, freelancer rates, agency retainers, and one-off setup fees. Real numbers.', date: '2026-08-21', dateModified: '2026-08-21', category: 'Strategy' },
+  { slug: 'how-much-does-a-website-cost-canada', contentExcerpt: 'A professional small business website in Canada costs $2,000 to $8,000 from a freelancer and $8,000 to $25,000 from an agency in 2026. A DIY site built on a template platform costs $200 to $600 per year and nothing but your time. Custom builds and e-commerce start around $15,000 and run past $75,000 for anything genuinely complex.', metaTitle: 'How Much Does a Website Cost in Canada? 2026 Guide', metaDescription: 'Real 2026 website costs in Canada: DIY builders, freelancers, agencies and custom builds — plus the ongoing fees most quotes leave out.', date: '2026-08-21', dateModified: '2026-08-21', category: 'Digital Marketing' },
 ];
+
+// ── FAQ data is read from the React source, never copied ────────────────────
+// The prerendered HTML used to emit no FAQPage at all, and hand-copying every
+// Q&A into this file would only recreate the drift that caused it. Parse the
+// FAQs straight out of src/lib/blogPosts.ts so there is a single source of
+// truth, and throw if the parse ever stops working rather than silently
+// shipping pages with the markup missing.
+function loadFaqsFromSource() {
+  const ts = readFileSync(resolve(__dirname, '../src/lib/blogPosts.ts'), 'utf-8');
+  // Questions containing an apostrophe are written as double-quoted strings,
+  // so both quote styles have to be accepted. Matching only single quotes
+  // silently dropped one or two entries per post.
+  const STR = String.raw`((?:'(?:[^'\\]|\\.)*')|(?:"(?:[^"\\]|\\.)*"))`;
+  const unquote = (lit) => {
+    const q = lit[0];
+    return lit.slice(1, -1).replace(new RegExp(String.raw`\\([\\` + q + `])`, 'g'), '$1');
+  };
+  const pairRe = new RegExp(
+    String.raw`\{\s*question:\s*` + STR + String.raw`\s*,\s*answer:\s*` + STR + String.raw`\s*\}`, 'g');
+
+  const out = {};
+  for (const chunk of ts.split(/\n\s*slug: /).slice(1)) {
+    const slugMatch = chunk.match(new RegExp('^' + STR));
+    if (!slugMatch) continue;
+    const slug = unquote(slugMatch[1]);
+
+    const faqBlock = chunk.match(/\n\s*faqs:\s*\[([\s\S]*?)\n\s*\],/);
+    if (!faqBlock) continue;
+
+    const faqs = [];
+    pairRe.lastIndex = 0;
+    let m;
+    while ((m = pairRe.exec(faqBlock[1])) !== null) faqs.push({ q: unquote(m[1]), a: unquote(m[2]) });
+
+    // Count what is actually in the source and refuse to ship a partial set.
+    // A silently short FAQPage is worse than a loud build failure.
+    const expected = (faqBlock[1].match(/\bquestion:/g) || []).length;
+    if (faqs.length !== expected) {
+      throw new Error(
+        `inject-meta: "${slug}" has ${expected} FAQ entries in blogPosts.ts but the parser ` +
+        `extracted ${faqs.length}. Fix the parser rather than shipping incomplete FAQPage markup.`);
+    }
+    out[slug] = faqs;
+  }
+  return out;
+}
+
+const sourceFaqs = loadFaqsFromSource();
+let faqPostCount = 0;
+for (const post of blogPosts) {
+  if (sourceFaqs[post.slug]) { post.faqs = sourceFaqs[post.slug]; faqPostCount++; }
+}
+console.log(`   FAQ schema: ${faqPostCount} posts carry FAQs (parsed from blogPosts.ts)`);
+
 
 // ── HTML generation helpers ─────────────────────────────────────────────────
 
@@ -738,6 +795,10 @@ for (const post of blogPosts) {
         { name: post.metaTitle.split(' | ')[0], url: `/blog/${post.slug}` },
       ]),
       webPageSchema(post.metaTitle, post.metaDescription, `/blog/${post.slug}`),
+      // The React page emits FAQPage via getFAQSchema, but the prerendered
+      // HTML never did — so the FAQ markup Google actually crawls was absent
+      // on every post that has FAQs. Emit it here too when the post carries them.
+      ...(post.faqs?.length ? [faqSchema(post.faqs)] : []),
     ]
   };
   const bodyContent = post.contentExcerpt

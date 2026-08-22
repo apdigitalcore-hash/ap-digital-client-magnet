@@ -11,8 +11,8 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Digital Marketing Agency Burnaby BC | AP Digital';
-const DESC = 'Burnaby digital marketing agency for salons, trades, realtors & coaches. Google Ads, Meta Ads & SEO. Month-to-month — no lock-in.';
+const TITLE = 'Burnaby Ads Management — $759/mo, Cancel Anytime';
+const DESC = 'Meta and Google campaigns for Burnaby businesses near Metrotown, Brentwood and Edmonds. Management from $759/month. Month-to-month, no lock-in.';
 const CANONICAL = 'https://ap-digital.ca/burnaby';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
