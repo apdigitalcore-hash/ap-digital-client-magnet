@@ -87,7 +87,7 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
     slug: 'how-much-does-social-media-marketing-cost-canada',
     title: 'Social Media Marketing Cost in Canada: 2026 Price Guide',
     metaTitle: 'Social Media Marketing Cost in Canada: 2026 Price Guide',
-    metaDescription: 'Real 2026 prices for Canadian social media marketing: agency fees, ad spend, and what each budget actually gets you. Plus a free budget calculator and downloadable template.',
+    metaDescription: 'Real 2026 prices for Canadian social media marketing: agency fees, ad spend, and what each budget actually gets you. Plus a free budget calculator.',
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
     readTime: '13 min read',
@@ -270,7 +270,7 @@ At AP DIGITAL, we build custom [social media marketing](/services/social-media) 
     slug: 'best-ads-platform-for-small-business-canada',
     title: 'Facebook Ads vs Google Ads: Which Is Better for Small Business in Canada?',
     metaTitle: 'Best Ads Platform for Small Business in Canada 2026',
-    metaDescription: 'Meta Ads or Google Ads — which is better for your small business in Canada? We compare both platforms so you can pick the right one for your budget & goals.',
+    metaDescription: 'Meta Ads or Google Ads — which is better for your small business in Canada? We compare both so you can pick the right one for your budget and goals.',
     excerpt: 'A head-to-head comparison of Facebook Ads and Google Ads for Canadian small businesses — including costs per lead, best niches, and when to use each platform.',
     date: '2026-03-12',
     readTime: '6 min read',
@@ -285,7 +285,7 @@ Google Ads puts your business in front of people who are actively searching for 
 
 This is what makes Google Ads so powerful for service-based businesses. You're not interrupting someone's scroll — you're showing up exactly when they're looking for you. Google Search Ads and Local Service Ads (LSAs) are particularly effective because they capture demand that already exists.
 
-**Cost per lead on Google Ads** varies widely by industry and competition. In Canada, most small businesses can expect to pay anywhere from $15 to $80 per lead depending on the niche. Highly competitive industries like legal services or real estate tend to sit at the higher end, while trades and local services often see leads in the $15 to $40 range.
+**Cost per lead on Google Ads** varies widely by industry and competition. In Canada, most small businesses can expect to pay anywhere from $15 to $80 per lead depending on the niche. Management fees are a separate bill, broken down in [our 2026 social media cost guide](/blog/how-much-does-social-media-marketing-cost-canada). Highly competitive industries like legal services or real estate tend to sit at the higher end, while trades and local services often see leads in the $15 to $40 range.
 
 The downside? Google Ads can get expensive quickly if your campaigns aren't optimized properly. Poorly managed campaigns waste budget on irrelevant clicks, broad keywords, and low-quality traffic. That's why working with an experienced agency matters — the difference between a well-run and a poorly-run Google Ads account can be thousands of dollars per month.
 
@@ -341,7 +341,7 @@ If your budget allows, yes. Google Ads captures people actively searching for yo
 
 **Are TikTok Ads worth it for small business in Canada?**
 TikTok Ads can work well for businesses targeting younger demographics (18–35) with visual or lifestyle-oriented products and services. CPMs are still relatively low compared to Meta, but the platform requires strong video creative to perform.`,
-    dateModified: '2026-08-11',
+    dateModified: '2026-08-23',
     faqs: [
       { question: 'Which ad platform is best for small business in Canada?', answer: 'It depends on your business type. Google Ads is best for service businesses where customers actively search for solutions (trades, dental, legal). Facebook and Instagram Ads are best for visual and relationship-driven businesses (salons, real estate, coaching). Most businesses benefit from running both.' },
       { question: 'Are Google Ads or Facebook Ads cheaper?', answer: 'Facebook Ads typically have a lower cost per click ($0.50–$3.00) compared to Google Ads ($2–$15+ depending on industry). However, Google Ads often produce higher-quality leads because the intent is higher.' },
@@ -354,7 +354,7 @@ TikTok Ads can work well for businesses targeting younger demographics (18–35)
     slug: 'email-marketing-vs-social-media',
     title: 'Email Marketing vs Social Media Marketing: Which Is Better for Canadian Small Businesses?',
     metaTitle: 'Email Marketing vs Social Media: What Works in 2026?',
-    metaDescription: 'Email or social media — where should your business focus? We compare both channels for Canadian small businesses so you can make the smartest marketing choice.',
+    metaDescription: 'Email or social media — where should your business focus? We compare both channels for Canadian small businesses so you can choose well.',
     excerpt: 'Should you invest in email marketing or social media? We compare costs, ROI, and strategy so Canadian small businesses can make the right call.',
     date: '2025-07-10',
     readTime: '6 min read',
@@ -1467,7 +1467,7 @@ const vancouverPosts: BlogPost[] = [
     slug: 'vancouver-small-business-seo-guide',
     title: 'Vancouver Small Business SEO: The Complete Guide to Ranking on Google in 2026',
     metaTitle: 'Vancouver Small Business SEO Guide 2026 | AP Digital',
-    metaDescription: 'Learn how Vancouver small businesses can rank higher on Google with local SEO, Google Business Profile optimization, and content strategy. Complete 2026 guide.',
+    metaDescription: 'How Vancouver small businesses rank higher on Google: local SEO, Google Business Profile optimization, and content strategy. Complete 2026 guide.',
     excerpt: 'Everything Vancouver small business owners need to know about local SEO, Google Business Profile, and ranking higher in 2026.',
     date: '2026-04-05',
     readTime: '8 min read',
@@ -1676,9 +1676,10 @@ At AP DIGITAL, we build and manage high-performance [Google Ads campaigns](/serv
     metaDescription: 'Discover what social media strategies actually work for Vancouver local businesses in 2026. Platform selection, content ideas, and real growth tactics.',
     excerpt: 'What Vancouver businesses need to know about social media marketing in 2026 — from platform selection to content strategy to measuring real results.',
     date: '2026-04-12',
+    dateModified: '2026-08-23',
     readTime: '6 min read',
     category: 'Social Media',
-    content: `Social media marketing in [Vancouver](/vancouver) is unlike any other Canadian market. The city's diversity, tech-savviness, and highly competitive business landscape mean that generic social strategies fall flat. Here's what actually works for Vancouver local businesses in 2026.
+    content: `Social media marketing in [Vancouver](/vancouver) is unlike any other Canadian market. Pricing here runs above the national average — see [what social media marketing costs across Canada](/blog/how-much-does-social-media-marketing-cost-canada) for the baseline. The city's diversity, tech-savviness, and highly competitive business landscape mean that generic social strategies fall flat. Here's what actually works for Vancouver local businesses in 2026.
 
 ## The Vancouver Social Media Landscape
 
@@ -1753,7 +1754,7 @@ const seoPosts: BlogPost[] = [
     slug: 'google-ads-coaching-business-bc',
     title: 'Google Ads for Coaching Businesses in BC: How to Get More Clients',
     metaTitle: 'Google Ads for Coaches in BC | Get More Clients | AP Digital',
-    metaDescription: 'Learn how coaches in BC can use Google Ads to attract high-ticket clients. Keyword strategy, budget tips, and landing page advice for life coaches, business coaches, and wellness coaches.',
+    metaDescription: 'How coaches in BC use Google Ads to attract high-ticket clients. Keyword strategy, budget tips, and landing page advice for life and business coaches.',
     excerpt: 'A step-by-step guide to running profitable Google Ads campaigns as a coach in British Columbia.',
     date: '2026-07-08',
     readTime: '7 min read',
@@ -1820,7 +1821,7 @@ We specialize in [coaching marketing](/coaching-marketing) and understand the un
     slug: 'salon-google-ads-vancouver',
     title: 'Google Ads for Salons in Vancouver: Fill Every Chair',
     metaTitle: 'Google Ads for Salons Vancouver | Fill Every Chair | AP Digital',
-    metaDescription: 'How Vancouver salons can use Google Ads to book more appointments. Keyword strategy, budget guide, and campaign tips for hair salons, nail salons, and med spas in Metro Vancouver.',
+    metaDescription: 'How Vancouver salons use Google Ads to book more appointments. Keyword strategy, budget guide and campaign tips for hair, nail and med spa businesses.',
     excerpt: 'How Vancouver salon owners can use Google Ads to fill appointment books — with real keyword and budget guidance.',
     date: '2026-07-06',
     readTime: '6 min read',
@@ -1891,7 +1892,7 @@ No long-term contracts. Transparent reporting. 90-day results guarantee.
     slug: 'digital-marketing-richmond-bc',
     title: 'Digital Marketing in Richmond BC: How Local Businesses Get More Leads',
     metaTitle: 'Digital Marketing Richmond BC | Local Leads | AP Digital',
-    metaDescription: 'Digital marketing strategies for Richmond BC businesses. Learn how local salons, restaurants, trades, and retailers use Google Ads, Meta Ads, and SEO to get more customers.',
+    metaDescription: 'Digital marketing for Richmond BC businesses. How local salons, restaurants, trades and retailers use Google Ads, Meta Ads and SEO to get more customers.',
     excerpt: 'How Richmond BC businesses are using digital marketing to stand out in one of Metro Vancouver\'s most competitive markets.',
     date: '2026-07-04',
     readTime: '7 min read',
@@ -1964,7 +1965,7 @@ No long-term contracts. Transparent reporting. 90-day results guarantee.
     slug: 'digital-marketing-langley-bc',
     title: 'Digital Marketing for Langley BC Businesses: Get More Local Leads',
     metaTitle: 'Digital Marketing Langley BC | More Local Leads | AP Digital',
-    metaDescription: 'Digital marketing guide for Langley BC businesses. How trades, salons, real estate agents, and local shops use Google Ads, SEO, and social media to get more customers in the Fraser Valley.',
+    metaDescription: 'Digital marketing for Langley BC businesses. How trades, salons and realtors use Google Ads, SEO and social media to win more Fraser Valley customers.',
     excerpt: 'How Langley BC businesses are winning more local customers with Google Ads, SEO, and social media marketing.',
     date: '2026-07-02',
     readTime: '6 min read',
@@ -2033,7 +2034,7 @@ const focusPosts: BlogPost[] = [
     slug: 'paid-ads-abbotsford-bc',
     title: 'Paid Ads for Small Businesses in Abbotsford BC: A Complete Guide',
     metaTitle: 'Paid Ads for Small Businesses in Abbotsford BC | AP Digital',
-    metaDescription: 'How Abbotsford small businesses use Google Ads and Meta Ads to get more leads. Local targeting tips, budget advice, and real results from Fraser Valley businesses.',
+    metaDescription: 'How Abbotsford small businesses use Google Ads and Meta Ads to get more leads. Local targeting tips and budget advice for Fraser Valley businesses.',
     excerpt: 'Abbotsford businesses are using paid ads to dominate local search. Here\'s how to get started with Google and Meta Ads in the Fraser Valley.',
     date: '2026-07-21',
     readTime: '7 min read',
@@ -2095,7 +2096,7 @@ If you're an Abbotsford business owner ready to stop guessing and start growing,
     slug: 'social-media-marketing-north-vancouver',
     title: 'Social Media Marketing in North Vancouver: What Local Businesses Need to Know',
     metaTitle: 'Social Media Marketing North Vancouver | AP Digital',
-    metaDescription: 'Social media strategies for North Vancouver businesses. Platform selection, content ideas, and how to turn followers into paying customers on the North Shore.',
+    metaDescription: 'Social media for North Vancouver businesses. Platform selection, content ideas, and how to turn followers into paying customers on the North Shore.',
     excerpt: 'North Vancouver businesses can build a loyal local following with the right social media strategy. Here\'s what works on the North Shore.',
     date: '2026-07-21',
     readTime: '6 min read',
@@ -2247,9 +2248,10 @@ If you're a Surrey business owner ready to stop relying on word-of-mouth, [book 
     slug: 'social-media-coaching-business-bc',
     title: 'Social Media for Coaches in BC: How to Attract Clients Online',
     metaTitle: 'Social Media for Coaches in BC | Attract More Clients | AP Digital',
-    metaDescription: 'Social media strategies for life coaches, business coaches, and wellness coaches in BC. Build your personal brand, grow your audience, and book more clients.',
+    metaDescription: 'Social media for life, business and wellness coaches in BC. Build your personal brand, grow your audience, and book more clients.',
     excerpt: 'BC coaches are building thriving practices through social media. Here\'s the playbook for attracting your ideal clients online.',
     date: '2026-07-21',
+    dateModified: '2026-08-23',
     readTime: '7 min read',
     category: 'Coaching Marketing',
     content: `If you're a coach in BC — whether you focus on life coaching, business coaching, wellness, fitness, or career transitions — [social media](/services/social-media) is your most powerful tool for attracting clients. But most coaches approach it wrong. They post motivational quotes, get a few likes, and wonder why their calendar is still empty.
@@ -2311,7 +2313,7 @@ Organic social media builds the foundation, but [paid ads](/services/paid-ads) a
 - **Retargeting ads** that follow up with people who visited your website or watched your Reels
 - **Webinar registration ads** for coaches who use free workshops as their conversion event
 
-A [$759/month](/pricing) ad management fee plus $600–$1,000 in ad spend typically generates 30–50 leads per month for coaching businesses.
+A [$759/month](/pricing) ad management fee plus $600–$1,000 in ad spend typically generates 30–50 leads per month for coaching businesses. That sits at the lower end of [what Canadian agencies charge for social media](/blog/how-much-does-social-media-marketing-cost-canada).
 
 ## Building Your Personal Brand in BC
 
@@ -2332,6 +2334,7 @@ Show up consistently. The coaches who win aren't the most talented — they're t
     metaDescription: 'How Vancouver salons use Instagram Ads to fill their chairs. Ad types, targeting, creative tips, and budget guidance from a Vancouver marketing agency.',
     excerpt: 'Instagram Ads are the highest-ROI channel for Vancouver salons. Here\'s exactly how to set them up for maximum bookings.',
     date: '2026-07-21',
+    dateModified: '2026-08-23',
     readTime: '7 min read',
     category: 'Salon Marketing',
     content: `Instagram is the single best advertising platform for [salons in Vancouver](/salon-marketing). Your work is visual, your audience lives on Instagram, and the platform's targeting lets you reach potential clients within walking distance of your chair. If you're not running [Instagram Ads](/services/paid-ads), you're leaving bookings on the table.
@@ -2342,7 +2345,7 @@ Here's what makes Instagram unique for salons:
 
 - **Visual-first format**: Your before-and-afters, colour transformations, and styling work ARE your ad creative. No stock photos, no copywriting gymnastics — just your actual results.
 - **Precise local targeting**: Show your ads only to women aged 22–55 within 10 km of your salon in [Vancouver](/vancouver). No wasted spend on people who'll never visit.
-- **Low cost per lead**: Vancouver salons typically see $5–$15 per lead on Instagram — far cheaper than Google Ads for salon keywords.
+- **Low cost per lead**: Vancouver salons typically see $5–$15 per lead on Instagram — far cheaper than Google Ads for salon keywords. Full pricing context is in [our Canadian social media cost guide](/blog/how-much-does-social-media-marketing-cost-canada).
 - **Booking intent**: People scrolling Instagram are in discovery mode. A stunning transformation photo at the right moment turns a scroller into a booking.
 
 ## The 3 Ad Types That Work for Vancouver Salons
@@ -2548,6 +2551,7 @@ Yes. Sending Google Ads traffic to your homepage is one of the most common and c
     metaDescription: 'Social media strategies for Burnaby businesses. Platform selection, content ideas, and how to grow your local following in Burnaby and the Tri-Cities.',
     excerpt: 'Burnaby businesses can dominate locally with the right social media strategy. Here\'s what works in the Metrotown to Heights corridor.',
     date: '2026-07-21',
+    dateModified: '2026-08-23',
     readTime: '6 min read',
     category: 'Social Media',
     content: `[Burnaby](/burnaby) sits right in the heart of Metro Vancouver — bordered by Vancouver, New Westminster, Coquitlam, and the North Shore. That central location means your potential customer base is massive, but it also means competition for attention is fierce. A strong [social media presence](/services/social-media) is how Burnaby businesses stand out.
@@ -2598,7 +2602,7 @@ Organic social media builds your foundation, but paid ads on Meta and Google acc
 
 ## Getting Started
 
-Managing social media consistently takes time. If you'd rather focus on running your business, [AP Digital handles it](/services/social-media) — content calendars, posting, community management, and growth strategy starting at [$849/month](/pricing).
+Managing social media consistently takes time. If you'd rather focus on running your business, [AP Digital handles it](/services/social-media) — content calendars, posting, community management, and growth strategy starting at [$849/month](/pricing). For how that compares nationally, see [what social media marketing costs in Canada](/blog/how-much-does-social-media-marketing-cost-canada).
 
 [Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll build a custom social media plan for your Burnaby business. Month-to-month, no contracts, [90-day guarantee](/pricing).`,
   },
@@ -3022,7 +3026,7 @@ At AP DIGITAL, we help Canadian small businesses build profitable [Google Ads ca
     slug: 'digital-marketing-budget-small-business-canada',
     title: 'Digital Marketing Budget for Small Business in Canada: 2026 Guide',
     metaTitle: 'Digital Marketing Budget Guide for Canadian Small Business 2026 | AP Digital',
-    metaDescription: 'How much should a Canadian small business spend on marketing? Budget breakdowns by revenue, channel allocation, and industry-specific recommendations for 2026.',
+    metaDescription: 'How much should a Canadian small business spend on marketing? Budget breakdowns by revenue, channel allocation and industry benchmarks for 2026.',
     excerpt: 'How much should your small business spend on digital marketing in 2026? Budget breakdowns by revenue level, channel allocation, and industry.',
     date: '2026-08-11',
     readTime: '9 min read',
@@ -3899,7 +3903,7 @@ const verticalPosts: BlogPost[] = [
     slug: 'dental-marketing-vancouver-bc',
     title: 'Dental Marketing in Vancouver BC: How to Get More Patients in 2026',
     metaTitle: 'Dental Marketing Vancouver BC | Get More Patients | AP Digital',
-    metaDescription: 'How Vancouver dental clinics get 30–50 new patients per month with Google Ads, local SEO, and review management. Practical strategies for dentists in Metro Vancouver.',
+    metaDescription: 'How Vancouver dental clinics attract new patients with Google Ads, local SEO and review management. Practical strategies for Metro Vancouver dentists.',
     excerpt: 'Vancouver dental clinics that dominate Google get the patients. Here\'s the exact marketing system filling chairs across Metro Vancouver.',
     date: '2026-07-15',
     readTime: '7 min read',
@@ -4056,7 +4060,7 @@ AP DIGITAL specializes in [fitness marketing across Metro Vancouver](/fitness-ma
     slug: 'restaurant-marketing-vancouver-bc',
     title: 'Restaurant Marketing in Vancouver BC: How to Get More Reservations and Walk-Ins',
     metaTitle: 'Restaurant Marketing Vancouver BC | More Tables | AP Digital',
-    metaDescription: 'How Vancouver restaurants and cafes fill more tables with Instagram ads, Google Business Profile, and food content strategy. Practical marketing for Metro Vancouver restaurants.',
+    metaDescription: 'How Vancouver restaurants and cafes fill more tables with Instagram ads, Google Business Profile and food content. Practical Metro Vancouver marketing.',
     excerpt: 'The Vancouver restaurants always packed on a Tuesday aren\'t just lucky — they have a marketing system. Here\'s how it works.',
     date: '2026-07-17',
     readTime: '7 min read',
