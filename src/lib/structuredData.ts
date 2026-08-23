@@ -328,6 +328,7 @@ export const getArticleSchema = (post: {
   metaTitle: string;
   metaDescription: string;
   date: string;
+  dateModified?: string;
   category: string;
 }) => ({
   "@type": "BlogPosting",
