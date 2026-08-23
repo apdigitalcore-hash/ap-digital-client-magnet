@@ -91,11 +91,11 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
     readTime: '13 min read',
-    dateModified: '2026-08-21',
+    dateModified: '2026-08-23',
     category: 'Marketing Strategy',
-    content: `One of the most common questions we hear from Canadian business owners is straightforward: "How much does social media marketing actually cost?" It's a fair question — and most agencies answer with vague ranges that leave you more confused than when you started. At AP DIGITAL, we believe in transparency, so this guide breaks down real 2026 pricing for every budget tier in Canada, including what you get, what you don't, and how to choose the right investment for your business.
+    content: `Social media marketing in Canada costs **$500 to $5,000+ per month** for management and strategy in 2026, plus another **$500 to $5,000 per month** in ad spend if you run paid campaigns. Management splits into three tiers: budget at **$500 to $1,000**, growth at **$1,500 to $3,000**, and full-service at **$3,000 to $5,000+**.
 
-Whether you're a Vancouver salon owner, a Toronto real estate agent, a Calgary contractor, or a coach anywhere in Canada, this guide will help you budget confidently and avoid the traps that waste money.
+Most agencies answer this question with ranges so wide they are useless. Below, every tier is broken out with what you actually get at that price, what you don't, and the red flags that mean a quote is too good to be true. Whether you're a Vancouver salon owner, a Toronto real estate agent, a Calgary contractor, or a coach anywhere in Canada, you'll be able to budget with real numbers rather than guesses.
 
 ## Social Media Marketing Costs in Canada: The Big Picture
 
