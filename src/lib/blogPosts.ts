@@ -255,7 +255,6 @@ Every business is different, and cookie-cutter packages rarely deliver the best 
 At AP DIGITAL, we build custom [social media marketing](/services/social-media) and [lead generation](/services/lead-generation) strategies for Canadian businesses. No long-term contracts. No hidden fees. Just transparent pricing and a 90-day results guarantee.
 
 **[Book your free strategy call today](https://calendly.com/apdigital-core/20min)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
-    dateModified: '2026-08-11',
     faqs: [
       { question: 'What are typical social media agency rates in Canada?', answer: 'Most Canadian agencies bill a monthly retainer between $500 and $5,000 depending on scope. Per-post pricing runs $50–$250, hourly consulting $75–$200, and percentage-of-ad-spend deals 10–20%. For a small business a flat retainer is usually the safest: your cost is predictable, and unlike percentage-of-spend it does not reward the agency for spending more of your money.' },
       { question: 'How much do social media ads cost in Canada?', answer: 'Facebook and Instagram ads run $0.50–$3.50 per click and $10–$60 per lead. TikTok is cheaper at $0.30–$2.00 per click, LinkedIn far more expensive at $4–$12. This is ad spend paid directly to the platform and is separate from any agency management fee. Below about $500/month the platforms cannot gather enough conversion data to optimise properly.' },
