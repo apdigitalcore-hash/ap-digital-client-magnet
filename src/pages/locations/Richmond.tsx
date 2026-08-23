@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: 'How quickly will I see leads as a Richmond business?',
-    answer: 'Most Richmond businesses see their first qualified leads within 2 weeks of launching their campaign. Google Ads can produce results within days for high-intent searches like"plumber Richmond BC" — Meta Ads typically optimize within 1–2 weeks.',
+    answer: 'Most Richmond businesses see their first qualified leads within 2 weeks of launching their campaign. Google Ads can produce results within days for high-intent searches like "plumber Richmond BC" — Meta Ads typically optimize within 1–2 weeks.',
   },
   {
     question: 'Do Richmond clients need a long-term contract?',
@@ -228,7 +228,7 @@ const Richmond = () => (
               Richmond's consumer behaviour has shifted decisively online. When a homeowner in Broadmoor needs an HVAC technician, they're not asking neighbours — they're searching Google within minutes. When someone in Steveston is looking for a new salon, they're clicking on Instagram ads and checking Google reviews before they book. When a Richmond real estate agent wants more listings, they need digital campaigns reaching homeowners in the specific submarkets they serve. The businesses in Richmond that are running targeted Google Ads and Meta Ads campaigns are consistently out-competing businesses relying on referrals and walk-in traffic alone. The gap between digitally active businesses and those without a structured ad strategy is widening every quarter.
             </p>
             <p>
-              What sets paid advertising apart from other growth strategies in Richmond is the immediacy and precision of results. A well-built Google Ads campaign targeting"plumber Richmond BC" or"HVAC Richmond" can generate job leads the same day it goes live — without waiting months for SEO to compound. A Meta Ads campaign targeting the right demographic in a specific Richmond postal code can fill a salon's appointment book within two weeks of launch. This is why Richmond businesses in our core verticals — trades, beauty, real estate, and coaching — consistently see strong returns on ad spend when campaigns are built correctly from the start.
+              What sets paid advertising apart from other growth strategies in Richmond is the immediacy and precision of results. A well-built Google Ads campaign targeting "plumber Richmond BC" or "HVAC Richmond" can generate job leads the same day it goes live — without waiting months for SEO to compound. A Meta Ads campaign targeting the right demographic in a specific Richmond postal code can fill a salon's appointment book within two weeks of launch. This is why Richmond businesses in our core verticals — trades, beauty, real estate, and coaching — consistently see strong returns on ad spend when campaigns are built correctly from the start.
             </p>
           </div>
         </div>

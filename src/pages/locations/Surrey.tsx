@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     question: 'Do you run Google Ads for Surrey businesses?',
-    answer: 'Yes — we run both Google Ads and Meta Ads for Surrey businesses. Which platform we prioritize depends on your business type. For high-intent searches like"plumber Surrey" or"electrician near me," Google Ads typically delivers the best results. For awareness and retargeting — salons, coaches, and health & wellness — Meta Ads often wins. We recommend the right mix after your free strategy call.',
+    answer: 'Yes — we run both Google Ads and Meta Ads for Surrey businesses. Which platform we prioritize depends on your business type. For high-intent searches like "plumber Surrey" or "electrician near me," Google Ads typically delivers the best results. For awareness and retargeting — salons, coaches, and health & wellness — Meta Ads often wins. We recommend the right mix after your free strategy call.',
   },
   {
     question: 'What industries do you serve in Surrey?',
@@ -134,7 +134,7 @@ const Surrey = () => (
               <span className="italic">Surrey BC</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. When someone searches"marketing agency near me" in Surrey, we put you in front of them. Month-to-month. Managed personally by Arjun Sharma.
+              AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. When someone searches "marketing agency near me" in Surrey, we put you in front of them. Month-to-month. Managed personally by Arjun Sharma.
             </p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
               <a

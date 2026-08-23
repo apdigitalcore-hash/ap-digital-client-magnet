@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     question: 'What\'s the best platform for Coquitlam service businesses?',
-    answer: 'It depends on your business type. For high-intent searches — someone actively looking for"plumber Coquitlam" or"electrician Port Moody" — Google Ads is typically the highest-converting channel. For awareness, retargeting, and businesses where customers need to see you multiple times before booking (salons, coaches, health & wellness), Meta Ads on Facebook and Instagram work exceptionally well. Most Coquitlam service businesses benefit from both platforms running together. We assess your specific situation on the strategy call and recommend the right starting point.',
+    answer: 'It depends on your business type. For high-intent searches — someone actively looking for "plumber Coquitlam" or "electrician Port Moody" — Google Ads is typically the highest-converting channel. For awareness, retargeting, and businesses where customers need to see you multiple times before booking (salons, coaches, health & wellness), Meta Ads on Facebook and Instagram work exceptionally well. Most Coquitlam service businesses benefit from both platforms running together. We assess your specific situation on the strategy call and recommend the right starting point.',
   },
   {
     question: 'How do I find a digital marketing agency near me in Coquitlam?',
