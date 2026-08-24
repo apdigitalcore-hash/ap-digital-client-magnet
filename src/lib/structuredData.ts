@@ -42,48 +42,23 @@ const serviceAreaCities = [
   { "@type": "City", "name": "Delta", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
 ];
 
-export const reviewSchemas = [
-  {
-    "@type": "Review",
-    "author": { "@type": "Person", "name": "Jordan M." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "AP Digital completely transformed our salon's booking flow. We went from relying on walk-ins to having a full calendar weeks in advance. Arjun is hands-on and actually knows what he's doing.",
-    "datePublished": "2026-03-15",
-    "itemReviewed": { "@id": `${BASE_URL}/#organization` }
-  },
-  {
-    "@type": "Review",
-    "author": { "@type": "Person", "name": "Priya K." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "We hired AP Digital to run our Google Ads for our plumbing business in Surrey. Within 3 weeks we were getting 2-3 calls a day from qualified leads. Best marketing investment we've made.",
-    "datePublished": "2026-04-02",
-    "itemReviewed": { "@id": `${BASE_URL}/#organization` }
-  },
-  {
-    "@type": "Review",
-    "author": { "@type": "Person", "name": "Marcus T." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "As a real estate agent in Vancouver, I needed someone who understood my market. AP Digital built a Meta Ads campaign that generates 15-20 qualified buyer leads every month. Worth every penny.",
-    "datePublished": "2026-05-10",
-    "itemReviewed": { "@id": `${BASE_URL}/#organization` }
-  },
-  {
-    "@type": "Review",
-    "author": { "@type": "Person", "name": "Sarah L." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "I'm a business coach in BC and struggled to get clients online. Arjun set up my Instagram ads and social media strategy — now I have a waitlist. No contracts, no BS, just results.",
-    "datePublished": "2026-06-01",
-    "itemReviewed": { "@id": `${BASE_URL}/#organization` }
-  },
-  {
-    "@type": "Review",
-    "author": { "@type": "Person", "name": "Dave R." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "We run an HVAC company in Burnaby. AP Digital set up Google Ads that consistently bring in jobs. The weekly reports are clear and Arjun is always available. Highly recommend.",
-    "datePublished": "2026-06-20",
-    "itemReviewed": { "@id": `${BASE_URL}/#organization` }
-  },
-];
+/**
+ * Review markup was removed on 2026-08-24.
+ *
+ * Five named Review nodes were shipped in the JS bundle — Jordan M., Priya K.,
+ * Marcus T., Sarah L., Dave R. None of them appear anywhere on the site, none
+ * match the Google Business Profile, and the aggregateRating alongside them
+ * claimed reviewCount 2 while marking up five. Unverifiable review markup is
+ * against Google's structured data policy and, in Canada, fabricated
+ * testimonials fall under the Competition Act's deceptive marketing rules.
+ *
+ * aggregateRating stays: 5.0 from 2 reviews is what the Google Business
+ * Profile actually shows. Google does not render self-serving review snippets
+ * for LocalBusiness, so real stars come from the profile, not from here.
+ *
+ * If real reviews are collected, mark up only ones that exist and are
+ * publicly verifiable, and keep reviewCount equal to the number marked up.
+ */
 
 export const organizationSchema = {
   "@type": ["LocalBusiness", "ProfessionalService"],
@@ -203,8 +178,7 @@ export const organizationSchema = {
     "reviewCount": "2",
     "bestRating": "5",
     "worstRating": "1"
-  },
-  "review": reviewSchemas
+  }
 };
 
 export const getWebSiteSchema = () => ({
