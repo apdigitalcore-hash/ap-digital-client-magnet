@@ -85,15 +85,19 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
   },
   {
     slug: 'how-much-does-social-media-marketing-cost-canada',
-    title: 'Social Media Marketing Cost & Agency Rates in Canada 2026',
-    metaTitle: 'Social Media Marketing Cost & Agency Rates in Canada 2026',
-    metaDescription: 'What Canadian agencies charge for social media in 2026: monthly rates by tier, per-post and hourly pricing, ad spend, and a free budget calculator.',
+    title: 'Social Media Marketing Cost in Canada: 2026 Price Guide',
+    metaTitle: 'Social Media Marketing Cost in Canada (2026 Prices & Tiers)',
+    metaDescription: 'See real 2026 social media marketing costs in Canada: $500–$5,000+/mo by tier, what each package includes, ad spend ranges, and a free budget calculator.',
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
     readTime: '13 min read',
-    dateModified: '2026-08-23',
+    dateModified: '2026-08-24',
     category: 'Marketing Strategy',
-    content: `Social media marketing in Canada costs **$500 to $5,000+ per month** for management and strategy in 2026, plus another **$500 to $5,000 per month** in ad spend if you run paid campaigns. Management splits into three tiers: budget at **$500 to $1,000**, growth at **$1,500 to $3,000**, and full-service at **$3,000 to $5,000+**.
+    content: `Social media marketing in Canada costs **$500 to $5,000+ per month** for management and strategy in 2026, plus another **$500 to $5,000 per month** in ad spend if you run paid campaigns. Here is the quick breakdown by tier so you can budget in seconds:
+
+- **Budget tier ($500–$1,000/mo):** 4–8 basic posts, no strategy or ads — just showing up.
+- **Growth tier ($1,500–$3,000/mo):** 12–20 posts, short-form video, community management, light ads, and reporting — the sweet spot for most small businesses.
+- **Full-service tier ($3,000–$5,000+/mo):** A dedicated team, advanced paid ads, pro video, multi-platform strategy, and CRO — for scaling brands.
 
 Most agencies answer this question with ranges so wide they are useless. Below, every tier is broken out with what you actually get at that price, what you don't, and the red flags that mean a quote is too good to be true. You will also find the four ways Canadian agencies bill — monthly retainer, per post, hourly, and percentage of ad spend — with typical rates for each, plus what video pricing looks like. Whether you're a Vancouver salon owner, a Toronto real estate agent, a Calgary contractor, or a coach anywhere in Canada, you'll be able to budget with real numbers rather than guesses.
 
