@@ -85,9 +85,9 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
   },
   {
     slug: 'how-much-does-social-media-marketing-cost-canada',
-    title: 'Social Media Marketing Cost in Canada: 2026 Price Guide',
-    metaTitle: 'Social Media Marketing Cost in Canada: 2026 Price Guide',
-    metaDescription: 'Real 2026 prices for Canadian social media marketing: agency fees, ad spend, and what each budget actually gets you. Plus a free budget calculator.',
+    title: 'Social Media Marketing Cost & Agency Rates in Canada 2026',
+    metaTitle: 'Social Media Marketing Cost & Agency Rates in Canada 2026',
+    metaDescription: 'What Canadian agencies charge for social media in 2026: monthly rates by tier, per-post and hourly pricing, ad spend, and a free budget calculator.',
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
     readTime: '13 min read',
@@ -95,7 +95,7 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
     category: 'Marketing Strategy',
     content: `Social media marketing in Canada costs **$500 to $5,000+ per month** for management and strategy in 2026, plus another **$500 to $5,000 per month** in ad spend if you run paid campaigns. Management splits into three tiers: budget at **$500 to $1,000**, growth at **$1,500 to $3,000**, and full-service at **$3,000 to $5,000+**.
 
-Most agencies answer this question with ranges so wide they are useless. Below, every tier is broken out with what you actually get at that price, what you don't, and the red flags that mean a quote is too good to be true. Whether you're a Vancouver salon owner, a Toronto real estate agent, a Calgary contractor, or a coach anywhere in Canada, you'll be able to budget with real numbers rather than guesses.
+Most agencies answer this question with ranges so wide they are useless. Below, every tier is broken out with what you actually get at that price, what you don't, and the red flags that mean a quote is too good to be true. You will also find the four ways Canadian agencies bill — monthly retainer, per post, hourly, and percentage of ad spend — with typical rates for each, plus what video pricing looks like. Whether you're a Vancouver salon owner, a Toronto real estate agent, a Calgary contractor, or a coach anywhere in Canada, you'll be able to budget with real numbers rather than guesses.
 
 ## Social Media Marketing Costs in Canada: The Big Picture
 
@@ -205,6 +205,23 @@ Management fees and ad spend are two different bills, and the ads themselves are
 Costs swing with your industry, your targeting, and — more than most people expect — your creative. A strong hook can cut cost per lead in half on the same budget and the same audience, which is why creative testing is worth more than micro-optimising bids. Instagram rewards creative over targeting more than any other placement, and we go deeper on [what Instagram ads cost in Canada](/blog/how-much-do-instagram-ads-cost-canada).
 
 Below roughly $500/month in spend, most platforms cannot gather enough conversion data to optimise. That is the practical floor, not an agency upsell. It is worth checking the other end of the funnel too — paid traffic landing on a page that does not convert wastes more money than the ads cost, and [what a website costs in Canada](/blog/how-much-does-a-website-cost-canada) covers when a rebuild is and is not worth it.
+
+## Social Media Video Pricing in Canada
+
+Video is quoted separately from social media management almost everywhere, so it is worth knowing the going rates before you assume it is included.
+
+| What You Are Buying | Typical 2026 Cost (CAD) |
+|---|---|
+| UGC-style clip from a creator | $150 – $600 per video |
+| Short-form video, freelancer (15 – 60s) | $300 – $1,500 per video |
+| Short-form video, production company | $1,500 – $5,000 per video |
+| Editing only, you supply the footage | $75 – $300 per video |
+| Monthly content package (4 – 8 videos) | $1,000 – $4,000/month |
+| Motion graphics or animation | $500 – $3,000 per video |
+
+The gap between a $300 freelancer video and a $3,000 produced one is mostly crew, location, and revisions — not whether it performs. For most local service businesses, footage shot on a recent phone and edited well outperforms a polished brand film, because it looks like the feed it appears in rather than an interruption.
+
+**To be straightforward: we do not produce video.** AP Digital runs paid ads and manages social accounts, and where a client needs video we tell them to hire a specialist or shoot it themselves. These numbers are here because you will be quoted them, not because we are quoting them.
 
 ## What to Look for in a Canadian Social Media Agency
 

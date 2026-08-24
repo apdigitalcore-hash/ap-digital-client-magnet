@@ -634,11 +634,10 @@ const blogPosts = [
 // FAQs straight out of src/lib/blogPosts.ts so there is a single source of
 // truth, and throw if the parse ever stops working rather than silently
 // shipping pages with the markup missing.
-function loadFaqsFromSource() {
+function loadPostsFromSource() {
   const ts = readFileSync(resolve(__dirname, '../src/lib/blogPosts.ts'), 'utf-8');
   // Questions containing an apostrophe are written as double-quoted strings,
-  // so both quote styles have to be accepted. Matching only single quotes
-  // silently dropped one or two entries per post.
+  // so both quote styles have to be accepted.
   const STR = String.raw`((?:'(?:[^'\\]|\\.)*')|(?:"(?:[^"\\]|\\.)*"))`;
   const unquote = (lit) => {
     const q = lit[0];
@@ -646,40 +645,61 @@ function loadFaqsFromSource() {
   };
   const pairRe = new RegExp(
     String.raw`\{\s*question:\s*` + STR + String.raw`\s*,\s*answer:\s*` + STR + String.raw`\s*\}`, 'g');
+  const field = (text, key) => {
+    const m = text.match(new RegExp(key + String.raw`:\s*` + STR));
+    return m ? unquote(m[1]) : undefined;
+  };
 
   const out = {};
   for (const chunk of ts.split(/\n\s*slug: /).slice(1)) {
     const slugMatch = chunk.match(new RegExp('^' + STR));
     if (!slugMatch) continue;
     const slug = unquote(slugMatch[1]);
+    const head = chunk.slice(0, chunk.indexOf('content:'));
+
+    const rec = {
+      metaTitle: field(head, 'metaTitle'),
+      metaDescription: field(head, 'metaDescription'),
+      date: field(head, 'date'),
+      dateModified: field(head, 'dateModified'),
+      category: field(head, 'category'),
+    };
 
     const faqBlock = chunk.match(/\n\s*faqs:\s*\[([\s\S]*?)\n\s*\],/);
-    if (!faqBlock) continue;
-
-    const faqs = [];
-    pairRe.lastIndex = 0;
-    let m;
-    while ((m = pairRe.exec(faqBlock[1])) !== null) faqs.push({ q: unquote(m[1]), a: unquote(m[2]) });
-
-    // Count what is actually in the source and refuse to ship a partial set.
-    // A silently short FAQPage is worse than a loud build failure.
-    const expected = (faqBlock[1].match(/\bquestion:/g) || []).length;
-    if (faqs.length !== expected) {
-      throw new Error(
-        `inject-meta: "${slug}" has ${expected} FAQ entries in blogPosts.ts but the parser ` +
-        `extracted ${faqs.length}. Fix the parser rather than shipping incomplete FAQPage markup.`);
+    if (faqBlock) {
+      const faqs = [];
+      pairRe.lastIndex = 0;
+      let m;
+      while ((m = pairRe.exec(faqBlock[1])) !== null) faqs.push({ q: unquote(m[1]), a: unquote(m[2]) });
+      const expected = (faqBlock[1].match(/\bquestion:/g) || []).length;
+      if (faqs.length !== expected) {
+        throw new Error(
+          `inject-meta: "${slug}" has ${expected} FAQ entries in blogPosts.ts but the parser ` +
+          `extracted ${faqs.length}. Fix the parser rather than shipping incomplete FAQPage markup.`);
+      }
+      rec.faqs = faqs;
     }
-    out[slug] = faqs;
+    out[slug] = rec;
   }
   return out;
 }
 
-const sourceFaqs = loadFaqsFromSource();
-let faqPostCount = 0;
+const sourcePosts = loadPostsFromSource();
+// blogPosts.ts is the single source of truth for post metadata. This file used
+// to keep its own copy of metaTitle/metaDescription/dates, and 33 of 41 posts
+// had drifted — meaning the tags Google crawled were not the ones the site
+// showed. Anything present in source now overwrites the copy here.
+let faqPostCount = 0, syncedFields = 0;
 for (const post of blogPosts) {
-  if (sourceFaqs[post.slug]) { post.faqs = sourceFaqs[post.slug]; faqPostCount++; }
+  const src = sourcePosts[post.slug];
+  if (!src) continue;
+  for (const key of ['metaTitle', 'metaDescription', 'date', 'dateModified', 'category']) {
+    if (src[key] !== undefined && src[key] !== post[key]) { post[key] = src[key]; syncedFields++; }
+  }
+  if (src.faqs) { post.faqs = src.faqs; faqPostCount++; }
 }
 console.log(`   FAQ schema: ${faqPostCount} posts carry FAQs (parsed from blogPosts.ts)`);
+console.log(`   Meta sync:  ${syncedFields} field(s) refreshed from blogPosts.ts`);
 
 
 // ── HTML generation helpers ─────────────────────────────────────────────────

@@ -3,78 +3,294 @@
     {
       "source": "/llms.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "X-Robots-Tag", "value": "all" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/llms-full.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
-        { "key": "X-Robots-Tag", "value": "all" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/((?!.*\\.(js|css|woff2|woff|ttf|png|jpg|jpeg|gif|svg|ico|webp|avif)$).*)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate, max-age=0" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate, max-age=0"
+        }
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/blog/social-media-marketing-cost-canada",
+      "destination": "/blog/how-much-does-social-media-marketing-cost-canada",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-digital-marketing-agency-vancouver",
+      "destination": "/blog/digital-marketing-agency-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-choose-marketing-agency-bc",
+      "destination": "/blog/digital-marketing-agency-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-market-a-trades-business-online",
+      "destination": "/blog/trades-marketing-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/trades-digital-marketing-guide",
+      "destination": "/blog/trades-marketing-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-get-more-salon-clients",
+      "destination": "/blog/salon-marketing-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/facebook-ads-vancouver-small-business",
+      "destination": "/blog/best-ads-platform-for-small-business-canada",
+      "permanent": true
+    },
+    {
+      "source": "/blog/facebook-ads-vs-google-ads",
+      "destination": "/blog/best-ads-platform-for-small-business-canada",
+      "permanent": true
+    },
+    {
+      "source": "/blog/google-ads-vs-meta-ads-local-business",
+      "destination": "/blog/best-ads-platform-for-small-business-canada",
+      "permanent": true
+    },
+    {
+      "source": "/blog/real-estate-social-media-tips",
+      "destination": "/blog/real-estate-agent-social-media-tips",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-much-should-salon-spend-on-marketing",
+      "destination": "/blog/salon-marketing-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/average-cost-per-lead-plumbers-canada",
+      "destination": "/blog/plumber-marketing-metro-vancouver",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-calculate-marketing-budget-service-business",
+      "destination": "/blog/digital-marketing-budget-small-business-canada",
+      "permanent": true
+    }
+  ],
   "rewrites": [
-    { "source": "/ai-plugin.json", "destination": "/api/ai-plugin" },
-    { "source": "/.well-known/ai-plugin.json", "destination": "/api/ai-plugin" },
-    { "source": "/llms-full.txt", "destination": "/api/llms-full" },
-    { "source": "/submit-contact", "destination": "/api/contact" },
-    { "source": "/trades-marketing", "destination": "/trades-marketing.html" },
-    { "source": "/salon-marketing", "destination": "/salon-marketing.html" },
-    { "source": "/real-estate-marketing", "destination": "/real-estate-marketing.html" },
-    { "source": "/coaching-marketing", "destination": "/coaching-marketing.html" },
-    { "source": "/services/paid-ads", "destination": "/services/paid-ads.html" },
-    { "source": "/services/social-media", "destination": "/services/social-media.html" },
-    { "source": "/services/content-creation", "destination": "/services/content-creation.html" },
-    { "source": "/services/seo", "destination": "/services/seo.html" },
-    { "source": "/services/lead-generation", "destination": "/services/lead-generation.html" },
-    { "source": "/services/web-design", "destination": "/services/web-design.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/blog", "destination": "/blog.html" },
-    { "source": "/surrey", "destination": "/surrey.html" },
-    { "source": "/burnaby", "destination": "/burnaby.html" },
-    { "source": "/langley", "destination": "/langley.html" },
-    { "source": "/coquitlam", "destination": "/coquitlam.html" },
-    { "source": "/vancouver", "destination": "/vancouver.html" },
-    { "source": "/richmond", "destination": "/richmond.html" },
-    { "source": "/abbotsford", "destination": "/abbotsford.html" },
-    { "source": "/pricing", "destination": "/pricing.html" },
-    { "source": "/case-studies", "destination": "/case-studies.html" },
-    { "source": "/how-to-choose-a-marketing-agency-vancouver", "destination": "/how-to-choose-a-marketing-agency-vancouver.html" },
-    { "source": "/blog/how-to-get-more-salon-clients", "destination": "/blog/how-to-get-more-salon-clients.html" },
-    { "source": "/blog/how-to-market-a-trades-business-online", "destination": "/blog/how-to-market-a-trades-business-online.html" },
-    { "source": "/blog/real-estate-agent-social-media-tips", "destination": "/blog/real-estate-agent-social-media-tips.html" },
-    { "source": "/blog/how-much-does-social-media-marketing-cost-canada", "destination": "/blog/how-much-does-social-media-marketing-cost-canada.html" },
-    { "source": "/blog/best-ads-platform-for-small-business-canada", "destination": "/blog/best-ads-platform-for-small-business-canada.html" },
-    { "source": "/blog/social-media-marketing-cost-canada", "destination": "/blog/social-media-marketing-cost-canada.html" },
-    { "source": "/blog/facebook-ads-vs-google-ads", "destination": "/blog/facebook-ads-vs-google-ads.html" },
-    { "source": "/blog/real-estate-social-media-tips", "destination": "/blog/real-estate-social-media-tips.html" },
-    { "source": "/blog/email-marketing-vs-social-media", "destination": "/blog/email-marketing-vs-social-media.html" },
-    { "source": "/blog/best-ads-for-trades-businesses-canada", "destination": "/blog/best-ads-for-trades-businesses-canada.html" },
-    { "source": "/blog/digital-marketing-agency-vancouver-bc", "destination": "/blog/digital-marketing-agency-vancouver-bc.html" },
-    { "source": "/blog/salon-marketing-vancouver-bc", "destination": "/blog/salon-marketing-vancouver-bc.html" },
-    { "source": "/blog/trades-marketing-vancouver-bc", "destination": "/blog/trades-marketing-vancouver-bc.html" },
-    { "source": "/blog/real-estate-agent-marketing-vancouver-bc", "destination": "/blog/real-estate-agent-marketing-vancouver-bc.html" },
-    { "source": "/blog/meta-ads-cost-contractors-bc", "destination": "/blog/meta-ads-cost-contractors-bc.html" },
-    { "source": "/blog/hvac-marketing-vancouver-bc", "destination": "/blog/hvac-marketing-vancouver-bc.html" },
-    { "source": "/blog/coaching-clients-bc", "destination": "/blog/coaching-clients-bc.html" },
-    { "source": "/blog/plumber-marketing-metro-vancouver", "destination": "/blog/plumber-marketing-metro-vancouver.html" },
-    { "source": "/blog/electrician-leads-bc", "destination": "/blog/electrician-leads-bc.html" },
-    { "source": "/blog/best-digital-marketing-agency-vancouver", "destination": "/blog/best-digital-marketing-agency-vancouver.html" },
-    { "source": "/blog/vancouver-small-business-seo-guide", "destination": "/blog/vancouver-small-business-seo-guide.html" },
-    { "source": "/blog/facebook-ads-vancouver-small-business", "destination": "/blog/facebook-ads-vancouver-small-business.html" },
-    { "source": "/blog/vancouver-google-ads-guide-local-business", "destination": "/blog/vancouver-google-ads-guide-local-business.html" },
-    { "source": "/blog/social-media-marketing-vancouver", "destination": "/blog/social-media-marketing-vancouver.html" },
-    { "source": "/((?!api/|.*\\.json$|.*\\.txt$|.*\\.xml$|.*\\.ico$|.*\\.png$|.*\\.svg$|\\.well-known/).*)", "destination": "/index.html" }
+    {
+      "source": "/ai-plugin.json",
+      "destination": "/api/ai-plugin"
+    },
+    {
+      "source": "/.well-known/ai-plugin.json",
+      "destination": "/api/ai-plugin"
+    },
+    {
+      "source": "/llms-full.txt",
+      "destination": "/api/llms-full"
+    },
+    {
+      "source": "/submit-contact",
+      "destination": "/api/contact"
+    },
+    {
+      "source": "/trades-marketing",
+      "destination": "/trades-marketing.html"
+    },
+    {
+      "source": "/salon-marketing",
+      "destination": "/salon-marketing.html"
+    },
+    {
+      "source": "/real-estate-marketing",
+      "destination": "/real-estate-marketing.html"
+    },
+    {
+      "source": "/coaching-marketing",
+      "destination": "/coaching-marketing.html"
+    },
+    {
+      "source": "/services/paid-ads",
+      "destination": "/services/paid-ads.html"
+    },
+    {
+      "source": "/services/social-media",
+      "destination": "/services/social-media.html"
+    },
+    {
+      "source": "/services/content-creation",
+      "destination": "/services/content-creation.html"
+    },
+    {
+      "source": "/services/seo",
+      "destination": "/services/seo.html"
+    },
+    {
+      "source": "/services/lead-generation",
+      "destination": "/services/lead-generation.html"
+    },
+    {
+      "source": "/services/web-design",
+      "destination": "/services/web-design.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/surrey",
+      "destination": "/surrey.html"
+    },
+    {
+      "source": "/burnaby",
+      "destination": "/burnaby.html"
+    },
+    {
+      "source": "/langley",
+      "destination": "/langley.html"
+    },
+    {
+      "source": "/coquitlam",
+      "destination": "/coquitlam.html"
+    },
+    {
+      "source": "/vancouver",
+      "destination": "/vancouver.html"
+    },
+    {
+      "source": "/richmond",
+      "destination": "/richmond.html"
+    },
+    {
+      "source": "/abbotsford",
+      "destination": "/abbotsford.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/case-studies.html"
+    },
+    {
+      "source": "/how-to-choose-a-marketing-agency-vancouver",
+      "destination": "/how-to-choose-a-marketing-agency-vancouver.html"
+    },
+    {
+      "source": "/blog/real-estate-agent-social-media-tips",
+      "destination": "/blog/real-estate-agent-social-media-tips.html"
+    },
+    {
+      "source": "/blog/how-much-does-social-media-marketing-cost-canada",
+      "destination": "/blog/how-much-does-social-media-marketing-cost-canada.html"
+    },
+    {
+      "source": "/blog/best-ads-platform-for-small-business-canada",
+      "destination": "/blog/best-ads-platform-for-small-business-canada.html"
+    },
+    {
+      "source": "/blog/email-marketing-vs-social-media",
+      "destination": "/blog/email-marketing-vs-social-media.html"
+    },
+    {
+      "source": "/blog/best-ads-for-trades-businesses-canada",
+      "destination": "/blog/best-ads-for-trades-businesses-canada.html"
+    },
+    {
+      "source": "/blog/digital-marketing-agency-vancouver-bc",
+      "destination": "/blog/digital-marketing-agency-vancouver-bc.html"
+    },
+    {
+      "source": "/blog/salon-marketing-vancouver-bc",
+      "destination": "/blog/salon-marketing-vancouver-bc.html"
+    },
+    {
+      "source": "/blog/trades-marketing-vancouver-bc",
+      "destination": "/blog/trades-marketing-vancouver-bc.html"
+    },
+    {
+      "source": "/blog/real-estate-agent-marketing-vancouver-bc",
+      "destination": "/blog/real-estate-agent-marketing-vancouver-bc.html"
+    },
+    {
+      "source": "/blog/meta-ads-cost-contractors-bc",
+      "destination": "/blog/meta-ads-cost-contractors-bc.html"
+    },
+    {
+      "source": "/blog/hvac-marketing-vancouver-bc",
+      "destination": "/blog/hvac-marketing-vancouver-bc.html"
+    },
+    {
+      "source": "/blog/coaching-clients-bc",
+      "destination": "/blog/coaching-clients-bc.html"
+    },
+    {
+      "source": "/blog/plumber-marketing-metro-vancouver",
+      "destination": "/blog/plumber-marketing-metro-vancouver.html"
+    },
+    {
+      "source": "/blog/electrician-leads-bc",
+      "destination": "/blog/electrician-leads-bc.html"
+    },
+    {
+      "source": "/blog/vancouver-small-business-seo-guide",
+      "destination": "/blog/vancouver-small-business-seo-guide.html"
+    },
+    {
+      "source": "/blog/vancouver-google-ads-guide-local-business",
+      "destination": "/blog/vancouver-google-ads-guide-local-business.html"
+    },
+    {
+      "source": "/blog/social-media-marketing-vancouver",
+      "destination": "/blog/social-media-marketing-vancouver.html"
+    },
+    {
+      "source": "/((?!api/|.*\\.json$|.*\\.txt$|.*\\.xml$|.*\\.ico$|.*\\.png$|.*\\.svg$|\\.well-known/).*)",
+      "destination": "/index.html"
+    }
   ]
 }
