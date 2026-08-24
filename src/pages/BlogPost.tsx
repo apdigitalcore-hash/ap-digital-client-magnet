@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
+import { LEGACY_BLOG_REDIRECTS } from '@/lib/legacyRedirects';
 import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
 import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
@@ -17,7 +18,12 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
 
-  if (!post) return <Navigate to="/blog" replace />;
+  // An old URL that still ranks goes to the post that replaced it, not to
+  // the index — dumping it on /blog throws away the ranking it still has.
+  if (!post) {
+    const target = slug ? LEGACY_BLOG_REDIRECTS[slug] : undefined;
+    return <Navigate to={target ? `/blog/${target}` : '/blog'} replace />;
+  }
 
   const canonical = post.canonicalUrl ?? `https://ap-digital.ca/blog/${post.slug}`;
 

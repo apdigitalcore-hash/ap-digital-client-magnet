@@ -839,5 +839,72 @@ function escapeHtml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+
+// ── Legacy /blog/ URLs that still rank ──────────────────────────────────────
+// The live host does not honour vercel.json, so its redirects never fire and
+// these URLs served the SPA shell as soft 404s. A static stub per URL works on
+// any host: it carries a canonical to the surviving post so Google consolidates
+// the ranking, and bounces a human immediately.
+function loadLegacyRedirects() {
+  const ts = readFileSync(resolve(__dirname, '../src/lib/legacyRedirects.ts'), 'utf-8');
+  const body = ts.slice(ts.indexOf('LEGACY_BLOG_REDIRECTS'));
+  const out = {};
+  for (const m of body.matchAll(/'([a-z0-9-]+)':\s*'([a-z0-9-]+)'/g)) out[m[1]] = m[2];
+  if (Object.keys(out).length === 0) {
+    throw new Error('inject-meta: parsed 0 legacy redirects — the parser is out of date.');
+  }
+  return out;
+}
+
+const legacyRedirects = loadLegacyRedirects();
+
+// vercel.json holds the same map for the day this moves to a host that reads
+// it. Assert rather than duplicate silently.
+{
+  const vercel = JSON.parse(readFileSync(resolve(__dirname, '../vercel.json'), 'utf-8'));
+  const inVercel = Object.fromEntries(
+    (vercel.redirects || [])
+      .filter((r) => r.source.startsWith('/blog/'))
+      .map((r) => [r.source.replace('/blog/', ''), r.destination.replace('/blog/', '')]));
+  const keys = new Set([...Object.keys(legacyRedirects), ...Object.keys(inVercel)]);
+  const drifted = [...keys].filter((k) => legacyRedirects[k] !== inVercel[k]);
+  if (drifted.length) {
+    throw new Error(
+      `inject-meta: legacyRedirects.ts and vercel.json disagree on: ${drifted.join(', ')}. ` +
+      `Update both, or the two hosts would behave differently.`);
+  }
+}
+
+let stubCount = 0;
+for (const [from, to] of Object.entries(legacyRedirects)) {
+  if (!blogPosts.some((p) => p.slug === to)) {
+    throw new Error(`inject-meta: legacy redirect "${from}" points at "${to}", which is not a live post.`);
+  }
+  const target = `${BASE_URL}/blog/${to}`;
+  const stub = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moved — AP Digital</title>
+<link rel="canonical" href="${target}">
+<meta http-equiv="refresh" content="0; url=/blog/${to}">
+<!-- No noindex here on purpose: noindex alongside a canonical is a
+     conflicting signal and can get the URL dropped instead of having
+     its ranking folded into the target. The canonical plus a zero-delay
+     refresh is what consolidates it. -->
+</head>
+<body>
+<p>This page has moved to <a href="/blog/${to}">${target}</a>.</p>
+<script>window.location.replace('/blog/${to}');</script>
+</body>
+</html>
+`;
+  const dir = resolve(distDir, 'blog', from);
+  if (!existsSync(dir)) mkdirSync(dir, { recursive: true });
+  writeFileSync(resolve(dir, 'index.html'), stub);
+  stubCount++;
+}
+console.log(`   Legacy URLs: ${stubCount} redirect stub(s) written`);
+
 console.log('\n✅ Meta injection complete.');
 console.log(`   ${staticRoutes.length} pages + ${blogPosts.length} blog posts generated.`);
