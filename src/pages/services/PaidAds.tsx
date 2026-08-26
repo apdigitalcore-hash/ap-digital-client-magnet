@@ -25,10 +25,64 @@ const included = [
   'Dedicated account manager',
 ];
 
+const costs = [
+  { line: 'Management fee', amount: '$759/month', note: 'Flat. Not a percentage of your spend.' },
+  { line: 'Ad spend', amount: '$1,000+/month', note: 'Paid directly to Google or Meta on your own card.' },
+  { line: 'Setup fee', amount: 'None', note: 'Tracking, research and build are inside the fee.' },
+  { line: 'Contract', amount: 'Month-to-month', note: "30 days' notice to pause or cancel. No exit fee." },
+];
+
+const platformFit = [
+  { type: 'Trades & contractors', platform: 'Google Ads first', why: 'A burst pipe or a dead furnace gets typed into Google at the moment of need.' },
+  { type: 'Salons & spas', platform: 'Meta Ads first', why: 'Nobody searches for a new hair colour. They see one in a feed and book.' },
+  { type: 'Dental & health clinics', platform: 'Google Ads first', why: 'High intent, local, and people compare before they call.' },
+  { type: 'Real estate', platform: 'Meta Ads first', why: 'Buyers and sellers are discovered long before they search for an agent.' },
+  { type: 'Coaches & consultants', platform: 'Meta Ads first', why: 'Demand has to be created, not captured.' },
+  { type: 'Restaurants', platform: 'Meta Ads first', why: 'Visual, local, and impulse-driven.' },
+];
+
+const firstThirtyDays = [
+  { when: 'Days 1-3', what: 'Conversion tracking before anything else. If we cannot tell which ad produced which lead, nothing after this matters. Calls get tracked, not just form fills.' },
+  { when: 'Days 3-7', what: 'Audience and keyword research, negative keyword list, first creative built, and a lead-volume target agreed with you in writing before launch.' },
+  { when: 'Week 2', what: 'Campaigns live. Most clients see their first qualified leads in this window. Cost per lead is still noisy and we do not read much into it yet.' },
+  { when: 'Weeks 3-4', what: 'Enough conversion data to optimise against. Search terms pruned weekly, losing creative cut, budget shifted to what is producing.' },
+];
+
+const wasteSources = [
+  'Boosted posts instead of campaigns. Boosting optimises for engagement, not enquiries.',
+  'Broad match with no negative keywords, which quietly spends a third of a local budget on searches with no purchase intent.',
+  'Performance Max with no brand exclusion, claiming credit for people already searching your name.',
+  'Sending ad traffic to a homepage instead of a page with one offer and one action.',
+  'Judging the account in week one, before there is enough data for the numbers to mean anything.',
+  'No call tracking, on a business that gets most of its leads by phone.',
+];
+
+const notFor = [
+  'Budgets under $500/month in ad spend. Below that the platforms cannot gather enough conversion data to optimise, and you pay near-full price for every click indefinitely.',
+  'Businesses with no way to answer a lead within the hour. Speed to first contact changes conversion more than anything we can do in the ad account.',
+  'Anyone who needs a guaranteed cost per lead before launch. We agree a volume target, not a price we cannot know yet.',
+];
+
 const faqs = [
   {
+    question: 'Do you charge a percentage of ad spend?',
+    answer: 'No. The fee is a flat $759 per month regardless of what you spend. Percentage billing at 10 to 20% is common and it rewards the agency for spending more of your money whether or not it produces anything. A flat fee removes that incentive entirely.',
+  },
+  {
+    question: 'Who owns the ad account and the data?',
+    answer: 'You do. The ad account, the pixel, the audiences and the entire conversion history stay in your name. If you leave, you keep all of it. Agencies that own the account are creating a switching cost disguised as an administrative detail.',
+  },
+  {
+    question: 'What is the minimum ad spend that actually works?',
+    answer: 'Around $500 per month is the practical floor and $1,000 is where we recommend starting. Below $500 the platforms cannot gather enough conversion data to optimise, so you pay close to full price for every click indefinitely. That is a platform limitation, not an agency upsell.',
+  },
+  {
+    question: 'Do you guarantee results?',
+    answer: 'We agree a lead-volume target before anything goes live, and if we miss it by month three we keep working at no charge until we hit it. What we do not do is guarantee a cost per lead before launch, because nobody can know that until the account has data. We also have no published case studies yet, and we say so rather than quoting numbers you cannot verify.',
+  },
+  {
     question: 'How much do paid ads cost in Vancouver?',
-    answer: 'Most of our clients invest between $500 and $1,500 per month in ad spend, plus a management fee that is quoted upfront before we start. There are no hidden costs — you know exactly what you are paying before any campaign goes live.',
+    answer: 'Management is $759 per month, flat, and ad spend is separate and paid directly to Google or Meta on your own card. We recommend a minimum of $1,000 per month in ad spend, so most Vancouver businesses run $1,750 to $3,000 a month all in. There is no setup fee and no percentage of spend.',
   },
   {
     question: 'How fast will I see results from paid ads?',
@@ -145,6 +199,111 @@ const PaidAds = () => (
         </ul>
 
         <IndustriesWeServe />
+
+
+        {/* ── What it costs ───────────────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What It Costs</h2>
+          <p className="text-muted-foreground mb-6">
+            Two separate bills, and conflating them is where most agency quotes get confusing.
+            Management pays for the work. Ad spend goes to the platform on your own card, so you
+            see the real numbers and keep control of the budget.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="py-3 pr-4 text-sm font-semibold text-foreground">Line item</th>
+                  <th className="py-3 pr-4 text-sm font-semibold text-foreground">Amount</th>
+                  <th className="py-3 text-sm font-semibold text-foreground">Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                {costs.map((c) => (
+                  <tr key={c.line} className="border-b border-border/60">
+                    <td className="py-3 pr-4 text-sm text-foreground font-medium whitespace-nowrap">{c.line}</td>
+                    <td className="py-3 pr-4 text-sm text-teal font-semibold whitespace-nowrap">{c.amount}</td>
+                    <td className="py-3 text-sm text-muted-foreground">{c.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-muted-foreground mt-4">
+            Most Vancouver businesses land between $1,750 and $3,000 a month all in, and the
+            majority of that is ad spend rather than fees. Full breakdown on the{' '}
+            <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing page</Link>.
+          </p>
+        </section>
+
+        {/* ── Which platform ──────────────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">Google Ads or Meta Ads?</h2>
+          <p className="text-muted-foreground mb-6">
+            The honest split is intent versus discovery. Google captures people already looking for
+            what you sell. Meta creates demand from people who were not looking yet. Most businesses
+            should get one working properly before adding the second — two half-funded channels
+            perform worse than one funded properly.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {platformFit.map((row) => (
+              <div key={row.type} className="bg-card border border-border rounded-xl p-5">
+                <p className="font-bold text-foreground mb-1">{row.type}</p>
+                <p className="text-sm text-teal font-semibold mb-2">{row.platform}</p>
+                <p className="text-sm text-muted-foreground">{row.why}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── First 30 days ───────────────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">The First 30 Days</h2>
+          <p className="text-muted-foreground mb-6">
+            No strategy decks. Here is what actually happens, in order.
+          </p>
+          <div className="space-y-4">
+            {firstThirtyDays.map((step) => (
+              <div key={step.when} className="bg-card border border-border rounded-xl p-5">
+                <p className="text-sm font-bold text-teal mb-1">{step.when}</p>
+                <p className="text-sm text-muted-foreground">{step.what}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Where budgets leak ──────────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">Where Ad Budgets Leak</h2>
+          <p className="text-muted-foreground mb-6">
+            The six things that cost self-managed and badly-managed accounts the most money. If you
+            are running ads yourself, this list is worth checking before you hire anyone.
+          </p>
+          <ul className="space-y-3">
+            {wasteSources.map((w) => (
+              <li key={w} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <span aria-hidden="true" className="mt-2 w-1.5 h-1.5 rounded-full bg-teal shrink-0" />
+                {w}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* ── Who this is not for ─────────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">When This Is Not the Right Spend</h2>
+          <p className="text-muted-foreground mb-6">
+            We would rather say this before you pay us than after.
+          </p>
+          <ul className="space-y-3">
+            {notFor.map((n) => (
+              <li key={n} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <span aria-hidden="true" className="mt-2 w-1.5 h-1.5 rounded-full bg-muted-foreground/50 shrink-0" />
+                {n}
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section className="mt-16 mb-16">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>

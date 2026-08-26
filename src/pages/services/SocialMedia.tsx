@@ -25,14 +25,53 @@ const included = [
   'Competitor analysis',
 ];
 
+const costs = [
+  { line: 'Management fee', amount: '$849/month', note: '2 platforms, 12 custom posts, captions, scheduling, community management.' },
+  { line: 'Content production', amount: 'You shoot it', note: 'We direct what to capture. Phone footage is genuinely fine.' },
+  { line: 'Ad spend', amount: 'Not included', note: 'This is organic. Paid is a separate service at $759/month.' },
+  { line: 'Contract', amount: 'Month-to-month', note: "30 days' notice to pause or cancel. No exit fee." },
+];
+
+const scope = [
+  { yes: 'A content calendar planned a month ahead', no: 'Shoot days with a videographer on site' },
+  { yes: 'Captions and hashtags written per post, not templated', no: 'Stock footage standing in for your actual work' },
+  { yes: 'Scheduling and publishing across two platforms', no: 'Paid ad management (that is a separate line)' },
+  { yes: 'Community management — comments and DMs answered', no: 'Follower-count guarantees' },
+  { yes: 'Monthly reporting on enquiries, not just reach', no: 'Reputation management or review removal' },
+];
+
+const whatWeNeed = [
+  { thing: 'Raw footage from your day', detail: 'Before-and-afters, work in progress, the finished result. Filmed on a phone, in the moment. This is the single biggest predictor of whether the account works.' },
+  { thing: 'One person who can answer a question', detail: 'Captions need a fact-check occasionally — a price, a service name, whether something is still offered.' },
+  { thing: 'Access, not passwords', detail: 'You keep ownership of every account. We work through business-manager access you can revoke at any time.' },
+];
+
+const honestLimits = [
+  'Organic social does not deliver new reach the way it did. Instagram shows your posts to a fraction of your followers, and your followers are largely people who already know you. New customers come from ads; organic is what convinces them once they check you out.',
+  'It compounds over 60 to 90 days rather than producing leads in week two. If you need bookings this month, paid ads are the honest answer and we will tell you so.',
+  'A dormant account is worse than no account. If posting stops, the stale last post reads as a business that may have closed — which is why consistency matters more than volume.',
+];
+
 const faqs = [
+  {
+    question: 'How much does social media management cost?',
+    answer: 'It is $849 per month for two platforms, twelve custom posts, captions, hashtags, scheduling and community management, month-to-month with 30 days notice. That excludes ad spend, which is a separate service at $759 per month. Packages elsewhere run $500 to $3,000 depending mainly on whether content production is included — ours is not, which is why it sits where it does.',
+  },
+  {
+    question: 'Should I be doing organic social or paid ads?',
+    answer: 'They do different jobs. Paid ads produce leads within about two weeks. Organic compounds over 60 to 90 days and is what convinces someone once an ad has brought them to your profile. If you need bookings this month, start with ads. If your ads are working but your profile undermines them, start here.',
+  },
+  {
+    question: 'Do you guarantee follower growth?',
+    answer: 'No, and we would be suspicious of anyone who does. Follower count and booking count are different projects, and buying the first does nothing for the second. We report on enquiries, saves and profile visits, because those are the ones that turn into work.',
+  },
   {
     question: 'Which social media platforms should my business be on?',
     answer: 'It depends on your industry and target audience. Instagram and TikTok work best for visual businesses like salons, med spas, and fitness studios. Facebook and Instagram are ideal for trades and home services. LinkedIn is the go-to for coaches, consultants, and B2B service providers. We analyze your market and recommend the platforms where your ideal customers actually spend their time.',
   },
   {
     question: 'How often will you post on my accounts?',
-    answer: 'Typically we post three to five times per week per platform, including a mix of feed posts, stories, and Reels or TikToks. Consistency is key to growing your audience and staying top of mind, so we build a content calendar that keeps your brand active without overwhelming your followers.',
+    answer: 'Twelve custom posts per month across two platforms, which works out to roughly three a week. Consistency matters more than volume — a steady rhythm outperforms a burst of posting followed by three quiet weeks. The calendar is planned a month ahead so you always know what is going out.',
   },
   {
     question: 'Can you manage my social media if I have never posted before?',
@@ -40,7 +79,7 @@ const faqs = [
   },
   {
     question: 'Do you create the content or do I need to provide it?',
-    answer: 'We handle everything: scripting, shooting guidance, editing, graphic design, copywriting, and posting. If you can provide raw photos or video clips, that helps — but it is not required. We can create high-quality content using stock assets, brand templates, and creative direction.',
+    answer: 'You shoot, we do everything else — direction on what to capture, captions, hashtags, scheduling, publishing and community management. We do not send a videographer, and that is deliberate: footage taken in the moment on a phone consistently outperforms a scheduled shoot day, because it looks like the feed it appears in. It also keeps the price at $849 rather than the $1,500 to $3,000 that packages with shoot days cost.',
   },
   {
     question: 'How do you measure social media success?',
@@ -142,6 +181,99 @@ const SocialMedia = () => (
         </ul>
 
         <IndustriesWeServe />
+
+        {/* ── What it costs ───────────────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What It Costs</h2>
+          <p className="text-muted-foreground mb-6">
+            One flat monthly fee, and a clear line about what sits outside it. Packages elsewhere
+            run $500 to $3,000 a month, and the variable that moves the price most is whether
+            someone comes to you to shoot content.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="py-3 pr-4 text-sm font-semibold text-foreground">Line item</th>
+                  <th className="py-3 pr-4 text-sm font-semibold text-foreground">Amount</th>
+                  <th className="py-3 text-sm font-semibold text-foreground">Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                {costs.map((c) => (
+                  <tr key={c.line} className="border-b border-border/60">
+                    <td className="py-3 pr-4 text-sm text-foreground font-medium whitespace-nowrap">{c.line}</td>
+                    <td className="py-3 pr-4 text-sm text-teal font-semibold whitespace-nowrap">{c.amount}</td>
+                    <td className="py-3 text-sm text-muted-foreground">{c.note}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* ── Scope, both directions ──────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What Is and Is Not Included</h2>
+          <p className="text-muted-foreground mb-6">
+            Most social media quotes are hard to compare because nobody lists the second column.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="py-3 pr-4 text-sm font-semibold text-foreground">Included</th>
+                  <th className="py-3 text-sm font-semibold text-foreground">Not included</th>
+                </tr>
+              </thead>
+              <tbody>
+                {scope.map((row) => (
+                  <tr key={row.yes} className="border-b border-border/60">
+                    <td className="py-3 pr-4 text-sm text-foreground">{row.yes}</td>
+                    <td className="py-3 text-sm text-muted-foreground">{row.no}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* ── What we need from you ───────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What We Need From You</h2>
+          <p className="text-muted-foreground mb-6">
+            Three things, and only the first one takes any real effort.
+          </p>
+          <div className="space-y-4">
+            {whatWeNeed.map((n) => (
+              <div key={n.thing} className="bg-card border border-border rounded-xl p-5">
+                <p className="font-bold text-foreground mb-1">{n.thing}</p>
+                <p className="text-sm text-muted-foreground">{n.detail}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── Honest limits ───────────────────────────────────────────── */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What Organic Social Will Not Do</h2>
+          <p className="text-muted-foreground mb-6">
+            Worth knowing before you pay anyone for it, including us.
+          </p>
+          <ul className="space-y-3">
+            {honestLimits.map((l) => (
+              <li key={l} className="flex items-start gap-3 text-sm text-muted-foreground">
+                <span aria-hidden="true" className="mt-2 w-1.5 h-1.5 rounded-full bg-muted-foreground/50 shrink-0" />
+                {l}
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm text-muted-foreground mt-6">
+            If leads this month are the priority, our{' '}
+            <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">paid ads service</Link>{' '}
+            is the honest starting point, and we will say so on the call.
+          </p>
+        </section>
 
         <section className="mt-16 mb-16">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
