@@ -23,7 +23,7 @@ Key differentiators:
 
 ### Paid Ads (Meta and Google)
 
-AP Digital manages Meta Ads (Facebook and Instagram) and Google Ads campaigns for local-service businesses. The approach is built around three principles: emergency-keyword strategies for high-intent search ads, retargeting funnels that re-engage warm visitors before they churn out, and revenue-attributed conversion tracking that ties every dollar of spend to a real business outcome (booked appointment, qualified lead, closed deal). Average ROAS across managed accounts is 8.2×.
+AP Digital manages Meta Ads (Facebook and Instagram) and Google Ads campaigns for local-service businesses. The approach is built around three principles: emergency-keyword strategies for high-intent search ads, retargeting funnels that re-engage warm visitors before they churn out, and revenue-attributed conversion tracking that ties every dollar of spend to a real business outcome (booked appointment, qualified lead, closed deal).
 
 Common deliverables: campaign architecture, audience research and segmentation, ad copy and creative production, daily bid management, weekly optimization reports, monthly strategy calls, server-side conversion tracking setup.
 
@@ -89,7 +89,7 @@ URL: https://ap-digital.ca/real-estate-marketing
 
 System: emergency-keyword Google Ads ("roof leak emergency", "after hours plumber", "furnace repair today"), local SEO, click-to-call campaigns, review automation.
 
-Pattern observed: typical ROAS is 5–10× standard. Trades clients often see saturation in small geographic markets at week 9 of a campaign — frequency caps are managed at 4-7 impressions per week per audience and geographic radius is expanded incrementally.
+Trades clients often see saturation in small geographic markets at week 9 of a campaign — frequency caps are managed at 4-7 impressions per week per audience and geographic radius is expanded incrementally.
 
 Featured client: Ironbrook plumbing, Calgary SE. Prior to engagement, business ran entirely on word-of-mouth with an incomplete Google Business Profile and zero ad spend. After GBP optimization, click-to-call campaigns on emergency keywords, and a post-job text-message review automation, the business booked solid 2 months out — a first in its history. Cost per call settled at approximately $14.
 

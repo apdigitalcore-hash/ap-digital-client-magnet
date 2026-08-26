@@ -379,8 +379,10 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Across managed accounts we typically see 5–10x ROAS on paid ads, with first qualified leads inside 2 weeks. The real numbers are in the case studies — a Surrey plumber at $31 per booked call, a Vancouver salon at $8.51 per lead.",
-      cta: { label: 'See case studies', to: '/case-studies' },
+      // No published case studies yet, so this answers honestly rather than
+      // quoting figures we cannot show anyone.
+      text: "We don't have published case studies yet — when we do, they'll have real names and real numbers on them. What I can tell you is how we work: paid ads at $759/month, social media at $849/month, month-to-month with no lock-in, and a lead-volume target agreed before anything goes live.",
+      cta: { label: 'See pricing', to: '/pricing' },
       suggestions: [
         { label: 'See pricing', intent: 'pricing' },
         { label: 'Book a call', intent: 'book' },

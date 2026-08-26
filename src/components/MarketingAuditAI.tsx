@@ -238,7 +238,7 @@ function estimateMonthlyLeak(dims: DimensionAnalysis[]): number {
 }
 
 const SERVICE_REC: Record<Dimension, { label: string; path: string; pitch: string }> = {
-  ads:     { label: 'Paid Ads',         path: '/services/paid-ads',         pitch: 'Google + Meta ads managed for $759/mo — 20-50 leads/month for BC trades, salons & realtors.' },
+  ads:     { label: 'Paid Ads',         path: '/services/paid-ads',         pitch: 'Google + Meta ads managed for $759/mo for BC trades, salons & realtors. Month-to-month, no lock-in.' },
   seo:     { label: 'SEO',              path: '/services/seo',              pitch: 'Local SEO + Google Business Profile optimization. Most clients hit page 1 in 90-180 days.' },
   social:  { label: 'Social Media',     path: '/services/social-media',     pitch: '12 custom posts/month, 2 platforms managed, community engagement — fully done for you.' },
   content: { label: 'Content Creation', path: '/services/content-creation', pitch: 'Scroll-stopping short-form video + social content that builds brand and drives leads.' },

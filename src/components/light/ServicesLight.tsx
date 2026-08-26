@@ -21,9 +21,9 @@ const services: {
       'We build, manage, and optimize ad campaigns across Google Ads, Meta (Facebook & Instagram), and TikTok — audience research, creative testing, retargeting funnels, and weekly performance reporting.',
     platforms: ['google', 'meta', 'facebook', 'tiktok'],
     stats: [
-      { value: '5–10x', label: 'Avg ROAS' },
+      { value: '$759', label: 'Per month' },
       { value: '14', label: 'Days to launch' },
-      { value: '$15+', label: 'Cost per lead' },
+      { value: '0', label: 'Lock-in months' },
     ],
   },
   {

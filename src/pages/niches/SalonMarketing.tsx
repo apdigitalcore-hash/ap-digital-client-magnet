@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
 const TITLE = 'Salon Marketing Vancouver | Fill Every Chair | AP Digital';
-const DESC = 'Get 20–40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.';
+const DESC = 'Meta Ads & Instagram content for Vancouver salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/salon-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

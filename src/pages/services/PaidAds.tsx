@@ -119,18 +119,18 @@ const PaidAds = () => (
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           <div className="bg-card border border-border rounded-xl p-6 text-center">
             <TrendingUp className="w-8 h-8 text-teal mx-auto mb-3" />
-            <p className="font-display text-3xl font-bold text-teal mb-2">5-10x</p>
-            <p className="text-muted-foreground text-sm">ROAS for clients</p>
+            <p className="font-display text-3xl font-bold text-teal mb-2">$759</p>
+            <p className="text-muted-foreground text-sm">Per month, month-to-month</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-6 text-center">
             <Phone className="w-8 h-8 text-teal mx-auto mb-3" />
-            <p className="font-display text-3xl font-bold text-teal mb-2">30+</p>
-            <p className="text-muted-foreground text-sm">Qualified leads per month</p>
+            <p className="font-display text-3xl font-bold text-teal mb-2">2 wks</p>
+            <p className="text-muted-foreground text-sm">To first qualified leads</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-6 text-center">
             <Star className="w-8 h-8 text-teal mx-auto mb-3" />
-            <p className="font-display text-3xl font-bold text-teal mb-2">$500/mo</p>
-            <p className="text-muted-foreground text-sm">Starting ad budget</p>
+            <p className="font-display text-3xl font-bold text-teal mb-2">$1,000</p>
+            <p className="text-muted-foreground text-sm">Recommended min. ad spend</p>
           </div>
         </div>
 
