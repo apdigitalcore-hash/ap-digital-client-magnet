@@ -72,6 +72,13 @@
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Google Preferred Sources. A reader who adds us gets our pages flagged with
+       a "preferred" badge in Top Stories, AI Mode and AI Overviews. Verified
+       2026-08-25 that ap-digital.ca is listed in Google's source preferences
+       tool, which is the eligibility test. Loading the library here so the
+       button renders on prerendered pages as well as client-rendered ones. -->
+  <script async src="https://news.google.com/swg/js/v1/publisher.js"></script>
 </head>
 <body>
   <!-- Meta Pixel no-JS fallback. Must be in <body>: HTML forbids <img> inside a

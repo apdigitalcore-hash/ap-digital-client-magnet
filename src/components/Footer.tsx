@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import PreferredSourceButton from '@/components/PreferredSourceButton';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -189,6 +190,20 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Reader-controlled visibility: someone who adds us as a preferred source
+          sees our pages badged in Top Stories, AI Mode and AI Overviews. */}
+      <div className="border-t border-foreground/10">
+        <div className="container-custom py-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
+            <p className="text-foreground/70 text-sm max-w-md">
+              Find our guides useful? Add us as a preferred source on Google and
+              our pages get prioritised in your results.
+            </p>
+            <PreferredSourceButton />
           </div>
         </div>
       </div>
