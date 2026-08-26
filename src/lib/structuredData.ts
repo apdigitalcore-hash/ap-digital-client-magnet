@@ -52,9 +52,10 @@ const serviceAreaCities = [
  * against Google's structured data policy and, in Canada, fabricated
  * testimonials fall under the Competition Act's deceptive marketing rules.
  *
- * aggregateRating stays: 5.0 from 2 reviews is what the Google Business
- * Profile actually shows. Google does not render self-serving review snippets
- * for LocalBusiness, so real stars come from the profile, not from here.
+ * aggregateRating was removed on 2026-08-25 as well. Google does not render
+ * self-serving review snippets for LocalBusiness in any case, so it earned
+ * nothing while being a rating claim published on all 83 pages. Real stars
+ * come from the Google Business Profile, not from markup here.
  *
  * If real reviews are collected, mark up only ones that exist and are
  * publicly verifiable, and keep reviewCount equal to the number marked up.
@@ -171,13 +172,6 @@ export const organizationSchema = {
         }]
       }
     ]
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "2",
-    "bestRating": "5",
-    "worstRating": "1"
   }
 };
 

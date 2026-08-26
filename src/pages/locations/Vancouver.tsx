@@ -93,7 +93,6 @@ const structuredData = {"@context":"https://schema.org","@graph": [
         {"@type":"City","name":"Yaletown" },
         {"@type":"City","name":"West End" }
       ],"openingHoursSpecification": {"@type":"OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"
-      },"aggregateRating": {"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"14","bestRating":"5","worstRating":"1"
       },"founder": {"@type":"Person","name":"Arjun Sharma" },"sameAs": ["https://ap-digital.ca"]
     }
   ]

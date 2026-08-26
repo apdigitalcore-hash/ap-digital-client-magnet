@@ -49,7 +49,6 @@ const orgSchema = {
   "areaServed": ["Vancouver", "Surrey", "Burnaby", "Richmond", "Langley", "Coquitlam", "Abbotsford", "Metro Vancouver"],
   "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.linkedin.com/company/theapdigital/"],
   "priceRange": "$$",
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "2", "bestRating": "5", "worstRating": "1" },
   "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
 };
 
