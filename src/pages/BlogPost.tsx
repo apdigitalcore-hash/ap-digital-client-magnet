@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PreferredSourceButton from '@/components/PreferredSourceButton';
 import { Button } from '@/components/ui/button';
 import { getPostBySlug, getRelatedPosts } from '@/lib/blogPosts';
 import { LEGACY_BLOG_REDIRECTS } from '@/lib/legacyRedirects';
@@ -171,6 +172,15 @@ const BlogPost = () => {
             {renderContent(post.content)}
           </div>
 
+          {/* Asked here rather than only in the footer: someone who just finished
+              the article is the reader most likely to want more of them. */}
+          <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-4 rounded-2xl border border-border bg-card p-6">
+            <p className="text-sm text-muted-foreground flex-1">
+              Found this useful? Add AP Digital as a preferred source and Google
+              will prioritise our guides in your results and AI Overviews.
+            </p>
+            <PreferredSourceButton />
+          </div>
 
           <div className="mt-16 bg-card border border-border rounded-2xl p-8 text-center">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Ready to Fill Your Schedule?</h2>
