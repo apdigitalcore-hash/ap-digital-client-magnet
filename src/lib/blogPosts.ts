@@ -797,6 +797,336 @@ Aim for 50+ Google reviews with a 4.7-star average or higher. Reviews are the si
     ],
   },
   {
+    slug: 'salon-marketing-surrey',
+    title: 'Salon Marketing in Surrey: How to Fill Your Chairs in 2026',
+    metaTitle: 'Salon Marketing Surrey BC | Fill Your Chairs | AP Digital',
+    metaDescription: 'Meta Ads & Instagram content for Surrey salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.',
+    excerpt: 'What actually works for Surrey salons in Newton, Guildford, South Surrey and Cloverdale — and what the ads, the content and an agency each cost.',
+    date: '2026-08-24',
+    dateModified: '2026-08-24',
+    readTime: '11 min read',
+    category: 'Salon Marketing',
+    content: `Surrey is the hardest salon market in Metro Vancouver to advertise in, and the reason is geography. Newton, Guildford, South Surrey, Fleetwood and Cloverdale behave like five separate towns. A client in South Surrey will not drive to Guildford for a blow-dry, and an ad targeting "Surrey" wastes most of its budget reaching people who were never going to book with you.
+
+That single fact — radius, not city — is the difference between a Surrey salon paying $8 a lead and paying $40.
+
+## What Surrey Salons Are Actually Competing With
+
+Three things, in order of how much damage they do:
+
+**Chain salons with real budgets.** They advertise city-wide, they are always on, and they can absorb a bad month. You cannot outspend them, which is fine, because you do not need to — you need to own eight kilometres, not the whole city.
+
+**Instagram accounts with more followers than you.** Follower count is not the threat people think it is. A salon with 12,000 followers spread across BC is worth less commercially than 900 followers who live within a fifteen-minute drive.
+
+**Word of mouth that has stopped growing.** Most Surrey salons we speak to were built on referrals and hit a ceiling. Referrals are excellent and they do not scale on demand. When a stylist chair opens up on a Tuesday, referrals will not fill it this week.
+
+## Where Surrey Salons Should Advertise
+
+**Meta Ads — Facebook and Instagram — do most of the work.** Salon services are discovered, not searched. Someone sees a balayage transformation, recognises their own hair, and books. That is a feed behaviour, and Meta owns it.
+
+Google Ads has a place, but a narrower one. People searching "hair salon near me" or "balayage Surrey" are high intent and low volume, and the clicks are more expensive. For most salons it is a second channel, not the first.
+
+The practical split for a Surrey salon spending $1,000 a month on ads: roughly $700 to $800 on Meta, the rest on a tight Google Search campaign covering your service names plus your neighbourhood.
+
+## Radius Targeting Is the Whole Game
+
+Set your radius to **8 to 12 kilometres** from the salon, not the city boundary. In Surrey that difference is enormous:
+
+| Targeting | Approx. reach | What it costs you |
+|---|---|---|
+| "Surrey, BC" | 570,000+ | Most of the budget reaches people 25+ minutes away |
+| 15 km radius | 250,000+ | Still crosses neighbourhoods people will not drive between |
+| 8 km radius | 80,000 – 150,000 | The people who will actually walk in |
+
+Narrower targeting looks worse in the reporting — fewer impressions, higher cost per thousand — and produces more bookings. That trade is nearly always worth making.
+
+If you are in **South Surrey**, exclude north of Highway 10. If you are in **Guildford**, your radius runs toward North Surrey and Port Kells rather than toward White Rock. Draw it around drive time, not around the map.
+
+## What Actually Converts in a Salon Ad
+
+Four things, in order:
+
+**Before-and-after, in motion.** A ten-second Reel of a colour correction outperforms a photo of the finished result almost every time, because the transformation is the product.
+
+**A price or an offer that is specific.** "20% off your first visit" beats "book now". "Balayage from $180" beats "affordable colour". Vagueness reads as expensive.
+
+**The stylist's face and name.** Salon bookings are a trust purchase. People are choosing a person to touch their hair for three hours.
+
+**One clear next step.** A booking link, or a lead form that asks for name, phone and service — three fields, nothing more. Every extra field costs you bookings.
+
+## Content Versus Ads — You Need Both, Differently
+
+Organic Instagram builds the trust that makes the ads work. Ads create the reach that organic cannot buy any more.
+
+A workable rhythm for a Surrey salon: three to four posts a week, of which at least two are transformation content and one is a stylist talking to camera. Then put money behind the two or three posts that performed best organically, rather than making separate ad creative. The feed has already told you what works.
+
+## What It Costs
+
+Three separate bills, and conflating them is where most quotes get confusing.
+
+| Line item | Typical monthly cost |
+|---|---|
+| Ad spend, paid to Meta directly | $500 – $2,000 |
+| Content — photos and Reels | $0 if you shoot it, $400 – $1,200 if not |
+| Management | See below |
+
+For transparency, our own pricing: **paid ads management is $759/month** and **social media management is $849/month**. They are quoted separately so you only pay for what you use, and either works on its own. Everything is month-to-month with 30 days' notice, and ad spend is paid directly to Meta so you keep control of the budget.
+
+Most Surrey salons starting out land between **$1,200 and $2,000 a month all in**, with the majority of that being ad spend rather than fees.
+
+## What to Expect, and When
+
+Paid ads move faster than anything else available to a salon. Campaigns typically launch within a week, and most clients see their first qualified leads within two weeks of launch. Cost per lead usually settles around weeks two to three, once there is enough data to optimise against.
+
+Organic content is slower and compounds over 60 to 90 days.
+
+We do not publish case studies with client names and numbers, because we do not yet have ones we can show you with permission attached. What we do instead is agree a lead-volume target before anything goes live, so there is a number we are both accountable to from day one.
+
+## Where Surrey Salons Waste Money
+
+- **Boosting posts from the Instagram app.** It optimises for engagement, not bookings. The same money in Ads Manager with a lead objective performs differently.
+- **Advertising to all of Surrey.** Covered above, and it is the single most common mistake.
+- **Running one ad for months.** Audiences tire of the execution long before the offer. Refresh creative every two to three weeks.
+- **No follow-up.** A lead that sits for an hour is worth a fraction of one called back in five minutes.
+- **Paying for followers.** Follower growth and booking growth are different projects.
+
+## How This Compares to Other Metro Vancouver Markets
+
+Surrey costs less per lead than Vancouver proper — competition is lower and the audience is larger — but requires tighter geographic discipline because the city is so spread out. If you have salons in more than one Surrey neighbourhood, run them as separate campaigns with separate radiuses. Our [Vancouver salon marketing page](/salon-marketing) and the guide to [getting more salon clients in Vancouver](/blog/how-to-get-more-salon-clients-vancouver) cover the denser market, and [salon social media management](/blog/salon-social-media-management-vancouver) covers the content side. Treating them as one account is how budgets quietly leak.
+
+## Frequently Asked Questions About Salon Marketing in Surrey
+
+Below are the questions Surrey salon owners ask us most often.
+
+## Work Out What Your Salon Needs
+
+If you are not sure whether your problem is reach, offer or follow-up, book a 20-minute call. We will tell you which one to fix first — including when the answer is that your ads are fine and the booking process is what is losing you clients.`,
+    faqs: [
+      { question: 'How much does salon marketing cost in Surrey?', answer: 'Most Surrey salons spend between $1,200 and $2,000 per month all in, and the majority of that is ad spend rather than fees. Ad spend runs $500 to $2,000 paid directly to Meta. Our paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Everything is month-to-month with 30 days notice.' },
+      { question: 'Should a Surrey salon use Facebook Ads or Google Ads?', answer: 'Meta Ads — Facebook and Instagram — should do most of the work, because salon services are discovered rather than searched. Someone sees a transformation, recognises their own hair, and books. Google Ads has a narrower role for high-intent searches like "balayage Surrey", which are lower volume and more expensive per click. A typical split on $1,000 of ad spend is $700 to $800 on Meta and the rest on a tight Google Search campaign.' },
+      { question: 'What radius should a Surrey salon target?', answer: 'Eight to twelve kilometres from the salon, not the city boundary. Surrey behaves like five separate towns — Newton, Guildford, South Surrey, Fleetwood and Cloverdale — and clients will not drive between them for a blow-dry. Targeting "Surrey, BC" reaches over 570,000 people, most of whom are 25 minutes away and were never going to book with you.' },
+      { question: 'How long before a Surrey salon sees results from ads?', answer: 'Campaigns typically launch within a week, and most clients see their first qualified leads within two weeks of launch. Cost per lead usually settles around weeks two to three once there is enough data to optimise against. Organic Instagram content is slower and compounds over roughly 60 to 90 days, which is why most salons run both.' },
+      { question: 'What kind of salon ad converts best?', answer: 'Before-and-after transformation content in motion, a specific price or offer rather than "book now", the stylist visible by name and face, and one clear next step. A ten-second Reel of a colour correction outperforms a photo of the finished result almost every time, because the transformation is the product being sold.' },
+      { question: 'Do I need Instagram content as well as ads?', answer: 'They do different jobs. Organic content builds the trust that makes ads convert; ads create reach that organic no longer provides. A workable rhythm is three to four posts a week with at least two transformations, then putting budget behind the posts that already performed well organically rather than producing separate ad creative.' },
+      { question: 'Why are my boosted Instagram posts not producing bookings?', answer: 'Boosting from the Instagram app optimises for engagement — likes, comments, shares — not for bookings. The same budget spent in Ads Manager with a lead or conversion objective behaves differently because it is optimising toward a different outcome. Boosted posts are the most common reason a salon concludes that "ads do not work".' },
+    ],
+  },
+  {
+    slug: 'how-to-get-more-salon-clients-vancouver',
+    title: 'How to Get More Salon Clients in Vancouver (2026 Guide)',
+    metaTitle: 'How to Get More Salon Clients in Vancouver | AP Digital',
+    metaDescription: 'Meta Ads & Instagram content for Vancouver salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.',
+    excerpt: 'The four reasons a Vancouver salon stops growing, and what to do about each one — with what the ads, the content and an agency actually cost.',
+    date: '2026-08-24',
+    dateModified: '2026-08-24',
+    readTime: '12 min read',
+    category: 'Salon Marketing',
+    content: `Almost every Vancouver salon that has stopped growing has one of four problems, and they need completely different fixes. Before spending anything, work out which one you have — because the money that solves a reach problem does nothing for a retention problem.
+
+**Not enough people know you exist.** Your chairs are empty on weekdays and your Instagram reaches the same few hundred people. This is a reach problem, and paid ads fix it fastest.
+
+**People find you and do not book.** Traffic is fine, bookings are not. This is an offer or booking-flow problem, and no amount of ad spend fixes it — it makes it more expensive.
+
+**People book once and never return.** Your first-visit numbers look healthy and revenue is flat. This is retention, and it is solved with follow-up, not advertising.
+
+**You are busy but not profitable.** Full calendar, thin margins. This is a pricing and service-mix problem.
+
+The rest of this guide deals mainly with the first two, because they are the ones marketing actually solves.
+
+## Fixing a Reach Problem in Vancouver
+
+Vancouver is a dense, expensive, competitive salon market. Kitsilano, Mount Pleasant, Yaletown, Commercial Drive and the West End each have their own character, and a client in Kits is not travelling to East Van for a cut.
+
+**Radius, not city.** Set targeting to 6 to 10 kilometres from the salon. Vancouver is compact enough that this still covers a real audience, and tight enough to exclude people who will never make the trip. Targeting "Vancouver, BC" burns most of a small budget on the wrong side of a bridge.
+
+**Meta Ads carry the load.** Salon services are discovered in a feed, not searched for. Someone sees a lived-in blonde they recognise as achievable on their own hair, and books. Facebook and Instagram own that behaviour.
+
+**Google Ads is the second channel, not the first.** People typing "hair salon Kitsilano" or "balayage Vancouver" are high intent but low volume, and clicks cost more. Worth running tightly once Meta is working.
+
+## Fixing a Conversion Problem
+
+If people are finding you and not booking, adding budget makes the leak more expensive. Five things to check, in order:
+
+**Is booking one tap away?** Every extra step loses people. A "Book" button that opens your booking system directly beats a link to a homepage with a menu.
+
+**Are prices visible?** Salons hide prices more than almost any other local business, and it costs them. Not seeing a price reads as expensive, and people who cannot self-qualify simply do not enquire.
+
+**Does the first visit have an offer?** Not a discount race — a reason to choose now. A first-visit consultation, or 20% off a first colour service, converts materially better than an open invitation.
+
+**Do you reply fast?** Enquiries that get an answer within five minutes convert far better than ones answered in an hour. An automated "got your message, calling shortly" beats silence.
+
+**Do you look like the work?** If your feed is quotes and stock photos rather than your own transformations, the ad promises something the profile does not back up.
+
+## What to Post, Concretely
+
+Three to four posts a week is enough. The mix that works for Vancouver salons:
+
+- **Transformations in motion.** Before-and-after Reels. This is the product.
+- **A stylist talking to camera.** Fifteen seconds on why a colour correction takes four hours, or how to keep blonde from going brassy. Trust content.
+- **The room.** Vancouver clients care what the space feels like.
+- **One booking prompt a week.** Openings this week, or a new service.
+
+Then put money behind whichever of those already performed best organically, rather than making separate ad creative. The feed has told you what works — pay to show it to more people.
+
+## Retention: the Cheapest Growth Available
+
+A salon that keeps 60% of first-time clients grows. One that keeps 25% has to advertise forever to stand still.
+
+The mechanics are unglamorous: rebook at the chair before they leave, text at the interval that matches the service — six weeks for colour, three for a fringe trim — and reach out to anyone who has not been in for four months with something specific rather than "we miss you".
+
+None of this costs ad budget, and it changes the economics of every lead you buy.
+
+## What It Costs
+
+Three separate bills:
+
+| Line item | Typical monthly cost |
+|---|---|
+| Ad spend, paid to Meta directly | $600 – $2,500 in Vancouver |
+| Content — photos and Reels | $0 if you shoot it, $400 – $1,200 if not |
+| Management | See below |
+
+Our own pricing, for transparency: **paid ads management is $759/month** and **social media management is $849/month**, quoted separately so you only pay for what you use. Everything is month-to-month with 30 days' notice, and ad spend goes directly to Meta rather than through us.
+
+Vancouver salons typically start between **$1,400 and $2,500 a month all in**. That is higher than [Surrey](/blog/salon-marketing-surrey), where competition is lower and cost per lead runs cheaper.
+
+## Timeline
+
+Campaigns launch within about a week. Most clients see their first qualified leads within two weeks, with cost per lead settling around weeks two to three. Organic content compounds over 60 to 90 days. Retention work shows up in revenue about one service cycle after you start — six to eight weeks for a colour-led salon. If content rather than ads is your gap, [salon social media management](/blog/salon-social-media-management-vancouver) covers what that costs, and our [salon marketing service page](/salon-marketing) covers the whole picture.
+
+We do not publish client case studies, because we do not have ones we can show with permission attached. Instead we agree a lead-volume target before launch, so there is a number we are both accountable to.
+
+## The Mistakes That Cost Vancouver Salons Most
+
+- **Boosting posts instead of running ads.** Boosting optimises for engagement, not bookings.
+- **Advertising city-wide.** Covered above, and the most expensive habit on this list.
+- **Discounting to fill chairs.** It fills them with people who leave when the discount does.
+- **Chasing followers.** Follower growth and booking growth are separate projects.
+- **Never changing creative.** Audiences tire of the execution long before the offer.
+
+## Frequently Asked Questions About Getting More Salon Clients
+
+Below are the questions Vancouver salon owners ask us most often.
+
+## Find Out Which Problem You Actually Have
+
+Book a 20-minute call and we will tell you whether your issue is reach, conversion or retention — including when the answer is that your marketing is fine and the booking flow is what is losing you clients.`,
+    faqs: [
+      { question: 'How do I get more salon clients in Vancouver?', answer: 'First work out which of four problems you have: not enough reach, people finding you but not booking, clients not returning, or being busy but unprofitable. Reach problems are fixed fastest with Meta Ads targeted 6 to 10 kilometres around the salon. Conversion problems are fixed by making booking one tap away, showing prices, and replying within minutes — adding ad budget to a conversion problem only makes the leak more expensive.' },
+      { question: 'How much should a Vancouver salon spend on marketing?', answer: 'Most Vancouver salons start between $1,400 and $2,500 per month all in, with ad spend of $600 to $2,500 paid directly to Meta. Our paid ads management is $759/month and social media management is $849/month, quoted separately. Vancouver runs higher than Surrey because competition is denser and cost per lead is correspondingly more expensive.' },
+      { question: 'What should a salon post on Instagram?', answer: 'Three to four posts a week: transformation Reels, a stylist talking to camera for fifteen seconds about something practical, the space itself, and one booking prompt a week. Then put budget behind whichever posts already performed best organically rather than producing separate ad creative — the feed has already told you what resonates.' },
+      { question: 'Why are people visiting my salon Instagram but not booking?', answer: 'Usually one of five things: booking is not one tap away, prices are hidden, there is no reason to book now rather than later, enquiries are not answered within minutes, or the feed does not show enough of your own work to back up what the ad promised. Hidden pricing is the most common — not seeing a price reads as expensive and stops people self-qualifying.' },
+      { question: 'How long does it take to get more salon clients from ads?', answer: 'Campaigns launch within about a week and most clients see their first qualified leads within two weeks of launch, with cost per lead settling around weeks two to three. Organic content compounds over 60 to 90 days. Retention work shows up roughly one service cycle after you start — six to eight weeks for a colour-led salon.' },
+      { question: 'Is discounting a good way to fill empty salon chairs?', answer: 'It fills them with people who leave when the discount does. A first-visit offer works when it gives a reason to book now — a consultation included, or a defined percentage off a first colour service — rather than starting a discount race. The goal is a client who rebooks at full price, not the cheapest possible first visit.' },
+      { question: 'Should I focus on getting new clients or keeping existing ones?', answer: 'Retention is cheaper and changes the economics of every lead you buy. A salon keeping 60% of first-time clients grows; one keeping 25% has to advertise forever to stand still. Rebooking at the chair, texting at the interval that matches the service, and reaching out at four months costs no ad budget at all.' },
+    ],
+  },
+  {
+    slug: 'salon-social-media-management-vancouver',
+    title: 'Salon Social Media Management in Vancouver: What It Costs and What You Get',
+    metaTitle: 'Salon Social Media Management Vancouver | AP Digital',
+    metaDescription: 'Instagram & Meta content managed for Vancouver salons from $849/month. Posting, captions, community management. Month-to-month. No contracts.',
+    excerpt: 'What a salon social media manager actually does, what it costs in Vancouver, and how to tell whether you need one or just need to post more consistently.',
+    date: '2026-08-24',
+    dateModified: '2026-08-24',
+    readTime: '11 min read',
+    category: 'Salon Marketing',
+    content: `Social media management for a Vancouver salon costs **$500 to $2,500 per month** depending on scope, and the single biggest variable is whether the price includes someone coming to the salon to shoot content. Ours is **$849/month** for two platforms, twelve custom posts, captions, scheduling and community management — content shot by your team, which is what most salons prefer anyway.
+
+The harder question is whether you need it at all. Plenty of Vancouver salons should just post more consistently themselves and put the money into ads instead. This guide is meant to help you tell which you are.
+
+## What "Social Media Management" Actually Includes
+
+The term covers wildly different things, which is why quotes range so widely. In practice it is some subset of:
+
+| Component | What it means |
+|---|---|
+| Content calendar | Planning what goes out and when, rather than posting when someone remembers |
+| Posting and scheduling | Getting it published consistently, at sensible times |
+| Captions and hashtags | Written per post, not templated |
+| Community management | Replying to comments and DMs, which is where salon bookings actually happen |
+| Content creation | Someone shooting photos and Reels — usually the expensive part |
+| Reporting | What performed, what did not, what changes next month |
+
+**Ask which of these are included before comparing any two quotes.** A $500 package that excludes content creation and community management is not cheaper than a $1,200 one that includes both — it is a different service.
+
+## What It Costs in Vancouver
+
+| Option | Monthly cost | Typically includes |
+|---|---|---|
+| DIY | $0 plus your time | Everything, badly, in gaps between clients |
+| Freelancer / VA | $400 – $900 | Scheduling, captions, basic replies |
+| Agency, content excluded | $800 – $1,500 | Strategy, calendar, posting, community management |
+| Agency, content included | $1,500 – $3,000+ | The above plus monthly shoot days |
+| In-house hire | $3,500 – $5,000 | Full-time, only sensible for multi-location groups |
+
+Our social media management is **$849/month** — two platforms, twelve custom posts, captions, hashtags, scheduling and community management, month-to-month with 30 days' notice. Paid ads are a separate line at **$759/month**, because plenty of salons need one and not the other.
+
+## The Honest Test: Do You Need This?
+
+**You probably do not need a manager yet if:** you or a stylist genuinely enjoy posting, you already publish two or three times a week, and your feed shows your own work. In that case put the money into ads. Organic reach on Instagram is a fraction of what it was; posting more consistently will not fix an empty Tuesday, and $849 of ad spend will do more for bookings than $849 of management.
+
+**You probably do need it if:** posting has stopped entirely, your last three posts are more than a month apart, DMs go unanswered for days, or you are posting but it is quotes and stock images rather than transformations. Inconsistency is worse than silence — a dormant feed with a stale last post actively costs you bookings when someone checks you out after seeing an ad.
+
+## Why Community Management Is the Part That Matters
+
+For salons specifically, the DMs are the booking channel. People do not fill in forms about their hair — they message asking whether you do colour corrections, what a balayage runs, and whether you have anything Saturday.
+
+Unanswered DMs are lost revenue in a way that unanswered comments on most other businesses are not. If a package excludes community management, understand that the highest-converting part of salon social is not covered.
+
+## Content: What to Shoot and Who Shoots It
+
+Most Vancouver salons are better off shooting their own content, for three reasons: you are already standing next to the transformation, phone cameras are good enough, and content shot in the moment looks native to the feed in a way a scheduled shoot day rarely does.
+
+What to capture, as a working habit rather than a project:
+
+- **Before, mid-process, after** on any colour service where the client is happy to be filmed
+- **Fifteen seconds of a stylist explaining something practical** — why toner fades, how to wash blonde
+- **The room, on a good light day**
+- **Reactions.** The chair spin. It is the most reliable content in the industry.
+
+A manager then turns that raw material into a calendar, captions, and a posting rhythm. That division — you shoot, they publish and respond — is what $849 buys and it is why it costs less than packages with shoot days included.
+
+## How Organic and Paid Fit Together
+
+They do different jobs and neither replaces the other.
+
+Organic builds the credibility that makes an ad convert. Someone sees your ad, taps the profile, and decides whether you are real. A feed full of your own recent work closes that loop; a feed with nothing since March opens a doubt.
+
+Paid creates reach organic no longer provides. Instagram shows your posts to a small slice of your followers, and your followers are already your clients. New clients come from ads.
+
+The most common sensible setup for a Vancouver salon: [ads](/blog/how-to-get-more-salon-clients-vancouver) to generate bookings, organic to make those bookings convert, and the best-performing organic posts promoted with budget rather than separate ad creative.
+
+## What to Ask Before You Hire Anyone
+
+- **Who writes the captions — a person or a template?**
+- **Is community management included, and what is the response-time commitment?**
+- **Who shoots the content, and if it is us, what do you need from us and how often?**
+- **What am I looking at in the monthly report — reach, or enquiries?**
+- **What is the notice period?** Anything over 30 days on a service this easy to switch is a red flag.
+
+## What We Do Not Claim
+
+We do not publish case studies with salon names and follower counts, because we do not have ones we can show with permission attached. What we do is agree what "working" means before starting — usually enquiries per month rather than follower growth — so there is a number to judge it against.
+
+## Frequently Asked Questions About Salon Social Media Management
+
+Below are the questions Vancouver salon owners ask us most often.
+
+## Work Out Whether You Need It
+
+See our [salon marketing service page](/salon-marketing) for how the pieces fit together, or [salon marketing in Surrey](/blog/salon-marketing-surrey) if that is your market. Book a 20-minute call and we will tell you honestly whether social media management is the right spend for your salon right now, or whether your money is better in ads. We say the second one fairly often.`,
+    faqs: [
+      { question: 'How much does salon social media management cost in Vancouver?', answer: 'Between $500 and $2,500 per month depending on scope, and the biggest variable is whether content creation is included. A freelancer handling scheduling and captions runs $400 to $900. An agency excluding content shoots runs $800 to $1,500. With monthly shoot days included it is $1,500 to $3,000+. Ours is $849/month for two platforms, twelve custom posts, captions, scheduling and community management.' },
+      { question: 'What does a salon social media manager actually do?', answer: 'Some subset of: content calendar, posting and scheduling, captions and hashtags, community management, content creation and reporting. The subset varies enormously between providers, which is why quotes range so widely. Ask which components are included before comparing two prices — a $500 package excluding content and community management is a different service, not a cheaper one.' },
+      { question: 'Do I need social media management or should I just run ads?', answer: 'If you or a stylist already post two or three times a week with your own work, put the money into ads instead — organic reach will not fill an empty Tuesday and the same budget in ad spend will do more. If posting has stopped, DMs go unanswered, or the feed is quotes and stock images rather than transformations, management is worth it. A dormant feed actively costs bookings when someone checks you out after seeing an ad.' },
+      { question: 'Why does community management matter for salons?', answer: 'For salons the DMs are the booking channel. People do not fill in forms about their hair — they message asking whether you do colour corrections, what balayage costs, and whether Saturday is free. Unanswered DMs are lost revenue in a way that unanswered comments are not for most businesses, so a package excluding community management leaves out the highest-converting part.' },
+      { question: 'Should the salon or the agency shoot the content?', answer: 'Most Vancouver salons are better off shooting their own. You are already standing next to the transformation, phone cameras are good enough, and in-the-moment content looks native to the feed in a way a scheduled shoot day rarely does. That division — you shoot, we publish and respond — is why $849/month costs less than packages including shoot days.' },
+      { question: 'How often should a salon post on Instagram?', answer: 'Three to four times a week is enough, and consistency matters more than volume. The mix that works: transformation Reels, a stylist explaining something practical in fifteen seconds, the space on a good light day, and one booking prompt a week. Inconsistency is worse than posting less — a stale last post reads as a salon that may not still be open.' },
+      { question: 'Does organic Instagram still work for salons?', answer: 'It works for a different job than it used to. Organic builds the credibility that makes ads convert — someone taps your profile after seeing an ad and decides whether you are real. What it no longer does is deliver new reach, because Instagram shows posts to a small slice of followers and your followers are largely already your clients. New clients come from ads; organic closes them.' },
+    ],
+  },
+  {
     slug: 'trades-marketing-vancouver-bc',
     title: 'Trades Marketing Vancouver BC: How Contractors Get More Local Jobs',
     metaTitle: 'Trades Marketing Vancouver BC: Get More Leads | AP Digital',
@@ -2792,6 +3122,219 @@ We've run Google Ads for Tri-Cities businesses across:
 If you're a Tri-Cities business owner ready to show up first on Google, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current online presence, research your competitors' ad strategies, and build a custom Google Ads plan for your market.
 
 **AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. We also serve [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), and [Abbotsford](/abbotsford). Month-to-month, no contracts, [90-day guarantee](/pricing).`,
+  },
+  {
+    slug: 'marketing-agency-tri-cities',
+    title: 'Hiring a Marketing Agency in the Tri-Cities: What to Expect in 2026',
+    metaTitle: 'Marketing Agency Tri-Cities | Coquitlam, Port Moody | AP Digital',
+    metaDescription: 'Google & Meta Ads for Tri-Cities businesses, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.',
+    excerpt: 'What a marketing agency costs in Coquitlam, Port Moody and Port Coquitlam, what you should get for it, and the questions worth asking before you sign.',
+    date: '2026-08-24',
+    dateModified: '2026-08-24',
+    readTime: '11 min read',
+    category: 'City',
+    content: `A marketing agency in the Tri-Cities costs **$759 to $2,500 per month** in management fees, plus ad spend paid directly to the platforms. Most Coquitlam, Port Moody and Port Coquitlam businesses end up between **$1,500 and $3,000 a month all in** once ad spend is included.
+
+If you are at the point of hiring rather than researching, this covers what you should get for that money, what to ask, and where Tri-Cities businesses specifically lose money.
+
+## Why the Tri-Cities Is a Different Market
+
+Coquitlam, Port Moody and Port Coquitlam are usually lumped together and behave differently:
+
+**Coquitlam** is the largest and most competitive — Burquitlam and the Town Centre have Vancouver-level density and Vancouver-level ad costs in some categories. **Port Moody** is smaller, more residential, and cheaper to reach; a modest budget goes a long way there. **Port Coquitlam** sits between the two, with a stronger trades and light-industrial base.
+
+The practical consequence: an agency that runs one campaign across "Tri-Cities" is treating three markets as one. Radius targeting around each business, not the regional label, is what separates a campaign that books work from one that reports impressions.
+
+There is also a real advantage here. Competition for Tri-Cities search terms is materially lower than Vancouver or Surrey. The same budget buys more visibility, and ranking is achievable in a way it simply is not in the core Vancouver market.
+
+## What You Should Get for a Management Fee
+
+Whatever the number, these should be in scope:
+
+- **Conversion tracking that works before launch.** If the agency cannot tell you which ad produced which lead, nothing else on this list matters.
+- **Campaign build and ongoing optimisation** — audiences, keywords, negatives, bid adjustments.
+- **Creative testing.** Ads fatigue. A campaign untouched for three months is a campaign getting worse.
+- **A weekly or monthly report that leads with leads.** Cost per lead, lead volume, what changed and why. Not impressions.
+- **Access to your own accounts.** You should own the ad account, the pixel and the data. If the agency owns them, leaving costs you your history.
+
+## What It Costs, Broken Down
+
+| Line item | Typical monthly cost |
+|---|---|
+| Ad spend, paid to Google or Meta directly | $800 – $2,500 |
+| Paid ads management | $759 – $2,000 |
+| Social media management | $500 – $1,500 |
+| Website changes, if needed | Usually project-priced |
+
+Our own pricing: **paid ads management is $759/month**, **social media management is $849/month**. Quoted separately so you only pay for what you use, month-to-month with 30 days' notice. Ad spend goes directly to Google or Meta — we never bill it through us, so you keep control and can see the real numbers.
+
+We recommend a minimum of **$1,000/month in ad spend** for the platforms to gather enough conversion data to optimise properly. Below roughly $500 they cannot, which is a platform limitation rather than an agency upsell.
+
+## Percentage-of-Spend Billing Is Worth Avoiding
+
+Some agencies charge 10–20% of ad spend. It sounds aligned and is not: it rewards the agency for spending more of your money, regardless of whether the extra spend produces anything. A flat fee is predictable and does not create that incentive. If someone quotes a percentage, ask what happens to their fee when the right move is to spend less.
+
+## Questions Worth Asking
+
+**"Who owns the ad account?"** It should be you.
+
+**"What happens in month one?"** A real answer involves tracking setup, research and a launch — not "we will build a strategy".
+
+**"What is the notice period?"** Anything over 30 days on a service this easy to switch deserves an explanation.
+
+**"What will you report?"** If the answer is reach and impressions, keep looking.
+
+**"Can I speak to whoever will actually run the account?"** In most agencies the person selling is not the person doing the work.
+
+**"What are your results?"** Watch how they answer. We do not have published case studies — we do not yet have client results we can show with names and permission attached — and we say so rather than quoting figures nobody can verify. An agency confidently quoting ROAS multiples it cannot evidence is telling you something.
+
+## What Actually Works for Tri-Cities Businesses
+
+**Google Ads for anything urgent or searched.** Trades, clinics, automotive, legal — people type these into Google at the moment of need. Local Service Ads are worth checking for eligible trades.
+
+**Meta Ads for anything discovered.** Salons, gyms, restaurants, real estate, coaching. Nobody searches for a new hair colour; they see one.
+
+**Tight geography either way.** A radius drawn around drive time — often 8 to 12 kilometres in the Tri-Cities — beats a campaign targeting the region.
+
+**Google Business Profile, which costs nothing.** For local searches the map pack sits above the organic results. Reviews and fresh photos move it, and neither has a media cost.
+
+## Where the Money Leaks
+
+- **Boosted posts instead of campaigns.** Boosting optimises for engagement, not enquiries.
+- **No negative keywords.** On a typical local Google account a meaningful share of spend lands on searches with no purchase intent.
+- **Sending ad traffic to a homepage.** A dedicated page with one offer and one action converts several times better.
+- **Judging week one.** Campaigns need two to three weeks before cost per lead means anything.
+- **No follow-up system.** A lead answered in five minutes converts far better than the same lead answered an hour later.
+
+## What to Expect, and When
+
+Campaigns typically launch within the first week. Most clients see their first qualified leads within two weeks of launch, with cost per lead settling around weeks two to three once there is enough data. Organic and local SEO compound over 60 to 90 days. If you are mainly weighing budget, [what Tri-Cities businesses pay for Google Ads](/blog/tri-cities-google-ads-cost) breaks the numbers down by industry.
+
+We agree a lead-volume target before anything goes live, so there is a number we are both accountable to rather than a vague promise about growth.
+
+## Frequently Asked Questions About Hiring a Tri-Cities Marketing Agency
+
+Below are the questions Coquitlam, Port Moody and Port Coquitlam business owners ask us most often.
+
+## Book a 20-Minute Call
+
+Tell us what you sell and what a good month looks like, and we will tell you whether paid ads are the right first move — including when the answer is that your budget is better spent elsewhere first.`,
+    faqs: [
+      { question: 'How much does a marketing agency cost in the Tri-Cities?', answer: 'Management fees run $759 to $2,500 per month, plus ad spend paid directly to the platforms. Most Coquitlam, Port Moody and Port Coquitlam businesses land between $1,500 and $3,000 a month all in. Our paid ads management is $759/month and social media management is $849/month, quoted separately and month-to-month with 30 days notice.' },
+      { question: 'Is the Tri-Cities cheaper to advertise in than Vancouver?', answer: 'Yes, meaningfully. Competition for Tri-Cities search terms is lower than Vancouver or Surrey, so the same budget buys more visibility and ranking is achievable in a way it is not in the core Vancouver market. Coquitlam is the most competitive of the three, particularly Burquitlam and the Town Centre; Port Moody is the cheapest to reach.' },
+      { question: 'Should I pay a flat fee or a percentage of ad spend?', answer: 'A flat fee. Percentage-of-spend billing at 10 to 20% sounds aligned but rewards the agency for spending more of your money regardless of whether it produces anything. A flat fee is predictable and creates no incentive to inflate budget. If an agency quotes a percentage, ask what happens to their fee when the right move is to spend less.' },
+      { question: 'How much ad spend do Tri-Cities businesses need?', answer: 'We recommend a minimum of $1,000 per month for the platforms to gather enough conversion data to optimise properly. Below roughly $500 they cannot learn effectively, which is a platform limitation rather than an agency upsell. Most Tri-Cities businesses run $800 to $2,500 in monthly ad spend depending on category and competition.' },
+      { question: 'Should Tri-Cities businesses use Google Ads or Meta Ads?', answer: 'Google Ads for anything urgent or actively searched — trades, clinics, automotive, legal — because people type those at the moment of need. Meta Ads for anything discovered rather than searched, such as salons, gyms, restaurants, real estate and coaching. Either way, radius targeting of roughly 8 to 12 kilometres beats campaigns aimed at the region as a whole.' },
+      { question: 'Who should own the ad account?', answer: 'You should. The ad account, the pixel and the historical data belong with the business, not the agency. If an agency owns them, leaving costs you your conversion history and the algorithm learning that came with it — which is a switching cost disguised as an administrative detail. Ask this before signing anything.' },
+      { question: 'How long before a Tri-Cities campaign produces leads?', answer: 'Campaigns typically launch within the first week and most clients see their first qualified leads within two weeks of launch. Cost per lead settles around weeks two to three, once there is enough data to optimise against. Judging performance in week one is the most common mistake — the numbers are not meaningful yet.' },
+    ],
+  },
+  {
+    slug: 'tri-cities-google-ads-cost',
+    title: 'What Does a Tri-Cities Business Pay for Google Ads in 2026?',
+    metaTitle: 'Google Ads Cost Tri-Cities | Coquitlam & Port Moody | AP Digital',
+    metaDescription: 'Google Ads for Tri-Cities businesses, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.',
+    excerpt: 'Real Google Ads costs for Coquitlam, Port Moody and Port Coquitlam businesses — cost per click by industry, monthly budgets, and what management actually adds.',
+    date: '2026-08-24',
+    dateModified: '2026-08-24',
+    readTime: '11 min read',
+    category: 'City',
+    content: `A Tri-Cities business running Google Ads pays **two separate bills**: ad spend to Google, typically **$800 to $2,500 per month**, and management, typically **$759 to $2,000 per month**. All in, most Coquitlam, Port Moody and Port Coquitlam businesses run **$1,500 to $4,000 a month**.
+
+Cost per click in the Tri-Cities generally lands between **$1.50 and $12** depending on industry — cheaper than the equivalent Vancouver term, because fewer advertisers are bidding.
+
+## Why the Tri-Cities Costs Less Than Vancouver
+
+Google Ads is an auction. Price is set by how many advertisers want the same click, and there are simply fewer of them competing for "plumber Port Moody" than "plumber Vancouver".
+
+That gap is the most useful thing about advertising here. A Coquitlam business can hold a top position on local terms for a budget that would buy near-invisibility in Vancouver.
+
+The three cities are not equivalent, though. **Coquitlam** — especially Burquitlam and the Town Centre — is the most competitive and closest to Vancouver pricing. **Port Moody** is the cheapest of the three. **Port Coquitlam** sits between them, with a heavier trades and light-industrial base.
+
+## Cost Per Click by Industry
+
+Approximate Tri-Cities ranges. Emergency and high-value services cost more because the resulting job is worth more.
+
+| Industry | Typical CPC | Typical cost per lead |
+|---|---|---|
+| Plumbing, HVAC, electrical | $6 – $12 | $35 – $90 |
+| Legal | $8 – $30 | $80 – $250 |
+| Dental and health clinics | $4 – $10 | $40 – $120 |
+| Automotive service | $2 – $6 | $25 – $70 |
+| Home renovation and contracting | $4 – $9 | $50 – $150 |
+| Salons, spas, fitness | $1.50 – $4 | $15 – $45 |
+| Real estate | $2 – $7 | $30 – $90 |
+
+Cost per lead matters more than cost per click. A $10 click that converts at 15% produces a cheaper lead than a $3 click converting at 2%, and the second one feels cheaper while being worse.
+
+## What Monthly Budget Actually Achieves
+
+| Monthly ad spend | Realistic expectation |
+|---|---|
+| Under $500 | Not enough data for Google to optimise. Avoid. |
+| $500 – $1,000 | One tight campaign, one service, one small radius. Viable for a single-service business. |
+| $1,000 – $2,000 | The range most Tri-Cities local businesses should start in. Two or three campaigns, room to test. |
+| $2,000 – $4,000 | Multiple services or a wider radius, with budget to bid competitively on the best terms. |
+| $4,000+ | Multi-location or genuinely competitive categories such as legal. |
+
+**The floor is real.** Below roughly $500 a month, Google cannot gather enough conversion data to optimise, so you pay near-full price for every click indefinitely. That is a platform constraint, not an agency upsell.
+
+## The Two Bills, Separated
+
+The most common confusion in agency quotes is conflating ad spend with management. They are different money going to different places.
+
+**Ad spend** goes to Google. It should be billed to your own card on your own account, so you see the real numbers and keep control.
+
+**Management** pays for the work: campaign build, keyword and negative-keyword research, conversion tracking, ad copy and testing, bid strategy, landing page guidance, and reporting.
+
+Our management is **$759/month** for paid ads, flat, month-to-month with 30 days' notice. Not a percentage of spend — a percentage rewards the agency for spending more of your money whether or not it produces anything.
+
+## What Management Is Actually Buying
+
+If you are weighing doing it yourself, the honest answer is that Google Ads is learnable and the platform actively encourages expensive defaults. The specific things that cost self-managed accounts money:
+
+**Broad match without negatives.** Google will happily spend your budget on loosely related searches. On a typical unmanaged local account a substantial share of spend lands on queries with no purchase intent.
+
+**Performance Max with no brand exclusion.** PMax will claim credit for people already searching your business name and report an excellent return for traffic you already had.
+
+**No conversion tracking, or tracking that only counts form fills.** Most local service businesses get the majority of leads by phone. If calls are not tracked, you will switch off the campaign that is actually working.
+
+**Never checking the search terms report.** This is where the waste is visible, and it needs looking at weekly rather than monthly.
+
+## Google Business Profile Comes First
+
+For local searches the map pack sits above the paid and organic results, and it costs nothing. Before increasing ad budget, make sure the profile is complete, categorised correctly, has recent photos, and is collecting reviews.
+
+For a Tri-Cities business, appearing in the map pack for "near me" searches often produces more calls than the ads sitting above it — which is why we tell people to fix that first, even though there is no fee in it for us.
+
+## Google Ads or Meta Ads?
+
+Google for urgency and intent: someone with a burst pipe, a toothache, or a legal deadline is typing it into Google right now. Meta for discovery: salons, gyms, restaurants, real estate.
+
+Many Tri-Cities businesses need both, and the sensible order is to get one working before adding the second. Running two half-funded channels is worse than running one properly. Our guide to [hiring a Tri-Cities marketing agency](/blog/marketing-agency-tri-cities) covers how to judge whoever runs them.
+
+## Timeline
+
+Campaigns typically launch within the first week. First qualified leads usually arrive within two weeks. Cost per lead settles around weeks two to three, once there is enough conversion data to optimise against. Judging the account in week one is the most common and most expensive mistake.
+
+We agree a lead-volume target before launch so there is a number we are both accountable to. We do not publish client case studies, because we do not yet have results we can show with names and permission attached — and quoting figures nobody can verify is not worth much to you anyway.
+
+## Frequently Asked Questions About Google Ads Costs in the Tri-Cities
+
+Below are the questions Coquitlam, Port Moody and Port Coquitlam business owners ask us most often.
+
+## Get a Straight Answer on Your Numbers
+
+Book a 20-minute call. Tell us what you sell and what a customer is worth, and we will tell you what budget makes sense — including when Google Ads is the wrong first channel for your business.`,
+    faqs: [
+      { question: 'How much do Google Ads cost for a Tri-Cities business?', answer: 'Two separate bills: ad spend to Google of typically $800 to $2,500 per month, and management of $759 to $2,000. All in, most Coquitlam, Port Moody and Port Coquitlam businesses run $1,500 to $4,000 monthly. Cost per click generally lands between $1.50 and $12 depending on industry, which is cheaper than the equivalent Vancouver term because fewer advertisers are bidding.' },
+      { question: 'Why are Google Ads cheaper in the Tri-Cities than Vancouver?', answer: 'Google Ads is an auction, and price is set by how many advertisers want the same click. Fewer businesses bid on "plumber Port Moody" than "plumber Vancouver". That gap is the most useful thing about advertising here — a Coquitlam business can hold a top position on local terms for a budget that would buy near-invisibility in Vancouver.' },
+      { question: 'What is the minimum Google Ads budget that works?', answer: 'Around $500 per month in ad spend is the practical floor, and $1,000 to $2,000 is where most Tri-Cities local businesses should start. Below roughly $500 Google cannot gather enough conversion data to optimise, so you pay near-full price for every click indefinitely. That is a platform constraint rather than an agency upsell.' },
+      { question: 'What is a typical cost per lead in the Tri-Cities?', answer: 'Roughly $35 to $90 for plumbing, HVAC and electrical; $40 to $120 for dental and health clinics; $15 to $45 for salons, spas and fitness; $80 to $250 for legal. Cost per lead matters more than cost per click — a $10 click converting at 15% produces a cheaper lead than a $3 click converting at 2%, even though the second feels cheaper.' },
+      { question: 'Should I pay a percentage of ad spend for management?', answer: 'No. A percentage rewards the agency for spending more of your money whether or not it produces results. A flat fee is predictable and creates no such incentive. Our management is $759/month flat, month-to-month with 30 days notice, and ad spend is billed to your own account by Google so you keep control and see the real numbers.' },
+      { question: 'Can I run Google Ads myself instead of hiring someone?', answer: 'You can, and the platform actively encourages expensive defaults. The specific things that cost self-managed accounts money are broad match without negative keywords, Performance Max with no brand exclusion claiming credit for traffic you already had, conversion tracking that counts only form fills when most local leads arrive by phone, and never checking the search terms report.' },
+      { question: 'Should I fix my Google Business Profile before running ads?', answer: 'Yes. For local searches the map pack sits above both the paid and organic results and costs nothing. Make sure the profile is complete, correctly categorised, has recent photos and is collecting reviews. For many Tri-Cities businesses the map pack produces more calls than the ads above it, which is why it is worth fixing first.' },
+    ],
   },
   {
     slug: 'how-much-do-instagram-ads-cost-canada',

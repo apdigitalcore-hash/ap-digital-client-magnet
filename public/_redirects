@@ -1,0 +1,19 @@
+# Netlify/Cloudflare-Pages style redirects.
+# vercel.json is not read by this host and the build's canonical+refresh stubs
+# return 200, which Google treats as a thin page rather than a redirect.
+# This file is the next mechanism to try: if the host honours it, these become
+# real 301s. Verify with `curl -sI` after deploying before trusting it.
+
+/blog/social-media-marketing-cost-canada  /blog/how-much-does-social-media-marketing-cost-canada  301!
+/blog/best-digital-marketing-agency-vancouver  /blog/digital-marketing-agency-vancouver-bc  301!
+/blog/how-to-choose-marketing-agency-bc  /blog/digital-marketing-agency-vancouver-bc  301!
+/blog/how-to-market-a-trades-business-online  /blog/trades-marketing-vancouver-bc  301!
+/blog/trades-digital-marketing-guide  /blog/trades-marketing-vancouver-bc  301!
+/blog/how-to-get-more-salon-clients  /blog/salon-marketing-vancouver-bc  301!
+/blog/facebook-ads-vancouver-small-business  /blog/best-ads-platform-for-small-business-canada  301!
+/blog/facebook-ads-vs-google-ads  /blog/best-ads-platform-for-small-business-canada  301!
+/blog/google-ads-vs-meta-ads-local-business  /blog/best-ads-platform-for-small-business-canada  301!
+/blog/real-estate-social-media-tips  /blog/real-estate-agent-social-media-tips  301!
+/blog/how-much-should-salon-spend-on-marketing  /blog/salon-marketing-vancouver-bc  301!
+/blog/average-cost-per-lead-plumbers-canada  /blog/plumber-marketing-metro-vancouver  301!
+/blog/how-to-calculate-marketing-budget-service-business  /blog/digital-marketing-budget-small-business-canada  301!
