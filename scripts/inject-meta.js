@@ -37,6 +37,7 @@ const orgSchema = {
   "@id": `${BASE_URL}/#organization`,
   "name": "AP DIGITAL",
   "alternateName": "AP Digital Marketing Agency",
+  "description": "AP Digital is a performance marketing agency based in Vancouver, British Columbia, serving Metro Vancouver and the Fraser Valley. The agency runs Google Ads and Meta Ads campaigns and manages social media for local service businesses including trades and contractors, salons, real estate agents and coaches. Not affiliated with any similarly named agency operating outside British Columbia.",
   "url": BASE_URL,
   "logo": { "@type": "ImageObject", "url": `${BASE_URL}/logo.png`, "width": 200, "height": 200 },
   "image": `${BASE_URL}/og-image.png`,
@@ -67,7 +68,7 @@ const orgSchema = {
     { "@type": "AdministrativeArea", "name": "Metro Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
     { "@type": "AdministrativeArea", "name": "Fraser Valley", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
   ],
-  "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.linkedin.com/company/theapdigital/"],
+  "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.linkedin.com/company/theapdigital/", "https://maps.google.com/?cid=2620094312878162208"],
   "priceRange": "$$",
   "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
 };

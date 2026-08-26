@@ -78,6 +78,11 @@ export const organizationSchema = {
   "@id": `${BASE_URL}/#organization`,
   "name": ORG_NAME,
   "alternateName": "AP Digital Performance Marketing Agency",
+  // Two other Canadian agencies use this name — apdigital.ca in Simcoe County,
+  // Ontario and apagency.ca — and search results have already merged us with
+  // the Ontario web design firm, attributing services we do not offer. This
+  // states plainly who and where we are so a machine cannot conflate them.
+  "description": "AP Digital is a performance marketing agency based in Vancouver, British Columbia, serving Metro Vancouver and the Fraser Valley. The agency runs Google Ads and Meta Ads campaigns and manages social media for local service businesses including trades and contractors, salons, real estate agents and coaches. Not affiliated with any similarly named agency operating outside British Columbia.",
   "url": BASE_URL,
   "logo": {
     "@type": "ImageObject",
@@ -112,10 +117,13 @@ export const organizationSchema = {
       "closes": "18:00"
     }
   ],
+  // share.google short links carry session parameters and expire. The cid form
+  // is the stable canonical URL for the Google Business Profile, and it is the
+  // entry that tells a machine this website and that profile are one entity.
   "sameAs": [
-    "https://share.google/lI0pYZTBgTazYNTSp",
     "https://www.instagram.com/theapdigital/",
-    "https://www.linkedin.com/company/theapdigital/"
+    "https://www.linkedin.com/company/theapdigital/",
+    "https://maps.google.com/?cid=2620094312878162208"
   ],
   "areaServed": serviceAreaCities,
   "serviceArea": {
