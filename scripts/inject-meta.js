@@ -46,7 +46,27 @@ const orgSchema = {
   "foundingDate": "2024",
   "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V5K", "addressCountry": "CA" },
   "geo": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
-  "areaServed": ["Vancouver", "Surrey", "Burnaby", "Richmond", "Langley", "Coquitlam", "Abbotsford", "Metro Vancouver"],
+  // Kept in step with serviceAreaCities in src/lib/structuredData.ts; the
+  // assertion below fails the build if the two drift apart again.
+  "areaServed": [
+    { "@type": "City", "name": "Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Surrey", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Burnaby", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Richmond", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Langley", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Coquitlam", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Abbotsford", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Mission", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Chilliwack", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Maple Ridge", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Port Coquitlam", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Port Moody", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "North Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "New Westminster", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "City", "name": "Delta", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "AdministrativeArea", "name": "Metro Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+    { "@type": "AdministrativeArea", "name": "Fraser Valley", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  ],
   "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.linkedin.com/company/theapdigital/"],
   "priceRange": "$$",
   "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
@@ -633,6 +653,26 @@ function loadPostsFromSource() {
   return out;
 }
 
+// ── areaServed must match the React source ─────────────────────────────────
+// This file and src/lib/structuredData.ts each carry their own copy. They were
+// already out of step — 8 flat strings here against 10 City objects there — so
+// the tags Google crawled claimed a narrower service area than the app did.
+{
+  const ts = readFileSync(resolve(__dirname, '../src/lib/structuredData.ts'), 'utf-8');
+  const block = ts.slice(ts.indexOf('const serviceAreaCities'), ts.indexOf('];', ts.indexOf('const serviceAreaCities')));
+  const fromSource = [...block.matchAll(/"name":\s*"([^"]+)"/g)]
+    .map((m) => m[1]).filter((n) => n !== 'British Columbia');
+  const fromHere = (orgSchema.areaServed || []).map((a) => a.name);
+  const missing = fromSource.filter((n) => !fromHere.includes(n));
+  const extra = fromHere.filter((n) => !fromSource.includes(n));
+  if (missing.length || extra.length) {
+    throw new Error(
+      `inject-meta: areaServed drift between this file and structuredData.ts. ` +
+      `Missing here: [${missing}]. Only here: [${extra}].`);
+  }
+  console.log(`   areaServed: ${fromHere.length} areas, in step with structuredData.ts`);
+}
+
 const sourcePosts = loadPostsFromSource();
 // blogPosts.ts is the single source of truth for post metadata. This file used
 // to keep its own copy of metaTitle/metaDescription/dates, and 33 of 41 posts
@@ -653,37 +693,42 @@ console.log(`   Meta sync:  ${syncedFields} field(s) refreshed from blogPosts.ts
 
 // ── HTML generation helpers ─────────────────────────────────────────────────
 
+// Every replacement below is passed as a function, not a string. String.replace()
+// interprets $$, $&, $` and $' inside a replacement string, and the schema
+// legitimately contains "$$" for priceRange plus dollar amounts throughout the
+// body copy. Passing strings silently turned "$$" into "$" on all 83 pages —
+// the source said the right thing and the output did not.
 function injectIntoHtml(html, { title, description, canonical, schema, body, robots }) {
   // Replace title
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`);
+  html = html.replace(/<title>[^<]*<\/title>/, () => `<title>${title}</title>`);
 
   // Replace meta description
-  html = html.replace(/<meta name="description"[^>]*\/?>/, `<meta name="description" content="${escapeAttr(description)}" />`);
+  html = html.replace(/<meta name="description"[^>]*\/?>/, () => `<meta name="description" content="${escapeAttr(description)}" />`);
 
   // Add canonical
   if (html.includes('rel="canonical"')) {
-    html = html.replace(/<link rel="canonical"[^>]*\/?>/, `<link rel="canonical" href="${canonical}" />`);
+    html = html.replace(/<link rel="canonical"[^>]*\/?>/, () => `<link rel="canonical" href="${canonical}" />`);
   } else {
-    html = html.replace('</head>', `  <link rel="canonical" href="${canonical}" />\n</head>`);
+    html = html.replace('</head>', () => `  <link rel="canonical" href="${canonical}" />\n</head>`);
   }
 
   // Per-route robots override (the shell defaults to "index, follow")
   if (robots) {
     if (/<meta name="robots"/.test(html)) {
-      html = html.replace(/<meta name="robots"[^>]*\/?>/, `<meta name="robots" content="${robots}" />`);
+      html = html.replace(/<meta name="robots"[^>]*\/?>/, () => `<meta name="robots" content="${robots}" />`);
     } else {
-      html = html.replace('</head>', `  <meta name="robots" content="${robots}" />\n</head>`);
+      html = html.replace('</head>', () => `  <meta name="robots" content="${robots}" />\n</head>`);
     }
   }
 
   // Replace OG tags
-  html = html.replace(/<meta property="og:url"[^>]*\/?>/, `<meta property="og:url" content="${canonical}" />`);
-  html = html.replace(/<meta property="og:title"[^>]*\/?>/, `<meta property="og:title" content="${escapeAttr(title)}" />`);
-  html = html.replace(/<meta property="og:description"[^>]*\/?>/, `<meta property="og:description" content="${escapeAttr(description)}" />`);
+  html = html.replace(/<meta property="og:url"[^>]*\/?>/, () => `<meta property="og:url" content="${canonical}" />`);
+  html = html.replace(/<meta property="og:title"[^>]*\/?>/, () => `<meta property="og:title" content="${escapeAttr(title)}" />`);
+  html = html.replace(/<meta property="og:description"[^>]*\/?>/, () => `<meta property="og:description" content="${escapeAttr(description)}" />`);
 
   // Replace Twitter tags
-  html = html.replace(/<meta name="twitter:title"[^>]*\/?>/, `<meta name="twitter:title" content="${escapeAttr(title)}" />`);
-  html = html.replace(/<meta name="twitter:description"[^>]*\/?>/, `<meta name="twitter:description" content="${escapeAttr(description)}" />`);
+  html = html.replace(/<meta name="twitter:title"[^>]*\/?>/, () => `<meta name="twitter:title" content="${escapeAttr(title)}" />`);
+  html = html.replace(/<meta name="twitter:description"[^>]*\/?>/, () => `<meta name="twitter:description" content="${escapeAttr(description)}" />`);
 
   // Inject JSON-LD schema
   if (schema) {
@@ -691,14 +736,14 @@ function injectIntoHtml(html, { title, description, canonical, schema, body, rob
       schema['@graph'].unshift(websiteSchema);
     }
     const scriptTag = `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
-    html = html.replace('</head>', `${scriptTag}\n</head>`);
+    html = html.replace('</head>', () => `${scriptTag}\n</head>`);
   }
 
   // Inject semantic body content (visible to crawlers, replaced by React hydration)
   if (body) {
     html = html.replace(
       '<div id="root"></div>',
-      `<div id="root"><main id="main-content">${body}</main></div>`
+      () => `<div id="root"><main id="main-content">${body}</main></div>`
     );
   }
 

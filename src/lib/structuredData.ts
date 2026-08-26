@@ -29,6 +29,11 @@ export const founderSchema = {
   ]
 };
 
+// Body copy has always said "Metro Vancouver and the Fraser Valley" while this
+// field stopped at Abbotsford. Mission, Chilliwack and Maple Ridge were missing
+// entirely, and the two regions were not represented at all — so an assistant
+// asked for Fraser Valley agencies had prose saying yes and structured data
+// saying no. Regions are AdministrativeArea, not City.
 const serviceAreaCities = [
   { "@type": "City", "name": "Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
   { "@type": "City", "name": "Surrey", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
@@ -37,9 +42,16 @@ const serviceAreaCities = [
   { "@type": "City", "name": "Langley", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
   { "@type": "City", "name": "Coquitlam", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
   { "@type": "City", "name": "Abbotsford", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  { "@type": "City", "name": "Mission", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  { "@type": "City", "name": "Chilliwack", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  { "@type": "City", "name": "Maple Ridge", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  { "@type": "City", "name": "Port Coquitlam", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  { "@type": "City", "name": "Port Moody", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
   { "@type": "City", "name": "North Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
   { "@type": "City", "name": "New Westminster", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
   { "@type": "City", "name": "Delta", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  { "@type": "AdministrativeArea", "name": "Metro Vancouver", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
+  { "@type": "AdministrativeArea", "name": "Fraser Valley", "containedInPlace": { "@type": "AdministrativeArea", "name": "British Columbia" } },
 ];
 
 /**
