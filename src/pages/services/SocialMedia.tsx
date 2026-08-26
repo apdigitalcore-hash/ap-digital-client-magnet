@@ -94,7 +94,7 @@ const SocialMedia = () => (
 
         {/* Short intro */}
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-          Inconsistent posting kills reach. We plan, create, and publish your content every week so your brand stays top of mind — without you lifting a finger. Combine with <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">paid ads</Link> to turn followers into leads. See <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link>.
+          Inconsistent posting kills reach. We plan, create, and publish your content every week so your brand stays top of mind — without you lifting a finger. Combine with <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">paid ads</Link> to turn followers into leads. See <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">how we work</Link>.
         </p>
 
         {/* 3-column why strip */}

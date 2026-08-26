@@ -141,7 +141,7 @@ const staticRoutes = [
     path: 'trades-marketing',
     title: 'Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital',
     description: 'AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20–50 qualified leads/month via Google & Meta Ads. No contracts. Starts at $759/month.',
-    body: '<h1>Trades &amp; Contractor Marketing — Get More Leads in BC</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades businesses — plumbers, electricians, HVAC technicians, roofers, and general contractors — get 20–50 qualified leads per month through Google Ads and Meta Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Trades &amp; Contractor Marketing — Get More Leads in BC</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades businesses — plumbers, electricians, HVAC technicians, roofers, and general contractors — get 20–50 qualified leads per month through Google Ads and Meta Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Trades & Contractor Marketing', 'Lead generation for BC plumbers, electricians, HVAC, roofers & general contractors using Google Ads & Meta Ads.', '/trades-marketing'),
@@ -160,7 +160,7 @@ const staticRoutes = [
     path: 'salon-marketing',
     title: 'Salon Marketing Vancouver | Fill Your Chair Every Week | AP Digital',
     description: 'Get 20–40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
-    body: '<h1>Salon Marketing — Fill Your Chair Every Week</h1><p>AP Digital helps hair salons, barbershops, and beauty studios in Vancouver get 20–40 new client inquiries per month with Meta Ads, Instagram content, and Google Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Salon Marketing — Fill Your Chair Every Week</h1><p>AP Digital helps hair salons, barbershops, and beauty studios in Vancouver get 20–40 new client inquiries per month with Meta Ads, Instagram content, and Google Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Salon Marketing', 'Social media & paid ads for Vancouver salons. Get consistent bookings every week.', '/salon-marketing'),
@@ -172,7 +172,7 @@ const staticRoutes = [
     path: 'real-estate-marketing',
     title: 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital',
     description: 'AP Digital generates 15–30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
-    body: '<h1>Real Estate Marketing — Consistent Buyer &amp; Seller Leads</h1><p>AP Digital generates 15–30 qualified buyer and seller leads per month for BC realtors using Meta Ads and Google Ads. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Real Estate Marketing — Consistent Buyer &amp; Seller Leads</h1><p>AP Digital generates 15–30 qualified buyer and seller leads per month for BC realtors using Meta Ads and Google Ads. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Real Estate Marketing', 'Lead generation for BC realtors using Meta Ads & Google Ads.', '/real-estate-marketing'),
@@ -315,7 +315,7 @@ const staticRoutes = [
     path: 'services/paid-ads',
     title: 'Paid Ads Agency Vancouver | Meta & Google Ads | AP Digital',
     description: 'AP Digital manages Meta & Google Ads for Vancouver businesses. First leads within 2 weeks. Month-to-month, no contracts. From $759/mo.',
-    body: '<h1>Paid Ads — Meta &amp; Google Ads Management</h1><p>AP Digital manages Meta Ads (Facebook and Instagram) and Google Ads campaigns for Vancouver businesses. Month-to-month, from $759/month.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Paid Ads — Meta &amp; Google Ads Management</h1><p>AP Digital manages Meta Ads (Facebook and Instagram) and Google Ads campaigns for Vancouver businesses. Month-to-month, from $759/month.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Paid Advertising', 'Meta Ads & Google Ads management for Vancouver small businesses.', '/services/paid-ads'),
@@ -363,7 +363,7 @@ const staticRoutes = [
     path: 'services/lead-generation',
     title: 'Lead Generation Agency Vancouver | AP Digital',
     description: 'AP Digital generates predictable leads for Vancouver businesses. First leads within 2 weeks. Month-to-month. 90-day guarantee.',
-    body: '<h1>Lead Generation — Predictable Leads Every Month</h1><p>AP Digital generates predictable leads for Vancouver businesses using paid ads and content systems. First leads typically within 2 weeks. Month-to-month. 90-day guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Lead Generation — Predictable Leads Every Month</h1><p>AP Digital generates predictable leads for Vancouver businesses using paid ads and content systems. First leads typically within 2 weeks. Month-to-month. 90-day guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Lead Generation', 'Paid ads & content systems for predictable lead generation.', '/services/lead-generation'),
@@ -410,7 +410,7 @@ const staticRoutes = [
     path: 'how-to-choose-a-marketing-agency-vancouver',
     title: 'How to Choose a Google Ads Agency in Vancouver | AP Digital',
     description: "What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver.",
-    body: '<h1>How to Choose a Marketing Agency in Vancouver</h1><p>What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver real results from those that don\'t. Written by Arjun Sharma, Founder of AP Digital.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>How to Choose a Marketing Agency in Vancouver</h1><p>What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver real results from those that don\'t. Written by Arjun Sharma, Founder of AP Digital.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'How to Choose a Marketing Agency', url: '/how-to-choose-a-marketing-agency-vancouver' }]),
@@ -422,7 +422,7 @@ const staticRoutes = [
     path: 'about',
     title: 'About AP Digital | Founded by Arjun Sharma | Vancouver Marketing Agency',
     description: 'AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in lead generation for trades, salons, real estate & coaches. No contracts.',
-    body: '<h1>About AP Digital</h1><p>AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in performance marketing and lead generation for local service businesses — trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants. Arjun personally manages every client account.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>About AP Digital</h1><p>AP Digital was founded by Arjun Sharma in Vancouver, BC. We specialize in performance marketing and lead generation for local service businesses — trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants. Arjun personally manages every client account.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }]),
@@ -433,7 +433,7 @@ const staticRoutes = [
     path: 'contact',
     title: 'Book a Free Strategy Call | AP Digital Vancouver',
     description: 'Book a free 20-minute strategy call with AP Digital. No pitch. No pressure. No contracts.',
-    body: '<h1>Book a Free Strategy Call</h1><p>Book a free 20-minute strategy call with Arjun Sharma at AP Digital. We\'ll show you how many leads are available in your area and what it would cost to capture them. No pitch. No pressure. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li></ul></nav>',
+    body: '<h1>Book a Free Strategy Call</h1><p>Book a free 20-minute strategy call with Arjun Sharma at AP Digital. We\'ll show you how many leads are available in your area and what it would cost to capture them. No pitch. No pressure. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact' }]),
@@ -456,7 +456,7 @@ const staticRoutes = [
     path: 'about/arjun-sharma',
     title: 'Arjun Sharma | Founder & Lead Strategist | AP Digital Vancouver',
     description: 'Arjun Sharma is the founder of AP Digital, a Vancouver performance marketing agency. He personally manages every client account, specializing in Google Ads and Meta Ads for trades contractors across BC.',
-    body: '<h1>Arjun Sharma — Founder &amp; Lead Strategist</h1><p>Arjun Sharma founded AP Digital in Vancouver, BC to help trades contractors, salons, real estate agents, and coaches get predictable leads through Google Ads and Meta Ads. He personally manages every client account.</p><nav aria-label="Quick links"><ul><li><a href="/about">About AP Digital</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/blog">Articles by Arjun</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Arjun Sharma — Founder &amp; Lead Strategist</h1><p>Arjun Sharma founded AP Digital in Vancouver, BC to help trades contractors, salons, real estate agents, and coaches get predictable leads through Google Ads and Meta Ads. He personally manages every client account.</p><nav aria-label="Quick links"><ul><li><a href="/about">About AP Digital</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/blog">Articles by Arjun</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'About', url: '/about' }, { name: 'Arjun Sharma', url: '/about/arjun-sharma' }]),
@@ -494,7 +494,7 @@ const staticRoutes = [
     robots: 'noindex, follow',
     title: 'Free 14-Day Ad Pilot | AP Digital',
     description: 'We run your Meta ads free for 14 days. You pay the ad budget directly to Meta. We charge nothing. A few spots available this month.',
-    body: '<h1>We&rsquo;ll run your ads free for 14 days</h1><p>You pay the ad budget straight to Meta on your own card. We charge you nothing. No contract, no setup fee, no catch. Shut it off whenever you want. 20 minute call &mdash; if it&rsquo;s not a fit we&rsquo;ll tell you on the call.</p><ul><li>$0 paid to us during the pilot</li><li>14 days, then you decide &mdash; no obligation</li><li>Ad budget never touches our account</li></ul><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>We&rsquo;ll run your ads free for 14 days</h1><p>You pay the ad budget straight to Meta on your own card. We charge you nothing. No contract, no setup fee, no catch. Shut it off whenever you want. 20 minute call &mdash; if it&rsquo;s not a fit we&rsquo;ll tell you on the call.</p><ul><li>$0 paid to us during the pilot</li><li>14 days, then you decide &mdash; no obligation</li><li>Ad budget never touches our account</li></ul><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Free 14-Day Pilot', url: '/free-pilot' }]),
@@ -773,7 +773,7 @@ const homepageHtml = injectIntoHtml(baseHtml, {
     webPageSchema('Vancouver Digital Marketing Agency | AP Digital', 'Performance marketing agency for BC small businesses.', '/'),
     breadcrumb([{ name: 'Home', url: '/' }]),
   ]},
-  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>Google Ads &amp; Meta Ads specialists</li><li>Trades contractors are our primary niche</li><li>From $759/month — no lock-in contracts</li><li>90-day results guarantee</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/services/seo">SEO</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
+  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>Google Ads &amp; Meta Ads specialists</li><li>Trades contractors are our primary niche</li><li>From $759/month — no lock-in contracts</li><li>90-day results guarantee</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/services/seo">SEO</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
 });
 // Write homepage as dist/index.html (overwrite the SPA shell)
 writeFileSync(resolve(distDir, 'index.html'), homepageHtml);
@@ -819,7 +819,7 @@ for (const post of blogPosts) {
   const bodyContent = post.contentExcerpt
     ? `<p>${escapeHtml(post.contentExcerpt)}</p>`
     : '';
-  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article><nav aria-label="Related"><ul><li><a href="/blog">All Articles</a></li><li><a href="/case-studies">Case Studies</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`;
+  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article><nav aria-label="Related"><ul><li><a href="/blog">All Articles</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`;
   const html = injectIntoHtml(baseHtml, {
     title: post.metaTitle,
     description: post.metaDescription,

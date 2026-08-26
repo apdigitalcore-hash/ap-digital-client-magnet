@@ -17,7 +17,7 @@ const Footer = () => {
   const company = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
-    { label: 'Case Studies', href: '/case-studies' },
+    { label: 'Our Approach', href: '/case-studies' },
     { label: 'Blog', href: '/blog' },
     { label: 'Pricing', href: '/pricing' },
     { label: 'Contact', href: '/contact' },

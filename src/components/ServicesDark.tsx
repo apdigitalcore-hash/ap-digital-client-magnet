@@ -115,7 +115,7 @@ const ServicesDark = () => {
         </div>
 
         <p className="text-center text-muted-foreground text-sm">
-          See how we've helped other businesses — <Link to="/case-studies" className="text-teal underline hover:text-teal/80">client results</Link> · <Link to="/blog" className="text-teal underline hover:text-teal/80">read our blog</Link>
+          See <Link to="/case-studies" className="text-teal underline hover:text-teal/80">how we work</Link> · <Link to="/blog" className="text-teal underline hover:text-teal/80">read our blog</Link>
         </p>
       </div>
     </section>

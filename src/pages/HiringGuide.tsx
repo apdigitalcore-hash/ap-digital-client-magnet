@@ -271,7 +271,7 @@ const HiringGuide = () => (
               'We work in four verticals only: salons, trades, real estate, and coaches. No generalism.',
               'Month-to-month. No contracts, no cancellation fees, no lock-in.',
               'Your ad account is yours. You own the data, the audiences, and the campaign history.',
-              'Four detailed case studies with specific numbers are published at ap-digital.ca/case-studies.',
+              'No published case studies yet — and we say so rather than quoting numbers you cannot verify.',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-teal shrink-0 mt-0.5" />
@@ -311,7 +311,7 @@ const HiringGuide = () => (
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/case-studies">See Case Studies</Link>
+              <Link to="/pricing">See Pricing</Link>
             </Button>
           </div>
         </section>

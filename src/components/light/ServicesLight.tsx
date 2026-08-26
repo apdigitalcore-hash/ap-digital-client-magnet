@@ -154,7 +154,7 @@ const ServicesLight = () => (
 
       <p className="text-center text-sm text-muted-foreground">
         See how we've helped other businesses —{' '}
-        <Link to="/case-studies" className="text-foreground underline underline-offset-4">client results</Link> ·{' '}
+        <Link to="/case-studies" className="text-foreground underline underline-offset-4">how we work</Link> ·{' '}
         <Link to="/blog" className="text-foreground underline underline-offset-4">read our blog</Link>
       </p>
     </div>
