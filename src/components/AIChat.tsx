@@ -39,18 +39,6 @@ const getGreeting = (pathname: string): Msg => {
       ],
     };
   }
-  if (pathname.startsWith('/services/seo')) {
-    return {
-      ...base,
-      text: "SEO questions? Ask about timelines, local SEO, or how we'd approach ranking your business. SEO is scoped on a call rather than sold at a list price.",
-      suggestions: [
-        { label: 'How long until I rank?', intent: 'timeline' },
-        { label: 'Do you do local SEO?', intent: 'local' },
-        { label: 'Cost of paid ads?', intent: 'ads-price' },
-        { label: 'Book a call', intent: 'book' },
-      ],
-    };
-  }
   if (pathname.startsWith('/services/paid-ads')) {
     return {
       ...base,

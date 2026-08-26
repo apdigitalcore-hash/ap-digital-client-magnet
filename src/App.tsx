@@ -22,10 +22,6 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const PaidAds = lazy(() => import("./pages/services/PaidAds"));
 const SocialMedia = lazy(() => import("./pages/services/SocialMedia"));
-const ContentCreation = lazy(() => import("./pages/services/ContentCreation"));
-const SEO = lazy(() => import("./pages/services/SEO"));
-const LeadGeneration = lazy(() => import("./pages/services/LeadGeneration"));
-const WebDesign = lazy(() => import("./pages/services/WebDesign"));
 const SalonMarketing = lazy(() => import("./pages/niches/SalonMarketing"));
 const RealEstateMarketing = lazy(() => import("./pages/niches/RealEstateMarketing"));
 const TradesMarketing = lazy(() => import("./pages/niches/TradesMarketing"));
@@ -90,10 +86,6 @@ const App = () => {
               <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/services/paid-ads" element={<PaidAds />} />
               <Route path="/services/social-media" element={<SocialMedia />} />
-              <Route path="/services/content-creation" element={<ContentCreation />} />
-              <Route path="/services/seo" element={<SEO />} />
-              <Route path="/services/lead-generation" element={<LeadGeneration />} />
-              <Route path="/services/web-design" element={<WebDesign />} />
               <Route path="/salon-marketing" element={<SalonMarketing />} />
               <Route path="/real-estate-marketing" element={<RealEstateMarketing />} />
               <Route path="/trades-marketing" element={<TradesMarketing />} />

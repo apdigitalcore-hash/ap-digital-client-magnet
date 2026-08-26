@@ -17,10 +17,6 @@ AP Digital is a Vancouver-based performance marketing agency specializing in lea
 
 - [Paid Ads (Meta & Google)](https://ap-digital.ca/services/paid-ads): Facebook, Instagram, and Google Ads management for local businesses
 - [Social Media Marketing](https://ap-digital.ca/services/social-media): Content creation, Reels, community management for Instagram, Facebook, TikTok
-- [SEO](https://ap-digital.ca/services/seo): Local SEO, Google Business Profile optimization, and on-page SEO for Vancouver businesses
-- [Lead Generation](https://ap-digital.ca/services/lead-generation): Full-funnel lead generation systems for service businesses
-- [Content Creation](https://ap-digital.ca/services/content-creation): Short-form video, graphics, and copywriting
-- [Web Design](https://ap-digital.ca/services/web-design): Conversion-focused websites for local businesses
 
 ## Industry Specializations
 

@@ -238,13 +238,16 @@ function estimateMonthlyLeak(dims: DimensionAnalysis[]): number {
 }
 
 const SERVICE_REC: Record<Dimension, { label: string; path: string; pitch: string }> = {
-  ads:     { label: 'Paid Ads',         path: '/services/paid-ads',         pitch: 'Google + Meta ads managed for $759/mo for BC trades, salons & realtors. Month-to-month, no lock-in.' },
-  seo:     { label: 'SEO',              path: '/services/seo',              pitch: 'Local SEO + Google Business Profile optimization. Most clients hit page 1 in 90-180 days.' },
-  social:  { label: 'Social Media',     path: '/services/social-media',     pitch: '12 custom posts/month, 2 platforms managed, community engagement — fully done for you.' },
-  content: { label: 'Content Creation', path: '/services/content-creation', pitch: 'Scroll-stopping short-form video + social content that builds brand and drives leads.' },
-  website: { label: 'Web Design',       path: '/services/web-design',       pitch: 'Fast, conversion-focused websites that turn visitors into paying clients. One-time $2,100.' },
-  reviews: { label: 'Lead Generation',  path: '/services/lead-generation',  pitch: 'Automated review collection + reputation systems. Part of our lead gen service.' },
-  funnel:  { label: 'Lead Generation',  path: '/services/lead-generation',  pitch: 'End-to-end lead nurture — email, SMS, CRM automation. Built for BC service businesses.' },
+  ads:     { label: 'Paid Ads',      path: '/services/paid-ads',     pitch: 'Google + Meta ads managed for $759/mo for BC trades, salons & realtors. Month-to-month, no lock-in.' },
+  social:  { label: 'Social Media',  path: '/services/social-media', pitch: '12 custom posts/month, 2 platforms managed, community engagement — fully done for you.' },
+  content: { label: 'Social Media',  path: '/services/social-media', pitch: 'Content is part of social media management at $849/mo — calendars, captions, scheduling and community management.' },
+  funnel:  { label: 'Paid Ads',      path: '/services/paid-ads',     pitch: 'Paid ads at $759/mo, with a lead-volume target agreed before launch. Month-to-month, no lock-in.' },
+  // We sell paid ads and social media. These three are real gaps an audit can
+  // find and things we do not sell, so they go to a conversation rather than to
+  // a page promising a service that does not exist.
+  seo:     { label: 'Talk it through', path: '/contact', pitch: 'We do not sell SEO as a package — worth a short call to work out whether it is your bottleneck before anyone charges you for it.' },
+  website: { label: 'Talk it through', path: '/contact', pitch: 'We do not build websites. Happy to tell you on a call whether yours is actually costing you leads, or whether the traffic is the problem.' },
+  reviews: { label: 'Talk it through', path: '/contact', pitch: 'Reviews are the highest-return thing most local businesses ignore, and it costs nothing to fix. We will walk you through it.' },
 };
 
 /* ────────────────────────────────────────────────────────────────────────────

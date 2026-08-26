@@ -153,22 +153,6 @@
       "destination": "/services/social-media.html"
     },
     {
-      "source": "/services/content-creation",
-      "destination": "/services/content-creation.html"
-    },
-    {
-      "source": "/services/seo",
-      "destination": "/services/seo.html"
-    },
-    {
-      "source": "/services/lead-generation",
-      "destination": "/services/lead-generation.html"
-    },
-    {
-      "source": "/services/web-design",
-      "destination": "/services/web-design.html"
-    },
-    {
       "source": "/about",
       "destination": "/about.html"
     },

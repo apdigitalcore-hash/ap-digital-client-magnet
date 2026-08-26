@@ -77,7 +77,7 @@ The biggest mistake agents make is posting only when they have a new listing. Co
 
 Managing social media on top of showings, negotiations, and paperwork is a lot. The most successful agents either hire a dedicated marketing person or partner with an agency that understands real estate.
 
-At AP DIGITAL, we help real estate agents across Canada build powerful personal brands, create scroll-stopping [short-form video content](/services/content-creation), and generate consistent buyer and seller leads through strategic [social media marketing](/services/social-media) and [paid advertising](/services/paid-ads).
+At AP DIGITAL, we help real estate agents across Canada build powerful personal brands, create scroll-stopping [short-form video content](/services/social-media), and generate consistent buyer and seller leads through strategic [social media marketing](/services/social-media) and [paid advertising](/services/paid-ads).
 
 We serve real estate agents across Metro Vancouver including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
@@ -273,7 +273,7 @@ Vancouver businesses typically spend $1,500–$4,000/month on agency management 
 
 Every business is different, and cookie-cutter packages rarely deliver the best results. The right investment depends on your goals, industry, competition, and current online presence.
 
-At AP DIGITAL, we build custom [social media marketing](/services/social-media) and [lead generation](/services/lead-generation) strategies for Canadian businesses. No long-term contracts. No hidden fees. Just transparent pricing and a 90-day results guarantee.
+At AP DIGITAL, we build custom [social media marketing](/services/social-media) and [lead generation](/services/paid-ads) strategies for Canadian businesses. No long-term contracts. No hidden fees. Just transparent pricing and a 90-day results guarantee.
 
 **[Book your free strategy call today](https://calendly.com/apdigital-core/20min)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
     faqs: [
@@ -454,7 +454,7 @@ This funnel approach combines the reach of social media with the conversion powe
 
 ## Need Help Building Your Marketing System?
 
-At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/lead-generation). We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). Book a free strategy call and we'll map out the right mix for your business.
+At AP DIGITAL, we help Canadian small businesses build complete marketing systems — from social media content and paid ads to email automation and [lead generation](/services/paid-ads). We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). Book a free strategy call and we'll map out the right mix for your business.
 
 ## Frequently Asked Questions
 
@@ -575,7 +575,7 @@ A proper [paid advertising](/services/paid-ads) setup for a trades business incl
 
 - Google Ads targeting high-intent local keywords
 - Facebook/Instagram ads with before-and-after creative
-- A simple [landing page](/services/web-design) designed to convert visitors into leads
+- A simple [landing page](/blog/how-much-does-a-website-cost-canada) designed to convert visitors into leads
 - Call tracking and form tracking to measure real results
 - Weekly optimization to lower costs and improve lead quality
 
@@ -674,7 +674,7 @@ There's a temptation to hire a large national or US-based agency for the perceiv
 
 AP DIGITAL was built specifically to serve the kinds of businesses that drive Vancouver's economy — [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades contractors](/trades-marketing), and [coaches](/coaching-marketing). We don't take on every client. We specialize in four niches and go deep, not wide.
 
-Our core services include [paid ads management](/services/paid-ads), [SEO](/services/seo), [web design](/services/web-design), [social media](/services/social-media), and [content creation](/services/content-creation). Every client gets a custom strategy built around their specific neighbourhood, target demographic, and budget. And we measure success in one currency: leads and bookings — not impressions or followers.
+Our core services include [paid ads management](/services/paid-ads), [SEO](/blog/vancouver-small-business-seo-guide), [web design](/blog/how-much-does-a-website-cost-canada), [social media](/services/social-media), and [content creation](/services/social-media). Every client gets a custom strategy built around their specific neighbourhood, target demographic, and budget. And we measure success in one currency: leads and bookings — not impressions or followers.
 
 We serve businesses across Metro Vancouver and the Fraser Valley including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
@@ -711,7 +711,7 @@ Vancouver's beauty market has unique characteristics you need to understand befo
 
 Your Instagram profile needs to function as a portfolio, a trust signal, and a lead generator all in one. For Vancouver salons, this means:
 
-- **[Reels](/services/content-creation) 3-5x per week.** Transformation videos, day-in-the-life content, before-and-after reveals. The Instagram algorithm rewards video heavily — even small accounts can reach thousands of local viewers.
+- **[Reels](/services/social-media) 3-5x per week.** Transformation videos, day-in-the-life content, before-and-after reveals. The Instagram algorithm rewards video heavily — even small accounts can reach thousands of local viewers.
 - **Location tagging.** Tag your Vancouver neighbourhood in every post. Use local hashtags like #KitsilanHair, #YalettownSalon, #NorthVanBeauty alongside broader tags.
 - **Stories daily.** Behind-the-scenes content, client results, booking availability, polls — Stories keep you top of mind with followers who are one step away from booking.
 
@@ -1147,7 +1147,7 @@ Most contractors in Vancouver fall into one of two traps:
 
 **Trap 2: Wasting money on the wrong platforms.** We've seen Vancouver contractors spend thousands on flyers, Yellow Pages listings, or generic website packages that generate zero leads. The problem isn't the budget — it's the channel.
 
-The solution is a simple, proven system: high-intent Google Ads + [local SEO](/services/seo) + a strong Google Business Profile. When combined correctly, this system puts your business in front of homeowners in Vancouver the exact moment they need your services.
+The solution is a simple, proven system: high-intent Google Ads + [local SEO](/blog/vancouver-small-business-seo-guide) + a strong Google Business Profile. When combined correctly, this system puts your business in front of homeowners in Vancouver the exact moment they need your services.
 
 ## The Vancouver Trades Marketing System
 
@@ -1229,7 +1229,7 @@ Based on our work with trades clients across BC:
 
 ## Ready to Get More Vancouver Jobs?
 
-AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — [Google Ads](/services/paid-ads), [social media content](/services/content-creation), and [local SEO](/services/seo) — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) for more.
+AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — [Google Ads](/services/paid-ads), [social media content](/services/social-media), and [local SEO](/blog/vancouver-small-business-seo-guide) — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) for more.
 
 **Book your free strategy call** and get a custom plan to fill your schedule with quality Vancouver jobs.
 
@@ -1329,11 +1329,11 @@ The most effective video formats for Vancouver realtors:
 - **Buyer and seller tip series** — "3 things every first-time buyer in Vancouver needs to know"
 - **Behind the scenes** — offer presentations, accepted offers, keys handovers (with client permission)
 
-### Step 4: Hyperlocal [SEO](/services/seo) — Own Your Neighbourhood
+### Step 4: Hyperlocal [SEO](/blog/vancouver-small-business-seo-guide) — Own Your Neighbourhood
 
 When a homeowner in Kitsilano types "Kitsilano real estate agent" into Google, you want to be the first name they see. Hyperlocal SEO for Vancouver realtors involves:
 
-- A [website](/services/web-design) with dedicated pages for each neighbourhood you serve
+- A [website](/blog/how-much-does-a-website-cost-canada) with dedicated pages for each neighbourhood you serve
 - Blog content targeting long-tail keywords like "buying a townhouse in East Vancouver 2026" or "best neighbourhoods in Vancouver for families"
 - Google Business Profile optimized for your specific areas
 - Local citations and directory listings (REBGV, Realtor.ca, Yelp, local directories)
@@ -1357,7 +1357,7 @@ The agents who consistently win in Vancouver are the ones who are still in front
 
 ## Ready to Stand Out in Vancouver's Real Estate Market?
 
-AP DIGITAL works with real estate agents across Metro Vancouver to build personal brands and [lead generation](/services/lead-generation) systems that produce consistent results. See our dedicated [Vancouver real estate marketing](/real-estate-marketing) page for details on how we work. We handle the content, the [paid ads](/services/paid-ads), and the strategy — so you can focus on closing deals.
+AP DIGITAL works with real estate agents across Metro Vancouver to build personal brands and [lead generation](/services/paid-ads) systems that produce consistent results. See our dedicated [Vancouver real estate marketing](/real-estate-marketing) page for details on how we work. We handle the content, the [paid ads](/services/paid-ads), and the strategy — so you can focus on closing deals.
 
 **Book your free strategy call** and get a custom Vancouver real estate marketing plan.`,
   },
@@ -1553,7 +1553,7 @@ Based on results with HVAC clients in BC:
 
 ## Ready to Fill Your HVAC Schedule in Vancouver?
 
-AP DIGITAL helps HVAC companies across Metro Vancouver build [lead generation](/services/lead-generation) systems that work year-round. We handle [Google Ads](/services/paid-ads), Meta Ads, and [content](/services/content-creation) — so your phone keeps ringing. Check out our [BC trades marketing](/trades-marketing) page to learn more.
+AP DIGITAL helps HVAC companies across Metro Vancouver build [lead generation](/services/paid-ads) systems that work year-round. We handle [Google Ads](/services/paid-ads), Meta Ads, and [content](/services/social-media) — so your phone keeps ringing. Check out our [BC trades marketing](/trades-marketing) page to learn more.
 
 **Book your free strategy call** and get a custom HVAC marketing plan for your Vancouver service area.`,
   },
@@ -1641,7 +1641,7 @@ A typical result: a BC life coach spending $800/month on ad spend generates 25�
 
 ## Ready to Get Consistent Coaching Clients in BC?
 
-AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We build your entire [lead generation](/services/lead-generation) system — the ads, the funnel, and the follow-up strategy. Visit our [BC coaching marketing page](/coaching-marketing) to learn more.
+AP DIGITAL specializes in Meta Ads for coaches across Metro Vancouver and BC. We build your entire [lead generation](/services/paid-ads) system — the ads, the funnel, and the follow-up strategy. Visit our [BC coaching marketing page](/coaching-marketing) to learn more.
 
 **Book your free strategy call** and let's map out a client acquisition system for your coaching practice.`,
   },
@@ -1721,7 +1721,7 @@ For plumbers in Metro Vancouver, social proof is your most powerful marketing as
 
 ## Ready to Get More Plumbing Jobs in Metro Vancouver?
 
-AP DIGITAL specializes in marketing for trades and contractors across the Lower Mainland. We build the full system — [Google Ads](/services/paid-ads), Meta Ads, [content](/services/content-creation), and [local SEO](/services/seo) — and we measure success in booked jobs. See our [BC trades marketing page](/trades-marketing).
+AP DIGITAL specializes in marketing for trades and contractors across the Lower Mainland. We build the full system — [Google Ads](/services/paid-ads), Meta Ads, [content](/services/social-media), and [local SEO](/blog/vancouver-small-business-seo-guide) — and we measure success in booked jobs. See our [BC trades marketing page](/trades-marketing).
 
 **Book your free strategy call** and get a custom marketing plan for your Vancouver plumbing business.`,
   },
@@ -1807,7 +1807,7 @@ You don't need to post daily. Two or three posts per week showing real local wor
 
 ## Ready to Get More Electrical Jobs in BC?
 
-AP DIGITAL builds complete digital marketing systems for electricians and trades businesses across Metro Vancouver and the Lower Mainland. We handle [Google Ads](/services/paid-ads), Meta Ads, and [local SEO](/services/seo) — so your phone keeps ringing and your crew stays busy. See our dedicated [BC trades marketing page](/trades-marketing).
+AP DIGITAL builds complete digital marketing systems for electricians and trades businesses across Metro Vancouver and the Lower Mainland. We handle [Google Ads](/services/paid-ads), Meta Ads, and [local SEO](/blog/vancouver-small-business-seo-guide) — so your phone keeps ringing and your crew stays busy. See our dedicated [BC trades marketing page](/trades-marketing).
 
 **Book your free strategy call** and get a custom lead generation plan for your BC electrical business.`,
   },
@@ -1888,7 +1888,7 @@ SEO is a long game. Expect to see initial improvements in three to six months, w
 
 ## Get More Vancouver Customers with AP DIGITAL
 
-At AP DIGITAL, we help Vancouver small businesses [rank higher on Google](/services/seo), get more reviews, and generate consistent organic leads. Our [local SEO strategies](/services/seo) are built specifically for the Vancouver market — not generic templates applied to every city.
+At AP DIGITAL, we help Vancouver small businesses [rank higher on Google](/blog/vancouver-small-business-seo-guide), get more reviews, and generate consistent organic leads. Our [local SEO strategies](/blog/vancouver-small-business-seo-guide) are built specifically for the Vancouver market — not generic templates applied to every city.
 
 **Book your free SEO audit** and let's find out exactly where your Vancouver business stands — and how to get to page one.
 
@@ -1990,7 +1990,7 @@ A reasonable starting budget for most Vancouver small businesses is $1,000–$2,
 
 ## Landing Pages: Where Most Vancouver Businesses Lose Money
 
-Here's where many Vancouver businesses fail with Google Ads: they send traffic to their homepage instead of a dedicated [landing page](/services/web-design). Your homepage is designed for general browsing — not for converting ad traffic.
+Here's where many Vancouver businesses fail with Google Ads: they send traffic to their homepage instead of a dedicated [landing page](/blog/how-much-does-a-website-cost-canada). Your homepage is designed for general browsing — not for converting ad traffic.
 
 A high-converting landing page for Vancouver Google Ads should include:
 
@@ -2150,7 +2150,7 @@ Don't send Google Ads traffic to your homepage. Build a dedicated landing page t
 - A simple booking form or Calendly link — reduce friction to zero
 - One clear CTA, not five competing options
 
-Your [landing page design](/services/web-design) matters as much as the ads themselves. A great ad sending traffic to a confusing page is wasted money.
+Your [landing page design](/blog/how-much-does-a-website-cost-canada) matters as much as the ads themselves. A great ad sending traffic to a confusing page is wasted money.
 
 ## Common Mistakes Coaches Make with Google Ads
 
@@ -2162,7 +2162,7 @@ Your [landing page design](/services/web-design) matters as much as the ads them
 
 ## How AP DIGITAL Helps Coaches Grow
 
-At AP DIGITAL, we've helped coaches across BC build predictable client acquisition systems using [Google Ads](/services/paid-ads), [content marketing](/services/content-creation), and [SEO](/services/seo). We handle the keyword research, ad copywriting, landing page design, and ongoing optimization — so you can focus on coaching.
+At AP DIGITAL, we've helped coaches across BC build predictable client acquisition systems using [Google Ads](/services/paid-ads), [content marketing](/services/social-media), and [SEO](/blog/vancouver-small-business-seo-guide). We handle the keyword research, ad copywriting, landing page design, and ongoing optimization — so you can focus on coaching.
 
 We specialize in [coaching marketing](/coaching-marketing) and understand the unique challenges of selling high-ticket services online. No long-term contracts, transparent reporting, and a 90-day results guarantee.
 
@@ -2225,7 +2225,7 @@ Send Google Ads traffic to a page built for conversion, not your generic homepag
 - Reviews from Google or Yelp
 - Your hours and services with pricing
 
-A well-built [landing page](/services/web-design) can double your conversion rate compared to sending traffic to a standard website.
+A well-built [landing page](/blog/how-much-does-a-website-cost-canada) can double your conversion rate compared to sending traffic to a standard website.
 
 ## Track Everything
 
@@ -2233,7 +2233,7 @@ Install Google Ads conversion tracking on your booking confirmation page. Track 
 
 ## AP DIGITAL: Salon Marketing That Works
 
-At AP DIGITAL, we specialize in [salon marketing in Vancouver](/salon-marketing) — from [Google Ads](/services/paid-ads) and [Meta Ads](/services/paid-ads) to [social media content](/services/social-media) and [SEO](/services/seo). We've helped salons across [Metro Vancouver](/vancouver), [Surrey](/surrey), and [Burnaby](/burnaby) fill their chairs predictably.
+At AP DIGITAL, we specialize in [salon marketing in Vancouver](/salon-marketing) — from [Google Ads](/services/paid-ads) and [Meta Ads](/services/paid-ads) to [social media content](/services/social-media) and [SEO](/blog/vancouver-small-business-seo-guide). We've helped salons across [Metro Vancouver](/vancouver), [Surrey](/surrey), and [Burnaby](/burnaby) fill their chairs predictably.
 
 No long-term contracts. Transparent reporting. 90-day results guarantee.
 
@@ -2284,16 +2284,16 @@ Before you spend on ads, make sure your Google Business Profile is fully optimiz
 - Regular posts and photo updates
 - Active review management (ask happy customers to leave Google reviews)
 
-[Local SEO](/services/seo) is the long game — but it's also the most cost-effective channel once it's working. Ranking in the "Richmond BC" map pack for your main keywords means free leads, every day.
+[Local SEO](/blog/vancouver-small-business-seo-guide) is the long game — but it's also the most cost-effective channel once it's working. Ranking in the "Richmond BC" map pack for your main keywords means free leads, every day.
 
 ## Content Marketing for Richmond
 
-Creating Richmond-specific [content](/services/content-creation) signals to Google that you're a local authority:
+Creating Richmond-specific [content](/services/social-media) signals to Google that you're a local authority:
 - Blog posts targeting "best [service] in Richmond BC"
 - Area guides mentioning Steveston, City Centre, Ironwood, Thompson, Broadmoor
 - Customer success stories from Richmond clients
 
-This content serves double duty: it helps your [SEO](/services/seo) and gives you material for [social media](/services/social-media).
+This content serves double duty: it helps your [SEO](/blog/vancouver-small-business-seo-guide) and gives you material for [social media](/services/social-media).
 
 ## Industries We Serve in Richmond
 
@@ -2306,7 +2306,7 @@ At AP DIGITAL, we work with Richmond businesses across multiple industries:
 
 ## Get Started with AP DIGITAL
 
-We're a [Vancouver-based digital marketing agency](/vancouver) that serves businesses across Metro Vancouver — including Richmond, [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), and [Coquitlam](/coquitlam). We handle [paid ads](/services/paid-ads), [SEO](/services/seo), [content creation](/services/content-creation), [social media](/services/social-media), and [web design](/services/web-design).
+We're a [Vancouver-based digital marketing agency](/vancouver) that serves businesses across Metro Vancouver — including Richmond, [Surrey](/surrey), [Burnaby](/burnaby), [Langley](/langley), and [Coquitlam](/coquitlam). We handle [paid ads](/services/paid-ads), [SEO](/blog/vancouver-small-business-seo-guide), [content creation](/services/social-media), [social media](/services/social-media), and [web design](/blog/how-much-does-a-website-cost-canada).
 
 No long-term contracts. Transparent reporting. 90-day results guarantee.
 
@@ -2349,10 +2349,10 @@ The advantage of running Google Ads in Langley versus [Vancouver](/vancouver) is
 
 Google's local map pack shows 3 businesses for local searches. For many Langley searches, the map pack has less competition than Vancouver — which means it's easier to rank.
 
-To dominate Langley local [SEO](/services/seo):
+To dominate Langley local [SEO](/blog/vancouver-small-business-seo-guide):
 - Optimize your Google Business Profile with Langley-specific descriptions
 - Get reviews from Langley customers mentioning the area
-- Create Langley-focused [content](/services/content-creation) on your website
+- Create Langley-focused [content](/services/social-media) on your website
 - Ensure your name, address, and phone number are consistent across all directories
 
 ## Social Media for Langley Businesses
@@ -2372,7 +2372,7 @@ For [trades businesses](/trades-marketing) in Langley, before-and-after project 
 
 At AP DIGITAL, we help Langley businesses compete and win online. We're based in [Metro Vancouver](/vancouver) and serve businesses across the Fraser Valley — including Langley, [Abbotsford](/abbotsford), [Surrey](/surrey), and [Coquitlam](/coquitlam).
 
-Our services: [Google & Meta Ads](/services/paid-ads), [SEO](/services/seo), [content creation](/services/content-creation), [social media management](/services/social-media), [web design](/services/web-design), and [lead generation](/services/lead-generation).
+Our services: [Google & Meta Ads](/services/paid-ads), [SEO](/blog/vancouver-small-business-seo-guide), [content creation](/services/social-media), [social media management](/services/social-media), [web design](/blog/how-much-does-a-website-cost-canada), and [lead generation](/services/paid-ads).
 
 No long-term contracts. Month-to-month. 90-day results guarantee.
 
@@ -3567,7 +3567,7 @@ Yes — when managed properly. Google Ads puts you in front of people actively s
 Yes. Vancouver is one of Canada's most competitive ad markets. CPCs are typically 10–25% higher than the national average. However, higher local service prices mean ROI is still strong. Read our detailed [Vancouver Google Ads cost guide](/blog/how-much-do-google-ads-cost-vancouver).
 
 **Google Ads or SEO — which should I choose?**
-Both. Google Ads delivers immediate leads but stops when you stop paying. [SEO](/services/seo) takes 3–6 months to build traction but produces long-term organic traffic. The smartest strategy is running Google Ads for immediate revenue while investing in SEO for sustainable growth.
+Both. Google Ads delivers immediate leads but stops when you stop paying. [SEO](/blog/vancouver-small-business-seo-guide) takes 3–6 months to build traction but produces long-term organic traffic. The smartest strategy is running Google Ads for immediate revenue while investing in SEO for sustainable growth.
 
 **How much do Google Ads management fees cost?**
 Agency management fees typically range from $500–$1,500/month for small businesses. Be wary of agencies charging a percentage of ad spend — this creates a conflict of interest where they benefit from increasing your budget regardless of performance.
@@ -3617,7 +3617,7 @@ Once you know your total budget, here's how to split it across channels:
 
 | Channel | % of Budget | Monthly Cost Range | Expected Impact |
 |---|---|---|---|
-| [SEO](/services/seo) | 20 – 30% | $500 – $3,000 | Long-term organic traffic (3–6 month ramp) |
+| [SEO](/blog/vancouver-small-business-seo-guide) | 20 – 30% | $500 – $3,000 | Long-term organic traffic (3–6 month ramp) |
 | [Google Ads](/services/paid-ads) | 25 – 35% | $500 – $3,000 | Immediate leads from high-intent searches |
 | [Meta Ads](/services/social-media) | 15 – 25% | $500 – $2,000 | Awareness, retargeting, lead generation |
 | Social Media Management | 10 – 15% | $500 – $1,500 | Brand building, community, organic reach |
@@ -3892,7 +3892,7 @@ Google reviews impact your business in four measurable ways:
 - **Click-through rate.** Businesses with higher star ratings in Google Search results get 25–35% more clicks than lower-rated competitors.
 - **Conversion rate.** Review-rich Google Business Profiles convert visitors to leads at 2–3x the rate of profiles with few or no reviews.
 
-Investing in reviews delivers compound returns — every review makes your business more visible, more trusted, and more likely to be chosen. Combined with [SEO](/services/seo), reviews are the foundation of local search dominance.
+Investing in reviews delivers compound returns — every review makes your business more visible, more trusted, and more likely to be chosen. Combined with [SEO](/blog/vancouver-small-business-seo-guide), reviews are the foundation of local search dominance.
 
 ## 10 Proven Methods to Get More Google Reviews
 
@@ -4009,7 +4009,7 @@ Immediately after delivering great service — within minutes if possible, or wi
 
 ## Build a Review Machine for Your Business
 
-At AP DIGITAL, we help Canadian businesses build [SEO](/services/seo) strategies that include systematic review generation. Reviews are a core part of local search dominance — and we make sure your Google Business Profile works as hard as your website.
+At AP DIGITAL, we help Canadian businesses build [SEO](/blog/vancouver-small-business-seo-guide) strategies that include systematic review generation. Reviews are a core part of local search dominance — and we make sure your Google Business Profile works as hard as your website.
 
 We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
@@ -4529,7 +4529,7 @@ Blog content targeting dental questions drives long-term organic traffic:
 - "Does MSP cover dental in BC?"
 - "Best dentist in [neighbourhood] for families"
 
-Each post targets a specific long-tail keyword and links back to your [service pages](/services/seo) and booking page.
+Each post targets a specific long-tail keyword and links back to your [service pages](/blog/vancouver-small-business-seo-guide) and booking page.
 
 ## What Vancouver Dental Clinics Can Expect
 
@@ -4539,7 +4539,7 @@ Each post targets a specific long-tail keyword and links back to your [service p
 
 ## Ready to Get More Patients?
 
-AP DIGITAL specializes in [dental marketing across Metro Vancouver](/dental-marketing). We handle [Google Ads](/services/paid-ads), Meta Ads, [local SEO](/services/seo), and review strategy — so your chairs stay full. No contracts, 90-day guarantee.
+AP DIGITAL specializes in [dental marketing across Metro Vancouver](/dental-marketing). We handle [Google Ads](/services/paid-ads), Meta Ads, [local SEO](/blog/vancouver-small-business-seo-guide), and review strategy — so your chairs stay full. No contracts, 90-day guarantee.
 
 **Book your free strategy call** and get a custom marketing plan for your dental clinic.`,
   },
@@ -4616,7 +4616,7 @@ Vancouver fitness has clear seasonal patterns — plan your marketing around the
 
 ## Ready to Fill Your Classes?
 
-AP DIGITAL specializes in [fitness marketing across Metro Vancouver](/fitness-marketing). We build the full system — [Meta Ads](/services/paid-ads), Google Ads, [content strategy](/services/content-creation), and landing pages — so your classes stay packed. Month-to-month, no contracts, 90-day guarantee.
+AP DIGITAL specializes in [fitness marketing across Metro Vancouver](/fitness-marketing). We build the full system — [Meta Ads](/services/paid-ads), Google Ads, [content strategy](/services/social-media), and landing pages — so your classes stay packed. Month-to-month, no contracts, 90-day guarantee.
 
 **Book your free strategy call** and get a custom plan to grow your Vancouver gym.`,
   },

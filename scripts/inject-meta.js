@@ -327,60 +327,12 @@ const staticRoutes = [
     path: 'services/social-media',
     title: 'Social Media Marketing Vancouver | Reels & Content | AP Digital',
     description: 'AP Digital manages social media for Vancouver businesses. Instagram Reels, short-form video & organic growth. Month-to-month. From $849/mo.',
-    body: '<h1>Social Media Marketing — Content That Drives Leads</h1><p>AP Digital manages social media for Vancouver businesses across Instagram, Facebook, and TikTok. 12+ custom posts per month, Reels production, and community management. Month-to-month, from $849/month.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/services/content-creation">Content Creation</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Social Media Marketing — Content That Drives Leads</h1><p>AP Digital manages social media for Vancouver businesses across Instagram, Facebook, and TikTok. 12+ custom posts per month, Reels production, and community management. Month-to-month, from $849/month.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Social Media Marketing', 'Social media management & content creation for Vancouver businesses.', '/services/social-media'),
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Social Media', url: '/services/social-media' }]),
       webPageSchema('Social Media Marketing Vancouver | AP Digital', 'Social media management for Vancouver businesses.', '/services/social-media'),
-    ]}
-  },
-  {
-    path: 'services/content-creation',
-    title: 'Content Creation Agency Vancouver | Reels & Social Video | AP Digital',
-    description: 'AP Digital creates scroll-stopping Reels, short-form video & social posts for Vancouver businesses. Content that drives bookings and leads.',
-    body: '<h1>Content Creation — Reels, Video &amp; Social Posts</h1><p>AP Digital creates scroll-stopping Reels, short-form video, and social media posts for Vancouver businesses. Content designed to drive bookings and leads, not just likes.</p><nav aria-label="Quick links"><ul><li><a href="/services/social-media">Social Media</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
-    schema: { "@context": "https://schema.org", "@graph": [
-      orgSchema, founderSchema,
-      serviceSchema('Content Creation', 'Short-form video & social content creation for Vancouver businesses.', '/services/content-creation'),
-      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Content Creation', url: '/services/content-creation' }]),
-      webPageSchema('Content Creation Agency Vancouver | AP Digital', 'Reels & social video for Vancouver businesses.', '/services/content-creation'),
-    ]}
-  },
-  {
-    path: 'services/seo',
-    title: 'SEO Agency Vancouver | Local SEO & Rankings | AP Digital',
-    description: 'AP Digital provides local SEO for Vancouver businesses. Google Business Profile optimization, on-page SEO, and content strategy. Month-to-month.',
-    body: '<h1>SEO — Rank Higher on Google in Vancouver</h1><p>AP Digital provides local SEO for Vancouver businesses. Google Business Profile optimization, on-page SEO, keyword strategy, and content that ranks. Most clients see ranking improvements within 60–90 days.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
-    schema: { "@context": "https://schema.org", "@graph": [
-      orgSchema, founderSchema,
-      serviceSchema('Search Engine Optimization (SEO)', 'Local SEO for Vancouver businesses.', '/services/seo'),
-      breadcrumb([{ name: 'Home', url: '/' }, { name: 'SEO Services', url: '/services/seo' }]),
-      webPageSchema('SEO Agency Vancouver | AP Digital', 'Local SEO for Vancouver businesses.', '/services/seo'),
-    ]}
-  },
-  {
-    path: 'services/lead-generation',
-    title: 'Lead Generation Agency Vancouver | AP Digital',
-    description: 'AP Digital generates predictable leads for Vancouver businesses. First leads within 2 weeks. Month-to-month. 90-day guarantee.',
-    body: '<h1>Lead Generation — Predictable Leads Every Month</h1><p>AP Digital generates predictable leads for Vancouver businesses using paid ads and content systems. First leads typically within 2 weeks. Month-to-month. 90-day guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
-    schema: { "@context": "https://schema.org", "@graph": [
-      orgSchema, founderSchema,
-      serviceSchema('Lead Generation', 'Paid ads & content systems for predictable lead generation.', '/services/lead-generation'),
-      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Lead Generation', url: '/services/lead-generation' }]),
-      webPageSchema('Lead Generation Agency Vancouver | AP Digital', 'Predictable leads for Vancouver businesses.', '/services/lead-generation'),
-    ]}
-  },
-  {
-    path: 'services/web-design',
-    title: 'Web Design Agency Vancouver | Built to Generate Leads | AP Digital',
-    description: 'AP Digital builds fast, lead-generating websites for Vancouver businesses. Mobile-first, SEO-ready, conversion-focused.',
-    body: '<h1>Web Design — Built to Generate Leads</h1><p>AP Digital builds fast, mobile-first, SEO-ready websites for Vancouver businesses. Every site is designed to convert visitors into leads and booked appointments.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
-    schema: { "@context": "https://schema.org", "@graph": [
-      orgSchema, founderSchema,
-      serviceSchema('Web Design', 'Conversion-focused websites for Vancouver businesses.', '/services/web-design'),
-      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Web Design', url: '/services/web-design' }]),
-      webPageSchema('Web Design Agency Vancouver | AP Digital', 'Lead-generating websites for Vancouver businesses.', '/services/web-design'),
     ]}
   },
   // ─── Core pages ───
@@ -773,7 +725,7 @@ const homepageHtml = injectIntoHtml(baseHtml, {
     webPageSchema('Vancouver Digital Marketing Agency | AP Digital', 'Performance marketing agency for BC small businesses.', '/'),
     breadcrumb([{ name: 'Home', url: '/' }]),
   ]},
-  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>Google Ads &amp; Meta Ads specialists</li><li>Trades contractors are our primary niche</li><li>From $759/month — no lock-in contracts</li><li>90-day results guarantee</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/services/seo">SEO</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
+  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>Google Ads &amp; Meta Ads specialists</li><li>Trades contractors are our primary niche</li><li>From $759/month — no lock-in contracts</li><li>90-day results guarantee</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
 });
 // Write homepage as dist/index.html (overwrite the SPA shell)
 writeFileSync(resolve(distDir, 'index.html'), homepageHtml);
