@@ -1,9 +1,10 @@
+import { useMemo, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { allPosts } from '@/lib/blogPosts';
-import { CalendarDays, Clock, ArrowRight } from 'lucide-react';
+import { CalendarDays, Clock, ArrowRight, Search, X } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
@@ -23,7 +24,37 @@ const structuredData = {
   ]
 };
 
-const Blog = () => (
+/**
+ * Filtering is deliberately client-side with no URL change.
+ *
+ * A /blog?q=... or /blog/category/... scheme would mint unlimited crawlable
+ * near-duplicate listing pages, which is the last thing a site whose problem is
+ * thin authority needs. Keeping it in React state means zero new URLs, zero
+ * crawl surface, and nothing to noindex.
+ */
+const Blog = () => {
+  const [query, setQuery] = useState('');
+  const [category, setCategory] = useState<string | null>(null);
+
+  const categories = useMemo(
+    () => [...new Set(allPosts.map((p) => p.category))].sort(),
+    [],
+  );
+
+  const results = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return allPosts.filter((post) => {
+      if (category && post.category !== category) return false;
+      if (!q) return true;
+      return (
+        post.title.toLowerCase().includes(q) ||
+        post.excerpt.toLowerCase().includes(q) ||
+        post.category.toLowerCase().includes(q)
+      );
+    });
+  }, [query, category]);
+
+  return (
   <>
     <Helmet>
       <title>{TITLE}</title>
@@ -56,8 +87,70 @@ const Blog = () => (
           Proven strategies to help local businesses get more leads, more clients, and more revenue.
         </p>
 
+
+        {/* Search and category filter — state only, no URL change. */}
+        <div className="mb-8">
+          <label htmlFor="blog-search" className="sr-only">Search articles</label>
+          <div className="relative">
+            <Search aria-hidden="true" className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <input
+              id="blog-search"
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search articles — try salon, Google Ads, pricing"
+              className="w-full rounded-full border border-border bg-card py-3 pl-11 pr-11 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-teal/40"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery('')}
+                aria-label="Clear search"
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-1 text-muted-foreground hover:text-foreground"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => setCategory(null)}
+              aria-pressed={category === null}
+              className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
+                category === null
+                  ? 'bg-teal text-white'
+                  : 'bg-card border border-border text-muted-foreground hover:text-foreground'
+              }`}
+            >
+              All ({allPosts.length})
+            </button>
+            {categories.map((c) => (
+              <button
+                key={c}
+                type="button"
+                onClick={() => setCategory(category === c ? null : c)}
+                aria-pressed={category === c}
+                className={`rounded-full px-3 py-1.5 text-xs font-medium transition-colors ${
+                  category === c
+                    ? 'bg-teal text-white'
+                    : 'bg-card border border-border text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+
+          <p aria-live="polite" className="mt-4 text-sm text-muted-foreground">
+            {results.length === allPosts.length
+              ? `${allPosts.length} articles`
+              : `${results.length} of ${allPosts.length} articles`}
+          </p>
+        </div>
         <div className="flex flex-col gap-6">
-          {allPosts.map((post) => (
+          {results.map((post) => (
             <Link
               key={post.slug}
               to={`/blog/${post.slug}`}
@@ -78,10 +171,23 @@ const Blog = () => (
             </Link>
           ))}
         </div>
+
+        {results.length === 0 && (
+          <div className="rounded-2xl border border-border bg-card p-8 text-center">
+            <p className="text-foreground font-medium mb-1">No articles match that.</p>
+            <p className="text-sm text-muted-foreground">
+              Try a broader term, or{' '}
+              <button type="button" onClick={() => { setQuery(''); setCategory(null); }} className="text-teal underline">
+                clear the filters
+              </button>.
+            </p>
+          </div>
+        )}
       </div>
     </main>
     <Footer />
   </>
-);
+  );
+};
 
 export default Blog;

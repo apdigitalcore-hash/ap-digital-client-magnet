@@ -140,6 +140,12 @@ At this investment level, you're effectively hiring a dedicated marketing team. 
 
 **Best for:** Established businesses ready to scale aggressively, multi-location brands, or companies in competitive markets like Vancouver, Toronto, or Calgary.
 
+## Work Out Your Own Number
+
+You have seen the three tiers. This works out which one fits your business, using your industry and the ad spend you have in mind. No email needed for the estimate.
+
+[LEAD_MAGNET:social-media-budget]
+
 ## Why Cheap Social Media Marketing Rarely Works
 
 You've seen the ads: "Social media management for $299/month." It sounds tempting, but it almost never delivers. Here's why:
@@ -242,12 +248,6 @@ Before signing a contract, evaluate the agency on these criteria:
 **No long-term contracts.** A confident agency earns your business month after month. Be cautious of twelve-month lock-ins.
 
 At AP DIGITAL, we work with [salons](/salon-marketing), [real estate agents](/real-estate-marketing), [trades](/trades-marketing), [coaches](/coaching-marketing), and other service businesses across Canada. We serve clients in Metro Vancouver including [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford), as well as businesses across Toronto, Calgary, and the rest of Canada.
-
-## Free Social Media Budget Calculator
-
-Want a quick estimate based on your industry and budget? Use our built-in calculator below to see what a realistic monthly investment looks like. Enter your details and we'll show you a custom breakdown — no email required, but if you want the full 2026 budget template, drop your email and we'll send it to you.
-
-[LEAD_MAGNET:social-media-budget]
 
 ## Frequently Asked Questions About Social Media Marketing Costs
 
@@ -1410,6 +1410,12 @@ Best for: multi-crew operations, franchise models, or multiple trades
 Expected results: 60–120+ leads/month
 Cost per lead: $20–$45
 Best for: large contracting companies covering the entire Lower Mainland
+
+## Estimate Your Own Contractor Budget
+
+You have the ranges. This works out what your spend is likely to return, based on trades cost-per-lead in BC. No email needed for the estimate.
+
+[LEAD_MAGNET:social-media-budget]
 
 ## What Affects Cost Per Lead for BC Contractors?
 
@@ -2831,6 +2837,12 @@ Your monthly Google Ads budget should be large enough to generate meaningful dat
 
 On top of ad spend, you'll need campaign management. At AP Digital, our [management fee is $759/month](/pricing) which covers strategy, keyword research, ad copywriting, bid optimization, and weekly reporting.
 
+## Work Out Your Vancouver Budget
+
+You have seen the recommended monthly ranges. This turns them into a number for your industry and your intended spend. No email needed for the estimate.
+
+[LEAD_MAGNET:social-media-budget]
+
 ## Why Vancouver Costs More Than Other Canadian Cities
 
 Vancouver is one of the most competitive ad markets in Canada. More businesses bidding on the same keywords drives up costs. But higher costs don't mean lower ROI — Vancouver also has higher average transaction values. A plumber in Vancouver charges more than one in Winnipeg, so even at a higher cost per lead, the return is strong.
@@ -3279,6 +3291,12 @@ Cost per lead matters more than cost per click. A $10 click that converts at 15%
 
 **The floor is real.** Below roughly $500 a month, Google cannot gather enough conversion data to optimise, so you pay near-full price for every click indefinitely. That is a platform constraint, not an agency upsell.
 
+## Work Out Your Own Budget
+
+You have seen what each budget level achieves. This estimates the leads your spend is likely to produce in your industry. No email needed for the estimate.
+
+[LEAD_MAGNET:social-media-budget]
+
 ## The Two Bills, Separated
 
 The most common confusion in agency quotes is conflating ad spend with management. They are different money going to different places.
@@ -3384,6 +3402,12 @@ Don't spread your budget too thin. Here's what each stage requires:
 - **Scale phase ($1,500–$5,000/month):** Full audience coverage with retargeting, lookalike audiences, and multiple ad formats running simultaneously.
 
 On top of ad spend, budget for management. DIY is free but time-consuming. Agency management typically runs $500–$1,500/month. At AP DIGITAL, our [paid ads management](/services/paid-ads) includes Instagram, Facebook, and reporting.
+
+## Estimate Your Instagram Ads Budget
+
+You have the minimums. This works out what your spend is likely to return for your industry. No email needed for the estimate.
+
+[LEAD_MAGNET:social-media-budget]
 
 ## Instagram Ads vs Facebook Ads: Cost Comparison
 
@@ -3522,6 +3546,12 @@ Both platforms work differently. Here's how they compare for Canadian small busi
 | Best For | Service businesses, urgent needs | Visual brands, awareness, retargeting |
 
 Google Ads captures people actively searching for your service. Meta Ads builds awareness and retargets warm audiences. The most effective strategy is running both — read our full [comparison guide](/blog/best-ads-platform-for-small-business-canada).
+
+## Work Out Your Own Number
+
+You have seen the cost-per-click ranges. This turns them into a monthly budget and an expected lead range for your industry. No email needed for the estimate.
+
+[LEAD_MAGNET:social-media-budget]
 
 ## How to Reduce Your Google Ads Costs
 
@@ -3663,6 +3693,12 @@ These percentages shift based on your business type. A trades business might put
 - Content Marketing: $300 – $800/month (blog posts, email sequences)
 - Google Ads: $200 – $700/month (coaching-specific keywords)
 - Best ROI channel: [Meta Ads with lead magnets](/blog/coaching-clients-bc)
+
+## Work Out Your Own Budget
+
+You have seen the sample budgets. This works out what your ad spend is likely to return, by industry. No email needed for the estimate.
+
+[LEAD_MAGNET:social-media-budget]
 
 ## How to Prioritize When Budget Is Tight
 

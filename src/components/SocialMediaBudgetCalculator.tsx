@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { PAID_ADS } from '@/lib/companyFacts';
 import { Button } from '@/components/ui/button';
 import { Calculator, CheckCircle, Loader2 } from 'lucide-react';
+
+const PAID_ADS_FEE = Number(PAID_ADS.price.replace(/[^0-9]/g, ''));
 
 const INDUSTRIES = [
   { value: 'salon', label: 'Salon / Beauty' },
@@ -22,7 +25,11 @@ const AD_SPEND_TIERS = [
 ];
 
 function getEstimate(industry: string, adSpend: number) {
-  const managementFee = adSpend <= 1000 ? 759 : adSpend <= 2500 ? 999 : 1499;
+  // Flat $759 regardless of spend. The tiered 759/999/1499 this used to return
+  // invented two fees that are not on the pricing page, and contradicted the
+  // "flat fee, not a percentage of your spend" line on /services/paid-ads —
+  // which is the actual differentiator being sold.
+  const managementFee = PAID_ADS_FEE;
 
   const cplRanges: Record<string, [number, number]> = {
     'salon': [8, 20],
