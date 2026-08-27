@@ -10,7 +10,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Law Firm Marketing Vancouver | AP Digital';
+const TITLE = 'Law Firm Marketing Vancouver | Get More Clients | AP Digital';
 const DESC = 'Google & Meta Ads for Vancouver law firms — family, injury, immigration and real estate practices. High-intent case leads, month-to-month, no lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/law-firm-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

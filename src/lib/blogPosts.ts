@@ -1931,7 +1931,7 @@ Yes — blog content targeting Vancouver-specific long-tail keywords (like "how 
     date: '2026-04-10',
     readTime: '7 min read',
     category: 'Paid Ads',
-    content: `When a [Vancouver](/vancouver) homeowner needs a plumber at 10 PM on a Tuesday or a business owner searches for "web designer Vancouver" during their lunch break, they go to Google. If your business isn't showing up at the top of those search results, you're losing jobs to competitors who are. Here's how Vancouver businesses can use Google Ads to capture high-intent leads in 2026.
+    content: `When a [Vancouver](/vancouver) homeowner needs a plumber at 10 PM on a Tuesday or a business owner searches for "web designer Vancouver" during their lunch break, they go to Google. If your business isn't showing up at the top of those search results, you're losing jobs to competitors who are. If you want that handled rather than explained, we run Google Ads as a [Google Ads agency in Vancouver](/services/paid-ads) from $759/month, month-to-month. Here's how Vancouver businesses can use Google Ads to capture high-intent leads in 2026.
 
 ## Why Google Ads Are Essential for Vancouver Businesses
 
@@ -2791,7 +2791,7 @@ const deepPosts: BlogPost[] = [
     date: '2026-07-21',
     readTime: '8 min read',
     category: 'Paid Ads',
-    content: `One of the most common questions we get from [Vancouver](/vancouver) business owners is: "How much will Google Ads cost me?" The honest answer is: it depends on your industry, your competition, and your goals. But we can give you real numbers based on what our clients actually pay.
+    content: `One of the most common questions we get from [Vancouver](/vancouver) business owners is: "How much will Google Ads cost me?" The honest answer is: it depends on your industry, your competition, and your goals. But we can give you real numbers based on what our clients actually pay. If you would rather skip to what we charge, our [Google Ads agency in Vancouver](/services/paid-ads) page publishes the management fee and the recommended minimum spend.
 
 ## Average Cost Per Click in Vancouver by Industry
 

@@ -7,7 +7,7 @@ import { CheckCircle, X, ArrowRight } from 'lucide-react';
 import { getBreadcrumbSchema, getWebPageSchema, getFAQSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'How to Choose a Google Ads Agency in Vancouver | AP Digital';
+const TITLE = 'How to Choose a Marketing Agency in Vancouver | AP Digital';
 const DESC = 'What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver from those that don\'t.';
 const CANONICAL = 'https://ap-digital.ca/how-to-choose-a-marketing-agency-vancouver';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -133,7 +133,7 @@ const HiringGuide = () => (
           <span className="text-teal text-sm font-semibold">Buyer's Guide · Vancouver, BC</span>
         </div>
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-          How to Choose a Google Ads Agency in Vancouver
+          How to Choose a Marketing Agency in Vancouver
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed mb-4">
           There are over 200 marketing agencies operating in Metro Vancouver. Most will happily take your budget and send you monthly reports full of impressions and reach. A much smaller number will actually make your phone ring.
@@ -235,7 +235,10 @@ const HiringGuide = () => (
             Realistic Expectations from a Vancouver Ads Agency
           </h2>
           <p className="text-muted-foreground mb-6">
-            Good agencies set honest timelines. Here is what you should realistically expect based on the channel:
+            Good agencies set honest timelines. Here is what you should realistically expect based on the channel.
+            For what we quote and how we work as a{' '}
+            <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">Google Ads agency in Vancouver</Link>,
+            the numbers are published rather than quoted on a call.
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
             <div className="bg-card border border-border rounded-xl p-5">

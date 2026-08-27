@@ -10,7 +10,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'HVAC Marketing Vancouver | Get More Service Calls | AP Digital';
+const TITLE = 'HVAC Marketing Vancouver | More Service Calls | AP Digital';
 const DESC = 'HVAC marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/hvac-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

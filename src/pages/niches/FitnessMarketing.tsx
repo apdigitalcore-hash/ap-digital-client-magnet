@@ -10,7 +10,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Gym & Fitness Marketing Vancouver | Get More Members | AP Digital';
+const TITLE = 'Gym & Fitness Marketing Vancouver | More Members | AP Digital';
 const DESC = 'Get 30–50 new gym memberships/month with Meta Ads & Google Ads. AP Digital serves Vancouver gyms, studios & personal trainers. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/fitness-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

@@ -91,7 +91,6 @@ export const organizationSchema = {
     "height": 200
   },
   "image": OG_IMAGE,
-  "description": "AP DIGITAL is a Vancouver-based performance marketing agency specializing in paid ads (Google Ads, Meta Ads) and social media marketing for salons, real estate agents, trades, and coaches across British Columbia.",
   "slogan": "More clients. Predictably.",
   "foundingDate": "2024",
   "founder": { "@id": `${BASE_URL}/#founder` },

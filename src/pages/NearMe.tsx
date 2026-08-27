@@ -15,7 +15,7 @@ import {
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Performance Marketing Agency Near Me | BC Local Ads | AP Digital';
+const TITLE = 'Digital Marketing Agency Near Me | BC Local Ads | AP Digital';
 const DESC = 'Looking for a digital marketing agency near you in BC? AP Digital runs Google Ads & Meta Ads for trades, salons, realtors & coaches across Metro Vancouver. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/digital-marketing-near-me';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

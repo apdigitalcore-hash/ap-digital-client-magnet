@@ -360,14 +360,14 @@ const staticRoutes = [
   },
   {
     path: 'how-to-choose-a-marketing-agency-vancouver',
-    title: 'How to Choose a Google Ads Agency in Vancouver | AP Digital',
+    title: 'How to Choose a Marketing Agency in Vancouver | AP Digital',
     description: "What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver.",
     body: '<h1>How to Choose a Marketing Agency in Vancouver</h1><p>What to look for when hiring a Vancouver Google Ads or Meta Ads agency — red flags, questions to ask, and what separates agencies that deliver real results from those that don\'t. Written by Arjun Sharma, Founder of AP Digital.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'How to Choose a Marketing Agency', url: '/how-to-choose-a-marketing-agency-vancouver' }]),
-      webPageSchema("How to Choose a Google Ads Agency in Vancouver", "Buyer's guide for hiring a Vancouver marketing agency.", '/how-to-choose-a-marketing-agency-vancouver'),
-      { "@type": "Article", "headline": "How to Choose a Google Ads Agency in Vancouver BC", "datePublished": "2026-05-01", "dateModified": "2026-08-05", "author": { "@id": `${BASE_URL}/#founder` }, "publisher": { "@id": `${BASE_URL}/#organization` } },
+      webPageSchema("How to Choose a Marketing Agency in Vancouver", "Buyer's guide for hiring a Vancouver marketing agency.", '/how-to-choose-a-marketing-agency-vancouver'),
+      { "@type": "Article", "headline": "How to Choose a Marketing Agency in Vancouver BC", "datePublished": "2026-05-01", "dateModified": "2026-08-05", "author": { "@id": `${BASE_URL}/#founder` }, "publisher": { "@id": `${BASE_URL}/#organization` } },
     ]}
   },
   {
@@ -732,6 +732,102 @@ writeFileSync(resolve(distDir, 'index.html'), homepageHtml);
 console.log('  ✓ dist/index.html (homepage)');
 
 // ── Generate static pages ───────────────────────────────────────────────────
+
+// ── Static page titles come from the React source too ──────────────────────
+// The blog-post sync above never covered static routes, so /services/paid-ads
+// shipped "Paid Ads Agency Vancouver" while its React source said "Google Ads
+// Agency Vancouver" — and Google, crawling the prerendered version, attached
+// that commercial query to an informational article instead. Ten static pages
+// had drifted the same way.
+function loadStaticTitles() {
+  const app = readFileSync(resolve(__dirname, '../src/App.tsx'), 'utf-8');
+  const routes = {};
+  for (const m of app.matchAll(/<Route path="\/([^"]*)" element=\{<(\w+)/g)) routes[m[1]] = m[2];
+  const files = {};
+  for (const m of app.matchAll(/const (\w+) = lazy\(\(\) => import\("\.([^"]+)"\)\);/g)) files[m[1]] = m[2];
+  for (const m of app.matchAll(/import (\w+) from "\.([^"]+)";/g)) files[m[1]] = m[2];
+
+  const out = {};
+  for (const [path, comp] of Object.entries(routes)) {
+    const rel = files[comp];
+    if (!rel) continue;
+    const fp = resolve(__dirname, '../src' + rel + '.tsx');
+    if (!existsSync(fp)) continue;
+    const m = readFileSync(fp, 'utf-8').match(/const TITLE = '((?:[^'\\]|\\.)*)'/);
+    if (m) out[path] = m[1].replace(/\\'/g, "'");
+  }
+  return out;
+}
+
+{
+  const reactTitles = loadStaticTitles();
+  let synced = 0;
+  for (const route of staticRoutes) {
+    const t = reactTitles[route.path];
+    if (t && t !== route.title) { route.title = t; synced++; }
+  }
+  console.log(`   Static titles: ${synced} synced from React source`);
+}
+
+// ── FAQ schema for static pages, read from the React source ────────────────
+// Sixteen static pages rendered FAQ questions to visitors while the prerendered
+// HTML carried no FAQPage at all, and the few that had one emitted 2-5 of 8-11.
+// Same split-source problem as the blog posts. Parsed from the page component so
+// the markup can only ever describe questions that are actually on the page.
+function loadStaticFaqs() {
+  const app = readFileSync(resolve(__dirname, '../src/App.tsx'), 'utf-8');
+  const routes = {};
+  for (const m of app.matchAll(/<Route path="\/([^"]*)" element=\{<(\w+)/g)) routes[m[1]] = m[2];
+  const files = {};
+  for (const m of app.matchAll(/const (\w+) = lazy\(\(\) => import\("\.([^"]+)"\)\);/g)) files[m[1]] = m[2];
+  for (const m of app.matchAll(/import (\w+) from "\.([^"]+)";/g)) files[m[1]] = m[2];
+
+  const STR = String.raw`((?:'(?:[^'\\]|\\.)*')|(?:"(?:[^"\\]|\\.)*"))`;
+  const unquote = (lit) => {
+    const q = lit[0];
+    return lit.slice(1, -1).replace(new RegExp(String.raw`\\([\\` + q + `])`, 'g'), '$1');
+  };
+  const pairRe = new RegExp(
+    String.raw`\{\s*question:\s*` + STR + String.raw`\s*,\s*answer:\s*` + STR + String.raw`\s*,?\s*\}`, 'g');
+
+  const out = {};
+  for (const [path, comp] of Object.entries(routes)) {
+    const rel = files[comp];
+    if (!rel) continue;
+    const fp = resolve(__dirname, '../src' + rel + '.tsx');
+    if (!existsSync(fp)) continue;
+    const block = readFileSync(fp, 'utf-8').match(/const faqs = \[([\s\S]*?)\n\];/);
+    if (!block) continue;
+
+    const faqs = [];
+    pairRe.lastIndex = 0;
+    let m;
+    while ((m = pairRe.exec(block[1])) !== null) faqs.push({ q: unquote(m[1]), a: unquote(m[2]) });
+
+    const expected = (block[1].match(/\bquestion:/g) || []).length;
+    if (faqs.length !== expected) {
+      throw new Error(
+        `inject-meta: /${path} has ${expected} FAQ entries in its component but the parser ` +
+        `extracted ${faqs.length}. Fix the parser rather than shipping partial FAQPage markup.`);
+    }
+    if (faqs.length) out[path] = faqs;
+  }
+  return out;
+}
+
+{
+  const staticFaqs = loadStaticFaqs();
+  let added = 0, replaced = 0;
+  for (const route of staticRoutes) {
+    const faqs = staticFaqs[route.path];
+    if (!faqs || !route.schema || !Array.isArray(route.schema['@graph'])) continue;
+    const graph = route.schema['@graph'];
+    const i = graph.findIndex((n) => n && n['@type'] === 'FAQPage');
+    if (i >= 0) { graph[i] = faqSchema(faqs); replaced++; }
+    else { graph.push(faqSchema(faqs)); added++; }
+  }
+  console.log(`   Static FAQs:   ${added} page(s) gained FAQPage, ${replaced} completed from source`);
+}
 
 console.log('\n📄 Generating static page HTML...');
 for (const route of staticRoutes) {
