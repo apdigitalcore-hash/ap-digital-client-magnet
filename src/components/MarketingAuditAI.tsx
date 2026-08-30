@@ -1113,14 +1113,9 @@ const MarketingAuditAI = () => {
                     >
                       Learn about {serviceRec.label} <ArrowRight className="w-4 h-4" />
                     </Link>
-                    <a
-                      href="https://calendly.com/apdigital-core/20min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-teal/40 text-teal font-semibold text-sm hover:bg-teal/10 transition"
-                    >
+                    <Link to="/book" className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-teal/40 text-teal font-semibold text-sm hover:bg-teal/10 transition">
                       Book a free strategy call
-                    </a>
+                    </Link>
                   </div>
                 </div>
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CheckCircle, Phone, Mail, MapPin, Clock, Calendar, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -122,12 +123,7 @@ const Contact = () => {
             </ul>
 
             {/* Primary CTA — direct booking via Calendly */}
-            <a
-              href="https://calendly.com/apdigital-core/20min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block bg-card border-2 border-teal hover:border-teal/80 p-8 md:p-10 rounded-2xl mb-12 shadow-custom-lg hover:shadow-xl transition-all"
-            >
+            <Link to="/book" className="group block bg-card border-2 border-teal hover:border-teal/80 p-8 md:p-10 rounded-2xl mb-12 shadow-custom-lg hover:shadow-xl transition-all">
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-teal flex items-center justify-center flex-shrink-0">
                   <Calendar className="w-8 h-8 text-primary-foreground" />
@@ -145,7 +141,7 @@ const Contact = () => {
                   <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
-            </a>
+            </Link>
 
             <div className="bg-secondary p-6 md:p-8 rounded-xl">
               <h3 className="font-display text-lg font-semibold text-foreground mb-6 text-center">

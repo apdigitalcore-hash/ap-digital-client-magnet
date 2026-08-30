@@ -42,7 +42,7 @@ export function loadCalendlyAssets() {
  * booking. `niche` is attached so Events Manager can attribute the conversion
  * to the same vertical as the Contact click that preceded it.
  */
-export function useCalendlyLeadTracking(niche?: string | null) {
+export function useCalendlyLeadTracking(niche?: string | null, source = 'free-pilot') {
   useEffect(() => {
     loadCalendlyAssets();
 
@@ -55,7 +55,9 @@ export function useCalendlyLeadTracking(niche?: string | null) {
 
       if (data.event === 'calendly.event_scheduled') {
         track('Lead', {
-          content_name: 'free-pilot',
+          // content_name was hardcoded to 'free-pilot', so a booking made on
+          // /book would have been attributed to a page the visitor never saw.
+          content_name: source,
           content_category: niche || 'general',
         });
       }
@@ -63,5 +65,5 @@ export function useCalendlyLeadTracking(niche?: string | null) {
 
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
-  }, [niche]);
+  }, [niche, source]);
 }

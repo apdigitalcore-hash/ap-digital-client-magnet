@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { ArrowRight, Search, Rocket, TrendingUp, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -209,15 +210,10 @@ const ProcessLight = () => {
                           <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                         </button>
                       ) : (
-                        <a
-                          href="https://calendly.com/apdigital-core/20min"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0C0E11] transition-colors hover:bg-white/90"
-                        >
+                        <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0C0E11] transition-colors hover:bg-white/90">
                           Book Free Call
                           <ArrowRight className="h-3.5 w-3.5" />
-                        </a>
+                        </Link>
                       )}
                     </motion.div>
                   </div>

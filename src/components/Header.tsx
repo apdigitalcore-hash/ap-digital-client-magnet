@@ -215,7 +215,7 @@ const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button variant={useDarkChrome ? 'pill' : 'hero'} size="default" asChild>
-              <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Free Call</a>
+              <Link to="/book">Book Free Call</Link>
             </Button>
           </div>
 
@@ -389,9 +389,9 @@ const Header = () => {
               {/* CTA */}
               <div className="px-4 pt-4 mt-2">
                 <Button variant="hero" className="w-full" size="lg" asChild>
-                  <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link to="/book" onClick={() => setIsMobileMenuOpen(false)}>
                     Book Free Call
-                  </a>
+                  </Link>
                 </Button>
               </div>
 

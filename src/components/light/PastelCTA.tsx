@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowRight, Phone } from 'lucide-react';
 
 interface PastelCTAProps {
@@ -24,15 +25,10 @@ const PastelCTA = ({
         <p className="mx-auto mt-4 max-w-xl text-sm text-foreground/80 sm:text-base">{subheadline}</p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="https://calendly.com/apdigital-core/20min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
-          >
+          <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
             Book a Free Strategy Call
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
 
           {showPhone && (
             <a

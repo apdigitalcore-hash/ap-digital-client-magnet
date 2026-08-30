@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { ArrowRight, Search, Rocket, TrendingUp, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -208,15 +209,10 @@ const ProcessDark = () => {
                           <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                         </button>
                       ) : (
-                        <a
-                          href="https://calendly.com/apdigital-core/20min"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal text-black text-sm font-bold hover:bg-teal-light transition-colors"
-                        >
+                        <Link to="/book" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-teal text-black text-sm font-bold hover:bg-teal-light transition-colors">
                           Book Free Call
                           <ArrowRight className="w-4 h-4" />
-                        </a>
+                        </Link>
                       )}
                     </motion.div>
                   </div>

@@ -17,6 +17,7 @@ import { useRevealCards } from "./hooks/useRevealCards";
 
 // Lazy load all other pages — loaded on demand
 const Contact = lazy(() => import("./pages/Contact"));
+const Book = lazy(() => import("./pages/Book"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
@@ -81,6 +82,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/book" element={<Book />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />

@@ -382,6 +382,17 @@ const staticRoutes = [
     ]}
   },
   {
+    path: 'book',
+    title: 'Book a Free Strategy Call | AP Digital',
+    description: 'Book a free 20-minute call with AP Digital. We review what you are running now and tell you what we would do. No charge, no obligation.',
+    body: '<h1>Book a Free Strategy Call</h1><p>Twenty minutes on the phone. We look at what you are running now, tell you what we would change, and give you a straight answer on whether we are the right fit — including when the answer is no. No charge and no obligation. It helps to have your website URL handy.</p><p>For reference: paid ads management is $759/month and social media management is $849/month, month-to-month with no lock-in contract.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/contact">Contact</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Book a Call', url: '/book' }]),
+      webPageSchema('Book a Free Strategy Call | AP Digital', 'Book a free 20-minute strategy call with AP Digital.', '/book'),
+    ]}
+  },
+  {
     path: 'contact',
     title: 'Book a Free Strategy Call | AP Digital Vancouver',
     description: 'Book a free 20-minute strategy call with AP Digital. No pitch. No pressure. No contracts.',

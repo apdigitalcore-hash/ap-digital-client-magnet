@@ -275,7 +275,7 @@ Every business is different, and cookie-cutter packages rarely deliver the best 
 
 At AP DIGITAL, we build custom [social media marketing](/services/social-media) and [lead generation](/services/paid-ads) strategies for Canadian businesses. No long-term contracts. No hidden fees. Just transparent pricing and a 90-day results guarantee.
 
-**[Book your free strategy call today](https://calendly.com/apdigital-core/20min)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
+**[Book your free strategy call today](/book)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
     faqs: [
       { question: 'What are typical social media agency rates in Canada?', answer: 'Most Canadian agencies bill a monthly retainer between $500 and $5,000 depending on scope. Per-post pricing runs $50–$250, hourly consulting $75–$200, and percentage-of-ad-spend deals 10–20%. For a small business a flat retainer is usually the safest: your cost is predictable, and unlike percentage-of-spend it does not reward the agency for spending more of your money.' },
       { question: 'How much do social media ads cost in Canada?', answer: 'Facebook and Instagram ads run $0.50–$3.50 per click and $10–$60 per lead. TikTok is cheaper at $0.30–$2.00 per click, LinkedIn far more expensive at $4–$12. This is ad spend paid directly to the platform and is separate from any agency management fee. Below about $500/month the platforms cannot gather enough conversion data to optimise properly.' },
@@ -2445,7 +2445,7 @@ The businesses that win in Abbotsford are the ones that show up consistently. Wh
 
 ## Getting Started
 
-If you're an Abbotsford business owner ready to stop guessing and start growing, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current marketing, identify the best channels for your industry, and build a custom plan to hit your lead targets within 90 days.
+If you're an Abbotsford business owner ready to stop guessing and start growing, [book a free strategy call](/book). We'll audit your current marketing, identify the best channels for your industry, and build a custom plan to hit your lead targets within 90 days.
 
 **AP Digital** is a [Vancouver-based performance marketing agency](/about) that specializes in [paid ads](/services/paid-ads) and [social media](/services/social-media) for service businesses across BC — including the Fraser Valley. Month-to-month, no contracts, 90-day results guarantee.`,
   },
@@ -2519,7 +2519,7 @@ Social media followers are valuable, but only if they convert. Here's how to bri
 
 Managing social media consistently takes 8–12 hours per week. For most North Van business owners, that time is better spent serving clients. A professional [social media management](/services/social-media) service handles your content calendar, posting, community management, and growth strategy — starting at [$849/month](/pricing).
 
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll build a custom social media plan for your North Shore business. Month-to-month, no contracts.`,
+[Book a free strategy call](/book) and we'll build a custom social media plan for your North Shore business. Month-to-month, no contracts.`,
   },
   {
     slug: 'facebook-ads-surrey-bc',
@@ -2597,7 +2597,7 @@ Facebook's algorithm needs 2–3 weeks and 50+ conversions to optimize. Business
 
 ## Getting Started
 
-If you're a Surrey business owner ready to stop relying on word-of-mouth, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current marketing, build a custom Facebook Ads plan, and have you generating leads within 2–3 weeks.
+If you're a Surrey business owner ready to stop relying on word-of-mouth, [book a free strategy call](/book). We'll audit your current marketing, build a custom Facebook Ads plan, and have you generating leads within 2–3 weeks.
 
 **AP Digital** is a [Vancouver-based agency](/about) specializing in [paid ads](/services/paid-ads) and [social media](/services/social-media) for service businesses across BC. We also serve [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford). No contracts, 90-day results guarantee.`,
   },
@@ -2682,7 +2682,7 @@ Show up consistently. The coaches who win aren't the most talented — they're t
 
 ## Ready to Grow Your Coaching Practice?
 
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll build a custom [social media](/services/social-media) and [paid ads](/services/paid-ads) plan to fill your coaching calendar with ideal clients. Month-to-month, no contracts, [90-day results guarantee](/pricing).`,
+[Book a free strategy call](/book) with AP Digital. We'll build a custom [social media](/services/social-media) and [paid ads](/services/paid-ads) plan to fill your coaching calendar with ideal clients. Month-to-month, no contracts, [90-day results guarantee](/pricing).`,
   },
   {
     slug: 'instagram-ads-salons-vancouver',
@@ -2781,7 +2781,7 @@ Add a text overlay with your Google rating: "4.9 stars, 200+ reviews." This imme
 
 ## Getting Started
 
-If you're a [Vancouver salon](/salon-marketing) owner ready to fill your chair with Instagram Ads, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll review your Instagram, audit your current marketing, and build a custom ad plan. No contracts, [90-day guarantee](/pricing).
+If you're a [Vancouver salon](/salon-marketing) owner ready to fill your chair with Instagram Ads, [book a free strategy call](/book). We'll review your Instagram, audit your current marketing, and build a custom ad plan. No contracts, [90-day guarantee](/pricing).
 
 **AP Digital** specializes in [paid ads](/services/paid-ads) and [social media](/services/social-media) for salons across [Vancouver](/vancouver), [Burnaby](/burnaby), [Surrey](/surrey), and the Lower Mainland.`,
   },
@@ -2874,7 +2874,7 @@ Leads are worthless without fast follow-up. If you're not calling back within 5 
 
 ## Getting an Accurate Quote
 
-Every business is different. The best way to get an accurate Google Ads cost estimate is to [book a free strategy call](https://calendly.com/apdigital-core/20min) with AP Digital. We'll analyze your industry, competition, and goals, then give you a transparent quote — no hidden fees, no surprises.
+Every business is different. The best way to get an accurate Google Ads cost estimate is to [book a free strategy call](/book) with AP Digital. We'll analyze your industry, competition, and goals, then give you a transparent quote — no hidden fees, no surprises.
 
 **AP Digital** — [Google Ads management](/services/paid-ads) for Vancouver businesses. [$759/month](/pricing), month-to-month, [90-day results guarantee](/pricing).
 
@@ -2967,7 +2967,7 @@ Organic social media builds your foundation, but paid ads on Meta and Google acc
 
 Managing social media consistently takes time. If you'd rather focus on running your business, [AP Digital handles it](/services/social-media) — content calendars, posting, community management, and growth strategy starting at [$849/month](/pricing). For how that compares nationally, see [what social media marketing costs in Canada](/blog/how-much-does-social-media-marketing-cost-canada).
 
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll build a custom social media plan for your Burnaby business. Month-to-month, no contracts, [90-day guarantee](/pricing).`,
+[Book a free strategy call](/book) and we'll build a custom social media plan for your Burnaby business. Month-to-month, no contracts, [90-day guarantee](/pricing).`,
   },
   {
     slug: 'tiktok-ads-small-business-bc',
@@ -3062,7 +3062,7 @@ TikTok Ads are worth testing if your audience is under 35 and your business is v
 
 But for most BC service businesses, [Meta Ads](/services/paid-ads) remain the primary lead generation platform. TikTok is the complement, not the replacement.
 
-[Book a free strategy call](https://calendly.com/apdigital-core/20min) and we'll assess whether TikTok makes sense for your business. [AP Digital](/about) manages [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses — month-to-month, no contracts.`,
+[Book a free strategy call](/book) and we'll assess whether TikTok makes sense for your business. [AP Digital](/about) manages [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses — month-to-month, no contracts.`,
   },
   {
     slug: 'google-ads-coquitlam-tri-cities',
@@ -3131,7 +3131,7 @@ We've run Google Ads for Tri-Cities businesses across:
 
 ## Getting Started
 
-If you're a Tri-Cities business owner ready to show up first on Google, [book a free strategy call](https://calendly.com/apdigital-core/20min). We'll audit your current online presence, research your competitors' ad strategies, and build a custom Google Ads plan for your market.
+If you're a Tri-Cities business owner ready to show up first on Google, [book a free strategy call](/book). We'll audit your current online presence, research your competitors' ad strategies, and build a custom Google Ads plan for your market.
 
 **AP Digital** — [paid ads](/services/paid-ads) and [social media](/services/social-media) for BC businesses. We also serve [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), and [Abbotsford](/abbotsford). Month-to-month, no contracts, [90-day guarantee](/pricing).`,
   },
@@ -3473,7 +3473,7 @@ Every business is different. The right Instagram Ads investment depends on your 
 
 We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
-**[Book your free strategy call](https://calendly.com/apdigital-core/20min)** and we'll build a custom Instagram Ads plan for your business.`,
+**[Book your free strategy call](/book)** and we'll build a custom Instagram Ads plan for your business.`,
     faqs: [
       { question: 'What is the minimum budget for Instagram Ads in Canada?', answer: 'You can start with as little as $5/day ($150/month), but we recommend at least $300/month to generate enough data for optimization.' },
       { question: 'How much does it cost per follower on Instagram Ads?', answer: 'Follower campaigns typically cost $0.50–$2.00 per new follower in Canada. However, lead generation and traffic campaigns deliver better business ROI.' },
@@ -3606,7 +3606,7 @@ Agency management fees typically range from $500–$1,500/month for small busine
 
 At AP DIGITAL, we help Canadian small businesses build profitable [Google Ads campaigns](/services/paid-ads) — no long-term contracts, no hidden fees. We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
-**[Book your free strategy call](https://calendly.com/apdigital-core/20min)** and we'll audit your current campaigns or build a custom Google Ads plan for your business.`,
+**[Book your free strategy call](/book)** and we'll audit your current campaigns or build a custom Google Ads plan for your business.`,
     faqs: [
       { question: "What's the minimum budget for Google Ads in Canada?", answer: 'We recommend at least $500/month in ad spend. Most small businesses see the best results starting at $1,000/month.' },
       { question: 'How long does it take for Google Ads to produce results?', answer: 'You can see clicks and leads within the first week, but it takes 2–4 weeks to optimize. Best performance comes after 60–90 days of continuous management.' },
@@ -3744,7 +3744,7 @@ Startups should allocate 12–20% of projected revenue to marketing during their
 
 Every business is different. At AP DIGITAL, we help Canadian small businesses build marketing strategies that match their budget and goals — no bloated packages, no unnecessary channels. We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
-**[Book your free strategy call](https://calendly.com/apdigital-core/20min)** and we'll build a custom marketing budget for your business — with complete transparency on what each dollar does.`,
+**[Book your free strategy call](/book)** and we'll build a custom marketing budget for your business — with complete transparency on what each dollar does.`,
     faqs: [
       { question: "What's the minimum marketing budget for a small business in Canada?", answer: 'We recommend at least $1,000/month to see meaningful results from digital marketing.' },
       { question: 'What percentage of revenue should go to marketing?', answer: '5–15% of gross revenue. Newer businesses should lean toward 10–15%. Established businesses with strong referrals can start at 5–7%.' },
@@ -3898,7 +3898,7 @@ HubSpot, Zoho, Salesforce, and Pipedrive all offer QuickBooks integrations (nati
 
 At AP DIGITAL, we help Canadian small businesses set up their marketing and sales systems — including CRM selection and integration with your [paid ads](/services/paid-ads) and [social media](/services/social-media) campaigns. We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
-**[Book your free strategy call](https://calendly.com/apdigital-core/20min)** and we'll recommend the right CRM for your business.`,
+**[Book your free strategy call](/book)** and we'll recommend the right CRM for your business.`,
     faqs: [
       { question: "What's the best free CRM for small business in Canada?", answer: 'HubSpot offers the most capable free CRM — unlimited contacts, deal tracking, email templates, and basic reporting. Zoho CRM Free is a strong alternative for 3 or fewer users.' },
       { question: 'Do I actually need a CRM?', answer: 'If you have more than 10 active leads or customers at any given time, yes. A CRM prevents leads from falling through the cracks. Businesses using a CRM see an average 29% increase in sales revenue.' },
@@ -4049,7 +4049,7 @@ At AP DIGITAL, we help Canadian businesses build [SEO](/blog/vancouver-small-bus
 
 We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby](/burnaby), [Richmond](/richmond), [Langley](/langley), [Coquitlam](/coquitlam), and [Abbotsford](/abbotsford).
 
-**[Book your free strategy call](https://calendly.com/apdigital-core/20min)** and we'll audit your Google Business Profile and build a review strategy that drives rankings and trust.`,
+**[Book your free strategy call](/book)** and we'll audit your Google Business Profile and build a review strategy that drives rankings and trust.`,
     faqs: [
       { question: 'How many Google reviews do I need to rank in local search?', answer: 'Businesses in the Local Pack typically have 40–100+ reviews. Focus on consistency — 4–8 new reviews per month is more valuable than getting 50 at once.' },
       { question: 'Can you buy Google reviews?', answer: 'No — Google detects fake review patterns and penalizes businesses. Penalties include review removal, profile suspension, and ranking drops.' },

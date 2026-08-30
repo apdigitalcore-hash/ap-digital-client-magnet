@@ -188,7 +188,7 @@ const BlogPost = () => {
               Book a free strategy call with AP DIGITAL and get a custom plan to grow your business.
             </p>
             <Button size="lg" className="bg-teal hover:bg-teal/90 text-white" asChild>
-              <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
+              <Link to="/book">Book Your Free Strategy Call</Link>
             </Button>
           </div>
 

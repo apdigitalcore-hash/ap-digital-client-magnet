@@ -365,7 +365,7 @@ const About = () => {
               Book a free strategy call with Arjun and let's talk about how AP Digital can generate predictable leads for your business.
             </p>
             <Button variant="hero" size="lg" asChild>
-              <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
+              <Link to="/book">Book Your Free Strategy Call</Link>
             </Button>
           </div>
         </section>

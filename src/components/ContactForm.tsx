@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 import { z } from 'zod';
@@ -105,6 +106,7 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const ContactForm = () => {
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [gdprConsent, setGdprConsent] = useState(false);
@@ -195,8 +197,11 @@ const ContactForm = () => {
       a3: nicheLabels[validatedData.niche] || validatedData.niche,
     });
 
-    const calendlyUrl = `https://calendly.com/apdigital-core/20min?${params.toString()}`;
-    window.location.href = calendlyUrl;
+    // Route through /book rather than calendly.com directly. The Calendly embed
+    // there posts calendly.event_scheduled back to us, which is what fires the
+    // Lead event; a direct redirect completes the booking off-site where the
+    // pixel cannot see it.
+    navigate(`/book?${params.toString()}`);
   };
 
   if (isSubmitted) {

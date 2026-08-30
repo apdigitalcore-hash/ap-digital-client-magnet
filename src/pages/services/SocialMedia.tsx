@@ -311,7 +311,7 @@ const SocialMedia = () => (
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
           <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and let us build a social media engine that grows your business.</p>
           <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
-            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">Book Your Free Strategy Call</a>
+            <Link to="/book">Book Your Free Strategy Call</Link>
           </Button>
         </section>
       </div>

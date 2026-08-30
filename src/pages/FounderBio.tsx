@@ -220,9 +220,9 @@ const FounderBio = () => (
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild variant="hero" size="lg">
-              <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
+              <Link to="/book">
                 Book Your Free Strategy Call <ArrowRight className="ml-2 w-4 h-4" />
-              </a>
+              </Link>
             </Button>
             <Button asChild variant="heroOutline" size="lg">
               <Link to="/about">About AP Digital</Link>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState, useCallback } from 'react';
 
 const lerp = (current: number, target: number, factor: number) =>
@@ -133,14 +134,9 @@ const WhileYouScroll = () => {
             <br />
             <span className="italic">today.</span>
           </h2>
-          <a
-            href="https://calendly.com/apdigital-core/20min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
-          >
+          <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
             Book a Free Audit
-          </a>
+          </Link>
         </div>
       </section>
     );
@@ -227,14 +223,9 @@ const WhileYouScroll = () => {
               <br />
               <span className="italic">today.</span>
             </h2>
-            <a
-              href="https://calendly.com/apdigital-core/20min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
-            >
+            <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
               Book a Free Audit
-            </a>
+            </Link>
           </div>
       </div>
 

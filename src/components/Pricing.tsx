@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -132,9 +133,9 @@ const Pricing = () => {
                 className="w-full"
                 asChild
               >
-                <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer">
+                <Link to="/book">
                   Get Started
-                </a>
+                </Link>
               </Button>
             </div>
           ))}
@@ -145,15 +146,10 @@ const Pricing = () => {
           <p className="text-muted-foreground mb-4">
             Need something custom? We create tailored solutions for unique needs.
           </p>
-          <a
-            href="https://calendly.com/apdigital-core/20min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-teal font-semibold hover:underline"
-          >
+          <Link to="/book" className="inline-flex items-center gap-2 text-teal font-semibold hover:underline">
             Request Custom Plan
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>

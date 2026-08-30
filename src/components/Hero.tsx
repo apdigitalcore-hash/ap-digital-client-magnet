@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-right.jpg';
@@ -56,10 +57,10 @@ const Hero = () => {
           style={{ animationDelay: '0.3s' }}
         >
           <Button variant="hero" size="lg" asChild>
-            <a href="https://calendly.com/apdigital-core/20min" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+            <Link to="/book" className="flex items-center gap-2">
               Book a Strategy Call
               <ArrowRight className="w-5 h-5" />
-            </a>
+            </Link>
           </Button>
           <Button variant="light" size="lg" asChild>
             <a href="/pricing">
