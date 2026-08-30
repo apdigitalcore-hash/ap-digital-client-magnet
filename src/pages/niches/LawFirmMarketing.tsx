@@ -28,9 +28,9 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '6-9x', label: 'Typical return on ad spend for legal clients' },
-  { icon: Phone, stat: '25+', label: 'Consultation calls per month from search' },
-  { icon: Scale, stat: '$95', label: 'Average cost per qualified case inquiry' },
+  { icon: TrendingUp, stat: 'Google Ads', label: 'Search campaigns for high-intent case enquiries' },
+  { icon: Phone, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Scale, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 
 const faqs = [
@@ -145,7 +145,7 @@ const LawFirmMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">Results Our Legal Clients See</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">

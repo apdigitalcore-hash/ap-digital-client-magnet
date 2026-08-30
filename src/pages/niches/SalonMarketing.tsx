@@ -28,9 +28,9 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '3-5x', label: 'Average return on ad spend for salon clients' },
-  { icon: Calendar, stat: '40+', label: 'New bookings per month from paid ads alone' },
-  { icon: Users, stat: '200%', label: 'Average follower growth in the first 90 days' },
+  { icon: TrendingUp, stat: 'Meta Ads', label: 'Instagram and Facebook campaigns for new bookings' },
+  { icon: Calendar, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Users, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 
 const faqs = [
@@ -148,7 +148,7 @@ const SalonMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">Results Our Salon Clients See</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">

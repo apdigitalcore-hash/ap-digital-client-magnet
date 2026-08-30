@@ -14,6 +14,7 @@
   <!-- Industry pages -->
   <url><loc>https://ap-digital.ca/salon-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
   <url><loc>https://ap-digital.ca/real-estate-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
+  <url><loc>https://ap-digital.ca/property-management-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://ap-digital.ca/trades-marketing</loc><priority>1.0</priority><changefreq>weekly</changefreq><lastmod>2026-08-05</lastmod></url>
   <url><loc>https://ap-digital.ca/coaching-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
   <url><loc>https://ap-digital.ca/dental-marketing</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-05</lastmod></url>
@@ -44,6 +45,7 @@
   <!-- Blog index -->
   <url><loc>https://ap-digital.ca/blog</loc><priority>0.8</priority><changefreq>weekly</changefreq><lastmod>2026-08-05</lastmod></url>
   <!-- Blog posts -->
+  <url><loc>https://ap-digital.ca/blog/property-management-marketing-cost</loc><priority>0.8</priority><changefreq>monthly</changefreq><lastmod>2026-08-30</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/real-estate-agent-social-media-tips</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/how-much-does-social-media-marketing-cost-canada</loc><priority>0.9</priority><changefreq>monthly</changefreq><lastmod>2026-08-20</lastmod></url>
   <url><loc>https://ap-digital.ca/blog/best-ads-platform-for-small-business-canada</loc><priority>0.7</priority><changefreq>monthly</changefreq><lastmod>2026-07-21</lastmod></url>

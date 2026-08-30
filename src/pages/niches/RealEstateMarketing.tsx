@@ -166,7 +166,7 @@ const RealEstateMarketing = () => (
 
         <div className="mt-16 mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-6">Cities We Serve</h2>
-          <p className="text-muted-foreground mb-6">We help realtors across Metro Vancouver and the Fraser Valley. See <Link to="/pricing" className="text-foreground underline underline-offset-4 hover:text-foreground/70">pricing</Link> or browse <Link to="/case-studies" className="text-foreground underline underline-offset-4 hover:text-foreground/70">how we work</Link>.</p>
+          <p className="text-muted-foreground mb-6">We help realtors across Metro Vancouver and the Fraser Valley. See <Link to="/pricing" className="text-foreground underline underline-offset-4 hover:text-foreground/70">pricing</Link> or browse <Link to="/case-studies" className="text-foreground underline underline-offset-4 hover:text-foreground/70">how we work</Link>. Managing rentals rather than selling? See <Link to="/property-management-marketing" className="text-foreground underline underline-offset-4 hover:text-foreground/70">property management marketing</Link>.</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
               { city: 'Vancouver', href: '/vancouver' },

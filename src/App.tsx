@@ -25,6 +25,7 @@ const PaidAds = lazy(() => import("./pages/services/PaidAds"));
 const SocialMedia = lazy(() => import("./pages/services/SocialMedia"));
 const SalonMarketing = lazy(() => import("./pages/niches/SalonMarketing"));
 const RealEstateMarketing = lazy(() => import("./pages/niches/RealEstateMarketing"));
+const PropertyManagementMarketing = lazy(() => import("./pages/niches/PropertyManagementMarketing"));
 const TradesMarketing = lazy(() => import("./pages/niches/TradesMarketing"));
 const CoachingMarketing = lazy(() => import("./pages/niches/CoachingMarketing"));
 const DentalMarketing = lazy(() => import("./pages/niches/DentalMarketing"));
@@ -90,6 +91,7 @@ const App = () => {
               <Route path="/services/social-media" element={<SocialMedia />} />
               <Route path="/salon-marketing" element={<SalonMarketing />} />
               <Route path="/real-estate-marketing" element={<RealEstateMarketing />} />
+              <Route path="/property-management-marketing" element={<PropertyManagementMarketing />} />
               <Route path="/trades-marketing" element={<TradesMarketing />} />
               <Route path="/coaching-marketing" element={<CoachingMarketing />} />
               <Route path="/dental-marketing" element={<DentalMarketing />} />

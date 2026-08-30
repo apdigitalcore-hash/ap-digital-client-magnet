@@ -28,9 +28,9 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '5-8x', label: 'Average return on ad spend for dental clients' },
-  { icon: Calendar, stat: '30+', label: 'New patient appointments per month from ads' },
-  { icon: Users, stat: '$42', label: 'Average cost per new patient inquiry' },
+  { icon: TrendingUp, stat: 'Google + Meta', label: 'Search and social campaigns for new-patient enquiries' },
+  { icon: Calendar, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Users, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 
 const faqs = [
@@ -145,7 +145,7 @@ const DentalMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">Results Our Dental Clients See</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">

@@ -140,8 +140,8 @@ const staticRoutes = [
   {
     path: 'trades-marketing',
     title: 'Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital',
-    description: 'AP Digital gets BC plumbers, electricians, HVAC companies & roofers 20–50 qualified leads/month via Google & Meta Ads. No contracts. Starts at $759/month.',
-    body: '<h1>Trades &amp; Contractor Marketing — Get More Leads in BC</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades businesses — plumbers, electricians, HVAC technicians, roofers, and general contractors — get 20–50 qualified leads per month through Google Ads and Meta Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    description: 'AP Digital runs Google & Meta Ads for BC plumbers, electricians, HVAC companies & roofers. No contracts. Starts at $759/month.',
+    body: '<h1>Trades &amp; Contractor Marketing — Get More Leads in BC</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades businesses — plumbers, electricians, HVAC technicians, roofers, and general contractors — get more qualified leads through Google Ads and Meta Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Trades & Contractor Marketing', 'Lead generation for BC plumbers, electricians, HVAC, roofers & general contractors using Google Ads & Meta Ads.', '/trades-marketing'),
@@ -159,8 +159,8 @@ const staticRoutes = [
   {
     path: 'salon-marketing',
     title: 'Salon Marketing Vancouver | Fill Your Chair Every Week | AP Digital',
-    description: 'Get 20–40 new salon clients/month with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
-    body: '<h1>Salon Marketing — Fill Your Chair Every Week</h1><p>AP Digital helps hair salons, barbershops, and beauty studios in Vancouver get 20–40 new client inquiries per month with Meta Ads, Instagram content, and Google Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    description: 'Get more salon clients with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
+    body: '<h1>Salon Marketing — Fill Your Chair Every Week</h1><p>AP Digital helps hair salons, barbershops, and beauty studios in Vancouver get more new client inquiries with Meta Ads, Instagram content, and Google Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Salon Marketing', 'Social media & paid ads for Vancouver salons. Get consistent bookings every week.', '/salon-marketing'),
@@ -171,8 +171,8 @@ const staticRoutes = [
   {
     path: 'real-estate-marketing',
     title: 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital',
-    description: 'AP Digital generates 15–30 buyer & seller leads/month for BC realtors using Meta Ads. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
-    body: '<h1>Real Estate Marketing — Consistent Buyer &amp; Seller Leads</h1><p>AP Digital generates 15–30 qualified buyer and seller leads per month for BC realtors using Meta Ads and Google Ads. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    description: 'Real estate marketing with Meta Ads & Google Ads for BC realtors. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
+    body: '<h1>Real Estate Marketing — Consistent Buyer &amp; Seller Leads</h1><p>AP Digital generates qualified buyer and seller leads for BC realtors using Meta Ads and Google Ads. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/property-management-marketing">Property Management Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Real Estate Marketing', 'Lead generation for BC realtors using Meta Ads & Google Ads.', '/real-estate-marketing'),
@@ -181,10 +181,22 @@ const staticRoutes = [
     ]}
   },
   {
+    path: 'property-management-marketing',
+    title: 'Fill Rental Vacancies Faster | Property Management Marketing BC',
+    description: 'Marketing for BC property managers: fill vacancies faster with Google & Meta Ads. Flat $759/month, month-to-month, no contracts.',
+    body: '<h1>Property Management Marketing — Fill Vacancies Faster</h1><p>AP Digital runs Google Ads and Meta Ads for property managers across Metro Vancouver and the Fraser Valley, so units spend fewer days empty. A $1,800 unit loses roughly $60 for every vacant day. Flat $759/month management. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/blog/property-management-marketing-cost">What it costs</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      serviceSchema('Property Management Marketing', 'Advertising that fills rental vacancies for BC property managers.', '/property-management-marketing'),
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Property Management Marketing', url: '/property-management-marketing' }]),
+      webPageSchema('Property Management Marketing BC | AP Digital', 'Advertising that fills rental vacancies faster for BC property managers.', '/property-management-marketing'),
+    ]}
+  },
+  {
     path: 'coaching-marketing',
     title: 'Coaching Marketing BC | Get Consistent Clients | AP Digital',
-    description: 'AP Digital helps BC life, business & fitness coaches get 20–40 new leads/month with Meta Ads funnels. Month-to-month. No lock-in contracts.',
-    body: '<h1>Coaching Marketing — Get Consistent Clients in BC</h1><p>AP Digital helps life, business, and fitness coaches in BC get 20–40 new leads per month with Meta Ads funnels and social media campaigns. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    description: 'AP Digital helps BC life, business & fitness coaches get more clients with Meta Ads funnels. Month-to-month. No lock-in contracts.',
+    body: '<h1>Coaching Marketing — Get Consistent Clients in BC</h1><p>AP Digital helps life, business, and fitness coaches in BC get more qualified leads with Meta Ads funnels and social media campaigns. Month-to-month. No lock-in contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Coaching Marketing', 'Meta Ads & social media for BC coaches.', '/coaching-marketing'),
@@ -289,7 +301,7 @@ const staticRoutes = [
   {
     path: 'roofer-marketing',
     title: 'Roofer Marketing Vancouver | Get More Roofing Jobs | AP Digital',
-    description: 'Get 15–25 qualified roofing leads/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver roofers. Month-to-month. No contracts. 90-day guarantee.',
+    description: 'Google Ads & Local SEO that bring roofing leads. AP Digital serves Metro Vancouver roofers. Month-to-month. No contracts. 90-day guarantee.',
     body: '<h1>Roofer Marketing — Get More Roofing Jobs with Google Ads</h1><p>BC\'s rainy season means roofing searches spike every fall. AP Digital builds booked-estimate systems for Metro Vancouver roofing companies using Google Ads, Local Service Ads, storm-response campaigns, and Google Business Profile optimization.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
@@ -301,7 +313,7 @@ const staticRoutes = [
   {
     path: 'contractor-marketing',
     title: 'General Contractor Marketing Vancouver | More Renovation Jobs | AP Digital',
-    description: 'Get 20+ qualified renovation leads/month with Google Ads & Meta Ads. AP Digital serves Metro Vancouver general contractors. Month-to-month. No contracts.',
+    description: 'Google Ads & Meta Ads that bring renovation leads. AP Digital serves Metro Vancouver general contractors. Month-to-month. No contracts.',
     body: '<h1>General Contractor Marketing — Get More Renovation Jobs</h1><p>Kitchen renos, bathroom remodels, basement finishing, laneway houses — AP Digital builds booked-estimate systems for general contractors using Google Ads, Meta Ads, and portfolio-driven landing pages.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
@@ -559,6 +571,7 @@ const blogPosts = [
   { slug: 'salon-social-media-management-vancouver', contentExcerpt: 'Social media management for a Vancouver salon costs **$500 to $2,500 per month** depending on scope, and the single biggest variable is whether the price includes someone coming to the salon to shoot content. Ours is **$849/month** for two platforms, twelve custom posts, captions, scheduling and community management —', metaTitle: 'Salon Social Media Management Vancouver | AP Digital', metaDescription: 'Instagram & Meta content managed for Vancouver salons from $849/month. Posting, captions, community management. Month-to-month. No contracts.', date: '2026-08-24', dateModified: '2026-08-24', category: 'Salon Marketing' },
   { slug: 'how-to-get-more-salon-clients-vancouver', contentExcerpt: 'Almost every Vancouver salon that has stopped growing has one of four problems, and they need completely different fixes. Before spending anything, work out which one you have — because the money that solves a reach problem does nothing for a retention problem.  **Not enough people know you exist.** Your chairs are emp', metaTitle: 'How to Get More Salon Clients in Vancouver | AP Digital', metaDescription: 'Meta Ads & Instagram content for Vancouver salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.', date: '2026-08-24', dateModified: '2026-08-24', category: 'Salon Marketing' },
   { slug: 'salon-marketing-surrey', contentExcerpt: 'Surrey is the hardest salon market in Metro Vancouver to advertise in, and the reason is geography. Newton, Guildford, South Surrey, Fleetwood and Cloverdale behave like five separate towns. A client in South Surrey will not drive to Guildford for a blow-dry, and an ad targeting "Surrey" wastes most of its budget reach', metaTitle: 'Salon Marketing Surrey BC | Fill Your Chairs | AP Digital', metaDescription: 'Meta Ads & Instagram content for Surrey salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.', date: '2026-08-24', dateModified: '2026-08-24', category: 'Salon Marketing' },
+  { slug: 'property-management-marketing-cost', dateModified: '2026-08-30', contentExcerpt: 'A property manager in BC should budget $800 to $2,000 per month in ad spend across a portfolio, plus $759/month for management. But budget against the cost of a vacant day, not a percentage of revenue: a unit renting at $1,800 a month loses roughly $60 for every day it sits empty, so cutting fourteen days off time-to-lease on one unit recovers about $840.', metaTitle: 'Property Management Marketing Cost in BC: 2026 Guide', metaDescription: 'What BC property managers pay to fill vacancies: ad spend by portfolio size, management fees, and the cost of a day empty. Real numbers.', date: '2026-08-30', category: 'Strategy' },
 ];
 
 // ── FAQ data is read from the React source, never copied ────────────────────
@@ -638,6 +651,17 @@ function loadPostsFromSource() {
 }
 
 const sourcePosts = loadPostsFromSource();
+{
+  // A new post added to blogPosts.ts but not to the list above used to be
+  // silently skipped: no prerendered HTML, no meta, invisible to crawlers.
+  const enumerated = new Set(blogPosts.map(p => p.slug));
+  const orphans = Object.keys(sourcePosts).filter(slug => !enumerated.has(slug));
+  if (orphans.length) {
+    throw new Error(
+      `inject-meta: ${orphans.length} post(s) in blogPosts.ts are missing from the ` +
+      `blogPosts list in this file, so no HTML would be generated: [${orphans.join(', ')}].`);
+  }
+}
 // blogPosts.ts is the single source of truth for post metadata. This file used
 // to keep its own copy of metaTitle/metaDescription/dates, and 33 of 41 posts
 // had drifted — meaning the tags Google crawled were not the ones the site

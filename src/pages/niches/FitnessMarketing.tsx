@@ -28,9 +28,9 @@ const included = [
 ];
 
 const results = [
-  { icon: TrendingUp, stat: '4-7x', label: 'Average return on ad spend for fitness clients' },
-  { icon: Calendar, stat: '35+', label: 'New member sign-ups per month from ads' },
-  { icon: Users, stat: '$18', label: 'Average cost per free trial lead' },
+  { icon: TrendingUp, stat: 'Meta Ads', label: 'Facebook and Instagram campaigns for trials and memberships' },
+  { icon: Calendar, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Users, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 
 const faqs = [
@@ -145,7 +145,7 @@ const FitnessMarketing = () => (
           ))}
         </ul>
 
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">Results Our Fitness Clients See</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
             <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">

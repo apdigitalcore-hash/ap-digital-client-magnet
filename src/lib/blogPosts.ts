@@ -3755,6 +3755,112 @@ Every business is different. At AP DIGITAL, we help Canadian small businesses bu
     ],
   },
   {
+    slug: 'property-management-marketing-cost',
+    title: 'How Much Should a Property Manager Spend on Marketing?',
+    metaTitle: 'Property Management Marketing Cost in BC: 2026 Guide',
+    metaDescription: 'What BC property managers pay to fill vacancies: ad spend by portfolio size, management fees, and the cost of a day empty. Real numbers.',
+    excerpt: 'Budget against the cost of a vacant day, not a percentage of revenue. Here is what filling vacancies actually costs in Metro Vancouver and the Fraser Valley.',
+    date: '2026-08-30',
+    dateModified: '2026-08-30',
+    readTime: '11 min read',
+    category: 'Strategy',
+    content: `A property manager in BC should budget **$800 to $2,000 per month in ad spend** across a portfolio, plus **$759/month** for management. But that is the wrong way to think about it, and the right way changes the number entirely.
+
+**Budget against the cost of a vacant day.** A unit renting at $1,800 a month loses roughly **$60 for every day it sits empty**. Cut fourteen days off your average time-to-lease on a single unit and you have recovered about **$840** — more than a month of management fees. That is the arithmetic that matters, not a percentage of revenue.
+
+## What a Vacancy Actually Costs You
+
+| Monthly rent | Cost per vacant day | 14 days saved |
+|---|---|---|
+| $1,500 | $49 | $686 |
+| $1,800 | $59 | $829 |
+| $2,200 | $72 | $1,013 |
+| $2,800 | $92 | $1,289 |
+| $3,500 | $115 | $1,611 |
+
+Now multiply by how many units turn over. A 240-unit portfolio at 5% vacancy is twelve empty units at any moment. At $1,800 average rent that is **roughly $700 a day** walking out of the door, or about **$21,000 a month**.
+
+Against that, an ad budget of $1,500 is not a marketing expense. It is a discount on a loss you are already taking.
+
+## The Two Bills
+
+| Line item | Typical monthly cost |
+|---|---|
+| Ad spend, paid to Google or Meta | $800 – $2,000 |
+| Management fee | $759 |
+| Listing photography | $150 – $400 per unit, one-off |
+| Your own site's listing pages | Usually already built |
+
+Ad spend goes directly to the platforms on your own account, so you see the real numbers and can pause a campaign the day a building fills. Our management fee is flat at **$759/month** regardless of what you spend — not a percentage, which would reward us for spending more of your money.
+
+## Budget by Portfolio Size
+
+| Units managed | Suggested monthly ad spend | Why |
+|---|---|---|
+| Under 20 | Not yet | Too little turnover for campaigns to keep learning |
+| 20 – 60 | $600 – $1,000 | One or two active vacancies at a time |
+| 60 – 150 | $1,000 – $1,800 | Enough turnover for continuous optimisation |
+| 150 – 400 | $1,800 – $3,000 | Multiple buildings, separate campaigns per radius |
+| 400+ | $3,000+ | Worth splitting by building type and rent band |
+
+**Under 20 units, we will tell you not to bother.** The spend goes quiet between vacancies, the platforms lose their optimisation, and you pay near-full price for every click. At that size your money is better in listing photography and your Google Business Profile.
+
+## Why Marketplace and Craigslist Are Not Enough
+
+Most BC property managers push every listing to Facebook Marketplace and Craigslist, and they work — they are free and renters genuinely look there.
+
+The problem is what happens after. Every enquiry, every photo view and every bit of traffic accumulates on a platform you do not own. You finish each vacancy with nothing: no audience to retarget, no email list, no data that makes the next unit cheaper to fill.
+
+Run the same listings as ads to pages on your own site and the second vacancy costs less than the first, because you can retarget everyone who viewed the first and did not enquire. That compounding is the entire argument for paid, and it is invisible if you only measure the first campaign.
+
+## What the Money Buys
+
+- **Radius targeting per building.** Renters search by neighbourhood, not by city. A campaign for a Mission building should not be spending in Surrey.
+- **Google Ads for "apartments for rent" searches** in the specific area, which catch people already looking.
+- **Meta Ads for discovery**, reaching people who are thinking about moving but have not started searching.
+- **Lead forms that qualify.** Asking move-in date and budget means your leasing team is not calling someone who wanted a place in three months at $600 less.
+- **Retargeting.** The cheapest enquiries you will get all year.
+
+## Fraser Valley Costs Less Than Vancouver
+
+Competition for rental advertising in Mission, Abbotsford, Chilliwack and Maple Ridge is materially lower than in Vancouver or Burnaby. The same $1,000 reaches more renters and holds position for longer.
+
+If your portfolio spans both, run them as separate campaigns with separate budgets. A blended campaign lets the expensive market quietly consume the budget that should be working in the cheap one.
+
+## What This Does Not Fix
+
+Advertising generates enquiries. It does not:
+
+- **Make an overpriced unit rent.** If you are $200 above comparable listings, more traffic just means more people declining faster.
+- **Fix bad photos.** Listing photography is the highest-return $300 in this entire budget and no ad spend substitutes for it.
+- **Answer the phone.** Enquiries that sit for a day convert far worse than ones called back within the hour.
+
+We will tell you if one of those is your actual problem, including when it means you should not hire us yet.
+
+## Timeline
+
+Campaigns typically launch within a week, and most clients see their first qualified enquiries within two weeks of launch. Cost per enquiry settles around weeks two to three once there is enough data to optimise against.
+
+We do not publish case studies, because we do not yet have property management results we can show with a client's name and permission attached. What we do instead is agree a target for enquiries per vacant unit before anything goes live, and report against it weekly.
+
+## Frequently Asked Questions About Property Management Marketing Costs
+
+Below are the questions BC property managers ask us most often.
+
+## Work Out Your Own Number
+
+Tell us your unit count, your average rent and your current time-to-lease, and we will tell you what budget makes sense — including when the answer is that your listings, not your advertising, are the constraint. Book a [20-minute call](/book).`,
+    faqs: [
+      { question: 'How much should a property manager spend on marketing?', answer: 'Budget against the cost of a vacant day rather than a percentage of revenue. A $1,800 unit loses about $60 for every day it stands empty, so cutting fourteen days off time-to-lease recovers roughly $840 on one unit. Most BC property managers run $800 to $2,000 per month in ad spend across a portfolio, plus $759/month management.' },
+      { question: 'What does a vacant unit actually cost per day?', answer: 'Divide the monthly rent by 30. A $1,500 unit costs about $49 a day, $1,800 is $59, $2,200 is $72 and $2,800 is $92. A 240-unit portfolio at 5% vacancy has twelve units empty at any moment, which at $1,800 average rent is roughly $700 a day or $21,000 a month.' },
+      { question: 'Is Facebook Marketplace enough for rental listings?', answer: 'Use it, but not only it. The issue is that every enquiry, photo view and visitor accumulates on a platform you do not own, so you finish each vacancy with no audience to retarget and no data that makes the next unit cheaper to fill. Advertising to listings on your own site means the second vacancy costs less than the first.' },
+      { question: 'How many units do you need before paid ads are worth it?', answer: 'Around twenty. Below that there is not enough turnover for the campaigns to keep learning, so spend goes quiet between vacancies and you pay close to full price for every click. At smaller portfolio sizes, listing photography and your Google Business Profile are the better spend.' },
+      { question: 'Is advertising cheaper in the Fraser Valley than Vancouver?', answer: 'Yes, meaningfully. Competition for rental advertising in Mission, Abbotsford, Chilliwack and Maple Ridge is well below Vancouver and Burnaby, so the same budget reaches more renters and holds position longer. If your portfolio spans both, run separate campaigns — a blended one lets the expensive market consume the budget.' },
+      { question: 'Will advertising fill a unit that is priced too high?', answer: 'No. More traffic to an overpriced listing produces more people declining faster. The same is true of poor photos and slow follow-up — enquiries that sit for a day convert far worse than ones answered within the hour. We will tell you when pricing, photography or response time is the real constraint rather than advertising.' },
+      { question: 'Do you handle tenant screening and showings?', answer: 'No. We generate and qualify enquiries; your team handles screening, showings and leasing. The lead forms capture move-in date and budget so you are not calling people who wanted something in three months at a much lower rent.' },
+    ],
+  },
+  {
     slug: 'best-crm-small-business-canada',
     title: 'Best CRM for Small Business in Canada: 2026 Comparison',
     metaTitle: 'Best CRM for Small Business in Canada 2026 | AP Digital',
