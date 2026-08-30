@@ -9,6 +9,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'HVAC Marketing Vancouver | More Service Calls | AP Digital';
 const DESC = 'HVAC marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
@@ -117,6 +118,8 @@ const HVACMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           When a furnace dies at midnight, homeowners Google it. We make sure your company is the first call they make — not your competitor's.
         </p>
+
+        <InlineCTA context="HVAC company" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">

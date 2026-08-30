@@ -126,8 +126,8 @@ const Richmond = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Digital Marketing Agency{' '}
-              <span className="italic">Richmond BC</span>
+              Richmond{' '}
+              <span className="italic">Google Ads</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Richmond businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Looking for a digital marketing agency near you in Richmond? We're local and we specialize in your industry. No lock-in contracts. Personal service from founder Arjun Sharma.

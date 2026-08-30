@@ -9,8 +9,9 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Roofer Marketing Vancouver | Get More Roofing Jobs | AP Digital';
+const TITLE = 'Roofer Marketing Vancouver | More Roofing Jobs | AP Digital';
 const DESC = 'Roofer marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/roofer-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -119,6 +120,8 @@ const RooferMarketing = () => (
           BC's rainy season means roofing searches spike every fall. AP Digital builds booked-estimate systems for Metro Vancouver roofing companies using Google Ads, Local Service Ads, storm-response campaigns, and Google Business Profile optimization.
         </p>
 
+        <InlineCTA context="roofing company" />
+
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -177,6 +180,10 @@ const RooferMarketing = () => (
         <div className="mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Related Pages</h2>
           <div className="grid sm:grid-cols-2 gap-4">
+            <Link to="/contractor-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
+              <p className="font-bold text-foreground">General Contractor Marketing</p>
+              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Renovation and build leads for BC contractors.</p>
+            </Link>
             <Link to="/trades-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Trades & Contractor Marketing</p>
               <p className="reveal-body relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>

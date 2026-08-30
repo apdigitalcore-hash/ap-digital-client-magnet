@@ -126,8 +126,8 @@ const Abbotsford = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Digital Marketing Agency{' '}
-              <span className="italic">Abbotsford BC</span>
+              Abbotsford{' '}
+              <span className="italic">Marketing for Trades</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Abbotsford and Fraser Valley businesses generate consistent, qualified leads using Meta Ads & Google Ads. If you're looking for a marketing agency near you in Abbotsford, we specialize in local service businesses. No lock-in contracts. Managed personally by founder Arjun Sharma.

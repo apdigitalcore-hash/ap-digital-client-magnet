@@ -495,7 +495,7 @@ It depends on your industry. Instagram and Facebook work well for visual busines
     date: '2025-08-05',
     readTime: '7 min read',
     category: 'Paid Advertising',
-    content: `If you're a plumber, electrician, roofer, HVAC tech, or general contractor in Canada — you already know that word-of-mouth only goes so far. The businesses booking $50K–$100K+ per month in jobs are the ones running ads. Here's exactly how to do it right.
+    content: `If you're a plumber, electrician, roofer, HVAC tech, or general contractor in Canada — you already know that word-of-mouth only goes so far. Our [roofer marketing](/roofer-marketing) page covers how we run those campaigns. The businesses booking $50K–$100K+ per month in jobs are the ones running ads. Here's exactly how to do it right.
 
 ## Why Ads Work for Trades Businesses
 
@@ -1496,7 +1496,7 @@ For a typical plumber spending $1,500/month (ad spend + management), expect 20�
     category: 'Trades Marketing',
     content: `Running an HVAC business in [Vancouver BC](/vancouver) comes with a unique challenge: you're either slammed or slow. Furnace season hits in October and the phones ring off the hook. By March, it slows down. Summer AC demand is growing but still unpredictable. The HVAC companies that stay booked year-round are the ones who have cracked the marketing equation.
 
-Here's exactly how to market your Vancouver HVAC business to generate consistent service calls in every season.
+Here's exactly how to market your Vancouver HVAC business to generate consistent service calls in every season. Our [HVAC marketing](/hvac-marketing) page covers how we run those campaigns.
 
 ## Why HVAC Marketing in Vancouver Is Different
 
@@ -1680,7 +1680,7 @@ A few realities about the Vancouver plumbing market that should shape your marke
 
 ### Google Ads: Emergency Leads on Demand
 
-For emergency plumbing calls, Google Ads is unmatched. When a pipe bursts in Burnaby at 7am, the homeowner searches "emergency plumber Burnaby" and calls whoever appears first. Google Ads puts you there — immediately.
+For emergency plumbing calls, Google Ads is unmatched. When a pipe bursts in Burnaby at 7am, the homeowner searches "emergency plumber Burnaby" and calls whoever appears first. Our [plumber marketing](/plumber-marketing) page covers how we run those campaigns. Google Ads puts you there — immediately.
 
 High-performing keywords for Metro Vancouver plumbers:
 - "emergency plumber Vancouver"
@@ -1752,7 +1752,7 @@ A few trends shaping the electrical market in Metro Vancouver right now:
 
 **Panel upgrades are everywhere.** Metro Vancouver's aging housing stock means thousands of homes still running on outdated 100-amp panels. With more appliances, EVs, and home offices demanding power, panel upgrades are a high-value, steady revenue stream.
 
-**New construction is active.** Despite the housing slowdown, multi-family construction in the Lower Mainland continues. Commercial and residential new builds represent significant contract opportunities for BC electricians with the right marketing presence.
+**New construction is active.** Despite the housing slowdown, multi-family construction in the Lower Mainland continues. Commercial and residential new builds represent significant contract opportunities for BC electricians with the right marketing presence. Our [electrician marketing](/electrician-marketing) page covers how we run those campaigns.
 
 **Smart home installations are growing.** Vancouver homeowners increasingly want smart lighting, automated systems, and integrated security wiring — premium services with premium margins.
 

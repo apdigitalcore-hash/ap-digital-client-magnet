@@ -9,8 +9,9 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Restaurant Marketing Vancouver | Fill More Tables | AP Digital';
+const TITLE = 'Restaurant Marketing Vancouver | More Tables | AP Digital';
 const DESC = 'Get more reservations & walk-ins with Meta Ads, Google Ads & social media. AP Digital serves Vancouver restaurants & cafes. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/restaurant-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -113,6 +114,8 @@ const RestaurantMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           Great food isn't enough. We make sure people in your neighborhood know about it — with Instagram content that makes them hungry and Google Ads that turn searches into reservations.
         </p>
+
+        <InlineCTA context="restaurant" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">

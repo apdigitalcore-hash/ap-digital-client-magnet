@@ -9,9 +9,10 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Gym & Fitness Marketing Vancouver | More Members | AP Digital';
-const DESC = 'Get 30–50 new gym memberships/month with Meta Ads & Google Ads. AP Digital serves Vancouver gyms, studios & personal trainers. Month-to-month. No contracts.';
+const TITLE = 'Gym Marketing Vancouver | More Members | AP Digital';
+const DESC = 'Meta Ads and Google Ads for Vancouver gyms, studios and personal trainers. From $759/month, month-to-month, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/fitness-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -113,6 +114,8 @@ const FitnessMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           Empty class slots and slow sign-up months kill studios. We build ad campaigns that keep your membership pipeline full year-round — not just in January.
         </p>
+
+        <InlineCTA context="gym" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">

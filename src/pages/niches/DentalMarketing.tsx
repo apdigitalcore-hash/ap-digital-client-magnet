@@ -9,6 +9,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'Dental Marketing Vancouver | Get More Patients | AP Digital';
 const DESC = 'Get 30–60 new dental patients/month with Google Ads & Meta Ads. AP Digital serves Vancouver dental clinics. Month-to-month. No contracts. 90-day guarantee.';
@@ -113,6 +114,8 @@ const DentalMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           Your chairs shouldn't be empty. We run Google Ads and Meta campaigns that put your clinic in front of people actively searching for a dentist — and turn them into booked appointments.
         </p>
+
+        <InlineCTA context="clinic" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">

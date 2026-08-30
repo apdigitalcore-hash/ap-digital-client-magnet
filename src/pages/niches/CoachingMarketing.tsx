@@ -9,6 +9,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'Coaching Marketing BC | Get Consistent Clients | AP Digital';
 const DESC = 'Coaching marketing with Meta Ads funnels & social media for BC life, business & fitness coaches. Month-to-month. No lock-in contracts.';
@@ -115,6 +116,8 @@ const CoachingMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           You've got the skills. We get you the clients. Funnels, ads, and content that scale your coaching practice without trading more time for money.
         </p>
+
+        <InlineCTA context="coaching business" />
 
         {/* 3-column why strip */}
         <div className="grid sm:grid-cols-3 gap-4 mb-16">

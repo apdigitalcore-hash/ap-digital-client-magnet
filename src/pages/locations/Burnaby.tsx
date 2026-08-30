@@ -130,8 +130,8 @@ const Burnaby = () => (
               <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
             </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Digital Marketing Agency{' '}
-              <span className="italic">Burnaby BC</span>
+              Burnaby{' '}
+              <span className="italic">Ads Management</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital helps Burnaby businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Searching for a marketing agency near you in Burnaby? You just found one. No lock-in contracts. Personal service from founder Arjun Sharma.

@@ -9,6 +9,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital';
 const DESC = 'Real estate marketing with Meta Ads & Google Ads for BC realtors. Serving Vancouver, Surrey & Burnaby. Month-to-month. No contracts.';
@@ -115,6 +116,8 @@ const RealEstateMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           The agent who shows up first wins. We get you in front of buyers and sellers before they call anyone else — with video, ads, and SEO.
         </p>
+
+        <InlineCTA context="real estate business" />
 
         {/* 3-column why strip */}
         <div className="grid sm:grid-cols-3 gap-4 mb-16">

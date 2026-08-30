@@ -9,6 +9,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'Trades Marketing BC | Plumber & HVAC Leads | AP Digital';
 const DESC = 'AP Digital runs Google & Meta Ads for BC plumbers, electricians, HVAC companies & roofers. No contracts. Starts at $500/month.';
@@ -115,6 +116,8 @@ const TradesMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           When a pipe bursts, people Google. We make sure they find you first — and that your phone keeps ringing year-round.
         </p>
+
+        <InlineCTA context="trades business" />
 
         {/* 3-column why strip */}
         <div className="grid sm:grid-cols-3 gap-4 mb-16">

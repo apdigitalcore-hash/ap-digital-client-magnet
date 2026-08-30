@@ -9,8 +9,9 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Plumber Marketing Vancouver | Get More Service Calls | AP Digital';
+const TITLE = 'Plumber Marketing Vancouver | More Calls | AP Digital';
 const DESC = 'Plumber marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/plumber-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -118,6 +119,8 @@ const PlumberMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           When a pipe bursts at 2am, homeowners Google it. We make sure your plumbing company is the first call they make — not your competitor's. AP Digital builds booked-estimate systems for BC plumbers using Google Ads, Local Service Ads, and Google Business Profile optimization.
         </p>
+
+        <InlineCTA context="plumbing company" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">

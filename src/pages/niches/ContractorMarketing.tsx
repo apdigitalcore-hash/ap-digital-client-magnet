@@ -9,8 +9,9 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'General Contractor Marketing Vancouver | More Renovation Jobs | AP Digital';
+const TITLE = 'General Contractor Marketing Vancouver | AP Digital';
 const DESC = 'General contractor marketing with Google Ads & Meta Ads for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/contractor-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -118,6 +119,8 @@ const ContractorMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           Kitchen renos, bathroom remodels, basement finishing, laneway houses — when Metro Vancouver homeowners plan a renovation, they search online first. AP Digital builds booked-estimate systems for general contractors using Google Ads, Meta Ads, and portfolio-driven landing pages.
         </p>
+
+        <InlineCTA context="contracting business" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">

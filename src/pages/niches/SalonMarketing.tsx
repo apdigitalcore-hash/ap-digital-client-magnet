@@ -9,6 +9,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'Salon Marketing Vancouver | Fill Every Chair | AP Digital';
 const DESC = 'Meta Ads & Instagram content for Vancouver salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.';
@@ -115,6 +116,8 @@ const SalonMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           Most salons run on referrals and hope. We build you a system — Meta Ads, Reels, and retargeting — that fills every chair on autopilot.
         </p>
+
+        <InlineCTA context="salon" />
 
         {/* 3-column why strip */}
         <div className="grid sm:grid-cols-3 gap-4 mb-16">

@@ -256,8 +256,8 @@ const staticRoutes = [
   {
     path: 'plumber-marketing',
     title: 'Plumber Marketing Vancouver | Get More Service Calls | AP Digital',
-    description: 'Get 30+ plumbing service calls/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver plumbers. Month-to-month. No contracts. 90-day guarantee.',
-    body: '<h1>Plumber Marketing — Get More Service Calls with Google Ads</h1><p>When a pipe bursts at 2am, homeowners Google it. AP Digital builds booked-estimate systems for BC plumbers using Google Ads, Local Service Ads, and Google Business Profile optimization. 30+ service calls/month. $31 average cost per booked call.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    description: 'Google Ads & Local SEO for Metro Vancouver plumbers. Month-to-month. No contracts. 90-day guarantee.',
+    body: '<h1>Plumber Marketing — Get More Service Calls with Google Ads</h1><p>When a pipe bursts at 2am, homeowners Google it. AP Digital builds booked-estimate systems for BC plumbers using Google Ads, Local Service Ads, and Google Business Profile optimization.</p><nav aria-label="Quick links"><ul><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Plumber Marketing', 'Google Ads & lead generation for plumbing companies in Metro Vancouver.', '/plumber-marketing'),
@@ -739,7 +739,7 @@ console.log('  ✓ dist/index.html (homepage)');
 // Agency Vancouver" — and Google, crawling the prerendered version, attached
 // that commercial query to an informational article instead. Ten static pages
 // had drifted the same way.
-function loadStaticTitles() {
+function loadStaticMeta() {
   const app = readFileSync(resolve(__dirname, '../src/App.tsx'), 'utf-8');
   const routes = {};
   for (const m of app.matchAll(/<Route path="\/([^"]*)" element=\{<(\w+)/g)) routes[m[1]] = m[2];
@@ -753,20 +753,29 @@ function loadStaticTitles() {
     if (!rel) continue;
     const fp = resolve(__dirname, '../src' + rel + '.tsx');
     if (!existsSync(fp)) continue;
-    const m = readFileSync(fp, 'utf-8').match(/const TITLE = '((?:[^'\\]|\\.)*)'/);
-    if (m) out[path] = m[1].replace(/\\'/g, "'");
+    const src = readFileSync(fp, 'utf-8');
+    const t = src.match(/const TITLE = '((?:[^'\\]|\\.)*)'/);
+    const d = src.match(/const DESC = '((?:[^'\\]|\\.)*)'/);
+    if (t || d) {
+      out[path] = {
+        title: t ? t[1].replace(/\\'/g, "'") : undefined,
+        description: d ? d[1].replace(/\\'/g, "'") : undefined,
+      };
+    }
   }
   return out;
 }
 
 {
-  const reactTitles = loadStaticTitles();
+  const reactTitles = loadStaticMeta();
   let synced = 0;
   for (const route of staticRoutes) {
-    const t = reactTitles[route.path];
-    if (t && t !== route.title) { route.title = t; synced++; }
+    const meta = reactTitles[route.path];
+    if (!meta) continue;
+    if (meta.title && meta.title !== route.title) { route.title = meta.title; synced++; }
+    if (meta.description && meta.description !== route.description) { route.description = meta.description; synced++; }
   }
-  console.log(`   Static titles: ${synced} synced from React source`);
+  console.log(`   Static meta:   ${synced} field(s) synced from React source`);
 }
 
 // ── FAQ schema for static pages, read from the React source ────────────────
@@ -827,6 +836,37 @@ function loadStaticFaqs() {
     else { graph.push(faqSchema(faqs)); added++; }
   }
   console.log(`   Static FAQs:   ${added} page(s) gained FAQPage, ${replaced} completed from source`);
+}
+
+// ── Give the prerendered body real substance ───────────────────────────────
+// Every niche and city page shipped 39-59 words of HTML. Google runs JS so it
+// sees the whole page, which is why these rank — but most AI crawlers do not,
+// and this site's best lead arrived via an AI assistant. Those crawlers were
+// judging a 40-word stub.
+//
+// The added text is the page's own FAQ content, which a visitor genuinely sees,
+// so the prerendered version describes the same page rather than inventing a
+// summary of it.
+function expandBodyWithFaqs(body, faqs) {
+  if (!faqs || !faqs.length) return body;
+  const items = faqs.slice(0, 4).map(
+    (f) => `<section><h2>${escapeHtml(f.q)}</h2><p>${escapeHtml(f.a)}</p></section>`).join('');
+  const navAt = body.indexOf('<nav');
+  const block = `<section aria-label="Common questions">${items}</section>`;
+  return navAt >= 0 ? body.slice(0, navAt) + block + body.slice(navAt) : body + block;
+}
+
+{
+  const staticFaqsForBody = loadStaticFaqs();
+  let expanded = 0;
+  for (const route of staticRoutes) {
+    const faqs = staticFaqsForBody[route.path];
+    if (!faqs || !route.body) continue;
+    const before = route.body.length;
+    route.body = expandBodyWithFaqs(route.body, faqs);
+    if (route.body.length > before) expanded++;
+  }
+  console.log(`   Body depth:    ${expanded} static page(s) expanded with their own FAQ copy`);
 }
 
 console.log('\n📄 Generating static page HTML...');

@@ -9,9 +9,10 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'Law Firm Marketing Vancouver | Get More Clients | AP Digital';
-const DESC = 'Google & Meta Ads for Vancouver law firms — family, injury, immigration and real estate practices. High-intent case leads, month-to-month, no lock-in contracts.';
+const DESC = 'Google & Meta Ads for Vancouver law firms — family, injury, immigration and real estate practices. Month-to-month, no lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/law-firm-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -113,6 +114,8 @@ const LawFirmMarketing = () => (
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
           People don't browse for a lawyer. They search once, call two or three firms, and hire the one that answers. We put your firm in front of those searches across Metro Vancouver — and track it all the way to signed files.
         </p>
+
+        <InlineCTA context="firm" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
