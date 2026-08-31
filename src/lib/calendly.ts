@@ -19,6 +19,14 @@ const CALENDLY_ORIGIN = /^https:\/\/([a-z0-9-]+\.)?calendly\.com$/;
 
 let assetsRequested = false;
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (opts: { url: string; parentElement: HTMLElement }) => void;
+    };
+  }
+}
+
 export function loadCalendlyAssets() {
   if (assetsRequested || typeof document === 'undefined') return;
   assetsRequested = true;
@@ -38,6 +46,52 @@ export function loadCalendlyAssets() {
 }
 
 /**
+ * widget.js only auto-initializes `.calendly-inline-widget` elements that exist
+ * when the script first executes. In this SPA the booking routes unmount and
+ * remount without a page reload, so on a repeat visit the script is already
+ * loaded, never re-runs, and the freshly mounted div stays an empty grey box.
+ * This explicitly initializes any widget that hasn't been initialized yet,
+ * once `window.Calendly` is available.
+ */
+function initNewInlineWidgets() {
+  const init = () => {
+    document
+      .querySelectorAll<HTMLElement>('.calendly-inline-widget[data-url]')
+      .forEach((el) => {
+        // Calendly replaces the div's children when it initializes; an iframe
+        // child means this element is already live.
+        if (el.querySelector('iframe')) return;
+        window.Calendly?.initInlineWidget({
+          url: el.dataset.url as string,
+          parentElement: el,
+        });
+      });
+  };
+
+  if (window.Calendly) {
+    init();
+    return;
+  }
+  const script = document.querySelector(`script[src="${WIDGET_JS}"]`);
+  if (script) {
+    script.addEventListener('load', init, { once: true });
+  } else {
+    // Assets were consumed by an earlier visit but the script tag is gone
+    // (shouldn't happen) — poll briefly for the global instead.
+    let attempts = 0;
+    const timer = window.setInterval(() => {
+      attempts += 1;
+      if (window.Calendly) {
+        window.clearInterval(timer);
+        init();
+      } else if (attempts > 50) {
+        window.clearInterval(timer);
+      }
+    }, 100);
+  }
+}
+
+/**
  * Loads the widget assets and fires a Lead when Calendly reports a completed
  * booking. `niche` is attached so Events Manager can attribute the conversion
  * to the same vertical as the Contact click that preceded it.
@@ -45,6 +99,7 @@ export function loadCalendlyAssets() {
 export function useCalendlyLeadTracking(niche?: string | null, source = 'free-pilot') {
   useEffect(() => {
     loadCalendlyAssets();
+    initNewInlineWidgets();
 
     const onMessage = (e: MessageEvent) => {
       // Without this any embedded third-party frame could post a fake booking
