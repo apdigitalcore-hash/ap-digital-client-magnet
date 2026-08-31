@@ -4050,7 +4050,7 @@ If you didn't ask in person, send a text or email within 24 hours while the expe
 
 ### 3. Add a Review Link to Your Email Signature
 
-Every email you send is a review opportunity. Add a line to your email signature: "Loved working with us? [Leave a Google review](your-link)." This generates 2–5 reviews per month passively for most businesses.
+Every email you send is a review opportunity. Add a line to your email signature: "Loved working with us? Leave a Google review: [your review link]." This generates 2–5 reviews per month passively for most businesses.
 
 ### 4. Create a QR Code for Your Counter or Receipt
 

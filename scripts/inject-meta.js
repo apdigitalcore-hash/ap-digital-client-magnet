@@ -611,6 +611,21 @@ function loadPostsFromSource() {
       category: field(head, 'category'),
     };
 
+    // The prerendered body used to be the excerpt alone, so all 453 in-body
+    // contextual links across the blog were invisible to crawlers, and a
+    // 1,400-word post was served to Google as two sentences.
+    const contentStart = chunk.indexOf('content: `');
+    if (contentStart !== -1) {
+      const from = contentStart + 'content: `'.length;
+      let i = from;
+      while (i < chunk.length) {
+        if (chunk[i] === '\\') { i += 2; continue; }
+        if (chunk[i] === '`') break;
+        i++;
+      }
+      rec.content = chunk.slice(from, i).replace(/\\([`$\\])/g, '$1');
+    }
+
     const faqBlock = chunk.match(/\n\s*faqs:\s*\[([\s\S]*?)\n\s*\],/);
     if (faqBlock) {
       const faqs = [];
@@ -674,6 +689,7 @@ for (const post of blogPosts) {
     if (src[key] !== undefined && src[key] !== post[key]) { post[key] = src[key]; syncedFields++; }
   }
   if (src.faqs) { post.faqs = src.faqs; faqPostCount++; }
+  if (src.content) post.content = src.content;
 }
 console.log(`   FAQ schema: ${faqPostCount} posts carry FAQs (parsed from blogPosts.ts)`);
 console.log(`   Meta sync:  ${syncedFields} field(s) refreshed from blogPosts.ts`);
@@ -917,6 +933,67 @@ for (const route of staticRoutes) {
   writeRoute(route.path, html);
 }
 
+
+// ── Markdown → HTML for the prerendered blog body ───────────────────────────
+// Deliberately small: the posts use only h2/h3, paragraphs, bullets, ordered
+// lists, tables, bold and links. Anything richer should be added here rather
+// than shipped as raw markdown text.
+function renderMarkdown(md) {
+  const inline = (t) => escapeHtml(t)
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, text, href) => `<a href="${href}">${text}</a>`)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+  const lines = md.split('\n');
+  const out = [];
+  let i = 0;
+
+  const cells = (row) => row.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+
+  while (i < lines.length) {
+    const line = lines[i];
+    const t = line.trim();
+
+    if (!t) { i++; continue; }
+
+    const h = t.match(/^(#{2,3})\s+(.*)$/);
+    if (h) { out.push(`<h${h[1].length}>${inline(h[2])}</h${h[1].length}>`); i++; continue; }
+
+    // table: header row, separator, then body rows
+    if (t.startsWith('|') && (lines[i + 1] || '').trim().match(/^\|[\s:|-]+\|$/)) {
+      const head = cells(t);
+      i += 2;
+      const rows = [];
+      while (i < lines.length && lines[i].trim().startsWith('|')) { rows.push(cells(lines[i].trim())); i++; }
+      out.push(
+        '<table><thead><tr>' + head.map(c => `<th>${inline(c)}</th>`).join('') + '</tr></thead><tbody>' +
+        rows.map(r => '<tr>' + r.map(c => `<td>${inline(c)}</td>`).join('') + '</tr>').join('') +
+        '</tbody></table>');
+      continue;
+    }
+
+    if (/^[-*]\s+/.test(t)) {
+      const items = [];
+      while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) { items.push(lines[i].trim().replace(/^[-*]\s+/, '')); i++; }
+      out.push('<ul>' + items.map(x => `<li>${inline(x)}</li>`).join('') + '</ul>');
+      continue;
+    }
+
+    if (/^\d+\.\s+/.test(t)) {
+      const items = [];
+      while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) { items.push(lines[i].trim().replace(/^\d+\.\s+/, '')); i++; }
+      out.push('<ol>' + items.map(x => `<li>${inline(x)}</li>`).join('') + '</ol>');
+      continue;
+    }
+
+    const para = [];
+    while (i < lines.length && lines[i].trim() && !/^(#{2,3}\s|\||[-*]\s|\d+\.\s)/.test(lines[i].trim())) {
+      para.push(lines[i].trim()); i++;
+    }
+    if (para.length) out.push(`<p>${inline(para.join(' '))}</p>`);
+  }
+  return out.join('');
+}
+
 // ── Generate blog post HTML ─────────────────────────────────────────────────
 
 console.log('\n📝 Generating blog post HTML...');
@@ -939,9 +1016,9 @@ for (const post of blogPosts) {
       ...(post.faqs?.length ? [faqSchema(post.faqs)] : []),
     ]
   };
-  const bodyContent = post.contentExcerpt
-    ? `<p>${escapeHtml(post.contentExcerpt)}</p>`
-    : '';
+  const bodyContent = post.content
+    ? renderMarkdown(post.content)
+    : (post.contentExcerpt ? `<p>${escapeHtml(post.contentExcerpt)}</p>` : '');
   const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article><nav aria-label="Related"><ul><li><a href="/blog">All Articles</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`;
   const html = injectIntoHtml(baseHtml, {
     title: post.metaTitle,
