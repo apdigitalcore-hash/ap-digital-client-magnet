@@ -115,57 +115,70 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      <section className="texture-rules relative flex items-center overflow-hidden bg-[#E4E7EB] sm:min-h-[100svh]">
+      {/* Two columns on desktop: copy left in the open space, photograph right.
+          Centred copy over a full-bleed photo meant the type had to compete with
+          the buildings; giving each its own column lets both be themselves. */}
+      <section className="texture-rules relative overflow-hidden bg-[#E4E7EB] lg:min-h-[100svh] lg:flex lg:items-center">
         <HeroLightFan />
-        <HeroSkyline />
 
-        <div className="relative z-10 w-full container-custom pt-24 pb-64 md:pt-20 md:pb-[31svh]">
-          <div className="max-w-3xl mx-auto text-center">
+        <div className="relative z-10 w-full container-custom pt-28 pb-0 sm:pt-32 lg:py-24">
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
 
-            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-8">
-              Performance Marketing — Vancouver, BC
-            </p>
+            {/* ── Copy ── */}
+            <div className="max-w-[560px] text-center lg:text-left">
+              <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-6">
+                Performance Marketing — Vancouver, BC
+              </p>
 
-            <h1 className="font-serif text-[2.5rem] sm:text-6xl md:text-[5rem] font-medium text-foreground leading-[1.05] tracking-tight mb-7">
-              Vancouver{' '}
-              <span className="italic">Performance</span>{' '}
-              Marketing Agency
-            </h1>
+              <h1 className="font-serif text-[2.5rem] sm:text-6xl lg:text-[4.25rem] xl:text-[4.75rem] font-medium text-foreground leading-[1.04] tracking-tight mb-6">
+                Vancouver{' '}
+                <span className="italic">Performance</span>{' '}
+                Marketing Agency
+              </h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-[520px] mx-auto mb-10 leading-relaxed">
-              We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
-            </p>
+              <p className="text-base sm:text-lg text-muted-foreground max-w-[480px] mx-auto lg:mx-0 mb-9 leading-relaxed">
+                We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
+              </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
-              <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
-                Book a Call
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
-              >
-                <PlayCircle className="w-6 h-6" strokeWidth={1.5} />
-                <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-5">
+                <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
+                  Book a Call
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="#how-it-works"
+                  className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <PlayCircle className="w-6 h-6" strokeWidth={1.5} />
+                  <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
+                </a>
+              </div>
+
+              {/* Trust bar — wraps under the CTAs, left-aligned with them on desktop. */}
+              <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-x-7 gap-y-3 text-foreground/55">
+                {[
+                  { icon: CalendarDays, label: 'Month-to-Month' },
+                  { icon: ShieldCheck, label: 'No Contracts' },
+                  { icon: Clock, label: '90-Day Guarantee' },
+                ].map(({ icon: Icon, label }, i) => (
+                  <div key={label} className="flex items-center gap-7">
+                    {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/15" />}
+                    <span className="flex items-center gap-2">
+                      <Icon className="w-4 h-4" strokeWidth={1.5} />
+                      <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Trust bar — sits with the copy, above the object. */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-foreground/55">
-              {[
-                { icon: CalendarDays, label: 'Month-to-Month' },
-                { icon: ShieldCheck, label: 'No Contracts' },
-                { icon: Clock, label: '90-Day Guarantee' },
-              ].map(({ icon: Icon, label }, i) => (
-                <div key={label} className="flex items-center gap-8">
-                  {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/15" />}
-                  <span className="flex items-center gap-2">
-                    <Icon className="w-4 h-4" strokeWidth={1.5} />
-                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
-                  </span>
-                </div>
-              ))}
+            {/* ── Photograph ── */}
+            {/* Bleeds to the right edge on desktop so the water runs off the page
+                rather than stopping at the container gutter. */}
+            <div className="-mx-6 h-[260px] sm:-mx-8 sm:h-[320px] lg:mx-0 lg:h-[64svh] lg:max-h-[560px] lg:-mr-[max(0px,calc((100vw-100%)/2))]">
+              <HeroSkyline />
             </div>
+
           </div>
         </div>
       </section>

@@ -93,47 +93,51 @@ export const HeroObject = () => (
 );
 
 /**
- * Hero skyline — Vancouver from the north shore, anchored to the base of the
- * hero in place of the sphere.
+ * Hero skyline — Vancouver from the north shore, in its own column beside the copy.
  *
- * The photograph is cropped to the band that carries information (mountains,
- * skyline, water) and its remaining sky is faded out with a mask, so the hero's
- * own #E4E7EB background supplies everything above it. That keeps the file
- * small and avoids a seam where the photo's sky meets the panel's.
+ * It keeps the photograph's natural square frame rather than being stretched
+ * across the full width. A square source cropped to a wide band throws away
+ * everything above the waterline: on a 1900px viewport the earlier full-bleed
+ * version was upscaling 1.85x and showing only the bottom fifth, so the
+ * mountains and sky — the reason to use this photo — were cropped out.
  *
- * alt is empty on purpose: the <h1> beside it already says "Vancouver", so
+ * The left and top edges are feathered into the section's #E4E7EB so the photo
+ * sits in the panel rather than on it.
+ *
+ * alt is empty by design: the <h1> beside it already says "Vancouver", so
  * describing the picture would only repeat the heading to a screen reader.
- * The image is decorative — it carries no information the copy does not.
- *
- * Source is 1024px wide, so 1024 is the largest honest width; a 2x export
- * would add bytes without adding detail. Replace both files if a higher
- * resolution original turns up.
  */
 export const HeroSkyline = () => (
-  <div
-    aria-hidden="true"
-    className="pointer-events-none absolute inset-x-0 bottom-0 z-[1]"
-  >
-    <picture>
+  // h-full on the img only works if every element between it and the sized
+  // wrapper is also full-height: <picture> is display:inline by default, so
+  // without this the image rendered at its natural square size and hung ~470px
+  // below the column, putting the skyline under the fold.
+  <div aria-hidden="true" className="pointer-events-none select-none h-full w-full overflow-hidden">
+    <picture className="block h-full w-full">
       <source
         type="image/webp"
         srcSet="/vancouver-skyline-640.webp 640w, /vancouver-skyline-1024.webp 1024w"
-        sizes="100vw"
+        sizes="(min-width: 1024px) 46vw, 100vw"
       />
       <img
         src="/vancouver-skyline-1024.jpg"
         srcSet="/vancouver-skyline-640.jpg 640w, /vancouver-skyline-1024.jpg 1024w"
-        sizes="100vw"
+        sizes="(min-width: 1024px) 46vw, 100vw"
         alt=""
         width={1024}
-        height={594}
-        // This is the hero's LCP element, so it must not be lazy.
+        height={1024}
+        // Hero LCP element — must not be lazy. React 18.3.1 drops the camelCase
+        // prop from the DOM, so it is spread lowercase to actually reach the browser.
         {...{ fetchpriority: 'high' }}
         decoding="async"
-        className="w-full select-none object-cover object-bottom h-[190px] sm:h-[28svh] sm:max-h-[320px]"
+        className="w-full h-full object-cover object-bottom"
         style={{
-          maskImage: 'linear-gradient(to bottom, transparent 0%, #000 34%, #000 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 34%, #000 100%)',
+          // One gradient, not two composited layers: -webkit-mask-composite
+          // takes different keywords than mask-composite, and the mismatched
+          // pair blanked the image out entirely in Chrome. A single diagonal
+          // feathers the top and left edges together into the panel.
+          maskImage: 'linear-gradient(112deg, transparent 0%, rgba(0,0,0,0.65) 22%, #000 46%)',
+          WebkitMaskImage: 'linear-gradient(112deg, transparent 0%, rgba(0,0,0,0.65) 22%, #000 46%)',
         }}
       />
     </picture>
