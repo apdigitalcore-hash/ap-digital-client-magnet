@@ -176,8 +176,10 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Full-bleed skyline along the base. */}
-        <div className="relative z-[1] w-full h-[240px] sm:h-[min(46svh,440px)] shrink-0">
+        {/* Full-bleed skyline along the base. No max-height cap: the photo
+            IS the hero's lower half (mountains, city, water), so it scales
+            with the viewport instead of being clamped to a strip. */}
+        <div className="relative z-[1] w-full h-[300px] sm:h-[52svh] lg:h-[58svh] shrink-0">
           <HeroSkyline />
         </div>
       </section>
