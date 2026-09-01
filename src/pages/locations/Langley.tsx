@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle, TrendingUp, Star, Zap, Target, Users, MapPin }
 import OurServices from '@/components/OurServices';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
+import apLogoMark from '@/assets/ap-logo-mark-256.webp';
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
@@ -125,6 +126,13 @@ const Langley = () => (
       <section className="relative bg-[#E4E7EB] pt-32 pb-24">
         <div className="container-custom">
           <div className="max-w-3xl animate-fade-up">
+            <img
+              src={apLogoMark}
+              alt=""
+              width={96}
+              height={96}
+              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-7"
+            />
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
               Langley{' '}
               <span className="italic">Google &amp; Meta Ads</span>{' '}
