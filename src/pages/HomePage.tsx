@@ -127,7 +127,9 @@ const HomePage = () => {
       <section className="texture-rules relative flex flex-col overflow-hidden bg-[#E4E7EB] lg:min-h-[100svh]">
         <HeroLightFan />
 
-        <div className="relative z-10 w-full container-custom flex-1 flex items-center pt-28 pb-14 sm:pt-32 lg:pt-24 lg:pb-16">
+        {/* items-end, not center: the copy anchors to the photo like the
+            reference, with the sky doing the breathing room above. */}
+        <div className="relative z-10 w-full container-custom flex-1 flex items-end pt-28 pb-8 sm:pt-32 sm:pb-10">
           <div className="max-w-[620px] text-left">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-6">
@@ -176,8 +178,10 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Full-bleed skyline along the base. */}
-        <div className="relative z-[1] w-full h-[240px] sm:h-[min(46svh,440px)] shrink-0">
+        {/* Full-bleed skyline along the base. No max-height cap: the photo
+            IS the hero's lower half (mountains, city, water), so it scales
+            with the viewport instead of being clamped to a strip. */}
+        <div className="relative z-[1] w-full h-[300px] sm:h-[52svh] lg:h-[58svh] shrink-0">
           <HeroSkyline />
         </div>
       </section>
