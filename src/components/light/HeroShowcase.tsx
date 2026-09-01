@@ -136,8 +136,8 @@ export const HeroSkyline = () => (
           // takes different keywords than mask-composite, and the mismatched
           // pair blanked the image out entirely in Chrome. A single diagonal
           // feathers the top and left edges together into the panel.
-          maskImage: 'linear-gradient(112deg, transparent 0%, rgba(0,0,0,0.65) 22%, #000 46%)',
-          WebkitMaskImage: 'linear-gradient(112deg, transparent 0%, rgba(0,0,0,0.65) 22%, #000 46%)',
+          maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.55) 12%, #000 30%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.55) 12%, #000 30%)',
         }}
       />
     </picture>
