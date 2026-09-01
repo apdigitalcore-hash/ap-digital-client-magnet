@@ -178,10 +178,13 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* Full-bleed skyline along the base. No max-height cap: the photo
-            IS the hero's lower half (mountains, city, water), so it scales
-            with the viewport instead of being clamped to a strip. */}
-        <div className="relative z-[1] w-full h-[300px] sm:h-[52svh] lg:h-[58svh] shrink-0">
+        {/* Full-bleed skyline along the base, sized against WIDTH not height.
+            The image scales with width, so a height in svh (or px) makes the
+            visible slice of the frame change with the window: 57% of the photo
+            at 1268px wide, 33% at 1900px. Deriving height from width keeps the
+            same slice — mountains, city, waterline — at every size. The svh
+            ceiling only guards very wide, short windows. */}
+        <div className="relative z-[1] w-full h-[58vw] sm:h-[50vw] sm:max-h-[62svh] shrink-0">
           <HeroSkyline />
         </div>
       </section>
