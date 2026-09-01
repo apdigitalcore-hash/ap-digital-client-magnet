@@ -499,7 +499,10 @@ const staticRoutes = [
       path: city,
       title: metaTitle,
       description: metaDesc,
-      body: `<h1>Digital Marketing Agency in ${cap}, BC</h1><p>AP Digital helps ${cap} businesses get more leads with Google Ads, Meta Ads, and social media marketing. We serve trades contractors, salons, real estate agents, coaches, and more. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`,
+      // H1 matches the React page exactly. It used to read "Digital Marketing
+      // Agency in ${cap}, BC" — an eighth headline, different from all seven
+      // rendered ones, and the only one Google actually crawled.
+      body: `<h1>${cap} Google &amp; Meta Ads + Social Media Management</h1><p>AP Digital helps ${cap} businesses get more leads with Google Ads, Meta Ads, and social media management. We serve trades contractors, salons, real estate agents, coaches, and more, across ${areas}. Month-to-month. No contracts.</p><nav aria-label="Quick links"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/how-to-choose-a-marketing-agency-vancouver">How to Choose an Agency</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>`,
       schema: { "@context": "https://schema.org", "@graph": [
         orgSchema, founderSchema,
         serviceSchema(`Digital Marketing ${cap} BC`, `Lead generation for ${cap} businesses using Google Ads & Meta Ads.`, `/${city}`),

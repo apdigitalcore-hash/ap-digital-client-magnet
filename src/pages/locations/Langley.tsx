@@ -6,7 +6,6 @@ import { ArrowRight, CheckCircle, TrendingUp, Star, Zap, Target, Users, MapPin }
 import OurServices from '@/components/OurServices';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
-import apLogo from '@/assets/ap-logo.png';
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
@@ -126,12 +125,10 @@ const Langley = () => (
       <section className="relative bg-[#E4E7EB] pt-32 pb-24">
         <div className="container-custom">
           <div className="max-w-3xl animate-fade-up">
-            <div className="mb-6">
-              <img src={apLogo} alt="AP Digital Marketing" className="w-20 h-20 sm:w-24 sm:h-24 rounded-full" />
-            </div>
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
               Langley{' '}
-              <span className="italic">Marketing</span>
+              <span className="italic">Google &amp; Meta Ads</span>{' '}
+              + Social Media Management
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mb-8">
               AP Digital is a Langley marketing company that gets local businesses more leads using Meta Ads, Google Ads and local SEO. From Langley City to the Township — trades, salons, realtors and coaches. If you're searching for a marketing agency near you in Langley, this is it. Month-to-month, managed personally by Arjun Sharma.
@@ -355,7 +352,28 @@ const Langley = () => (
         subheadline="Book a free 20-minute strategy call. We'll show you exactly what a campaign looks like for your business and your budget. No pitch, no pressure."
       />
 
-    </main>
+    
+      {/* Internal links — these pages previously dead-ended at /book, so nothing
+          flowed to the niche pages or between cities. */}
+      <section className="py-16 bg-white border-t border-foreground/[0.07]">
+        <div className="container-custom max-w-3xl text-muted-foreground leading-relaxed">
+          <h2 className="font-serif text-2xl text-foreground mb-4">More on working with us in Langley</h2>
+          <p className="mb-4">
+            We run <Link to="/services/paid-ads" className="underline underline-offset-4 hover:text-foreground">Google and Meta Ads</Link> and{' '}
+            <Link to="/services/social-media" className="underline underline-offset-4 hover:text-foreground">social media management</Link> for Langley businesses — most often <Link to="/trades-marketing" className="underline underline-offset-4 hover:text-foreground">trades and contractors</Link>, <Link to="/salon-marketing" className="underline underline-offset-4 hover:text-foreground">salons</Link>, <Link to="/real-estate-marketing" className="underline underline-offset-4 hover:text-foreground">real estate agents</Link>, <Link to="/dental-marketing" className="underline underline-offset-4 hover:text-foreground">dental clinics</Link>.
+          </p>
+          <p className="mb-4">
+            Full pricing is on the <Link to="/pricing" className="underline underline-offset-4 hover:text-foreground">pricing page</Link>, and{' '}
+            <Link to="/how-to-choose-a-marketing-agency-vancouver" className="underline underline-offset-4 hover:text-foreground">how to choose a marketing agency</Link> covers what to ask before you hire anyone.
+          </p>
+          <p>
+            Nearby: <Link to="/abbotsford" className="underline underline-offset-4 hover:text-foreground">Abbotsford</Link> and{' '}
+            <Link to="/surrey" className="underline underline-offset-4 hover:text-foreground">Surrey</Link>.
+          </p>
+        </div>
+      </section>
+
+      </main>
     <Footer />
   </>
 );
