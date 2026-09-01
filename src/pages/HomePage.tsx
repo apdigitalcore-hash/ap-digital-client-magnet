@@ -117,7 +117,7 @@ const HomePage = () => {
       {/* ─────────────────── HERO ─────────────────── */}
       {/* The photograph is the hero, not a band beneath it. Copy sits on the
           pale left of the frame, over a scrim that guarantees contrast. */}
-      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] min-h-[112svh] sm:min-h-[92svh] lg:min-h-[100svh]">
+      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] min-h-[96svh] sm:min-h-[92svh] lg:min-h-[100svh]">
         <HeroSkyline />
         <HeroScrim />
 
@@ -152,23 +152,28 @@ const HomePage = () => {
               </a>
             </div>
 
-            {/* Stacked, not a row: laid out horizontally these ran out along the
-                photograph, where the scrim has faded and the buildings begin, so
-                the last item was the hardest to read. Stacked they all stay in
-                the left column where the ground is lightest. Dividers dropped —
-                they separated a row, and there is no row now. */}
-            <div className="mt-7 sm:mt-10 flex flex-col items-start gap-2.5 sm:gap-3 text-foreground/80">
-              {[
-                { icon: CalendarDays, label: 'Month-to-Month' },
-                { icon: ShieldCheck, label: 'No Contracts' },
-                { icon: Clock, label: '90-Day Guarantee' },
-              ].map(({ icon: Icon, label }) => (
-                <span key={label} className="flex items-center gap-2.5">
-                  <Icon className="w-4 h-4 shrink-0" strokeWidth={1.5} />
-                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
-                </span>
-              ))}
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────────── TRUST BAR ─────────────────── */}
+      {/* These lived in the hero and spent the evening fighting the photograph
+          for contrast — over the buildings on desktop, over Canada Place on
+          mobile. On the white below it there is nothing behind them, so they
+          read at every size without a scrim propping them up. */}
+      <section className="bg-white border-b border-foreground/[0.07]">
+        <div className="container-custom py-6 sm:py-7">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 sm:gap-x-12 text-foreground/70">
+            {[
+              { icon: CalendarDays, label: 'Month-to-Month' },
+              { icon: ShieldCheck, label: 'No Contracts' },
+              { icon: Clock, label: '90-Day Guarantee' },
+            ].map(({ icon: Icon, label }) => (
+              <span key={label} className="flex items-center gap-2.5">
+                <Icon className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+                <span className="text-[10px] sm:text-[11px] font-semibold tracking-[0.2em] uppercase">{label}</span>
+              </span>
+            ))}
           </div>
         </div>
       </section>
