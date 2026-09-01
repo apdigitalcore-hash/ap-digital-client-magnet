@@ -113,20 +113,23 @@ export const HeroSkyline = () => (
   // below the copy instead — same element, same download, different box.
   <div
     aria-hidden="true"
-    className="pointer-events-none select-none absolute inset-x-0 bottom-0 h-[190px] sm:inset-0 sm:h-auto"
+    className="pointer-events-none select-none absolute inset-0"
   >
     <picture className="block h-full w-full">
-      {/* Mobile plate first — <source> matches in order, so the narrow-screen
-          crop has to precede the wide one or it never wins. */}
+      {/* Portrait plate for narrow screens, listed first because <source>
+          matches in document order. A phone viewport is ~0.46 wide-to-tall and
+          this plate is 0.474, so object-cover discards almost nothing — which
+          is why mobile can now be full-bleed like desktop instead of a cropped
+          landscape strip sitting in a band. */}
       <source
         media="(max-width: 639px)"
         type="image/webp"
-        srcSet="/vancouver-skyline-m750.webp 750w, /vancouver-skyline-m1100.webp 1100w"
+        srcSet="/vancouver-skyline-p560.webp 560w, /vancouver-skyline-p864.webp 864w"
         sizes="100vw"
       />
       <source
         media="(max-width: 639px)"
-        srcSet="/vancouver-skyline-m750.jpg 750w, /vancouver-skyline-m1100.jpg 1100w"
+        srcSet="/vancouver-skyline-p560.jpg 560w, /vancouver-skyline-p864.jpg 864w"
         sizes="100vw"
       />
       <source
@@ -184,7 +187,7 @@ export const HeroScrim = () => (
       className="pointer-events-none absolute inset-0 sm:hidden"
       style={{
         background:
-          'linear-gradient(to bottom, rgba(228,231,235,0.97) 0%, rgba(228,231,235,0.94) 48%, rgba(228,231,235,0.35) 62%, rgba(228,231,235,0) 74%)',
+          'linear-gradient(to bottom, rgba(228,231,235,0.82) 0%, rgba(228,231,235,0.72) 42%, rgba(228,231,235,0.30) 60%, rgba(228,231,235,0) 72%)',
       }}
     />
   </>

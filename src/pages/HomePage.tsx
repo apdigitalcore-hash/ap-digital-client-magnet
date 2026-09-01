@@ -117,24 +117,24 @@ const HomePage = () => {
       {/* ─────────────────── HERO ─────────────────── */}
       {/* The photograph is the hero, not a band beneath it. Copy sits on the
           pale left of the frame, over a scrim that guarantees contrast. */}
-      <section className="texture-rules relative isolate flex items-center overflow-hidden bg-[#E4E7EB] sm:min-h-[92svh] lg:min-h-[100svh]">
+      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] min-h-[112svh] sm:min-h-[92svh] lg:min-h-[100svh]">
         <HeroSkyline />
         <HeroScrim />
 
-        <div className="relative z-10 w-full container-custom pt-24 pb-[214px] sm:pt-32 sm:pb-16 lg:py-24">
+        <div className="relative z-10 w-full container-custom pt-20 pb-16 sm:pt-32 lg:py-24">
           <div className="max-w-[620px] text-left">
 
-            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-6">
+            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-5 sm:mb-6">
               Performance Marketing — Vancouver, BC
             </p>
 
-            <h1 className="font-serif text-[2.5rem] sm:text-6xl lg:text-[4.5rem] font-medium text-foreground leading-[1.04] tracking-tight mb-6">
+            <h1 className="font-serif text-[2.4rem] sm:text-6xl lg:text-[4.5rem] font-medium text-foreground leading-[1.05] tracking-tight mb-5 sm:mb-6">
               Vancouver{' '}
               <span className="italic">Performance</span>{' '}
-              Marketing Agency
+              <span className="whitespace-nowrap">Marketing Agency</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-foreground/65 max-w-[500px] mb-8 sm:mb-9 leading-relaxed">
+            <p className="text-[15px] sm:text-lg text-foreground/70 max-w-[500px] mb-7 sm:mb-9 leading-relaxed">
               We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
             </p>
 
@@ -157,7 +157,7 @@ const HomePage = () => {
                 the last item was the hardest to read. Stacked they all stay in
                 the left column where the ground is lightest. Dividers dropped —
                 they separated a row, and there is no row now. */}
-            <div className="mt-8 sm:mt-10 flex flex-col items-start gap-3 text-foreground/70">
+            <div className="mt-7 sm:mt-10 flex flex-col items-start gap-2.5 sm:gap-3 text-foreground/80">
               {[
                 { icon: CalendarDays, label: 'Month-to-Month' },
                 { icon: ShieldCheck, label: 'No Contracts' },
