@@ -127,7 +127,9 @@ const HomePage = () => {
       <section className="texture-rules relative flex flex-col overflow-hidden bg-[#E4E7EB] lg:min-h-[100svh]">
         <HeroLightFan />
 
-        <div className="relative z-10 w-full container-custom flex-1 flex items-center pt-28 pb-14 sm:pt-32 lg:pt-24 lg:pb-16">
+        {/* items-end, not center: the copy anchors to the photo like the
+            reference, with the sky doing the breathing room above. */}
+        <div className="relative z-10 w-full container-custom flex-1 flex items-end pt-28 pb-8 sm:pt-32 sm:pb-10">
           <div className="max-w-[620px] text-left">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-6">
