@@ -152,21 +152,21 @@ const HomePage = () => {
               </a>
             </div>
 
-            {/* Bumped from 55% to 70% opacity: this row sits lowest, which is
-                where the photograph is darkest even with the scrim. */}
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-foreground/70">
+            {/* Stacked, not a row: laid out horizontally these ran out along the
+                photograph, where the scrim has faded and the buildings begin, so
+                the last item was the hardest to read. Stacked they all stay in
+                the left column where the ground is lightest. Dividers dropped —
+                they separated a row, and there is no row now. */}
+            <div className="mt-10 flex flex-col items-start gap-3 text-foreground/70">
               {[
                 { icon: CalendarDays, label: 'Month-to-Month' },
                 { icon: ShieldCheck, label: 'No Contracts' },
                 { icon: Clock, label: '90-Day Guarantee' },
-              ].map(({ icon: Icon, label }, i) => (
-                <div key={label} className="flex items-center gap-6">
-                  {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/20" />}
-                  <span className="flex items-center gap-2">
-                    <Icon className="w-4 h-4" strokeWidth={1.5} />
-                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
-                  </span>
-                </div>
+              ].map(({ icon: Icon, label }) => (
+                <span key={label} className="flex items-center gap-2.5">
+                  <Icon className="w-4 h-4 shrink-0" strokeWidth={1.5} />
+                  <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
+                </span>
               ))}
             </div>
           </div>
