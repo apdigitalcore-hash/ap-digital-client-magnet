@@ -118,21 +118,29 @@ const HomePage = () => {
       {/* The photograph is the hero, not a band beneath it. Copy sits on the
           pale left of the frame, over a scrim that guarantees contrast.
 
-          MOBILE HEIGHT IS IN vw, NOT svh, AND MUST STAY THAT WAY.
+          MOBILE HEIGHT IS DRIVEN BY CONTENT AND vw — NEVER vh/svh/dvh.
           Mobile browsers change the viewport height as the URL bar hides and
-          shows during scroll, so any vh/svh/dvh height makes the full-bleed
-          photograph resize mid-scroll — visibly. HeroShowcase carries the same
-          note from an earlier round on the sphere: vh was tried, then svh, and
-          both still resized on a real phone. Width does not change while
-          scrolling, so deriving the height from vw removes the variable
-          instead of guessing which unit misbehaves on which browser.
-          196vw is close to the portrait plate's own 1:2.11 ratio, so the frame
-          shows almost whole. Desktop keeps svh — no URL bar, no problem. */}
-      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] min-h-[196vw] sm:min-h-[92svh] lg:min-h-[100svh]">
+          shows, so any vh-family height makes the full-bleed photograph resize
+          mid-scroll, visibly. HeroShowcase carries the same note from an
+          earlier round on the sphere: vh was tried, then svh, and both still
+          resized on a real phone.
+
+          A fixed vw multiple does not work either. The plate is bottom-anchored,
+          so the skyline lands at (sectionHeight - 0.717 x width). Narrow phones
+          wrap the headline onto more lines, so the copy ends LOWER while a
+          ratio-based height gets SHORTER — at 170vw the copy cleared the
+          skyline by 41px at 430px wide and collided with it by 134px at 375px.
+
+          So the section takes its height from the content, and the copy reserves
+          the photograph underneath it: 72vw covers the 0.717 x width offset and
+          the +40px is the gap. That holds the same gap at every phone width, and
+          contains no unit the URL bar can change. Desktop keeps svh — no URL
+          bar, no problem. */}
+      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] sm:min-h-[92svh] lg:min-h-[100svh]">
         <HeroSkyline />
         <HeroScrim />
 
-        <div className="relative z-10 w-full container-custom pt-20 pb-16 sm:pt-32 lg:py-24">
+        <div className="relative z-10 w-full container-custom pt-20 pb-[calc(72vw+40px)] sm:pt-32 sm:pb-16 lg:py-24">
           <div className="max-w-[620px] text-left">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-5 sm:mb-6">
