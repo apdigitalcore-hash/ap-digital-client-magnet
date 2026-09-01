@@ -93,55 +93,85 @@ export const HeroObject = () => (
 );
 
 /**
- * Hero skyline — Vancouver from the north shore, in its own column beside the copy.
+ * Hero skyline — Vancouver from the north shore, as the hero's own backdrop.
  *
- * It keeps the photograph's natural square frame rather than being stretched
- * across the full width. A square source cropped to a wide band throws away
- * everything above the waterline: on a 1900px viewport the earlier full-bleed
- * version was upscaling 1.85x and showing only the bottom fifth, so the
- * mountains and sky — the reason to use this photo — were cropped out.
+ * Landscape plate, not a square. Three earlier versions forced a 1:1 photo into
+ * a wide slot, so the visible slice of the frame changed with window width and
+ * the composition was never the same twice. A 3:2 plate covering the whole
+ * section removes that failure mode: object-cover has almost nothing to crop.
  *
- * The left and top edges are feathered into the section's #E4E7EB so the photo
- * sits in the panel rather than on it.
+ * The copy sits ON the photograph rather than in a panel above it, so there is
+ * no mask, no fade and no seam to keep in sync — see HeroScrim for the one
+ * thing that does need managing, which is contrast under the text.
  *
- * alt is empty by design: the <h1> beside it already says "Vancouver", so
+ * alt is empty by design: the <h1> over it already says "Vancouver", so
  * describing the picture would only repeat the heading to a screen reader.
  */
 export const HeroSkyline = () => (
-  // h-full on the img only works if every element between it and the sized
-  // wrapper is also full-height: <picture> is display:inline by default, so
-  // without this the image rendered at its natural square size and hung ~470px
-  // below the column, putting the skyline under the fold.
-  <div aria-hidden="true" className="pointer-events-none select-none h-full w-full overflow-hidden">
+  // Full-bleed from sm up. On a narrow viewport a 3:2 plate cropped to a tall
+  // frame zooms to a vertical sliver of skyline, so mobile keeps it as a band
+  // below the copy instead — same element, same download, different box.
+  <div
+    aria-hidden="true"
+    className="pointer-events-none select-none absolute inset-x-0 bottom-0 h-[44svh] sm:inset-0 sm:h-auto"
+  >
     <picture className="block h-full w-full">
       <source
         type="image/webp"
         srcSet="/vancouver-skyline-640.webp 640w, /vancouver-skyline-1024.webp 1024w"
-        sizes="(min-width: 1024px) 46vw, 100vw"
+        sizes="100vw"
       />
       <img
         src="/vancouver-skyline-1024.jpg"
         srcSet="/vancouver-skyline-640.jpg 640w, /vancouver-skyline-1024.jpg 1024w"
-        sizes="(min-width: 1024px) 46vw, 100vw"
+        sizes="100vw"
         alt=""
         width={1024}
-        height={1024}
+        height={682}
         // Hero LCP element — must not be lazy. React 18.3.1 drops the camelCase
         // prop from the DOM, so it is spread lowercase to actually reach the browser.
         {...{ fetchpriority: 'high' }}
         decoding="async"
-        className="w-full h-full object-cover object-bottom"
-        style={{
-          // One gradient, not two composited layers: -webkit-mask-composite
-          // takes different keywords than mask-composite, and the mismatched
-          // pair blanked the image out entirely in Chrome. A single diagonal
-          // feathers the top and left edges together into the panel.
-          maskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 10%, #000 18%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 10%, #000 18%)',
-        }}
+        className="h-full w-full object-cover object-bottom"
       />
     </picture>
   </div>
+);
+
+/**
+ * Scrim under the copy.
+ *
+ * The photograph's left side is pale sky, so dark type reads on it at the
+ * reference size — but "reads at one size" is exactly the assumption that broke
+ * the previous three heroes. On a narrow or short window the skyline shifts
+ * left and the trust bar, which is only 55% opacity, would land on the towers.
+ * This keeps the left third reliably light regardless of how the photo crops,
+ * and fades out before it reaches the buildings.
+ */
+export const HeroScrim = () => (
+  <>
+    {/* Desktop: horizontal, because the copy is beside the skyline. */}
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 hidden sm:block"
+      style={{
+        background:
+          'linear-gradient(100deg, rgba(228,231,235,0.95) 0%, rgba(228,231,235,0.88) 30%, rgba(228,231,235,0.58) 52%, rgba(228,231,235,0) 70%)',
+      }}
+    />
+    {/* Mobile: vertical, because the copy is above the band, not beside it.
+        The desktop gradient left "NO CONTRACTS" sitting unreadable on the
+        Canada Place sails at 375px — a horizontal fade cannot protect text
+        that is stacked rather than side-by-side. */}
+    <div
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 sm:hidden"
+      style={{
+        background:
+          'linear-gradient(to bottom, rgba(228,231,235,0.97) 0%, rgba(228,231,235,0.94) 48%, rgba(228,231,235,0.35) 62%, rgba(228,231,235,0) 74%)',
+      }}
+    />
+  </>
 );
 
 export default HeroObject;

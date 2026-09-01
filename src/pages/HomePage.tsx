@@ -12,7 +12,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 // HeroObject (the sphere) is still exported from HeroShowcase; swapping it back
 // in here is a one-line change if the photograph does not earn its place.
-import { HeroLightFan, HeroSkyline } from '@/components/light/HeroShowcase';
+import { HeroSkyline, HeroScrim } from '@/components/light/HeroShowcase';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
@@ -115,21 +115,13 @@ const HomePage = () => {
       <Header />
 
       {/* ─────────────────── HERO ─────────────────── */}
-      {/* Copy sits top-left in the open sky; the photograph runs full-bleed
-          along the base. The column split this replaced shrank the photo to a
-          floating rectangle on tall viewports, with dead space above and below.
+      {/* The photograph is the hero, not a band beneath it. Copy sits on the
+          pale left of the frame, over a scrim that guarantees contrast. */}
+      <section className="texture-rules relative isolate flex items-center overflow-hidden bg-[#E4E7EB] min-h-[92svh] lg:min-h-[100svh]">
+        <HeroSkyline />
+        <HeroScrim />
 
-          The band shows a fixed slice of the FULL SQUARE frame rather than a
-          pre-cropped wide strip. That is what makes it survive a wide, short
-          laptop: at 1440x850 the strip version had upscaled 1.4x and cropped
-          from 71% down, cutting the mountains off. Squared and bottom-anchored,
-          the same 27-35% slice always contains mountains, city and water. */}
-      <section className="texture-rules relative flex flex-col overflow-hidden bg-[#E4E7EB] lg:min-h-[100svh]">
-        <HeroLightFan />
-
-        {/* items-end, not center: the copy anchors to the photo like the
-            reference, with the sky doing the breathing room above. */}
-        <div className="relative z-10 w-full container-custom flex-1 flex items-end pt-28 pb-8 sm:pt-32 sm:pb-10">
+        <div className="relative z-10 w-full container-custom pt-28 pb-[42svh] sm:pt-32 sm:pb-16 lg:py-24">
           <div className="max-w-[620px] text-left">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-6">
@@ -142,7 +134,7 @@ const HomePage = () => {
               Marketing Agency
             </h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-[500px] mb-9 leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/65 max-w-[500px] mb-9 leading-relaxed">
               We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
             </p>
 
@@ -153,21 +145,23 @@ const HomePage = () => {
               </Link>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-3 text-foreground/70 hover:text-foreground transition-colors"
               >
                 <PlayCircle className="w-6 h-6" strokeWidth={1.5} />
                 <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
               </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-foreground/55">
+            {/* Bumped from 55% to 70% opacity: this row sits lowest, which is
+                where the photograph is darkest even with the scrim. */}
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-foreground/70">
               {[
                 { icon: CalendarDays, label: 'Month-to-Month' },
                 { icon: ShieldCheck, label: 'No Contracts' },
                 { icon: Clock, label: '90-Day Guarantee' },
               ].map(({ icon: Icon, label }, i) => (
                 <div key={label} className="flex items-center gap-6">
-                  {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/15" />}
+                  {i > 0 && <span className="hidden sm:block h-4 w-px bg-foreground/20" />}
                   <span className="flex items-center gap-2">
                     <Icon className="w-4 h-4" strokeWidth={1.5} />
                     <span className="text-[10px] font-semibold tracking-[0.2em] uppercase">{label}</span>
@@ -176,16 +170,6 @@ const HomePage = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Full-bleed skyline along the base, sized against WIDTH not height.
-            The image scales with width, so a height in svh (or px) makes the
-            visible slice of the frame change with the window: 57% of the photo
-            at 1268px wide, 33% at 1900px. Deriving height from width keeps the
-            same slice — mountains, city, waterline — at every size. The svh
-            ceiling only guards very wide, short windows. */}
-        <div className="relative z-[1] w-full h-[58vw] sm:h-[50vw] sm:max-h-[62svh] shrink-0">
-          <HeroSkyline />
         </div>
       </section>
 
