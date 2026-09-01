@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital';
+const TITLE = 'Real Estate Leads BC — Marketing for Realtors, $759/mo';
 const DESC = 'Real estate marketing with Meta Ads & Google Ads for BC realtors. Serving Vancouver, Surrey & Burnaby. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/real-estate-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -109,7 +109,7 @@ const RealEstateMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Real Estate Marketing BC — Leads for Agents &amp; Brokerages
+          Real Estate Leads in BC for Agents &amp; Brokerages
         </h1>
 
         {/* Short intro */}

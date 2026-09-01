@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Salon Marketing Vancouver | Fill Every Chair | AP Digital';
+const TITLE = 'Salon Marketing Vancouver — More Bookings, $759/mo';
 const DESC = 'Meta Ads & Instagram content for Vancouver salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/salon-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -109,7 +109,7 @@ const SalonMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Salon Marketing — Get More Bookings with Meta Ads
+          Salon Marketing in Vancouver — More Bookings Every Week
         </h1>
 
         {/* Short intro */}

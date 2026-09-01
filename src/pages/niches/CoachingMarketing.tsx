@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Coaching Marketing BC | Get Consistent Clients | AP Digital';
+const TITLE = 'Coaching Marketing BC — Get Coaching Clients, $759/mo';
 const DESC = 'Coaching marketing with Meta Ads funnels & social media for BC life, business & fitness coaches. Month-to-month. No lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -109,7 +109,7 @@ const CoachingMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Coaching Marketing BC — Fill Your Calendar
+          Coaching Client Leads in BC
         </h1>
 
         {/* Short intro */}

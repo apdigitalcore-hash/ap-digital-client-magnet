@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Plumber Marketing Vancouver | More Calls | AP Digital';
+const TITLE = 'Plumber Marketing Vancouver — More Service Calls';
 const DESC = 'Plumber marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/plumber-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -113,7 +113,7 @@ const PlumberMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Plumber Marketing — Get More Service Calls with Google Ads
+          Plumber Leads in Metro Vancouver
         </h1>
 
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">

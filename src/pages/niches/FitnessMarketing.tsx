@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Gym Marketing Vancouver | More Members | AP Digital';
+const TITLE = 'Gym Marketing Vancouver — Fill Your Classes, $759/mo';
 const DESC = 'Meta Ads and Google Ads for Vancouver gyms, studios and personal trainers. From $759/month, month-to-month, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/fitness-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -108,7 +108,7 @@ const FitnessMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Gym &amp; Fitness Marketing — Fill Your Classes with Meta Ads
+          Gym &amp; Fitness Leads in Vancouver
         </h1>
 
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">

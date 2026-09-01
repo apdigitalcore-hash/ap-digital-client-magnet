@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Electrician Marketing Vancouver | Get More Jobs | AP Digital';
+const TITLE = 'Electrician Marketing Vancouver — More Jobs, $759/mo';
 const DESC = 'Electrician marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/electrician-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -113,7 +113,7 @@ const ElectricianMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Electrician Marketing — Get More Jobs with Google Ads
+          Electrician Leads in Metro Vancouver
         </h1>
 
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">

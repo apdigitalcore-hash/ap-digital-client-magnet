@@ -123,7 +123,7 @@ const PropertyManagementMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Fill Rental Vacancies Faster — Marketing for BC Property Managers
+          Property Management Leads in BC — Fill Vacancies Faster
         </h1>
 
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
