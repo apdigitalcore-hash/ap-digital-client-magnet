@@ -924,23 +924,147 @@ function loadStaticFaqs() {
 // The added text is the page's own FAQ content, which a visitor genuinely sees,
 // so the prerendered version describes the same page rather than inventing a
 // summary of it.
-function expandBodyWithFaqs(body, faqs) {
-  if (!faqs || !faqs.length) return body;
-  const items = faqs.slice(0, 4).map(
-    (f) => `<section><h2>${escapeHtml(f.q)}</h2><p>${escapeHtml(f.a)}</p></section>`).join('');
+
+/**
+ * Pulls the page's own content arrays out of the component: `included` (what the
+ * service covers) and `results` (the three factual stat blocks). Both are plain
+ * literals, so they extract cleanly — unlike the surrounding JSX prose, which is
+ * not worth parsing by regex.
+ */
+function loadStaticLists() {
+  const app = readFileSync(resolve(__dirname, '../src/App.tsx'), 'utf-8');
+  const routes = {};
+  for (const m of app.matchAll(/<Route path="\/([^"]*)" element=\{<(\w+)/g)) routes[m[1]] = m[2];
+  const files = {};
+  for (const m of app.matchAll(/const (\w+) = lazy\(\(\) => import\("\.([^"]+)"\)\);/g)) files[m[1]] = m[2];
+  for (const m of app.matchAll(/import (\w+) from "\.([^"]+)";/g)) files[m[1]] = m[2];
+
+  const STR = /'((?:[^'\\]|\\.)*)'/g;
+  const out = {};
+  for (const [path, comp] of Object.entries(routes)) {
+    const rel = files[comp];
+    if (!rel) continue;
+    const fp = resolve(__dirname, '../src' + rel + '.tsx');
+    if (!existsSync(fp)) continue;
+    const src = readFileSync(fp, 'utf-8');
+
+    const inc = src.match(/const included = \[([\s\S]*?)\n\];/);
+    const included = [];
+    if (inc) { STR.lastIndex = 0; let m; while ((m = STR.exec(inc[1]))) included.push(m[1].replace(/\\'/g, "'")); }
+
+    const res = src.match(/const results = \[([\s\S]*?)\n\];/);
+    const results = [];
+    if (res) {
+      for (const r of res[1].matchAll(/stat:\s*'((?:[^'\\]|\\.)*)'\s*,\s*label:\s*'((?:[^'\\]|\\.)*)'/g)) {
+        results.push({ stat: r[1].replace(/\\'/g, "'"), label: r[2].replace(/\\'/g, "'") });
+      }
+    }
+    if (included.length || results.length) out[path] = { included, results };
+  }
+  return out;
+}
+
+
+/**
+ * The prose the component renders: h2/h3 headings and body paragraphs, in
+ * document order. Together with the lists above this is the difference between
+ * a crawler seeing ~300 words of a page and seeing most of it.
+ *
+ * Deliberately conservative: JSX expressions are stripped rather than evaluated,
+ * and anything under 40 characters is dropped, since short fragments are labels
+ * and button text rather than content.
+ */
+function loadStaticProse() {
+  const app = readFileSync(resolve(__dirname, '../src/App.tsx'), 'utf-8');
+  const routes = {};
+  for (const m of app.matchAll(/<Route path="\/([^"]*)" element=\{<(\w+)/g)) routes[m[1]] = m[2];
+  const files = {};
+  for (const m of app.matchAll(/const (\w+) = lazy\(\(\) => import\("\.([^"]+)"\)\);/g)) files[m[1]] = m[2];
+  for (const m of app.matchAll(/import (\w+) from "\.([^"]+)";/g)) files[m[1]] = m[2];
+
+  const strip = (t) => t
+    .replace(/\{\/\*[\s\S]*?\*\/\}/g, '')
+    .replace(/\{'\s*'\}/g, ' ')
+    .replace(/\{[^{}]*\}/g, '')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const out = {};
+  for (const [path, comp] of Object.entries(routes)) {
+    const rel = files[comp];
+    if (!rel) continue;
+    const fp = resolve(__dirname, '../src' + rel + '.tsx');
+    if (!existsSync(fp)) continue;
+    const src = readFileSync(fp, 'utf-8');
+    const mainAt = src.indexOf('<main');
+    const body = mainAt >= 0 ? src.slice(mainAt) : src;
+    const blocks = [];
+    for (const m of body.matchAll(/<(h2|h3|p)\b[^>]*>([\s\S]*?)<\/\1>/g)) {
+      const t = strip(m[2]);
+      // Reject anything that still smells like source. Blog.tsx's search UI uses
+      // template literals and nested JSX that the stripper cannot flatten, and a
+      // fragment of it leaked into the prerendered body on the first run. A page
+      // is better off missing a paragraph than shipping code to Google.
+      if (t.length >= 40 && !/className|=>|[{}`]|undefined|\$\{/.test(t)) {
+        blocks.push({ tag: m[1], text: t });
+      }
+    }
+    if (blocks.length) out[path] = blocks;
+  }
+  return out;
+}
+
+function expandBodyWithFaqs(body, faqs, lists, prose) {
+  const parts = [];
+
+  // Page prose, minus anything the intro paragraph already carries.
+  if (prose && prose.length) {
+    const seen = body.replace(/<[^>]*>/g, ' ');
+    const fresh = prose.filter((b) => !seen.includes(b.text.slice(0, 60)));
+    if (fresh.length) {
+      parts.push('<section>' + fresh.map((b) => b.tag === 'p'
+        ? `<p>${escapeHtml(b.text)}</p>`
+        : `<${b.tag}>${escapeHtml(b.text)}</${b.tag}>`).join('') + '</section>');
+    }
+  }
+
+  // What the service actually covers. This was rendered client-side only, so a
+  // crawler saw none of it.
+  if (lists && lists.included && lists.included.length) {
+    parts.push('<section><h2>What you get</h2><ul>' +
+      lists.included.map((i) => `<li>${escapeHtml(i)}</li>`).join('') + '</ul></section>');
+  }
+  if (lists && lists.results && lists.results.length) {
+    parts.push('<section><h2>How we work</h2><ul>' +
+      lists.results.map((r) => `<li><strong>${escapeHtml(r.stat)}</strong> — ${escapeHtml(r.label)}</li>`).join('') +
+      '</ul></section>');
+  }
+  // Every FAQ, not the first four. The cap was costing these pages roughly half
+  // their answerable copy for no reason — the schema already carries them all.
+  if (faqs && faqs.length) {
+    parts.push('<section aria-label="Common questions">' + faqs.map(
+      (f) => `<section><h2>${escapeHtml(f.q)}</h2><p>${escapeHtml(f.a)}</p></section>`).join('') + '</section>');
+  }
+  if (!parts.length) return body;
+  const block = parts.join('');
   const navAt = body.indexOf('<nav');
-  const block = `<section aria-label="Common questions">${items}</section>`;
   return navAt >= 0 ? body.slice(0, navAt) + block + body.slice(navAt) : body + block;
 }
 
 {
   const staticFaqsForBody = loadStaticFaqs();
+  const staticLists = loadStaticLists();
+  const staticProse = loadStaticProse();
   let expanded = 0;
   for (const route of staticRoutes) {
     const faqs = staticFaqsForBody[route.path];
-    if (!faqs || !route.body) continue;
+    const lists = staticLists[route.path];
+    const prose = staticProse[route.path];
+    if ((!faqs && !lists && !prose) || !route.body) continue;
     const before = route.body.length;
-    route.body = expandBodyWithFaqs(route.body, faqs);
+    route.body = expandBodyWithFaqs(route.body, faqs, lists, prose);
     if (route.body.length > before) expanded++;
   }
   console.log(`   Body depth:    ${expanded} static page(s) expanded with their own FAQ copy`);
