@@ -10,7 +10,9 @@ import ProcessLight from '@/components/light/ProcessLight';
 import ServicesLight from '@/components/light/ServicesLight';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
-import HeroObject, { HeroLightFan } from '@/components/light/HeroShowcase';
+// HeroObject (the sphere) is still exported from HeroShowcase; swapping it back
+// in here is a one-line change if the photograph does not earn its place.
+import { HeroLightFan, HeroSkyline } from '@/components/light/HeroShowcase';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
@@ -115,7 +117,7 @@ const HomePage = () => {
       {/* ─────────────────── HERO ─────────────────── */}
       <section className="texture-rules relative flex items-center overflow-hidden bg-[#E4E7EB] sm:min-h-[100svh]">
         <HeroLightFan />
-        <HeroObject />
+        <HeroSkyline />
 
         <div className="relative z-10 w-full container-custom pt-24 pb-64 md:pt-20 md:pb-[31svh]">
           <div className="max-w-3xl mx-auto text-center">
