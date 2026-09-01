@@ -141,7 +141,7 @@ const HomePage = () => {
         <HeroScrim />
 
         <div className="relative z-10 w-full container-custom pt-20 pb-[calc(72vw+40px)] sm:pt-32 sm:pb-16 lg:py-24">
-          <div className="max-w-[620px] text-left">
+          <div className="max-w-[620px] mx-auto text-center sm:mx-0 sm:text-left">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-5 sm:mb-6">
               Performance Marketing — Vancouver, BC
@@ -153,11 +153,11 @@ const HomePage = () => {
               <span className="whitespace-nowrap">Marketing Agency</span>
             </h1>
 
-            <p className="text-[15px] sm:text-lg text-foreground/70 max-w-[500px] mb-7 sm:mb-9 leading-relaxed">
+            <p className="text-[15px] sm:text-lg text-foreground/70 max-w-[500px] mx-auto sm:mx-0 mb-7 sm:mb-9 leading-relaxed">
               We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:items-center sm:justify-start gap-4 sm:gap-5">
               <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
                 Book a Call
                 <ArrowRight className="w-4 h-4" />

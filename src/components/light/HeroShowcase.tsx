@@ -166,10 +166,12 @@ export const HeroSkyline = () => (
  */
 export const HeroScrim = () => (
   <>
-    {/* Desktop: horizontal, because the copy is beside the skyline. Eased once
-        the sharper plate landed — the copy column only needs the first ~30%
-        held light, and a heavier gradient was flattening the mountains for no
-        legibility gain. */}
+    {/* Desktop: horizontal, because the copy sits in the open left of the
+        frame — beside the skyline, not over it. Centring the copy here was
+        tried and reverted: this photograph's empty space is on the left, so a
+        centred block lands on the densest part of the city, and no scrim
+        rescues the subhead without washing the photograph out. Mobile centres
+        instead, where the copy sits above the skyline rather than beside it. */}
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 hidden sm:block"
