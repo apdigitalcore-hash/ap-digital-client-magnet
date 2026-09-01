@@ -118,16 +118,16 @@ export const HeroSkyline = () => (
     <picture className="block h-full w-full">
       <source
         type="image/webp"
-        srcSet="/vancouver-skyline-640.webp 640w, /vancouver-skyline-1024.webp 1024w"
+        srcSet="/vancouver-skyline-640.webp 640w, /vancouver-skyline-1024.webp 1024w, /vancouver-skyline-1402.webp 1402w"
         sizes="100vw"
       />
       <img
-        src="/vancouver-skyline-1024.jpg"
-        srcSet="/vancouver-skyline-640.jpg 640w, /vancouver-skyline-1024.jpg 1024w"
+        src="/vancouver-skyline-1402.jpg"
+        srcSet="/vancouver-skyline-640.jpg 640w, /vancouver-skyline-1024.jpg 1024w, /vancouver-skyline-1402.jpg 1402w"
         sizes="100vw"
         alt=""
-        width={1024}
-        height={682}
+        width={1402}
+        height={935}
         // Hero LCP element — must not be lazy. React 18.3.1 drops the camelCase
         // prop from the DOM, so it is spread lowercase to actually reach the browser.
         {...{ fetchpriority: 'high' }}
@@ -150,13 +150,16 @@ export const HeroSkyline = () => (
  */
 export const HeroScrim = () => (
   <>
-    {/* Desktop: horizontal, because the copy is beside the skyline. */}
+    {/* Desktop: horizontal, because the copy is beside the skyline. Eased once
+        the sharper plate landed — the copy column only needs the first ~30%
+        held light, and a heavier gradient was flattening the mountains for no
+        legibility gain. */}
     <div
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 hidden sm:block"
       style={{
         background:
-          'linear-gradient(100deg, rgba(228,231,235,0.95) 0%, rgba(228,231,235,0.88) 30%, rgba(228,231,235,0.58) 52%, rgba(228,231,235,0) 70%)',
+          'linear-gradient(100deg, rgba(228,231,235,0.92) 0%, rgba(228,231,235,0.82) 26%, rgba(228,231,235,0.38) 46%, rgba(228,231,235,0) 62%)',
       }}
     />
     {/* Mobile: vertical, because the copy is above the band, not beside it.
