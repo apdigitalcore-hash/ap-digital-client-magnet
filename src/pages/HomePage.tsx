@@ -157,14 +157,14 @@ const HomePage = () => {
               We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center sm:items-center sm:justify-start gap-4 sm:gap-5">
+            <div className="flex flex-col items-center sm:items-start gap-4 sm:gap-5">
               <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
                 Book a Call
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center gap-3 text-foreground/70 hover:text-foreground transition-colors"
+                className="inline-flex items-center gap-3 text-foreground/90 hover:text-foreground transition-colors"
               >
                 <PlayCircle className="w-6 h-6" strokeWidth={1.5} />
                 <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
