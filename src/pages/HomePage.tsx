@@ -116,8 +116,19 @@ const HomePage = () => {
 
       {/* ─────────────────── HERO ─────────────────── */}
       {/* The photograph is the hero, not a band beneath it. Copy sits on the
-          pale left of the frame, over a scrim that guarantees contrast. */}
-      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] min-h-[96svh] sm:min-h-[92svh] lg:min-h-[100svh]">
+          pale left of the frame, over a scrim that guarantees contrast.
+
+          MOBILE HEIGHT IS IN vw, NOT svh, AND MUST STAY THAT WAY.
+          Mobile browsers change the viewport height as the URL bar hides and
+          shows during scroll, so any vh/svh/dvh height makes the full-bleed
+          photograph resize mid-scroll — visibly. HeroShowcase carries the same
+          note from an earlier round on the sphere: vh was tried, then svh, and
+          both still resized on a real phone. Width does not change while
+          scrolling, so deriving the height from vw removes the variable
+          instead of guessing which unit misbehaves on which browser.
+          196vw is close to the portrait plate's own 1:2.11 ratio, so the frame
+          shows almost whole. Desktop keeps svh — no URL bar, no problem. */}
+      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] min-h-[196vw] sm:min-h-[92svh] lg:min-h-[100svh]">
         <HeroSkyline />
         <HeroScrim />
 
