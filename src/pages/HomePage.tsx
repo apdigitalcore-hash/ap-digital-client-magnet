@@ -117,11 +117,11 @@ const HomePage = () => {
       {/* ─────────────────── HERO ─────────────────── */}
       {/* The photograph is the hero, not a band beneath it. Copy sits on the
           pale left of the frame, over a scrim that guarantees contrast. */}
-      <section className="texture-rules relative isolate flex items-center overflow-hidden bg-[#E4E7EB] min-h-[92svh] lg:min-h-[100svh]">
+      <section className="texture-rules relative isolate flex items-center overflow-hidden bg-[#E4E7EB] sm:min-h-[92svh] lg:min-h-[100svh]">
         <HeroSkyline />
         <HeroScrim />
 
-        <div className="relative z-10 w-full container-custom pt-28 pb-[42svh] sm:pt-32 sm:pb-16 lg:py-24">
+        <div className="relative z-10 w-full container-custom pt-24 pb-[214px] sm:pt-32 sm:pb-16 lg:py-24">
           <div className="max-w-[620px] text-left">
 
             <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-6">
@@ -134,7 +134,7 @@ const HomePage = () => {
               Marketing Agency
             </h1>
 
-            <p className="text-base sm:text-lg text-foreground/65 max-w-[500px] mb-9 leading-relaxed">
+            <p className="text-base sm:text-lg text-foreground/65 max-w-[500px] mb-8 sm:mb-9 leading-relaxed">
               We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
             </p>
 
@@ -157,7 +157,7 @@ const HomePage = () => {
                 the last item was the hardest to read. Stacked they all stay in
                 the left column where the ground is lightest. Dividers dropped —
                 they separated a row, and there is no row now. */}
-            <div className="mt-10 flex flex-col items-start gap-3 text-foreground/70">
+            <div className="mt-8 sm:mt-10 flex flex-col items-start gap-3 text-foreground/70">
               {[
                 { icon: CalendarDays, label: 'Month-to-Month' },
                 { icon: ShieldCheck, label: 'No Contracts' },

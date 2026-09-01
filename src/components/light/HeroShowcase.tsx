@@ -113,9 +113,22 @@ export const HeroSkyline = () => (
   // below the copy instead — same element, same download, different box.
   <div
     aria-hidden="true"
-    className="pointer-events-none select-none absolute inset-x-0 bottom-0 h-[44svh] sm:inset-0 sm:h-auto"
+    className="pointer-events-none select-none absolute inset-x-0 bottom-0 h-[190px] sm:inset-0 sm:h-auto"
   >
     <picture className="block h-full w-full">
+      {/* Mobile plate first — <source> matches in order, so the narrow-screen
+          crop has to precede the wide one or it never wins. */}
+      <source
+        media="(max-width: 639px)"
+        type="image/webp"
+        srcSet="/vancouver-skyline-m750.webp 750w, /vancouver-skyline-m1100.webp 1100w"
+        sizes="100vw"
+      />
+      <source
+        media="(max-width: 639px)"
+        srcSet="/vancouver-skyline-m750.jpg 750w, /vancouver-skyline-m1100.jpg 1100w"
+        sizes="100vw"
+      />
       <source
         type="image/webp"
         srcSet="/vancouver-skyline-640.webp 640w, /vancouver-skyline-1024.webp 1024w, /vancouver-skyline-1402.webp 1402w"
