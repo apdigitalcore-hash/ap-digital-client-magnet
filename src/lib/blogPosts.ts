@@ -91,7 +91,7 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
     readTime: '15 min read',
-    dateModified: '2026-08-27',
+    dateModified: '2026-09-01',
     category: 'Marketing Strategy',
     content: `Social media marketing in Canada costs **$500 to $5,000+ per month** for management and strategy in 2026, plus another **$500 to $5,000 per month** in ad spend if you run paid campaigns. Here is the quick breakdown by tier so you can budget in seconds:
 
@@ -277,6 +277,9 @@ At AP DIGITAL, we build custom [social media marketing](/services/social-media) 
 
 **[Book your free strategy call today](/book)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
     faqs: [
+      { question: 'What is the cost for social media marketing in Canada?', answer: 'Management runs $500 to $5,000+ per month depending on the tier, and ad spend is separate — usually another $500 to $5,000 per month if you run paid campaigns. Budget tier is $500 to $1,000 for scheduling and basic content, growth is $1,500 to $3,000 for strategy plus paid management, and full-service is $3,000 to $5,000+ with video production and reporting. AP Digital charges a flat $849/month for social media management.' },
+      { question: 'How much does it cost to market on social media if you do it yourself?', answer: 'Doing it in-house is not free, it just moves the cost. Scheduling tools run $15 to $100 a month, stock assets and templates another $20 to $50, and the real expense is time: most owners spend six to ten hours a week on content, which at any sensible hourly rate exceeds an agency retainer. The honest comparison is not $0 versus $849 — it is your ten hours versus $849.' },
+      { question: 'How do social media marketing costs compare to other advertising costs?', answer: 'Social is usually the cheapest paid channel to start in Canada. Meta Ads clear around $0.50 to $2.00 per click for most local businesses, Google Search Ads run $2 to $8 depending on the trade, and traditional advertising — radio, print, direct mail — starts in the thousands with no per-click accountability. The cost of advertising is not just the spend, it is what you can measure afterwards.' },
       { question: 'What are typical social media agency rates in Canada?', answer: 'Most Canadian agencies bill a monthly retainer between $500 and $5,000 depending on scope. Per-post pricing runs $50–$250, hourly consulting $75–$200, and percentage-of-ad-spend deals 10–20%. For a small business a flat retainer is usually the safest: your cost is predictable, and unlike percentage-of-spend it does not reward the agency for spending more of your money.' },
       { question: 'How much do social media ads cost in Canada?', answer: 'Facebook and Instagram ads run $0.50–$3.50 per click and $10–$60 per lead. TikTok is cheaper at $0.30–$2.00 per click, LinkedIn far more expensive at $4–$12. This is ad spend paid directly to the platform and is separate from any agency management fee. Below about $500/month the platforms cannot gather enough conversion data to optimise properly.' },
       { question: 'How much does a social media manager cost in Canada?', answer: 'A freelance social media manager in Canada typically charges $500–$2,000/month depending on experience and scope. An agency with strategy, paid ads, and reporting will usually cost $1,500–$5,000/month.' },

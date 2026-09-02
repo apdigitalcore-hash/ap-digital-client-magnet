@@ -372,7 +372,7 @@ const Burnaby = () => (
           </p>
           <p className="mb-4">
             Full pricing is on the <Link to="/pricing" className="underline underline-offset-4 hover:text-foreground">pricing page</Link>, and{' '}
-            <Link to="/how-to-choose-a-marketing-agency-vancouver" className="underline underline-offset-4 hover:text-foreground">how to choose a marketing agency</Link> covers what to ask before you hire anyone.
+            <Link to="/how-to-choose-a-marketing-agency-vancouver" className="underline underline-offset-4 hover:text-foreground">how to choose a marketing agency</Link> covers what to ask before you hire anyone. If you are pricing it up, <Link to="/blog/how-much-does-social-media-marketing-cost-canada" className="underline underline-offset-4 hover:text-foreground">what social media marketing costs in Canada</Link> has the real numbers.
           </p>
           <p>
             Nearby: <Link to="/coquitlam" className="underline underline-offset-4 hover:text-foreground">Coquitlam</Link> and{' '}
