@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Coaching Marketing BC — Get Coaching Clients, $759/mo';
+const TITLE = 'Coaching Client Leads BC — Marketing | AP Digital';
 const DESC = 'Coaching marketing with Meta Ads funnels & social media for BC life, business & fitness coaches. Month-to-month. No lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/coaching-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

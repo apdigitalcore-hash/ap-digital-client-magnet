@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Electrician Marketing Vancouver — More Jobs, $759/mo';
+const TITLE = 'Electrician Marketing Vancouver — Jobs | AP Digital';
 const DESC = 'Electrician marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/electrician-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

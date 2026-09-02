@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'HVAC Marketing Vancouver — More Service Calls, $759/mo';
+const TITLE = 'HVAC Marketing Vancouver — Service Calls | AP Digital';
 const DESC = 'HVAC marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/hvac-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

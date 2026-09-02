@@ -22,7 +22,7 @@ import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, 
  * agency" phrasing ranks 68-82.
  */
 
-const TITLE = 'Property Management Marketing BC | Fill Vacancies Faster';
+const TITLE = 'Property Management Marketing BC | AP Digital';
 const DESC =
   'Meta and Google Ads for BC property managers. Send tenant enquiries to your own site instead of Marketplace. From $759/month, month-to-month, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/property-management-marketing';

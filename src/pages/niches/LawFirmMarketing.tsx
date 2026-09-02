@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Law Firm Marketing Vancouver — Case Leads, Not Clicks';
+const TITLE = 'Law Firm Marketing Vancouver — Case Leads | AP Digital';
 const DESC = 'Google & Meta Ads for Vancouver law firms — family, injury, immigration and real estate practices. Month-to-month, no lock-in contracts.';
 const CANONICAL = 'https://ap-digital.ca/law-firm-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

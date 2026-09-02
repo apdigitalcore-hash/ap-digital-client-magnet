@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Roofer Marketing Vancouver — More Roofing Jobs';
+const TITLE = 'Roofer Marketing Vancouver — Roofing Jobs | AP Digital';
 const DESC = 'Roofer marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/roofer-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Dental Marketing Vancouver — More Patients, No Contract';
+const TITLE = 'Dental Marketing Vancouver — Patient Leads | AP Digital';
 const DESC = 'Google Ads & Meta Ads for Vancouver dental clinics — new patient campaigns from $759/month. Month-to-month, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/dental-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

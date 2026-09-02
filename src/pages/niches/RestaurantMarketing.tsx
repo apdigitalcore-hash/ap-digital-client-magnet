@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Restaurant Marketing Vancouver — Fill More Tables';
+const TITLE = 'Restaurant Marketing Vancouver | AP Digital';
 const DESC = 'Get more reservations & walk-ins with Meta Ads, Google Ads & social media. AP Digital serves Vancouver restaurants & cafes. Month-to-month. No contracts.';
 const CANONICAL = 'https://ap-digital.ca/restaurant-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

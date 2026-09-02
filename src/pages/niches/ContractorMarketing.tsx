@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Contractor Marketing Vancouver — More Renovation Jobs';
+const TITLE = 'Contractor Marketing Vancouver | AP Digital';
 const DESC = 'General contractor marketing with Google Ads & Meta Ads for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/contractor-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
