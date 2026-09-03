@@ -587,10 +587,25 @@ function loadPostsFromSource() {
   const ts = readFileSync(resolve(__dirname, '../src/lib/blogPosts.ts'), 'utf-8');
   // Questions containing an apostrophe are written as double-quoted strings,
   // so both quote styles have to be accepted.
-  const STR = String.raw`((?:'(?:[^'\\]|\\.)*')|(?:"(?:[^"\\]|\\.)*"))`;
+  // Backticks included: one FreePilot answer is a template literal, and the
+  // FAQ-count assertion correctly refused to ship 6 of its 7 entries.
+  const STR = '((?:\'(?:[^\'\\\\]|\\\\.)*\')|(?:"(?:[^"\\\\]|\\\\.)*")|(?:`(?:[^`\\\\]|\\\\.)*`))';
+  // ${PAID_ADS.price} and friends are the only interpolations these strings use,
+  // and they resolve to literals in companyFacts. Substitute them rather than
+  // dropping the entry — the price is exactly the part a searcher wants.
+  const facts = readFileSync(resolve(__dirname, '../src/lib/companyFacts.ts'), 'utf-8');
+  const priceOf = (svc) => {
+    const m = facts.match(new RegExp(`key:\\s*'${svc}'[\\s\\S]*?price:\\s*'([^']*)'`));
+    return m ? m[1] : '';
+  };
+  const INTERP = {
+    'PAID_ADS.price': priceOf('paid-ads'),
+    'SOCIAL_MEDIA.price': priceOf('social-media'),
+  };
   const unquote = (lit) => {
     const q = lit[0];
-    return lit.slice(1, -1).replace(new RegExp(String.raw`\\([\\` + q + `])`, 'g'), '$1');
+    let v = lit.slice(1, -1).replace(new RegExp(String.raw`\\([\\` + q + `])`, 'g'), '$1');
+    return v.replace(/\$\{([A-Za-z_.]+)\}/g, (m, k) => (k in INTERP ? INTERP[k] : m));
   };
   const pairRe = new RegExp(
     String.raw`\{\s*question:\s*` + STR + String.raw`\s*,\s*answer:\s*` + STR + String.raw`\s*\}`, 'g');
@@ -770,17 +785,56 @@ function writeRoute(path, html) {
 
 // ── Homepage (highest-value SEO/GEO page) ──────────────────────────────────
 
-const homepageHtml = injectIntoHtml(baseHtml, {
-  title: 'Vancouver Digital Marketing Agency | AP Digital',
-  description: 'Vancouver marketing agency for trades, salons, realtors & coaches. Meta & Google Ads that generate predictable leads. Month-to-month, from $759/mo.',
+// The homepage is built here, before the sync block below, and is not a member
+// of staticRoutes — so it was the one page the drift protection never reached.
+// Its crawled title read "Vancouver Digital Marketing Agency" while the page
+// itself said "Performance", on the site's best organic page. Read the tuned
+// values from HomePage.tsx rather than restating them here.
+const homeMeta = loadStaticMeta()[''] || {};
+const HOME_TITLE = homeMeta.title || 'Vancouver Digital Marketing Agency | AP Digital';
+const HOME_DESC = homeMeta.description || 'Vancouver marketing agency for trades, salons, realtors & coaches. Meta & Google Ads that generate predictable leads. Month-to-month.';
+const HOME_H1 = homeMeta.h1 || 'Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses';
+
+const HOME_BODY = `<h1>${HOME_H1}</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>Google Ads &amp; Meta Ads specialists</li><li>Trades contractors are our primary niche</li><li>From $759/month — no lock-in contracts</li><li>90-day results guarantee</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>`;
+
+let homepageHtml = injectIntoHtml(baseHtml, {
+  title: HOME_TITLE,
+  description: HOME_DESC,
   canonical: BASE_URL + '/',
   schema: { "@context": "https://schema.org", "@graph": [
     websiteSchema, orgSchema, founderSchema,
-    webPageSchema('Vancouver Digital Marketing Agency | AP Digital', 'Performance marketing agency for BC small businesses.', '/'),
+    webPageSchema(HOME_TITLE, 'Performance marketing agency for BC small businesses.', '/'),
     breadcrumb([{ name: 'Home', url: '/' }]),
   ]},
-  body: '<h1>Vancouver Digital Marketing Agency — Predictable Leads for Local Businesses</h1><p>AP Digital is a Vancouver-based performance marketing agency that helps trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants get predictable leads every month through Google Ads, Meta Ads, and social media. Founded by Arjun Sharma. Month-to-month. No contracts. 90-day results guarantee.</p><ul><li>Google Ads &amp; Meta Ads specialists</li><li>Trades contractors are our primary niche</li><li>From $759/month — no lock-in contracts</li><li>90-day results guarantee</li></ul><nav aria-label="Services"><ul><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/services/social-media">Social Media</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/real-estate-marketing">Real Estate Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/contact">Book a Free Strategy Call</a></li></ul></nav>',
+  body: HOME_BODY,
 });
+
+// The homepage sits outside staticRoutes, so it also missed the body expansion
+// every other page received: 91 crawled words on the site's best organic page,
+// while the rendered page carries five FAQs and fifteen prose blocks. Same root
+// cause as the title drift — one page built on its own path, outside the loops.
+{
+  const faqs = loadStaticFaqs()[''];
+  const lists = loadStaticLists()[''];
+  const prose = loadStaticProse()[''];
+  const expanded = expandBodyWithFaqs(HOME_BODY, faqs, lists, prose);
+  if (expanded !== HOME_BODY) {
+    homepageHtml = injectIntoHtml(baseHtml, {
+      title: HOME_TITLE,
+      description: HOME_DESC,
+      canonical: BASE_URL + '/',
+      schema: { "@context": "https://schema.org", "@graph": [
+        websiteSchema, orgSchema, founderSchema,
+        webPageSchema(HOME_TITLE, 'Performance marketing agency for BC small businesses.', '/'),
+        breadcrumb([{ name: 'Home', url: '/' }]),
+        // The homepage renders five FAQs; without this the crawler saw none of
+        // them in schema, only as body text.
+        ...(faqs && faqs.length ? [faqSchema(faqs)] : []),
+      ]},
+      body: expanded,
+    });
+  }
+}
 // Write homepage as dist/index.html (overwrite the SPA shell)
 writeFileSync(resolve(distDir, 'index.html'), homepageHtml);
 console.log('  ✓ dist/index.html (homepage)');
@@ -868,10 +922,25 @@ function loadStaticFaqs() {
   for (const m of app.matchAll(/const (\w+) = lazy\(\(\) => import\("\.([^"]+)"\)\);/g)) files[m[1]] = m[2];
   for (const m of app.matchAll(/import (\w+) from "\.([^"]+)";/g)) files[m[1]] = m[2];
 
-  const STR = String.raw`((?:'(?:[^'\\]|\\.)*')|(?:"(?:[^"\\]|\\.)*"))`;
+  // Backticks included: one FreePilot answer is a template literal, and the
+  // FAQ-count assertion correctly refused to ship 6 of its 7 entries.
+  const STR = '((?:\'(?:[^\'\\\\]|\\\\.)*\')|(?:"(?:[^"\\\\]|\\\\.)*")|(?:`(?:[^`\\\\]|\\\\.)*`))';
+  // ${PAID_ADS.price} and friends are the only interpolations these strings use,
+  // and they resolve to literals in companyFacts. Substitute them rather than
+  // dropping the entry — the price is exactly the part a searcher wants.
+  const facts = readFileSync(resolve(__dirname, '../src/lib/companyFacts.ts'), 'utf-8');
+  const priceOf = (svc) => {
+    const m = facts.match(new RegExp(`key:\\s*'${svc}'[\\s\\S]*?price:\\s*'([^']*)'`));
+    return m ? m[1] : '';
+  };
+  const INTERP = {
+    'PAID_ADS.price': priceOf('paid-ads'),
+    'SOCIAL_MEDIA.price': priceOf('social-media'),
+  };
   const unquote = (lit) => {
     const q = lit[0];
-    return lit.slice(1, -1).replace(new RegExp(String.raw`\\([\\` + q + `])`, 'g'), '$1');
+    let v = lit.slice(1, -1).replace(new RegExp(String.raw`\\([\\` + q + `])`, 'g'), '$1');
+    return v.replace(/\$\{([A-Za-z_.]+)\}/g, (m, k) => (k in INTERP ? INTERP[k] : m));
   };
   const pairRe = new RegExp(
     String.raw`\{\s*question:\s*` + STR + String.raw`\s*,\s*answer:\s*` + STR + String.raw`\s*,?\s*\}`, 'g');
@@ -882,7 +951,11 @@ function loadStaticFaqs() {
     if (!rel) continue;
     const fp = resolve(__dirname, '../src' + rel + '.tsx');
     if (!existsSync(fp)) continue;
-    const block = readFileSync(fp, 'utf-8').match(/const faqs = \[([\s\S]*?)\n\];/);
+    // Three pages name this array something other than `faqs` — homepageFAQs,
+    // faqData, FAQS — and each was silently skipped, taking its FAQPage schema
+    // and its body copy with it. Match any FAQ-ish array name rather than one
+    // spelling.
+    const block = readFileSync(fp, 'utf-8').match(/const [A-Za-z_]*[Ff][Aa][Qq][A-Za-z_]* = \[([\s\S]*?)\n\];/);
     if (!block) continue;
 
     const faqs = [];
