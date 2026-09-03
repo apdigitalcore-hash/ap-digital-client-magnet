@@ -22,6 +22,12 @@ const scrollToBook = () => {
   document.getElementById('book')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
+// The no-param title, hoisted into the TITLE convention so inject-meta's
+// loadStaticMeta picks it up. Without it this was the one static route outside
+// the drift protection: its prerendered <title> could diverge from the rendered
+// one with nothing to catch it. Crawlers request /free-pilot without ?for=, so
+// this default is exactly what belongs in the prerendered HTML.
+const TITLE = 'Free 14-Day Ad Pilot | AP Digital';
 const CANONICAL = 'https://ap-digital.ca/free-pilot';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 const DESC =
@@ -227,7 +233,7 @@ const FreePilot = () => {
   const yourAds = niche ? `your ${niche} ads` : 'your ads';
   const title = niche
     ? `Free 14-Day Ad Pilot for ${niche.charAt(0).toUpperCase() + niche.slice(1)} Companies | AP Digital`
-    : 'Free 14-Day Ad Pilot | AP Digital';
+    : TITLE;
 
   // Helmet alone does not win here: the route ships prerendered HTML with a
   // baked-in <title>, and on the deployed build Helmet was not taking
