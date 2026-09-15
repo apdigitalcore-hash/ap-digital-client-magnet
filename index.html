@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNTRFJGYCN"></script>
+  <!-- Google tag (GA4) — the stream on the "AP Digital" property. Gated to the
+       production hostname, same as the Meta pixel below, so localhost and
+       Lovable previews never enter the dataset. -->
   <script>
+  (function () {
+    var h = location.hostname;
+    if (h !== 'ap-digital.ca' && h !== 'www.ap-digital.ca') return;
+    var id = 'G-X5T3PPQMRK';
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(s);
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-RNTRFJGYCN');
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', id);
+  })();
   </script>
 
   <!-- Meta Pixel — gated to production so localhost and Lovable previews
