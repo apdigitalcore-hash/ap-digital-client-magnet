@@ -1,16 +1,11 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Check, ArrowRight, Shield, Zap, Trophy, Star, Target, Megaphone } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { Check, ArrowRight, Shield, Zap, Trophy, Target, Megaphone } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import DarkCTA from '@/components/DarkCTA';
+import SectionLabel from '@/components/light/SectionLabel';
+import FaqLight from '@/components/light/FaqLight';
+import PastelCTA from '@/components/light/PastelCTA';
 import JsonLd from '@/components/JsonLd';
 import {
   organizationSchema,
@@ -120,7 +115,11 @@ const structuredData = {
 
 const Pricing = () => {
   return (
-    <main id="main-content" className="min-h-screen bg-near-black">
+    // Light system, matching the homepage, the 7 city pages and the 14 niche
+    // pages. This page was the last commercial one still on the old dark theme
+    // — near-black ground, white headings, teal accents — and it is linked from
+    // every one of those, so the jump was visible on the path to the money page.
+    <main id="main-content" className="min-h-screen bg-background">
       <Helmet>
         <title>{TITLE}</title>
         <meta name="description" content={DESC} />
@@ -134,108 +133,109 @@ const Pricing = () => {
         <meta name="twitter:title" content={TITLE} />
         <meta name="twitter:description" content={DESC} />
         <meta name="robots" content="index, follow" />
-        
       </Helmet>
       <JsonLd data={structuredData} />
 
       <Header />
 
-      {/* Hero */}
-      <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 bg-near-black overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,_rgba(20,184,166,0.12)_0%,_transparent_60%)]" />
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal/30 to-transparent" />
+      {/* Hero — same shell as the city pages: #E4E7EB ground, serif H1. */}
+      <section className="relative bg-[#E4E7EB] pt-32 pb-24">
+        <div className="container-custom">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-6 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+              Pricing
+            </p>
 
-        <div className="container-custom relative z-10 text-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal text-xs font-bold uppercase tracking-[0.2em] mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal" />
-            Pricing
-          </div>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-[1.04] tracking-tight">
-            Marketing Service<br />
-            <span className="text-gradient">Packages &amp; Pricing</span>
-          </h1>
-          <p className="text-base sm:text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
-            Per-service pricing built around how your business actually grows. Every service is month-to-month and backed by our 90-day results guarantee.
-          </p>
+            {/* Wording unchanged — restyled only. */}
+            <h1 className="font-serif text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl mb-6">
+              Marketing Service Packages &amp; Pricing
+            </h1>
 
-          {/* Trust bar */}
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-gray-400 mb-10">
-            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> No contracts</span>
-            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> 90-day guarantee</span>
-            <span className="flex items-center gap-2"><Check className="w-4 h-4 text-teal" strokeWidth={3} /> Cancel anytime</span>
-            <span className="flex items-center gap-2">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
-              ))}
-              <span className="ml-1">5.0 on Google</span>
-            </span>
-          </div>
+            <p className="mx-auto mb-9 max-w-2xl text-base leading-relaxed text-foreground/70 sm:text-lg">
+              Per-service pricing built around how your business actually grows. Every service is month-to-month and backed by our 90-day results guarantee.
+            </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/book" className="flex items-center gap-2">
-                Book a free strategy call
-                <ArrowRight className="w-5 h-5" />
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
+              <Link
+                to="/book"
+                className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
+              >
+                Book a Free Strategy Call
+                <ArrowRight className="h-4 w-4" />
               </Link>
-            </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Individual service cards */}
-      <section className="py-16 sm:py-20 bg-charcoal">
+      {/* Trust markers on white, matching the band under the homepage hero.
+          The Google rating claim is dropped: the profile has 2 reviews, so
+          "5.0 on Google" oversold a number a visitor can check in one click. */}
+      <section className="border-b border-foreground/[0.07] bg-white">
+        <div className="container-custom py-6 sm:py-7">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-foreground/70 sm:gap-x-12">
+            {['Month-to-Month', 'No Contracts', '90-Day Guarantee'].map((label) => (
+              <span key={label} className="flex items-center gap-2.5">
+                <Check className="h-4 w-4 shrink-0" strokeWidth={2} />
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] sm:text-[11px]">{label}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Service cards */}
+      <section className="bg-white py-24">
         <div className="container-custom">
-          <div className="text-center mb-10 sm:mb-14">
-            <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
-              Our services
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-3">
+          <div className="mb-14 text-center">
+            <SectionLabel label="Our Services" className="justify-center" />
+            <h2 className="mt-4 font-serif text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
               Pick what your business needs.
             </h2>
-            <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">
-              Transparent monthly pricing per service. No bundles, no contracts — just what you need to grow. Learn more about our <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">paid ads</Link> and <Link to="/services/social-media" className="text-teal underline hover:text-teal/80">social media</Link> services, or see <Link to="/case-studies" className="text-teal underline hover:text-teal/80">how we work</Link>.
+            <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/70 sm:text-lg">
+              Transparent monthly pricing per service. No bundles, no contracts — just what you need to grow. Learn more about our{' '}
+              <Link to="/services/paid-ads" className="underline underline-offset-4 hover:text-foreground">paid ads</Link> and{' '}
+              <Link to="/services/social-media" className="underline underline-offset-4 hover:text-foreground">social media</Link> services, or see{' '}
+              <Link to="/case-studies" className="underline underline-offset-4 hover:text-foreground">how we work</Link>.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+          <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
             {serviceCards.map((svc) => (
               <div
                 key={svc.name}
-                className="group flex flex-col rounded-2xl bg-charcoal-light border border-gray-800 hover:border-teal/30 transition-all duration-300 hover:-translate-y-0.5 p-6 sm:p-7"
+                className="elev-1 hover:elev-2 flex flex-col rounded-2xl bg-white p-7 transition-all duration-300 hover:-translate-y-0.5"
               >
-                {/* Icon + name */}
-                <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
-                    <svc.icon className="w-5 h-5 text-teal" strokeWidth={1.8} />
-                  </div>
-                  <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-teal">{svc.name}</p>
+                <div className="mb-5 flex items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EDEFF2]">
+                    <svc.icon className="h-5 w-5 text-foreground" strokeWidth={1.6} />
+                  </span>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">{svc.name}</p>
                 </div>
 
-                <p className="text-sm text-gray-400 leading-relaxed mb-5">{svc.description}</p>
+                <p className="mb-5 text-sm leading-relaxed text-foreground/70">{svc.description}</p>
 
-                {/* Price */}
-                <div className="rounded-xl bg-near-black/60 border border-gray-800 p-5 mb-5">
+                <div className="mb-5 rounded-xl bg-[#EDEFF2] p-5">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="font-display text-4xl font-black text-white">{svc.ourPrice}</span>
-                    <span className="text-gray-400 text-sm">{svc.period}</span>
+                    <span className="font-serif text-4xl font-medium text-foreground">{svc.ourPrice}</span>
+                    <span className="text-sm text-foreground/60">{svc.period}</span>
                   </div>
                 </div>
 
-                <div className="h-px bg-gray-800 mb-4" />
-
-                <ul className="space-y-2.5 flex-1 mb-6">
+                <ul className="mb-6 flex-1 space-y-2.5">
                   {svc.includes.map((item) => (
                     <li key={item} className="flex items-start gap-2.5">
-                      <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-teal/15 border border-teal/30 flex items-center justify-center">
-                        <Check className="w-2.5 h-2.5 text-teal" strokeWidth={3} />
-                      </span>
-                      <span className="text-sm text-gray-300 leading-snug">{item}</span>
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-foreground/70" strokeWidth={2.4} />
+                      <span className="text-sm leading-snug text-foreground/80">{item}</span>
                     </li>
                   ))}
                 </ul>
 
-                <Link to="/book" className="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl border border-teal/40 text-teal text-sm font-semibold hover:bg-teal/10 transition-colors duration-200">
-                  Get started <ArrowRight className="w-4 h-4" />
+                <Link
+                  to="/book"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-foreground/20 px-4 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-foreground transition-colors hover:bg-foreground hover:text-background"
+                >
+                  Get Started <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
             ))}
@@ -244,64 +244,33 @@ const Pricing = () => {
       </section>
 
       {/* Guarantees */}
-      <section className="py-16 sm:py-20 bg-charcoal">
+      <section className="bg-[#EDEFF2] py-24">
         <div className="container-custom">
-          <div className="text-center mb-10">
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+          <div className="mb-12 text-center">
+            <SectionLabel label="Why Us" className="justify-center" />
+            <h2 className="mt-4 font-serif text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl">
               Why clients trust us
             </h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
             {guarantees.map((g) => (
-              <div key={g.title} className="p-6 sm:p-7 rounded-2xl border border-gray-800 bg-charcoal-light/60 hover:border-teal/25 transition-colors">
-                <div className="w-11 h-11 rounded-xl bg-teal/10 border border-teal/20 flex items-center justify-center mb-4">
-                  <g.icon className="w-5 h-5 text-teal" />
-                </div>
-                <h3 className="font-display text-lg font-bold text-white mb-2 leading-tight">
-                  {g.title}
-                </h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{g.description}</p>
+              <div key={g.title} className="elev-1 rounded-2xl bg-white p-7">
+                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#EDEFF2]">
+                  <g.icon className="h-5 w-5 text-foreground" strokeWidth={1.6} />
+                </span>
+                <h3 className="mb-2 font-serif text-lg font-medium leading-tight text-foreground">{g.title}</h3>
+                <p className="text-sm leading-relaxed text-foreground/70">{g.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 sm:py-24 bg-charcoal">
-        <div className="container-custom max-w-3xl">
-          <div className="text-center mb-10 sm:mb-12">
-            <span className="inline-block text-[10px] font-bold tracking-[0.25em] uppercase text-teal mb-4">
-              Common questions
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 leading-tight">
-              Pricing <span className="text-gradient">FAQ</span>
-            </h2>
-            <p className="text-gray-400 text-base sm:text-lg">
-              Honest answers to the questions every business owner asks.
-            </p>
-          </div>
+      {/* FAQ — the shared component, so the accordion behaves as it does
+          everywhere else and the FAQ parser keeps finding `const faqs`. */}
+      <FaqLight faqs={faqs} />
 
-          <Accordion type="single" collapsible className="w-full space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={faq.question}
-                value={`faq-${i}`}
-                className="border border-gray-800 rounded-xl bg-charcoal-light/40 px-5 data-[state=open]:border-teal/40"
-              >
-                <AccordionTrigger className="text-left text-white font-semibold hover:no-underline py-5">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-gray-400 leading-relaxed pb-5">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      <DarkCTA
+      <PastelCTA
         headline="Ready to lock in your package?"
         subheadline="Book a free 30-minute strategy call. We'll review your current marketing, agree on a 90-day target, and quote you on the package that fits."
       />

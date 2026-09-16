@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import {
   Target,
   BarChart3,
@@ -18,6 +17,7 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PastelCTA from '@/components/light/PastelCTA';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import JsonLd from '@/components/JsonLd';
 import {
@@ -166,33 +166,31 @@ const About = () => {
 
       <main id="main-content">
         {/* Dark Hero */}
-        <section className="relative bg-near-black pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-teal/5 rounded-full blur-3xl" />
-          </div>
-          <div className="container-custom relative z-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-6">
-              <MapPin className="w-4 h-4" />
-              <span className="text-sm font-semibold uppercase tracking-wider">Vancouver, BC · Serving Metro Vancouver</span>
-            </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white max-w-4xl mb-6">
-              About <span className="text-gradient">AP Digital</span> — Built for Vancouver Small Business
+        {/* Light hero, matching the city and niche pages. */}
+        <section className="relative bg-[#E4E7EB] pt-32 pb-24">
+          <div className="container-custom">
+            <p className="mb-6 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+              <MapPin className="h-4 w-4" />
+              Vancouver, BC · Serving Metro Vancouver
+            </p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.05] tracking-tight text-foreground max-w-4xl mb-6">
+              About AP Digital — Built for Vancouver Small Business
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-3xl leading-relaxed">
+            <p className="text-foreground/70 text-lg md:text-xl max-w-3xl leading-relaxed">
               Founded by Arjun Sharma in Vancouver, BC, AP Digital is a specialist marketing agency helping salons, trades, real estate agents, and coaches generate predictable leads through short-form content and targeted paid advertising. No lock-in contracts. No vanity metrics. Just measurable results.
             </p>
           </div>
         </section>
 
         {/* Stats strip */}
-        <section className="bg-charcoal py-12 md:py-16 border-b border-gray-800">
+        <section className="bg-white py-12 md:py-16 border-b border-foreground/[0.07]">
           <div className="container-custom">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <stat.icon className="w-8 h-8 text-teal mx-auto mb-3" />
-                  <p className="font-display text-3xl md:text-4xl font-bold text-white mb-1">{stat.value}</p>
-                  <p className="text-gray-400 text-sm">{stat.label}</p>
+                  <stat.icon className="w-8 h-8 text-foreground/70 mx-auto mb-3" strokeWidth={1.6} />
+                  <p className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-1">{stat.value}</p>
+                  <p className="text-foreground/60 text-sm">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -202,12 +200,12 @@ const About = () => {
         {/* Meet the Founder */}
         <section className="container-custom py-16 md:py-24">
           <div className="max-w-5xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EDEFF2] text-foreground/70 mb-4">
               <Users className="w-4 h-4" />
               <span className="text-sm font-semibold uppercase tracking-wider">Meet the Founder</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              <Link to="/about/arjun-sharma" className="text-teal underline decoration-teal/40 underline-offset-4 hover:decoration-teal transition-colors">Arjun Sharma</Link> — Founder & Marketing Strategist
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight text-foreground mb-6">
+              <Link to="/about/arjun-sharma" className="underline underline-offset-4 hover:text-foreground/70 transition-colors">Arjun Sharma</Link> — Founder & Marketing Strategist
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed max-w-3xl">
               <p>
@@ -223,10 +221,10 @@ const About = () => {
                 Outside of AP Digital, Arjun is deeply embedded in the Vancouver small business community — from Surrey and Burnaby to Langley, Coquitlam, and the Fraser Valley. He understands how local markets behave, what kind of creative resonates with Canadian audiences, and how to build campaigns that feel native to the Lower Mainland rather than imported from Silicon Valley.
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
-                <a href="https://www.linkedin.com/in/arjun-sharma-9b2520395/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal text-sm font-medium hover:bg-teal/20 transition-colors">
+                <a href="https://www.linkedin.com/in/arjun-sharma-9b2520395/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-sm font-medium hover:bg-foreground hover:text-background transition-colors">
                   LinkedIn
                 </a>
-                <Link to="/about/arjun-sharma" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal text-sm font-medium hover:bg-teal/20 transition-colors">
+                <Link to="/about/arjun-sharma" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-sm font-medium hover:bg-foreground hover:text-background transition-colors">
                   Full Bio
                 </Link>
               </div>
@@ -235,9 +233,9 @@ const About = () => {
         </section>
 
         {/* Our Story */}
-        <section className="bg-muted/50 py-16 md:py-20">
+        <section className="bg-[#EDEFF2] py-16 md:py-20">
           <div className="container-custom max-w-4xl">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">Our Story</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-6">Our Story</h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
                 AP Digital was founded in Vancouver, BC after Arjun spent years watching local businesses get taken for a ride by agencies that cared more about billing cycles than business outcomes. Flashy campaigns with no leads. Expensive retainers with no accountability. Monthly reports full of impressions, reach, and engagement — but no actual revenue. It was broken, and we knew we could fix it.
@@ -257,7 +255,7 @@ const About = () => {
 
         {/* Who We Help */}
         <section className="container-custom py-16 md:py-20">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Who We Help</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-4">Who We Help</h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-2xl">
             We specialize in four industries. Staying focused means we bring playbooks that already work in your vertical — not experiments using your budget.
           </p>
@@ -266,10 +264,10 @@ const About = () => {
               <Link
                 key={niche.label}
                 to={niche.href}
-                className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:border-teal/50 transition-all duration-300 group"
+                className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:border-foreground/25 transition-all duration-300 group"
               >
-                <niche.icon className="w-8 h-8 text-teal mb-4" />
-                <h3 className="font-display text-lg font-bold text-foreground mb-2 group-hover:text-teal transition-colors">{niche.label}</h3>
+                <niche.icon className="w-8 h-8 text-foreground/70 mb-4" />
+                <h3 className="font-serif text-lg font-medium text-foreground mb-2 transition-colors">{niche.label}</h3>
                 <p className="text-muted-foreground text-sm">{niche.description}</p>
               </Link>
             ))}
@@ -277,16 +275,16 @@ const About = () => {
         </section>
 
         {/* What We Believe (Values) */}
-        <section className="bg-muted/50 py-16 md:py-20">
+        <section className="bg-[#EDEFF2] py-16 md:py-20">
           <div className="container-custom">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">What We Believe</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-4">What We Believe</h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-2xl">
               Four operating principles that guide every engagement we take on.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               {values.map((value) => (
                 <div key={value.title} className="bg-card border border-border rounded-xl p-6">
-                  <h3 className="font-display text-xl font-bold text-foreground mb-3">{value.title}</h3>
+                  <h3 className="font-serif text-xl font-medium text-foreground mb-3">{value.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               ))}
@@ -296,14 +294,14 @@ const About = () => {
 
         {/* Why AP DIGITAL */}
         <section className="container-custom py-16 md:py-20">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-10">Why AP Digital</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-10">Why AP Digital</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {differentiators.map((item) => (
               <div key={item.title} className="space-y-4">
-                <div className="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-teal" />
+                <div className="w-12 h-12 rounded-xl bg-[#EDEFF2] flex items-center justify-center">
+                  <item.icon className="w-6 h-6 text-foreground/70" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-foreground">{item.title}</h3>
+                <h3 className="font-serif text-xl font-medium text-foreground">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.description}</p>
               </div>
             ))}
@@ -311,13 +309,13 @@ const About = () => {
         </section>
 
         {/* FAQ */}
-        <section className="bg-muted/50 py-16 md:py-20">
+        <section className="bg-[#EDEFF2] py-16 md:py-20">
           <div className="container-custom max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal/10 border border-teal/20 text-teal mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#EDEFF2] text-foreground/70 mb-4">
               <MessageCircle className="w-4 h-4" />
               <span className="text-sm font-semibold uppercase tracking-wider">Frequently Asked</span>
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">Questions about AP Digital</h2>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-8">Questions about AP Digital</h2>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`faq-${index}`}>
@@ -331,7 +329,7 @@ const About = () => {
 
         {/* Cities We Serve */}
         <section className="container-custom py-16 md:py-20">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">Cities We Serve</h2>
+          <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-4">Cities We Serve</h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl">
             AP Digital works with small businesses across Metro Vancouver and the Fraser Valley — including Surrey, Burnaby, Langley, Coquitlam, Port Coquitlam, Maple Ridge, New Westminster, and the City of Vancouver.
           </p>
@@ -348,27 +346,19 @@ const About = () => {
               <Link
                 key={href}
                 to={href}
-                className="bg-card border border-border rounded-xl p-6 text-center hover:border-teal/50 hover:shadow-md transition-all"
+                className="bg-card border border-border rounded-xl p-6 text-center hover:border-foreground/25 hover:shadow-md transition-all"
               >
-                <MapPin className="w-5 h-5 text-teal mx-auto mb-2" />
+                <MapPin className="w-5 h-5 text-foreground/60 mx-auto mb-2" />
                 <span className="font-medium text-foreground">{city}</span>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="bg-near-black py-16 md:py-20">
-          <div className="container-custom text-center">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">Ready to Get Real Results?</h2>
-            <p className="text-primary-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Book a free strategy call with Arjun and let's talk about how AP Digital can generate predictable leads for your business.
-            </p>
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/book">Book Your Free Strategy Call</Link>
-            </Button>
-          </div>
-        </section>
+        <PastelCTA
+          headline="Ready to Get Real Results?"
+          subheadline="Book a free strategy call with Arjun and let's talk about how AP Digital can generate predictable leads for your business."
+        />
       </main>
 
       <Footer />
