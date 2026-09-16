@@ -60,8 +60,9 @@ const Header = () => {
   // of the site is light now, so the list tracks the DARK heroes instead and
   // anything unlisted safely defaults to dark, readable chrome.
   const darkHeroPrefixes = [
-    '/about',            // covers /about/arjun-sharma
-    '/pricing',
+    // /about, /about/arjun-sharma and /pricing moved to the light editorial
+    // theme, so they came off this list for the same reason the city pages did:
+    // leaving them renders white nav text and a teal wordmark on a light hero.
     '/privacy-policy',
     '/terms-of-service',
     '/contact',
