@@ -725,32 +725,32 @@ function injectIntoHtml(html, { title, description, canonical, schema, body, rob
   html = html.replace(/<title>[^<]*<\/title>/, () => `<title>${title}</title>`);
 
   // Replace meta description
-  html = html.replace(/<meta name="description"[^>]*\/?>/, () => `<meta name="description" content="${escapeAttr(description)}" />`);
+  html = html.replace(/<meta name="description"[^>]*\/?>/, () => `<meta name="description" data-rh="true" content="${escapeAttr(description)}" />`);
 
   // Add canonical
   if (html.includes('rel="canonical"')) {
-    html = html.replace(/<link rel="canonical"[^>]*\/?>/, () => `<link rel="canonical" href="${canonical}" />`);
+    html = html.replace(/<link rel="canonical"[^>]*\/?>/, () => `<link rel="canonical" data-rh="true" href="${canonical}" />`);
   } else {
-    html = html.replace('</head>', () => `  <link rel="canonical" href="${canonical}" />\n</head>`);
+    html = html.replace('</head>', () => `  <link rel="canonical" data-rh="true" href="${canonical}" />\n</head>`);
   }
 
   // Per-route robots override (the shell defaults to "index, follow")
   if (robots) {
     if (/<meta name="robots"/.test(html)) {
-      html = html.replace(/<meta name="robots"[^>]*\/?>/, () => `<meta name="robots" content="${robots}" />`);
+      html = html.replace(/<meta name="robots"[^>]*\/?>/, () => `<meta name="robots" data-rh="true" content="${robots}" />`);
     } else {
-      html = html.replace('</head>', () => `  <meta name="robots" content="${robots}" />\n</head>`);
+      html = html.replace('</head>', () => `  <meta name="robots" data-rh="true" content="${robots}" />\n</head>`);
     }
   }
 
   // Replace OG tags
-  html = html.replace(/<meta property="og:url"[^>]*\/?>/, () => `<meta property="og:url" content="${canonical}" />`);
-  html = html.replace(/<meta property="og:title"[^>]*\/?>/, () => `<meta property="og:title" content="${escapeAttr(title)}" />`);
-  html = html.replace(/<meta property="og:description"[^>]*\/?>/, () => `<meta property="og:description" content="${escapeAttr(description)}" />`);
+  html = html.replace(/<meta property="og:url"[^>]*\/?>/, () => `<meta property="og:url" data-rh="true" content="${canonical}" />`);
+  html = html.replace(/<meta property="og:title"[^>]*\/?>/, () => `<meta property="og:title" data-rh="true" content="${escapeAttr(title)}" />`);
+  html = html.replace(/<meta property="og:description"[^>]*\/?>/, () => `<meta property="og:description" data-rh="true" content="${escapeAttr(description)}" />`);
 
   // Replace Twitter tags
-  html = html.replace(/<meta name="twitter:title"[^>]*\/?>/, () => `<meta name="twitter:title" content="${escapeAttr(title)}" />`);
-  html = html.replace(/<meta name="twitter:description"[^>]*\/?>/, () => `<meta name="twitter:description" content="${escapeAttr(description)}" />`);
+  html = html.replace(/<meta name="twitter:title"[^>]*\/?>/, () => `<meta name="twitter:title" data-rh="true" content="${escapeAttr(title)}" />`);
+  html = html.replace(/<meta name="twitter:description"[^>]*\/?>/, () => `<meta name="twitter:description" data-rh="true" content="${escapeAttr(description)}" />`);
 
   // Inject JSON-LD schema
   if (schema) {
@@ -1143,6 +1143,19 @@ function expandBodyWithFaqs(body, faqs, lists, prose) {
   console.log(`   Body depth:    ${expanded} static page(s) expanded with their own FAQ copy`);
 }
 
+// The blog hub shipped 57 words and three links; its article list only existed
+// after JavaScript ran, so discovery of every post depended on rendering.
+{
+  const hub = staticRoutes.find((r) => r.path === 'blog');
+  if (hub && hub.body && !hub.body.includes('aria-label="All articles"')) {
+    const items = blogPosts.map((p) =>
+      `<li><a href="/blog/${p.slug}">${escapeHtml(p.metaTitle.split(' | ')[0])}</a></li>`).join('');
+    const block = `<section aria-label="All articles"><h2>All articles</h2><ul>${items}</ul></section>`;
+    const navAt = hub.body.indexOf('<nav');
+    hub.body = navAt >= 0 ? hub.body.slice(0, navAt) + block + hub.body.slice(navAt) : hub.body + block;
+  }
+}
+
 console.log('\n📄 Generating static page HTML...');
 for (const route of staticRoutes) {
   const html = injectIntoHtml(baseHtml, {
@@ -1177,6 +1190,13 @@ function renderMarkdown(md) {
     const t = line.trim();
 
     if (!t) { i++; continue; }
+
+    // React swaps [LEAD_MAGNET:…] for the calculator; the prerendered body used to
+    // print the raw token instead. Give crawlers and no-JS readers a real fallback.
+    if (/^\[LEAD_MAGNET:[a-z0-9-]+\]$/.test(t)) {
+      out.push('<p><strong>Budget calculator:</strong> estimate your monthly ad spend and management cost with the interactive calculator on this page, or see <a href="/pricing">current pricing</a>.</p>');
+      i++; continue;
+    }
 
     const h = t.match(/^(#{2,3})\s+(.*)$/);
     if (h) { out.push(`<h${h[1].length}>${inline(h[2])}</h${h[1].length}>`); i++; continue; }
