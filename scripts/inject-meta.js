@@ -1174,6 +1174,18 @@ for (const route of staticRoutes) {
 // Deliberately small: the posts use only h2/h3, paragraphs, bullets, ordered
 // lists, tables, bold and links. Anything richer should be added here rather
 // than shipped as raw markdown text.
+
+// Mirrors src/lib/moneyLinks.ts — same JSON rules, so React and prerender agree.
+const MONEY = JSON.parse(readFileSync(resolve(__dirname, '../src/lib/moneyLinks.json'), 'utf8'));
+function getMoneyLinks(slug, title) {
+  const text = `${slug.replace(/-/g, ' ')} ${title}`.toLowerCase();
+  const hit = (rules, max) => rules.filter(r => r.match.some(m => text.includes(m))).slice(0, max).map(({ path, label }) => ({ path, label }));
+  const links = [...hit(MONEY.services, 1), ...hit(MONEY.niches, 2), ...hit(MONEY.cities, 2)];
+  if (!links.some(l => l.path.startsWith('/services'))) links.unshift({ path: '/services/paid-ads', label: 'Google & Meta Ads management' });
+  if (!links.some(l => MONEY.cities.some(c => c.path === l.path))) links.push({ path: '/vancouver', label: 'Vancouver' });
+  return [...links, { path: '/pricing', label: 'Pricing' }];
+}
+
 function renderMarkdown(md) {
   const inline = (t) => escapeHtml(t)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, text, href) => `<a href="${href}">${text}</a>`)
@@ -1268,7 +1280,7 @@ for (const post of blogPosts) {
     ? '<section aria-label="Frequently asked questions">' + post.faqs.map(
         (f) => `<section><h2>${escapeHtml(f.q)}</h2><p>${escapeHtml(f.a)}</p></section>`).join('') + '</section>'
     : '';
-  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}${faqBody}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article><nav aria-label="Related"><ul><li><a href="/blog">All Articles</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>`;
+  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}${faqBody}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article><nav aria-label="Related services"><ul>${getMoneyLinks(post.slug, post.title).map(l => `<li><a href="${l.path}">${escapeHtml(l.label)}</a></li>`).join('')}<li><a href="/blog">All Articles</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>`;
   const html = injectIntoHtml(baseHtml, {
     title: post.metaTitle,
     description: post.metaDescription,

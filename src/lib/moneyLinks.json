@@ -1,0 +1,31 @@
+{
+  "niches": [
+    { "match": ["salon", "barber", "beauty", "med spa", "nail"], "path": "/salon-marketing", "label": "Salon marketing" },
+    { "match": ["real estate", "realtor"], "path": "/real-estate-marketing", "label": "Real estate marketing" },
+    { "match": ["property manage", "rental", "vacanc"], "path": "/property-management-marketing", "label": "Property management marketing" },
+    { "match": ["plumb"], "path": "/plumber-marketing", "label": "Plumber marketing" },
+    { "match": ["electrician", "electrical"], "path": "/electrician-marketing", "label": "Electrician marketing" },
+    { "match": ["hvac", "heating", "furnace"], "path": "/hvac-marketing", "label": "HVAC marketing" },
+    { "match": ["roof"], "path": "/roofer-marketing", "label": "Roofer marketing" },
+    { "match": ["contractor", "renovat"], "path": "/contractor-marketing", "label": "Contractor marketing" },
+    { "match": ["trades", "tradesperson", "home service"], "path": "/trades-marketing", "label": "Trades marketing" },
+    { "match": ["dental", "dentist"], "path": "/dental-marketing", "label": "Dental marketing" },
+    { "match": ["gym", "fitness", "personal trainer"], "path": "/fitness-marketing", "label": "Gym & fitness marketing" },
+    { "match": ["restaurant", "cafe"], "path": "/restaurant-marketing", "label": "Restaurant marketing" },
+    { "match": ["law firm", "lawyer", "legal"], "path": "/law-firm-marketing", "label": "Law firm marketing" },
+    { "match": ["coach"], "path": "/coaching-marketing", "label": "Coaching marketing" }
+  ],
+  "cities": [
+    { "match": ["surrey"], "path": "/surrey", "label": "Surrey" },
+    { "match": ["burnaby"], "path": "/burnaby", "label": "Burnaby" },
+    { "match": ["richmond"], "path": "/richmond", "label": "Richmond" },
+    { "match": ["coquitlam", "tri-cities", "tri cities", "port moody"], "path": "/coquitlam", "label": "Coquitlam" },
+    { "match": ["langley"], "path": "/langley", "label": "Langley" },
+    { "match": ["abbotsford", "fraser valley"], "path": "/abbotsford", "label": "Abbotsford" },
+    { "match": ["vancouver"], "path": "/vancouver", "label": "Vancouver" }
+  ],
+  "services": [
+    { "match": ["social media", "instagram", "content", "tiktok"], "path": "/services/social-media", "label": "Social media management" },
+    { "match": ["google ads", "meta ads", "facebook ads", "instagram ads", "ppc", "ads"], "path": "/services/paid-ads", "label": "Google & Meta Ads management" }
+  ]
+}

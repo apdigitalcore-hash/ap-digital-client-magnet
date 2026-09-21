@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { getMoneyLinks } from '@/lib/moneyLinks';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -181,6 +182,17 @@ const BlogPost = () => {
             </p>
             <PreferredSourceButton />
           </div>
+
+          <nav aria-label="Related services" className="mt-12 border-t border-border pt-6">
+            <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">Where we can help</p>
+            <ul className="flex flex-wrap gap-2">
+              {getMoneyLinks(post.slug, post.title).map(l => (
+                <li key={l.path}>
+                  <Link to={l.path} className="inline-block rounded-full border border-border px-3 py-1.5 text-sm text-foreground hover:border-teal hover:text-teal transition-colors">{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
           <div className="mt-16 bg-card border border-border rounded-2xl p-8 text-center">
             <h2 className="font-display text-2xl font-bold text-foreground mb-3">Ready to Fill Your Schedule?</h2>
