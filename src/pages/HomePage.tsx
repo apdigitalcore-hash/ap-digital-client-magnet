@@ -151,19 +151,19 @@ const HomePage = () => {
             decoding="async"
             className="absolute bottom-0 right-0 h-full w-auto max-w-none"
             style={{
-              maskImage: 'linear-gradient(to right, transparent 0%, #000 34%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #000 34%)',
+              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 22%, #000 55%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 22%, #000 55%)',
             }}
           />
         </div>
 
-        <div className="relative z-10 w-full container-custom pt-28 pb-10 sm:pt-36 lg:flex-1 lg:flex lg:items-center lg:pt-32 lg:pb-12">
+        <div className="relative z-10 w-full container-custom pt-28 pb-10 sm:pt-36 lg:flex-1 lg:flex lg:items-center lg:pt-28 lg:pb-8">
           <div className="max-w-[640px]">
             <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/70 mb-5 sm:mb-6">
               Vancouver Digital Marketing
             </p>
 
-            <h1 className="font-serif text-[2.9rem] sm:text-6xl lg:text-[5rem] font-normal leading-[1.02] tracking-tight mb-6">
+            <h1 className="font-serif text-[2.9rem] sm:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-normal leading-[1.02] tracking-tight mb-6">
               Vancouver{' '}
               <span className="italic">Performance</span>{' '}
               <span className="sm:whitespace-nowrap">Marketing Agency</span>
@@ -198,7 +198,7 @@ const HomePage = () => {
           style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)' }}
         />
 
-        <div className="relative z-10 container-custom hidden lg:block pb-10">
+        <div className="relative z-10 w-full container-custom hidden lg:block pb-8">
           <div className="border-t border-white/20 pt-6 text-left text-[11px] tracking-[0.3em] uppercase text-white/70">
             Google Ads <span className="mx-4 text-white/40">/</span> Meta Ads <span className="mx-4 text-white/40">/</span> Social Media
           </div>
