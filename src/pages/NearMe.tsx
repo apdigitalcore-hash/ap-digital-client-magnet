@@ -92,7 +92,6 @@ const structuredData = {
         "@type": "PostalAddress",
         "addressLocality": "Vancouver",
         "addressRegion": "BC",
-        "postalCode": "V6B 2W9",
         "addressCountry": "CA"
       },
       "geo": {

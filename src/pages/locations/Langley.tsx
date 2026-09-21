@@ -83,7 +83,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Langley', url: '/langley' },
     ]),
     getWebPageSchema(TITLE, DESC, '/langley'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/langley","name":"AP Digital — Langley Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/langley","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/langley","name":"AP Digital — Langley Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/langley","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
       },"areaServed": [
         {"@type":"City","name":"Langley" },
         {"@type":"City","name":"Langley City" },

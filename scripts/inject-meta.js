@@ -45,7 +45,7 @@ const orgSchema = {
   "email": "apdigital.core@gmail.com",
   "founder": { "@id": `${BASE_URL}/#founder` },
   "foundingDate": "2024",
-  "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "postalCode": "V5K", "addressCountry": "CA" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA" },
   "geo": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
   // Kept in step with serviceAreaCities in src/lib/structuredData.ts; the
   // assertion below fails the build if the two drift apart again.

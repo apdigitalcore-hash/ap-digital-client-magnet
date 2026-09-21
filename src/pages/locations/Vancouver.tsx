@@ -83,7 +83,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Vancouver', url: '/vancouver' },
     ]),
     getWebPageSchema(TITLE, DESC, '/vancouver'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/vancouver","name":"AP Digital — Vancouver Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/vancouver","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V6B 2W9","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/vancouver","name":"AP Digital — Vancouver Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/vancouver","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
       },"geo": {"@type":"GeoCoordinates","latitude": 49.2827,"longitude": -123.1207
       },"areaServed": [
         {"@type":"City","name":"Vancouver" },

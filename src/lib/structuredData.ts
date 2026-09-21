@@ -98,7 +98,6 @@ export const organizationSchema = {
     "@type": "PostalAddress",
     "addressLocality": "Vancouver",
     "addressRegion": "BC",
-    "postalCode": "V5K",
     "addressCountry": "CA"
   },
   "geo": {

@@ -83,7 +83,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Coquitlam', url: '/coquitlam' },
     ]),
     getWebPageSchema(TITLE, DESC, '/coquitlam'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/coquitlam","name":"AP Digital — Coquitlam Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/coquitlam","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/coquitlam","name":"AP Digital — Coquitlam Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/coquitlam","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
       },"areaServed": [
         {"@type":"City","name":"Coquitlam" },
         {"@type":"City","name":"Port Moody" },

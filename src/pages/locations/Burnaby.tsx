@@ -83,7 +83,7 @@ const structuredData = {"@context":"https://schema.org","@graph": [
       { name: 'Burnaby', url: '/burnaby' },
     ]),
     getWebPageSchema(TITLE, DESC, '/burnaby'),
-    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/burnaby","name":"AP Digital — Burnaby Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/burnaby","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","postalCode":"V3Y 0G3","addressCountry":"CA"
+    {"@type":"LocalBusiness","@id":"https://ap-digital.ca/burnaby","name":"AP Digital — Burnaby Digital Marketing Agency","description": DESC,"url":"https://ap-digital.ca/burnaby","telephone":"+1-778-682-5772","email":"apdigital.core@gmail.com","priceRange":"$$","address": {"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"
       },"areaServed": [
         {"@type":"City","name":"Burnaby" },
         {"@type":"City","name":"New Westminster" },
