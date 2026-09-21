@@ -55,6 +55,7 @@ const FreePilot = lazy(() => import("./pages/FreePilot"));
 const ThankYou = lazy(() => import("./pages/ThankYou"));
 const Login = lazy(() => import("./pages/Login"));
 const AdminSeo = lazy(() => import("./pages/AdminSeo"));
+const AdminOpportunityBrief = lazy(() => import("./pages/AdminOpportunityBrief"));
 const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 
 
@@ -122,6 +123,7 @@ const App = () => {
               <Route path="/thank-you" element={<ThankYou />} />
               <Route path="/login" element={<Login />} />
               <Route path="/admin/seo" element={<AdminSeo />} />
+              <Route path="/admin/opportunity-brief" element={<AdminOpportunityBrief />} />
               <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
