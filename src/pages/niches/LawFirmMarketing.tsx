@@ -29,7 +29,7 @@ const included = [
 
 const results = [
   { icon: TrendingUp, stat: 'Google Ads', label: 'Search campaigns for high-intent case enquiries' },
-  { icon: Phone, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Phone, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
   { icon: Scale, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 

@@ -21,7 +21,7 @@ const included = [
   'Google Ads for high-intent local searches',
   'Google Business Profile setup & optimization',
   'Review generation & reputation management',
-  'Short-form video & social media content',
+  'Short-form video strategy & social media content',
   'Landing pages built for Abbotsford leads',
   'Monthly ROI reporting — leads & revenue',
   'Local SEO for Abbotsford service areas',
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: 'Is there a Abbotsford marketing company that works month-to-month?',
-    answer: 'Yes. AP Digital works month-to-month with every Abbotsford client — pause or cancel with 30 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
+    answer: 'Yes. AP Digital works month-to-month with every Abbotsford client — pause or cancel with 15 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
   },
   {
     question: 'How much does a marketing agency in Abbotsford cost?',

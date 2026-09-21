@@ -19,7 +19,7 @@ const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 const included = [
   'Facebook & Instagram lead ad campaigns',
   'Personal brand content strategy',
-  'Short-form video for listings & market updates',
+  'Short-form video plans for listings & market updates',
   'Google Ads for buyer & seller keywords',
   'Landing page & lead capture funnel',
   'CRM integration & automated follow-up',
@@ -29,7 +29,7 @@ const included = [
 
 const results = [
   { icon: Home, stat: 'Meta Ads', label: 'Facebook & Instagram lead campaigns' },
-  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
   { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     question: 'How is AP Digital different from other real estate marketing companies?',
-    answer: 'Most real estate marketing companies sell you a template. AP Digital builds custom campaigns managed by the founder — not a junior account manager. We focus exclusively on paid ads and social media, we work month-to-month, and we guarantee results within 90 days or we work for free until we deliver.',
+    answer: 'Most real estate marketing companies sell you a template. AP Digital builds custom campaigns managed by the founder — not a junior account manager. We focus exclusively on paid ads and social media, we work month-to-month, and if we miss the lead target we agree on in 90 days, we keep working free until we hit it.',
   },
   {
     question: 'How do I find a real estate marketing agency near me?',

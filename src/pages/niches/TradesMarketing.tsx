@@ -134,7 +134,7 @@ const TradesMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. If the phone isn't ringing more within 30 days, you pay nothing.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. If we miss the lead target we agree on in 90 days, we keep working free until we hit it.</p>
           </div>
         </div>
 

@@ -62,7 +62,7 @@ const TermsOfService = () => {
 
             <div>
               <h2 className="text-xl font-semibold text-primary-foreground mb-3">8. Termination</h2>
-              <p>Either party may terminate services with 30 days written notice. Upon termination, the client is responsible for payment of all services rendered up to the termination date. Any outstanding deliverables will be provided upon receipt of final payment.</p>
+              <p>Either party may terminate services with 15 days written notice. Upon termination, the client is responsible for payment of all services rendered up to the termination date. Any outstanding deliverables will be provided upon receipt of final payment.</p>
             </div>
 
             <div>

@@ -21,7 +21,7 @@ const included = [
   'Google Ads for high-intent local searches',
   'Google Business Profile setup & optimization',
   'Review generation & reputation management',
-  'Short-form video content (Reels & TikTok)',
+  'Short-form video strategy (Reels & TikTok)',
   'High-converting landing pages for Vancouver leads',
   'Monthly ROI reporting — leads & revenue only',
   'Local SEO targeting Vancouver neighbourhoods',
@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: 'Is there a Vancouver marketing company that works month-to-month?',
-    answer: 'Yes. AP Digital works month-to-month with every Vancouver client — pause or cancel with 30 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
+    answer: 'Yes. AP Digital works month-to-month with every Vancouver client — pause or cancel with 15 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
   },
   {
     question: 'How much does a marketing agency in Vancouver cost?',

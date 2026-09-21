@@ -29,7 +29,7 @@ const costs = [
   { line: 'Management fee', amount: '$759/month', note: 'Flat. Not a percentage of your spend.' },
   { line: 'Ad spend', amount: '$1,000+/month', note: 'Paid directly to Google or Meta on your own card.' },
   { line: 'Setup fee', amount: 'None', note: 'Tracking, research and build are inside the fee.' },
-  { line: 'Contract', amount: 'Month-to-month', note: "30 days' notice to pause or cancel. No exit fee." },
+  { line: 'Contract', amount: 'Month-to-month', note: "15 days' notice to pause or cancel. No exit fee." },
 ];
 
 const platformFit = [

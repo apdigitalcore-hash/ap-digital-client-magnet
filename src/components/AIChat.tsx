@@ -315,7 +315,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "We help realtors and real estate teams generate qualified buyer/seller leads on autopilot through paid ads, video content, and SEO.",
+      text: "We help realtors and real estate teams generate qualified buyer/seller leads on autopilot through Meta and Google ads and social media management.",
       cta: { label: 'See real estate marketing', to: '/real-estate-marketing' },
       suggestions: [
         { label: 'See pricing', intent: 'pricing' },
@@ -353,7 +353,7 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      text: "Paid ads can drive leads within 7–14 days of launch. SEO typically shows movement in 60–90 days and compounds from there. Web design projects ship in 3–4 weeks. Our 90-day guarantee covers all of it.",
+      text: `Campaigns typically go live within a week of kickoff, and how quickly leads follow depends on your market and budget. ${TERMS.guarantee}`,
       suggestions: [
         { label: 'See guarantee', intent: 'guarantee' },
         { label: 'See pricing', intent: 'pricing' },

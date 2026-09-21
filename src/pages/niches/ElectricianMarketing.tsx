@@ -29,7 +29,7 @@ const included = [
 
 const results = [
   { icon: Search, stat: 'Google Ads', label: 'Search campaigns for electrical keywords' },
-  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
   { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
@@ -136,7 +136,7 @@ const ElectricianMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">No contracts. If we don't deliver qualified electrical leads in 90 days, you don't pay. Month-to-month, always.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">No contracts. If we miss the lead target we agree on in 90 days, we keep working free until we hit it. Month-to-month, always.</p>
           </div>
         </div>
 

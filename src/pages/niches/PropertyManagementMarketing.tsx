@@ -41,7 +41,7 @@ const included = [
 
 const results = [
   { icon: Building2, stat: 'Meta + Google', label: 'Vacancy campaigns across both platforms' },
-  { icon: Clock, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Clock, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
   { icon: FileSearch, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 

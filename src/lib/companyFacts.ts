@@ -23,7 +23,7 @@ export const TERMS = {
   contract: 'Month-to-month. No long-term contracts, no cancellation fees.',
   guarantee:
     '90-day results guarantee — we agree on a lead-volume target at kickoff, and if we miss it by month 3 we keep working at no charge until we hit it.',
-  notice: '30 days\' notice to pause or cancel.',
+  notice: '15 days\' notice to pause or cancel.',
   adSpendSeparate:
     'Ad spend is separate from management and paid directly to Google or Meta — you keep control of the budget. We recommend a minimum of $1,000/month in spend for meaningful data.',
 } as const;

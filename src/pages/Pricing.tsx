@@ -70,7 +70,7 @@ const serviceCards = [
 const faqs = [
   {
     question: 'Do you require a long-term contract?',
-    answer: 'No. Every package is month-to-month. You can pause or cancel with 30 days\' notice — no hidden fees, no exit penalties. Most clients stay long-term because the campaigns are profitable, not because they\'re obligated.',
+    answer: 'No. Every package is month-to-month. You can pause or cancel with 15 days\' notice — no hidden fees, no exit penalties. Most clients stay long-term because the campaigns are profitable, not because they\'re obligated.',
   },
   {
     question: 'Is the ad spend included in the monthly fee?',

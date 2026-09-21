@@ -100,7 +100,7 @@ const About = () => {
     {
       icon: Video,
       title: 'Short-Form Content Experts',
-      description: 'We create scroll-stopping Reels, TikToks, and video ads that drive real action — not just likes. Video is the #1 performing format in 2026 and we have the playbook.',
+      description: 'We plan short-form content and run it as ads that drive real action — not just likes. You film on your phone; we handle the hooks, captions, posting and targeting.',
     },
   ];
 
@@ -133,7 +133,7 @@ const About = () => {
     },
     {
       title: 'Long-term partnerships over one-off gigs',
-      description: 'Marketing compounds. The clients who stay with us for 12+ months see 3-5x the results of one-off projects. That is why we build every engagement as a long-term relationship, not a quick transaction.',
+      description: 'Marketing compounds: campaigns get sharper as the data builds. That is why we build every engagement as a long-term relationship, not a quick transaction.',
     },
   ];
 
@@ -241,7 +241,7 @@ const About = () => {
                 AP Digital was founded in Vancouver, BC after Arjun spent years watching local businesses get taken for a ride by agencies that cared more about billing cycles than business outcomes. Flashy campaigns with no leads. Expensive retainers with no accountability. Monthly reports full of impressions, reach, and engagement — but no actual revenue. It was broken, and we knew we could fix it.
               </p>
               <p>
-                We built AP Digital with one mission: help Canadian small businesses get predictable, measurable leads using the strategies that actually work today — short-form video content and targeted paid advertising. Every dollar our clients spend is tied to a result. Every campaign is built to generate leads, not just impressions. Every report maps back to real dollars in the bank.
+                We built AP Digital with one mission: help Canadian small businesses get predictable, measurable leads using the strategies that actually work today — short-form content and targeted paid advertising. Every dollar our clients spend is tied to a result. Every campaign is built to generate leads, not just impressions. Every report maps back to real dollars in the bank.
               </p>
               <p>
                 Since launching, we have helped salons fill their chairs, contractors fill their calendars, and realtors close more deals — all through one philosophy: marketing is only valuable if it makes the phone ring.

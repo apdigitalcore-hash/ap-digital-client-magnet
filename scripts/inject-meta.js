@@ -515,7 +515,7 @@ const staticRoutes = [
           { q: `Who is the best digital marketing agency in ${cap} for contractors?`,
             a: `For ${cap} trades — plumbers, HVAC, electricians, roofers — the agency worth hiring is the one that targets at neighbourhood level rather than blanketing Metro Vancouver, and that reports cost per booked job rather than impressions. AP Digital runs Google Ads and Meta Ads for ${cap} contractors across ${areas}, month-to-month with no lock-in. Arjun Sharma manages every account personally.` },
           { q: `Is there a ${cap} marketing company that works month-to-month?`,
-            a: `Yes. AP Digital works month-to-month with every ${cap} client — pause or cancel with 30 days' notice, no exit fee.` },
+            a: `Yes. AP Digital works month-to-month with every ${cap} client — pause or cancel with 15 days' notice, no exit fee.` },
           { q: `How much does a marketing agency in ${cap} cost?`,
             a: `Paid ads management is $759/month and social media management is $849/month, quoted separately. Ad spend is separate again and goes straight to Google or Meta. Most ${cap} businesses start between $1,000 and $2,000/month all in.` },
         ]),

@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: 'Is there a Burnaby marketing company that works month-to-month?',
-    answer: 'Yes. AP Digital works month-to-month with every Burnaby client — pause or cancel with 30 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
+    answer: 'Yes. AP Digital works month-to-month with every Burnaby client — pause or cancel with 15 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
   },
   {
     question: 'How much does a marketing agency in Burnaby cost?',

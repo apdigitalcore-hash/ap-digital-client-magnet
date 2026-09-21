@@ -132,7 +132,7 @@ This is where most Canadian small businesses should start if they want actual re
 - Basic paid ad management and monthly reporting
 - A defined lead generation process
 
-This is the sweet spot for Vancouver salons, BC trades businesses, real estate agents, coaches, and local service providers. At AP DIGITAL, our [Social Media Management](/services/social-media) packages sit in this range and include content creation, posting, and reporting designed to generate leads, not just likes.
+This is the sweet spot for Vancouver salons, BC trades businesses, real estate agents, coaches, and local service providers. For comparison, AP DIGITAL's [Social Media Management](/services/social-media) is **$849/month** — below this range — covering two platforms, twelve custom posts, captions, scheduling and community management. That is the management fee only: ad spend is a separate bill, paid directly to Meta.
 
 ## Full-Service Tier: $3,000 – $5,000+ per Month
 
@@ -163,8 +163,8 @@ We've spoken with dozens of Canadian business owners who spent six to twelve mon
 |---|---|---|---|---|
 | DIY / Freelancer | $200 – $500 | Separate | Basic posts, little strategy | Solopreneurs with time to spare |
 | Budget Agency | $500 – $1,000 | Separate | 4–8 posts, basic captions | Basic presence only |
-| Growth Agency | $1,500 – $3,000 | Often included | Strategy, 12–20 posts, short video, reporting, light ads | Small businesses serious about leads |
-| Full-Service Agency | $3,000 – $5,000+ | Often included | Dedicated team, advanced ads, video, multi-platform, CRO | Scaling or competitive businesses |
+| Growth Agency | $1,500 – $3,000 | Separate | Strategy, 12–20 posts, short video, reporting, light ads | Small businesses serious about leads |
+| Full-Service Agency | $3,000 – $5,000+ | Separate | Dedicated team, advanced ads, video, multi-platform, CRO | Scaling or competitive businesses |
 
 Note: Management fees are separate from ad spend. Ad spend is paid directly to Meta, Google, or LinkedIn and typically ranges from $500 to $5,000 per month depending on your market and goals.
 
@@ -873,7 +873,7 @@ Three separate bills, and conflating them is where most quotes get confusing.
 | Content — photos and Reels | $0 if you shoot it, $400 – $1,200 if not |
 | Management | See below |
 
-For transparency, our own pricing: **paid ads management is $759/month** and **social media management is $849/month**. They are quoted separately so you only pay for what you use, and either works on its own. Everything is month-to-month with 30 days' notice, and ad spend is paid directly to Meta so you keep control of the budget.
+For transparency, our own pricing: **paid ads management is $759/month** and **social media management is $849/month**. They are quoted separately so you only pay for what you use, and either works on its own. Everything is month-to-month with 15 days' notice, and ad spend is paid directly to Meta so you keep control of the budget.
 
 Most Surrey salons starting out land between **$1,200 and $2,000 a month all in**, with the majority of that being ad spend rather than fees.
 
@@ -989,7 +989,7 @@ Three separate bills:
 | Content — photos and Reels | $0 if you shoot it, $400 – $1,200 if not |
 | Management | See below |
 
-Our own pricing, for transparency: **paid ads management is $759/month** and **social media management is $849/month**, quoted separately so you only pay for what you use. Everything is month-to-month with 30 days' notice, and ad spend goes directly to Meta rather than through us.
+Our own pricing, for transparency: **paid ads management is $759/month** and **social media management is $849/month**, quoted separately so you only pay for what you use. Everything is month-to-month with 15 days' notice, and ad spend goes directly to Meta rather than through us.
 
 Vancouver salons typically start between **$1,400 and $2,500 a month all in**. That is higher than [Surrey](/blog/salon-marketing-surrey), where competition is lower and cost per lead runs cheaper.
 
@@ -1063,7 +1063,7 @@ The term covers wildly different things, which is why quotes range so widely. In
 | Agency, content included | $1,500 – $3,000+ | The above plus monthly shoot days |
 | In-house hire | $3,500 – $5,000 | Full-time, only sensible for multi-location groups |
 
-Our social media management is **$849/month** — two platforms, twelve custom posts, captions, hashtags, scheduling and community management, month-to-month with 30 days' notice. Paid ads are a separate line at **$759/month**, because plenty of salons need one and not the other.
+Our social media management is **$849/month** — two platforms, twelve custom posts, captions, hashtags, scheduling and community management, month-to-month with 15 days' notice. Paid ads are a separate line at **$759/month**, because plenty of salons need one and not the other.
 
 ## The Honest Test: Do You Need This?
 
@@ -3181,7 +3181,7 @@ Whatever the number, these should be in scope:
 | Social media management | $500 – $1,500 |
 | Website changes, if needed | Usually project-priced |
 
-Our own pricing: **paid ads management is $759/month**, **social media management is $849/month**. Quoted separately so you only pay for what you use, month-to-month with 30 days' notice. Ad spend goes directly to Google or Meta — we never bill it through us, so you keep control and can see the real numbers.
+Our own pricing: **paid ads management is $759/month**, **social media management is $849/month**. Quoted separately so you only pay for what you use, month-to-month with 15 days' notice. Ad spend goes directly to Google or Meta — we never bill it through us, so you keep control and can see the real numbers.
 
 We recommend a minimum of **$1,000/month in ad spend** for the platforms to gather enough conversion data to optimise properly. Below roughly $500 they cannot, which is a platform limitation rather than an agency upsell.
 
@@ -3308,7 +3308,7 @@ The most common confusion in agency quotes is conflating ad spend with managemen
 
 **Management** pays for the work: campaign build, keyword and negative-keyword research, conversion tracking, ad copy and testing, bid strategy, landing page guidance, and reporting.
 
-Our management is **$759/month** for paid ads, flat, month-to-month with 30 days' notice. Not a percentage of spend — a percentage rewards the agency for spending more of your money whether or not it produces anything.
+Our management is **$759/month** for paid ads, flat, month-to-month with 15 days' notice. Not a percentage of spend — a percentage rewards the agency for spending more of your money whether or not it produces anything.
 
 ## What Management Is Actually Buying
 

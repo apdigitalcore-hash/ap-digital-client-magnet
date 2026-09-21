@@ -38,7 +38,7 @@ const homepageFAQs = [
   },
   {
     question: "How quickly will I see results from paid ads?",
-    answer: "Most clients see their first leads within the first 2 weeks of campaign launch. We offer a 90-day guarantee — if you don't see measurable results, you don't pay."
+    answer: "Campaigns typically go live within a week of kickoff. We agree a lead target at the start, and if we miss it by month three, we keep working free until we hit it."
   },
   {
     question: "What areas does AP Digital serve?",
@@ -154,7 +154,7 @@ const HomePage = () => {
             </h1>
 
             <p className="text-[15px] sm:text-lg text-foreground/70 max-w-[500px] mx-auto sm:mx-0 mb-7 sm:mb-9 leading-relaxed">
-              We run your ads, create your content, and deliver real leads — guaranteed results in 90 days or you don't pay.
+              We run your ads and your social content — and if we miss the lead target we agree on in 90 days, we keep working free until we hit it.
             </p>
 
             <div className="flex flex-col items-center sm:items-start gap-4 sm:gap-5">
@@ -231,8 +231,8 @@ const HomePage = () => {
 
           <div className="grid grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto">
             {[
-              { to: '/salon-marketing', name: 'Salons', tagline: 'Full bookings in 30 days' },
-              { to: '/real-estate-marketing', name: 'Real Estate', tagline: '15–30 qualified leads per month' },
+              { to: '/salon-marketing', name: 'Salons', tagline: 'Keep your chairs booked' },
+              { to: '/real-estate-marketing', name: 'Real Estate', tagline: 'Buyer & seller leads' },
               { to: '/trades-marketing', name: 'Trades', tagline: 'Stop relying on word-of-mouth' },
               { to: '/coaching-marketing', name: 'Coaching', tagline: 'Calendar filled with ideal clients' },
             ].map(({ to, name, tagline }) => (

@@ -29,7 +29,7 @@ const costs = [
   { line: 'Management fee', amount: '$849/month', note: '2 platforms, 12 custom posts, captions, scheduling, community management.' },
   { line: 'Content production', amount: 'You shoot it', note: 'We direct what to capture. Phone footage is genuinely fine.' },
   { line: 'Ad spend', amount: 'Not included', note: 'This is organic. Paid is a separate service at $759/month.' },
-  { line: 'Contract', amount: 'Month-to-month', note: "30 days' notice to pause or cancel. No exit fee." },
+  { line: 'Contract', amount: 'Month-to-month', note: "15 days' notice to pause or cancel. No exit fee." },
 ];
 
 const scope = [

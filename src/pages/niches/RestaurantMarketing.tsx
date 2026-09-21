@@ -17,7 +17,7 @@ const CANONICAL = 'https://ap-digital.ca/restaurant-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
-  'Meta Ads with food photography & video content',
+  'Meta Ads built around your food photos & video',
   'Google Ads for "restaurants near me" & cuisine-specific searches',
   'Google Business Profile optimization & review management',
   'Instagram content strategy & Reels production guidance',
@@ -29,7 +29,7 @@ const included = [
 
 const results = [
   { icon: TrendingUp, stat: 'Meta Ads', label: 'Instagram and Facebook campaigns for covers and walk-ins' },
-  { icon: Calendar, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Calendar, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
   { icon: Users, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 
@@ -131,7 +131,7 @@ const RestaurantMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. 90-day guarantee. If we don't bring you more customers, you don't pay.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. 90-day guarantee: if we miss the target we agree on, we keep working free until we hit it.</p>
           </div>
         </div>
 

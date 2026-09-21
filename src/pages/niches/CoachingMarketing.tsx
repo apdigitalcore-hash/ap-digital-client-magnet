@@ -18,7 +18,7 @@ const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Instagram & TikTok growth strategy',
-  'Short-form video content creation (Reels, TikToks)',
+  'Short-form video planning — hooks, scripts & captions (Reels, TikToks)',
   'Facebook & Instagram ad campaigns for client acquisition',
   'Personal brand positioning & content pillars',
   'Lead capture funnel & landing page',
@@ -29,7 +29,7 @@ const included = [
 
 const results = [
   { icon: Users, stat: 'Meta Ads', label: 'Facebook & Instagram lead campaigns' },
-  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, cancel anytime' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
   { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: 'Is there a contract for coaching marketing?',
-    answer: 'No. AP Digital works month-to-month with all coaching clients. No lock-in, no cancellation fees. We guarantee results within 90 days or we work for free until we deliver.',
+    answer: 'No. AP Digital works month-to-month with all coaching clients. No lock-in, no cancellation fees. If we miss the lead target we agree on in 90 days, we keep working free until we hit it.',
   },
   {
     question: 'Should coaches use Instagram or Facebook for marketing?',
@@ -129,7 +129,7 @@ const CoachingMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Content that builds authority</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Short-form video, email sequences, and social content that make you the obvious choice in your niche.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Short-form video plans, email sequences, and social content that make you the obvious choice in your niche.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />

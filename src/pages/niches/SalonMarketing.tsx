@@ -29,7 +29,7 @@ const included = [
 
 const results = [
   { icon: TrendingUp, stat: 'Meta Ads', label: 'Instagram and Facebook campaigns for new bookings' },
-  { icon: Calendar, stat: 'No Contract', label: 'Month-to-month, cancel with 30 days notice' },
+  { icon: Calendar, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
   { icon: Users, stat: '90-Day', label: 'Lead-volume target agreed before launch' },
 ];
 
@@ -134,7 +134,7 @@ const SalonMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. If we don't get you new bookings within 30 days, you don't owe us a thing.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. If we miss the bookings target we agree on in 90 days, we keep working free until we hit it.</p>
           </div>
         </div>
 

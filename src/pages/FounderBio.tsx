@@ -43,7 +43,7 @@ const structuredData = {
 
 const specialties = [
   { icon: Wrench, title: 'Trades & Contractor Lead Gen', desc: 'Built booked-estimate systems for plumbers, electricians, HVAC, roofers, and general contractors across Metro Vancouver. Primary niche.' },
-  { icon: Target, title: 'Google Ads & Local Service Ads', desc: 'Manages $50K+/month in Google Ads spend for local service businesses. Specialist in high-intent keyword targeting and call-based conversion tracking.' },
+  { icon: Target, title: 'Google Ads & Local Service Ads', desc: 'Runs Google Ads for local service businesses. Specialist in high-intent keyword targeting and call-based conversion tracking.' },
   { icon: BarChart3, title: 'Meta Ads for Service Businesses', desc: 'Designs Meta Ads funnels that generate leads for salons, coaches, real estate agents, and contractors across Metro Vancouver.' },
   { icon: Users, title: 'Google Business Profile & Local SEO', desc: 'Optimizes GBP listings, builds review generation systems, and manages NAP consistency for Local Pack visibility across BC service areas.' },
 ];
@@ -136,10 +136,10 @@ const FounderBio = () => (
             Arjun Sharma founded AP Digital in Vancouver, BC after watching local service businesses — plumbers, electricians, salon owners, realtors — get burned by agencies selling impressions instead of leads. Every contractor he talked to had the same story: they'd spent $3K–$10K on "digital marketing" and had nothing to show for it except a prettier Instagram page.
           </p>
           <p>
-            He built AP Digital around one principle: marketing is only valuable if it makes the phone ring with qualified jobs. Not impressions. Not clicks. Not followers. Booked estimates and closed deals. That philosophy shaped everything about the agency — from month-to-month contracts (no lock-ins) to reporting dashboards that track cost-per-booked-job (not vanity metrics) to the 90-day performance guarantee (if we don't deliver, you don't pay).
+            He built AP Digital around one principle: marketing is only valuable if it makes the phone ring with qualified jobs. Not impressions. Not clicks. Not followers. Booked estimates and closed deals. That philosophy shaped everything about the agency — from month-to-month contracts (no lock-ins) to reporting dashboards that track cost-per-booked-job (not vanity metrics) to the 90-day performance guarantee (if we miss the lead target we agree on, we keep working free until we hit it).
           </p>
           <p>
-            Arjun personally manages every client account. When you work with AP Digital, you talk to the person running your campaigns — not a junior account manager, not an overseas team, not a chatbot. He manages $50K+/month in ad spend across Google Ads, Meta Ads, and Local Service Ads for trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants across Metro Vancouver.
+            Arjun personally manages every client account. When you work with AP Digital, you talk to the person running your campaigns — not a junior account manager, not an overseas team, not a chatbot. He runs campaigns across Google Ads, Meta Ads, and Local Service Ads for trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants across Metro Vancouver.
           </p>
           <p>
             His primary focus is trades contractors — plumbers, electricians, HVAC companies, roofers, and general contractors. He's built a methodology he calls "booked-estimate systems": campaigns designed to generate not just leads, but actual booked service calls and on-site estimates. The system tracks from ad click → phone call → booked estimate → completed job → revenue, so every client knows their true cost-per-job, not just cost-per-click.
