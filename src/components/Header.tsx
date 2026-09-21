@@ -69,7 +69,8 @@ const Header = () => {
     // The city pages moved to the light editorial theme, so they are no longer
     // listed here — leaving them would render white nav text on a white hero.
   ];
-  const hasDarkHero = darkHeroPrefixes.some(
+  // Homepage opens on the night skyline hero.
+  const hasDarkHero = pathname === '/' || darkHeroPrefixes.some(
     (p) => pathname === p || pathname.startsWith(`${p}/`)
   ) || (
     // Case studies index is light, but a specific case study detail page

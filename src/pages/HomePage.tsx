@@ -1,6 +1,6 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, ChevronRight, CalendarDays, ShieldCheck, Clock, PlayCircle } from 'lucide-react';
+import { ArrowRight, Zap, Target, Users, TrendingUp, ChevronRight, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
@@ -12,7 +12,6 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 // HeroObject (the sphere) is still exported from HeroShowcase; swapping it back
 // in here is a one-line change if the photograph does not earn its place.
-import { HeroSkyline, HeroScrim } from '@/components/light/HeroShowcase';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
@@ -136,41 +135,72 @@ const HomePage = () => {
           the +40px is the gap. That holds the same gap at every phone width, and
           contains no unit the URL bar can change. Desktop keeps svh — no URL
           bar, no problem. */}
-      <section className="texture-rules relative isolate flex items-start sm:items-center overflow-hidden bg-[#E4E7EB] sm:min-h-[92svh] lg:min-h-[100svh]">
-        <HeroSkyline />
-        <HeroScrim />
+      <section className="relative isolate overflow-hidden bg-[#0E1A28] text-white lg:min-h-[100svh] lg:flex lg:flex-col">
+        {/* Night plate. Desktop: anchored right and bottom, faded into the navy on
+            its left edge so the headline sits on open sky. Mobile: a band under
+            the copy, faded in from the top. Height never uses vh on mobile. */}
+        <div aria-hidden="true" className="pointer-events-none select-none absolute inset-0 hidden lg:block">
+          <img
+            src="/vancouver-night-1000.jpg"
+            srcSet="/vancouver-night-500.webp 500w, /vancouver-night-1000.webp 1000w"
+            sizes="50vw"
+            alt=""
+            width={996}
+            height={1400}
+            {...{ fetchpriority: 'high' }}
+            decoding="async"
+            className="absolute bottom-0 right-0 h-full w-auto max-w-none"
+            style={{
+              maskImage: 'linear-gradient(to right, transparent 0%, #000 34%)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #000 34%)',
+            }}
+          />
+        </div>
 
-        <div className="relative z-10 w-full container-custom pt-20 pb-[calc(72vw+40px)] sm:pt-32 sm:pb-16 lg:py-24">
-          <div className="max-w-[620px] mx-auto text-center sm:mx-0 sm:text-left">
-
-            <p className="text-[11px] font-semibold tracking-[0.28em] uppercase text-muted-foreground mb-5 sm:mb-6">
-              Performance Marketing — Vancouver, BC
+        <div className="relative z-10 w-full container-custom pt-28 pb-10 sm:pt-36 lg:flex-1 lg:flex lg:items-center lg:pt-32 lg:pb-12">
+          <div className="max-w-[640px]">
+            <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/70 mb-5 sm:mb-6">
+              Vancouver Digital Marketing
             </p>
 
-            <h1 className="font-serif text-[2.4rem] sm:text-6xl lg:text-[4.5rem] font-medium text-foreground leading-[1.05] tracking-tight mb-5 sm:mb-6">
+            <h1 className="font-serif text-[2.9rem] sm:text-6xl lg:text-[5rem] font-normal leading-[1.02] tracking-tight mb-6">
               Vancouver{' '}
               <span className="italic">Performance</span>{' '}
-              <span className="whitespace-nowrap">Marketing Agency</span>
+              <span className="sm:whitespace-nowrap">Marketing Agency</span>
             </h1>
 
-            <p className="text-[15px] sm:text-lg text-foreground/70 max-w-[500px] mx-auto sm:mx-0 mb-7 sm:mb-9 leading-relaxed">
-              We run your ads and your social content — and if we miss the lead target we agree on in 90 days, we keep working free until we hit it.
+            <p className="text-[16px] sm:text-lg text-white/80 max-w-[520px] mb-8 sm:mb-9 leading-relaxed">
+              Google &amp; Meta Ads and social media for local businesses — and if we miss the lead target we agree on in 90 days, we keep working free until we hit it.
             </p>
 
-            <div className="flex flex-col items-center sm:items-start gap-4 sm:gap-5">
-              <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
-                Book a Call
+            <div className="flex flex-col items-stretch gap-5 sm:flex-row sm:items-center sm:gap-8">
+              <Link to="/book" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#F4EFE6] px-8 py-4 text-[15px] font-medium text-[#0E1A28] transition-colors hover:bg-white">
+                Book a free call
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <a
-                href="#how-it-works"
-                className="inline-flex items-center gap-3 text-foreground/90 hover:text-foreground transition-colors"
-              >
-                <PlayCircle className="w-6 h-6" strokeWidth={1.5} />
-                <span className="text-xs font-semibold tracking-[0.18em] uppercase">How It Works</span>
+              <a href="#how-it-works" className="self-start border-b border-white/60 pb-1 text-[15px] text-white hover:border-white transition-colors">
+                See how it works
               </a>
             </div>
+          </div>
+        </div>
 
+        <img
+          aria-hidden="true"
+          src="/vancouver-night-500.webp"
+          srcSet="/vancouver-night-500.webp 500w, /vancouver-night-1000.webp 1000w"
+          sizes="100vw"
+          alt=""
+          width={498}
+          height={700}
+          decoding="async"
+          className="relative block w-full h-[78vw] sm:h-[56vw] object-cover object-bottom lg:hidden"
+          style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)' }}
+        />
+
+        <div className="relative z-10 container-custom hidden lg:block pb-10">
+          <div className="border-t border-white/20 pt-6 text-left text-[11px] tracking-[0.3em] uppercase text-white/70">
+            Google Ads <span className="mx-4 text-white/40">/</span> Meta Ads <span className="mx-4 text-white/40">/</span> Social Media
           </div>
         </div>
       </section>
