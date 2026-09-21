@@ -486,7 +486,7 @@ const staticRoutes = [
   // Neighbourhoods per city, so the prerendered FAQ answers match what the
   // rendered page says rather than being generic.
   ...[
-    ['vancouver',  'Kitsilano, Mount Pleasant, East Vancouver and Yaletown', 'Vancouver Marketing Agency — From $759/mo, No Contract', 'Google Ads and Meta Ads managed for Vancouver businesses — Kitsilano, Mount Pleasant, Yaletown, East Van. From $759/month, month-to-month, no lock-in.'],
+    ['vancouver',  'Kitsilano, Mount Pleasant, East Vancouver and Yaletown', 'Google & Meta Ads Vancouver — From $759/mo, No Contract', 'Google Ads and Meta Ads managed for Vancouver businesses — Kitsilano, Mount Pleasant, Yaletown, East Van. From $759/month, month-to-month, no lock-in.'],
     ['surrey',     'Newton, Guildford, South Surrey and Cloverdale', 'Surrey Lead Generation: Google & Meta Ads, No Lock-In', 'Paid ads for Surrey businesses in Newton, Guildford, South Surrey and Cloverdale. $759/month, cancel with 15 days\' notice. No long-term contract.'],
     ['burnaby',    'Metrotown, Brentwood, North Burnaby and Edmonds', 'Burnaby Ads Management — $759/mo, No Lock-In', 'Meta and Google campaigns for Burnaby businesses near Metrotown, Brentwood and Edmonds. Management from $759/month. Month-to-month, no lock-in.'],
     ['richmond',   'City Centre, Steveston, Broadmoor and Brighouse', 'Richmond Google Ads for Local Business — No Contract', 'Richmond businesses in City Centre, Steveston and Brighouse: Google Ads and Meta Ads from $759/month. No contract, cancel with 15 days\' notice.'],
