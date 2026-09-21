@@ -12,7 +12,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
 const TITLE = 'Richmond Google Ads for Local Business — No Contract';
-const DESC = 'Richmond businesses in City Centre, Steveston and Brighouse: Google Ads and Meta Ads from $759/month. No contract, cancel with 30 days\' notice.';
+const DESC = 'Richmond businesses in City Centre, Steveston and Brighouse: Google Ads and Meta Ads from $759/month. No contract, cancel with 15 days\' notice.';
 const CANONICAL = 'https://ap-digital.ca/richmond';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

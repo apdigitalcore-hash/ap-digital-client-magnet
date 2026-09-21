@@ -12,7 +12,7 @@ import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
 const TITLE = 'Salon Marketing Vancouver — More Bookings | AP Digital';
-const DESC = 'Meta Ads & Instagram content for Vancouver salons, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.';
+const DESC = 'Meta Ads & Instagram content for Vancouver salons from $759/month, built to fill your chairs. Month-to-month, no contracts.';
 const CANONICAL = 'https://ap-digital.ca/salon-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

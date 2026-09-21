@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Burnaby Ads Management — $759/mo, Cancel Anytime';
+const TITLE = 'Burnaby Ads Management — $759/mo, No Lock-In';
 const DESC = 'Meta and Google campaigns for Burnaby businesses near Metrotown, Brentwood and Edmonds. Management from $759/month. Month-to-month, no lock-in.';
 const CANONICAL = 'https://ap-digital.ca/burnaby';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
