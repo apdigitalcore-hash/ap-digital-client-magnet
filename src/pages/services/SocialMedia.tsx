@@ -55,7 +55,7 @@ const honestLimits = [
 const faqs = [
   {
     question: 'How much does social media management cost?',
-    answer: 'It is $849 per month for two platforms, twelve custom posts, captions, hashtags, scheduling and community management, month-to-month with 30 days notice. That excludes ad spend, which is a separate service at $759 per month. Packages elsewhere run $500 to $3,000 depending mainly on whether content production is included — ours is not, which is why it sits where it does.',
+    answer: 'It is $849 per month for two platforms, twelve custom posts, captions, hashtags, scheduling and community management, month-to-month with 15 days notice. That excludes ad spend, which is a separate service at $759 per month. Packages elsewhere run $500 to $3,000 depending mainly on whether content production is included — ours is not, which is why it sits where it does.',
   },
   {
     question: 'Should I be doing organic social or paid ads?',
