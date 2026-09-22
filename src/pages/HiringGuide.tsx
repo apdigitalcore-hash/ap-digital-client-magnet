@@ -87,7 +87,7 @@ const criteria = [
   },
   {
     title: 'No lock-in contracts or long-term commitments',
-    good: 'Month-to-month with the ability to pause or cancel with 30 days notice. Agencies with good results don\'t need contractual lock-in.',
+    good: 'Month-to-month with the ability to pause or cancel with 15 days notice. Agencies with good results don\'t need contractual lock-in.',
     bad: '6-month or 12-month minimums with hefty cancellation fees. This protects the agency, not you.',
   },
   {
