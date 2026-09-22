@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense } from "react";
 
@@ -17,6 +17,13 @@ import { useRevealCards } from "./hooks/useRevealCards";
 
 // Lazy load all other pages — loaded on demand
 const Contact = lazy(() => import("./pages/Contact"));
+const AdviceHome = lazy(() => import("./pages/advice/AdviceHome"));
+const AdviceSimulate = lazy(() => import("./pages/advice/AdviceSimulate"));
+const AdviceReport = lazy(() => import("./pages/advice/AdviceReport"));
+const AdviceMy = lazy(() => import("./pages/advice/AdviceMy"));
+
+// The agency chat bubble would sit on top of ADvice's own product UI.
+const ChatGate = () => (useLocation().pathname.startsWith("/advice") ? null : <AIChat />);
 const Book = lazy(() => import("./pages/Book"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
@@ -126,11 +133,16 @@ const App = () => {
               <Route path="/admin/opportunity-brief" element={<AdminOpportunityBrief />} />
               <Route path="/.lovable/oauth/consent" element={<OAuthConsent />} />
               
+              <Route path="/advice" element={<AdviceHome />} />
+              <Route path="/advice/simulate" element={<AdviceSimulate />} />
+              <Route path="/advice/report/:shareId" element={<AdviceReport />} />
+              <Route path="/advice/my" element={<AdviceMy />} />
+
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
-          <AIChat />
+          <ChatGate />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

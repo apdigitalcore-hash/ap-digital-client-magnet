@@ -493,3 +493,11 @@
   .reveal-wash { transition: none; }
   .reveal-ink, .reveal-body { transition: none; }
 }
+
+/* ADvice report → PDF via the browser's print dialog. Keeps the dark design. */
+@media print {
+  .advice { background: #0a0a0a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .advice-noprint { display: none !important; }
+  .advice-card, .advice-section { break-inside: avoid; }
+  @page { margin: 12mm; background: #0a0a0a; }
+}

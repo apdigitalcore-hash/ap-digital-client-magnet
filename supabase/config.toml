@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.audit-analysis]
 verify_jwt = false
+
+[functions.advice-simulate]
+verify_jwt = false
