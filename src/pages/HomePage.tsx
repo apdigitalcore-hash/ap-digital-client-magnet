@@ -141,20 +141,18 @@ const HomePage = () => {
             the copy, faded in from the top. Height never uses vh on mobile. */}
         <div aria-hidden="true" className="pointer-events-none select-none absolute inset-0 hidden lg:block">
           <img
-            src="/vancouver-night-1000.jpg"
-            srcSet="/vancouver-night-500.webp 500w, /vancouver-night-1000.webp 1000w"
-            sizes="50vw"
+            src="/vancouver-night-2260.jpg"
+            srcSet="/vancouver-night-1130.webp 1130w, /vancouver-night-2260.webp 2260w"
+            sizes="100vw"
             alt=""
-            width={996}
-            height={1400}
+            width={2260}
+            height={1560}
             {...{ fetchpriority: 'high' }}
             decoding="async"
-            className="absolute bottom-0 right-0 h-full w-auto max-w-none"
-            style={{
-              maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 22%, #000 55%)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 22%, #000 55%)',
-            }}
+            className="h-full w-full object-cover object-[right_bottom]"
           />
+          {/* Keeps the headline on dark sky whatever the window's aspect ratio. */}
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(14,26,40,0.85) 0%, rgba(14,26,40,0.55) 35%, rgba(14,26,40,0) 60%)' }} />
         </div>
 
         <div className="relative z-10 w-full container-custom pt-28 pb-10 sm:pt-36 lg:flex-1 lg:flex lg:items-center lg:pt-28 lg:pb-8">
@@ -187,14 +185,12 @@ const HomePage = () => {
 
         <img
           aria-hidden="true"
-          src="/vancouver-night-500.webp"
-          srcSet="/vancouver-night-500.webp 500w, /vancouver-night-1000.webp 1000w"
-          sizes="100vw"
+          src="/vancouver-night-m750.webp"
           alt=""
-          width={498}
-          height={700}
+          width={750}
+          height={780}
           decoding="async"
-          className="relative block w-full h-[78vw] sm:h-[56vw] object-cover object-bottom lg:hidden"
+          className="relative block w-full h-[90vw] sm:h-[60vw] object-cover object-bottom lg:hidden"
           style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)' }}
         />
 
