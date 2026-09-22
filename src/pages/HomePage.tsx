@@ -1,9 +1,10 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Target, Users, TrendingUp, ChevronRight, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
+import { ArrowRight, Play, Zap, Target, Users, TrendingUp, ChevronRight, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
+import { Button } from '@/components/ui/button';
 
 import SectionLabel from '@/components/light/SectionLabel';
 import ProcessLight from '@/components/light/ProcessLight';
@@ -135,7 +136,7 @@ const HomePage = () => {
           the +40px is the gap. That holds the same gap at every phone width, and
           contains no unit the URL bar can change. Desktop keeps svh — no URL
           bar, no problem. */}
-      <section className="relative isolate overflow-hidden bg-[#0E1A28] text-white lg:min-h-[100svh] lg:flex lg:flex-col">
+      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground lg:flex lg:min-h-[720px] lg:flex-col lg:h-[100svh] lg:max-h-[920px]">
         {/* Night plate. Desktop: anchored right and bottom, faded into the navy on
             its left edge so the headline sits on open sky. Mobile: a band under
             the copy, faded in from the top. Height never uses vh on mobile. */}
@@ -152,32 +153,37 @@ const HomePage = () => {
             className="h-full w-full object-cover object-[right_bottom]"
           />
           {/* Keeps the headline on dark sky whatever the window's aspect ratio. */}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(90deg, rgba(14,26,40,0.85) 0%, rgba(14,26,40,0.55) 35%, rgba(14,26,40,0) 60%)' }} />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--primary)/0.92)_0%,hsl(var(--primary)/0.72)_38%,hsl(var(--primary)/0.08)_68%)]" />
         </div>
 
-        <div className="relative z-10 w-full container-custom pt-28 pb-10 sm:pt-36 lg:flex-1 lg:flex lg:items-center lg:pt-28 lg:pb-8">
-          <div className="max-w-[640px]">
-            <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white/70 mb-5 sm:mb-6">
+        <div className="relative z-10 w-full container-custom pt-28 pb-8 sm:pt-36 lg:flex lg:flex-1 lg:items-center lg:pt-24 lg:pb-12">
+          <div className="max-w-[760px] lg:-translate-y-2">
+            <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-primary-foreground/75 sm:mb-5 lg:text-[11px]">
               Vancouver Digital Marketing
             </p>
 
-            <h1 className="font-serif text-[2.9rem] sm:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-normal leading-[1.02] tracking-tight mb-6">
+            <h1 className="mb-5 font-serif text-[2.75rem] font-normal leading-[0.98] tracking-normal sm:text-6xl lg:max-w-[760px] lg:text-[4.8rem] xl:text-[5.35rem]">
               Vancouver{' '}
               <span className="italic">Performance</span>{' '}
               <span className="sm:whitespace-nowrap">Marketing Agency</span>
             </h1>
 
-            <p className="text-[16px] sm:text-lg text-white/80 max-w-[520px] mb-8 sm:mb-9 leading-relaxed">
+            <p className="mb-7 max-w-[550px] text-[15px] leading-relaxed text-primary-foreground/85 sm:text-lg lg:mb-7">
               Google &amp; Meta Ads and social media for local businesses — and if we miss the lead target we agree on in 90 days, we keep working free until we hit it.
             </p>
 
-            <div className="flex flex-col items-stretch gap-5 sm:flex-row sm:items-center sm:gap-8">
-              <Link to="/book" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#F4EFE6] px-8 py-4 text-[15px] font-medium text-[#0E1A28] transition-colors hover:bg-white">
-                Book a free call
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <a href="#how-it-works" className="self-start border-b border-white/60 pb-1 text-[15px] text-white hover:border-white transition-colors">
-                See how it works
+            <div className="flex flex-col items-stretch gap-4 sm:items-start lg:gap-3">
+              <Button asChild variant="secondary" size="lg" className="h-14 rounded-full px-8 text-[13px] font-semibold uppercase tracking-[0.14em] sm:min-w-[210px]">
+                <Link to="/book">
+                  Book a call
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </Button>
+              <a href="#how-it-works" className="group inline-flex w-fit items-center gap-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-primary-foreground/85 transition-colors hover:text-primary-foreground">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-primary-foreground/70 transition-colors group-hover:border-primary-foreground">
+                  <Play className="h-3 w-3 fill-current" />
+                </span>
+                How it works
               </a>
             </div>
           </div>
@@ -190,8 +196,8 @@ const HomePage = () => {
           width={750}
           height={780}
           decoding="async"
-          className="relative block w-full h-[90vw] sm:h-[60vw] object-cover object-bottom lg:hidden"
-          style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 28%)' }}
+          className="relative block h-[90vw] w-full object-cover object-bottom sm:h-[60vw] lg:hidden"
+          style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)' }}
         />
 
         <div className="relative z-10 w-full container-custom hidden lg:block pb-8">
