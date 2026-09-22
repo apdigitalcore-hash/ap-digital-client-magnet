@@ -1,21 +1,20 @@
-import { ADVICE_API_URL } from './config';
+import { supabase } from '@/integrations/supabase/client';
 import type { SimInputs, Simulation } from './types';
 
 const HISTORY_KEY = 'advice:history';
 
 export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
-  let res: Response;
-  try {
-    res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(inputs),
-    });
-  } catch {
-    throw new Error('Couldn’t reach the simulator. Check your connection and try again.');
+  const { data, error } = await supabase.functions.invoke('advice-simulate', { body: inputs });
+  if (error) {
+    let message = 'The simulation failed. Please try again.';
+    try {
+      const body = await (error as { context?: Response }).context?.json();
+      if (body?.error) message = body.error;
+    } catch {
+      /* keep the generic message */
+    }
+    throw new Error(message);
   }
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.error ?? 'The simulation failed. Please try again.');
   const sim = data as Simulation;
   saveToHistory(sim);
   return sim;

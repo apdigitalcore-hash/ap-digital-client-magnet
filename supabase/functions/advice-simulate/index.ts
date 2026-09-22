@@ -1,22 +1,11 @@
-// ADvice — Vercel serverless function. Runs one campaign simulation through
+// ADvice — Lovable Cloud function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
-// Env: GEMINI_API_KEY (required), GEMINI_MODEL (optional), ALLOWED_ORIGINS (optional, comma-separated).
+// Secrets: GEMINI_API_KEY (required), GEMINI_MODEL (optional).
+import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = process.env.GEMINI_MODEL ?? "gemini-2.0-flash";
-const ALLOWED = (process.env.ALLOWED_ORIGINS ?? "https://ap-digital.ca,https://www.ap-digital.ca")
-  .split(",").map((s) => s.trim()).filter(Boolean);
+const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
+const GEMINI_MODEL = Deno.env.get("GEMINI_MODEL") ?? "gemini-2.0-flash";
 const PER_IP_PER_HOUR = 8;
-
-function corsFor(origin: string | null): Record<string, string> {
-  const ok = origin && (ALLOWED.includes(origin) || /^https:\/\/[a-z0-9-]+\.lovable\.app$/.test(origin) || /^http:\/\/localhost:\d+$/.test(origin));
-  return {
-    "Access-Control-Allow-Origin": ok ? origin! : ALLOWED[0],
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Vary": "Origin",
-  };
-}
 
 // Best-effort per-instance limiter. Warm instances are reused, so this stops
 // casual hammering; Gemini's own quota is the hard backstop.
@@ -225,14 +214,11 @@ function normalise(r: any) {
 }
 
 
-export function OPTIONS(req: Request) {
-  return new Response(null, { status: 204, headers: corsFor(req.headers.get("origin")) });
-}
-
-export async function POST(req: Request) {
-  const cors = corsFor(req.headers.get("origin"));
+Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   const json = (body: unknown, status = 200) =>
-    new Response(JSON.stringify(body), { status, headers: { ...cors, "Content-Type": "application/json" } });
+    new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
+  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
 
   if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet." }, 500);
 
@@ -309,4 +295,4 @@ export async function POST(req: Request) {
     inputs,
     results,
   });
-}
+});
