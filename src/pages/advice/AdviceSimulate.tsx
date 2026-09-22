@@ -96,7 +96,7 @@ const AdviceSimulate = () => {
     setRunning(true);
     try {
       const sim = await runSimulation(v);
-      navigate(`/advice/report/${sim.shareId}`, { state: { sim, fresh: true } });
+      navigate('/advice/report', { state: { sim, fresh: true } });
     } catch (err) {
       setRunning(false);
       setError(err instanceof Error ? err.message : 'The simulation failed. Please try again.');

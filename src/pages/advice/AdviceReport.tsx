@@ -1,14 +1,13 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Check, Download, Link2, RotateCcw } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import ReportView from '@/advice/ReportView';
-import { getReport, sendMagicLink } from '@/advice/api';
+import { captureEmail, decodeReport, encodeReport, reportUrl } from '@/advice/api';
 import type { Simulation } from '@/advice/types';
-import { supabase } from '@/integrations/supabase/client';
 
-const SaveCard = () => {
+const SaveCard = ({ sim }: { sim: Simulation }) => {
   const [email, setEmail] = useState('');
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -17,7 +16,7 @@ const SaveCard = () => {
     e.preventDefault();
     setState('sending');
     try {
-      await sendMagicLink(email.trim());
+      await captureEmail(email.trim(), sim);
       setState('sent');
     } catch (err) {
       setState('error');
@@ -28,8 +27,8 @@ const SaveCard = () => {
   if (state === 'sent') {
     return (
       <div className="advice-noprint rounded-xl border border-[#3b82f6]/30 bg-[#3b82f6]/[0.06] p-6">
-        <p className="font-medium">Check your inbox</p>
-        <p className="mt-1 text-sm text-white/60">We sent a sign-in link to {email}. Open it and this simulation will be saved to your account.</p>
+        <p className="font-medium">You’re on the list</p>
+        <p className="mt-1 text-sm text-white/60">We’ll send new ADvice features to {email}. This simulation is already saved under My simulations in this browser.</p>
       </div>
     );
   }
@@ -37,7 +36,7 @@ const SaveCard = () => {
   return (
     <form onSubmit={submit} className="advice-noprint rounded-xl border border-[#3b82f6]/30 bg-[#3b82f6]/[0.06] p-6">
       <p className="font-medium">Save your simulations</p>
-      <p className="mt-1 text-sm text-white/60">Enter your email to create a free account. We’ll send a sign-in link — no password.</p>
+      <p className="mt-1 text-sm text-white/60">Your reports are saved in this browser. Add your email to get a copy of this report’s link and hear about new features.</p>
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
         <input
           type="email"
@@ -49,7 +48,7 @@ const SaveCard = () => {
           className="flex-1 rounded-lg border border-white/10 bg-black/30 px-3.5 py-2.5 text-sm outline-none focus:border-[#3b82f6]"
         />
         <button type="submit" disabled={state === 'sending'} className="rounded-lg bg-[#3b82f6] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#2563eb] disabled:opacity-60">
-          {state === 'sending' ? 'Sending…' : 'Create free account'}
+          {state === 'sending' ? 'Sending…' : 'Save my report'}
         </button>
       </div>
       {state === 'error' && <p className="mt-2 text-sm text-red-300">{message}</p>}
@@ -58,26 +57,29 @@ const SaveCard = () => {
 };
 
 const AdviceReport = () => {
-  const { shareId = '' } = useParams();
   const location = useLocation();
   const passed = (location.state as { sim?: Simulation; fresh?: boolean } | null) ?? null;
-  const [sim, setSim] = useState<Simulation | null>(passed?.sim?.shareId === shareId ? passed.sim : null);
+  const [sim, setSim] = useState<Simulation | null>(passed?.sim ?? null);
   const [missing, setMissing] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [signedIn, setSignedIn] = useState(true);
   const fresh = !!passed?.fresh;
 
+  // A report opened from a link carries itself in the #fragment; one opened
+  // from this app arrives in router state and gets its fragment written in,
+  // so reloading or bookmarking the page keeps working.
   useEffect(() => {
-    if (sim) return;
-    getReport(shareId).then((s) => (s ? setSim(s) : setMissing(true)));
-  }, [shareId, sim]);
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => setSignedIn(!!data.session));
-  }, []);
+    if (passed?.sim) {
+      encodeReport(passed.sim).then((f) => window.history.replaceState(window.history.state, '', `/advice/report#${f}`));
+      return;
+    }
+    const f = window.location.hash.slice(1);
+    if (!f) return setMissing(true);
+    decodeReport(f).then((s) => (s ? setSim(s) : setMissing(true)));
+  }, [passed?.sim]);
 
   const share = async () => {
-    const url = `${window.location.origin}/advice/report/${shareId}`;
+    if (!sim) return;
+    const url = await reportUrl(sim);
     try {
       if (navigator.share && /Mobi/i.test(navigator.userAgent)) {
         await navigator.share({ title: 'My ADvice simulation', url });
@@ -106,7 +108,7 @@ const AdviceReport = () => {
         {missing ? (
           <div className="py-24 text-center">
             <h1 className="text-2xl font-semibold">Report not found</h1>
-            <p className="mt-2 text-white/55">This link may be mistyped or the report was removed.</p>
+            <p className="mt-2 text-white/55">This link looks incomplete — make sure you copied all of it.</p>
             <Link to="/advice/simulate" className="mt-8 inline-block rounded-lg bg-[#3b82f6] px-5 py-2.5 text-sm font-medium">Run your own simulation</Link>
           </div>
         ) : !sim ? (
@@ -137,7 +139,7 @@ const AdviceReport = () => {
               </button>
             </div>
 
-            {fresh && !signedIn && <div className="mt-8"><SaveCard /></div>}
+            {fresh && <div className="mt-8"><SaveCard sim={sim} /></div>}
           </>
         )}
       </div>

@@ -1,23 +1,39 @@
-// ADvice — runs one campaign simulation through Gemini and stores it.
-// Public (verify_jwt = false): anonymous simulations are the point. Abuse is
-// held back by a per-IP hourly cap and a global daily cap, both counted in SQL.
-import { createClient } from "npm:@supabase/supabase-js@2";
-import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
+// ADvice — Vercel serverless function. Runs one campaign simulation through
+// Gemini and returns the report. Stateless: nothing is stored server-side.
+// Env: GEMINI_API_KEY (required), GEMINI_MODEL (optional), ALLOWED_ORIGINS (optional, comma-separated).
 
-const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
-const GEMINI_MODEL = Deno.env.get("GEMINI_MODEL") ?? "gemini-2.0-flash";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const GEMINI_MODEL = process.env.GEMINI_MODEL ?? "gemini-2.0-flash";
+const ALLOWED = (process.env.ALLOWED_ORIGINS ?? "https://ap-digital.ca,https://www.ap-digital.ca")
+  .split(",").map((s) => s.trim()).filter(Boolean);
 const PER_IP_PER_HOUR = 8;
-const GLOBAL_PER_DAY = 1000;
+
+function corsFor(origin: string | null): Record<string, string> {
+  const ok = origin && (ALLOWED.includes(origin) || /^https:\/\/[a-z0-9-]+\.lovable\.app$/.test(origin) || /^http:\/\/localhost:\d+$/.test(origin));
+  return {
+    "Access-Control-Allow-Origin": ok ? origin! : ALLOWED[0],
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Vary": "Origin",
+  };
+}
+
+// Best-effort per-instance limiter. Warm instances are reused, so this stops
+// casual hammering; Gemini's own quota is the hard backstop.
+const hits = new Map<string, number[]>();
+function limited(ip: string) {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < 3600_000);
+  if (recent.length >= PER_IP_PER_HOUR) return true;
+  recent.push(now);
+  hits.set(ip, recent);
+  if (hits.size > 5000) hits.clear();
+  return false;
+}
 
 const CHANNELS = ["Google Search Ads", "Google Display", "Meta/Facebook", "Instagram", "TikTok", "LinkedIn"];
 const INDUSTRIES = ["Ecommerce", "SaaS", "Local service", "Real estate", "Health & wellness", "Finance", "Education", "Food & beverage", "Other"];
 
-function json(body: unknown, status = 200) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { ...corsHeaders, "Content-Type": "application/json" },
-  });
-}
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
@@ -208,20 +224,16 @@ function normalise(r: any) {
   return r;
 }
 
-async function sha256(text: string) {
-  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
-  return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, "0")).join("");
+
+export function OPTIONS(req: Request) {
+  return new Response(null, { status: 204, headers: corsFor(req.headers.get("origin")) });
 }
 
-function shareId() {
-  const alphabet = "abcdefghijkmnpqrstuvwxyz23456789";
-  const bytes = crypto.getRandomValues(new Uint8Array(10));
-  return Array.from(bytes, (b) => alphabet[b % alphabet.length]).join("");
-}
+export async function POST(req: Request) {
+  const cors = corsFor(req.headers.get("origin"));
+  const json = (body: unknown, status = 200) =>
+    new Response(JSON.stringify(body), { status, headers: { ...cors, "Content-Type": "application/json" } });
 
-Deno.serve(async (req) => {
-  if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
-  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
   if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet." }, 500);
 
   let body: Record<string, unknown>;
@@ -233,18 +245,8 @@ Deno.serve(async (req) => {
   const inputs = readInputs(body);
   if (typeof inputs === "string") return json({ error: inputs }, 400);
 
-  const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-
   const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
-  const ipHash = await sha256(`${ip}:advice`);
-  const hourAgo = new Date(Date.now() - 3600_000).toISOString();
-  const dayAgo = new Date(Date.now() - 86400_000).toISOString();
-  const [{ count: ipCount }, { count: dayCount }] = await Promise.all([
-    admin.from("advice_simulations").select("id", { count: "exact", head: true }).eq("ip_hash", ipHash).gte("created_at", hourAgo),
-    admin.from("advice_simulations").select("id", { count: "exact", head: true }).gte("created_at", dayAgo),
-  ]);
-  if ((ipCount ?? 0) >= PER_IP_PER_HOUR) return json({ error: "You've run a lot of simulations this hour. Try again in a little while." }, 429);
-  if ((dayCount ?? 0) >= GLOBAL_PER_DAY) return json({ error: "ADvice is at today's capacity. Please try again tomorrow." }, 429);
+  if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while." }, 429);
 
   const [landingText, productText] = await Promise.all([
     inputs.landingUrl ? fetchPageText(inputs.landingUrl) : Promise.resolve(null),
@@ -301,25 +303,10 @@ Deno.serve(async (req) => {
     return json({ error: "The simulation failed. Please try again." }, 502);
   }
 
-  const row = {
-    share_id: shareId(),
-    campaign_name: inputs.campaignName || null,
-    channel: inputs.channel,
-    industry: inputs.industry,
-    creative_score: results.creative.overall,
+  return json({
+    id: crypto.randomUUID().slice(0, 8),
+    createdAt: new Date().toISOString(),
     inputs,
     results,
-    ip_hash: ipHash,
-  };
-  const { data: saved, error } = await admin
-    .from("advice_simulations")
-    .insert(row)
-    .select("share_id, claim_token, created_at")
-    .single();
-  if (error) {
-    console.error("insert", error);
-    return json({ error: "Your simulation ran but couldn't be saved. Please try again." }, 500);
-  }
-
-  return json({ shareId: saved.share_id, claimToken: saved.claim_token, createdAt: saved.created_at, inputs, results });
-});
+  });
+}

@@ -135,7 +135,7 @@ const App = () => {
               
               <Route path="/advice" element={<AdviceHome />} />
               <Route path="/advice/simulate" element={<AdviceSimulate />} />
-              <Route path="/advice/report/:shareId" element={<AdviceReport />} />
+              <Route path="/advice/report" element={<AdviceReport />} />
               <Route path="/advice/my" element={<AdviceMy />} />
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

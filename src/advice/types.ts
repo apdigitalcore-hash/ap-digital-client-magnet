@@ -58,7 +58,7 @@ export interface SimResults {
 }
 
 export interface Simulation {
-  shareId: string;
+  id: string;
   createdAt: string;
   inputs: SimInputs;
   results: SimResults;

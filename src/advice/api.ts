@@ -1,88 +1,101 @@
-import { supabase } from '@/integrations/supabase/client';
+import { ADVICE_API_URL } from './config';
 import type { SimInputs, Simulation } from './types';
 
-const CLAIMS_KEY = 'advice:claims';
+const HISTORY_KEY = 'advice:history';
 
-// Claim tokens for simulations this browser ran anonymously. They let the
-// user attach those runs to an account after signing in.
-function readClaims(): string[] {
+export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
+  let res: Response;
   try {
-    return JSON.parse(localStorage.getItem(CLAIMS_KEY) ?? '[]');
+    res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(inputs),
+    });
+  } catch {
+    throw new Error('Couldn’t reach the simulator. Check your connection and try again.');
+  }
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error ?? 'The simulation failed. Please try again.');
+  const sim = data as Simulation;
+  saveToHistory(sim);
+  return sim;
+}
+
+// ── History: kept in this browser only ─────────────────────────────────────
+export function readHistory(): Simulation[] {
+  try {
+    return JSON.parse(localStorage.getItem(HISTORY_KEY) ?? '[]');
   } catch {
     return [];
   }
 }
-function writeClaims(tokens: string[]) {
+
+function saveToHistory(sim: Simulation) {
   try {
-    localStorage.setItem(CLAIMS_KEY, JSON.stringify(tokens.slice(-100)));
+    const rest = readHistory().filter((s) => s.id !== sim.id);
+    localStorage.setItem(HISTORY_KEY, JSON.stringify([sim, ...rest].slice(0, 50)));
   } catch {
-    /* storage unavailable — claiming just won't carry over */
+    /* storage full or blocked — the report still works via its link */
   }
 }
 
-export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
-  const { data, error } = await supabase.functions.invoke('advice-simulate', { body: inputs });
-  if (error) {
-    let message = 'The simulation failed. Please try again.';
-    try {
-      const body = await (error as { context?: Response }).context?.json();
-      if (body?.error) message = body.error;
-    } catch {
-      /* keep the generic message */
-    }
-    throw new Error(message);
+export function removeFromHistory(id: string) {
+  try {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(readHistory().filter((s) => s.id !== id)));
+  } catch {
+    /* ignore */
   }
-  if (data.claimToken) {
-    writeClaims([...readClaims(), data.claimToken]);
-    // Already signed in: attach straight away.
-    const { data: s } = await supabase.auth.getSession();
-    if (s.session) void claimPending();
+}
+
+// ── Share links: the whole report travels in the URL fragment ───────────────
+// Deflate + base64url keeps a full report to a few KB. The fragment (#…) is
+// never sent to any server, so shared reports stay between the people who
+// have the link.
+const fromB64Url = (s: string) =>
+  Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
+
+async function pipe(bytes: Uint8Array, stream: CompressionStream | DecompressionStream) {
+  const out = new Blob([bytes]).stream().pipeThrough(stream);
+  return new Uint8Array(await new Response(out).arrayBuffer());
+}
+
+export async function encodeReport(sim: Simulation): Promise<string> {
+  const packed = await pipe(new TextEncoder().encode(JSON.stringify(sim)), new CompressionStream('deflate-raw'));
+  let s = '';
+  for (let i = 0; i < packed.length; i += 0x8000) s += String.fromCharCode(...packed.subarray(i, i + 0x8000));
+  return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+export async function decodeReport(fragment: string): Promise<Simulation | null> {
+  try {
+    const raw = await pipe(fromB64Url(fragment), new DecompressionStream('deflate-raw'));
+    const sim = JSON.parse(new TextDecoder().decode(raw));
+    return sim?.results?.predictions ? (sim as Simulation) : null;
+  } catch {
+    return null;
   }
-  return data as Simulation;
 }
 
-export async function getReport(shareId: string): Promise<Simulation | null> {
-  const { data, error } = await supabase.rpc('get_advice_report' as never, { _share_id: shareId } as never);
-  const row = (data as unknown as Array<Record<string, unknown>> | null)?.[0];
-  if (error || !row) return null;
-  return {
-    shareId: row.share_id as string,
-    createdAt: row.created_at as string,
-    inputs: row.inputs as Simulation['inputs'],
-    results: row.results as Simulation['results'],
-  };
-}
+export const reportUrl = async (sim: Simulation) =>
+  `${window.location.origin}/advice/report#${await encodeReport(sim)}`;
 
-export async function claimPending(): Promise<void> {
-  const tokens = readClaims();
-  if (!tokens.length) return;
-  const { error } = await supabase.rpc('claim_advice_simulations' as never, { _tokens: tokens } as never);
-  if (!error) writeClaims([]);
-}
-
-export async function sendMagicLink(email: string): Promise<void> {
-  const { error } = await supabase.auth.signInWithOtp({
-    email,
-    options: { emailRedirectTo: `${window.location.origin}/advice/my` },
+// ── Email capture → AP Digital's formsubmit inbox (same as the calculators) ─
+export async function captureEmail(email: string, sim: Simulation): Promise<void> {
+  const res = await fetch('https://formsubmit.co/ajax/apdigital.core@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      email,
+      source: 'ADvice simulator',
+      campaign: sim.inputs.campaignName || '(untitled)',
+      channel: sim.inputs.channel,
+      industry: sim.inputs.industry,
+      budget: `$${sim.inputs.budget.toLocaleString()}/mo`,
+      'creative-score': sim.results.creative.overall,
+      report: await reportUrl(sim),
+      _subject: `ADvice signup: ${email} — ${sim.inputs.channel}`,
+      _template: 'table',
+    }),
   });
-  if (error) throw new Error(error.message);
-}
-
-export interface HistoryRow {
-  share_id: string;
-  campaign_name: string | null;
-  channel: string;
-  industry: string;
-  creative_score: number | null;
-  created_at: string;
-}
-
-export async function listMine(): Promise<HistoryRow[]> {
-  const { data, error } = await supabase
-    .from('advice_simulations' as never)
-    .select('share_id, campaign_name, channel, industry, creative_score, created_at')
-    .order('created_at', { ascending: false })
-    .limit(200);
-  if (error) throw new Error(error.message);
-  return (data ?? []) as unknown as HistoryRow[];
+  if (!res.ok) throw new Error('Something went wrong. Please try again.');
 }
