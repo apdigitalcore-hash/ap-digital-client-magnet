@@ -26,17 +26,17 @@ const SaveCard = ({ sim }: { sim: Simulation }) => {
 
   if (state === 'sent') {
     return (
-      <div className="advice-noprint rounded-xl border border-[#3b82f6]/30 bg-[#3b82f6]/[0.06] p-6">
+      <div className="advice-noprint rounded-xl border border-black/[0.06] bg-[#f5f5f7] p-6">
         <p className="font-medium">You’re on the list</p>
-        <p className="mt-1 text-sm text-white/60">We’ll send new ADvice features to {email}. This simulation is already saved under My simulations in this browser.</p>
+        <p className="mt-1 text-sm text-[#6e6e73]">We’ll send new ADvice features to {email}. This simulation is already saved under My simulations in this browser.</p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={submit} className="advice-noprint rounded-xl border border-[#3b82f6]/30 bg-[#3b82f6]/[0.06] p-6">
+    <form onSubmit={submit} className="advice-noprint rounded-xl border border-black/[0.06] bg-[#f5f5f7] p-6">
       <p className="font-medium">Save your simulations</p>
-      <p className="mt-1 text-sm text-white/60">Your reports are saved in this browser. Add your email to get a copy of this report’s link and hear about new features.</p>
+      <p className="mt-1 text-sm text-[#6e6e73]">Your reports are saved in this browser. Add your email to get a copy of this report’s link and hear about new features.</p>
       <div className="mt-4 flex flex-col gap-2 sm:flex-row">
         <input
           type="email"
@@ -45,13 +45,13 @@ const SaveCard = ({ sim }: { sim: Simulation }) => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@company.com"
           aria-label="Email address"
-          className="flex-1 rounded-lg border border-white/10 bg-black/30 px-3.5 py-2.5 text-sm outline-none focus:border-[#3b82f6]"
+          className="flex-1 rounded-2xl border border-black/[0.1] bg-white px-3.5 py-2.5 text-sm outline-none focus:border-[#1d1d1f]"
         />
-        <button type="submit" disabled={state === 'sending'} className="rounded-lg bg-[#3b82f6] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#2563eb] disabled:opacity-60">
+        <button type="submit" disabled={state === 'sending'} className="rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black disabled:opacity-60">
           {state === 'sending' ? 'Sending…' : 'Save my report'}
         </button>
       </div>
-      {state === 'error' && <p className="mt-2 text-sm text-red-300">{message}</p>}
+      {state === 'error' && <p className="mt-2 text-sm text-[#d70015]">{message}</p>}
     </form>
   );
 };
@@ -108,33 +108,33 @@ const AdviceReport = () => {
         {missing ? (
           <div className="py-24 text-center">
             <h1 className="text-2xl font-semibold">Report not found</h1>
-            <p className="mt-2 text-white/55">This link looks incomplete — make sure you copied all of it.</p>
-            <Link to="/advice/simulate" className="mt-8 inline-block rounded-lg bg-[#3b82f6] px-5 py-2.5 text-sm font-medium">Run your own simulation</Link>
+            <p className="mt-2 text-[#6e6e73]">This link looks incomplete — make sure you copied all of it.</p>
+            <Link to="/advice/simulate" className="mt-8 inline-block rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white">Run your own simulation</Link>
           </div>
         ) : !sim ? (
           <div className="space-y-4 py-12">
-            {[0, 1, 2].map((k) => <div key={k} className="h-32 animate-pulse rounded-xl bg-white/[0.04]" />)}
+            {[0, 1, 2].map((k) => <div key={k} className="h-32 animate-pulse rounded-xl bg-[#f5f5f7]" />)}
           </div>
         ) : (
           <>
             {!fresh && (
-              <div className="advice-noprint mb-8 flex flex-col gap-3 rounded-xl border border-white/[0.08] bg-white/[0.02] p-4 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-white/65">Someone shared this ADvice simulation with you.</p>
-                <Link to="/advice/simulate" className="text-sm font-medium text-[#60a5fa] hover:text-white">Run your own free →</Link>
+              <div className="advice-noprint mb-8 flex flex-col gap-3 rounded-xl border border-black/[0.06] bg-[#f5f5f7] p-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm text-[#6e6e73]">Someone shared this ADvice simulation with you.</p>
+                <Link to="/advice/simulate" className="text-sm font-medium text-[#1d1d1f] hover:text-[#1d1d1f]">Run your own free →</Link>
               </div>
             )}
 
             <ReportView sim={sim} />
 
-            <div className="advice-noprint mt-12 flex flex-col gap-3 border-t border-white/[0.06] pt-8 sm:flex-row">
-              <Link to="/advice/simulate" className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-white/85">
+            <div className="advice-noprint mt-12 flex flex-col gap-3 border-t border-black/[0.06] pt-8 sm:flex-row">
+              <Link to="/advice/simulate" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
                 <RotateCcw className="h-4 w-4" /> Run another simulation
               </Link>
-              <button type="button" onClick={() => window.print()} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 px-5 py-2.5 text-sm font-medium hover:border-white/35">
+              <button type="button" onClick={() => window.print()} className="inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
                 <Download className="h-4 w-4" /> Download report as PDF
               </button>
-              <button type="button" onClick={share} className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 px-5 py-2.5 text-sm font-medium hover:border-white/35">
-                {copied ? <Check className="h-4 w-4 text-emerald-400" /> : <Link2 className="h-4 w-4" />}
+              <button type="button" onClick={share} className="inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
+                {copied ? <Check className="h-4 w-4 text-[#248a3d]" /> : <Link2 className="h-4 w-4" />}
                 {copied ? 'Link copied' : 'Share report'}
               </button>
             </div>
