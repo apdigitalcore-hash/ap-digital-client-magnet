@@ -18,7 +18,7 @@ const LOADING_LINES = [
   'Writing your recommendations…',
 ];
 
-const field = 'w-full rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-[#3b82f6] focus:bg-white/[0.05]';
+const field = 'w-full rounded-md border border-white/10 bg-[#0f0f10] px-3.5 py-2.5 text-[15px] text-white placeholder:text-white/30 outline-none transition-colors focus:border-[#3b82f6] focus:bg-white/[0.05]';
 const label = 'mb-1.5 block text-sm font-medium text-white/80';
 const hint = 'font-normal text-white/40';
 
@@ -121,13 +121,13 @@ const AdviceSimulate = () => {
             {STEPS.map((s, i) => (
               <li key={s} className="flex flex-1 items-center gap-2">
                 <span
-                  className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-medium ${
+                  className={`flex h-6 w-6 shrink-0 items-center justify-center rounded font-['Geist_Mono',_monospace] text-[11px] ${
                     i < step ? 'bg-[#3b82f6] text-white' : i === step ? 'border border-[#3b82f6] text-white' : 'border border-white/15 text-white/40'
                   }`}
                 >
                   {i < step ? <Check className="h-3.5 w-3.5" /> : i + 1}
                 </span>
-                <span className={`hidden text-sm sm:inline ${i === step ? 'text-white' : 'text-white/40'}`}>{s}</span>
+                <span className={`hidden font-['Geist_Mono',_monospace] text-[11px] uppercase tracking-[0.08em] sm:inline ${i === step ? 'text-white' : 'text-white/40'}`}>{s}</span>
                 {i < STEPS.length - 1 && <span className="h-px flex-1 bg-white/10" />}
               </li>
             ))}
@@ -144,7 +144,7 @@ const AdviceSimulate = () => {
             >
               {step === 0 && (
                 <>
-                  <h1 className="text-2xl font-semibold tracking-tight">What are you advertising?</h1>
+                  <h1 className="text-3xl font-semibold tracking-[-0.03em] text-white">What are you advertising?</h1>
                   <div>
                     <label className={label} htmlFor="campaignName">Campaign name <span className={hint}>(optional)</span></label>
                     <input id="campaignName" className={field} value={v.campaignName} onChange={set('campaignName')} placeholder="Spring promo — Search" />
@@ -176,7 +176,7 @@ const AdviceSimulate = () => {
 
               {step === 1 && (
                 <>
-                  <h1 className="text-2xl font-semibold tracking-tight">Where and how much?</h1>
+                  <h1 className="text-3xl font-semibold tracking-[-0.03em] text-white">Where and how much?</h1>
                   <div>
                     <span className={label}>Ad channel</span>
                     <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -185,7 +185,7 @@ const AdviceSimulate = () => {
                           type="button"
                           key={c}
                           onClick={() => setV((p) => ({ ...p, channel: c }))}
-                          className={`rounded-lg border px-3 py-3 text-left text-sm transition-colors ${
+                          className={`rounded-md border px-3 py-3 text-left text-sm transition-colors ${
                             v.channel === c ? 'border-[#3b82f6] bg-[#3b82f6]/10 text-white' : 'border-white/10 bg-white/[0.02] text-white/70 hover:border-white/25'
                           }`}
                         >
@@ -224,7 +224,7 @@ const AdviceSimulate = () => {
 
               {step === 2 && (
                 <>
-                  <h1 className="text-2xl font-semibold tracking-tight">Paste your ad</h1>
+                  <h1 className="text-3xl font-semibold tracking-[-0.03em] text-white">Paste your ad</h1>
                   <div>
                     <label className={label} htmlFor="headline">Headline {isSearch && <span className={hint}>(30 characters per headline)</span>}</label>
                     <input id="headline" className={field} value={v.headline} onChange={set('headline')} placeholder="24/7 Emergency Plumber" />
@@ -256,11 +256,11 @@ const AdviceSimulate = () => {
               </button>
             ) : <span />}
             {step < 2 ? (
-              <button type="button" onClick={next} className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-black hover:bg-white/85">
+              <button type="button" onClick={next} className="inline-flex items-center gap-2 rounded-md bg-[#EDEDED] px-5 py-2.5 text-sm font-medium text-black hover:bg-white">
                 Continue <ArrowRight className="h-4 w-4" />
               </button>
             ) : (
-              <button type="button" onClick={submit} className="inline-flex items-center gap-2 rounded-lg bg-[#3b82f6] px-5 py-2.5 text-sm font-medium text-white shadow-[0_0_30px_-8px_#3b82f6] hover:bg-[#2563eb]">
+              <button type="button" onClick={submit} className="inline-flex items-center gap-2 rounded-md bg-[#3b82f6] px-5 py-2.5 text-sm font-medium text-white hover:bg-[#2f74e6]">
                 Run simulation <ArrowRight className="h-4 w-4" />
               </button>
             )}

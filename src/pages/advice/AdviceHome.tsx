@@ -1,28 +1,79 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { ArrowRight, Gauge, PenLine, ShieldAlert, Sparkles, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import { CHANNELS } from '@/advice/types';
 
 const TITLE = 'ADvice — Free AI Ad Campaign Simulator';
 const DESC = 'Simulate your Google, Meta, TikTok or LinkedIn campaign before you spend a dollar. Predicted CTR, CPC, CPA and ROAS, a creative score, and rewritten ad copy. Free.';
 
+const mono = "font-['Geist_Mono',_monospace]";
+const label = `${mono} text-[11px] uppercase tracking-[0.08em] text-[#8A8F98]`;
+
+/* The hero's picture is the product: a real-looking readout of one simulation. */
+const Readout = ({ k, v, tone = 'text-[#EDEDED]' }: { k: string; v: string; tone?: string }) => (
+  <div className="border-b border-r border-white/[0.07] p-4">
+    <p className={label}>{k}</p>
+    <p className={`${mono} mt-2 text-[17px] tabular-nums ${tone}`}>{v}</p>
+  </div>
+);
+
+const SamplePanel = () => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.6, delay: 0.15 }}
+    className="overflow-hidden rounded-lg border border-white/[0.09] bg-[#0f0f10] shadow-[0_30px_80px_-30px_rgba(59,130,246,0.25)]"
+    aria-label="Example simulation report"
+  >
+    <div className={`flex items-center justify-between border-b border-white/[0.07] px-4 py-3 ${mono} text-[11px] uppercase tracking-[0.08em]`}>
+      <span className="text-[#8A8F98]">Sim · Google Search · $3,000/mo</span>
+      <span className="flex items-center gap-1.5 text-[#4ADE80]"><span className="h-1.5 w-1.5 rounded-full bg-[#4ADE80]" />Complete</span>
+    </div>
+
+    <div className="grid grid-cols-2 border-l border-white/[0.07] sm:grid-cols-3 [&>*]:-ml-px">
+      <Readout k="CTR" v="4.2–6.1%" />
+      <Readout k="CPC" v="$6.50–9.80" />
+      <Readout k="Clicks / mo" v="306–461" />
+      <Readout k="Conv. rate" v="8–12%" />
+      <Readout k="CPA" v="$55–120" />
+      <Readout k="Risk" v="Medium" tone="text-[#FACC15]" />
+    </div>
+
+    <div className="border-b border-white/[0.07] p-4">
+      <div className="flex items-baseline justify-between">
+        <p className={label}>Creative score</p>
+        <p className={`${mono} text-[13px] text-[#FACC15]`}>68 / 100 · Needs work</p>
+      </div>
+      <div className="mt-3 h-1 rounded-full bg-white/[0.06]">
+        <motion.div className="h-full rounded-full bg-[#FACC15]" initial={{ width: 0 }} animate={{ width: '68%' }} transition={{ duration: 1, delay: 0.5 }} />
+      </div>
+    </div>
+
+    <div className="space-y-2 p-4">
+      <p className={label}>Headline rewrite</p>
+      <p className={`${mono} text-[13px] text-[#F87171]/80 line-through decoration-[#F87171]/50`}>24/7 Emergency Plumber</p>
+      <p className={`${mono} text-[13px] text-[#4ADE80]`}>Plumber at Your Door in 60 Min — $149</p>
+    </div>
+  </motion.div>
+);
+
 const STEPS = [
-  { title: 'Describe the campaign', body: 'What you sell, who it’s for, the channel and the budget.' },
-  { title: 'Paste your ad', body: 'Headline, primary text, description — and your landing page if you have one.' },
-  { title: 'Get the simulation', body: 'Predicted results, a creative score, risks and exactly what to fix.' },
+  { t: 'Describe the campaign', d: 'What you sell, who it’s for, the channel and your monthly budget.' },
+  { t: 'Paste the ad', d: 'Headline, body copy, description — plus your landing page, if you have one.' },
+  { t: 'Read the simulation', d: 'Predicted results, what’s weak, and the exact changes to make before launch.' },
 ];
 
-const FEATURES = [
-  { icon: Gauge, title: 'Performance predictions', body: 'CTR, CPC, clicks, conversions, CPA and ROAS as honest ranges, with a confidence level.' },
-  { icon: PenLine, title: 'Creative score', body: 'Headline, clarity, CTA, emotional triggers and search-intent match, scored out of 100.' },
-  { icon: ShieldAlert, title: 'Risk assessment', body: 'Budget fit, competition in your niche and whether now is a good time to launch.' },
-  { icon: Sparkles, title: 'AI recommendations', body: 'Rewritten headline and copy, budget moves and audience tweaks you can use today.' },
-  { icon: Users, title: 'Competitor snapshot', body: 'How crowded your space is, the going CPC, and what the top ads do differently.' },
+const ANATOMY = [
+  { k: 'Predictions', t: 'What the month is likely to look like', d: 'CTR, CPC, clicks, conversions, CPA and ROAS as honest ranges, with a confidence level that drops when your inputs are vague.', v: 'CPA $55–120' },
+  { k: 'Creative', t: 'A score for the ad itself', d: 'Headline, clarity, call to action, emotional triggers and — for Search — how well the copy matches what people actually type.', v: '68 / 100' },
+  { k: 'Risk', t: 'Reasons it could go sideways', d: 'Whether the budget fits the niche, how crowded the auction is, and whether now is a good or bad time to launch.', v: 'Medium' },
+  { k: 'Fixes', t: 'What to change, specifically', d: 'Three to five improvements ranked by impact, a rewritten headline and body you can paste, budget moves and audience tweaks.', v: '5 changes' },
+  { k: 'Market', t: 'Who you’re up against', d: 'Roughly how many advertisers target your space, the going CPC, and what the best ads in your category do differently.', v: '40–80 rivals' },
 ];
 
-const fade = { initial: { opacity: 0, y: 16 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5 } };
+const reveal = { initial: { opacity: 0, y: 10 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: '-60px' }, transition: { duration: 0.45 } };
 
 const AdviceHome = () => (
   <AdviceShell>
@@ -35,83 +86,107 @@ const AdviceHome = () => (
       <meta property="og:url" content="https://ap-digital.ca/advice" />
     </Helmet>
 
-    <section className="relative overflow-hidden">
+    {/* ── Hero ── */}
+    <section className="relative border-b border-white/[0.07]">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-24 h-[420px] w-[720px] max-w-[120vw] -translate-x-1/2 rounded-full bg-[#3b82f6]/25 blur-[120px]"
+        className="pointer-events-none absolute inset-0 opacity-[0.35]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)',
+          backgroundSize: '64px 64px',
+          maskImage: 'radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 70% at 70% 40%, #000 30%, transparent 75%)',
+        }}
       />
-      <div className="relative mx-auto max-w-4xl px-4 pb-20 pt-24 text-center sm:px-6 sm:pt-32">
-        <motion.p {...fade} className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#3b82f6]" /> Free · No sign-up needed
-        </motion.p>
-        <motion.h1 {...fade} className="text-balance text-4xl font-semibold tracking-tight sm:text-6xl">
-          Simulate Your Campaign Before You Spend a Dollar
-        </motion.h1>
-        <motion.p {...fade} className="mx-auto mt-6 max-w-2xl text-balance text-base text-white/60 sm:text-lg">
-          ADvice is the flight simulator for advertising. Paste your ad, pick a channel and budget, and see how it’s likely to perform — plus exactly what to fix before launch.
-        </motion.p>
-        <motion.div {...fade} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link
-            to="/advice/simulate"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#3b82f6] px-6 py-3 font-medium text-white shadow-[0_0_40px_-8px_#3b82f6] transition-colors hover:bg-[#2563eb]"
-          >
-            Run Free Simulation <ArrowRight className="h-4 w-4" />
-          </Link>
-          <a href="#how" className="px-4 py-3 text-sm text-white/60 transition-colors hover:text-white">How it works</a>
-        </motion.div>
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+        <div>
+          <p className={label}>Free · no sign-up</p>
+          <h1 className="mt-5 max-w-[14ch] text-balance text-[2.6rem] font-semibold leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl">
+            Simulate your campaign before you spend a dollar
+          </h1>
+          <p className="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-[#A1A6AE]">
+            Paste your ad, pick the channel and budget. ADvice predicts how it will perform, scores the creative, and tells you what to fix — before a single click is paid for.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link
+              to="/advice/simulate"
+              className="inline-flex items-center gap-2 rounded-md bg-[#3b82f6] px-5 py-3 text-[15px] font-medium text-white transition-colors hover:bg-[#2f74e6]"
+            >
+              Run free simulation <ArrowRight className="h-4 w-4" />
+            </Link>
+            <span className={`${mono} text-[12px] text-[#5F646C]`}>~20 seconds per run</span>
+          </div>
+        </div>
+        <SamplePanel />
       </div>
     </section>
 
-    <section className="border-y border-white/[0.06] py-8">
-      <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-8 gap-y-3 px-4 text-sm text-white/45">
-        <span className="text-white/30">Simulates</span>
-        {CHANNELS.map((c) => <span key={c}>{c}</span>)}
-      </div>
-    </section>
-
-    <section id="how" className="mx-auto max-w-5xl scroll-mt-20 px-4 py-24 sm:px-6">
-      <motion.h2 {...fade} className="text-center text-3xl font-semibold tracking-tight">How it works</motion.h2>
-      <div className="mt-12 grid gap-4 sm:grid-cols-3">
-        {STEPS.map((s, i) => (
-          <motion.div {...fade} key={s.title} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-6">
-            <span className="text-sm font-medium text-[#3b82f6]">Step {i + 1}</span>
-            <h3 className="mt-2 font-medium">{s.title}</h3>
-            <p className="mt-2 text-sm text-white/55">{s.body}</p>
-          </motion.div>
+    {/* ── Channels ── */}
+    <section className="border-b border-white/[0.07]">
+      <div className={`mx-auto flex max-w-6xl flex-wrap items-center gap-x-5 gap-y-2 px-4 py-5 sm:px-6 ${mono} text-[12px] uppercase tracking-[0.06em]`}>
+        <span className="text-[#5F646C]">Calibrated for</span>
+        {CHANNELS.map((c, i) => (
+          <span key={c} className="text-[#A1A6AE]">
+            {c}{i < CHANNELS.length - 1 && <span className="ml-5 text-white/15">/</span>}
+          </span>
         ))}
       </div>
     </section>
 
-    <section className="mx-auto max-w-5xl px-4 pb-24 sm:px-6">
-      <motion.h2 {...fade} className="text-center text-3xl font-semibold tracking-tight">What you get</motion.h2>
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {FEATURES.map((f) => (
-          <motion.div {...fade} key={f.title} className="rounded-xl border border-white/[0.08] bg-white/[0.02] p-6">
-            <f.icon className="h-5 w-5 text-[#3b82f6]" />
-            <h3 className="mt-4 font-medium">{f.title}</h3>
-            <p className="mt-2 text-sm text-white/55">{f.body}</p>
-          </motion.div>
-        ))}
-        <motion.div {...fade} className="flex flex-col justify-between rounded-xl border border-[#3b82f6]/30 bg-[#3b82f6]/[0.06] p-6">
-          <p className="text-sm text-white/70">Share any report with a link — your team, your client, your boss.</p>
-          <Link to="/advice/simulate" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white">
-            Try it now <ArrowRight className="h-4 w-4" />
-          </Link>
-        </motion.div>
+    {/* ── How it works: a real sequence, so it's numbered ── */}
+    <section className="border-b border-white/[0.07]">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="grid md:grid-cols-3">
+          {STEPS.map((s, i) => (
+            <motion.div
+              {...reveal}
+              key={s.t}
+              className={`py-10 md:py-14 ${i > 0 ? 'border-t border-white/[0.07] md:border-l md:border-t-0 md:pl-8' : ''} ${i < 2 ? 'md:pr-8' : ''}`}
+            >
+              <span className={`${mono} text-[12px] text-[#3b82f6]`}>0{i + 1}</span>
+              <h2 className="mt-3 text-lg font-medium tracking-[-0.01em] text-white">{s.t}</h2>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#8A8F98]">{s.d}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
 
-    <section className="border-t border-white/[0.06] py-24">
-      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-        <motion.p {...fade} className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-          Our goal: Build the most useful AI tool in marketing. Period.
+    {/* ── Anatomy of a report ── */}
+    <section className="border-b border-white/[0.07]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[320px_1fr] lg:gap-16">
+        <div className="lg:sticky lg:top-24 lg:self-start">
+          <p className={label}>The report</p>
+          <h2 className="mt-4 text-balance text-3xl font-semibold leading-tight tracking-[-0.03em] text-white">Five readouts, one decision: launch, fix, or rethink.</h2>
+          <p className="mt-4 text-[15px] leading-relaxed text-[#8A8F98]">Every report is written for your product, audience and copy — then you can share it with a link.</p>
+        </div>
+        <ol className="divide-y divide-white/[0.07] border-y border-white/[0.07]">
+          {ANATOMY.map((a) => (
+            <motion.li {...reveal} key={a.k} className="grid gap-3 py-7 sm:grid-cols-[120px_1fr_auto] sm:gap-8">
+              <span className={`${label} pt-1`}>{a.k}</span>
+              <div>
+                <h3 className="font-medium text-white">{a.t}</h3>
+                <p className="mt-1.5 max-w-[56ch] text-[15px] leading-relaxed text-[#8A8F98]">{a.d}</p>
+              </div>
+              <span className={`${mono} whitespace-nowrap pt-1 text-[13px] text-[#EDEDED]`}>{a.v}</span>
+            </motion.li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    {/* ── Mission ── */}
+    <section>
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-24 sm:px-6 md:flex-row md:items-end md:justify-between">
+        <motion.p {...reveal} className="max-w-[20ch] text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.035em] text-white sm:text-5xl">
+          Our goal: build the most useful AI tool in marketing. Period.
         </motion.p>
-        <motion.div {...fade} className="mt-10">
+        <motion.div {...reveal}>
           <Link
             to="/advice/simulate"
-            className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-medium text-black transition-colors hover:bg-white/85"
+            className="inline-flex items-center gap-2 rounded-md bg-[#EDEDED] px-5 py-3 text-[15px] font-medium text-black transition-colors hover:bg-white"
           >
-            Run Free Simulation <ArrowRight className="h-4 w-4" />
+            Run your first simulation <ArrowRight className="h-4 w-4" />
           </Link>
         </motion.div>
       </div>

@@ -13,22 +13,22 @@ const span = (r: Range, f: (n: number) => string) =>
 
 // ── colour language: green good, amber middling, red bad ────────────────────
 const TONE = {
-  good: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/25',
-  mid: 'text-amber-300 bg-amber-300/10 border-amber-300/25',
-  bad: 'text-red-400 bg-red-400/10 border-red-400/25',
+  good: 'text-emerald-400 bg-[#4ADE80]/10 border-emerald-400/25',
+  mid: 'text-amber-300 bg-[#FACC15]/10 border-amber-300/25',
+  bad: 'text-red-400 bg-[#F87171]/10 border-red-400/25',
   neutral: 'text-white/70 bg-white/5 border-white/10',
 };
 const scoreTone = (s: number) => (s >= 75 ? TONE.good : s >= 50 ? TONE.mid : TONE.bad);
-const scoreBar = (s: number) => (s >= 75 ? 'bg-emerald-400' : s >= 50 ? 'bg-amber-300' : 'bg-red-400');
+const scoreBar = (s: number) => (s >= 75 ? 'bg-[#4ADE80]' : s >= 50 ? 'bg-[#FACC15]' : 'bg-[#F87171]');
 const riskTone = (l: Level) => (l === 'low' ? TONE.good : l === 'medium' ? TONE.mid : TONE.bad);
 const confidenceTone = (l: Level) => (l === 'high' ? TONE.good : l === 'medium' ? TONE.mid : TONE.bad);
 
 const Pill = ({ tone, children }: { tone: string; children: ReactNode }) => (
-  <span className={`inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium capitalize ${tone}`}>{children}</span>
+  <span className={`inline-flex items-center rounded border px-2 py-0.5 font-['Geist_Mono',_monospace] text-[11px] uppercase tracking-[0.06em] ${tone}`}>{children}</span>
 );
 
 const Card = ({ children, className = '' }: { children: ReactNode; className?: string }) => (
-  <div className={`advice-card rounded-xl border border-white/[0.08] bg-white/[0.02] p-5 ${className}`}>{children}</div>
+  <div className={`advice-card rounded-lg border border-white/[0.08] bg-[#0f0f10] p-5 ${className}`}>{children}</div>
 );
 
 const Section = ({ n, title, right, children }: { n: number; title: string; right?: ReactNode; children: ReactNode }) => (
@@ -39,7 +39,7 @@ const Section = ({ n, title, right, children }: { n: number; title: string; righ
     className="advice-section"
   >
     <div className="mb-4 flex items-center justify-between gap-4">
-      <h2 className="text-lg font-semibold tracking-tight">{title}</h2>
+      <h2 className="flex items-baseline gap-3 text-lg font-semibold tracking-[-0.02em] text-white"><span className="font-['Geist_Mono',_monospace] text-[12px] font-normal text-[#3b82f6]">0{n}</span>{title}</h2>
       {right}
     </div>
     {children}
@@ -48,9 +48,9 @@ const Section = ({ n, title, right, children }: { n: number; title: string; righ
 
 const Metric = ({ label, value, sub }: { label: string; value: string; sub?: string }) => (
   <Card>
-    <p className="text-xs uppercase tracking-wider text-white/45">{label}</p>
-    <p className="mt-2 text-xl font-semibold tabular-nums sm:text-2xl">{value}</p>
-    {sub && <p className="mt-1 text-xs text-white/40">{sub}</p>}
+    <p className="font-['Geist_Mono',_monospace] text-[11px] uppercase tracking-[0.08em] text-[#8A8F98]">{label}</p>
+    <p className="font-['Geist_Mono',_monospace] mt-2 text-lg tabular-nums text-white sm:text-xl">{value}</p>
+    {sub && <p className="mt-1 text-xs text-[#5F646C]">{sub}</p>}
   </Card>
 );
 
@@ -58,7 +58,7 @@ const ScoreRow = ({ label, s }: { label: string; s: Scored }) => (
   <div className="py-3">
     <div className="flex items-center justify-between gap-3">
       <span className="text-sm font-medium">{label}</span>
-      <span className="text-sm tabular-nums text-white/70">{s.score}</span>
+      <span className="font-['Geist_Mono',_monospace] text-sm tabular-nums text-white/80">{s.score}</span>
     </div>
     <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
       <motion.div
@@ -74,7 +74,7 @@ const ScoreRow = ({ label, s }: { label: string; s: Scored }) => (
 
 const ScoreRing = ({ score }: { score: number }) => {
   const r = 52, c = 2 * Math.PI * r;
-  const stroke = score >= 75 ? '#34d399' : score >= 50 ? '#fcd34d' : '#f87171';
+  const stroke = score >= 75 ? '#4ADE80' : score >= 50 ? '#FACC15' : '#F87171';
   return (
     <svg viewBox="0 0 120 120" className="h-32 w-32" role="img" aria-label={`Creative score ${score} out of 100`}>
       <circle cx="60" cy="60" r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="8" />
@@ -92,9 +92,9 @@ const ScoreRing = ({ score }: { score: number }) => {
 };
 
 const CopyBlock = ({ label, text }: { label: string; text: string }) => (
-  <div className="rounded-lg border border-white/[0.08] bg-black/30 p-4">
+  <div className="rounded-lg border border-white/[0.08] bg-black/40 p-4">
     <div className="mb-2 flex items-center justify-between">
-      <span className="text-xs uppercase tracking-wider text-white/45">{label}</span>
+      <span className="font-['Geist_Mono',_monospace] text-[11px] uppercase tracking-[0.08em] text-[#8A8F98]">{label}</span>
       <button
         type="button"
         onClick={() => navigator.clipboard?.writeText(text)}
@@ -103,7 +103,7 @@ const CopyBlock = ({ label, text }: { label: string; text: string }) => (
         <Copy className="h-3 w-3" /> Copy
       </button>
     </div>
-    <p className="whitespace-pre-line text-sm text-white/90">{text}</p>
+    <p className="font-['Geist_Mono',_monospace] whitespace-pre-line text-[13px] leading-relaxed text-[#4ADE80]">{text}</p>
   </div>
 );
 
@@ -117,10 +117,10 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
   return (
     <div className="space-y-12">
       <header>
-        <p className="text-sm text-white/45">
+        <p className="font-['Geist_Mono',_monospace] text-[12px] uppercase tracking-[0.06em] text-[#8A8F98]">
           {i.channel} · {i.industry} · {money(i.budget)}/month · {new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}
         </p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">{i.campaignName || 'Simulation report'}</h1>
+        <h1 className="mt-2 text-3xl font-semibold tracking-[-0.035em] text-white sm:text-4xl">{i.campaignName || 'Simulation report'}</h1>
         <p className="mt-4 max-w-3xl text-white/70">{r.summary}</p>
       </header>
 
@@ -197,7 +197,7 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
         <div className="space-y-3">
           {r.recommendations.improvements.map((m, idx) => (
             <Card key={m.title} className="flex gap-4">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#3b82f6]/15 text-sm font-medium text-[#60a5fa]">{idx + 1}</span>
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded border border-[#3b82f6]/30 font-['Geist_Mono',_monospace] text-[12px] text-[#60a5fa]">{idx + 1}</span>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="font-medium">{m.title}</h3>
