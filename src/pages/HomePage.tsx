@@ -140,7 +140,14 @@ const HomePage = () => {
         {/* Night plate. Desktop: anchored right and bottom, faded into the navy on
             its left edge so the headline sits on open sky. Mobile: a band under
             the copy, faded in from the top. Height never uses vh on mobile. */}
-        <div aria-hidden="true" className="pointer-events-none select-none absolute inset-0 hidden lg:block">
+        {/* The plate starts where the copy ends — never less than 560px or 30% from
+            the left — so the skyline can't slide under the headline at any width.
+            Its left edge fades into the navy, which reads as open water/sky. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none select-none absolute inset-y-0 right-0 left-[max(30%,560px)] hidden lg:block"
+          style={{ maskImage: 'linear-gradient(to right, transparent 0%, #000 30%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #000 30%)' }}
+        >
           <img
             src="/vancouver-night-2260.jpg"
             srcSet="/vancouver-night-1130.webp 1130w, /vancouver-night-2260.webp 2260w"
@@ -150,25 +157,23 @@ const HomePage = () => {
             height={1560}
             {...{ fetchpriority: 'high' }}
             decoding="async"
-            className="h-full w-full object-cover object-[right_bottom]"
+            className="h-full w-full object-cover object-[78%_bottom]"
           />
-          {/* Keeps the headline on dark sky whatever the window's aspect ratio. */}
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,hsl(var(--primary)/0.92)_0%,hsl(var(--primary)/0.72)_38%,hsl(var(--primary)/0.08)_68%)]" />
         </div>
 
         <div className="relative z-10 w-full container-custom pt-28 pb-8 sm:pt-36 lg:flex lg:flex-1 lg:items-center lg:pt-24 lg:pb-12">
-          <div className="max-w-[760px] lg:-translate-y-2">
+          <div className="max-w-[640px] lg:-translate-y-2">
             <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-primary-foreground/75 sm:mb-5 lg:text-[11px]">
               Vancouver Digital Marketing
             </p>
 
-            <h1 className="mb-5 font-serif text-[2.75rem] font-normal leading-[0.98] tracking-normal sm:text-6xl lg:max-w-[760px] lg:text-[4.8rem] xl:text-[5.35rem]">
+            <h1 className="mb-5 font-serif text-[2.75rem] font-normal leading-[0.98] tracking-normal sm:text-6xl lg:max-w-[620px] lg:text-[4.25rem] xl:text-[4.75rem]">
               Vancouver{' '}
               <span className="italic">Performance</span>{' '}
               <span className="sm:whitespace-nowrap">Marketing Agency</span>
             </h1>
 
-            <p className="mb-7 max-w-[550px] text-[15px] leading-relaxed text-primary-foreground/85 sm:text-lg lg:mb-7">
+            <p className="mb-7 max-w-[500px] text-[15px] leading-relaxed text-primary-foreground/85 sm:text-lg lg:mb-7">
               Google &amp; Meta Ads and social media for local businesses — and if we miss the lead target we agree on in 90 days, we keep working free until we hit it.
             </p>
 
