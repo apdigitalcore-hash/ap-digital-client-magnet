@@ -36,7 +36,7 @@ const results = [
 const faqs = [
   {
     question: 'How do I get more dental patients in Vancouver?',
-    answer: 'Google Ads is the fastest channel — people searching "dentist near me" or "emergency dentist Vancouver" are ready to book. AP Digital runs geo-targeted Google and Meta campaigns that put your clinic in front of patients within 10–15 km, generating 30–60 new patient inquiries per month.',
+    answer: 'Google Ads is the fastest channel — people searching "dentist near me" or "emergency dentist Vancouver" are ready to book. AP Digital runs geo-targeted Google and Meta campaigns that put your clinic in front of patients within 10–15 km. Volume depends on your budget, the treatments you promote and how competitive your area is — implant and Invisalign searches cost far more per click than a general check-up.',
   },
   {
     question: 'How much does dental marketing cost?',

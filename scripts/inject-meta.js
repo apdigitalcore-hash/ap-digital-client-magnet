@@ -285,7 +285,7 @@ const staticRoutes = [
   {
     path: 'electrician-marketing',
     title: 'Electrician Marketing Vancouver | Get More Jobs | AP Digital',
-    description: 'Get 25+ qualified electrical jobs/month with Google Ads & Local SEO. AP Digital serves Metro Vancouver electricians. Month-to-month. No contracts. 90-day guarantee.',
+    description: 'Electrician marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.',
     body: '<h1>Electrician Marketing — Get More Jobs with Google Ads</h1><p>Panel upgrades, EV charger installs, emergency rewiring — AP Digital builds booked-estimate systems for BC electricians using Google Ads, Local Service Ads, and Google Business Profile optimization. EV charger installation is up 140% YoY in BC.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/contractor-marketing">Contractor Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/blog/electrician-leads-bc">Electrician leads in BC</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,

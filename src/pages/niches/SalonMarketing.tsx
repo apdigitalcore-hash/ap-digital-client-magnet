@@ -36,7 +36,7 @@ const results = [
 const faqs = [
   {
     question: 'How do I get more salon clients in Vancouver?',
-    answer: 'The fastest way is targeted Instagram and Facebook ads reaching people in your area who are actively looking for salon services. AP Digital sets up geo-targeted campaigns on Meta and Google that reach potential clients within 10–15 km of your salon, generating 20–40 new bookings per month.',
+    answer: 'The fastest way is targeted Instagram and Facebook ads reaching people in your area who are actively looking for salon services. AP Digital sets up geo-targeted campaigns on Meta and Google that reach potential clients within 10–15 km of your salon. How many bookings that turns into depends on your offer, your budget and how easy it is to book once someone taps the ad.',
   },
   {
     question: 'How much does salon marketing cost in BC?',

@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: 'How fast will I get roofing leads from Google Ads?',
-    answer: 'Storm-damage and emergency repair searches can generate calls within hours of launching. Replacement and re-roofing keywords typically produce 1–3 qualified leads per day within the first two weeks. Volume spikes significantly during and after BC\'s rainy season (October–March).',
+    answer: 'Storm-damage and emergency repair searches can generate calls within hours of launching. Replacement and re-roofing keywords cost more per click than repairs but carry far higher job values. Volume spikes significantly during and after BC\'s rainy season (October–March).',
   },
   {
     question: 'Should roofers use Google Ads or Meta Ads?',

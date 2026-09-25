@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     question: 'How fast will I get leads from Google Ads?',
-    answer: 'Emergency electrical searches generate calls within 24–48 hours. Service keywords like "panel upgrade" and "EV charger installation" typically produce 2–3 qualified leads per day within the first two weeks. We see the strongest volume from Monday to Thursday when homeowners are planning projects.',
+    answer: 'Emergency electrical searches generate calls within 24–48 hours. Service keywords like "panel upgrade" and "EV charger installation" cost more per click but bring bigger jobs, so we usually split them from emergency terms. We see the strongest volume from Monday to Thursday when homeowners are planning projects.',
   },
   {
     question: 'Should electricians use Google Ads or Meta Ads?',

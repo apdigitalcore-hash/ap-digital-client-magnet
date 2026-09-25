@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     question: 'What results can Langley trades businesses expect?',
-    answer: 'Most Langley contractors — plumbers, HVAC, electricians, roofers — see 10 to 30 qualified leads per month within 60 days of launching with AP Digital. Results depend on your service area, budget, and niche, but trades businesses in Langley consistently perform well because local search intent is high and the competition, while present, is beatable with a well-structured campaign.',
+    answer: 'Trades businesses in Langley — plumbers, HVAC, electricians, roofers — tend to do well on paid search because local intent is high and the competition, while present, is beatable with a well-structured campaign. What you get out of it depends on your service area, budget and niche, which is why we agree a lead target with you at kickoff rather than quoting a number up front.',
   },
   {
     question: 'How do I find a digital marketing agency near me in Langley?',

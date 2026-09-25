@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: 'How fast will my firm see case inquiries?',
-    answer: 'Google Ads usually generates the first consultation calls within the first week of launch. Most legal clients reach a steady flow of 20–30 inquiries per month by week 4–6 once we\'ve cut wasted spend and tightened negative keywords.',
+    answer: 'Google Ads usually generates the first consultation calls within the first week of launch. Legal clicks are among the most expensive in Google Ads, so the first weeks are mostly about cutting wasted spend and tightening negative keywords before volume settles.',
   },
   {
     question: 'Can you help my firm rank in Google Maps?',

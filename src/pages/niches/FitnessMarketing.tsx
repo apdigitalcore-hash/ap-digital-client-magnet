@@ -36,7 +36,7 @@ const results = [
 const faqs = [
   {
     question: 'How do I get more gym members in Vancouver?',
-    answer: 'Meta Ads are the highest-ROI channel for gyms and studios. We target people within 5–10 km of your location who match your ideal member profile — age, fitness interests, income — and drive them to a free trial or intro offer. Most gyms see 30–50 new leads per month.',
+    answer: 'Meta Ads are the highest-ROI channel for gyms and studios. We target people within 5–10 km of your location who match your ideal member profile — age, fitness interests, income — and drive them to a free trial or intro offer. How many leads that produces depends on your budget, your offer and how many studios compete in your area — a strong intro offer usually matters more than the ad itself.',
   },
   {
     question: 'How much does fitness marketing cost?',
