@@ -3,7 +3,7 @@
 // Secrets: GEMINI_API_KEY (required), GEMINI_MODEL (optional).
 import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 
-const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY");
+const GEMINI_API_KEY = Deno.env.get("DefaultGeminiProject");
 const GEMINI_MODEL = Deno.env.get("GEMINI_MODEL") ?? "gemini-2.0-flash";
 const PER_IP_PER_HOUR = 8;
 
