@@ -1,5 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { getMoneyLinks } from '@/lib/moneyLinks';
+import { clusterSiblings, getCluster } from '@/lib/clusterLinks';
+import { blogPosts } from '@/lib/blogPosts';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -182,6 +184,28 @@ const BlogPost = () => {
             </p>
             <PreferredSourceButton />
           </div>
+
+          {(() => {
+            const cluster = getCluster(post.slug);
+            const siblings = clusterSiblings(post.slug)
+              .map((s) => blogPosts.find((b) => b.slug === s))
+              .filter(Boolean)
+              .slice(0, 8);
+            if (!cluster || siblings.length === 0) return null;
+            return (
+              <nav aria-label={cluster.label} className="mt-12 rounded-2xl border border-border bg-card p-6">
+                <h2 className="font-display text-lg font-bold text-foreground">{cluster.label}</h2>
+                <p className="mt-1 text-sm text-muted-foreground">{cluster.intro}</p>
+                <ul className="mt-4 grid gap-x-8 gap-y-2 sm:grid-cols-2">
+                  {siblings.map((s) => (
+                    <li key={s!.slug}>
+                      <Link to={`/blog/${s!.slug}`} className="text-sm text-teal hover:underline">{s!.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            );
+          })()}
 
           <nav aria-label="Related services" className="mt-12 border-t border-border pt-6">
             <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">Where we can help</p>

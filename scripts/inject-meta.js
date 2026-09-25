@@ -1181,6 +1181,21 @@ for (const route of staticRoutes) {
 
 // Mirrors src/lib/moneyLinks.ts — same JSON rules, so React and prerender agree.
 const MONEY = JSON.parse(readFileSync(resolve(__dirname, '../src/lib/moneyLinks.json'), 'utf8'));
+// Topic clusters — mirrors src/lib/clusterLinks.ts so React and the prerendered
+// HTML link the same way.
+const CLUSTERS = JSON.parse(readFileSync(resolve(__dirname, '../src/lib/clusters.json'), 'utf8'));
+function clusterFor(slug) {
+  for (const [key, c] of Object.entries(CLUSTERS)) if (c.posts.includes(slug)) return { key, ...c };
+  return null;
+}
+function clusterNav(post, titleOf) {
+  const c = clusterFor(post.slug);
+  if (!c) return '';
+  const siblings = [c.hub, ...c.posts.filter((s) => s !== c.hub)].filter((s) => s !== post.slug).slice(0, 8);
+  if (!siblings.length) return '';
+  return `<nav aria-label="${escapeHtml(c.label)}"><h2>${escapeHtml(c.label)}</h2><p>${escapeHtml(c.intro)}</p><ul>` +
+    siblings.map((s) => `<li><a href="/blog/${s}">${escapeHtml(titleOf(s) || s)}</a></li>`).join('') + '</ul></nav>';
+}
 function getMoneyLinks(slug, title) {
   const text = `${slug.replace(/-/g, ' ')} ${title}`.toLowerCase();
   const hit = (rules, max) => rules.filter(r => r.match.some(m => text.includes(m))).slice(0, max).map(({ path, label }) => ({ path, label }));
@@ -1284,7 +1299,7 @@ for (const post of blogPosts) {
     ? '<section aria-label="Frequently asked questions">' + post.faqs.map(
         (f) => `<section><h2>${escapeHtml(f.q)}</h2><p>${escapeHtml(f.a)}</p></section>`).join('') + '</section>'
     : '';
-  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}${faqBody}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article><nav aria-label="Related services"><ul>${getMoneyLinks(post.slug, post.title).map(l => `<li><a href="${l.path}">${escapeHtml(l.label)}</a></li>`).join('')}<li><a href="/blog">All Articles</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>`;
+  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}${faqBody}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article>${clusterNav(post, (s) => (blogPosts.find((p) => p.slug === s) || {}).metaTitle?.split(' | ')[0])}<nav aria-label="Related services"><ul>${getMoneyLinks(post.slug, post.title).map(l => `<li><a href="${l.path}">${escapeHtml(l.label)}</a></li>`).join('')}<li><a href="/blog">All Articles</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>`;
   const html = injectIntoHtml(baseHtml, {
     title: post.metaTitle,
     description: post.metaDescription,

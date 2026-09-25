@@ -233,6 +233,44 @@ The gap between a $300 freelancer video and a $3,000 produced one is mostly crew
 
 **To be straightforward: we do not produce video.** AP Digital runs paid ads and manages social accounts, and where a client needs video we tell them to hire a specialist or shoot it themselves. These numbers are here because you will be quoted them, not because we are quoting them.
 
+## What a Social Media Package Actually Includes
+
+"Packages" are where Canadian pricing gets slippery, because two agencies quoting $1,500 can be selling very different work. Before comparing prices, compare these six line items.
+
+| Line item | Budget package | Mid package | Full-service |
+| --- | --- | --- | --- |
+| Posts per month | 8 – 12 | 12 – 20 | 20 – 30 |
+| Platforms | 1 – 2 | 2 – 3 | 3 – 5 |
+| Original photo/video | Stock or client-supplied | Some client-supplied, edited | Shot on site monthly |
+| Captions & hashtags | Templated | Written per post | Written per post, tested |
+| Community management | None | Weekday replies | Daily replies + DMs |
+| Reporting | Monthly screenshot | Monthly call | Weekly dashboard |
+
+Two questions settle most quotes. **Who creates the raw footage?** If the agency shoots on location, expect $1,500+; if you film on your phone and they edit, plan and publish, it stays well under that. **Is ad spend included?** It should not be — see [the ad spend section below](#how-much-do-social-media-ads-cost-in-canada). A package that bundles spend into one number makes it impossible to see what management actually costs you.
+
+## Cost by Business Size
+
+| Business | Typical monthly management | Typical monthly ad spend |
+| --- | --- | --- |
+| Solo operator or new local business | $500 – $900 | $300 – $800 |
+| Established local service business (2 – 10 staff) | $800 – $1,800 | $800 – $2,500 |
+| Multi-location or regional brand | $2,000 – $4,000 | $2,500 – $10,000 |
+| Ecommerce scaling nationally | $3,000 – $6,000 | $5,000+ |
+
+A local plumber in Surrey and a national ecommerce brand both "do social media", but the work has almost nothing in common. Smaller local businesses usually get further by putting more into ad spend and less into content volume: twelve good posts and $1,500 in well-targeted ads beat thirty posts and no budget nearly every time.
+
+## Social Media vs Other Advertising Costs
+
+Social is one line in an advertising budget, and it is rarely the cheapest way to reach someone who is ready to buy right now. For comparison, using the same Canadian pricing basis as above:
+
+- **Google Ads** — higher intent, higher cost per click. See [what Google Ads cost a small business](/blog/google-ads-cost-small-business-canada) and [Google Ads costs in Vancouver](/blog/how-much-do-google-ads-cost-vancouver).
+- **Instagram and Facebook ads** — cheaper clicks, more persuading required. See [Instagram ad costs in Canada](/blog/how-much-do-instagram-ads-cost-canada) and [what Meta Ads cost BC contractors](/blog/meta-ads-cost-contractors-bc).
+- **TikTok** — the cheapest reach of the major platforms, with the shortest shelf life. See [TikTok ads for BC small business](/blog/tiktok-ads-small-business-bc).
+- **SEO** — no cost per click, but months before it pays. See [what SEO costs in Canada](/blog/how-much-does-seo-cost-canada).
+- **Email** — the cheapest per customer once a list exists. See [email marketing costs in Canada](/blog/how-much-does-email-marketing-cost-canada).
+
+Most local businesses we work with end up running paid search for demand that already exists, and social for the demand that does not yet know you exist.
+
 ## What to Look for in a Canadian Social Media Agency
 
 Before signing a contract, evaluate the agency on these criteria:
