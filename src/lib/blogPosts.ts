@@ -86,7 +86,7 @@ We serve real estate agents across Metro Vancouver including [Vancouver](/vancou
   {
     slug: 'how-much-does-social-media-marketing-cost-canada',
     title: 'Social Media Marketing Cost in Canada: 2026 Price Guide',
-    metaTitle: 'Social Media Marketing Cost in Canada (2026 Prices & Tiers)',
+    metaTitle: 'Social Media Marketing Cost in Canada (2026): $500–$5,000/mo',
     metaDescription: 'See real 2026 social media marketing costs in Canada: $500–$5,000+/mo by tier, what each package includes, ad spend ranges, and a free budget calculator.',
     excerpt: 'A transparent 2026 price guide for Canadian social media marketing — from budget packages to full-service retainers, with a free budget calculator and downloadable template.',
     date: '2026-08-09',
