@@ -46,6 +46,9 @@ Disallow: /
 
 # Sitemaps
 Sitemap: https://ap-digital.ca/sitemap.xml
+# Same 58 URLs under a second name, so a fresh submission in Search Console
+# reports its own coverage instead of reusing the Aug 8 entry's cached counts.
+Sitemap: https://ap-digital.ca/apdigital-sitemap.xml
 
 # AI reference files
 # /llms.txt          — concise structured index
