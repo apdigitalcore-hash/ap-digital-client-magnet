@@ -37,8 +37,8 @@ const steps = [
     title: 'We optimize relentlessly.',
     description: 'Weekly A/B tests, bid adjustments, creative refreshes, and performance reports. Your campaigns get better every single week.',
     deliverable: 'Weekly performance reports',
-    stat: '340%',
-    statLabel: 'avg traffic growth',
+    stat: 'Weekly',
+    statLabel: 'tests & reporting',
   },
 ];
 

@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     question: 'How much does trades marketing cost in BC?',
-    answer: 'Most BC contractors start with $800–$1,500/month in ad spend plus a $759/month management fee. This covers Google Ads, Meta Ads, creative testing, and weekly reporting. Cost per lead typically ranges from $15–$40 depending on the trade.',
+    answer: 'Most BC contractors start with $800–$1,500/month in ad spend plus a $759/month management fee. This covers Google Ads, Meta Ads, creative testing, and weekly reporting. Cost per lead varies a lot by trade, season and how competitive your area is — emergency call-outs are cheaper to win than large installs, and we report yours every week rather than quoting an average up front.',
   },
   {
     question: 'Should my trades business use Google Ads or Facebook Ads?',
@@ -129,7 +129,7 @@ const TradesMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Local SEO that sticks</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">We get you into the Google Maps pack — where 40%+ of local clicks go — and keep you there.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">We get you into the Google Maps pack, where local searches turn into calls, and keep you there.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />

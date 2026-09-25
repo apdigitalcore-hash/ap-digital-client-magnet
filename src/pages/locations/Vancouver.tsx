@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     question: 'Do I need a long-term contract?',
-    answer: 'No. AP Digital operates month-to-month with every Vancouver client. We earn your business every 30 days by actually delivering results — there is no lock-in, no setup penalty, and no cancellation fee.',
+    answer: 'No. AP Digital operates month-to-month with every Vancouver client. We earn your business every month by actually delivering results — there is no lock-in, no setup penalty, and no cancellation fee. Pause or cancel with 15 days\' notice.',
   },
   {
     question: 'How much does digital marketing cost in Vancouver?',

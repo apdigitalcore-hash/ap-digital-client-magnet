@@ -86,7 +86,7 @@ const faqs = [
   },
   {
     question: 'How fast will I see results from paid ads?',
-    answer: 'Most clients see their first qualified leads within two weeks of campaign launch. We optimize aggressively during the first 30 days to dial in targeting, creatives, and landing pages for the best possible cost per lead.',
+    answer: 'How quickly the first qualified leads arrive depends on your market, budget and how much people search for what you sell. We optimize aggressively during the first 30 days to dial in targeting, creatives, and landing pages for the best possible cost per lead.',
   },
   {
     question: 'Should I use Facebook Ads or Google Ads?',
@@ -151,7 +151,7 @@ const PaidAds = () => (
 
         {/* Short intro */}
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-          Most businesses waste their first $5k figuring out what works. We've already done that testing — your campaigns launch with proven structure from day one. Pair ads with our <Link to="/services/social-media" className="text-teal underline hover:text-teal/80">social media management</Link> for full-funnel coverage. See <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">how we work</Link>.
+          Most accounts lose money early on structure mistakes — broad match with no negatives, one ad set for every service, no conversion tracking. Your campaigns launch without those. Pair ads with our <Link to="/services/social-media" className="text-teal underline hover:text-teal/80">social media management</Link> for full-funnel coverage. See <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing</Link> or browse <Link to="/case-studies" className="text-teal underline hover:text-teal/80">how we work</Link>.
         </p>
 
         {/* 3-column why strip */}

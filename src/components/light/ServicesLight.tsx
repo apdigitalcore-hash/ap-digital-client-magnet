@@ -36,7 +36,7 @@ const services: {
     platforms: ['instagram', 'facebook', 'tiktok', 'meta'],
     stats: [
       { value: '12+', label: 'Posts / month' },
-      { value: '340%', label: 'Avg growth' },
+      { value: '$849', label: 'Per month' },
       { value: '4', label: 'Platforms' },
     ],
   },

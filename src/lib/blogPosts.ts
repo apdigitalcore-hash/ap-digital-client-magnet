@@ -275,7 +275,20 @@ Every business is different, and cookie-cutter packages rarely deliver the best 
 
 At AP DIGITAL, we build custom [social media marketing](/services/social-media) and [lead generation](/services/paid-ads) strategies for Canadian businesses. No long-term contracts. No hidden fees. Just transparent pricing and a 90-day results guarantee.
 
-**[Book your free strategy call today](/book)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.`,
+**[Book your free strategy call today](/book)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.
+
+## Where these numbers come from
+
+Agency fees in this guide come from published Canadian agency pricing and our own rate card. Platform costs are auction-driven, so the ranges are benchmarks, not quotes — your own costs depend on your industry, location, audience and creative.
+
+- **Meta (Facebook & Instagram) auction and pricing** — [Meta Business Help Center: about ad auctions](https://www.facebook.com/business/help/430291176997542)
+- **Facebook advertising benchmarks by industry** — [LocalIQ/WordStream Facebook ad benchmarks](https://localiq.com/blog/facebook-advertising-benchmarks/)
+- **Google Ads budgets and how charges work** — [Google Ads Help: about budgets](https://support.google.com/google-ads/answer/6167118)
+- **TikTok bidding and campaign minimums** — [TikTok Ads Manager: bidding and optimisation](https://ads.tiktok.com/help/article/tiktok-ads-manager-bidding-optimization)
+- **LinkedIn advertising costs** — [LinkedIn Marketing Solutions: ads pricing](https://business.linkedin.com/marketing-solutions/ads/pricing)
+- **Platform usage and posting benchmarks** — [Sprout Social: social media statistics](https://sproutsocial.com/insights/social-media-statistics/)
+
+**Our own figures** — the $759/month ads management and $849/month social media management quoted here are AP Digital's published rates, not survey averages. Ad spend is always billed by the platform directly, never through us.`,
     faqs: [
       { question: 'What is the cost for social media marketing in Canada?', answer: 'Management runs $500 to $5,000+ per month depending on the tier, and ad spend is separate — usually another $500 to $5,000 per month if you run paid campaigns. Budget tier is $500 to $1,000 for scheduling and basic content, growth is $1,500 to $3,000 for strategy plus paid management, and full-service is $3,000 to $5,000+ with video production and reporting. AP Digital charges a flat $849/month for social media management.' },
       { question: 'How much does it cost to market on social media if you do it yourself?', answer: 'Doing it in-house is not free, it just moves the cost. Scheduling tools run $15 to $100 a month, stock assets and templates another $20 to $50, and the real expense is time: most owners spend six to ten hours a week on content, which at any sensible hourly rate exceeds an agency retainer. The honest comparison is not $0 versus $849 — it is your ten hours versus $849.' },
