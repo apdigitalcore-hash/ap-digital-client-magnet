@@ -42,19 +42,11 @@ const faqs = [
   },
   {
     question: 'How quickly will I see leads in Coquitlam?',
-    answer: 'Most Coquitlam businesses see their first qualified leads within 2 weeks of launching Meta Ads with AP Digital.',
+    answer: 'Campaigns are usually live within a week of kickoff. How quickly leads follow depends on your trade, your budget and how many people in the Tri-Cities search for what you sell each month — emergency plumbing moves in days, a kitchen renovation enquiry takes longer. We agree a 90-day lead target at kickoff, and if we miss it we keep working free until we hit it.',
   },
   {
     question: 'Is there a long-term contract for Coquitlam clients?',
     answer: 'No lock-in contracts. AP Digital works month-to-month with every client in Coquitlam and the Tri-Cities.',
-  },
-  {
-    question: 'How much does digital marketing cost in Coquitlam?',
-    answer: 'Most clients start with $500–$1,500/month in ad spend. Our management fee is transparent and quoted before you commit to anything.',
-  },
-  {
-    question: 'Does AP Digital serve Port Moody and Port Coquitlam too?',
-    answer: 'Yes — we run campaigns across the entire Tri-Cities area including Coquitlam, Port Moody, and Port Coquitlam, as well as New Westminster and Burnaby.',
   },
   {
     question: 'Do you serve Port Moody and Port Coquitlam too?',
@@ -342,9 +334,22 @@ const Coquitlam = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Fast Results</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Most Coquitlam clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Campaigns go live within a week of kickoff, and we optimise daily through the first fortnight rather than setting and forgetting.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Local market detail — the part a template page can't have */}
+      <section className="bg-white py-24">
+        <div className="container-custom max-w-3xl">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-8">
+            Advertising in the Tri-Cities, specifically
+          </h2>
+            <p className="text-muted-foreground leading-relaxed mb-5">Coquitlam is not a small Vancouver. It is three connected markets — Coquitlam, Port Moody and Port Coquitlam — with about 250,000 people between them, and the buying behaviour changes street by street. Westwood Plateau and Burke Mountain are family neighbourhoods full of newer detached homes: renovations, heat pumps, roofing, landscaping, orthodontics. Burquitlam and the towers along the Evergreen Extension skew younger and renting, which is where salons, studios, clinics and restaurants do better than trades. Maillardville, Austin Heights and Port Coquitlam's older stock bring repair work — plumbing, electrical, drainage — on houses that are forty years and up.</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">That matters for ad budgets. A single campaign covering "Tri-Cities" spends the same money reaching a Burquitlam renter and a Burke Mountain homeowner, even though only one of them is going to book a $14,000 roof. We split campaigns by area whenever the search volume supports it, so your budget concentrates where the work actually is.</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">The competition here is thinner than in Vancouver, which is the opportunity. Searches like "marketing agency Coquitlam" or "electrician Port Moody" cost less per click than the Vancouver equivalents, because fewer advertisers bid on them. A Tri-Cities business that runs tight local campaigns can outrank far bigger Vancouver competitors in its own back yard, for a fraction of what a city-wide campaign would cost.</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">Seasonality is real here too. Roofing and drainage searches climb from October as the rain sets in. Heat pump and air conditioning searches spike in the first hot week of summer, usually late June. Renovation enquiries build through January and February while people are indoors planning. We move budget toward whichever of those is in season rather than spreading it evenly across the year.</p>
         </div>
       </section>
 

@@ -1080,7 +1080,11 @@ function loadStaticProse() {
       // template literals and nested JSX that the stripper cannot flatten, and a
       // fragment of it leaked into the prerendered body on the first run. A page
       // is better off missing a paragraph than shipping code to Google.
-      if (t.length >= 40 && !/className|=>|[{}`]|undefined|\$\{/.test(t)) {
+      // Headings are short by nature — "Advertising in Surrey, specifically" is
+      // 35 characters and was being dropped — so they get a lower bar than body
+      // paragraphs. The source-leak guard below still applies to both.
+      const min = m[1] === 'p' ? 40 : 18;
+      if (t.length >= min && !/className|=>|[{}`]|undefined|\$\{/.test(t)) {
         blocks.push({ tag: m[1], text: t });
       }
     }

@@ -42,15 +42,11 @@ const faqs = [
   },
   {
     question: 'How quickly will I see leads in Surrey?',
-    answer: 'Most Surrey businesses see their first leads within 2 weeks of launching Meta Ads with AP Digital.',
+    answer: 'Campaigns are usually live within a week of kickoff. How quickly leads follow depends on your industry, your budget and how many Surrey residents search for what you sell — emergency trades work moves within days, while considered purchases take longer. We agree a 90-day lead target at kickoff, and if we miss it we keep working free until we hit it.',
   },
   {
     question: 'Do I have to sign a long-term contract?',
     answer: 'No contracts. We work month-to-month with every client in Surrey and across Metro Vancouver.',
-  },
-  {
-    question: 'How much does digital marketing cost in Surrey?',
-    answer: 'Most clients start with $500–$1,500/month in ad spend. Our management fee is transparent and quoted upfront.',
   },
   {
     question: 'Will Arjun personally manage my account?',
@@ -345,6 +341,19 @@ const Surrey = () => (
               <p className="relative z-10 text-muted-foreground reveal-body text-sm">Most Surrey clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Local market detail — the part a template page can't have */}
+      <section className="bg-white py-24">
+        <div className="container-custom max-w-3xl">
+          <h2 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-8">
+            Advertising in Surrey, specifically
+          </h2>
+            <p className="text-muted-foreground leading-relaxed mb-5">Surrey is the largest city by area in Metro Vancouver and is on track to pass Vancouver in population. For advertising, that size is the whole problem: a campaign set to "Surrey" covers everything from the townhouses of Clayton to the acreages of South Surrey, and those are not the same customer. Newton and Whalley are dense, younger and more price-sensitive. Fleetwood and Cloverdale are established family neighbourhoods where renovation, roofing and orthodontic work concentrates. South Surrey and White Rock hold the city's highest household incomes, which is where premium home services, cosmetic clinics and realtors get their best return.</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">Language matters here in a way it does not elsewhere in the region. Large parts of Newton and Whalley are Punjabi-speaking, and ads written in English alone leave conversions on the table for trades, immigration services, insurance and family clinics. We run separate ad sets when that is your customer base, rather than translating one campaign and hoping.</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">Surrey also has a genuine commuter split. A business on King George Boulevard is competing for the same customer as one in Langley or Delta, because the drive is short in every direction. We use radius targeting around your actual service area rather than the city boundary, so you stop paying to reach people who will never travel to you — and start appearing for the neighbouring towns you do serve.</p>
+            <p className="text-muted-foreground leading-relaxed mb-5">Costs sit between Vancouver and the Fraser Valley. "Google Ads agency Surrey" and similar commercial searches cost noticeably less per click than their Vancouver equivalents, while the population you reach is nearly as large. For a Surrey business with a local service area, that gap is the single best reason to advertise here rather than buy region-wide coverage.</p>
         </div>
       </section>
 
