@@ -26,7 +26,8 @@ const BlogPost = () => {
   // the index — dumping it on /blog throws away the ranking it still has.
   if (!post) {
     const target = slug ? LEGACY_BLOG_REDIRECTS[slug] : undefined;
-    return <Navigate to={target ? `/blog/${target}` : '/blog'} replace />;
+    const to = target ? (target.startsWith('/') ? target : `/blog/${target}`) : '/blog';
+    return <Navigate to={to} replace />;
   }
 
   const canonical = post.canonicalUrl ?? `https://ap-digital.ca/blog/${post.slug}`;

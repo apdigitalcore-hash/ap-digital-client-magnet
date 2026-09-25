@@ -109,6 +109,116 @@
       "source": "/blog/how-to-calculate-marketing-budget-service-business",
       "destination": "/blog/digital-marketing-budget-small-business-canada",
       "permanent": true
+    },
+    {
+      "source": "/blog/paid-ads-abbotsford-bc",
+      "destination": "/abbotsford",
+      "permanent": true
+    },
+    {
+      "source": "/blog/social-media-burnaby-bc",
+      "destination": "/burnaby",
+      "permanent": true
+    },
+    {
+      "source": "/blog/social-media-marketing-north-vancouver",
+      "destination": "/vancouver",
+      "permanent": true
+    },
+    {
+      "source": "/blog/facebook-ads-surrey-bc",
+      "destination": "/surrey",
+      "permanent": true
+    },
+    {
+      "source": "/blog/digital-marketing-langley-bc",
+      "destination": "/langley",
+      "permanent": true
+    },
+    {
+      "source": "/blog/electrician-leads-bc",
+      "destination": "/electrician-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/dental-marketing-vancouver-bc",
+      "destination": "/dental-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/gym-marketing-vancouver-bc",
+      "destination": "/fitness-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/hvac-marketing-vancouver-bc",
+      "destination": "/hvac-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/plumber-marketing-metro-vancouver",
+      "destination": "/plumber-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/restaurant-marketing-vancouver-bc",
+      "destination": "/restaurant-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/coaching-clients-bc",
+      "destination": "/coaching-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/social-media-coaching-business-bc",
+      "destination": "/coaching-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/google-ads-coaching-business-bc",
+      "destination": "/coaching-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/salon-google-ads-vancouver",
+      "destination": "/salon-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/blog/social-media-marketing-vancouver",
+      "destination": "/services/social-media",
+      "permanent": true
+    },
+    {
+      "source": "/blog/google-ads-coquitlam-tri-cities",
+      "destination": "/blog/tri-cities-google-ads-cost",
+      "permanent": true
+    },
+    {
+      "source": "/blog/vancouver-google-ads-guide-local-business",
+      "destination": "/blog/how-much-do-google-ads-cost-vancouver",
+      "permanent": true
+    },
+    {
+      "source": "/blog/instagram-ads-salons-vancouver",
+      "destination": "/blog/salon-social-media-management-vancouver",
+      "permanent": true
+    },
+    {
+      "source": "/blog/best-ads-for-trades-businesses-canada",
+      "destination": "/blog/trades-marketing-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/real-estate-agent-social-media-tips",
+      "destination": "/blog/real-estate-agent-marketing-vancouver-bc",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-get-more-salon-clients-vancouver",
+      "destination": "/blog/salon-marketing-vancouver-bc",
+      "permanent": true
     }
   ],
   "rewrites": [

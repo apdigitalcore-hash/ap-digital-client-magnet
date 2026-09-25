@@ -56,12 +56,12 @@ const stats = [
 ];
 
 const articles = [
-  { title: 'Best Ads for Trades Businesses in Canada', href: '/blog/best-ads-for-trades-businesses-canada' },
+  { title: 'Best Ads for Trades Businesses in Canada', href: '/blog/trades-marketing-vancouver-bc' },
   { title: 'How Much Do Google Ads Cost in Vancouver?', href: '/blog/how-much-do-google-ads-cost-vancouver' },
   { title: 'Meta Ads Cost for Contractors in BC', href: '/blog/meta-ads-cost-contractors-bc' },
   { title: 'Vancouver Small Business SEO Guide', href: '/blog/vancouver-small-business-seo-guide' },
   { title: 'Trades Marketing Vancouver BC', href: '/blog/trades-marketing-vancouver-bc' },
-  { title: 'Plumber Marketing Metro Vancouver', href: '/blog/plumber-marketing-metro-vancouver' },
+  { title: 'Plumber Marketing Metro Vancouver', href: '/plumber-marketing' },
 ];
 
 const FounderBio = () => (
