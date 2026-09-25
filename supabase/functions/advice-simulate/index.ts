@@ -3,8 +3,12 @@
 // Secrets: GEMINI_API_KEY (required), GEMINI_MODEL (optional).
 import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 
-const GEMINI_API_KEY = Deno.env.get("DefaultGeminiProject");
-const GEMINI_MODEL = Deno.env.get("GEMINI_MODEL") ?? "gemini-2.0-flash";
+// Lovable created the secret as "DefaultGeminiProject"; either name works.
+const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY") ?? Deno.env.get("DefaultGeminiProject");
+// Models are tried in order; Google retires names over time, so a list beats a
+// single hard-coded id. GEMINI_MODEL, when set, is tried first.
+const MODELS = [Deno.env.get("GEMINI_MODEL"), "gemini-2.5-flash", "gemini-2.0-flash", "gemini-flash-latest"]
+  .filter(Boolean) as string[];
 const PER_IP_PER_HOUR = 8;
 
 // Best-effort per-instance limiter. Warm instances are reused, so this stops
@@ -259,35 +263,50 @@ Deno.serve(async (req) => {
   ].filter(Boolean).join("\n\n");
 
   let results;
-  try {
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
-        signal: AbortSignal.timeout(55_000),
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-          contents: [{ role: "user", parts: [{ text: userPrompt }] }],
-          generationConfig: {
-            temperature: 0.4,
-            responseMimeType: "application/json",
-            responseSchema: RESPONSE_SCHEMA,
-          },
-        }),
-      },
-    );
-    if (!res.ok) {
-      console.error("gemini", res.status, (await res.text()).slice(0, 500));
-      return json({ error: res.status === 429 ? "The AI is busy right now. Try again in a minute." : "The simulation failed. Please try again." }, 502);
+  let lastError = "";
+  for (const model of MODELS) {
+    try {
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
+          signal: AbortSignal.timeout(55_000),
+          body: JSON.stringify({
+            systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+            contents: [{ role: "user", parts: [{ text: userPrompt }] }],
+            generationConfig: {
+              temperature: 0.4,
+              responseMimeType: "application/json",
+              responseSchema: RESPONSE_SCHEMA,
+            },
+          }),
+        },
+      );
+      if (!res.ok) {
+        const body = (await res.text()).slice(0, 600);
+        lastError = `${model}: ${res.status} ${body}`;
+        console.error("gemini", lastError);
+        // 404/400 usually means "this model name is gone" — try the next one.
+        if (res.status === 404 || res.status === 400) continue;
+        if (res.status === 429) return json({ error: "The AI is busy right now. Try again in a minute.", detail: lastError }, 502);
+        return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
+      }
+      const data = await res.json();
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!text) {
+        lastError = `${model}: empty response ${JSON.stringify(data).slice(0, 400)}`;
+        console.error("gemini", lastError);
+        continue;
+      }
+      results = normalise(JSON.parse(text));
+      break;
+    } catch (e) {
+      lastError = `${model}: ${e instanceof Error ? e.message : String(e)}`;
+      console.error("gemini error", lastError);
     }
-    const data = await res.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    results = normalise(JSON.parse(text));
-  } catch (e) {
-    console.error("gemini error", e);
-    return json({ error: "The simulation failed. Please try again." }, 502);
   }
+  if (!results) return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
 
   return json({
     id: crypto.randomUUID().slice(0, 8),
