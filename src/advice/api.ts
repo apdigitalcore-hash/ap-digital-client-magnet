@@ -54,7 +54,11 @@ const fromB64Url = (s: string) =>
   Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (c) => c.charCodeAt(0));
 
 async function pipe(bytes: Uint8Array, stream: CompressionStream | DecompressionStream) {
-  const out = new Blob([bytes]).stream().pipeThrough(stream);
+  // Copy into a fresh ArrayBuffer so the Blob constructor sees a concrete
+  // ArrayBuffer (not a SharedArrayBuffer-backed view), which TS accepts.
+  const buf = new ArrayBuffer(bytes.length);
+  new Uint8Array(buf).set(bytes);
+  const out = new Blob([buf]).stream().pipeThrough(stream);
   return new Uint8Array(await new Response(out).arrayBuffer());
 }
 
