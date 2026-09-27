@@ -228,32 +228,37 @@ function normalise(r: any) {
 }
 
 
-// Vercel's Node runtime dispatches a single default export, unlike Next.js
-// route handlers — named POST/OPTIONS exports are never called.
-export default async function handler(req: Request): Promise<Response> {
-  if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsFor(req.headers.get("origin")) });
-  if (req.method !== "POST") {
-    return new Response(JSON.stringify({ error: "Method not allowed" }), {
-      status: 405,
-      headers: { ...corsFor(req.headers.get("origin")), "Content-Type": "application/json" },
-    });
-  }
-  const cors = corsFor(req.headers.get("origin"));
-  const json = (body: unknown, status = 200) =>
-    new Response(JSON.stringify(body), { status, headers: { ...cors, "Content-Type": "application/json" } });
+// Node-style handler: Vercel's runtime passes (req, res) here, and the
+// web-style Request/Response signature crashed on invocation.
+// deno-lint-ignore-file no-explicit-any
+export default async function handler(req: any, res: any) {
+  const origin = req.headers.origin ?? null;
+  const cors = corsFor(origin);
+  for (const [k, v] of Object.entries(cors)) res.setHeader(k, v as string);
+  res.setHeader("Content-Type", "application/json");
 
+  const json = (body: unknown, status = 200) => {
+    res.statusCode = status;
+    res.end(JSON.stringify(body));
+  };
+
+  if (req.method === "OPTIONS") {
+    res.statusCode = 204;
+    return res.end();
+  }
+  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
   if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet." }, 500);
 
   let body: Record<string, unknown>;
   try {
-    body = await req.json();
+    body = typeof req.body === "string" ? JSON.parse(req.body) : (req.body ?? {});
   } catch {
     return json({ error: "Invalid request." }, 400);
   }
   const inputs = readInputs(body);
   if (typeof inputs === "string") return json({ error: inputs }, 400);
 
-  const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
+  const ip = (String(req.headers["x-forwarded-for"] ?? "") ?? "").split(",")[0].trim() || "unknown";
   if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while." }, 429);
 
   const [landingText, productText] = await Promise.all([
