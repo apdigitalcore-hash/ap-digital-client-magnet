@@ -12,3 +12,7 @@ simulator on ap-digital.ca/advice. Stateless — no database.
    - `ALLOWED_ORIGINS` — optional, defaults to `https://ap-digital.ca,https://www.ap-digital.ca`
 4. Deploy, then put the project URL (e.g. `https://advice-api.vercel.app`) in
    `src/advice/config.ts` → `ADVICE_API_URL`.
+
+## Deploy trigger
+Vercel builds this folder on every push to `main` once the project's Root
+Directory is set to `services/advice-api`.
