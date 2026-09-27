@@ -264,7 +264,9 @@ Deno.serve(async (req) => {
 
   let results;
   let lastError = "";
-  for (const model of MODELS) {
+  // Two passes: a transient upstream failure on the first pass (Gemini returns
+  // 500s under load) should not cost the user their simulation.
+  for (const model of [...MODELS, ...MODELS]) {
     try {
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
