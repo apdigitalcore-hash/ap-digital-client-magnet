@@ -64,7 +64,7 @@ const Loading = () => {
 
 
 /** Asked once, after the first report — not before it. */
-const EmailGate = ({ onDone }: { onDone: () => void }) => {
+const EmailGate = ({ inputs, onDone }: { inputs: SimInputs; onDone: () => void }) => {
   const [email, setEmail] = useState('');
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState('');
@@ -74,7 +74,7 @@ const EmailGate = ({ onDone }: { onDone: () => void }) => {
     setBusy(true);
     setError('');
     try {
-      await captureEmail(email.trim());
+      await captureEmail(email.trim(), { inputs });
       onDone();
     } catch (err) {
       setBusy(false);
@@ -184,7 +184,7 @@ const AdviceSimulate = () => {
       {gate === 'limit' ? (
         <LimitReached />
       ) : gate === 'email' ? (
-        <EmailGate onDone={() => { setGate('ok'); void submit(); }} />
+        <EmailGate inputs={v} onDone={() => { setGate('ok'); void submit(); }} />
       ) : running ? (
         <Loading />
       ) : (

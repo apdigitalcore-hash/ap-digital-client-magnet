@@ -208,19 +208,33 @@ export const reportUrl = async (sim: Simulation) =>
   `${window.location.origin}/advice/report#${await encodeReport(sim)}`;
 
 // ── Email capture → AP Digital's formsubmit inbox (same as the calculators) ─
-export async function captureEmail(email: string, sim?: Simulation): Promise<void> {
+/**
+ * Sends the lead to AP Digital's inbox.
+ *
+ * The email is asked for before the run, so the campaign details come from the
+ * form (`inputs`); once a report exists, `sim` fills in the score and link too.
+ */
+export async function captureEmail(
+  email: string,
+  context?: { inputs?: SimInputs; sim?: Simulation },
+): Promise<void> {
+  const sim = context?.sim;
+  const inputs = context?.inputs ?? sim?.inputs;
   const res = await fetch('https://formsubmit.co/ajax/apdigital.core@gmail.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
       email,
       source: 'ADvice simulator',
-      campaign: sim?.inputs.campaignName || '(untitled)',
-      channel: sim?.inputs.channel ?? '',
-      industry: sim?.inputs.industry ?? '',
-      budget: sim ? `$${sim.inputs.budget.toLocaleString()}/mo` : '',
-      'creative-score': sim ? sim.results.creative.overall : '',
+      campaign: inputs?.campaignName || '(untitled)',
+      channel: inputs?.channel ?? '',
+      industry: inputs?.industry ?? '',
+      budget: inputs ? `$${inputs.budget.toLocaleString()}/mo` : '',
+      'creative-score': sim ? sim.results.creative.overall : '(before first run)',
       'simulations-run': runCount(),
+      product: inputs?.product?.slice(0, 300) ?? '',
+      audience: inputs?.audience?.slice(0, 300) ?? '',
+      headline: inputs?.headline ?? '',
       report: sim ? await reportUrl(sim) : '',
       _subject: `ADvice signup: ${email}`,
       _template: 'table',

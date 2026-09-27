@@ -17,7 +17,7 @@ const SaveCard = ({ sim }: { sim: Simulation }) => {
     e.preventDefault();
     setState('sending');
     try {
-      await captureEmail(email.trim(), sim);
+      await captureEmail(email.trim(), { sim });
       setState('sent');
     } catch (err) {
       setState('error');
