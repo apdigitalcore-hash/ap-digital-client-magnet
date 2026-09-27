@@ -335,3 +335,5 @@ export default async function handler(req: Request): Promise<Response> {
     results,
   });
 }
+
+// Root directory: services/advice-api (set in the Vercel project).
