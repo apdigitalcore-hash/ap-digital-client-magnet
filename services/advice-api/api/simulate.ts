@@ -228,11 +228,16 @@ function normalise(r: any) {
 }
 
 
-export function OPTIONS(req: Request) {
-  return new Response(null, { status: 204, headers: corsFor(req.headers.get("origin")) });
-}
-
-export async function POST(req: Request) {
+// Vercel's Node runtime dispatches a single default export, unlike Next.js
+// route handlers — named POST/OPTIONS exports are never called.
+export default async function handler(req: Request): Promise<Response> {
+  if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: corsFor(req.headers.get("origin")) });
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { ...corsFor(req.headers.get("origin")), "Content-Type": "application/json" },
+    });
+  }
   const cors = corsFor(req.headers.get("origin"));
   const json = (body: unknown, status = 200) =>
     new Response(JSON.stringify(body), { status, headers: { ...cors, "Content-Type": "application/json" } });
