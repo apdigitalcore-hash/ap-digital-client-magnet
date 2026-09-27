@@ -1,9 +1,21 @@
 import { supabase } from '@/integrations/supabase/client';
+import { ADVICE_API_URL } from './config';
 import type { SimInputs, Simulation } from './types';
 
 const HISTORY_KEY = 'advice:history';
 
-export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
+async function viaVercel(inputs: SimInputs): Promise<Simulation> {
+  const res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(inputs),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error ?? 'The simulation failed. Please try again.');
+  return data as Simulation;
+}
+
+async function viaLovable(inputs: SimInputs): Promise<Simulation> {
   const { data, error } = await supabase.functions.invoke('advice-simulate', { body: inputs });
   if (error) {
     let message = 'The simulation failed. Please try again.';
@@ -15,9 +27,27 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
     }
     throw new Error(message);
   }
-  const sim = data as Simulation;
-  saveToHistory(sim);
-  return sim;
+  return data as Simulation;
+}
+
+/**
+ * Runs one simulation. Vercel is the primary once configured; the Lovable
+ * Cloud function stays as a fallback so a single bad deploy on either side
+ * never takes the simulator down.
+ */
+export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
+  const chain = ADVICE_API_URL ? [viaVercel, viaLovable] : [viaLovable];
+  let last: unknown;
+  for (const run of chain) {
+    try {
+      const sim = await run(inputs);
+      saveToHistory(sim);
+      return sim;
+    } catch (e) {
+      last = e;
+    }
+  }
+  throw last instanceof Error ? last : new Error('The simulation failed. Please try again.');
 }
 
 // ── History: kept in this browser only ─────────────────────────────────────
