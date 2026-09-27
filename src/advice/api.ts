@@ -31,21 +31,35 @@ async function viaLovable(inputs: SimInputs): Promise<Simulation> {
 }
 
 /**
- * Runs one simulation. Vercel is the primary once configured; the Lovable
- * Cloud function stays as a fallback so a single bad deploy on either side
- * never takes the simulator down.
+ * Runs one simulation.
+ *
+ * Providers are tried in order — Vercel first once configured, then the
+ * Lovable Cloud function — and the whole chain is retried a few times. The
+ * backend currently answers only intermittently (two versions are deployed
+ * across its instances), and a visitor should not have to press the button
+ * again to get a report that a retry would have produced.
  */
+const ATTEMPTS = 4;
+const RETRY_DELAY_MS = 1200;
+
 export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
   const chain = ADVICE_API_URL ? [viaVercel, viaLovable] : [viaLovable];
   let last: unknown;
-  for (const run of chain) {
-    try {
-      const sim = await run(inputs);
-      saveToHistory(sim);
-      return sim;
-    } catch (e) {
-      last = e;
+  for (let attempt = 0; attempt < ATTEMPTS; attempt++) {
+    for (const run of chain) {
+      try {
+        const sim = await run(inputs);
+        saveToHistory(sim);
+        return sim;
+      } catch (e) {
+        last = e;
+        // A rate-limit or validation message is the final answer; retrying
+        // it just wastes the visitor's time.
+        const msg = e instanceof Error ? e.message : '';
+        if (/lot of simulations|capacity|isn.t configured/i.test(msg)) throw e;
+      }
     }
+    if (attempt < ATTEMPTS - 1) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * (attempt + 1)));
   }
   throw last instanceof Error ? last : new Error('The simulation failed. Please try again.');
 }
