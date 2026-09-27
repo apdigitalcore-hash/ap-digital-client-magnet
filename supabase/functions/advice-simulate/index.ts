@@ -181,7 +181,7 @@ Ground every number in industry benchmarks, and keep them internally consistent:
 - Meta/Facebook and Instagram: CPM roughly $8-$25, CTR roughly 0.8-2% (feed), CPC roughly $0.50-$2.50, conversion rate roughly 1-5% depending on offer friction.
 - TikTok: CPM roughly $6-$15, CTR roughly 0.8-1.8%, CPC roughly $0.30-$1.50.
 - LinkedIn: CPM roughly $30-$80, CTR roughly 0.4-0.9%, CPC roughly $5-$12.
-Adjust for the industry, the audience's intent and the quality of the copy. clicks = budget / CPC; conversions = clicks x conversion rate; CPA = budget / conversions. Give ROAS only when a revenue value can be reasonably inferred (ecommerce, priced products); otherwise return null. Ranges should be honest - wide when the input is thin.
+Adjust for the industry, the audience's intent and the quality of the copy. clicks = budget / CPC; conversions = clicks x conversion rate; CPA = budget / conversions. Express ctr and conversionRate as percentage numbers, not fractions: 4.2 means 4.2%, never 0.042.  Give ROAS only when a revenue value can be reasonably inferred (ecommerce, priced products); otherwise return null. Ranges should be honest - wide when the input is thin.
 
 Score the creative (0-100 each) against direct-response frameworks: AIDA, PAS, the 4 U's (useful, urgent, unique, ultra-specific), specificity of the offer, proof, and a clear single CTA. The overall score weights headline and CTA most. Verdict: Strong >= 75, Needs Work 50-74, Weak < 50. Score "intent" only for Google Search Ads (how well the copy matches the likely search query); return null for other channels.
 
@@ -205,10 +205,36 @@ function clampRange(r: { low?: number; high?: number } | null | undefined, min =
 const clampScore = (n: unknown) => Math.max(0, Math.min(100, Math.round(Number(n) || 0)));
 
 // deno-lint-ignore no-explicit-any
+// Gemini sometimes returns ctr/conversionRate as fractions (0.05) rather than
+// percentages (5), which rendered as "0.0% – 0.1%" next to a sane click count.
+// conversions / clicks gives the true rate, so use it to decide the scale.
+// deno-lint-ignore no-explicit-any
+function fixRateScale(p: any) {
+  const mid = (r: any) => (Number(r?.low) + Number(r?.high)) / 2;
+  const clicks = mid(p.clicks), convs = mid(p.conversions);
+  const impliedPct = clicks > 0 ? (convs / clicks) * 100 : NaN;
+  const asPct = (r: any) => ({ low: r.low * 100, high: r.high * 100 });
+  if (Number.isFinite(impliedPct) && impliedPct > 0) {
+    const given = mid(p.conversionRate);
+    // Whichever reading sits closer to the implied rate wins.
+    if (Math.abs(given * 100 - impliedPct) < Math.abs(given - impliedPct)) {
+      p.conversionRate = asPct(p.conversionRate);
+      if (mid(p.ctr) <= 1) p.ctr = asPct(p.ctr);
+      return;
+    }
+  }
+  // No usable cross-check: a rate at or below 1 is a fraction in every channel
+  // we support, since even Display sits near 0.3% and would be 0.003.
+  if (mid(p.conversionRate) <= 1) p.conversionRate = asPct(p.conversionRate);
+  if (mid(p.ctr) <= 0.1) p.ctr = asPct(p.ctr);
+}
+
+// deno-lint-ignore no-explicit-any
 function normalise(r: any) {
   const p = r.predictions ?? {};
   for (const k of ["ctr", "cpc", "clicks", "conversionRate", "conversions", "cpa"]) p[k] = clampRange(p[k]) ?? { low: 0, high: 0 };
   p.roas = clampRange(p.roas);
+  fixRateScale(p);
   const c = r.creative ?? {};
   c.overall = clampScore(c.overall);
   for (const k of ["headline", "clarity", "cta", "emotion", "intent"]) if (c[k]) c[k].score = clampScore(c[k].score);
