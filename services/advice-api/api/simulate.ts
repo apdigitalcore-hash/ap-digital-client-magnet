@@ -113,6 +113,15 @@ async function fetchPageText(raw: string): Promise<string | null> {
   }
 }
 
+// Ad creative, forwarded to Gemini for this request only and never echoed back.
+function readImage(b: Record<string, unknown>): { data: string; mime: string } | null {
+  const img = b.image as { data?: unknown; mime?: unknown } | undefined;
+  if (!img || typeof img.data !== "string" || typeof img.mime !== "string") return null;
+  if (!/^image\/(png|jpeg|webp)$/.test(img.mime)) return null;
+  if (img.data.length > 3_000_000) return null;   // ~2MB decoded
+  return { data: img.data, mime: img.mime };
+}
+
 const range = { type: "OBJECT", properties: { low: { type: "NUMBER" }, high: { type: "NUMBER" } }, required: ["low", "high"] };
 const scored = { type: "OBJECT", properties: { score: { type: "INTEGER" }, note: { type: "STRING" } }, required: ["score", "note"] };
 const level = (values: string[]) => ({ type: "STRING", enum: values });
@@ -203,6 +212,8 @@ Recommendations must be specific to THIS product, audience and copy - never gene
 
 Competitor snapshot: estimate the number of active advertisers targeting this niche and region, the average CPC, and 3-5 concrete things top-performing ads in this category do differently.
 
+When an ad image is attached, judge it as part of the creative: whether the message is readable at thumbnail size, whether the offer or price is visible, whether a face or product carries attention, and whether it suits the channel's format. Say what to change about the image in the improvements. Never claim to see an image when none was provided.
+
 All currency is USD unless the audience location clearly implies another currency, in which case say so in the assumptions. Return only JSON matching the schema.`;
 
 function clampRange(r: { low?: number; high?: number } | null | undefined, min = 0, max = 1e9) {
@@ -283,6 +294,7 @@ export default async function handler(req: any, res: any) {
   }
   const inputs = readInputs(body);
   if (typeof inputs === "string") return json({ error: inputs }, 400);
+  const image = readImage(body);
 
   const ip = (String(req.headers["x-forwarded-for"] ?? "") ?? "").split(",")[0].trim() || "unknown";
   if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while." }, 429);
@@ -304,6 +316,7 @@ export default async function handler(req: any, res: any) {
     `Ad headline: ${inputs.headline || "(none)"}`,
     `Primary text: ${inputs.primaryText || "(none)"}`,
     `Description: ${inputs.description || "(none)"}`,
+    image ? "An ad image is attached - review it as part of the creative." : "No ad image provided.",
     inputs.landingUrl
       ? landingText
         ? `Landing page URL: ${inputs.landingUrl}\nLanding page content (fetched):\n${landingText}`
@@ -325,7 +338,9 @@ export default async function handler(req: any, res: any) {
           signal: AbortSignal.timeout(55_000),
           body: JSON.stringify({
             systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
-            contents: [{ role: "user", parts: [{ text: userPrompt }] }],
+            contents: [{ role: "user", parts: image
+              ? [{ text: userPrompt }, { inlineData: { mimeType: image.mime, data: image.data } }]
+              : [{ text: userPrompt }] }],
             generationConfig: {
               temperature: 0.4,
               responseMimeType: "application/json",

@@ -5,6 +5,7 @@ import { Check, Download, Link2, RotateCcw } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import ReportView from '@/advice/ReportView';
 import { captureEmail, decodeReport, encodeReport, reportUrl } from '@/advice/api';
+import { downloadReportPdf } from '@/advice/pdf';
 import type { Simulation } from '@/advice/types';
 
 const SaveCard = ({ sim }: { sim: Simulation }) => {
@@ -130,7 +131,7 @@ const AdviceReport = () => {
               <Link to="/advice/simulate" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
                 <RotateCcw className="h-4 w-4" /> Run another simulation
               </Link>
-              <button type="button" onClick={() => window.print()} className="inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
+              <button type="button" onClick={() => downloadReportPdf(sim)} className="inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
                 <Download className="h-4 w-4" /> Download report as PDF
               </button>
               <button type="button" onClick={share} className="inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">

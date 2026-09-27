@@ -4,6 +4,31 @@ import type { SimInputs, Simulation } from './types';
 
 const HISTORY_KEY = 'advice:history';
 
+/** Downscale to something Gemini reads well without bloating the request. */
+export function readImageFile(file: File): Promise<{ data: string; mime: string }> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const max = 1024;
+      const scale = Math.min(1, max / Math.max(img.width, img.height));
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return reject(new Error('Could not read that image.'));
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      resolve({ data: canvas.toDataURL('image/jpeg', 0.82).split(',')[1], mime: 'image/jpeg' });
+    };
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error('That file does not look like an image.'));
+    };
+    img.src = url;
+  });
+}
+
 async function viaVercel(inputs: SimInputs): Promise<Simulation> {
   const res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
     method: 'POST',
@@ -49,6 +74,9 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
     for (const run of chain) {
       try {
         const sim = await run(inputs);
+        // The creative is not part of the report, and a base64 image would
+        // blow up both localStorage and the share link.
+        delete sim.inputs.image;
         saveToHistory(sim);
         return sim;
       } catch (e) {

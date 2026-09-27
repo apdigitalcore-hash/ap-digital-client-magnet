@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
-import { runSimulation } from '@/advice/api';
+import { readImageFile, runSimulation } from '@/advice/api';
 import { CHANNELS, EMPTY_INPUTS, INDUSTRIES, type SimInputs } from '@/advice/types';
 
 const STEPS = ['Your business', 'Channel & budget', 'Your ad'];
@@ -68,6 +68,7 @@ const AdviceSimulate = () => {
   const [v, setV] = useState<SimInputs>(EMPTY_INPUTS);
   const [error, setError] = useState('');
   const [running, setRunning] = useState(false);
+  const [imageName, setImageName] = useState('');
 
   const set = <K extends keyof SimInputs>(k: K) => (e: { target: { value: string } }) =>
     setV((prev) => ({ ...prev, [k]: e.target.value }));
@@ -237,6 +238,43 @@ const AdviceSimulate = () => {
                   <div>
                     <label className={label} htmlFor="description">Description <span className={hint}>(optional)</span></label>
                     <input id="description" className={field} value={v.description} onChange={set('description')} placeholder="Licensed & insured. Book online in 30 seconds." />
+                  </div>
+                  <div>
+                    <span className={label}>Ad image <span className={hint}>(optional — we’ll review the creative too)</span></span>
+                    {v.image ? (
+                      <div className="flex items-center gap-3 rounded-xl border border-black/[0.1] bg-[#f5f5f7] p-3">
+                        <img src={`data:${v.image.mime};base64,${v.image.data}`} alt="" className="h-14 w-14 rounded-lg object-cover" />
+                        <span className="min-w-0 flex-1 truncate text-sm text-[#6e6e73]">{imageName || 'Ad image'}</span>
+                        <button
+                          type="button"
+                          onClick={() => { setV((p) => ({ ...p, image: undefined })); setImageName(''); }}
+                          className="text-sm text-[#6e6e73] underline hover:text-[#1d1d1f]"
+                        >
+                          Remove
+                        </button>
+                      </div>
+                    ) : (
+                      <label className="flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-black/[0.18] bg-[#f5f5f7] px-4 py-6 text-sm text-[#6e6e73] hover:border-black/40">
+                        <input
+                          type="file"
+                          accept="image/png,image/jpeg,image/webp"
+                          className="sr-only"
+                          onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            try {
+                              const image = await readImageFile(file);
+                              setV((p) => ({ ...p, image }));
+                              setImageName(file.name);
+                              setError('');
+                            } catch (err) {
+                              setError(err instanceof Error ? err.message : 'Could not read that image.');
+                            }
+                          }}
+                        />
+                        Upload your ad image or video thumbnail
+                      </label>
+                    )}
                   </div>
                   <div>
                     <label className={label} htmlFor="landingUrl">Landing page URL <span className={hint}>(optional — we’ll analyse it)</span></label>
