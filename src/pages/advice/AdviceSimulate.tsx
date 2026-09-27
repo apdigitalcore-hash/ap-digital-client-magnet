@@ -128,7 +128,9 @@ const AdviceSimulate = () => {
   const [error, setError] = useState('');
   const [running, setRunning] = useState(false);
   const [imageName, setImageName] = useState('');
-  const [gate, setGate] = useState<'ok' | 'email' | 'limit'>(() => gateState());
+  // Only the hard limit is shown up front; the email is asked for after the
+  // form is filled and Run is pressed, never on arrival.
+  const [gate, setGate] = useState<'ok' | 'email' | 'limit'>(() => (gateState() === 'limit' ? 'limit' : 'ok'));
 
   const set = <K extends keyof SimInputs>(k: K) => (e: { target: { value: string } }) =>
     setV((prev) => ({ ...prev, [k]: e.target.value }));
