@@ -164,6 +164,9 @@ The gap between a $300 freelancer video and a $3,000 produced one is mostly crew
 
 **To be straightforward: we do not produce video.** AP Digital runs paid ads and manages social accounts, and where a client needs video we tell them to hire a specialist or shoot it themselves. These numbers are here because you will be quoted them, not because we are quoting them.
 
+> **Before you spend any of this:** run your campaign through [ADvice](/advice), our free AI campaign simulator. Paste the ad, pick the channel and budget, and it predicts your click-through rate, cost per click and cost per lead, scores the creative out of 100, and rewrites the copy. No sign-up for the first one.
+
+
 ## What a Social Media Package Actually Includes
 
 "Packages" are where Canadian pricing gets slippery, because two agencies quoting $1,500 can be selling very different work. Before comparing prices, compare these six line items.
@@ -245,6 +248,11 @@ Every business is different, and cookie-cutter packages rarely deliver the best 
 At AP DIGITAL, we build custom [social media marketing](/services/social-media) and [lead generation](/services/paid-ads) strategies for Canadian businesses. No long-term contracts. No hidden fees. Just transparent pricing and a 90-day results guarantee.
 
 **[Book your free strategy call today](/book)** and we'll figure out exactly what your business needs to grow online in 2026 — with complete transparency on pricing and expectations.
+
+## Test the campaign before you fund it
+
+Whatever tier you land on, the cheapest money you will ever spend is the money you do not waste on a weak ad. [ADvice](/advice) runs your headline, copy and creative through the same benchmarks used in this guide and tells you what a month at your budget is likely to return — and what to change first. It is free, and the first simulation needs no sign-up.
+
 
 ## Where these numbers come from
 

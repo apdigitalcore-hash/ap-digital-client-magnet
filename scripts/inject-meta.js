@@ -349,6 +349,30 @@ const staticRoutes = [
   },
   // ─── Core pages ───
   {
+    // ADvice — the free campaign simulator. Its React page sets the same title
+    // and description; this is what a crawler sees before the app boots.
+    path: 'advice',
+    title: 'ADvice — Free AI Ad Campaign Simulator',
+    description: 'Simulate your Google, Meta, TikTok or LinkedIn campaign before you spend a dollar. Predicted CTR, CPC, CPA and ROAS, a creative score, and rewritten ad copy. Free.',
+    body: '<h1>Simulate your campaign before you spend a dollar</h1><p>ADvice is a free AI campaign simulator from AP Digital. Paste your ad, pick the channel and monthly budget, and it predicts how the campaign is likely to perform before any money is spent: click-through rate, cost per click, monthly clicks, conversions, cost per acquisition and ROAS, each as a range with a confidence level.</p><p>It also scores the creative out of 100 — headline, clarity, call to action, emotional triggers and, for search campaigns, how well the copy matches what people type — flags budget, competition and seasonality risk, rewrites the headline and body copy for you, and estimates how crowded the auction is in your niche. Upload the ad image and it reviews the creative itself.</p><p>Works for Google Search Ads, Google Display, Meta/Facebook, Instagram, TikTok and LinkedIn. The first simulation needs no sign-up, and every report can be shared with a link or downloaded as a PDF.</p><h2>How it works</h2><ol><li>Describe what you are selling, who it is for, the channel and the budget.</li><li>Paste your headline and ad copy, and upload the creative if you have one.</li><li>Read the simulation: predicted results, a creative score, the risks and exactly what to change.</li></ol><nav aria-label="Related"><ul><li><a href="/advice/simulate">Run a free simulation</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs in Canada</a></li><li><a href="/blog/google-ads-cost-small-business-canada">What Google Ads cost a small business</a></li><li><a href="/services/paid-ads">Google &amp; Meta Ads management</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      {
+        "@type": "WebApplication",
+        "@id": `${BASE_URL}/advice#app`,
+        "name": "ADvice",
+        "url": `${BASE_URL}/advice`,
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "description": "Free AI ad campaign simulator: predicted CTR, CPC, CPA and ROAS, a creative score and rewritten ad copy, before you spend a dollar.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+        "publisher": { "@id": `${BASE_URL}/#organization` },
+      },
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'ADvice', url: '/advice' }]),
+      webPageSchema('ADvice — Free AI Ad Campaign Simulator', 'Free AI campaign simulator: predicted results, a creative score and rewritten ad copy.', '/advice'),
+    ]}
+  },
+  {
     path: 'pricing',
     title: 'Marketing Pricing Vancouver | From $759/mo | AP Digital',
     description: 'Transparent pricing for paid ads and social media management. Month-to-month. 90-day results guarantee. Updated August 2026.',
