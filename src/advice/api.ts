@@ -3,6 +3,54 @@ import { ADVICE_API_URL } from './config';
 import type { SimInputs, Simulation } from './types';
 
 const HISTORY_KEY = 'advice:history';
+const RUNS_KEY = 'advice:runs';
+const EMAIL_KEY = 'advice:email';
+
+/**
+ * Free-use policy.
+ *
+ * The first report costs nothing and asks for nothing — that is what makes
+ * people run one and share it. The email is asked for once they have seen a
+ * real report, which converts far better than a wall in front of it. Counting
+ * lives in the browser, so it is a nudge rather than a licence check.
+ */
+export const FREE_BEFORE_EMAIL = 1;
+export const FREE_TOTAL = 5;
+
+const readNum = (k: string) => {
+  try {
+    return Number(localStorage.getItem(k)) || 0;
+  } catch {
+    return 0;
+  }
+};
+
+export const runCount = () => readNum(RUNS_KEY);
+
+export function savedEmail(): string {
+  try {
+    return localStorage.getItem(EMAIL_KEY) ?? '';
+  } catch {
+    return '';
+  }
+}
+
+export function rememberEmail(email: string) {
+  try {
+    localStorage.setItem(EMAIL_KEY, email);
+  } catch {
+    /* storage blocked — the gate simply asks again next time */
+  }
+}
+
+/** What the simulator should do before the next run. */
+export function gateState(): 'ok' | 'email' | 'limit' {
+  const runs = runCount();
+  if (runs >= FREE_TOTAL) return 'limit';
+  if (runs >= FREE_BEFORE_EMAIL && !savedEmail()) return 'email';
+  return 'ok';
+}
+
 
 /** Downscale to something Gemini reads well without bloating the request. */
 export function readImageFile(file: File): Promise<{ data: string; mime: string }> {
@@ -77,6 +125,11 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
         // The creative is not part of the report, and a base64 image would
         // blow up both localStorage and the share link.
         delete sim.inputs.image;
+        try {
+          localStorage.setItem(RUNS_KEY, String(runCount() + 1));
+        } catch {
+          /* storage blocked — the visitor keeps their free runs */
+        }
         saveToHistory(sim);
         return sim;
       } catch (e) {
@@ -155,22 +208,24 @@ export const reportUrl = async (sim: Simulation) =>
   `${window.location.origin}/advice/report#${await encodeReport(sim)}`;
 
 // ── Email capture → AP Digital's formsubmit inbox (same as the calculators) ─
-export async function captureEmail(email: string, sim: Simulation): Promise<void> {
+export async function captureEmail(email: string, sim?: Simulation): Promise<void> {
   const res = await fetch('https://formsubmit.co/ajax/apdigital.core@gmail.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
     body: JSON.stringify({
       email,
       source: 'ADvice simulator',
-      campaign: sim.inputs.campaignName || '(untitled)',
-      channel: sim.inputs.channel,
-      industry: sim.inputs.industry,
-      budget: `$${sim.inputs.budget.toLocaleString()}/mo`,
-      'creative-score': sim.results.creative.overall,
-      report: await reportUrl(sim),
-      _subject: `ADvice signup: ${email} — ${sim.inputs.channel}`,
+      campaign: sim?.inputs.campaignName || '(untitled)',
+      channel: sim?.inputs.channel ?? '',
+      industry: sim?.inputs.industry ?? '',
+      budget: sim ? `$${sim.inputs.budget.toLocaleString()}/mo` : '',
+      'creative-score': sim ? sim.results.creative.overall : '',
+      'simulations-run': runCount(),
+      report: sim ? await reportUrl(sim) : '',
+      _subject: `ADvice signup: ${email}`,
       _template: 'table',
     }),
   });
   if (!res.ok) throw new Error('Something went wrong. Please try again.');
+  rememberEmail(email);
 }

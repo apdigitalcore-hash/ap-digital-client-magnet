@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FormEvent, useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, Sparkles } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
-import { readImageFile, runSimulation } from '@/advice/api';
+import { captureEmail, FREE_TOTAL, gateState, readImageFile, runCount, runSimulation } from '@/advice/api';
 import { CHANNELS, EMPTY_INPUTS, INDUSTRIES, type SimInputs } from '@/advice/types';
 
 const STEPS = ['Your business', 'Channel & budget', 'Your ad'];
@@ -62,6 +62,65 @@ const Loading = () => {
   );
 };
 
+
+/** Asked once, after the first report — not before it. */
+const EmailGate = ({ onDone }: { onDone: () => void }) => {
+  const [email, setEmail] = useState('');
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+
+  const submit = async (e: FormEvent) => {
+    e.preventDefault();
+    setBusy(true);
+    setError('');
+    try {
+      await captureEmail(email.trim());
+      onDone();
+    } catch (err) {
+      setBusy(false);
+      setError(err instanceof Error ? err.message : 'Something went wrong.');
+    }
+  };
+
+  return (
+    <div className="mx-auto max-w-md py-20 text-center">
+      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#f5f5f7]">
+        <Sparkles className="h-5 w-5 text-[#1d1d1f]" />
+      </span>
+      <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">Keep simulating — it stays free</h1>
+      <p className="mt-3 text-[#6e6e73]">
+        Add your email for {FREE_TOTAL - 1} more simulations. We send the occasional ADvice update and nothing else.
+      </p>
+      <form onSubmit={submit} className="mt-8 flex flex-col gap-2 sm:flex-row">
+        <input
+          type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
+          placeholder="you@company.com" aria-label="Email address"
+          className="flex-1 rounded-xl border border-black/[0.1] bg-[#f5f5f7] px-3.5 py-2.5 text-[15px] outline-none focus:border-[#1d1d1f] focus:bg-white"
+        />
+        <button type="submit" disabled={busy} className="rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black disabled:opacity-60">
+          {busy ? 'Saving…' : 'Continue'}
+        </button>
+      </form>
+      {error && <p className="mt-3 text-sm text-[#d70015]">{error}</p>}
+      <p className="mt-4 text-xs text-[#86868b]">Reports you have already run stay in My simulations.</p>
+    </div>
+  );
+};
+
+const LimitReached = () => (
+  <div className="mx-auto max-w-md py-20 text-center">
+    <h1 className="text-3xl font-semibold tracking-[-0.03em]">That is your {FREE_TOTAL} free simulations</h1>
+    <p className="mt-3 text-[#6e6e73]">
+      If the reports are telling you something worth acting on, the fastest next step is twenty minutes with the person
+      who built this — we will look at your account together, free.
+    </p>
+    <div className="mt-8 flex flex-col items-center gap-3">
+      <Link to="/book" className="rounded-full bg-[#1d1d1f] px-6 py-3 text-[15px] text-white hover:bg-black">Book a free call</Link>
+      <Link to="/advice/my" className="text-sm text-[#6e6e73] underline hover:text-[#1d1d1f]">See your past simulations</Link>
+    </div>
+  </div>
+);
+
 const AdviceSimulate = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
@@ -69,6 +128,7 @@ const AdviceSimulate = () => {
   const [error, setError] = useState('');
   const [running, setRunning] = useState(false);
   const [imageName, setImageName] = useState('');
+  const [gate, setGate] = useState<'ok' | 'email' | 'limit'>(() => gateState());
 
   const set = <K extends keyof SimInputs>(k: K) => (e: { target: { value: string } }) =>
     setV((prev) => ({ ...prev, [k]: e.target.value }));
@@ -94,6 +154,11 @@ const AdviceSimulate = () => {
     const e = stepError(2);
     setError(e);
     if (e) return;
+    const g = gateState();
+    if (g !== 'ok') {
+      setGate(g);
+      return;
+    }
     setRunning(true);
     try {
       const sim = await runSimulation(v);
@@ -114,7 +179,11 @@ const AdviceSimulate = () => {
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 
-      {running ? (
+      {gate === 'limit' ? (
+        <LimitReached />
+      ) : gate === 'email' ? (
+        <EmailGate onDone={() => { setGate('ok'); void submit(); }} />
+      ) : running ? (
         <Loading />
       ) : (
         <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6 sm:py-16">

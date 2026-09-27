@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { Check, Download, Link2, RotateCcw } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import ReportView from '@/advice/ReportView';
-import { captureEmail, decodeReport, encodeReport, reportUrl } from '@/advice/api';
+import { captureEmail, decodeReport, encodeReport, reportUrl, savedEmail } from '@/advice/api';
 import { downloadReportPdf } from '@/advice/pdf';
 import type { Simulation } from '@/advice/types';
 
@@ -140,7 +140,7 @@ const AdviceReport = () => {
               </button>
             </div>
 
-            {fresh && <div className="mt-8"><SaveCard sim={sim} /></div>}
+            {fresh && !savedEmail() && <div className="mt-8"><SaveCard sim={sim} /></div>}
           </>
         )}
       </div>
