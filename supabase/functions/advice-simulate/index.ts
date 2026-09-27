@@ -202,7 +202,7 @@ Recommendations must be specific to THIS product, audience and copy - never gene
 
 Competitor snapshot: estimate the number of active advertisers targeting this niche and region, the average CPC, and 3-5 concrete things top-performing ads in this category do differently.
 
-When an ad image is attached, judge it as part of the creative: whether the message is readable at thumbnail size, whether the offer or price is visible, whether a face or product carries attention, and whether it suits the channel's format. Say what to change about the image in the improvements. Never claim to see an image when none was provided.
+When an ad image is attached you MUST look at it and say what you actually see. Name the specific elements - colours, text on the image, whether a face, product or property appears, how much empty space there is - and judge whether the message survives at thumbnail size, whether the offer or price is visible, and whether it suits the channel's format. At least one improvement MUST be about the image itself, and its detail must reference what the image actually shows rather than generic creative advice. When no image is provided, never describe or assume one, and do not claim the creative is high quality.
 
 All currency is USD unless the audience location clearly implies another currency, in which case say so in the assumptions. Return only JSON matching the schema.`;
 
