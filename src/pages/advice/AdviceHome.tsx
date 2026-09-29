@@ -91,6 +91,12 @@ const AdviceHome = () => (
       <meta property="og:title" content={TITLE} />
       <meta property="og:description" content={DESC} />
       <meta property="og:url" content="https://ap-digital.ca/advice" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://ap-digital.ca/advice-og.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={TITLE} />
+      <meta name="twitter:description" content={DESC} />
+      <meta name="twitter:image" content="https://ap-digital.ca/advice-og.png" />
     </Helmet>
 
     {/* Hero */}

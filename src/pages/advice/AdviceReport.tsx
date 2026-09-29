@@ -132,6 +132,9 @@ const AdviceReport = () => {
         <meta name="robots" content="noindex, nofollow" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content="An AI simulation of this ad campaign — predicted results, creative score and recommendations. Run your own free on ADvice." />
+        <meta property="og:image" content="https://ap-digital.ca/advice-og.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://ap-digital.ca/advice-og.png" />
       </Helmet>
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">

@@ -18,8 +18,9 @@ const AdviceMy = () => {
   return (
     <AdviceShell title="My Simulations | ADvice">
       <Helmet>
-        <title>My Simulations | ADvice</title>
         <meta name="robots" content="noindex, nofollow" />
+        <meta property="og:image" content="https://ap-digital.ca/advice-og.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">

@@ -352,6 +352,7 @@ const staticRoutes = [
     // ADvice — the free campaign simulator. Its React page sets the same title
     // and description; this is what a crawler sees before the app boots.
     path: 'advice',
+    ogImage: 'https://ap-digital.ca/advice-og.png',
     title: 'ADvice — Free AI Ad Campaign Simulator',
     description: 'Simulate your Google, Meta, TikTok or LinkedIn campaign before you spend a dollar. Predicted CTR, CPC, CPA and ROAS, a creative score, and rewritten ad copy. Free.',
     body: '<h1>Simulate your campaign before you spend a dollar</h1><p>ADvice is a free AI campaign simulator from AP Digital. Paste your ad, pick the channel and monthly budget, and it predicts how the campaign is likely to perform before any money is spent: click-through rate, cost per click, monthly clicks, conversions, cost per acquisition and ROAS, each as a range with a confidence level.</p><p>It also scores the creative out of 100 — headline, clarity, call to action, emotional triggers and, for search campaigns, how well the copy matches what people type — flags budget, competition and seasonality risk, rewrites the headline and body copy for you, and estimates how crowded the auction is in your niche. Upload the ad image and it reviews the creative itself.</p><p>Works for Google Search Ads, Google Display, Meta/Facebook, Instagram, TikTok and LinkedIn. The first simulation needs no sign-up, and every report can be shared with a link or downloaded as a PDF.</p><h2>How it works</h2><ol><li>Describe what you are selling, who it is for, the channel and the budget.</li><li>Paste your headline and ad copy, and upload the creative if you have one.</li><li>Read the simulation: predicted results, a creative score, the risks and exactly what to change.</li></ol><nav aria-label="Related"><ul><li><a href="/advice/simulate">Run a free simulation</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs in Canada</a></li><li><a href="/blog/google-ads-cost-small-business-canada">What Google Ads cost a small business</a></li><li><a href="/services/paid-ads">Google &amp; Meta Ads management</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
@@ -744,7 +745,7 @@ console.log(`   Meta sync:  ${syncedFields} field(s) refreshed from blogPosts.ts
 // legitimately contains "$$" for priceRange plus dollar amounts throughout the
 // body copy. Passing strings silently turned "$$" into "$" on all 83 pages —
 // the source said the right thing and the output did not.
-function injectIntoHtml(html, { title, description, canonical, schema, body, robots }) {
+function injectIntoHtml(html, { title, description, canonical, schema, body, robots, ogImage }) {
   // Replace title
   html = html.replace(/<title>[^<]*<\/title>/, () => `<title>${title}</title>`);
 
@@ -771,6 +772,12 @@ function injectIntoHtml(html, { title, description, canonical, schema, body, rob
   html = html.replace(/<meta property="og:url"[^>]*\/?>/, () => `<meta property="og:url" data-rh="true" content="${canonical}" />`);
   html = html.replace(/<meta property="og:title"[^>]*\/?>/, () => `<meta property="og:title" data-rh="true" content="${escapeAttr(title)}" />`);
   html = html.replace(/<meta property="og:description"[^>]*\/?>/, () => `<meta property="og:description" data-rh="true" content="${escapeAttr(description)}" />`);
+  // A page can carry its own share image — /advice does, so the simulator does
+  // not preview as the agency logo when someone shares it.
+  if (ogImage) {
+    html = html.replace(/<meta property="og:image"[^>]*\/?>/, () => `<meta property="og:image" data-rh="true" content="${escapeAttr(ogImage)}" />`);
+    html = html.replace(/<meta name="twitter:image"[^>]*\/?>/, () => `<meta name="twitter:image" data-rh="true" content="${escapeAttr(ogImage)}" />`);
+  }
 
   // Replace Twitter tags
   html = html.replace(/<meta name="twitter:title"[^>]*\/?>/, () => `<meta name="twitter:title" data-rh="true" content="${escapeAttr(title)}" />`);
@@ -1193,6 +1200,7 @@ for (const route of staticRoutes) {
     schema: route.schema,
     body: route.body || '',
     robots: route.robots,
+    ogImage: route.ogImage,
   });
   writeRoute(route.path, html);
 }

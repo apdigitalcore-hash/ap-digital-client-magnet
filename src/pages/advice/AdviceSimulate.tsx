@@ -204,8 +204,11 @@ const AdviceSimulate = () => {
   return (
     <AdviceShell title="Run a Simulation | ADvice">
       <Helmet>
-        <title>Run a Simulation | ADvice</title>
         <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="Run a Simulation | ADvice" />
+        <meta property="og:description" content="Paste your ad, pick a channel and budget, and see how the campaign is likely to perform before you spend." />
+        <meta property="og:image" content="https://ap-digital.ca/advice-og.png" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
       {failure ? (
