@@ -130,7 +130,7 @@ const Vancouver = () => (
           <div className="max-w-3xl animate-fade-up">
             <img
               src={apLogoMark}
-              alt=""
+              alt="AP Digital logo"
               width={96}
               height={96}
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-7"
