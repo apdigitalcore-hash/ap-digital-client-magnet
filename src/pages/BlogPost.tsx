@@ -199,7 +199,15 @@ const BlogPost = () => {
 
           {(() => {
             const promo = advicePromoFor(post.slug);
-            if (!promo) return null;
+            if (!promo) {
+              return (
+                <p className="mt-12 text-sm text-muted-foreground">
+                  Planning a campaign? Try{' '}
+                  <Link to="/advice" className="text-teal underline hover:text-teal/80">ADvice</Link>, our free
+                  simulator — it predicts your results and scores your ad before you spend.
+                </p>
+              );
+            }
             return (
               <aside className="mt-12 rounded-2xl border border-teal/30 bg-teal/[0.04] p-6">
                 <h2 className="font-display text-lg font-bold text-foreground">{promo.heading}</h2>

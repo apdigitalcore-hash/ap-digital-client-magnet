@@ -9,7 +9,7 @@ import JsonLd from '@/components/JsonLd';
 const Contact = () => {
   const faqData = [
     { question: "Is this really free?", answer: "Yes, 100%. The audit call is completely free with no strings attached. We believe in providing value upfront." },
-    { question: "How long is the call?", answer: "Typically 20-30 minutes. Enough time to understand your business and give you real insights, without wasting your day." },
+    { question: "How long is the call?", answer: "Twenty minutes. Enough time to understand your business and give you real insights, without wasting your day." },
     { question: "What happens after the call?", answer: "If it's a good fit, we'll discuss working together. If not, you'll still walk away with actionable advice you can implement yourself." },
     { question: "Do you require long-term contracts?", answer: "No. We work month-to-month. We earn your business every month based on results, not contracts." }
   ];
@@ -133,7 +133,7 @@ const Contact = () => {
                     Book Your Free Strategy Call
                   </div>
                   <div className="text-muted-foreground">
-                    Pick a time that works — 30 minutes, no obligation. Confirmation emails sent automatically.
+                    Pick a time that works — 20 minutes, no obligation. Confirmation emails sent automatically.
                   </div>
                 </div>
                 <div className="flex items-center gap-2 text-teal font-semibold group-hover:translate-x-1 transition-transform">
@@ -194,7 +194,7 @@ const Contact = () => {
                   How long is the call?
                 </h3>
                 <p className="text-muted-foreground">
-                  Typically 20-30 minutes. Enough time to understand your business and give you real insights, without wasting your day.
+                  Twenty minutes. Enough time to understand your business and give you real insights, without wasting your day.
                 </p>
               </div>
 

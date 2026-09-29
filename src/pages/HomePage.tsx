@@ -38,7 +38,7 @@ const homepageFAQs = [
   },
   {
     question: "How quickly will I see results from paid ads?",
-    answer: "Campaigns typically go live within a week of kickoff. We agree a lead target at the start, and if we miss it by month three, we keep working free until we hit it."
+    answer: "Campaigns are live within 14 days of kickoff. We agree a lead target at the start, and if we miss it by month three, we keep working free until we hit it."
   },
   {
     question: "What areas does AP Digital serve?",
@@ -307,6 +307,33 @@ const HomePage = () => {
 
       <ProcessLight />
       <ServicesLight />
+
+      {/* ─────────────────── ADVICE ─────────────────── */}
+      <section className="py-24 md:py-28 bg-white border-y border-foreground/[0.07]">
+        <div className="container-custom">
+          <div className="mx-auto max-w-3xl text-center">
+            <SectionLabel label="Free Tool" />
+            <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-medium leading-[1.05] tracking-tight text-foreground">
+              Simulate your campaign <span className="italic">before</span> you spend
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
+              ADvice is our free AI campaign simulator. Paste your ad, pick the channel and budget, and it predicts your
+              click-through rate, cost per click and cost per lead, scores the creative out of 100 and rewrites the copy.
+              No sign-up for the first one.
+            </p>
+            <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                to="/advice"
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85"
+              >
+                Try ADvice free
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <span className="text-sm text-muted-foreground">Google, Meta, Instagram, TikTok and LinkedIn</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ─────────────────── WHY CHOOSE US ─────────────────── */}
       <section className="py-24 md:py-32 bg-[#EDEFF2]">

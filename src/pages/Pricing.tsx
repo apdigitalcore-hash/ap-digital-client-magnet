@@ -94,7 +94,7 @@ const faqs = [
   },
   {
     question: 'When do I see results?',
-    answer: 'Paid ads typically show qualified leads within 2–3 weeks. Organic content (SEO, social) compounds over 60–90 days. We track and report from day 1 so you always know where you stand — not just at month-end.',
+    answer: 'Paid ads usually start producing data you can judge within 2–3 weeks. Organic content (SEO, social) compounds over 60–90 days. We track and report from day 1 so you always know where you stand — not just at month-end.',
   },
 ];
 
@@ -272,7 +272,7 @@ const Pricing = () => {
 
       <PastelCTA
         headline="Ready to lock in your package?"
-        subheadline="Book a free 30-minute strategy call. We'll review your current marketing, agree on a 90-day target, and quote you on the package that fits."
+        subheadline="Book a free 20-minute strategy call. We'll review your current marketing, agree on a 90-day target, and quote you on the package that fits."
       />
 
       <Footer />

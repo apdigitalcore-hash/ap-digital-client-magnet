@@ -1218,7 +1218,10 @@ function clusterFor(slug) {
 }
 function advicePromo(post) {
   const p = CLUSTERS.advicePromo;
-  if (!p || !p.posts.includes(post.slug)) return '';
+  if (!p) return '';
+  if (!p.posts.includes(post.slug)) {
+    return '<p>Planning a campaign? Try <a href="/advice">ADvice</a>, our free simulator — it predicts your results and scores your ad before you spend.</p>';
+  }
   return `<aside aria-label="ADvice"><h2>${escapeHtml(p.heading)}</h2><p>${escapeHtml(p.body)}</p><p><a href="/advice">${escapeHtml(p.cta)}</a></p></aside>`;
 }
 

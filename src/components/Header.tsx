@@ -178,6 +178,16 @@ const Header = () => {
             </DropdownMenu>
 
             <Link
+              to="/advice"
+              className={`flex items-center gap-1.5 text-sm font-medium transition-colors duration-200 hover:text-teal ${
+                useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
+              }`}
+            >
+              ADvice
+              <span className="rounded-full bg-teal/15 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-teal">Free</span>
+            </Link>
+
+            <Link
               to="/pricing"
               className={`text-sm font-medium transition-colors duration-200 hover:text-teal ${
                 useDarkChrome ? 'text-foreground' : 'text-primary-foreground/90'
@@ -255,6 +265,14 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
+                </Link>
+
+                <Link
+                  to="/advice"
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl text-white font-medium hover:bg-white/10 hover:text-teal transition-colors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  ADvice — free ad simulator
                 </Link>
 
                 <Link

@@ -37,7 +37,7 @@ const services: {
     stats: [
       { value: '12+', label: 'Posts / month' },
       { value: '$849', label: 'Per month' },
-      { value: '4', label: 'Platforms' },
+      { value: '2', label: 'Platforms' },
     ],
   },
 ];
@@ -153,8 +153,8 @@ const ServicesLight = () => (
       </div>
 
       <p className="text-center text-sm text-muted-foreground">
-        See how we've helped other businesses —{' '}
-        <Link to="/case-studies" className="text-foreground underline underline-offset-4">how we work</Link> ·{' '}
+        See exactly how we work —{' '}
+        <Link to="/case-studies" className="text-foreground underline underline-offset-4">our approach</Link> ·{' '}
         <Link to="/blog" className="text-foreground underline underline-offset-4">read our blog</Link>
       </p>
     </div>
