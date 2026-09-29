@@ -7,7 +7,7 @@ import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY") ?? Deno.env.get("DefaultGeminiProject");
 // Models are tried in order; Google retires names over time, so a list beats a
 // single hard-coded id. GEMINI_MODEL, when set, is tried first.
-const MODELS = [Deno.env.get("GEMINI_MODEL"), "gemini-2.5-flash", "gemini-2.0-flash", "gemini-flash-latest"]
+const MODELS = [Deno.env.get("GEMINI_MODEL"), "gemini-2.5-flash", "gemini-flash-latest"]
   .filter(Boolean) as string[];
 const PER_IP_PER_HOUR = 8;
 
@@ -228,16 +228,19 @@ function fixRateScale(p: any) {
   if (Number.isFinite(impliedPct) && impliedPct > 0) {
     const given = mid(p.conversionRate);
     // Whichever reading sits closer to the implied rate wins.
-    if (Math.abs(given * 100 - impliedPct) < Math.abs(given - impliedPct)) {
+    const isFraction = Math.abs(given * 100 - impliedPct) < Math.abs(given - impliedPct);
+    if (isFraction) {
       p.conversionRate = asPct(p.conversionRate);
-      if (mid(p.ctr) <= 1) p.ctr = asPct(p.ctr);
-      return;
+      // The model used fractions, so CTR is a fraction too (0.009 = 0.9%).
+      if (mid(p.ctr) <= 0.1) p.ctr = asPct(p.ctr);
     }
+    // Either way the scale is settled — never fall through to the guess below.
+    return;
   }
-  // No usable cross-check: a rate at or below 1 is a fraction in every channel
-  // we support, since even Display sits near 0.3% and would be 0.003.
-  if (mid(p.conversionRate) <= 1) p.conversionRate = asPct(p.conversionRate);
-  if (mid(p.ctr) <= 0.1) p.ctr = asPct(p.ctr);
+  // No usable cross-check: only values too small to be real percentages are
+  // treated as fractions (0.05 conversion rate = 5%; 0.01 CTR = 1%).
+  if (mid(p.conversionRate) <= 0.2) p.conversionRate = asPct(p.conversionRate);
+  if (mid(p.ctr) <= 0.05) p.ctr = asPct(p.ctr);
 }
 
 // deno-lint-ignore no-explicit-any
@@ -303,6 +306,7 @@ Deno.serve(async (req) => {
 
   let results;
   let lastError = "";
+  let busy = false;
   // Two passes: a transient upstream failure on the first pass (Gemini returns
   // 500s under load) should not cost the user their simulation.
   for (const model of [...MODELS, ...MODELS]) {
@@ -332,7 +336,13 @@ Deno.serve(async (req) => {
         console.error("gemini", lastError);
         // 404/400 usually means "this model name is gone" — try the next one.
         if (res.status === 404 || res.status === 400) continue;
-        if (res.status === 429) return json({ error: "The AI is busy right now. Try again in a minute.", detail: lastError }, 502);
+        // Quota (429) and overload (5xx) are per-model — back off briefly and
+        // try the next model instead of failing the visitor.
+        if (res.status === 429 || res.status >= 500) {
+          busy = true;
+          await new Promise((r) => setTimeout(r, 600));
+          continue;
+        }
         return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
       }
       const data = await res.json();
@@ -349,7 +359,10 @@ Deno.serve(async (req) => {
       console.error("gemini error", lastError);
     }
   }
-  if (!results) return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
+  if (!results) {
+    const error = busy ? "The AI is busy right now. Try again in a minute." : "The simulation failed. Please try again.";
+    return json({ error, detail: lastError }, 502);
+  }
 
   return json({
     id: crypto.randomUUID().slice(0, 8),

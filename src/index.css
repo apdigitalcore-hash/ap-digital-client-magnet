@@ -494,12 +494,12 @@
   .reveal-ink, .reveal-body { transition: none; }
 }
 
-/* ADvice report → PDF via the browser's print dialog. Keeps the dark design. */
+/* ADvice report printing: light ground to match the light report UI. */
 @media print {
-  .advice { background: #0a0a0a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .advice { background: #fff !important; }
   .advice-noprint { display: none !important; }
   .advice-card, .advice-section { break-inside: avoid; }
-  @page { margin: 12mm; background: #0a0a0a; }
+  @page { margin: 12mm; }
 }
 
 /* ADvice uses the system (SF) stack for headings too, not the site's display face. */
