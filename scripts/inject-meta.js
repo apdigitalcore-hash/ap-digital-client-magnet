@@ -1209,9 +1209,19 @@ const MONEY = JSON.parse(readFileSync(resolve(__dirname, '../src/lib/moneyLinks.
 // HTML link the same way.
 const CLUSTERS = JSON.parse(readFileSync(resolve(__dirname, '../src/lib/clusters.json'), 'utf8'));
 function clusterFor(slug) {
-  for (const [key, c] of Object.entries(CLUSTERS)) if (c.posts.includes(slug)) return { key, ...c };
+  // advicePromo shares the file but is a callout, not a cluster.
+  for (const [key, c] of Object.entries(CLUSTERS)) {
+    if (key === 'advicePromo') continue;
+    if (c.posts.includes(slug)) return { key, ...c };
+  }
   return null;
 }
+function advicePromo(post) {
+  const p = CLUSTERS.advicePromo;
+  if (!p || !p.posts.includes(post.slug)) return '';
+  return `<aside aria-label="ADvice"><h2>${escapeHtml(p.heading)}</h2><p>${escapeHtml(p.body)}</p><p><a href="/advice">${escapeHtml(p.cta)}</a></p></aside>`;
+}
+
 function clusterNav(post, titleOf) {
   const c = clusterFor(post.slug);
   if (!c) return '';
@@ -1323,7 +1333,7 @@ for (const post of blogPosts) {
     ? '<section aria-label="Frequently asked questions">' + post.faqs.map(
         (f) => `<section><h2>${escapeHtml(f.q)}</h2><p>${escapeHtml(f.a)}</p></section>`).join('') + '</section>'
     : '';
-  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}${faqBody}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article>${clusterNav(post, (s) => (blogPosts.find((p) => p.slug === s) || {}).metaTitle?.split(' | ')[0])}<nav aria-label="Related services"><ul>${getMoneyLinks(post.slug, post.title).map(l => `<li><a href="${l.path}">${escapeHtml(l.label)}</a></li>`).join('')}<li><a href="/blog">All Articles</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>`;
+  const body = `<article><h1>${escapeHtml(post.metaTitle.split(' | ')[0])}</h1><p>${escapeHtml(post.metaDescription)}</p>${bodyContent}${faqBody}<p>By <a href="/about/arjun-sharma">Arjun Sharma</a>, Founder of <a href="/about">AP Digital</a>. Published ${post.date}.</p></article>${advicePromo(post)}${clusterNav(post, (s) => (blogPosts.find((p) => p.slug === s) || {}).metaTitle?.split(' | ')[0])}<nav aria-label="Related services"><ul>${getMoneyLinks(post.slug, post.title).map(l => `<li><a href="${l.path}">${escapeHtml(l.label)}</a></li>`).join('')}<li><a href="/blog">All Articles</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>`;
   const html = injectIntoHtml(baseHtml, {
     title: post.metaTitle,
     description: post.metaDescription,

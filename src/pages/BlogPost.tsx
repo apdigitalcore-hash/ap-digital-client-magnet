@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { getMoneyLinks } from '@/lib/moneyLinks';
-import { clusterSiblings, getCluster } from '@/lib/clusterLinks';
+import { advicePromoFor, clusterSiblings, getCluster } from '@/lib/clusterLinks';
 import { blogPosts } from '@/lib/blogPosts';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
@@ -127,7 +127,18 @@ const BlogPost = () => {
         return <Link key={i} to={linkMatch[2]} className="text-teal underline hover:text-teal/80 transition-colors">{linkMatch[1]}</Link>;
       }
       if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={i} className="text-foreground font-semibold">{part.slice(2, -2)}</strong>;
+        const inner = part.slice(2, -2);
+        // A bold link — **[text](/url)** — matched the bold pattern whole, so
+        // the markdown was printing raw. Parse the link inside the bold.
+        const boldLink = inner.match(/^\[(.*?)\]\((.*?)\)$/);
+        if (boldLink) {
+          return (
+            <strong key={i} className="text-foreground font-semibold">
+              <Link to={boldLink[2]} className="text-teal underline hover:text-teal/80 transition-colors">{boldLink[1]}</Link>
+            </strong>
+          );
+        }
+        return <strong key={i} className="text-foreground font-semibold">{inner}</strong>;
       }
       return part;
     });
@@ -185,6 +196,23 @@ const BlogPost = () => {
             </p>
             <PreferredSourceButton />
           </div>
+
+          {(() => {
+            const promo = advicePromoFor(post.slug);
+            if (!promo) return null;
+            return (
+              <aside className="mt-12 rounded-2xl border border-teal/30 bg-teal/[0.04] p-6">
+                <h2 className="font-display text-lg font-bold text-foreground">{promo.heading}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{promo.body}</p>
+                <Link
+                  to="/advice"
+                  className="mt-4 inline-flex min-h-[44px] items-center rounded-full bg-teal px-5 text-sm font-medium text-white transition-colors hover:bg-teal/90"
+                >
+                  {promo.cta}
+                </Link>
+              </aside>
+            );
+          })()}
 
           {(() => {
             const cluster = getCluster(post.slug);

@@ -2,7 +2,7 @@
   "cost": {
     "label": "Pricing guides",
     "hub": "how-much-does-social-media-marketing-cost-canada",
-    "intro": "What marketing actually costs in Canada — real numbers, updated as the platforms change.",
+    "intro": "What marketing actually costs in Canada \u2014 real numbers, updated as the platforms change.",
     "posts": [
       "how-much-does-social-media-marketing-cost-canada",
       "how-much-do-instagram-ads-cost-canada",
@@ -17,6 +17,24 @@
       "tri-cities-google-ads-cost",
       "property-management-marketing-cost",
       "salon-social-media-management-vancouver"
+    ]
+  },
+  "advicePromo": {
+    "note": "Posts that carry the ADvice callout \u2014 readers already weighing ad spend.",
+    "heading": "Test this campaign before you fund it",
+    "body": "ADvice is our free AI campaign simulator. Paste your ad, pick the channel and budget, and it predicts your click-through rate, cost per click and cost per lead, scores the creative out of 100 and rewrites the copy. The first one needs no sign-up.",
+    "cta": "Run a free simulation",
+    "posts": [
+      "how-much-does-social-media-marketing-cost-canada",
+      "best-ads-platform-for-small-business-canada",
+      "meta-ads-cost-contractors-bc",
+      "how-much-do-google-ads-cost-vancouver",
+      "tiktok-ads-small-business-bc",
+      "tri-cities-google-ads-cost",
+      "how-much-do-instagram-ads-cost-canada",
+      "google-ads-cost-small-business-canada",
+      "digital-marketing-budget-small-business-canada",
+      "property-management-marketing-cost"
     ]
   }
 }
