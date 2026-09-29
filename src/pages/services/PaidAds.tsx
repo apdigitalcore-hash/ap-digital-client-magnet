@@ -29,7 +29,7 @@ const costs = [
   { line: 'Management fee', amount: '$759/month', note: 'Flat. Not a percentage of your spend.' },
   { line: 'Ad spend', amount: '$1,000+/month', note: 'Paid directly to Google or Meta on your own card.' },
   { line: 'Setup fee', amount: 'None', note: 'Tracking, research and build are inside the fee.' },
-  { line: 'Contract', amount: 'Month-to-month', note: "15 days' notice to pause or cancel. No exit fee." },
+  { line: 'Contract', amount: 'Month-to-month', note: "30 days' notice to pause or cancel. No exit fee." },
 ];
 
 const platformFit = [
@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     question: 'Do you guarantee results?',
-    answer: 'We agree a lead-volume target before anything goes live, and if we miss it by month three we keep working at no charge until we hit it. What we do not do is guarantee a cost per lead before launch, because nobody can know that until the account has data. We also have no published case studies yet, and we say so rather than quoting numbers you cannot verify.',
+    answer: 'We agree a lead-volume target before anything goes live, and if we miss it by month three we keep working at no fee for a further 30 days. What we do not do is guarantee a cost per lead before launch, because nobody can know that until the account has data. We also have no published case studies yet, and we say so rather than quoting numbers you cannot verify.',
   },
   {
     question: 'How much do paid ads cost in Vancouver?',

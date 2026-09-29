@@ -388,7 +388,7 @@ const staticRoutes = [
     path: 'case-studies',
     title: 'Our Approach | How We Work | AP Digital',
     description: 'How AP Digital runs paid ads and social media for BC businesses: what we report, what we charge, and the terms. No published case studies yet.',
-    body: '<h1>How We Work</h1><p>We do not have published case studies yet. Rather than showing numbers we cannot attribute to a named client, here is exactly how the work runs: paid ads management at $759/month, social media management at $849/month, both month-to-month with no lock-in contract and 15 days notice to cancel. Ad spend is separate and paid directly to Google or Meta. We agree a lead-volume target before launch, and report leads, cost per lead, and what changed each week.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>How We Work</h1><p>We do not have published case studies yet. Rather than showing numbers we cannot attribute to a named client, here is exactly how the work runs: paid ads management at $759/month, social media management at $849/month, both month-to-month with no lock-in contract and 30 days notice to cancel. Ad spend is separate and paid directly to Google or Meta. We agree a lead-volume target before launch, and report leads, cost per lead, and what changed each week.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Our Approach', url: '/case-studies' }]),
@@ -512,10 +512,10 @@ const staticRoutes = [
   // rendered page says rather than being generic.
   ...[
     ['vancouver',  'Kitsilano, Mount Pleasant, East Vancouver and Yaletown', 'Google & Meta Ads Vancouver — From $759/mo, No Contract', 'Google Ads and Meta Ads managed for Vancouver businesses — Kitsilano, Mount Pleasant, Yaletown, East Van. From $759/month, month-to-month, no lock-in.'],
-    ['surrey',     'Newton, Guildford, South Surrey and Cloverdale', 'Surrey Lead Generation: Google & Meta Ads, No Lock-In', 'Paid ads for Surrey businesses in Newton, Guildford, South Surrey and Cloverdale. $759/month, cancel with 15 days\' notice. No long-term contract.'],
+    ['surrey',     'Newton, Guildford, South Surrey and Cloverdale', 'Surrey Lead Generation: Google & Meta Ads, No Lock-In', 'Paid ads for Surrey businesses in Newton, Guildford, South Surrey and Cloverdale. $759/month, cancel with 30 days\' notice. No long-term contract.'],
     ['burnaby',    'Metrotown, Brentwood, North Burnaby and Edmonds', 'Burnaby Ads Management — $759/mo, No Lock-In', 'Meta and Google campaigns for Burnaby businesses near Metrotown, Brentwood and Edmonds. Management from $759/month. Month-to-month, no lock-in.'],
-    ['richmond',   'City Centre, Steveston, Broadmoor and Brighouse', 'Richmond Google Ads for Local Business — No Contract', 'Richmond businesses in City Centre, Steveston and Brighouse: Google Ads and Meta Ads from $759/month. No contract, cancel with 15 days\' notice.'],
-    ['langley',    'Willoughby, Walnut Grove, Murrayville and Aldergrove', 'Langley Google & Meta Ads — Month-to-Month, No Contract', 'Langley trades, salons and realtors: Google and Meta Ads from $759/month. Month-to-month, 15 days\' notice, no contract.'],
+    ['richmond',   'City Centre, Steveston, Broadmoor and Brighouse', 'Richmond Google Ads for Local Business — No Contract', 'Richmond businesses in City Centre, Steveston and Brighouse: Google Ads and Meta Ads from $759/month. No contract, cancel with 30 days\' notice.'],
+    ['langley',    'Willoughby, Walnut Grove, Murrayville and Aldergrove', 'Langley Google & Meta Ads — Month-to-Month, No Contract', 'Langley trades, salons and realtors: Google and Meta Ads from $759/month. Month-to-month, 30 days\' notice, no contract.'],
     ['coquitlam',  'Port Moody, Port Coquitlam and the wider Tri-Cities', 'Coquitlam Google & Meta Ads From $759/mo — No Lock-In', 'Google Ads and Meta Ads for Coquitlam, Port Moody and Port Coquitlam businesses. From $759/month with no lock-in contract. Book a 20-minute call.'],
     ['abbotsford', 'West Abbotsford, Clearbrook, Auguston and Matsqui', 'Abbotsford Marketing for Trades — $759/mo, No Contract', 'Marketing for Abbotsford contractors, trades and salons across the Fraser Valley. Google and Meta Ads from $759/month. Month-to-month, no contract.'],
   ].map(([city, areas, metaTitle, metaDesc]) => {
@@ -540,7 +540,7 @@ const staticRoutes = [
           { q: `Who is the best digital marketing agency in ${cap} for contractors?`,
             a: `For ${cap} trades — plumbers, HVAC, electricians, roofers — the agency worth hiring is the one that targets at neighbourhood level rather than blanketing Metro Vancouver, and that reports cost per booked job rather than impressions. AP Digital runs Google Ads and Meta Ads for ${cap} contractors across ${areas}, month-to-month with no lock-in. Arjun Sharma manages every account personally.` },
           { q: `Is there a ${cap} marketing company that works month-to-month?`,
-            a: `Yes. AP Digital works month-to-month with every ${cap} client — pause or cancel with 15 days' notice, no exit fee.` },
+            a: `Yes. AP Digital works month-to-month with every ${cap} client — pause or cancel with 30 days' notice, no exit fee.` },
           { q: `How much does a marketing agency in ${cap} cost?`,
             a: `Paid ads management is $759/month and social media management is $849/month, quoted separately. Ad spend is separate again and goes straight to Google or Meta. Most ${cap} businesses start between $1,000 and $2,000/month all in.` },
         ]),

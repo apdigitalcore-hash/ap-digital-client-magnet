@@ -24,7 +24,7 @@ const guarantees = [
   {
     icon: Shield,
     title: '90-Day Results Guarantee',
-    description: 'If we don\'t hit the lead targets we agree on in your first 90 days, we work for free until we do.',
+    description: 'If we don\'t hit the lead targets we agree on in your first 90 days, we keep working at no fee for a further 30 days.',
   },
   {
     icon: Zap,
@@ -70,7 +70,7 @@ const serviceCards = [
 const faqs = [
   {
     question: 'Do you require a long-term contract?',
-    answer: 'No. Every package is month-to-month. You can pause or cancel with 15 days\' notice — no hidden fees, no exit penalties. Most clients stay long-term because the campaigns are profitable, not because they\'re obligated.',
+    answer: 'No. Every package is month-to-month. You can pause or cancel with 30 days\' notice — no hidden fees, no exit penalties. Most clients stay long-term because the campaigns are profitable, not because they\'re obligated.',
   },
   {
     question: 'Is the ad spend included in the monthly fee?',
@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     question: 'How does the 90-day results guarantee work?',
-    answer: 'In your kickoff call we agree on a specific lead-volume or pipeline target tied to your industry, budget, and current baseline. If we miss that target by month 3, we keep working at no charge until we hit it. We put the target in writing in your service agreement.',
+    answer: 'In your kickoff call we agree on a specific lead-volume or pipeline target tied to your industry, budget, and current baseline. If we miss that target by month 3, we keep working at no fee for a further 30 days. We put the target in writing in your service agreement.',
   },
   {
     question: 'What if my industry isn\'t one of your specialties?',

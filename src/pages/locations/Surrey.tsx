@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: 'Is there a Surrey marketing company that works month-to-month?',
-    answer: 'Yes. AP Digital works month-to-month with every Surrey client — pause or cancel with 15 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
+    answer: 'Yes. AP Digital works month-to-month with every Surrey client — pause or cancel with 30 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
   },
   {
     question: 'How much does a marketing agency in Surrey cost?',
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: 'How quickly will I see leads in Surrey?',
-    answer: 'Campaigns are usually live within a week of kickoff. How quickly leads follow depends on your industry, your budget and how many Surrey residents search for what you sell — emergency trades work moves within days, while considered purchases take longer. We agree a 90-day lead target at kickoff, and if we miss it we keep working free until we hit it.',
+    answer: 'Campaigns are usually live within a week of kickoff. How quickly leads follow depends on your industry, your budget and how many Surrey residents search for what you sell — emergency trades work moves within days, while considered purchases take longer. We agree a 90-day lead target at kickoff, and if we miss it we keep working at no fee for a further 30 days.',
   },
   {
     question: 'Do I have to sign a long-term contract?',

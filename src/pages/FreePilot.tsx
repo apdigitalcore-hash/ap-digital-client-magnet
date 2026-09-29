@@ -459,7 +459,7 @@ const FreePilot = () => {
                 <CtaButton niche={niche} />
               </div>
               <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.18em] text-foreground/70">
-                No contract · No setup fee · 15-day cancellation notice
+                No contract · No setup fee · 30-day cancellation notice
               </p>
             </div>
           </div>

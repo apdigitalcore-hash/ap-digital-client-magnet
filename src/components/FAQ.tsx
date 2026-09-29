@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     question: 'What makes AP DIGITAL different from other agencies?',
-    answer: "We specialize in specific niches—salons, real estate, trades, and coaching—which means we understand your industry inside and out. We're not generalists guessing what might work. Plus, our 90-day results guarantee means we're invested in your success. If we miss the lead target we agree on, we keep working free until we hit it.",
+    answer: "We specialize in specific niches—salons, real estate, trades, and coaching—which means we understand your industry inside and out. We're not generalists guessing what might work. Plus, our 90-day results guarantee means we're invested in your success. If we miss the lead target we agree on, we keep working at no fee for a further 30 days.",
   },
   {
     question: 'How much do I need to spend on ads?',

@@ -29,7 +29,7 @@ const included = [
 
 const results = [
   { icon: Users, stat: 'Meta Ads', label: 'Facebook & Instagram lead campaigns' },
-  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, 15 days\' notice' },
+  { icon: Share2, stat: 'No Contract', label: 'Month-to-month, 30 days\' notice' },
   { icon: ShieldCheck, stat: '90-Day', label: 'Performance guarantee included' },
 ];
 
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: 'Is there a contract for coaching marketing?',
-    answer: 'No. AP Digital works month-to-month with all coaching clients. No lock-in, no cancellation fees. If we miss the lead target we agree on in 90 days, we keep working free until we hit it.',
+    answer: 'No. AP Digital works month-to-month with all coaching clients. No lock-in, no cancellation fees. If we miss the lead target we agree on in 90 days, we keep working at no fee for a further 30 days.',
   },
   {
     question: 'Should coaches use Instagram or Facebook for marketing?',

@@ -38,7 +38,7 @@ const homepageFAQs = [
   },
   {
     question: "How quickly will I see results from paid ads?",
-    answer: "Campaigns are live within 14 days of kickoff. We agree a lead target at the start, and if we miss it by month three, we keep working free until we hit it."
+    answer: "Campaigns are live within 14 days of kickoff. We agree a lead target at the start, and if we miss it by month three, we keep working at no fee for a further 30 days."
   },
   {
     question: "What areas does AP Digital serve?",
@@ -174,7 +174,7 @@ const HomePage = () => {
             </h1>
 
             <p className="mb-7 max-w-[500px] text-[15px] leading-relaxed text-primary-foreground/85 sm:text-lg lg:mb-7">
-              Google &amp; Meta Ads and social media for local businesses — and if we miss the lead target we agree on in 90 days, we keep working free until we hit it.
+              Google &amp; Meta Ads and social media for local businesses — and if we miss the lead target we agree on in 90 days, we keep working at no fee for a further 30 days.
             </p>
 
             <div className="flex flex-col items-stretch gap-4 sm:items-start lg:gap-3">

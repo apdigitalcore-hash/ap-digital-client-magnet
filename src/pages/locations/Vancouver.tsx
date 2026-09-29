@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     question: 'Is there a Vancouver marketing company that works month-to-month?',
-    answer: 'Yes. AP Digital works month-to-month with every Vancouver client — pause or cancel with 15 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
+    answer: 'Yes. AP Digital works month-to-month with every Vancouver client — pause or cancel with 30 days\' notice, no exit fee. Most agencies ask for six or twelve months up front because it protects them through a slow start. We would rather earn the next month by producing leads in this one.',
   },
   {
     question: 'How much does a marketing agency in Vancouver cost?',
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     question: 'Do I need a long-term contract?',
-    answer: 'No. AP Digital operates month-to-month with every Vancouver client. We earn your business every month by actually delivering results — there is no lock-in, no setup penalty, and no cancellation fee. Pause or cancel with 15 days\' notice.',
+    answer: 'No. AP Digital operates month-to-month with every Vancouver client. We earn your business every month by actually delivering results — there is no lock-in, no setup penalty, and no cancellation fee. Pause or cancel with 30 days\' notice.',
   },
   {
     question: 'How much does digital marketing cost in Vancouver?',
