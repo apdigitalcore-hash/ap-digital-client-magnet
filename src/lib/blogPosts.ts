@@ -182,6 +182,23 @@ The gap between a $300 freelancer video and a $3,000 produced one is mostly crew
 
 Two questions settle most quotes. **Who creates the raw footage?** If the agency shoots on location, expect $1,500+; if you film on your phone and they edit, plan and publish, it stays well under that. **Is ad spend included?** It should not be — see [the ad spend section below](#how-much-do-social-media-ads-cost-in-canada). A package that bundles spend into one number makes it impossible to see what management actually costs you.
 
+## What It Costs by City
+
+Management fees barely move across the country — a freelancer in Halifax and one in Toronto charge within a few hundred dollars of each other. Ad spend is where the city shows up, because you are bidding against whoever else wants the same audience.
+
+| City | Typical management | Typical monthly ad spend | What drives it |
+| --- | --- | --- | --- |
+| Toronto | $900 – $3,500 | $1,500 – $6,000 | The most crowded auction in Canada; agencies, ecommerce and franchises all bidding |
+| Vancouver | $800 – $3,000 | $1,200 – $4,000 | High competition in trades, real estate and wellness; smaller population than Toronto |
+| Montreal | $700 – $2,500 | $800 – $3,000 | Cheaper auction, but budget for French and English creative — effectively two campaigns |
+| Calgary | $750 – $2,500 | $1,000 – $3,500 | Swings with the energy cycle; trades and home services dominate |
+| Ottawa | $700 – $2,200 | $800 – $2,500 | Steadier, government-heavy market with fewer aggressive bidders |
+| Smaller cities and towns | $500 – $1,500 | $400 – $1,500 | Thin competition, so a modest budget can own the local feed |
+
+Two things are worth saying plainly. **Montreal costs more than the auction suggests** if your customers are francophone, because you need separate French creative rather than a translated caption. And **a Toronto business on a Halifax budget will lose**: the same $800 that buys steady reach in a small market barely registers in the GTA feed.
+
+Our own rate is the same wherever you are — [$849/month](/pricing) for social media management, ad spend billed separately by the platform — because the work does not change; the auction does.
+
 ## Cost by Business Size
 
 | Business | Typical monthly management | Typical monthly ad spend |
