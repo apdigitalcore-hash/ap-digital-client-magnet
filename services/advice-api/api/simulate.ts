@@ -329,6 +329,7 @@ export default async function handler(req: any, res: any) {
 
   let results;
   let lastError = "";
+  let busy = false;
   // Two passes: a transient upstream failure on the first pass (Gemini returns
   // 500s under load) should not cost the user their simulation.
   for (const model of [...MODELS, ...MODELS]) {
@@ -358,7 +359,13 @@ export default async function handler(req: any, res: any) {
         console.error("gemini", lastError);
         // 404/400 usually means "this model name is gone" — try the next one.
         if (res.status === 404 || res.status === 400) continue;
-        if (res.status === 429) return json({ error: "The AI is busy right now. Try again in a minute.", detail: lastError }, 502);
+        // Quota (429) and overload (5xx) are per-model — back off briefly and
+        // try the next model instead of failing the visitor.
+        if (res.status === 429 || res.status >= 500) {
+          busy = true;
+          await new Promise((r) => setTimeout(r, 600));
+          continue;
+        }
         return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
       }
       const data = await res.json();
@@ -375,7 +382,10 @@ export default async function handler(req: any, res: any) {
       console.error("gemini error", lastError);
     }
   }
-  if (!results) return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
+  if (!results) {
+    const error = busy ? "The AI is busy right now. Try again in a minute." : "The simulation failed. Please try again.";
+    return json({ error, detail: lastError }, 502);
+  }
 
   return json({
     id: crypto.randomUUID().slice(0, 8),
