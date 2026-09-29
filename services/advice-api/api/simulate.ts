@@ -34,6 +34,7 @@ function limited(ip: string) {
   return false;
 }
 
+const CURRENCIES = ["CAD", "USD"];
 const CHANNELS = ["Google Search Ads", "Google Display", "Meta/Facebook", "Instagram", "TikTok", "LinkedIn"];
 const INDUSTRIES = ["Ecommerce", "SaaS", "Local service", "Real estate", "Health & wellness", "Finance", "Education", "Food & beverage", "Other"];
 
@@ -48,6 +49,7 @@ interface Inputs {
   audience: string;
   channel: string;
   budget: number;
+  currency: string;
   headline: string;
   primaryText: string;
   description: string;
@@ -63,6 +65,7 @@ function readInputs(b: Record<string, unknown>): Inputs | string {
     audience: str(b.audience, 1500),
     channel: str(b.channel, 40),
     budget: Math.round(Number(b.budget)),
+    currency: CURRENCIES.includes(str(b.currency, 8)) ? str(b.currency, 8) : "CAD",
     headline: str(b.headline, 300),
     primaryText: str(b.primaryText, 2000),
     description: str(b.description, 500),
@@ -214,7 +217,7 @@ Competitor snapshot: estimate the number of active advertisers targeting this ni
 
 When an ad image is attached you MUST look at it and say what you actually see. Name the specific elements - colours, text on the image, whether a face, product or property appears, how much empty space there is - and judge whether the message survives at thumbnail size, whether the offer or price is visible, and whether it suits the channel's format. At least one improvement MUST be about the image itself, and its detail must reference what the image actually shows rather than generic creative advice. When no image is provided, never describe or assume one, and do not claim the creative is high quality.
 
-All currency is USD unless the audience location clearly implies another currency, in which case say so in the assumptions. Return only JSON matching the schema.`;
+Every figure must be in the currency named in the request and nowhere else — never convert, never quote another currency, and state the currency code once in the assumptions. Return only JSON matching the schema.`;
 
 function clampRange(r: { low?: number; high?: number } | null | undefined, min = 0, max = 1e9) {
   if (!r) return null;
@@ -311,7 +314,8 @@ export default async function handler(req: any, res: any) {
     `Current date: ${new Date().toISOString().slice(0, 10)}`,
     `Channel: ${inputs.channel}`,
     `Industry: ${inputs.industry}`,
-    `Monthly budget: $${inputs.budget.toLocaleString("en-US")}`,
+    `Monthly budget: $${inputs.budget.toLocaleString("en-US")} ${inputs.currency}`,
+    `Report every figure in ${inputs.currency}. Benchmarks below are USD — convert them to ${inputs.currency} before answering.`,
     `What they're selling: ${inputs.product || "(see product URL)"}`,
     inputs.productUrl && `Product URL: ${inputs.productUrl}`,
     productText && `Product page content (fetched):\n${productText}`,

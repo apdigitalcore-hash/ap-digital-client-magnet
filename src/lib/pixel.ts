@@ -47,6 +47,16 @@ export function track(event: string, params?: PixelParams) {
   }
 }
 
+/**
+ * GA4-only event, for steps that are worth measuring but are not Meta
+ * conversions — e.g. which channel and budget people simulate.
+ */
+export function trackGa4(event: string, params?: PixelParams) {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', event, params ?? {});
+  }
+}
+
 /** Custom event — use for anything that is not a real conversion. */
 export function trackCustom(event: string, params?: PixelParams) {
   if (!ready()) return;

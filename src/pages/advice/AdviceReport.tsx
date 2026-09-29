@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { Check, Download, Link2, RotateCcw } from 'lucide-react';
@@ -6,6 +6,7 @@ import AdviceShell from '@/advice/AdviceShell';
 import ReportView from '@/advice/ReportView';
 import { captureEmail, decodeReport, encodeReport, reportUrl, savedEmail } from '@/advice/api';
 import { downloadReportPdf } from '@/advice/pdf';
+import { track, trackGa4 } from '@/lib/pixel';
 import type { Simulation } from '@/advice/types';
 
 const SaveCard = ({ sim }: { sim: Simulation }) => {
@@ -18,6 +19,12 @@ const SaveCard = ({ sim }: { sim: Simulation }) => {
     setState('sending');
     try {
       await captureEmail(email.trim(), { sim });
+      track('Lead', { content_name: 'ADvice report email', content_category: sim.inputs.industry });
+      trackGa4('report_email_saved', {
+        channel: sim.inputs.channel,
+        industry: sim.inputs.industry,
+        budget: sim.inputs.budget,
+      });
       setState('sent');
     } catch (err) {
       setState('error');
@@ -46,13 +53,17 @@ const SaveCard = ({ sim }: { sim: Simulation }) => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@company.com"
           aria-label="Email address"
-          className="flex-1 rounded-2xl border border-black/[0.1] bg-white px-3.5 py-2.5 text-sm outline-none focus:border-[#1d1d1f]"
+          className="min-h-[44px] flex-1 rounded-2xl border border-black/[0.1] bg-white px-3.5 py-2.5 text-[15px] outline-none focus:border-[#1d1d1f]"
         />
-        <button type="submit" disabled={state === 'sending'} className="rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black disabled:opacity-60">
+        <button type="submit" disabled={state === 'sending'} className="min-h-[44px] rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black disabled:opacity-60">
           {state === 'sending' ? 'Sending…' : 'Save my report'}
         </button>
       </div>
       {state === 'error' && <p className="mt-2 text-sm text-[#d70015]">{message}</p>}
+      <p className="mt-3 text-xs text-[#86868b]">
+        We use it to send ADvice updates, nothing else. See our{' '}
+        <Link to="/privacy-policy" className="underline hover:text-[#1d1d1f]">privacy policy</Link>.
+      </p>
     </form>
   );
 };
@@ -68,6 +79,24 @@ const AdviceReport = () => {
   // A report opened from a link carries itself in the #fragment; one opened
   // from this app arrives in router state and gets its fragment written in,
   // so reloading or bookmarking the page keeps working.
+  // Fires once per report shown, so Meta and GA4 can attribute a completed
+  // simulation back to the page and campaign that produced it.
+  const tracked = useRef('');
+  useEffect(() => {
+    if (!sim || tracked.current === sim.id) return;
+    tracked.current = sim.id;
+    if (fresh) {
+      track('Lead', { content_name: 'ADvice simulation', content_category: sim.inputs.industry });
+    }
+    trackGa4('simulation_completed', {
+      channel: sim.inputs.channel,
+      industry: sim.inputs.industry,
+      budget: sim.inputs.budget,
+      creative_score: sim.results.creative.overall,
+      shared: !fresh,
+    });
+  }, [sim, fresh]);
+
   useEffect(() => {
     if (passed?.sim) {
       encodeReport(passed.sim).then((f) => window.history.replaceState(window.history.state, '', `/advice/report#${f}`));
@@ -97,7 +126,7 @@ const AdviceReport = () => {
   const title = sim ? `${sim.inputs.campaignName || 'Campaign simulation'} — ADvice report` : 'ADvice report';
 
   return (
-    <AdviceShell>
+    <AdviceShell title={title}>
       <Helmet>
         <title>{title}</title>
         <meta name="robots" content="noindex, nofollow" />
@@ -128,16 +157,31 @@ const AdviceReport = () => {
             <ReportView sim={sim} />
 
             <div className="advice-noprint mt-12 flex flex-col gap-3 border-t border-black/[0.06] pt-8 sm:flex-row">
-              <Link to="/advice/simulate" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
+              <Link to="/advice/simulate" className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
                 <RotateCcw className="h-4 w-4" /> Run another simulation
               </Link>
-              <button type="button" onClick={() => downloadReportPdf(sim)} className="inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
+              <button type="button" onClick={() => downloadReportPdf(sim)} className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
                 <Download className="h-4 w-4" /> Download report as PDF
               </button>
-              <button type="button" onClick={share} className="inline-flex items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
+              <button type="button" onClick={share} className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30">
                 {copied ? <Check className="h-4 w-4 text-[#248a3d]" /> : <Link2 className="h-4 w-4" />}
                 {copied ? 'Link copied' : 'Share report'}
               </button>
+            </div>
+
+            <div className="advice-noprint mt-10 rounded-[20px] bg-[#f5f5f7] p-8 text-center">
+              <h2 className="text-[22px] font-semibold tracking-[-0.02em]">Want this built and run for you?</h2>
+              <p className="mx-auto mt-2 max-w-[46ch] text-[15px] text-[#6e6e73]">
+                AP Digital runs Google and Meta Ads for local businesses from $759/month — month-to-month, and we keep
+                working free if we miss the lead target we agree on.
+              </p>
+              <Link
+                to="/book"
+                onClick={() => trackGa4('advice_book_click', { channel: sim.inputs.channel, industry: sim.inputs.industry })}
+                className="mt-6 inline-flex min-h-[44px] items-center rounded-full bg-[#1d1d1f] px-6 py-3 text-[15px] text-white transition-colors hover:bg-black"
+              >
+                Book a free call
+              </Link>
             </div>
 
             {fresh && !savedEmail() && <div className="mt-8"><SaveCard sim={sim} /></div>}

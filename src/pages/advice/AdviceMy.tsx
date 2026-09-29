@@ -16,7 +16,7 @@ const AdviceMy = () => {
   };
 
   return (
-    <AdviceShell>
+    <AdviceShell title="My Simulations | ADvice">
       <Helmet>
         <title>My Simulations | ADvice</title>
         <meta name="robots" content="noindex, nofollow" />
@@ -27,7 +27,7 @@ const AdviceMy = () => {
             <h1 className="text-2xl font-semibold tracking-tight">My simulations</h1>
             <p className="mt-1 text-sm text-[#86868b]">Saved in this browser. Use Share on any report to keep a permanent link.</p>
           </div>
-          <Link to="/advice/simulate" className="inline-flex items-center gap-2 rounded-full bg-[#1d1d1f] px-4 py-2 text-sm font-medium hover:bg-black text-white">
+          <Link to="/advice/simulate" className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2 text-sm font-medium text-white hover:bg-black">
             New simulation <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -55,7 +55,7 @@ const AdviceMy = () => {
                   type="button"
                   onClick={() => remove(r.id)}
                   aria-label={`Remove ${r.inputs.campaignName || 'simulation'}`}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-1.5 text-[#86868b] hover:bg-[#f5f5f7] hover:text-[#1d1d1f]"
+                  className="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full text-[#86868b] hover:bg-[#f5f5f7] hover:text-[#1d1d1f]"
                 >
                   <X className="h-4 w-4" />
                 </button>

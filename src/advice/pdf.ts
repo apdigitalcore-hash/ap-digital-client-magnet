@@ -58,7 +58,7 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
   text(i.campaignName || 'Simulation report', 22, 'bold');
   y += 2;
   text(
-    `${i.channel} · ${i.industry} · ${money(i.budget)}/month · ${new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}`,
+    `${i.channel} · ${i.industry} · ${money(i.budget)} ${i.currency ?? 'CAD'}/month · ${new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}`,
     9, 'normal', '#6e6e73',
   );
   y += 10;
@@ -76,6 +76,7 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
     ['Cost per acquisition', span(p.cpa, money)],
     ['ROAS', p.roas ? span(p.roas, (n) => `${n.toFixed(1)}x`) : '—'],
     ['Confidence', p.confidence],
+    ['Currency', i.currency ?? 'CAD'],
   ];
   const half = COL / 2;
   for (let k = 0; k < metrics.length; k += 2) {

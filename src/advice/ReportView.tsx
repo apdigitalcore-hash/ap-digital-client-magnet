@@ -4,8 +4,7 @@ import { AlertTriangle, CalendarClock, Copy, Swords, TrendingUp, Wallet } from '
 import type { Level, Range, Scored, Simulation } from './types';
 
 // ── formatting ────────────────────────────────────────────────────────────
-const money = (n: number) =>
-  n >= 100 ? `$${Math.round(n).toLocaleString('en-US')}` : `$${n.toFixed(2)}`;
+const fmt = (n: number) => (n >= 100 ? Math.round(n).toLocaleString('en-US') : n.toFixed(2));
 const int = (n: number) => Math.round(n).toLocaleString('en-US');
 const pct = (n: number) => `${n.toFixed(n < 10 ? 1 : 0)}%`;
 const span = (r: Range, f: (n: number) => string) =>
@@ -98,7 +97,7 @@ const CopyBlock = ({ label, text }: { label: string; text: string }) => (
       <button
         type="button"
         onClick={() => navigator.clipboard?.writeText(text)}
-        className="advice-noprint inline-flex items-center gap-1 text-xs text-[#86868b] hover:text-[#1d1d1f]"
+        className="advice-noprint -m-2 inline-flex min-h-[44px] min-w-[44px] items-center justify-end gap-1 p-2 text-xs text-[#86868b] hover:text-[#1d1d1f]"
       >
         <Copy className="h-3 w-3" /> Copy
       </button>
@@ -112,13 +111,16 @@ const SEASON_LABEL = { good: 'Good time', neutral: 'Neutral', bad: 'Poor timing'
 
 const ReportView = ({ sim }: { sim: Simulation }) => {
   const { inputs: i, results: r } = sim;
+  // Every figure carries the currency the simulation was run in.
+  const cur = i.currency ?? 'CAD';
+  const money = (n: number) => `$${fmt(n)}`;
   const p = r.predictions;
 
   return (
     <div className="space-y-12">
       <header>
         <p className="text-[12px] text-[#6e6e73]">
-          {i.channel} · {i.industry} · {money(i.budget)}/month · {new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}
+          {i.channel} · {i.industry} · {money(i.budget)} {cur}/month · {new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}
         </p>
         <h1 className="mt-2 text-3xl font-semibold tracking-[-0.035em] text-[#1d1d1f] sm:text-4xl">{i.campaignName || 'Simulation report'}</h1>
         <p className="mt-4 max-w-3xl text-[#6e6e73]">{r.summary}</p>
@@ -133,7 +135,7 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
           <Metric label="Conversions / month" value={span(p.conversions, int)} />
           <Metric label="Cost per acquisition" value={span(p.cpa, money)} />
           <Metric label="ROAS" value={p.roas ? span(p.roas, (n) => `${n.toFixed(1)}x`) : '—'} sub={p.roas ? undefined : 'Needs a known order value'} />
-          <Metric label="Budget" value={money(i.budget)} sub="per month" />
+          <Metric label="Budget" value={money(i.budget)} sub={`${cur} per month`} />
         </div>
         <Card className="mt-3">
           <p className="text-sm text-[#6e6e73]">{p.confidenceReason}</p>

@@ -2,10 +2,10 @@ import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Check, Sparkles } from 'lucide-react';
+import { AlertCircle, ArrowLeft, ArrowRight, Check, RotateCcw, Sparkles } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import { captureEmail, FREE_TOTAL, gateState, readImageFile, runCount, runSimulation } from '@/advice/api';
-import { CHANNELS, EMPTY_INPUTS, INDUSTRIES, type SimInputs } from '@/advice/types';
+import { CHANNELS, CURRENCIES, EMPTY_INPUTS, INDUSTRIES, type SimInputs } from '@/advice/types';
 
 const STEPS = ['Your business', 'Channel & budget', 'Your ad'];
 
@@ -18,7 +18,7 @@ const LOADING_LINES = [
   'Writing your recommendations…',
 ];
 
-const field = 'w-full rounded-xl border border-black/[0.1] bg-[#f5f5f7] px-3.5 py-2.5 text-[15px] text-[#1d1d1f] placeholder:text-[#86868b] outline-none transition-colors focus:border-[#1d1d1f] focus:bg-white';
+const field = 'w-full min-h-[44px] rounded-xl border border-black/[0.1] bg-[#f5f5f7] px-3.5 py-3 text-[15px] text-[#1d1d1f] placeholder:text-[#86868b] outline-none transition-colors focus:border-[#1d1d1f] focus:bg-white';
 const label = 'mb-1.5 block text-sm font-medium text-[#1d1d1f]';
 const hint = 'font-normal text-[#86868b]';
 
@@ -121,6 +121,31 @@ const LimitReached = () => (
   </div>
 );
 
+
+const FailureScreen = ({ message, onRetry }: { message: string; onRetry: () => void }) => (
+  <div className="mx-auto max-w-md py-20 text-center">
+    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#fff0f0]">
+      <AlertCircle className="h-5 w-5 text-[#d70015]" />
+    </span>
+    <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">That simulation didn’t finish</h1>
+    <p className="mt-3 text-[#6e6e73]">{message}</p>
+    <p className="mt-2 text-[15px] text-[#86868b]">
+      Your answers are still here — nothing was lost. This is usually a busy moment on the AI service, and a second
+      attempt normally works.
+    </p>
+    <div className="mt-8 flex flex-col items-center gap-3">
+      <button
+        type="button"
+        onClick={onRetry}
+        className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#1d1d1f] px-6 py-3 text-[15px] text-white hover:bg-black"
+      >
+        <RotateCcw className="h-4 w-4" /> Try again
+      </button>
+      <Link to="/advice" className="py-2 text-sm text-[#6e6e73] underline hover:text-[#1d1d1f]">Back to ADvice</Link>
+    </div>
+  </div>
+);
+
 const AdviceSimulate = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
@@ -130,6 +155,7 @@ const AdviceSimulate = () => {
   const [imageName, setImageName] = useState('');
   // Only the hard limit is shown up front; the email is asked for after the
   // form is filled and Run is pressed, never on arrival.
+  const [failure, setFailure] = useState('');
   const [gate, setGate] = useState<'ok' | 'email' | 'limit'>(() => (gateState() === 'limit' ? 'limit' : 'ok'));
 
   const set = <K extends keyof SimInputs>(k: K) => (e: { target: { value: string } }) =>
@@ -156,6 +182,7 @@ const AdviceSimulate = () => {
     const e = stepError(2);
     setError(e);
     if (e) return;
+    setFailure('');
     const g = gateState();
     if (g !== 'ok') {
       setGate(g);
@@ -167,7 +194,7 @@ const AdviceSimulate = () => {
       navigate('/advice/report', { state: { sim, fresh: true } });
     } catch (err) {
       setRunning(false);
-      setError(err instanceof Error ? err.message : 'The simulation failed. Please try again.');
+      setFailure(err instanceof Error ? err.message : 'The simulation failed. Please try again.');
     }
   };
 
@@ -175,13 +202,15 @@ const AdviceSimulate = () => {
   const isSearch = v.channel === 'Google Search Ads';
 
   return (
-    <AdviceShell>
+    <AdviceShell title="Run a Simulation | ADvice">
       <Helmet>
         <title>Run a Simulation | ADvice</title>
         <meta name="robots" content="noindex, follow" />
       </Helmet>
 
-      {gate === 'limit' ? (
+      {failure ? (
+        <FailureScreen message={failure} onRetry={() => { setFailure(''); void submit(); }} />
+      ) : gate === 'limit' ? (
         <LimitReached />
       ) : gate === 'email' ? (
         <EmailGate inputs={v} onDone={() => { setGate('ok'); void submit(); }} />
@@ -269,7 +298,22 @@ const AdviceSimulate = () => {
                   <div>
                     <div className="mb-3 flex items-baseline justify-between">
                       <label className={label} htmlFor="budget">Monthly budget</label>
-                      <div className="flex items-center gap-1 text-sm">
+                      <div className="flex items-center gap-2 text-sm">
+                        <div className="flex overflow-hidden rounded-full border border-black/[0.1]">
+                          {CURRENCIES.map((c) => (
+                            <button
+                              type="button"
+                              key={c}
+                              onClick={() => setV((p) => ({ ...p, currency: c }))}
+                              aria-pressed={v.currency === c}
+                              className={`min-h-[36px] px-3 text-[13px] transition-colors ${
+                                v.currency === c ? 'bg-[#1d1d1f] text-white' : 'text-[#6e6e73] hover:text-[#1d1d1f]'
+                              }`}
+                            >
+                              {c}
+                            </button>
+                          ))}
+                        </div>
                         <span className="text-[#86868b]">$</span>
                         <input
                           aria-label="Monthly budget in dollars"
@@ -360,16 +404,16 @@ const AdviceSimulate = () => {
 
           <div className="mt-8 flex items-center justify-between">
             {step > 0 ? (
-              <button type="button" onClick={() => { setError(''); setStep((s) => s - 1); }} className="inline-flex items-center gap-2 text-sm text-[#6e6e73] hover:text-[#1d1d1f]">
+              <button type="button" onClick={() => { setError(''); setStep((s) => s - 1); }} className="inline-flex min-h-[44px] items-center gap-2 text-sm text-[#6e6e73] hover:text-[#1d1d1f]">
                 <ArrowLeft className="h-4 w-4" /> Back
               </button>
             ) : <span />}
             {step < 2 ? (
-              <button type="button" onClick={next} className="inline-flex items-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
+              <button type="button" onClick={next} className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
                 Continue <ArrowRight className="h-4 w-4" />
               </button>
             ) : (
-              <button type="button" onClick={submit} className="inline-flex items-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
+              <button type="button" onClick={submit} className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
                 Run simulation <ArrowRight className="h-4 w-4" />
               </button>
             )}

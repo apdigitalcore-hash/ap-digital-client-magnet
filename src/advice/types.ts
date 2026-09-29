@@ -1,6 +1,9 @@
 export const CHANNELS = ['Google Search Ads', 'Google Display', 'Meta/Facebook', 'Instagram', 'TikTok', 'LinkedIn'] as const;
 export const INDUSTRIES = ['Ecommerce', 'SaaS', 'Local service', 'Real estate', 'Health & wellness', 'Finance', 'Education', 'Food & beverage', 'Other'] as const;
 
+export const CURRENCIES = ['CAD', 'USD'] as const;
+export type Currency = (typeof CURRENCIES)[number];
+
 export type Channel = (typeof CHANNELS)[number];
 export type Industry = (typeof INDUSTRIES)[number];
 
@@ -12,6 +15,8 @@ export interface SimInputs {
   audience: string;
   channel: Channel | '';
   budget: number;
+  /** Currency every figure in the report is expressed in. */
+  currency: Currency;
   headline: string;
   primaryText: string;
   description: string;
@@ -68,5 +73,5 @@ export interface Simulation {
 
 export const EMPTY_INPUTS: SimInputs = {
   campaignName: '', product: '', productUrl: '', industry: '', audience: '', channel: '',
-  budget: 2500, headline: '', primaryText: '', description: '', landingUrl: '',
+  budget: 2500, currency: 'CAD', headline: '', primaryText: '', description: '', landingUrl: '',
 };
