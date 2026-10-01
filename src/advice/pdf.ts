@@ -53,7 +53,7 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
   const p = r.predictions;
 
   // ── header ────────────────────────────────────────────────────────────────
-  text('ADvice — campaign simulation', 9, 'bold', '#6e6e73');
+  text('ADvice by AP Digital Co. — campaign simulation', 9, 'bold', '#6e6e73');
   y += 6;
   text(i.campaignName || 'Simulation report', 22, 'bold');
   y += 2;
@@ -162,7 +162,7 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
     doc.setPage(n);
     doc.setFont('helvetica', 'normal').setFontSize(7.5).setTextColor('#86868b');
     doc.text(
-      'AI estimates based on industry benchmarks, not guarantees · ADvice by AP Digital · ap-digital.ca/advice',
+      'AI estimates based on industry benchmarks, not guarantees · ADvice by AP Digital Co. · ap-digital.ca/advice',
       M, H - 28,
     );
     doc.text(`${n} / ${pages}`, W - M, H - 28, { align: 'right' });

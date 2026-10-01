@@ -31,8 +31,11 @@ const AdviceShell = ({ children, title }: { children: ReactNode; title?: string 
   <div className="advice min-h-screen bg-white font-[-apple-system,BlinkMacSystemFont,'SF_Pro_Text','SF_Pro_Display','Helvetica_Neue',Inter,sans-serif] text-[#1d1d1f] antialiased">
     <header className="advice-noprint sticky top-0 z-40 border-b border-black/[0.06] bg-white/75 backdrop-blur-xl backdrop-saturate-150">
       <div className="mx-auto flex h-14 max-w-[980px] items-center justify-between px-5">
-        <Link to="/advice" aria-label="ADvice home" className="inline-flex min-h-[44px] items-center">
+        <Link to="/advice" aria-label="ADvice by AP Digital Co." className="inline-flex min-h-[44px] items-center gap-2.5">
           <AdviceLogo className="text-[19px]" />
+          <span className="hidden border-l border-black/[0.12] pl-2.5 text-[12px] leading-tight text-[#86868b] sm:inline">
+            by AP Digital Co.
+          </span>
         </Link>
         <nav className="flex items-center gap-5">
           <NavLink to="/advice/my" className={navClass}>My Simulations</NavLink>

@@ -119,6 +119,9 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
   return (
     <div className="space-y-12">
       <header>
+        <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.1em] text-[#86868b]">
+          ADvice by AP Digital Co.
+        </p>
         <p className="text-[12px] text-[#6e6e73]">
           {i.channel} · {i.industry} · {money(i.budget)} {cur}/month · {new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}
         </p>
