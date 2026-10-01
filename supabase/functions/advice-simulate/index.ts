@@ -5,10 +5,11 @@ import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
 
 // Lovable created the secret as "DefaultGeminiProject"; either name works.
 const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY") ?? Deno.env.get("DefaultGeminiProject");
-// Models are tried in order; Google retires names over time, so a list beats a
-// single hard-coded id. GEMINI_MODEL, when set, is tried first.
-const MODELS = [Deno.env.get("GEMINI_MODEL"), "gemini-2.5-flash", "gemini-flash-latest"]
-  .filter(Boolean) as string[];
+// Models are tried in order; keep the configured model first and deduplicate it
+// from the stable alias used as a fallback.
+const MODELS = [...new Set([Deno.env.get("GEMINI_MODEL"), "gemini-flash-latest"].filter(Boolean))] as string[];
+const MAX_AI_ATTEMPTS = 4;
+const MAX_RETRY_DELAY_MS = 8_000;
 const PER_IP_PER_HOUR = 8;
 
 // Best-effort per-instance limiter. Warm instances are reused, so this stops
@@ -311,9 +312,11 @@ Deno.serve(async (req) => {
   let results;
   let lastError = "";
   let busy = false;
-  // Two passes: a transient upstream failure on the first pass (Gemini returns
-  // 500s under load) should not cost the user their simulation.
-  for (const model of [...MODELS, ...MODELS]) {
+  // Retry only transient failures. Rotate models between attempts, then use
+  // exponential backoff with jitter so simultaneous visitors do not retry in
+  // lockstep during an upstream outage.
+  for (let attempt = 0; attempt < MAX_AI_ATTEMPTS; attempt += 1) {
+    const model = MODELS[attempt % MODELS.length];
     try {
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
@@ -340,11 +343,19 @@ Deno.serve(async (req) => {
         console.error("gemini", lastError);
         // 404/400 usually means "this model name is gone" — try the next one.
         if (res.status === 404 || res.status === 400) continue;
-        // Quota (429) and overload (5xx) are per-model — back off briefly and
-        // try the next model instead of failing the visitor.
+        // Quota (429) and overload (5xx) are transient. Honour Retry-After when
+        // present, otherwise use bounded exponential backoff with jitter.
         if (res.status === 429 || res.status >= 500) {
           busy = true;
-          await new Promise((r) => setTimeout(r, 600));
+          if (attempt < MAX_AI_ATTEMPTS - 1) {
+            const retryAfter = Number(res.headers.get("retry-after"));
+            const exponential = 1_500 * 2 ** attempt;
+            const jitter = Math.floor(Math.random() * 750);
+            const delay = Number.isFinite(retryAfter) && retryAfter > 0
+              ? Math.min(MAX_RETRY_DELAY_MS, retryAfter * 1_000)
+              : Math.min(MAX_RETRY_DELAY_MS, exponential + jitter);
+            await new Promise((resolve) => setTimeout(resolve, delay));
+          }
           continue;
         }
         return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
