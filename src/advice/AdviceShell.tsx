@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import apLogo from '@/assets/ap-logo-mark-256.webp';
 
 export const AdviceLogo = ({ className = '' }: { className?: string }) => (
   <span className={`inline-flex items-baseline font-semibold tracking-[-0.02em] text-[#1d1d1f] ${className}`}>
@@ -32,6 +33,7 @@ const AdviceShell = ({ children, title }: { children: ReactNode; title?: string 
     <header className="advice-noprint sticky top-0 z-40 border-b border-black/[0.06] bg-white/75 backdrop-blur-xl backdrop-saturate-150">
       <div className="mx-auto flex h-14 max-w-[980px] items-center justify-between px-5">
         <Link to="/advice" aria-label="ADvice by AP Digital Co." className="inline-flex min-h-[44px] items-center gap-2.5">
+          <img src={apLogo} alt="" width={28} height={28} className="h-7 w-7 rounded-full" />
           <AdviceLogo className="text-[19px]" />
           <span className="hidden border-l border-black/[0.12] pl-2.5 text-[12px] leading-tight text-[#86868b] sm:inline">
             by AP Digital Co.

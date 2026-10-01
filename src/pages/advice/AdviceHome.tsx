@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import { CHANNELS } from '@/advice/types';
+import apLogo from '@/assets/ap-logo-mark-256.webp';
 
 const TITLE = 'ADvice — Free AI Ad Campaign Simulator';
 const DESC = 'Simulate your Google, Meta, TikTok or LinkedIn campaign before you spend a dollar. Predicted CTR, CPC, CPA and ROAS, a creative score, and rewritten ad copy. Free.';
@@ -102,7 +103,12 @@ const AdviceHome = () => (
     {/* Hero */}
     <section className="pt-20 text-center sm:pt-28">
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }} className="mx-auto max-w-[980px] px-5">
-        <p className="text-[17px] font-semibold text-[#6e6e73] sm:text-[21px]">ADvice</p>
+        <div className="flex flex-col items-center gap-3">
+          <img src={apLogo} alt="AP Digital Co." width={48} height={48} className="h-12 w-12 rounded-full" />
+          <p className="text-[15px] font-medium text-[#6e6e73] sm:text-[17px]">
+            <span className="font-semibold text-[#1d1d1f]">ADvice</span> by AP Digital Co.
+          </p>
+        </div>
         <h1 className="mx-auto mt-3 max-w-[16ch] text-balance text-[44px] font-semibold leading-[1.05] tracking-[-0.03em] sm:text-[72px] lg:text-[80px]">
           Simulate your campaign before you spend a dollar.
         </h1>
