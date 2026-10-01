@@ -2,4 +2,4 @@
 
 - [x] Replace the retired simulator model and strengthen transient-error retries.
 - [x] Update Surrey, Richmond, and Langley descriptions to the current 30-day cancellation notice.
-- [ ] Verify both fixes and resolve the remaining monitoring finding.
+- [x] Verify both fixes and resolve the remaining monitoring finding.
