@@ -1,7 +1,10 @@
 // ADvice — Lovable Cloud function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
 // Secrets: GEMINI_API_KEY (required), GEMINI_MODEL (optional).
-import { corsHeaders } from "npm:@supabase/supabase-js@2/cors";
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
 
 // Lovable created the secret as "DefaultGeminiProject"; either name works.
 const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY") ?? Deno.env.get("DefaultGeminiProject");
