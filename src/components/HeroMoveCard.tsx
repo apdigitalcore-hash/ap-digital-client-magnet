@@ -698,7 +698,10 @@ const HeroMoveCard = () => {
           </div>
 
           {/* Headline */}
-          <h3 className="mb-3 font-serif text-xl leading-[1.2] tracking-tight text-white sm:text-2xl">
+          {/* The global h3 rule applies font-bold; at Playfair's weight that
+              reads as a slab on a dark card, so this sets 400 and gives the
+              lines room to breathe. */}
+          <h3 className="mb-3 font-serif text-[21px] font-normal leading-[1.35] tracking-normal text-white sm:text-[25px]">
             {move.headline}
           </h3>
 
