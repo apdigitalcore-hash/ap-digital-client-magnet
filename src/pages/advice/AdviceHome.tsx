@@ -10,13 +10,6 @@ import adviceLogo from '/advice-logo.png';
 const TITLE = 'ADvice — Free AI Ad Campaign Simulator';
 const DESC = 'Simulate your Google, Meta, TikTok or LinkedIn campaign before you spend a dollar. Predicted CTR, CPC, CPA and ROAS, a creative score, and rewritten ad copy. Free.';
 
-const rise = {
-  initial: { opacity: 0, y: 24 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-80px' },
-  transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const },
-};
-
 const PrimaryButton = ({ children }: { children: ReactNode }) => (
   <Link
     to="/advice/simulate"
@@ -35,7 +28,7 @@ const Stat = ({ k, v }: { k: string; v: string }) => (
 );
 
 const ProductShot = () => (
-  <motion.div {...rise} className="mx-auto mt-16 max-w-[980px] px-5">
+  <div className="mx-auto mt-16 max-w-[980px] px-5">
     <div className="rounded-[32px] bg-[#f5f5f7] px-5 pb-0 pt-10 sm:px-12 sm:pt-14">
       <div className="mx-auto max-w-[760px] rounded-t-[20px] bg-white p-6 text-left shadow-[0_2px_40px_rgba(0,0,0,0.08)] sm:p-10">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -58,11 +51,11 @@ const ProductShot = () => (
         </div>
       </div>
     </div>
-  </motion.div>
+  </div>
 );
 
 const Tile = ({ className = '', children }: { className?: string; children: ReactNode }) => (
-  <motion.div {...rise} className={`rounded-[28px] bg-[#f5f5f7] p-8 sm:p-10 ${className}`}>{children}</motion.div>
+  <div className={`rounded-[28px] bg-[#f5f5f7] p-8 sm:p-10 ${className}`}>{children}</div>
 );
 
 const Ring = ({ score }: { score: number }) => {
@@ -138,9 +131,9 @@ const AdviceHome = () => (
 
     {/* What you get — bento */}
     <section className="mx-auto max-w-[980px] px-5 pb-24">
-      <motion.h2 {...rise} className="mx-auto max-w-[18ch] text-balance text-center text-[36px] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[48px]">
+      <h2 className="mx-auto max-w-[18ch] text-balance text-center text-[36px] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[48px]">
         Everything you need to know. Before launch.
-      </motion.h2>
+      </h2>
       <div className="mt-14 grid gap-5 md:grid-cols-2">
         <Tile>
           <p className="text-[17px] font-semibold">Performance predictions</p>
@@ -185,14 +178,14 @@ const AdviceHome = () => (
     {/* How it works */}
     <section id="how" className="scroll-mt-16 bg-[#f5f5f7] py-24">
       <div className="mx-auto max-w-[980px] px-5">
-        <motion.h2 {...rise} className="text-center text-[36px] font-semibold tracking-[-0.025em] sm:text-[48px]">Three steps. Twenty seconds.</motion.h2>
+        <h2 className="text-center text-[36px] font-semibold tracking-[-0.025em] sm:text-[48px]">Three steps. Twenty seconds.</h2>
         <div className="mt-16 grid gap-12 text-center md:grid-cols-3">
           {STEPS.map((s) => (
-            <motion.div {...rise} key={s.n}>
+            <div key={s.n}>
               <p className="text-[56px] font-semibold leading-none tracking-[-0.03em] text-[#d2d2d7]">{s.n}</p>
               <p className="mt-4 text-[21px] font-semibold tracking-[-0.01em]">{s.t}</p>
               <p className="mx-auto mt-2 max-w-[26ch] text-[17px] leading-snug text-[#6e6e73]">{s.d}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
@@ -201,12 +194,12 @@ const AdviceHome = () => (
     {/* Mission */}
     <section className="py-28 text-center">
       <div className="mx-auto max-w-[980px] px-5">
-        <motion.p {...rise} className="mx-auto max-w-[18ch] text-balance text-[36px] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[56px]">
+        <p className="mx-auto max-w-[18ch] text-balance text-[36px] font-semibold leading-[1.1] tracking-[-0.025em] sm:text-[56px]">
           Our goal: build the most useful AI tool in marketing. Period.
-        </motion.p>
-        <motion.div {...rise} className="mt-10">
+        </p>
+        <div className="mt-10">
           <PrimaryButton>Run your first simulation</PrimaryButton>
-        </motion.div>
+        </div>
       </div>
     </section>
   </AdviceShell>
