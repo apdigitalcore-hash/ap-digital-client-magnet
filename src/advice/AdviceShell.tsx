@@ -1,10 +1,14 @@
 import { ReactNode, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AdviceMark } from './AdviceMark';
 
 export const AdviceLogo = ({ className = '' }: { className?: string }) => (
-  <span className={`inline-flex items-baseline font-semibold tracking-[-0.02em] text-[#1d1d1f] ${className}`}>
-    <span className="font-bold">AD</span>
-    <span className="font-normal">vice</span>
+  <span className={`inline-flex items-center gap-2 ${className}`}>
+    <AdviceMark className="h-[1.15em] w-[1.15em] text-[#1d1d1f]" />
+    <span className="font-semibold tracking-[-0.02em] text-[#1d1d1f]">
+      <span className="font-bold">AD</span>
+      <span className="font-normal">vice</span>
+    </span>
   </span>
 );
 
