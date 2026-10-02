@@ -1,6 +1,5 @@
 import { ReactNode, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import apLogo from '@/assets/ap-logo-mark-256.webp';
 
 export const AdviceLogo = ({ className = '' }: { className?: string }) => (
   <span className={`inline-flex items-baseline font-semibold tracking-[-0.02em] text-[#1d1d1f] ${className}`}>
@@ -36,7 +35,6 @@ const AdviceShell = ({ children, title }: { children: ReactNode; title?: string 
             goes back to the agency site. Nested anchors are not valid HTML. */}
         <div className="flex items-center gap-2.5">
           <Link to="/advice" aria-label="ADvice home" className="inline-flex min-h-[44px] items-center gap-2.5">
-            <img src={apLogo} alt="" width={28} height={28} className="h-7 w-7 rounded-full" />
             <AdviceLogo className="text-[19px]" />
           </Link>
           <Link
