@@ -1,15 +1,14 @@
 import { ReactNode, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { AdviceMark } from './AdviceMark';
+import adviceLogo from '/advice-logo.png';
 
+/**
+ * The ADvice wordmark — the rocket replaces the "i", so the mark is the
+ * wordmark rather than a separate symbol. The trail needs headroom, so the
+ * image is taller than the letters and aligned on its baseline.
+ */
 export const AdviceLogo = ({ className = '' }: { className?: string }) => (
-  <span className={`inline-flex items-center gap-2 ${className}`}>
-    <AdviceMark className="h-[1.15em] w-[1.15em] text-[#1d1d1f]" />
-    <span className="font-semibold tracking-[-0.02em] text-[#1d1d1f]">
-      <span className="font-bold">AD</span>
-      <span className="font-normal">vice</span>
-    </span>
-  </span>
+  <img src={adviceLogo} alt="ADvice" className={`w-auto ${className}`} />
 );
 
 // Every tap target clears 44px on a phone, which is why the nav links carry a
@@ -39,7 +38,7 @@ const AdviceShell = ({ children, title }: { children: ReactNode; title?: string 
             goes back to the agency site. Nested anchors are not valid HTML. */}
         <div className="flex items-center gap-2.5">
           <Link to="/advice" aria-label="ADvice home" className="inline-flex min-h-[44px] items-center gap-2.5">
-            <AdviceLogo className="text-[19px]" />
+            <AdviceLogo className="h-7" />
           </Link>
           <Link
             to="/"
