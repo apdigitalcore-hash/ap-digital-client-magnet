@@ -9,8 +9,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Social Media Marketing Agency Vancouver | AP Digital';
-const DESC = 'AP Digital manages social media for Vancouver salons, trades & real estate professionals. Short-form content & organic growth.';
+const TITLE = 'Social Media Management Rates Vancouver — $849/mo | AP Digital';
+const DESC = 'Social media management at $849/month — 2 platforms, 12 posts, captions and community management. See how flat-rate pricing compares to per-post and hourly agency rates. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/services/social-media';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -137,7 +137,7 @@ const SocialMedia = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-8">
-          Social Media Marketing Agency Vancouver
+          Social Media Management in Vancouver — What It Costs
         </h1>
 
         {/* Short intro */}
