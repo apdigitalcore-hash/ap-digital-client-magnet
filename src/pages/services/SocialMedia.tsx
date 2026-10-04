@@ -32,6 +32,15 @@ const costs = [
   { line: 'Contract', amount: 'Month-to-month', note: "30 days' notice to pause or cancel. No exit fee." },
 ];
 
+// The four ways Canadian agencies bill. Ours is the first row; the rest are
+// what a visitor comparing quotes will have been offered elsewhere.
+const rateModels = [
+  { model: 'Flat retainer (ours)', rate: '$500 – $5,000/mo', effect: 'Predictable. Our fee is $849 and does not move with your spend or post count.' },
+  { model: 'Per post', rate: '$50 – $250/post', effect: 'Looks cheap until you do the maths — 12 posts at $150 is $1,800, with no strategy attached.' },
+  { model: 'Hourly', rate: '$75 – $200/hr', effect: 'You pay more when the agency works slower. Fine for a one-off audit, poor for ongoing work.' },
+  { model: '% of ad spend', rate: '10 – 20% of spend', effect: 'The agency earns more when you spend more, and nothing rewards a lower cost per lead.' },
+];
+
 const scope = [
   { yes: 'A content calendar planned a month ahead', no: 'Shoot days with a videographer on site' },
   { yes: 'Captions and hashtags written per post, not templated', no: 'Stock footage standing in for your actual work' },
@@ -210,6 +219,47 @@ const SocialMedia = () => (
               </tbody>
             </table>
           </div>
+        </section>
+
+        {/* Rates comparison. Searchers looking for "agency rates" and "packages
+            pricing" are comparing billing models, not just numbers — the guide
+            surveys all four neutrally, this says which one we use and why. */}
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">How Our Rates Compare to Other Agencies</h2>
+          <p className="text-muted-foreground mb-6">
+            Canadian agencies bill social media four different ways, and the model changes what
+            you are actually buying. We use a flat retainer. Here is what each one costs and what
+            it does to the incentives.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="border-b border-border">
+                  <th className="py-3 pr-4 text-sm font-semibold text-foreground">Billing model</th>
+                  <th className="py-3 pr-4 text-sm font-semibold text-foreground">Typical rate</th>
+                  <th className="py-3 text-sm font-semibold text-foreground">What it means for you</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rateModels.map((r) => (
+                  <tr key={r.model} className="border-b border-border/60">
+                    <td className="py-3 pr-4 text-sm text-foreground font-medium whitespace-nowrap">{r.model}</td>
+                    <td className="py-3 pr-4 text-sm text-teal font-semibold whitespace-nowrap">{r.rate}</td>
+                    <td className="py-3 text-sm text-muted-foreground">{r.effect}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-muted-foreground mt-6">
+            We charge a flat $849 a month because it is the only one of the four where our
+            incentive and yours point the same way: we do not earn more by posting more, by
+            working slower, or by talking you into a bigger ad budget. For the full market survey
+            with rates from every tier, see our{' '}
+            <Link to="/blog/how-much-does-social-media-marketing-cost-canada" className="text-teal underline hover:text-teal/80">
+              guide to social media marketing costs in Canada
+            </Link>.
+          </p>
         </section>
 
         {/* ── Scope, both directions ──────────────────────────────────── */}

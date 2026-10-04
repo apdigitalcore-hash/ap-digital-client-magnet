@@ -132,6 +132,8 @@ A few things worth knowing about how these play out.
 
 **Flat retainers are the safest default** for a small business, because your cost is predictable and the agency's incentive is to keep you long enough to be worth the acquisition — which means producing results.
 
+For reference, AP Digital bills a flat retainer — social media management at $849/month, month-to-month with 30 days' notice, ad spend paid directly to the platform. [Our social media rates and what each package includes](/services/social-media) are listed in full.
+
 ## How Much Do Social Media Ads Cost in Canada?
 
 Management fees and ad spend are two different bills, and the ads themselves are the one that goes to Meta or Google rather than to your agency. If paid search is the larger part of your mix, we cover [what Google Ads cost a small business in Canada](/blog/google-ads-cost-small-business-canada) separately. Typical 2026 costs for Canadian businesses:
@@ -180,7 +182,7 @@ The gap between a $300 freelancer video and a $3,000 produced one is mostly crew
 | Community management | None | Weekday replies | Daily replies + DMs |
 | Reporting | Monthly screenshot | Monthly call | Weekly dashboard |
 
-Two questions settle most quotes. **Who creates the raw footage?** If the agency shoots on location, expect $1,500+; if you film on your phone and they edit, plan and publish, it stays well under that. **Is ad spend included?** It should not be — see [the ad spend section below](#how-much-do-social-media-ads-cost-in-canada). A package that bundles spend into one number makes it impossible to see what management actually costs you.
+Two questions settle most quotes. **Who creates the raw footage?** If the agency shoots on location, expect $1,500+; if you film on your phone and they edit, plan and publish, it stays well under that. **Is ad spend included?** It should not be — see [the ad spend section below](#how-much-do-social-media-ads-cost-in-canada). A package that bundles spend into one number makes it impossible to see what management actually costs you. If you want a worked example rather than a range, [our own package and what it includes](/services/social-media) is published line by line.
 
 ## What It Costs by City
 
