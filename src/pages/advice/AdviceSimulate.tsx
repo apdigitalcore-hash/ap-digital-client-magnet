@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlertCircle, ArrowLeft, ArrowRight, Check, RotateCcw, Sparkles } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
-import { captureEmail, FREE_TOTAL, gateState, readImageFile, runCount, runSimulation } from '@/advice/api';
+import { FREE_TOTAL, gateState, holdLead, readImageFile, rememberEmail, runSimulation } from '@/advice/api';
 import { CHANNELS, CURRENCIES, EMPTY_INPUTS, INDUSTRIES, type SimInputs } from '@/advice/types';
 
 const STEPS = ['Your business', 'Channel & budget', 'Your ad'];
@@ -64,22 +64,17 @@ const Loading = () => {
 
 
 /** Asked once, after the first report — not before it. */
-const EmailGate = ({ inputs, onDone }: { inputs: SimInputs; onDone: () => void }) => {
+const EmailGate = ({ onDone }: { onDone: () => void }) => {
   const [email, setEmail] = useState('');
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState('');
 
-  const submit = async (e: FormEvent) => {
+  const submit = (e: FormEvent) => {
     e.preventDefault();
-    setBusy(true);
-    setError('');
-    try {
-      await captureEmail(email.trim(), { inputs });
-      onDone();
-    } catch (err) {
-      setBusy(false);
-      setError(err instanceof Error ? err.message : 'Something went wrong.');
-    }
+    // The notification is only useful with the report attached, so the address
+    // is held here and sent the moment this simulation finishes.
+    const address = email.trim();
+    rememberEmail(address);
+    holdLead(address);
+    onDone();
   };
 
   return (
@@ -97,11 +92,10 @@ const EmailGate = ({ inputs, onDone }: { inputs: SimInputs; onDone: () => void }
           placeholder="you@company.com" aria-label="Email address"
           className="flex-1 rounded-xl border border-black/[0.1] bg-[#f5f5f7] px-3.5 py-2.5 text-[15px] outline-none focus:border-[#1d1d1f] focus:bg-white"
         />
-        <button type="submit" disabled={busy} className="rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black disabled:opacity-60">
-          {busy ? 'Saving…' : 'Continue'}
+        <button type="submit" className="min-h-[44px] rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
+          Continue
         </button>
       </form>
-      {error && <p className="mt-3 text-sm text-[#d70015]">{error}</p>}
       <p className="mt-4 text-xs text-[#86868b]">Reports you have already run stay in My simulations.</p>
     </div>
   );
@@ -216,7 +210,7 @@ const AdviceSimulate = () => {
       ) : gate === 'limit' ? (
         <LimitReached />
       ) : gate === 'email' ? (
-        <EmailGate inputs={v} onDone={() => { setGate('ok'); void submit(); }} />
+        <EmailGate onDone={() => { setGate('ok'); void submit(); }} />
       ) : running ? (
         <Loading />
       ) : (

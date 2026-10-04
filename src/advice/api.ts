@@ -5,6 +5,7 @@ import type { SimInputs, Simulation } from './types';
 const HISTORY_KEY = 'advice:history';
 const RUNS_KEY = 'advice:runs';
 const EMAIL_KEY = 'advice:email';
+const PENDING_LEAD_KEY = 'advice:pendingLead';
 
 /**
  * Free-use policy.
@@ -40,6 +41,31 @@ export function rememberEmail(email: string) {
     localStorage.setItem(EMAIL_KEY, email);
   } catch {
     /* storage blocked — the gate simply asks again next time */
+  }
+}
+
+/**
+ * Email given at the gate, before any report exists.
+ *
+ * Nothing is sent yet: the notification is only useful with the results
+ * attached, so the address waits here and goes out the moment the simulation
+ * this person was mid-way through finishes.
+ */
+export function holdLead(email: string) {
+  try {
+    localStorage.setItem(PENDING_LEAD_KEY, email);
+  } catch {
+    /* storage blocked — the report page will ask again */
+  }
+}
+
+function takeHeldLead(): string {
+  try {
+    const email = localStorage.getItem(PENDING_LEAD_KEY) ?? '';
+    localStorage.removeItem(PENDING_LEAD_KEY);
+    return email;
+  } catch {
+    return '';
   }
 }
 
@@ -131,6 +157,10 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
           /* storage blocked — the visitor keeps their free runs */
         }
         saveToHistory(sim);
+        const held = takeHeldLead();
+        // Fire and forget: a failed notification must not cost the visitor
+        // the report they just waited for.
+        if (held) void captureEmail(held, { sim }).catch(() => holdLead(held));
         return sim;
       } catch (e) {
         last = e;
@@ -220,25 +250,78 @@ export async function captureEmail(
 ): Promise<void> {
   const sim = context?.sim;
   const inputs = context?.inputs ?? sim?.inputs;
+  const r = sim?.results;
+
+  const range = (x?: { low: number; high: number }, unit = '') =>
+    x ? `${x.low}${unit} – ${x.high}${unit}` : '';
+  const money = (x?: { low: number; high: number }) =>
+    x ? `$${x.low} – $${x.high}` : '';
+
+  const payload: Record<string, string | number> = {
+    email,
+    source: 'ADvice simulator',
+    'simulations-run': runCount(),
+
+    // what they typed
+    campaign: inputs?.campaignName || '(untitled)',
+    channel: inputs?.channel ?? '',
+    industry: inputs?.industry ?? '',
+    budget: inputs ? `$${inputs.budget.toLocaleString()} ${inputs.currency ?? 'CAD'}/mo` : '',
+    product: inputs?.product?.slice(0, 500) ?? '',
+    audience: inputs?.audience?.slice(0, 500) ?? '',
+    'ad-headline': inputs?.headline ?? '',
+    'ad-primary-text': inputs?.primaryText?.slice(0, 600) ?? '',
+    'ad-description': inputs?.description ?? '',
+    'landing-page': inputs?.landingUrl || '(none given)',
+  };
+
+  if (r) {
+    const p = r.predictions;
+    Object.assign(payload, {
+      // what the simulation said
+      'creative-score': `${r.creative.overall}/100 — ${r.creative.verdict}`,
+      'score-headline': `${r.creative.headline.score} — ${r.creative.headline.note}`,
+      'score-clarity': `${r.creative.clarity.score} — ${r.creative.clarity.note}`,
+      'score-cta': `${r.creative.cta.score} — ${r.creative.cta.note}`,
+      'score-emotion': `${r.creative.emotion.score} — ${r.creative.emotion.note}`,
+      'score-intent': r.creative.intent ? `${r.creative.intent.score} — ${r.creative.intent.note}` : 'n/a (not search)',
+
+      'predicted-ctr': range(p.ctr, '%'),
+      'predicted-cpc': money(p.cpc),
+      'predicted-clicks': range(p.clicks),
+      'predicted-conversion-rate': range(p.conversionRate, '%'),
+      'predicted-conversions': range(p.conversions),
+      'predicted-cpa': money(p.cpa),
+      'predicted-roas': p.roas ? `${p.roas.low}x – ${p.roas.high}x` : 'n/a',
+      confidence: `${p.confidence} — ${p.confidenceReason}`,
+
+      'risk-overall': r.risk.overall,
+      'risk-budget': `${r.risk.budget.status} — ${r.risk.budget.note}`,
+      'risk-competition': `${r.risk.competition.level} — ${r.risk.competition.note}`,
+      'risk-seasonality': `${r.risk.seasonality.status} — ${r.risk.seasonality.note}`,
+
+      recommendations: r.recommendations.improvements
+        .map((m, i) => `${i + 1}. [${m.impact}] ${m.title} — ${m.detail}`)
+        .join('\n\n'),
+      'rewritten-headline': r.recommendations.headline,
+      'rewritten-primary-text': r.recommendations.primaryText,
+      'rewritten-description': r.recommendations.description,
+      'budget-advice': r.recommendations.budget,
+      'audience-advice': r.recommendations.audience.join(' · '),
+      'landing-page-feedback': r.recommendations.landingPage ?? '(no landing page given)',
+      competitors: `${r.competitors.advertisers.low}–${r.competitors.advertisers.high} advertisers · avg CPC $${r.competitors.avgCpc.low}–$${r.competitors.avgCpc.high}`,
+      summary: r.summary,
+      report: await reportUrl(sim!),
+    });
+  }
+
+  payload._subject = `ADvice lead: ${email}${r ? ` — ${inputs?.channel}, ${r.creative.overall}/100` : ''}`;
+  payload._template = 'table';
+
   const res = await fetch('https://formsubmit.co/ajax/apdigital.core@gmail.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({
-      email,
-      source: 'ADvice simulator',
-      campaign: inputs?.campaignName || '(untitled)',
-      channel: inputs?.channel ?? '',
-      industry: inputs?.industry ?? '',
-      budget: inputs ? `$${inputs.budget.toLocaleString()}/mo` : '',
-      'creative-score': sim ? sim.results.creative.overall : '(before first run)',
-      'simulations-run': runCount(),
-      product: inputs?.product?.slice(0, 300) ?? '',
-      audience: inputs?.audience?.slice(0, 300) ?? '',
-      headline: inputs?.headline ?? '',
-      report: sim ? await reportUrl(sim) : '',
-      _subject: `ADvice signup: ${email}`,
-      _template: 'table',
-    }),
+    body: JSON.stringify(payload),
   });
   if (!res.ok) throw new Error('Something went wrong. Please try again.');
   rememberEmail(email);
