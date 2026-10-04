@@ -1,21 +1,21 @@
 import { useEffect } from 'react';
-import { track } from './pixel';
 
 /**
- * Calendly inline embed + booking-completion tracking.
+ * Calendly inline embed.
  *
- * Why the inline embed rather than a confirmation redirect: redirecting to an
- * external site is a Calendly paid feature. The embed widget is available on
- * every plan, and it posts `calendly.event_scheduled` to the parent window when
- * a booking completes — so Lead fires on an actual booking rather than on a
- * click, and the visitor never leaves the page.
+ * This file used to fire Lead on the widget's `calendly.event_scheduled`
+ * message. The event type also has a confirmation redirect to /thank-you,
+ * which fires its own Lead, so every booking was counted twice — confirmed in
+ * the pixel data on 29 Sep and 4 Oct, one booking and two Leads each day.
+ *
+ * /thank-you is now the only place a booking Lead fires. It has the better
+ * coverage of the two: the redirect runs for bookings made through a direct
+ * calendly.com link as well as through this embed, which the message listener
+ * never saw.
  */
 
 const WIDGET_JS = 'https://assets.calendly.com/assets/external/widget.js';
 const WIDGET_CSS = 'https://assets.calendly.com/assets/external/widget.css';
-
-/** Only messages genuinely from Calendly may fire a conversion. */
-const CALENDLY_ORIGIN = /^https:\/\/([a-z0-9-]+\.)?calendly\.com$/;
 
 let assetsRequested = false;
 
@@ -91,34 +91,10 @@ function initNewInlineWidgets() {
   }
 }
 
-/**
- * Loads the widget assets and fires a Lead when Calendly reports a completed
- * booking. `niche` is attached so Events Manager can attribute the conversion
- * to the same vertical as the Contact click that preceded it.
- */
-export function useCalendlyLeadTracking(niche?: string | null, source = 'free-pilot') {
+/** Loads the Calendly widget assets and mounts any inline embed on the page. */
+export function useCalendlyEmbed() {
   useEffect(() => {
     loadCalendlyAssets();
     initNewInlineWidgets();
-
-    const onMessage = (e: MessageEvent) => {
-      // Without this any embedded third-party frame could post a fake booking
-      // and inflate the Lead count.
-      if (!CALENDLY_ORIGIN.test(e.origin)) return;
-      const data = e.data as { event?: unknown } | null;
-      if (!data || typeof data.event !== 'string') return;
-
-      if (data.event === 'calendly.event_scheduled') {
-        track('Lead', {
-          // content_name was hardcoded to 'free-pilot', so a booking made on
-          // /book would have been attributed to a page the visitor never saw.
-          content_name: source,
-          content_category: niche || 'general',
-        });
-      }
-    };
-
-    window.addEventListener('message', onMessage);
-    return () => window.removeEventListener('message', onMessage);
-  }, [niche, source]);
+  }, []);
 }

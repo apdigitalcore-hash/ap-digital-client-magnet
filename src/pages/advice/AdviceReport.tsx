@@ -6,7 +6,7 @@ import AdviceShell from '@/advice/AdviceShell';
 import ReportView from '@/advice/ReportView';
 import { captureEmail, decodeReport, encodeReport, reportUrl, savedEmail } from '@/advice/api';
 import { downloadReportPdf } from '@/advice/pdf';
-import { track, trackGa4 } from '@/lib/pixel';
+import { trackCustom, trackGa4 } from '@/lib/pixel';
 import type { Simulation } from '@/advice/types';
 
 const SaveCard = ({ sim }: { sim: Simulation }) => {
@@ -19,7 +19,8 @@ const SaveCard = ({ sim }: { sim: Simulation }) => {
     setState('sending');
     try {
       await captureEmail(email.trim(), { sim });
-      track('Lead', { content_name: 'ADvice report email', content_category: sim.inputs.industry });
+      // A free-tool signup, not a booked call — Lead is reserved for bookings.
+      trackCustom('AdviceSignup', { content_name: 'ADvice report email', content_category: sim.inputs.industry });
       trackGa4('report_email_saved', {
         channel: sim.inputs.channel,
         industry: sim.inputs.industry,
@@ -80,13 +81,16 @@ const AdviceReport = () => {
   // from this app arrives in router state and gets its fragment written in,
   // so reloading or bookmarking the page keeps working.
   // Fires once per report shown, so Meta and GA4 can attribute a completed
-  // simulation back to the page and campaign that produced it.
+  // simulation back to the page and campaign that produced it. Custom events
+  // rather than Lead: a free simulation is not a sales conversion, and mixing
+  // the two made the Lead count useless for judging booked calls. Set up as
+  // Custom Conversions in Events Manager for retargeting and optimisation.
   const tracked = useRef('');
   useEffect(() => {
     if (!sim || tracked.current === sim.id) return;
     tracked.current = sim.id;
     if (fresh) {
-      track('Lead', { content_name: 'ADvice simulation', content_category: sim.inputs.industry });
+      trackCustom('AdviceReportViewed', { content_name: 'ADvice simulation', content_category: sim.inputs.industry });
     }
     trackGa4('simulation_completed', {
       channel: sim.inputs.channel,

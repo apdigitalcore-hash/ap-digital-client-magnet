@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
-import { useCalendlyLeadTracking } from '@/lib/calendly';
+import { useCalendlyEmbed } from '@/lib/calendly';
 import { CONTACT, PAID_ADS, SOCIAL_MEDIA, TERMS } from '@/lib/companyFacts';
 
 /**
@@ -36,7 +36,7 @@ const EXPECT = [
 ];
 
 const Book = () => {
-  useCalendlyLeadTracking(null, 'book');
+  useCalendlyEmbed();
 
   // ContactForm sends name/email/answers through as query params. Forward them
   // to the widget so the form still prefills — previously it redirected

@@ -15,7 +15,7 @@ import {
 } from '@/lib/structuredData';
 import { CONTACT, PAID_ADS } from '@/lib/companyFacts';
 import { track } from '@/lib/pixel';
-import { useCalendlyLeadTracking } from '@/lib/calendly';
+import { useCalendlyEmbed } from '@/lib/calendly';
 
 /** All CTAs now scroll to the inline Calendly embed instead of leaving the page. */
 const scrollToBook = () => {
@@ -226,9 +226,10 @@ const FreePilot = () => {
     return NICHE_MAP[key] ?? null;
   }, [params]);
 
-  // Passed the niche so the Lead conversion is attributed to the same vertical
-  // as the Contact click that preceded it.
-  useCalendlyLeadTracking(niche);
+  // The booking Lead now fires on /thank-you, which the Calendly redirect
+  // reaches for both the embed and a direct calendly.com link. The niche still
+  // rides on the Contact click above.
+  useCalendlyEmbed();
 
   const yourAds = niche ? `your ${niche} ads` : 'your ads';
   const title = niche

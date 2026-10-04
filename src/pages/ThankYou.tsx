@@ -9,12 +9,22 @@ import { CONTACT } from '@/lib/companyFacts';
 const TITLE = "You're booked in | AP Digital";
 
 /**
- * Calendly redirect target — set this as the event type's confirmation
- * redirect ("Redirect to an external site") so the booking completes here
- * rather than on calendly.com, where our pixel cannot see it.
+ * Calendly redirect target — the 20-minute event type's confirmation redirect
+ * ("Redirect to an external site") points here, so a booking completes on our
+ * own page rather than on calendly.com where the pixel cannot see it.
  *
- * This is the only place a Lead fires. CTA clicks fire Contact instead, so a
- * click that never becomes a booking is never counted as a conversion.
+ * This is now the only place a booking Lead fires. lib/calendly.ts used to fire
+ * a second one from the embed's `calendly.event_scheduled` message, which
+ * double-counted every booking made through the widget — one booking and two
+ * Leads on both 29 Sep and 4 Oct. That listener is gone; this page covers the
+ * embed and direct calendly.com links alike.
+ *
+ * CTA clicks fire Contact instead, so a click that never becomes a booking is
+ * never counted as a conversion. ADvice fires its own AdviceReportViewed and
+ * AdviceSignup custom events, so free-tool signups stay out of this bucket.
+ *
+ * Because the Lead depends on the redirect, it is load-bearing configuration:
+ * if the redirect is ever removed in Calendly, bookings stop being counted.
  */
 const ThankYou = () => {
   useEffect(() => {
