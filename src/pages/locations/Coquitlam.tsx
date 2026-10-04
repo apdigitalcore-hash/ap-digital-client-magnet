@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
+import CityHero from '@/components/locations/CityHero';
 import Footer from '@/components/Footer';
 import { ArrowRight, CheckCircle, TrendingUp, Star, Zap, Target, Users, MapPin } from 'lucide-react';
 import OurServices from '@/components/OurServices';
 import IndustriesWeServe from '@/components/IndustriesWeServe';
 import { getServiceSchema, getBreadcrumbSchema, getFAQSchema, getWebPageSchema, founderSchema } from '@/lib/structuredData';
-import apLogoMark from '@/assets/ap-logo-mark-256.webp';
 import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
@@ -114,40 +114,16 @@ const Coquitlam = () => (
     <Header />
     <main id="main-content">
 
-      {/* Hero */}
-      <section className="relative bg-[#E4E7EB] pt-32 pb-24">
-        <div className="container-custom">
-          <div className="max-w-3xl animate-fade-up">
-            <img
-              src={apLogoMark}
-              alt="AP Digital logo"
-              width={96}
-              height={96}
-              className="w-20 h-20 sm:w-24 sm:h-24 rounded-full mb-7"
-            />
-            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-medium text-foreground mb-6 leading-[1.05] tracking-tight">
-              Coquitlam{' '}
-              <span className="italic">Google &amp; Meta Ads</span>{' '}
-              + Social Media Management
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mb-8">
-              AP Digital helps Coquitlam businesses — and across Port Moody & Port Coquitlam — generate qualified leads with Meta Ads, Google Ads & social media. Searching for a digital marketing agency near you in the Tri-Cities? We specialize in local businesses. No contracts, month-to-month.
-            </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
-              <Link to="/book" className="inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-4 text-xs font-semibold uppercase tracking-[0.14em] text-background transition-colors hover:bg-foreground/85">
-                Book Your Free Strategy Call
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/services/paid-ads"
-                className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground"
-              >
-                See Our Services
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CityHero
+        city="Coquitlam"
+        headline={<>
+          Coquitlam{' '}
+          <span className="italic">Google &amp; Meta Ads</span>{' '}
+          + Social Media Management
+        </>}
+        intro={<>AP Digital helps Coquitlam businesses — and across Port Moody & Port Coquitlam — generate qualified leads with Meta Ads, Google Ads & social media. Searching for a digital marketing agency near you in the Tri-Cities? We specialize in local businesses. No contracts, month-to-month.</>}
+        neighbourhoods={['Coquitlam Centre', 'Port Moody', 'Port Coquitlam', 'Burke Mountain']}
+      />
 
       {/* Who We Help */}
       <section className="bg-white py-24">
