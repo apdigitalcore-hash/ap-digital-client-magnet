@@ -137,30 +137,6 @@ const HomePage = () => {
           contains no unit the URL bar can change. Desktop keeps svh — no URL
           bar, no problem. */}
       <section className="relative isolate overflow-hidden bg-primary text-primary-foreground lg:flex lg:min-h-[720px] lg:flex-col lg:h-[100svh] lg:max-h-[920px]">
-        {/* Night plate. Desktop: anchored right and bottom, faded into the navy on
-            its left edge so the headline sits on open sky. Mobile: a band under
-            the copy, faded in from the top. Height never uses vh on mobile. */}
-        {/* The plate starts where the copy ends — never less than 560px or 30% from
-            the left — so the skyline can't slide under the headline at any width.
-            Its left edge fades into the navy, which reads as open water/sky. */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none select-none absolute inset-y-0 right-0 left-[max(30%,560px)] hidden lg:block"
-          style={{ maskImage: 'linear-gradient(to right, transparent 0%, #000 30%)', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, #000 30%)' }}
-        >
-          <img
-            src="/vancouver-night-2260.jpg"
-            srcSet="/vancouver-night-1130.webp 1130w, /vancouver-night-2260.webp 2260w"
-            sizes="100vw"
-            alt=""
-            width={2260}
-            height={1560}
-            {...{ fetchpriority: 'high' }}
-            decoding="async"
-            className="h-full w-full object-cover object-[78%_bottom]"
-          />
-        </div>
-
         <div className="relative z-10 w-full container-custom pt-28 pb-8 sm:pt-36 lg:flex lg:flex-1 lg:items-center lg:pt-24 lg:pb-12">
           <div className="max-w-[640px] lg:-translate-y-2">
             <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-primary-foreground/75 sm:mb-5 lg:text-[11px]">
@@ -194,16 +170,29 @@ const HomePage = () => {
           </div>
         </div>
 
-        <img
-          aria-hidden="true"
-          src="/vancouver-night-m750.webp"
-          alt=""
-          width={750}
-          height={780}
-          decoding="async"
-          className="relative block h-[90vw] w-full object-cover object-bottom sm:h-[60vw] lg:hidden"
-          style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)', WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%)' }}
-        />
+
+        {/* Night plate — one element, two placements.
+            Desktop anchors it right and bottom, starting where the copy ends
+            (never less than 560px or 30% from the left) so the skyline cannot
+            slide under the headline; mobile drops it to a band under the copy.
+            It is a single <picture> because a phone was downloading the desktop
+            plate as well: a hidden container does not stop the fetch. The
+            source media queries make the browser pick exactly one file. */}
+        <picture>
+          <source media="(min-width: 1024px)" type="image/webp" srcSet="/vancouver-night-1130.webp 1130w, /vancouver-night-2260.webp 2260w" sizes="70vw" />
+          <source media="(min-width: 1024px)" srcSet="/vancouver-night-2260.jpg" />
+          <source type="image/webp" srcSet="/vancouver-night-m750.webp" />
+          <img
+            aria-hidden="true"
+            src="/vancouver-night-m750.webp"
+            alt=""
+            width={750}
+            height={780}
+            {...{ fetchpriority: 'high' }}
+            decoding="async"
+            className="pointer-events-none relative block h-[90vw] w-full select-none object-cover object-bottom [mask-image:linear-gradient(to_bottom,transparent_0%,#000_20%)] sm:h-[60vw] lg:absolute lg:inset-y-0 lg:right-0 lg:left-[max(30%,560px)] lg:h-full lg:w-auto lg:object-[78%_bottom] lg:[mask-image:linear-gradient(to_right,transparent_0%,#000_30%)]"
+          />
+        </picture>
 
         <div className="relative z-10 w-full container-custom hidden lg:block pb-8">
           <div className="border-t border-white/20 pt-6 text-left text-[11px] tracking-[0.3em] uppercase text-white/70">
