@@ -66,8 +66,16 @@ const Header = () => {
     '/privacy-policy',
     '/terms-of-service',
     '/contact',
-    // The city pages moved to the light editorial theme, so they are no longer
-    // listed here — leaving them would render white nav text on a white hero.
+    // The city pages are back on the night-skyline hero (254dbd6), so the
+    // chrome has to be light again — dark nav text on that hero is invisible,
+    // which is exactly what came off this list when they were briefly light.
+    '/vancouver',
+    '/surrey',
+    '/burnaby',
+    '/langley',
+    '/coquitlam',
+    '/richmond',
+    '/abbotsford',
   ];
   // Homepage opens on the night skyline hero.
   const hasDarkHero = pathname === '/' || darkHeroPrefixes.some(
