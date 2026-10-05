@@ -24,7 +24,11 @@ export type CityPhoto = {
 type Props = {
   /** Eyebrow line — the city as a visitor would say it. */
   city: string;
-  /** The H1. Passed as nodes so each page keeps its own italic emphasis. */
+  /**
+   * The H1, set on three lines: the city, the ads service, the social service.
+   * Passed as nodes so each page supplies its own city while the shape stays
+   * identical across all seven.
+   */
   headline: ReactNode;
   intro: ReactNode;
   photo?: CityPhoto;
@@ -62,12 +66,12 @@ const CityHero = ({
 }: Props) => (
   <section className="relative isolate overflow-hidden bg-primary text-primary-foreground lg:flex lg:min-h-[640px] lg:flex-col lg:h-[86svh] lg:max-h-[860px]">
     <div className="relative z-10 w-full container-custom pt-28 pb-8 sm:pt-36 lg:flex lg:flex-1 lg:items-center lg:pt-24 lg:pb-12">
-      <div className="max-w-[640px] lg:-translate-y-2">
+      <div className="max-w-[640px] lg:max-w-[720px] lg:-translate-y-2">
         <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-primary-foreground/75 sm:mb-5 lg:text-[11px]">
           {city} Digital Marketing
         </p>
 
-        <h1 className="mb-5 font-serif text-[2.75rem] font-normal leading-[0.98] tracking-normal sm:text-6xl lg:max-w-[620px] lg:text-[4.25rem]">
+        <h1 className="mb-5 font-serif text-[2rem] font-normal leading-[1.06] tracking-normal sm:text-[2.75rem] lg:max-w-[720px] lg:text-[3rem]">
           {headline}
         </h1>
 

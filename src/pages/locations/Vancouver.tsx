@@ -127,9 +127,9 @@ const Vancouver = () => (
       <CityHero
         city="Vancouver"
         headline={<>
-          Vancouver{' '}
-          <span className="italic">Google &amp; Meta Ads</span>{' '}
-          + Social Media Management
+          <span className="block">Vancouver</span>
+          <span className="block">Google &amp; Meta Ads</span>
+          <span className="block">+ Social Media Management</span>
         </>}
         intro={<>AP Digital is a Vancouver-based marketing agency helping local businesses — trades, salons, real estate agents & coaches — get consistent, qualified leads using Meta Ads & Google Ads. When someone searches "digital marketing near me" in Vancouver, we make sure they find you first. Month-to-month. Managed personally by founder Arjun Sharma.</>}
         photo={{ base: '/vancouver-night', position: '50% bottom', wideWidth: 1007 }}

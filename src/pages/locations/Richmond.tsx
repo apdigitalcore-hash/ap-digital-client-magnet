@@ -121,9 +121,9 @@ const Richmond = () => (
       <CityHero
         city="Richmond"
         headline={<>
-          Richmond{' '}
-          <span className="italic">Google &amp; Meta Ads</span>{' '}
-          + Social Media Management
+          <span className="block">Richmond</span>
+          <span className="block">Google &amp; Meta Ads</span>
+          <span className="block">+ Social Media Management</span>
         </>}
         intro={<>AP Digital helps Richmond businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Looking for a digital marketing agency near you in Richmond? We're local and we specialize in your industry. No lock-in contracts. Personal service from founder Arjun Sharma.</>}
         photo={{ base: '/richmond-night', position: '80% bottom', wideWidth: 1008 }}

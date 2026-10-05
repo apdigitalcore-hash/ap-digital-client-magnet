@@ -121,11 +121,12 @@ const Abbotsford = () => (
       <CityHero
         city="Abbotsford"
         headline={<>
-          Abbotsford{' '}
-          <span className="italic">Google &amp; Meta Ads</span>{' '}
-          + Social Media Management
+          <span className="block">Abbotsford</span>
+          <span className="block">Google &amp; Meta Ads</span>
+          <span className="block">+ Social Media Management</span>
         </>}
         intro={<>AP Digital helps Abbotsford and Fraser Valley businesses generate consistent, qualified leads using Meta Ads & Google Ads. If you're looking for a marketing agency near you in Abbotsford, we specialize in local service businesses. No lock-in contracts. Managed personally by founder Arjun Sharma.</>}
+        photo={{ base: '/abbotsford-night', position: '68% bottom', wideWidth: 1008 }}
         neighbourhoods={['Clearbrook', 'Abbotsford West', 'Sumas Prairie']}
       />
 

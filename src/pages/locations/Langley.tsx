@@ -125,11 +125,12 @@ const Langley = () => (
       <CityHero
         city="Langley"
         headline={<>
-          Langley{' '}
-          <span className="italic">Google &amp; Meta Ads</span>{' '}
-          + Social Media Management
+          <span className="block">Langley</span>
+          <span className="block">Google &amp; Meta Ads</span>
+          <span className="block">+ Social Media Management</span>
         </>}
         intro={<>AP Digital is a Langley marketing company that gets local businesses more leads using Meta Ads, Google Ads and local SEO. From Langley City to the Township — trades, salons, realtors and coaches. If you're searching for a marketing agency near you in Langley, this is it. Month-to-month, managed personally by Arjun Sharma.</>}
+        photo={{ base: '/langley-night', position: '70% bottom', wideWidth: 1008 }}
         neighbourhoods={['Langley City', 'Walnut Grove', 'Willoughby', 'Aldergrove']}
       />
 

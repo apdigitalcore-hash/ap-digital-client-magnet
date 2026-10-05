@@ -121,9 +121,9 @@ const Surrey = () => (
       <CityHero
         city="Surrey"
         headline={<>
-          Surrey{' '}
-          <span className="italic">Google &amp; Meta Ads</span>{' '}
-          + Social Media Management
+          <span className="block">Surrey</span>
+          <span className="block">Google &amp; Meta Ads</span>
+          <span className="block">+ Social Media Management</span>
         </>}
         intro={<>AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. When someone searches "marketing agency near me" in Surrey, we put you in front of them. Month-to-month. Managed personally by Arjun Sharma.</>}
         photo={{ base: '/surrey-night', position: '72% bottom', wideWidth: 1008 }}

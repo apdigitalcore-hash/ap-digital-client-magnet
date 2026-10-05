@@ -125,11 +125,12 @@ const Burnaby = () => (
       <CityHero
         city="Burnaby"
         headline={<>
-          Burnaby{' '}
-          <span className="italic">Google &amp; Meta Ads</span>{' '}
-          + Social Media Management
+          <span className="block">Burnaby</span>
+          <span className="block">Google &amp; Meta Ads</span>
+          <span className="block">+ Social Media Management</span>
         </>}
         intro={<>AP Digital helps Burnaby businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Searching for a marketing agency near you in Burnaby? You just found one. No lock-in contracts. Personal service from founder Arjun Sharma.</>}
+        photo={{ base: '/burnaby-night', position: '75% bottom', wideWidth: 1008 }}
         neighbourhoods={['Metrotown', 'Brentwood', 'Lougheed']}
       />
 

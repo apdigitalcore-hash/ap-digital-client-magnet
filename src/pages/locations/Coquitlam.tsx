@@ -117,11 +117,12 @@ const Coquitlam = () => (
       <CityHero
         city="Coquitlam"
         headline={<>
-          Coquitlam{' '}
-          <span className="italic">Google &amp; Meta Ads</span>{' '}
-          + Social Media Management
+          <span className="block">Coquitlam</span>
+          <span className="block">Google &amp; Meta Ads</span>
+          <span className="block">+ Social Media Management</span>
         </>}
         intro={<>AP Digital helps Coquitlam businesses — and across Port Moody & Port Coquitlam — generate qualified leads with Meta Ads, Google Ads & social media. Searching for a digital marketing agency near you in the Tri-Cities? We specialize in local businesses. No contracts, month-to-month.</>}
+        photo={{ base: '/coquitlam-night', position: '72% bottom', wideWidth: 1008 }}
         neighbourhoods={['Coquitlam Centre', 'Port Moody', 'Port Coquitlam', 'Burke Mountain']}
       />
 
