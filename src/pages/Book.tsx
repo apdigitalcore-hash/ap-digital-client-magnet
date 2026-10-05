@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import JsonLd from '@/components/JsonLd';
 import { getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 import { useCalendlyEmbed } from '@/lib/calendly';
+import { calendlyUtmParams } from '@/lib/attribution';
 import { CONTACT, PAID_ADS, SOCIAL_MEDIA, TERMS } from '@/lib/companyFacts';
 
 /**
@@ -43,7 +44,13 @@ const Book = () => {
   // straight to calendly.com, which is exactly the path the pixel cannot see.
   const { search } = useLocation();
   const prefill = search.startsWith('?') ? search.slice(1) : search;
-  const widgetUrl = `${CONTACT.calendly}?hide_gdpr_banner=1${prefill ? `&${prefill}` : ''}`;
+  // Calendly carries UTM parameters through to the booking record and its
+  // webhooks, which is the only place a booked call can say where it came
+  // from — the embed hands us nothing else about the visitor.
+  const attribution = new URLSearchParams(calendlyUtmParams()).toString();
+  const widgetUrl = [`${CONTACT.calendly}?hide_gdpr_banner=1`, prefill, attribution]
+    .filter(Boolean)
+    .join('&');
 
   const structuredData = {
     '@context': 'https://schema.org',

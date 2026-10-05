@@ -16,6 +16,7 @@ import {
 import { CONTACT, PAID_ADS } from '@/lib/companyFacts';
 import { track } from '@/lib/pixel';
 import { useCalendlyEmbed } from '@/lib/calendly';
+import { calendlyUtmParams } from '@/lib/attribution';
 
 /** All CTAs now scroll to the inline Calendly embed instead of leaving the page. */
 const scrollToBook = () => {
@@ -231,6 +232,13 @@ const FreePilot = () => {
   // rides on the Contact click above.
   useCalendlyEmbed();
 
+  // Where the visitor came from, carried into the booking record. Built here
+  // rather than inline so the widget URL is computed once per render.
+  const calendlyWidgetUrl = (() => {
+    const attribution = new URLSearchParams(calendlyUtmParams()).toString();
+    return `${CONTACT.calendly}?hide_gdpr_banner=1${attribution ? `&${attribution}` : ''}`;
+  })();
+
   const yourAds = niche ? `your ${niche} ads` : 'your ads';
   const title = niche
     ? `Free 14-Day Ad Pilot for ${niche.charAt(0).toUpperCase() + niche.slice(1)} Companies | AP Digital`
@@ -435,7 +443,7 @@ const FreePilot = () => {
 
             <div
               className="calendly-inline-widget mt-10 overflow-hidden rounded-3xl bg-white elev-1"
-              data-url={`${CONTACT.calendly}?hide_gdpr_banner=1`}
+              data-url={calendlyWidgetUrl}
               style={{ minWidth: '320px', height: '700px' }}
             />
             <noscript>

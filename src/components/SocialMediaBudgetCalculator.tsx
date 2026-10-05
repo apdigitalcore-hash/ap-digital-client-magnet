@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { attributionFields } from '@/lib/attribution';
 import { PAID_ADS } from '@/lib/companyFacts';
 import { Button } from '@/components/ui/button';
 import { Calculator, CheckCircle, Loader2 } from 'lucide-react';
@@ -84,6 +85,8 @@ const SocialMediaBudgetCalculator = () => {
           'ad-spend': `$${adSpend.toLocaleString()}/mo`,
           'estimated-total': estimate ? `$${estimate.totalMonthly.toLocaleString()}/mo` : '',
           'estimated-leads': estimate ? `${estimate.leadsLow}–${estimate.leadsHigh}/mo` : '',
+          // Where they came from, recorded at landing by PageViewTracker.
+          ...attributionFields(),
           _subject: `Budget Calculator Lead: ${name.trim()} — ${industryLabel}`,
           _template: 'table',
         }),
