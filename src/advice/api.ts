@@ -104,14 +104,51 @@ export function readImageFile(file: File): Promise<{ data: string; mime: string 
   });
 }
 
+/**
+ * Why a simulation failed, carried through to the failure screen.
+ *
+ * It used to arrive as a bare string, so a crash in our own function and the
+ * model provider being busy were indistinguishable. Both showed "the AI is
+ * busy, try again" — which during an outage told everyone to retry into the
+ * same crash for hours.
+ */
+export type FailureKind = 'busy' | 'rate' | 'server' | 'network' | 'input' | 'config';
+
+export class SimulationError extends Error {
+  kind: FailureKind;
+  constructor(message: string, kind: FailureKind) {
+    super(message);
+    this.kind = kind;
+  }
+}
+
+const kindFor = (status: number, given?: string): FailureKind => {
+  if (given === 'busy' || given === 'rate' || given === 'server' || given === 'input' || given === 'config') return given;
+  if (status === 429) return 'rate';
+  if (status >= 500) return 'server';
+  if (status >= 400) return 'input';
+  return 'server';
+};
+
 async function viaVercel(inputs: SimInputs): Promise<Simulation> {
-  const res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(inputs),
-  });
+  let res: Response;
+  try {
+    res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(inputs),
+    });
+  } catch {
+    // Never reached the server at all — their connection, or we are down.
+    throw new SimulationError('We could not reach the simulator.', 'network');
+  }
   const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.error ?? 'The simulation failed. Please try again.');
+  if (!res.ok) {
+    throw new SimulationError(
+      data.error ?? 'The simulation failed. Please try again.',
+      kindFor(res.status, data.kind),
+    );
+  }
   return data as Simulation;
 }
 
@@ -167,15 +204,15 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
         return sim;
       } catch (e) {
         last = e;
-        // A rate-limit or validation message is the final answer; retrying
-        // it just wastes the visitor's time.
-        const msg = e instanceof Error ? e.message : '';
-        if (/lot of simulations|capacity|isn.t configured/i.test(msg)) throw e;
+        // A rate limit, a bad input or a missing key is the final answer;
+        // retrying it only wastes the visitor's time. Matching on the kind
+        // rather than the wording, which used to drift out of sync.
+        if (e instanceof SimulationError && ['rate', 'input', 'config'].includes(e.kind)) throw e;
       }
     }
     if (attempt < ATTEMPTS - 1) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * (attempt + 1)));
   }
-  throw last instanceof Error ? last : new Error('The simulation failed. Please try again.');
+  throw last instanceof Error ? last : new SimulationError('The simulation failed. Please try again.', 'server');
 }
 
 // ── History: kept in this browser only ─────────────────────────────────────

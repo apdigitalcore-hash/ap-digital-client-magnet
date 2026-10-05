@@ -31,6 +31,7 @@ function limited(ip: string) {
 const CURRENCIES = ["CAD", "USD"];
 const CHANNELS = ["Google Search Ads", "Google Display", "Meta/Facebook", "Instagram", "TikTok", "LinkedIn"];
 const INDUSTRIES = ["Ecommerce", "SaaS", "Local service", "Real estate", "Health & wellness", "Finance", "Education", "Food & beverage", "Other"];
+const OBJECTIVES = ["Leads", "Messages", "Calls", "Sales", "Website traffic", "Brand awareness"];
 
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
@@ -42,6 +43,7 @@ interface Inputs {
   industry: string;
   audience: string;
   channel: string;
+  objective: string;
   budget: number;
   currency: string;
   headline: string;
@@ -58,6 +60,9 @@ function readInputs(b: Record<string, unknown>): Inputs | string {
     industry: str(b.industry, 40),
     audience: str(b.audience, 1500),
     channel: str(b.channel, 40),
+    // Unknown or missing falls back to Leads rather than rejecting: an older
+    // client that does not send it still gets a sane report.
+    objective: OBJECTIVES.includes(str(b.objective, 40)) ? str(b.objective, 40) : "Leads",
     budget: Math.round(Number(b.budget)),
     currency: CURRENCIES.includes(str(b.currency, 8)) ? str(b.currency, 8) : "CAD",
     headline: str(b.headline, 300),
@@ -351,6 +356,14 @@ export function sanitiseHealthAudience(audience: string[], industry: string): st
   return [SAFE_ALTERNATIVE, ...kept];
 }
 
+/** Why a page could not be read, phrased for the prompt. */
+const LANDING_FAILURE: Record<string, string> = {
+  blocked: "could not be read: the site refused our request (bot protection)",
+  empty: "could not be read: the page returned no readable content, usually because it renders entirely in JavaScript",
+  parked: "is not a live website: the domain serves a parking or for-sale page",
+  unreachable: "could not be reached",
+};
+
 const SYSTEM_PROMPT = `You are a senior performance marketer with 10+ years running paid campaigns across Google Ads, Meta, TikTok and LinkedIn for ecommerce, SaaS, local service and B2B brands. You are powering ADvice, a free campaign simulator that predicts performance before a marketer spends money.
 
 Ground every number in industry benchmarks, and keep them internally consistent:
@@ -443,7 +456,13 @@ function normalise(r: any) {
   c.overall = clampScore(c.overall);
   for (const k of ["headline", "clarity", "cta", "emotion", "intent"]) if (c[k]) c[k].score = clampScore(c[k].score);
   c.verdict = c.overall >= 75 ? "Strong" : c.overall >= 50 ? "Needs Work" : "Weak";
-  r.recommendations.improvements = (r.recommendations?.improvements ?? []).slice(0, 5);
+  // The schema asks for these, but a malformed answer must degrade rather
+  // than throw: an exception here costs the visitor the whole simulation.
+  r.recommendations = r.recommendations ?? {};
+  r.recommendations.improvements = (r.recommendations.improvements ?? []).slice(0, 5);
+  r.recommendations.audience = r.recommendations.audience ?? [];
+  r.risk = r.risk ?? {};
+  r.competitors = r.competitors ?? {};
   return r;
 }
 
@@ -454,20 +473,20 @@ Deno.serve(async (req) => {
     new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
 
-  if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet." }, 500);
+  if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet.", kind: "config" }, 500);
 
   let body: Record<string, unknown>;
   try {
     body = await req.json();
   } catch {
-    return json({ error: "Invalid request." }, 400);
+    return json({ error: "Invalid request.", kind: "input" }, 400);
   }
   const inputs = readInputs(body);
-  if (typeof inputs === "string") return json({ error: inputs }, 400);
+  if (typeof inputs === "string") return json({ error: inputs, kind: "input" }, 400);
   const image = readImage(body);
 
   const ip = (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
-  if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while." }, 429);
+  if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while.", kind: "rate" }, 429);
 
   const [landing, product] = await Promise.all([
     inputs.landingUrl ? fetchPage(inputs.landingUrl) : Promise.resolve(null),
@@ -551,7 +570,7 @@ Deno.serve(async (req) => {
           }
           continue;
         }
-        return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
+        return json({ error: "The simulation failed. Please try again.", kind: "server", detail: lastError }, 502);
       }
       const data = await res.json();
       const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -569,7 +588,7 @@ Deno.serve(async (req) => {
         inputs.description, product?.text, landing?.text,
       ].filter(Boolean).join(" ");
       results.recommendations.audience = sanitiseHealthAudience(
-        results.recommendations?.audience ?? [], inputs.industry,
+        results.recommendations.audience ?? [], inputs.industry,
       );
 
       const invented = findInventedClaims(results.recommendations ?? {}, supplied);
@@ -599,8 +618,11 @@ Deno.serve(async (req) => {
     }
   }
   if (!results) {
+    // "busy" means the model provider pushed back, which a retry does fix.
+    // Anything else is our own failure, and telling someone to retry that is
+    // how an outage becomes hours of people retrying into the same crash.
     const error = busy ? "The AI is busy right now. Try again in a minute." : "The simulation failed. Please try again.";
-    return json({ error, detail: lastError }, 502);
+    return json({ error, kind: busy ? "busy" : "server", detail: lastError }, 502);
   }
 
   return json({

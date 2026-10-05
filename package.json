@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/inject-meta.js",
+    "build": "npm run typecheck:api && vite build && node scripts/inject-meta.js",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typecheck:api": "tsc --noEmit --strict --target es2022 --module esnext --moduleResolution bundler --lib es2023,dom --skipLibCheck services/advice-api/api/simulate.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

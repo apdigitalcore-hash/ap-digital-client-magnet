@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlertCircle, ArrowLeft, ArrowRight, Check, RotateCcw, Sparkles } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
-import { FREE_TOTAL, gateState, holdLead, readImageFile, rememberEmail, runSimulation } from '@/advice/api';
+import { FREE_TOTAL, captureEmail, gateState, holdLead, readImageFile, rememberEmail, runSimulation, SimulationError, type FailureKind } from '@/advice/api';
 import { CHANNELS, CURRENCIES, EMPTY_INPUTS, INDUSTRIES, OBJECTIVES, OBJECTIVES_BY_CHANNEL, type Objective, type SimInputs } from '@/advice/types';
 
 const STEPS = ['Your business', 'Channel & budget', 'Your ad'];
@@ -116,29 +116,95 @@ const LimitReached = () => (
 );
 
 
-const FailureScreen = ({ message, onRetry }: { message: string; onRetry: () => void }) => (
-  <div className="mx-auto max-w-md py-20 text-center">
-    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#fff0f0]">
-      <AlertCircle className="h-5 w-5 text-[#d70015]" />
-    </span>
-    <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">That simulation didn’t finish</h1>
-    <p className="mt-3 text-[#6e6e73]">{message}</p>
-    <p className="mt-2 text-[15px] text-[#86868b]">
-      Your answers are still here — nothing was lost. This is usually a busy moment on the AI service, and a second
-      attempt normally works.
-    </p>
-    <div className="mt-8 flex flex-col items-center gap-3">
-      <button
-        type="button"
-        onClick={onRetry}
-        className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#1d1d1f] px-6 py-3 text-[15px] text-white hover:bg-black"
-      >
-        <RotateCcw className="h-4 w-4" /> Try again
-      </button>
-      <Link to="/advice" className="py-2 text-sm text-[#6e6e73] underline hover:text-[#1d1d1f]">Back to ADvice</Link>
+/**
+ * What went wrong, said truthfully.
+ *
+ * This used to tell everyone "the AI is busy, a second attempt normally
+ * works" — including during an outage in our own function, where every one of
+ * those second attempts hit the same crash. A retry is only offered where a
+ * retry can actually succeed.
+ */
+const FailureScreen = ({
+  kind, message, inputs, onRetry,
+}: {
+  kind: FailureKind;
+  message: string;
+  inputs: SimInputs;
+  onRetry: () => void;
+}) => {
+  const ours = kind === 'server' || kind === 'network' || kind === 'config';
+  const [email, setEmail] = useState('');
+  const [sent, setSent] = useState(false);
+
+  return (
+    <div className="mx-auto max-w-md py-20 text-center">
+      <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#fff0f0]">
+        <AlertCircle className="h-5 w-5 text-[#d70015]" />
+      </span>
+      <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">That simulation didn’t finish</h1>
+      <p className="mt-3 text-[#6e6e73]">{message}</p>
+      <p className="mt-2 text-[15px] text-[#86868b]">
+        Your answers are still here — nothing was lost.{' '}
+        {ours
+          ? 'This one is on us, not on you, and it has been logged. Trying again may hit the same problem.'
+          : 'This is usually a busy moment on the AI service, and a second attempt normally works.'}
+      </p>
+
+      <div className="mt-8 flex flex-col items-center gap-3">
+        {!ours && (
+          <button
+            type="button"
+            onClick={onRetry}
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-[#1d1d1f] px-6 py-3 text-[15px] text-white hover:bg-black"
+          >
+            <RotateCcw className="h-4 w-4" /> Try again
+          </button>
+        )}
+
+        {ours && !sent && (
+          <form
+            className="w-full text-left"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (!email.trim()) return;
+              // Reuses the lead path so the campaign details travel with it;
+              // flagged so it is read as a rescue, not a signup.
+              void captureEmail(email.trim(), { inputs }).catch(() => {});
+              setSent(true);
+            }}
+          >
+            <label htmlFor="rescue" className="text-[13px] text-[#6e6e73]">
+              Leave your email and we’ll send the report once it’s fixed.
+            </label>
+            <div className="mt-2 flex gap-2">
+              <input
+                id="rescue"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@company.com"
+                className="min-h-[44px] flex-1 rounded-xl border border-black/[0.12] px-4 text-[15px] outline-none focus:border-[#1d1d1f]"
+              />
+              <button type="submit" className="min-h-[44px] rounded-xl bg-[#1d1d1f] px-5 text-[15px] text-white hover:bg-black">
+                Send it
+              </button>
+            </div>
+          </form>
+        )}
+        {ours && sent && (
+          <p className="text-[15px] text-[#248a3d]">Thanks — we’ll send your report once this is fixed.</p>
+        )}
+
+        {ours && (
+          <button type="button" onClick={onRetry} className="py-2 text-sm text-[#6e6e73] underline hover:text-[#1d1d1f]">
+            Try again anyway
+          </button>
+        )}
+        <Link to="/advice" className="py-2 text-sm text-[#6e6e73] underline hover:text-[#1d1d1f]">Back to ADvice</Link>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 const AdviceSimulate = () => {
   const navigate = useNavigate();
@@ -150,6 +216,7 @@ const AdviceSimulate = () => {
   // Only the hard limit is shown up front; the email is asked for after the
   // form is filled and Run is pressed, never on arrival.
   const [failure, setFailure] = useState('');
+  const [failureKind, setFailureKind] = useState<FailureKind>('server');
   const [gate, setGate] = useState<'ok' | 'email' | 'limit'>(() => (gateState() === 'limit' ? 'limit' : 'ok'));
 
   const set = <K extends keyof SimInputs>(k: K) => (e: { target: { value: string } }) =>
@@ -191,6 +258,7 @@ const AdviceSimulate = () => {
       navigate('/advice/report', { state: { sim, fresh: true } });
     } catch (err) {
       setRunning(false);
+      setFailureKind(err instanceof SimulationError ? err.kind : 'server');
       setFailure(err instanceof Error ? err.message : 'The simulation failed. Please try again.');
     }
   };
@@ -209,7 +277,12 @@ const AdviceSimulate = () => {
       </Helmet>
 
       {failure ? (
-        <FailureScreen message={failure} onRetry={() => { setFailure(''); void submit(); }} />
+        <FailureScreen
+          kind={failureKind}
+          message={failure}
+          inputs={v}
+          onRetry={() => { setFailure(''); void submit(); }}
+        />
       ) : gate === 'limit' ? (
         <LimitReached />
       ) : gate === 'email' ? (

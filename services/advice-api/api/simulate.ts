@@ -37,6 +37,7 @@ function limited(ip: string) {
 const CURRENCIES = ["CAD", "USD"];
 const CHANNELS = ["Google Search Ads", "Google Display", "Meta/Facebook", "Instagram", "TikTok", "LinkedIn"];
 const INDUSTRIES = ["Ecommerce", "SaaS", "Local service", "Real estate", "Health & wellness", "Finance", "Education", "Food & beverage", "Other"];
+const OBJECTIVES = ["Leads", "Messages", "Calls", "Sales", "Website traffic", "Brand awareness"];
 
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
@@ -48,6 +49,7 @@ interface Inputs {
   industry: string;
   audience: string;
   channel: string;
+  objective: string;
   budget: number;
   currency: string;
   headline: string;
@@ -64,6 +66,9 @@ function readInputs(b: Record<string, unknown>): Inputs | string {
     industry: str(b.industry, 40),
     audience: str(b.audience, 1500),
     channel: str(b.channel, 40),
+    // Unknown or missing falls back to Leads rather than rejecting: an older
+    // client that does not send it still gets a sane report.
+    objective: OBJECTIVES.includes(str(b.objective, 40)) ? str(b.objective, 40) : "Leads",
     budget: Math.round(Number(b.budget)),
     currency: CURRENCIES.includes(str(b.currency, 8)) ? str(b.currency, 8) : "CAD",
     headline: str(b.headline, 300),
@@ -357,6 +362,67 @@ export function sanitiseHealthAudience(audience: string[], industry: string): st
   return [SAFE_ALTERNATIVE, ...kept];
 }
 
+/** Why a page could not be read, phrased for the prompt. */
+const LANDING_FAILURE: Record<string, string> = {
+  blocked: "could not be read: the site refused our request (bot protection)",
+  empty: "could not be read: the page returned no readable content, usually because it renders entirely in JavaScript",
+  parked: "is not a live website: the domain serves a parking or for-sale page",
+  unreachable: "could not be reached",
+};
+
+// ── Failure logging and alerting ───────────────────────────────────────────
+/**
+ * Records every failed simulation and raises an alarm when they cluster.
+ *
+ * A total outage of the simulator ran for hours and was found by a person
+ * trying to use it, because nothing watched. Serverless instances are
+ * short-lived and not shared, so this counter is per-instance and
+ * deliberately crude: it is a smoke alarm, not a metrics pipeline. Under a
+ * real outage every instance fails, so the threshold is reached quickly
+ * somewhere, which is all that is needed to get a message out.
+ *
+ * Sends through the same formsubmit inbox the leads use, so there is no new
+ * credential to hold. Alerts are rate limited to one per instance per window
+ * so a sustained outage cannot turn into thousands of emails.
+ */
+const FAIL_WINDOW_MS = 10 * 60_000;
+const FAIL_THRESHOLD = 3;
+const failures: { at: number; status: number; reason: string }[] = [];
+let lastAlertAt = 0;
+
+async function recordFailure(status: number, reason: string, context: Record<string, unknown>) {
+  const now = Date.now();
+  // Structured so it is greppable in the Vercel log drain.
+  console.error(JSON.stringify({ event: "simulation_failed", status, reason: reason.slice(0, 500), ...context }));
+
+  failures.push({ at: now, status, reason });
+  while (failures.length && now - failures[0].at > FAIL_WINDOW_MS) failures.shift();
+  if (failures.length < FAIL_THRESHOLD) return;
+  if (now - lastAlertAt < FAIL_WINDOW_MS) return;
+  lastAlertAt = now;
+
+  const body = {
+    _subject: `ADvice ALERT: ${failures.length} failed simulations in ${Math.round(FAIL_WINDOW_MS / 60000)} minutes`,
+    _template: "table",
+    failures: String(failures.length),
+    window: `${Math.round(FAIL_WINDOW_MS / 60000)} minutes`,
+    latest_status: String(status),
+    latest_reason: reason.slice(0, 900),
+    recent: failures.map((f) => `${new Date(f.at).toISOString()} ${f.status} ${f.reason.slice(0, 160)}`).join("\n"),
+    note: "Sent by the ADvice API when simulations fail repeatedly. Check the Vercel logs for simulation_failed entries.",
+  };
+  try {
+    await fetch("https://formsubmit.co/ajax/apdigital.core@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(5000),
+    });
+  } catch {
+    // An alert that cannot be sent must never take the request down with it.
+  }
+}
+
 const SYSTEM_PROMPT = `You are a senior performance marketer with 10+ years running paid campaigns across Google Ads, Meta, TikTok and LinkedIn for ecommerce, SaaS, local service and B2B brands. You are powering ADvice, a free campaign simulator that predicts performance before a marketer spends money.
 
 Ground every number in industry benchmarks, and keep them internally consistent:
@@ -449,7 +515,13 @@ function normalise(r: any) {
   c.overall = clampScore(c.overall);
   for (const k of ["headline", "clarity", "cta", "emotion", "intent"]) if (c[k]) c[k].score = clampScore(c[k].score);
   c.verdict = c.overall >= 75 ? "Strong" : c.overall >= 50 ? "Needs Work" : "Weak";
-  r.recommendations.improvements = (r.recommendations?.improvements ?? []).slice(0, 5);
+  // The schema asks for these, but a malformed answer must degrade rather
+  // than throw: an exception here costs the visitor the whole simulation.
+  r.recommendations = r.recommendations ?? {};
+  r.recommendations.improvements = (r.recommendations.improvements ?? []).slice(0, 5);
+  r.recommendations.audience = r.recommendations.audience ?? [];
+  r.risk = r.risk ?? {};
+  r.competitors = r.competitors ?? {};
   return r;
 }
 
@@ -457,7 +529,27 @@ function normalise(r: any) {
 // Node-style handler: Vercel's runtime passes (req, res) here, and the
 // web-style Request/Response signature crashed on invocation.
 // deno-lint-ignore-file no-explicit-any
+/**
+ * Wrapper so an unhandled throw is still recorded and still answers JSON.
+ *
+ * The outage that prompted this was a ReferenceError thrown before any of the
+ * code below could return a 502, so nothing was logged and nothing alerted.
+ */
 export default async function handler(req: any, res: any) {
+  try {
+    return await run(req, res);
+  } catch (e) {
+    const reason = e instanceof Error ? `${e.name}: ${e.message}` : String(e);
+    await recordFailure(500, reason, { kind: "crash", path: "handler" });
+    if (!res.headersSent) {
+      res.statusCode = 500;
+      res.setHeader("Content-Type", "application/json");
+      res.end(JSON.stringify({ error: "Something went wrong on our end.", kind: "server" }));
+    }
+  }
+}
+
+async function run(req: any, res: any) {
   const origin = req.headers.origin ?? null;
   const cors = corsFor(origin);
   for (const [k, v] of Object.entries(cors)) res.setHeader(k, v as string);
@@ -473,20 +565,20 @@ export default async function handler(req: any, res: any) {
     return res.end();
   }
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
-  if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet." }, 500);
+  if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet.", kind: "config" }, 500);
 
   let body: Record<string, unknown>;
   try {
     body = typeof req.body === "string" ? JSON.parse(req.body) : (req.body ?? {});
   } catch {
-    return json({ error: "Invalid request." }, 400);
+    return json({ error: "Invalid request.", kind: "input" }, 400);
   }
   const inputs = readInputs(body);
-  if (typeof inputs === "string") return json({ error: inputs }, 400);
+  if (typeof inputs === "string") return json({ error: inputs, kind: "input" }, 400);
   const image = readImage(body);
 
   const ip = (String(req.headers["x-forwarded-for"] ?? "") ?? "").split(",")[0].trim() || "unknown";
-  if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while." }, 429);
+  if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while.", kind: "rate" }, 429);
 
   const [landing, product] = await Promise.all([
     inputs.landingUrl ? fetchPage(inputs.landingUrl) : Promise.resolve(null),
@@ -560,7 +652,7 @@ export default async function handler(req: any, res: any) {
           await new Promise((r) => setTimeout(r, 600));
           continue;
         }
-        return json({ error: "The simulation failed. Please try again.", detail: lastError }, 502);
+        return json({ error: "The simulation failed. Please try again.", kind: "server", detail: lastError }, 502);
       }
       const data = await res.json();
       const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -578,7 +670,7 @@ export default async function handler(req: any, res: any) {
         inputs.description, product?.text, landing?.text,
       ].filter(Boolean).join(" ");
       results.recommendations.audience = sanitiseHealthAudience(
-        results.recommendations?.audience ?? [], inputs.industry,
+        results.recommendations.audience ?? [], inputs.industry,
       );
 
       const invented = findInventedClaims(results.recommendations ?? {}, supplied);
@@ -608,8 +700,18 @@ export default async function handler(req: any, res: any) {
     }
   }
   if (!results) {
+    // "busy" means the model provider pushed back, which a retry does fix.
+    // Anything else is our own failure, and telling someone to retry that is
+    // how an outage becomes hours of people retrying into the same crash.
     const error = busy ? "The AI is busy right now. Try again in a minute." : "The simulation failed. Please try again.";
-    return json({ error, detail: lastError }, 502);
+    await recordFailure(502, lastError || "no model returned a result", {
+      kind: busy ? "busy" : "server",
+      channel: inputs.channel,
+      industry: inputs.industry,
+      objective: inputs.objective,
+      landing: landing?.status ?? "none",
+    });
+    return json({ error, kind: busy ? "busy" : "server", detail: lastError }, 502);
   }
 
   return json({
