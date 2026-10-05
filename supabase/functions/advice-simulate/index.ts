@@ -59,6 +59,7 @@ function readInputs(b: Record<string, unknown>): Inputs | string {
     industry: str(b.industry, 40),
     audience: str(b.audience, 1500),
     channel: str(b.channel, 40),
+    objective: str(b.objective, 40),
     budget: Math.round(Number(b.budget)),
     currency: CURRENCIES.includes(str(b.currency, 8)) ? str(b.currency, 8) : "CAD",
     headline: str(b.headline, 300),
