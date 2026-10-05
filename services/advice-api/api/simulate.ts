@@ -99,6 +99,13 @@ export type PageFetch =
   | { status: "ok"; text: string; handoff: string[] }
   | { status: "blocked" | "empty" | "parked" | "unreachable"; text: null; handoff: string[] };
 
+const LANDING_FAILURE: Record<string, string> = {
+  blocked: "BLOCKED OUR REQUEST (it refuses automated visits)",
+  empty: "RETURNED ALMOST NO READABLE TEXT",
+  parked: "IS A PARKED DOMAIN, not a real page",
+  unreachable: "COULD NOT BE REACHED",
+};
+
 /** Scheduling and booking systems that take the conversion off the advertiser's domain. */
 const BOOKING_HOSTS =
   /(nexhealth|localmed|dentrix|flexbooker|calendly|acuityscheduling|janeapp|setmore|zocdoc|simplepractice|squarespace-scheduling|mindbodyonline|booksy|fresha|vagaro|schedulicity|opendental|curve-dental|clio|housecallpro|jobber)/i;
