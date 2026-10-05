@@ -1,4 +1,5 @@
 import { supabase } from '@/integrations/supabase/client';
+import { attributionFields } from '@/lib/attribution';
 import { ADVICE_API_URL } from './config';
 import type { SimInputs, Simulation } from './types';
 
@@ -314,6 +315,9 @@ export async function captureEmail(
       report: await reportUrl(sim!),
     });
   }
+
+  // Where they came from, recorded at landing by PageViewTracker.
+  Object.assign(payload, attributionFields());
 
   payload._subject = `ADvice lead: ${email}${r ? ` — ${inputs?.channel}, ${r.creative.overall}/100` : ''}`;
   payload._template = 'table';

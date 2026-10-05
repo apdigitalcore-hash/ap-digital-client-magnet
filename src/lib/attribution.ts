@@ -1,0 +1,132 @@
+/**
+ * Where a visitor came from, recorded at landing rather than at submit.
+ *
+ * UTMs live in the URL of the page someone arrives on. By the time they run a
+ * simulation and save their email they are on /advice/report with a clean URL,
+ * so reading the query string at submit time reports nothing. `document.referrer`
+ * has the same problem in reverse: it is set once per document load, so after a
+ * client-side navigation it still names the external site — right for the first
+ * page, but it will not tell you which campaign brought them.
+ *
+ * So the touch is recorded on every route change and kept in storage. Two of
+ * them are worth having:
+ *
+ *   first  — the very first visit this browser ever made. Answers "what
+ *            originally found us", which is what a content cluster is judged on.
+ *   last   — the most recent visit that carried a campaign or an outside
+ *            referrer. Answers "what brought them back to convert".
+ *
+ * Direct visits deliberately do not overwrite `last`: someone who arrives from
+ * an ad, leaves, then types the URL a day later was still produced by the ad.
+ */
+
+const FIRST_KEY = 'ap_attr_first';
+const LAST_KEY = 'ap_attr_last';
+
+export type Touch = {
+  /** "google / cpc", "chatgpt.com / referral", "direct" … */
+  source: string;
+  referrer: string;
+  landing: string;
+  at: string;
+  utm?: Record<string, string>;
+};
+
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+const CLICK_IDS = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'msclkid', 'ttclid', 'li_fat_id'];
+
+// Private mode and blocked site data both throw rather than return null, and a
+// lead is worth more than its attribution, so every access is guarded.
+const read = (k: string): Touch | null => {
+  try {
+    const raw = localStorage.getItem(k);
+    return raw ? (JSON.parse(raw) as Touch) : null;
+  } catch {
+    return null;
+  }
+};
+const write = (k: string, t: Touch) => {
+  try {
+    localStorage.setItem(k, JSON.stringify(t));
+  } catch {
+    /* nothing to do — the lead still sends, just without this field */
+  }
+};
+
+const host = (url: string) => {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return '';
+  }
+};
+
+/** Builds the touch for the page being viewed, or null if it carries no signal. */
+function currentTouch(search: string, pathname: string): Touch | null {
+  const params = new URLSearchParams(search);
+  const utm: Record<string, string> = {};
+  for (const k of [...UTM_KEYS, ...CLICK_IDS]) {
+    const v = params.get(k);
+    if (v) utm[k] = v.slice(0, 200);
+  }
+
+  const ref = typeof document !== 'undefined' ? document.referrer : '';
+  const refHost = host(ref);
+  const selfHost = typeof location !== 'undefined' ? location.hostname.replace(/^www\./, '') : '';
+  const external = refHost && refHost !== selfHost;
+
+  let source: string;
+  if (utm.utm_source) {
+    source = `${utm.utm_source} / ${utm.utm_medium ?? 'unknown'}`;
+  } else if (utm.gclid || utm.gbraid || utm.wbraid) {
+    source = 'google / cpc';
+  } else if (utm.fbclid) {
+    source = 'facebook / cpc';
+  } else if (utm.msclkid) {
+    source = 'bing / cpc';
+  } else if (external) {
+    source = `${refHost} / referral`;
+  } else {
+    return null; // direct, and nothing to learn from it
+  }
+
+  return {
+    source,
+    referrer: ref || '(none)',
+    landing: pathname + (search || ''),
+    at: new Date().toISOString(),
+    ...(Object.keys(utm).length ? { utm } : {}),
+  };
+}
+
+/**
+ * Called on every route change. Cheap, and a no-op for direct navigation
+ * within the site.
+ */
+export function recordTouch(pathname: string, search: string) {
+  const touch = currentTouch(search, pathname);
+  if (!touch) return;
+  if (!read(FIRST_KEY)) write(FIRST_KEY, touch);
+  write(LAST_KEY, touch);
+}
+
+/** Flat, readable fields to attach to a lead notification. */
+export function attributionFields(): Record<string, string> {
+  const first = read(FIRST_KEY);
+  const last = read(LAST_KEY);
+  if (!first && !last) return { 'traffic-source': 'direct / none recorded' };
+
+  const line = (t: Touch) =>
+    [t.source, t.landing, t.referrer !== '(none)' ? t.referrer : null]
+      .filter(Boolean)
+      .join(' · ');
+
+  const out: Record<string, string> = {};
+  if (last) out['traffic-source'] = line(last);
+  if (first) {
+    out['first-seen'] = `${line(first)} · ${first.at.slice(0, 10)}`;
+    const u = first.utm;
+    if (u) out['first-campaign'] = Object.entries(u).map(([k, v]) => `${k}=${v}`).join(' · ');
+  }
+  return out;
+}
