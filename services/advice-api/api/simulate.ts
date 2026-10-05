@@ -82,37 +82,131 @@ function readInputs(b: Record<string, unknown>): Inputs | string {
 
 // Fetch a public page as plain text for the model. Only http(s) on public
 // hostnames, capped in time and size — this runs on user-supplied URLs.
-async function fetchPageText(raw: string): Promise<string | null> {
+/**
+ * What happened when we tried to read a page.
+ *
+ * Previously this returned `string | null`, and null meant every kind of
+ * failure at once. Two live runs showed why that is not enough: sephora.com
+ * answers 403 to our user agent, while a dental site answered 200 with a
+ * 114-byte stub whose only content was a JavaScript redirect. The second case
+ * extracted zero characters, so the model was told it had "minimal content"
+ * and guessed the rest. Naming the failure lets the report say plainly that it
+ * could not read the page, which is more useful than a confident guess.
+ */
+export type PageFetch =
+  | { status: "ok"; text: string; handoff: string[] }
+  | { status: "blocked" | "empty" | "parked" | "unreachable"; text: null; handoff: string[] };
+
+/** Scheduling and booking systems that take the conversion off the advertiser's domain. */
+const BOOKING_HOSTS =
+  /(nexhealth|localmed|dentrix|flexbooker|calendly|acuityscheduling|janeapp|setmore|zocdoc|simplepractice|squarespace-scheduling|mindbodyonline|booksy|fresha|vagaro|schedulicity|opendental|curve-dental|clio|housecallpro|jobber)/i;
+
+/** Domain parking and for-sale pages. The site is not live at all. */
+const PARKED =
+  /forsale\.godaddy|afternic|sedoparking|dan\.com|hugedomains|domainmarket|bodis\.com|parkingcrew|above\.com|undeveloped\.com|buydomains/i;
+
+async function readOnce(url: URL): Promise<{ res: Response; html: string } | null> {
+  const res = await fetch(url, {
+    signal: AbortSignal.timeout(6000),
+    redirect: "follow",
+    headers: {
+      // Some sites refuse an obvious bot. Identify honestly but acceptably.
+      "User-Agent": "Mozilla/5.0 (compatible; ADviceBot/1.0; +https://ap-digital.ca/advice)",
+      Accept: "text/html,application/xhtml+xml",
+    },
+  });
+  if (!(res.headers.get("content-type") ?? "").includes("text/html")) return null;
+  return { res, html: (await res.text()).slice(0, 300_000) };
+}
+
+/** The destination of a JS or meta-refresh redirect, if the page is only that. */
+export function clientRedirect(html: string, base: URL): URL | null {
+  const js = html.match(/(?:window\.)?location(?:\.href)?\s*=\s*["']([^"']+)["']/i)?.[1];
+  const meta = html.match(/<meta[^>]+http-equiv=["']?refresh["']?[^>]*content=["'][^"']*url=([^"';]+)/i)?.[1];
+  const target = js ?? meta;
+  if (!target) return null;
+  try {
+    return new URL(target, base);
+  } catch {
+    return null;
+  }
+}
+
+function extract(html: string): { title: string; text: string } {
+  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim() ?? "";
+  const text = html
+    .replace(/<(script|style|noscript|svg)[\s\S]*?<\/\1>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim();
+  return { title, text };
+}
+
+/** External hosts the page sends its conversion to — booking systems and forms. */
+export function findHandoff(html: string, self: string): string[] {
+  const hosts = new Set<string>();
+  const re = /(?:href|src|action)\s*=\s*["']https?:\/\/([a-z0-9.-]+)/gi;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(html))) {
+    const host = m[1].toLowerCase().replace(/^www\./, "");
+    if (host === self || host.endsWith(`.${self}`)) continue;
+    if (BOOKING_HOSTS.test(host)) hosts.add(host);
+  }
+  return [...hosts].slice(0, 5);
+}
+
+export async function fetchPage(raw: string): Promise<PageFetch> {
   let url: URL;
   try {
     url = new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`);
   } catch {
-    return null;
+    return { status: "unreachable", text: null, handoff: [] };
   }
   const host = url.hostname.toLowerCase();
-  if (!["http:", "https:"].includes(url.protocol) || url.port) return null;
+  if (!["http:", "https:"].includes(url.protocol) || url.port) return { status: "unreachable", text: null, handoff: [] };
   if (
     host === "localhost" || host.endsWith(".local") || host.endsWith(".internal") ||
     /^\d+\.\d+\.\d+\.\d+$/.test(host) || host.includes(":") || !host.includes(".")
-  ) return null;
+  ) return { status: "unreachable", text: null, handoff: [] };
+
   try {
-    const res = await fetch(url, {
-      signal: AbortSignal.timeout(6000),
-      headers: { "User-Agent": "ADviceBot/1.0 (+https://ap-digital.ca/advice)" },
-    });
-    if (!res.ok || !(res.headers.get("content-type") ?? "").includes("text/html")) return null;
-    const html = (await res.text()).slice(0, 300_000);
-    const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1]?.trim() ?? "";
-    const text = html
-      .replace(/<(script|style|noscript|svg)[\s\S]*?<\/\1>/gi, " ")
-      .replace(/<[^>]+>/g, " ")
-      .replace(/&nbsp;/g, " ")
-      .replace(/&amp;/g, "&")
-      .replace(/\s+/g, " ")
-      .trim();
-    return `Title: ${title}\n${text.slice(0, 6000)}`;
+    let got = await readOnce(url);
+    if (!got) return { status: "unreachable", text: null, handoff: [] };
+    // 403/429 is a bot block, not a broken page — worth saying so exactly.
+    if (got.res.status === 403 || got.res.status === 429) return { status: "blocked", text: null, handoff: [] };
+    if (!got.res.ok) return { status: "unreachable", text: null, handoff: [] };
+
+    let { title, text } = extract(got.html);
+    let current = new URL(got.res.url || url.href);
+
+    // A stub that only redirects in the browser. One hop is enough to reach
+    // the real page, and stops here rather than chasing a loop.
+    if (text.length < 200) {
+      const next = clientRedirect(got.html, current);
+      if (next && next.href !== current.href) {
+        if (PARKED.test(next.href)) return { status: "parked", text: null, handoff: [] };
+        const hop = await readOnce(next);
+        if (hop) {
+          if (PARKED.test(hop.res.url)) return { status: "parked", text: null, handoff: [] };
+          got = hop;
+          current = new URL(hop.res.url || next.href);
+          ({ title, text } = extract(hop.html));
+        }
+      }
+    }
+
+    if (PARKED.test(got.html) || PARKED.test(current.href)) return { status: "parked", text: null, handoff: [] };
+
+    const handoff = findHandoff(got.html, current.hostname.toLowerCase().replace(/^www\./, ""));
+    // A page with almost no text told us nothing, and pretending otherwise is
+    // what produced landing-page feedback for a page nobody ever read.
+    if (text.length < 200) return { status: "empty", text: null, handoff };
+
+    return { status: "ok", text: `Title: ${title}\n${text.slice(0, 6000)}`, handoff };
   } catch {
-    return null;
+    return { status: "unreachable", text: null, handoff: [] };
   }
 }
 
@@ -238,6 +332,31 @@ export function findInventedClaims(
   return found;
 }
 
+/**
+ * Strips patient-list targeting from audience advice for health advertisers.
+ *
+ * A run for a dental clinic advised "creating lookalike audiences based on
+ * existing patient lists". That means uploading a list of dental patients to
+ * Meta: health information under PIPEDA and BC health privacy law, and against
+ * the platforms' own sensitive-category rules. It is the most damaging thing
+ * the report could tell a clinic to do, so it is removed in code rather than
+ * discouraged in the prompt.
+ *
+ * Website retargeting and interest targeting are untouched — they are fine.
+ */
+const LIST_TARGETING =
+  /look[- ]?alike|similar audience|seed audience|customer match|(patient|client|customer|email|CRM|contact)\s+(list|data|file|upload)|upload(ing)?\s+(your|a|the)?\s*(patient|client|customer|email|CRM)|first[- ]party\s+(data|list)/i;
+
+const SAFE_ALTERNATIVE =
+  "Do not upload patient lists to ad platforms — a patient list is health information under Canadian privacy law and breaches the platforms' sensitive-category rules. Retarget from your own website pixel instead, and layer interest and local radius targeting.";
+
+export function sanitiseHealthAudience(audience: string[], industry: string): string[] {
+  if (industry !== "Health & wellness") return audience;
+  const kept = (audience ?? []).filter((a) => !LIST_TARGETING.test(a));
+  if (kept.length === audience?.length) return audience;
+  return [SAFE_ALTERNATIVE, ...kept];
+}
+
 const SYSTEM_PROMPT = `You are a senior performance marketer with 10+ years running paid campaigns across Google Ads, Meta, TikTok and LinkedIn for ecommerce, SaaS, local service and B2B brands. You are powering ADvice, a free campaign simulator that predicts performance before a marketer spends money.
 
 Ground every number in industry benchmarks, and keep them internally consistent:
@@ -260,7 +379,8 @@ Score the creative (0-100 each) against direct-response frameworks: AIDA, PAS, t
 
 Confidence: high only when product, audience, copy and a landing page are all specific; low when most inputs are vague.
 
-Seasonality: judge against the current date given below.
+Seasonality: judge against the current date given below. Never call a vertical evergreen without checking its buying calendar first.
+In particular, for dental, optometry, physiotherapy, massage, chiropractic and anything else paid by private extended health benefits in Canada: these plans run on a calendar year, reset on 1 January, and unused annual maximums are forfeited. October through December is therefore the strongest window of the year in those verticals, with the last three weeks of December the peak, because patients spend remaining benefits before they vanish. A campaign running in Q4 for one of these should be marked a strong window with that reason, and the recommendations should say to lead on using benefits before they expire and to raise budget through November and December. January to March is correspondingly the weakest window, when maximums have just reset and patients are paying out of pocket again.
 
 CLAIM INTEGRITY - this constraint overrides persuasiveness, and a weaker but defensible ad is the correct answer.
 The rewrite may restate, sharpen, condense or reorder what the advertiser gave you. It must not introduce a fact they did not supply. Specifically, never add:
@@ -271,6 +391,8 @@ The rewrite may restate, sharpen, condense or reorder what the advertiser gave y
 - a statistic, rating, review count, years in business, or number of customers.
 Treat coverage, funding and insurance programmes with particular care: "accepts the Canadian Dental Care Plan" means the practice bills that plan, it does NOT mean treatment is free. These programmes are income tested and cover only some procedures, so never convert "accepts X" into "free" or "covered". Health professions are also regulated: superlatives about a clinic or practitioner breach provincial advertising rules in Canada.
 If their input does not support a stronger hook, say so in the improvements - name the single piece of evidence that would unlock a stronger ad (a price, a wait time, a named credential) and ask them for it. Do not manufacture it.
+
+SENSITIVE CATEGORIES - Health & wellness. When the industry is Health & wellness (clinics, dental, medical, optometry, physiotherapy, mental health, any practice holding patient records), NEVER recommend uploading, matching, hashing or importing a customer, patient or client list to an ad platform, and never recommend a lookalike, similar or seed audience built from one. A patient list is health information: in Canada it is protected by PIPEDA and provincial health privacy law, and the platforms' own policies restrict sensitive-category targeting. Instead recommend website retargeting from the practice's own pixel, interest and demographic targeting, and local radius targeting, and state plainly in the audience advice that patient lists must not be uploaded to ad platforms. This applies regardless of how well first-party data would perform.
 
 Recommendations must be specific to THIS product, audience and copy - never generic advice like "test more" or "know your audience". Each improvement names exactly what to change. Rewrite the headline, primary text and description ready to paste, within the channel's character limits (Google Search headlines 30 chars, descriptions 90 chars). Budget advice must name amounts or percentages. If a landing page was provided, give specific feedback on message match, the offer above the fold, and friction; otherwise return null for landingPage.
 
@@ -366,9 +488,9 @@ export default async function handler(req: any, res: any) {
   const ip = (String(req.headers["x-forwarded-for"] ?? "") ?? "").split(",")[0].trim() || "unknown";
   if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while." }, 429);
 
-  const [landingText, productText] = await Promise.all([
-    inputs.landingUrl ? fetchPageText(inputs.landingUrl) : Promise.resolve(null),
-    inputs.productUrl && inputs.productUrl !== inputs.landingUrl ? fetchPageText(inputs.productUrl) : Promise.resolve(null),
+  const [landing, product] = await Promise.all([
+    inputs.landingUrl ? fetchPage(inputs.landingUrl) : Promise.resolve(null),
+    inputs.productUrl && inputs.productUrl !== inputs.landingUrl ? fetchPage(inputs.productUrl) : Promise.resolve(null),
   ]);
 
   const userPrompt = [
@@ -380,17 +502,20 @@ export default async function handler(req: any, res: any) {
     `Report every figure in ${inputs.currency}. Benchmarks below are USD — convert them to ${inputs.currency} before answering.`,
     `What they're selling: ${inputs.product || "(see product URL)"}`,
     inputs.productUrl && `Product URL: ${inputs.productUrl}`,
-    productText && `Product page content (fetched):\n${productText}`,
+    product?.status === "ok" && `Product page content (fetched):\n${product.text}`,
     `Target audience: ${inputs.audience}`,
     `Ad headline: ${inputs.headline || "(none)"}`,
     `Primary text: ${inputs.primaryText || "(none)"}`,
     `Description: ${inputs.description || "(none)"}`,
     image ? "An ad image is attached - review it as part of the creative." : "No ad image provided.",
     inputs.landingUrl
-      ? landingText
-        ? `Landing page URL: ${inputs.landingUrl}\nLanding page content (fetched):\n${landingText}`
-        : `Landing page URL: ${inputs.landingUrl} (could not be fetched - say so in landingPage feedback and judge only from the URL)`
+      ? landing?.status === "ok"
+        ? `Landing page URL: ${inputs.landingUrl}\nLanding page content (fetched):\n${landing.text}`
+        : `Landing page URL: ${inputs.landingUrl}\nTHE LANDING PAGE ${LANDING_FAILURE[landing?.status ?? "unreachable"]}. You have not seen this page. Set landingPage to exactly: "We could not read ${inputs.landingUrl}, so there is no landing page feedback in this report." and nothing else. Do not infer, assume or describe what is on it, and do not mention it anywhere else in the report.`
       : "No landing page provided.",
+    landing?.handoff?.length
+      ? `CONVERSION HANDOFF: the landing page sends its booking or form to ${landing.handoff.join(", ")}, which is a different domain from the advertiser's. Raise this as a HIGH impact improvement: their conversion happens off their own site, so their pixel and analytics never see it, conversion tracking will under-report, and the platform cannot optimise towards it. Tell them to install the pixel on the booking system if it allows it, or to track the click through to it as a conversion.`
+      : null,
   ].filter(Boolean).join("\n\n");
 
   let results;
@@ -450,8 +575,12 @@ export default async function handler(req: any, res: any) {
       // appears here is theirs to make; one that does not is invented.
       const supplied = [
         inputs.product, inputs.audience, inputs.headline, inputs.primaryText,
-        inputs.description, productText, landingText,
+        inputs.description, product?.text, landing?.text,
       ].filter(Boolean).join(" ");
+      results.recommendations.audience = sanitiseHealthAudience(
+        results.recommendations?.audience ?? [], inputs.industry,
+      );
+
       const invented = findInventedClaims(results.recommendations ?? {}, supplied);
       if (invented.length && !corrected) {
         // One corrective pass. Naming the specific violation works far better
