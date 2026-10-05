@@ -1,4 +1,6 @@
 import { ReactNode } from 'react';
+import AdPreview from './AdPreviewSection';
+import { previewPair } from './adPreview';
 import { CONVERSION_NOUN, type Objective } from '@/advice/types';
 import { motion } from 'framer-motion';
 import { AlertTriangle, CalendarClock, Copy, Swords, TrendingUp, Wallet } from 'lucide-react';
@@ -275,6 +277,12 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
           </Card>
         </div>
       </Section>
+
+      {previewPair(sim) && (
+        <Section n={6} title="Ad preview">
+          <AdPreview sim={sim} />
+        </Section>
+      )}
 
       <p className="flex items-start gap-2 text-xs text-[#86868b]">
         <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />

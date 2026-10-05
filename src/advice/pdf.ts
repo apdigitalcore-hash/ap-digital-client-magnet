@@ -1,4 +1,5 @@
 import { CONVERSION_NOUN, type Objective, type Range, type Simulation } from './types';
+import { previewPair } from './adPreview';
 
 /**
  * Builds the report as a real PDF file.
@@ -165,6 +166,55 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
   y += 4;
   text('What top ads do differently', 10, 'bold');
   r.competitors.patterns.forEach((x) => text(`· ${x}`, 9, 'normal', '#6e6e73', 10));
+
+  // ── ad preview ────────────────────────────────────────────────────────────
+  // Drawn rather than screenshotted: the point is the comparison and the
+  // truncation, both of which come from the same model the report uses.
+  const preview = previewPair(sim);
+  if (preview) {
+    rule();
+    heading('Ad preview');
+    const colW = (COL - 18) / 2;
+    const startY = y;
+    let bottom = y;
+    ([['Your ad', preview.yours], ['Rewritten', preview.rewritten]] as const).forEach(([title, c], col) => {
+      const x = M + col * (colW + 18);
+      y = startY;
+      doc.setFont('helvetica', 'bold').setFontSize(8).setTextColor('#6e6e73');
+      doc.text(title.toUpperCase(), x, y);
+      y += 12;
+      if (preview.kind === 'search') {
+        doc.setFont('helvetica', 'normal').setFontSize(7.5).setTextColor('#6e6e73');
+        doc.text(c.displayUrl || '-', x, y); y += 11;
+        doc.setFont('helvetica', 'bold').setFontSize(10).setTextColor('#1a0dab');
+        doc.splitTextToSize(c.headline, colW).forEach((l: string) => { doc.text(l, x, y); y += 12; });
+        doc.setFont('helvetica', 'normal').setFontSize(8).setTextColor('#4d5156');
+        doc.splitTextToSize(c.description + (c.truncated ? '…' : ''), colW).forEach((l: string) => { doc.text(l, x, y); y += 10; });
+      } else {
+        doc.setFont('helvetica', 'normal').setFontSize(8).setTextColor('#1d1d1f');
+        doc.splitTextToSize(c.primaryText + (c.truncated ? '… See more' : ''), colW).forEach((l: string) => { doc.text(l, x, y); y += 10; });
+        y += 4;
+        // The advertiser's own creative, the same one in both cards. A broken
+        // or unsupported image must not take the whole PDF down with it.
+        if (preview.image) {
+          const h = colW / 1.91;
+          try {
+            doc.addImage(`data:${preview.image.mime};base64,${preview.image.data}`, 'JPEG', x, y, colW, h);
+            y += h + 6;
+          } catch { /* skip the image, keep the report */ }
+        }
+        doc.setFont('helvetica', 'bold').setFontSize(9).setTextColor('#1d1d1f');
+        doc.splitTextToSize(c.headline, colW).forEach((l: string) => { doc.text(l, x, y); y += 11; });
+        if (c.description) {
+          doc.setFont('helvetica', 'normal').setFontSize(7.5).setTextColor('#86868b');
+          doc.splitTextToSize(c.description, colW).forEach((l: string) => { doc.text(l, x, y); y += 9; });
+        }
+      }
+      bottom = Math.max(bottom, y);
+    });
+    y = bottom + 6;
+    text('Preview — an approximation of layout and where the text is cut off, not a screenshot of any platform.', 7.5, 'normal', '#86868b');
+  }
 
   // ── footer on every page ──────────────────────────────────────────────────
   const pages = doc.getNumberOfPages();

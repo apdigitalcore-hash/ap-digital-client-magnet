@@ -1,11 +1,13 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Check, Download, Link2, RotateCcw } from 'lucide-react';
+import { Check, Download, Image as ImageIcon, Link2, RotateCcw } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import ReportView from '@/advice/ReportView';
 import { captureEmail, decodeReport, encodeReport, reportUrl, savedEmail } from '@/advice/api';
 import { downloadReportPdf } from '@/advice/pdf';
+import { renderPreviewImage } from '@/advice/previewImage';
+import { previewPair } from '@/advice/adPreview';
 import { trackCustom, trackGa4 } from '@/lib/pixel';
 import type { Simulation } from '@/advice/types';
 
@@ -116,7 +118,15 @@ const AdviceReport = () => {
     if (!sim) return;
     const url = await reportUrl(sim);
     try {
+      // The preview is the part people actually pass around, so it goes with
+      // the link wherever the device can carry a file.
+      const image = await renderPreviewImage(sim).catch(() => null);
       if (navigator.share && /Mobi/i.test(navigator.userAgent)) {
+        const file = image ? new File([image], 'ad-preview.png', { type: 'image/png' }) : null;
+        if (file && navigator.canShare?.({ files: [file] })) {
+          await navigator.share({ title: 'My ADvice simulation', text: url, files: [file] });
+          return;
+        }
         await navigator.share({ title: 'My ADvice simulation', url });
         return;
       }
@@ -175,6 +185,23 @@ const AdviceReport = () => {
                 {copied ? <Check className="h-4 w-4 text-[#248a3d]" /> : <Link2 className="h-4 w-4" />}
                 {copied ? 'Link copied' : 'Share report'}
               </button>
+              {previewPair(sim) && (
+                <button
+                  type="button"
+                  onClick={async () => {
+                    const blob = await renderPreviewImage(sim);
+                    if (!blob) return;
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = `${(sim.inputs.campaignName || 'ad-preview').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'ad-preview'}-preview.png`;
+                    a.click();
+                    URL.revokeObjectURL(a.href);
+                  }}
+                  className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30"
+                >
+                  <ImageIcon className="h-4 w-4" /> Save ad preview
+                </button>
+              )}
             </div>
 
             <div className="advice-noprint mt-10 rounded-[20px] bg-[#f5f5f7] p-8 text-center">

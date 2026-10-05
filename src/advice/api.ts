@@ -149,9 +149,11 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
     for (const run of chain) {
       try {
         const sim = await run(inputs);
-        // The creative is not part of the report, and a base64 image would
-        // blow up both localStorage and the share link.
-        delete sim.inputs.image;
+        // The creative stays on the live report so the ad preview can show it,
+        // but never reaches storage or a share link: a base64 image would blow
+        // up localStorage and bloat the URL, and the creative is the
+        // advertiser's, not something to pass around in a link.
+        sim.inputs.image = inputs.image;
         try {
           localStorage.setItem(RUNS_KEY, String(runCount() + 1));
         } catch {
@@ -185,10 +187,16 @@ export function readHistory(): Simulation[] {
   }
 }
 
+/** The report without the creative — everything that may be stored or shared. */
+const withoutImage = (sim: Simulation): Simulation => ({
+  ...sim,
+  inputs: { ...sim.inputs, image: undefined },
+});
+
 function saveToHistory(sim: Simulation) {
   try {
     const rest = readHistory().filter((s) => s.id !== sim.id);
-    localStorage.setItem(HISTORY_KEY, JSON.stringify([sim, ...rest].slice(0, 50)));
+    localStorage.setItem(HISTORY_KEY, JSON.stringify([withoutImage(sim), ...rest].slice(0, 50)));
   } catch {
     /* storage full or blocked — the report still works via its link */
   }
@@ -219,7 +227,7 @@ async function pipe(bytes: Uint8Array, stream: CompressionStream | Decompression
 }
 
 export async function encodeReport(sim: Simulation): Promise<string> {
-  const packed = await pipe(new TextEncoder().encode(JSON.stringify(sim)), new CompressionStream('deflate-raw'));
+  const packed = await pipe(new TextEncoder().encode(JSON.stringify(withoutImage(sim))), new CompressionStream('deflate-raw'));
   let s = '';
   for (let i = 0; i < packed.length; i += 0x8000) s += String.fromCharCode(...packed.subarray(i, i + 0x8000));
   return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
