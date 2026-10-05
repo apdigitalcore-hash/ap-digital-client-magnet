@@ -48,6 +48,7 @@ interface Inputs {
   industry: string;
   audience: string;
   channel: string;
+  objective: string;
   budget: number;
   currency: string;
   headline: string;
