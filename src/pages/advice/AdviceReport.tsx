@@ -24,6 +24,7 @@ const SaveCard = ({ sim }: { sim: Simulation }) => {
       trackGa4('report_email_saved', {
         channel: sim.inputs.channel,
         industry: sim.inputs.industry,
+        objective: sim.inputs.objective || 'Leads',
         budget: sim.inputs.budget,
       });
       setState('sent');

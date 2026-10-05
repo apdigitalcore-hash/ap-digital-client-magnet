@@ -205,6 +205,14 @@ Ground every number in industry benchmarks, and keep them internally consistent:
 - LinkedIn: CPM roughly $30-$80, CTR roughly 0.4-0.9%, CPC roughly $5-$12.
 Adjust for the industry, the audience's intent and the quality of the copy. clicks = budget / CPC; conversions = clicks x conversion rate; CPA = budget / conversions. Express ctr and conversionRate as percentage numbers, not fractions: 4.2 means 4.2%, never 0.042.  Give ROAS only when a revenue value can be reasonably inferred (ecommerce, priced products); otherwise return null. Ranges should be honest - wide when the input is thin.
 
+The campaign objective decides what a conversion IS, and the benchmarks above are landing-page conversion rates — they do not transfer across objectives. Use the objective given:
+- Leads: a form submission on a landing page. The benchmarks above apply as written.
+- Messages: a DM conversation opened in the platform's inbox. There is no landing page in the path, so friction is far lower and rates run roughly 3-4x a lead form's; the advertiser's cost per conversation is NOT a cost per customer, and many conversations never reply. Say so in the assumptions.
+- Calls: a phone call connected from the ad. Rates sit between a form and a message, and quality is higher but volume much lower. Call-only inventory is limited, so clicks should be conservative.
+- Sales: a completed purchase. Rates are well below lead rates (roughly a third), and ROAS is the number that matters — give it whenever a price can be inferred.
+- Website traffic: the click IS the outcome. Set conversionRate and conversions to a low: 0, high: 0 range and cpa to low: 0, high: 0, and state in the assumptions that no conversion step was modelled because the objective is traffic. Judge the campaign on CPC and clicks instead.
+- Brand awareness: same as Website traffic — no conversion step. Judge on CPM, reach and CTR, and say so.
+
 Score the creative (0-100 each) against direct-response frameworks: AIDA, PAS, the 4 U's (useful, urgent, unique, ultra-specific), specificity of the offer, proof, and a clear single CTA. The overall score weights headline and CTA most. Verdict: Strong >= 75, Needs Work 50-74, Weak < 50. Score "intent" only for Google Search Ads (how well the copy matches the likely search query); return null for other channels.
 
 Confidence: high only when product, audience, copy and a landing page are all specific; low when most inputs are vague.
@@ -313,6 +321,7 @@ export default async function handler(req: any, res: any) {
   const userPrompt = [
     `Current date: ${new Date().toISOString().slice(0, 10)}`,
     `Channel: ${inputs.channel}`,
+    `Campaign objective: ${inputs.objective || "Leads"}`,
     `Industry: ${inputs.industry}`,
     `Monthly budget: $${inputs.budget.toLocaleString("en-US")} ${inputs.currency}`,
     `Report every figure in ${inputs.currency}. Benchmarks below are USD — convert them to ${inputs.currency} before answering.`,

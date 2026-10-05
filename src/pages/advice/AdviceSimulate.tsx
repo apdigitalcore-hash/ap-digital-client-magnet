@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { AlertCircle, ArrowLeft, ArrowRight, Check, RotateCcw, Sparkles } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import { FREE_TOTAL, gateState, holdLead, readImageFile, rememberEmail, runSimulation } from '@/advice/api';
-import { CHANNELS, CURRENCIES, EMPTY_INPUTS, INDUSTRIES, type SimInputs } from '@/advice/types';
+import { CHANNELS, CURRENCIES, EMPTY_INPUTS, INDUSTRIES, OBJECTIVES, OBJECTIVES_BY_CHANNEL, type Objective, type SimInputs } from '@/advice/types';
 
 const STEPS = ['Your business', 'Channel & budget', 'Your ad'];
 
@@ -161,7 +161,10 @@ const AdviceSimulate = () => {
       if (!v.industry) return 'Pick an industry.';
       if (!v.audience.trim()) return 'Describe who you’re trying to reach.';
     }
-    if (s === 1 && !v.channel) return 'Pick an ad channel.';
+    if (s === 1) {
+      if (!v.channel) return 'Pick an ad channel.';
+      if (!v.objective) return 'Pick what you want the ads to produce.';
+    }
     if (s === 2 && !v.headline.trim() && !v.primaryText.trim()) return 'Add at least a headline or primary text.';
     return '';
   };
@@ -282,7 +285,16 @@ const AdviceSimulate = () => {
                         <button
                           type="button"
                           key={c}
-                          onClick={() => setV((p) => ({ ...p, channel: c }))}
+                          onClick={() => setV((p) => ({
+                            ...p,
+                            channel: c,
+                            // LinkedIn cannot be bought on Messages; keeping a
+                            // stale objective would send the model something
+                            // the channel does not offer.
+                            objective: OBJECTIVES_BY_CHANNEL[c].includes(p.objective as Objective)
+                              ? p.objective
+                              : OBJECTIVES_BY_CHANNEL[c][0],
+                          }))}
                           className={`rounded-xl border px-3 py-3 text-left text-sm transition-colors ${
                             v.channel === c ? 'border-[#1d1d1f] bg-black/[0.04] text-[#1d1d1f]' : 'border-black/[0.1] bg-[#f5f5f7] text-[#6e6e73] hover:border-black/30'
                           }`}
@@ -291,6 +303,26 @@ const AdviceSimulate = () => {
                         </button>
                       ))}
                     </div>
+                  </div>
+                  <div>
+                    <span className={label}>What do you want from it?</span>
+                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+                      {(v.channel ? OBJECTIVES_BY_CHANNEL[v.channel] : OBJECTIVES).map((o) => (
+                        <button
+                          type="button"
+                          key={o}
+                          onClick={() => setV((p) => ({ ...p, objective: o }))}
+                          className={`rounded-xl border px-3 py-3 text-left text-sm transition-colors ${
+                            v.objective === o ? 'border-[#1d1d1f] bg-black/[0.04] text-[#1d1d1f]' : 'border-black/[0.1] bg-[#f5f5f7] text-[#6e6e73] hover:border-black/30'
+                          }`}
+                        >
+                          {o}
+                        </button>
+                      ))}
+                    </div>
+                    <p className="mt-2 text-[13px] text-[#86868b]">
+                      This decides what a conversion means — a lead form, a DM, a phone call or a purchase.
+                    </p>
                   </div>
                   <div>
                     <div className="mb-3 flex items-baseline justify-between">

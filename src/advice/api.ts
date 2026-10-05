@@ -266,6 +266,7 @@ export async function captureEmail(
     // what they typed
     campaign: inputs?.campaignName || '(untitled)',
     channel: inputs?.channel ?? '',
+    objective: inputs?.objective || 'Leads',
     industry: inputs?.industry ?? '',
     budget: inputs ? `$${inputs.budget.toLocaleString()} ${inputs.currency ?? 'CAD'}/mo` : '',
     product: inputs?.product?.slice(0, 500) ?? '',

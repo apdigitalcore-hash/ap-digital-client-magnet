@@ -1,4 +1,4 @@
-import type { Range, Simulation } from './types';
+import { CONVERSION_NOUN, type Objective, type Range, type Simulation } from './types';
 
 /**
  * Builds the report as a real PDF file.
@@ -58,7 +58,7 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
   text(i.campaignName || 'Simulation report', 22, 'bold');
   y += 2;
   text(
-    `${i.channel} · ${i.industry} · ${money(i.budget)} ${i.currency ?? 'CAD'}/month · ${new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}`,
+    `${i.channel} · ${i.objective || 'Leads'} · ${i.industry} · ${money(i.budget)} ${i.currency ?? 'CAD'}/month · ${new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}`,
     9, 'normal', '#6e6e73',
   );
   y += 10;
@@ -67,13 +67,20 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
 
   // ── predictions, two columns of label/value ───────────────────────────────
   heading('Performance predictions');
+  // A traffic or awareness campaign has no conversion step after the click,
+  // so those rows are omitted rather than printed as zeroes.
+  const noun = CONVERSION_NOUN[(i.objective || 'Leads') as Objective];
   const metrics: [string, string][] = [
     ['Click-through rate', span(p.ctr, pct)],
     ['Cost per click', span(p.cpc, money)],
     ['Monthly clicks', span(p.clicks, int)],
-    ['Conversion rate', span(p.conversionRate, pct)],
-    ['Conversions / month', span(p.conversions, int)],
-    ['Cost per acquisition', span(p.cpa, money)],
+    ...(noun
+      ? ([
+          ['Conversion rate', span(p.conversionRate, pct)],
+          [`${noun.many.replace(/^./, (c) => c.toUpperCase())} / month`, span(p.conversions, int)],
+          [noun.cost, span(p.cpa, money)],
+        ] as [string, string][])
+      : ([['Objective', `${i.objective || 'Leads'} — no conversion step modelled`]] as [string, string][])),
     ['ROAS', p.roas ? span(p.roas, (n) => `${n.toFixed(1)}x`) : '—'],
     ['Confidence', p.confidence],
     ['Currency', i.currency ?? 'CAD'],

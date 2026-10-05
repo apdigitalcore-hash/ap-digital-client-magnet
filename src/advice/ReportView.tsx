@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { CONVERSION_NOUN, type Objective } from '@/advice/types';
 import { motion } from 'framer-motion';
 import { AlertTriangle, CalendarClock, Copy, Swords, TrendingUp, Wallet } from 'lucide-react';
 import type { Level, Range, Scored, Simulation } from './types';
@@ -115,6 +116,7 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
   const cur = i.currency ?? 'CAD';
   const money = (n: number) => `$${fmt(n)}`;
   const p = r.predictions;
+  const noun = CONVERSION_NOUN[(i.objective || 'Leads') as Objective];
 
   return (
     <div className="space-y-12">
@@ -123,7 +125,7 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
           ADvice by AP Digital Co.
         </p>
         <p className="text-[12px] text-[#6e6e73]">
-          {i.channel} · {i.industry} · {money(i.budget)} {cur}/month · {new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}
+          {i.channel} · {i.objective || 'Leads'} · {i.industry} · {money(i.budget)} {cur}/month · {new Date(sim.createdAt).toLocaleDateString('en-US', { dateStyle: 'medium' })}
         </p>
         <h1 className="mt-2 text-3xl font-semibold tracking-[-0.035em] text-[#1d1d1f] sm:text-4xl">{i.campaignName || 'Simulation report'}</h1>
         <p className="mt-4 max-w-3xl text-[#6e6e73]">{r.summary}</p>
@@ -134,9 +136,18 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
           <Metric label="Click-through rate" value={span(p.ctr, pct)} />
           <Metric label="Cost per click" value={span(p.cpc, money)} />
           <Metric label="Monthly clicks" value={span(p.clicks, int)} />
-          <Metric label="Conversion rate" value={span(p.conversionRate, pct)} />
-          <Metric label="Conversions / month" value={span(p.conversions, int)} />
-          <Metric label="Cost per acquisition" value={span(p.cpa, money)} />
+          {/* A traffic or awareness campaign has no conversion step after the
+              click, so the slots are left out rather than filled with zeroes
+              that read as a prediction of failure. */}
+          {noun ? (
+            <>
+              <Metric label="Conversion rate" value={span(p.conversionRate, pct)} />
+              <Metric label={`${noun.many.replace(/^./, (c) => c.toUpperCase())} / month`} value={span(p.conversions, int)} />
+              <Metric label={noun.cost} value={span(p.cpa, money)} />
+            </>
+          ) : (
+            <Metric label="Objective" value={i.objective || 'Leads'} sub="No conversion step after the click" />
+          )}
           <Metric label="ROAS" value={p.roas ? span(p.roas, (n) => `${n.toFixed(1)}x`) : '—'} sub={p.roas ? undefined : 'Needs a known order value'} />
           <Metric label="Budget" value={money(i.budget)} sub={`${cur} per month`} />
         </div>
