@@ -144,6 +144,9 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
   text(`Headline: ${r.recommendations.headline}`, 9, 'normal', '#1d1d1f', 10);
   text(`Primary text: ${r.recommendations.primaryText}`, 9, 'normal', '#1d1d1f', 10);
   text(`Description: ${r.recommendations.description}`, 9, 'normal', '#1d1d1f', 10);
+  y += 4;
+  text('Rewritten using only the claims you provided. Anything stronger needs to be something you can evidence.', 8, 'normal', '#86868b', 10);
+  if (r.recommendations.claimNotice) text(r.recommendations.claimNotice, 8, 'normal', '#b25000', 10);
   y += 6;
   text('Budget', 10, 'bold');
   text(r.recommendations.budget, 9, 'normal', '#6e6e73', 10);

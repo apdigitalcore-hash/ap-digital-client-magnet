@@ -232,6 +232,17 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
           <div className="md:col-span-2"><CopyBlock label="Primary text" text={r.recommendations.primaryText} /></div>
         </div>
 
+        {/* The rewrite is the most copied part of the report, so the limit on
+            what it is allowed to assert travels with it. */}
+        <p className="mt-3 text-[13px] leading-relaxed text-[#86868b]">
+          Rewritten using only the claims you provided. Anything stronger needs to be something you can evidence.
+        </p>
+        {r.recommendations.claimNotice && (
+          <p className="mt-2 rounded-xl bg-[#fff4e5] px-4 py-3 text-[13px] leading-relaxed text-[#b25000]">
+            {r.recommendations.claimNotice}
+          </p>
+        )}
+
         <div className="mt-3 grid gap-3 md:grid-cols-2">
           <Card>
             <div className="flex items-center gap-2"><TrendingUp className="h-4 w-4 text-[#1d1d1f]" /><h3 className="text-sm font-medium">Budget advice</h3></div>

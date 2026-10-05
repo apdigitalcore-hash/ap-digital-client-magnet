@@ -100,6 +100,11 @@ export interface SimResults {
     budget: string;
     audience: string[];
     landingPage: string | null;
+    /**
+     * Set only when the claim guard had to fall back to the advertiser's own
+     * wording because the rewrite kept inventing claims they never supplied.
+     */
+    claimNotice?: string;
   };
   competitors: { advertisers: Range; avgCpc: Range; patterns: string[] };
 }

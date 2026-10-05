@@ -195,6 +195,49 @@ const RESPONSE_SCHEMA = {
   required: ["summary", "predictions", "creative", "risk", "recommendations", "competitors"],
 };
 
+// ── Claim guard ────────────────────────────────────────────────────────────
+/**
+ * Catches claims the rewrite invented.
+ *
+ * The prompt forbids them, but a prompt is a request, not a guarantee, and the
+ * cost of one escaping is an advertiser running "Your child's check-up could
+ * be FREE" on the strength of accepting a plan that is income tested. So the
+ * rewrite is checked against what the advertiser actually wrote: a banned
+ * phrase is only allowed through if it already appears in their own input.
+ */
+export const CLAIM_PATTERNS: [RegExp, string][] = [
+  // Health claims first: "pain-free" is a clinical promise, not a price, and
+  // the free pattern below would otherwise claim it.
+  [/\b(pain[- ]free|cure[sd]?\b|heal(s|ed|ing)?\b|clinically proven|doctor recommended|safe for)/i, "a health outcome claim"],
+  // Not preceded by a hyphen or word character, so "hassle-free" and
+  // "risk-free" fall to the guarantee and health rules instead of this one.
+  [/(?<![\w-])(free|no cost|at no charge|zero cost)\b|\$0\b/i, "a free or no-cost claim"],
+  [/\b(best|top|#\s?1|number one|leading|finest|premier|most trusted|highest[- ]rated|award[- ]winning|voted)\b/i, "a superlative or ranking"],
+  [/\bguarantee(d|s)?\b|\bpromise(d|s)?\b|\brisk[- ]free\b/i, "a guarantee"],
+  [/\$\s?\d|\b\d+\s?% ?(off|discount)\b|\bsave \d/i, "a price or discount"],
+  [/\b\d+\s?%|\b\d+\s?(x|times)\b|\b\d{3,}\+?\s+(patients|clients|customers|families|reviews)\b/i, "a statistic"],
+];
+
+export function findInventedClaims(
+  rewrite: { headline?: string; primaryText?: string; description?: string },
+  supplied: string,
+): string[] {
+  const hay = supplied.toLowerCase();
+  const found: string[] = [];
+  for (const [field, value] of Object.entries(rewrite)) {
+    if (typeof value !== "string" || !value) continue;
+    for (const [re, label] of CLAIM_PATTERNS) {
+      const m = value.match(re);
+      // Already in what they gave us: theirs to make, not ours.
+      if (m && !hay.includes(m[0].toLowerCase())) {
+        found.push(`${field}: ${label} ("${m[0]}")`);
+        break;
+      }
+    }
+  }
+  return found;
+}
+
 const SYSTEM_PROMPT = `You are a senior performance marketer with 10+ years running paid campaigns across Google Ads, Meta, TikTok and LinkedIn for ecommerce, SaaS, local service and B2B brands. You are powering ADvice, a free campaign simulator that predicts performance before a marketer spends money.
 
 Ground every number in industry benchmarks, and keep them internally consistent:
@@ -218,6 +261,16 @@ Score the creative (0-100 each) against direct-response frameworks: AIDA, PAS, t
 Confidence: high only when product, audience, copy and a landing page are all specific; low when most inputs are vague.
 
 Seasonality: judge against the current date given below.
+
+CLAIM INTEGRITY - this constraint overrides persuasiveness, and a weaker but defensible ad is the correct answer.
+The rewrite may restate, sharpen, condense or reorder what the advertiser gave you. It must not introduce a fact they did not supply. Specifically, never add:
+- a price, discount, or any "free" / "no cost" / "$0" claim that was not in their input;
+- a superlative or ranking ("best", "top", "#1", "leading", "award-winning", "most trusted");
+- a guarantee, warranty or promise of a result;
+- a medical, dental, health, financial or legal outcome claim;
+- a statistic, rating, review count, years in business, or number of customers.
+Treat coverage, funding and insurance programmes with particular care: "accepts the Canadian Dental Care Plan" means the practice bills that plan, it does NOT mean treatment is free. These programmes are income tested and cover only some procedures, so never convert "accepts X" into "free" or "covered". Health professions are also regulated: superlatives about a clinic or practitioner breach provincial advertising rules in Canada.
+If their input does not support a stronger hook, say so in the improvements - name the single piece of evidence that would unlock a stronger ad (a price, a wait time, a named credential) and ask them for it. Do not manufacture it.
 
 Recommendations must be specific to THIS product, audience and copy - never generic advice like "test more" or "know your audience". Each improvement names exactly what to change. Rewrite the headline, primary text and description ready to paste, within the channel's character limits (Google Search headlines 30 chars, descriptions 90 chars). Budget advice must name amounts or percentages. If a landing page was provided, give specific feedback on message match, the offer above the fold, and friction; otherwise return null for landingPage.
 
@@ -342,6 +395,9 @@ export default async function handler(req: any, res: any) {
 
   let results;
   let lastError = "";
+  // Set when the claim guard has already asked for one corrective rewrite.
+  let corrected = false;
+  let correction = "";
   let busy = false;
   // Two passes: a transient upstream failure on the first pass (Gemini returns
   // 500s under load) should not cost the user their simulation.
@@ -354,7 +410,7 @@ export default async function handler(req: any, res: any) {
           headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
           signal: AbortSignal.timeout(55_000),
           body: JSON.stringify({
-            systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+            systemInstruction: { parts: [{ text: SYSTEM_PROMPT + correction }] },
             contents: [{ role: "user", parts: image
               ? [{ text: userPrompt }, { inlineData: { mimeType: image.mime, data: image.data } }]
               : [{ text: userPrompt }] }],
@@ -389,6 +445,33 @@ export default async function handler(req: any, res: any) {
         continue;
       }
       results = normalise(JSON.parse(text));
+
+      // Everything the advertiser actually told us. A banned phrase that
+      // appears here is theirs to make; one that does not is invented.
+      const supplied = [
+        inputs.product, inputs.audience, inputs.headline, inputs.primaryText,
+        inputs.description, productText, landingText,
+      ].filter(Boolean).join(" ");
+      const invented = findInventedClaims(results.recommendations ?? {}, supplied);
+      if (invented.length && !corrected) {
+        // One corrective pass. Naming the specific violation works far better
+        // than repeating the general rule, and it costs a single call.
+        corrected = true;
+        correction = `\n\nYour previous answer invented claims the advertiser never supplied: ${invented.join("; ")}. Rewrite the ad using only what they gave you. Do not substitute a different unsupported claim. If there is no strong hook in their input, write a plainer ad and say in the improvements what evidence would unlock a stronger one.`;
+        results = undefined;
+        continue;
+      }
+      if (invented.length) {
+        // Still inventing after a correction: keep their own words rather than
+        // ship a claim they cannot stand behind.
+        results.recommendations = {
+          ...results.recommendations,
+          headline: inputs.headline || results.recommendations.headline,
+          primaryText: inputs.primaryText || results.recommendations.primaryText,
+          description: inputs.description || results.recommendations.description,
+          claimNotice: "The suggested rewrite made claims your input did not support, so your original wording is shown instead. Give ADvice a fact it can use — a price, a wait time, a credential — and run it again.",
+        };
+      }
       break;
     } catch (e) {
       lastError = `${model}: ${e instanceof Error ? e.message : String(e)}`;
