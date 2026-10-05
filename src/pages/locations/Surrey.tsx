@@ -126,7 +126,7 @@ const Surrey = () => (
           + Social Media Management
         </>}
         intro={<>AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. When someone searches "marketing agency near me" in Surrey, we put you in front of them. Month-to-month. Managed personally by Arjun Sharma.</>}
-        photo={{ base: '/surrey-night', position: '72% bottom', wideWidth: 1672 }}
+        photo={{ base: '/surrey-night', position: '72% bottom', wideWidth: 1008 }}
         neighbourhoods={['Newton', 'Guildford', 'South Surrey', 'Cloverdale']}
       />
 

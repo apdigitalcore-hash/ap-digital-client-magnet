@@ -106,7 +106,7 @@ const CityHero = ({
           {...{ fetchpriority: 'high' }}
           decoding="async"
           style={photo.position ? ({ '--city-pos': photo.position } as React.CSSProperties) : undefined}
-          className="pointer-events-none relative block h-[90vw] w-full select-none object-cover object-bottom [mask-image:linear-gradient(to_bottom,transparent_0%,#000_20%)] sm:h-[60vw] lg:absolute lg:inset-y-0 lg:right-0 lg:left-[max(30%,560px)] lg:h-full lg:w-auto lg:object-[var(--city-pos,78%_bottom)] lg:[mask-image:linear-gradient(to_right,transparent_0%,#000_30%)]"
+          className="pointer-events-none relative block h-[90vw] w-full select-none object-cover object-bottom [mask-repeat:no-repeat] [mask-size:100%_100%] [mask-image:linear-gradient(to_bottom,transparent_0%,#000_20%)] sm:h-[60vw] lg:absolute lg:inset-y-0 lg:right-0 lg:left-auto lg:h-full lg:w-[min(70%,calc(100%-560px))] lg:object-[var(--city-pos,78%_bottom)] lg:[mask-image:linear-gradient(to_right,transparent_0%,#000_30%)]"
         />
       </picture>
     ) : (
