@@ -42,6 +42,7 @@ interface Inputs {
   industry: string;
   audience: string;
   channel: string;
+  objective: string;
   budget: number;
   currency: string;
   headline: string;
@@ -58,6 +59,7 @@ function readInputs(b: Record<string, unknown>): Inputs | string {
     industry: str(b.industry, 40),
     audience: str(b.audience, 1500),
     channel: str(b.channel, 40),
+    objective: str(b.objective, 40),
     budget: Math.round(Number(b.budget)),
     currency: CURRENCIES.includes(str(b.currency, 8)) ? str(b.currency, 8) : "CAD",
     headline: str(b.headline, 300),
@@ -90,6 +92,13 @@ function readInputs(b: Record<string, unknown>): Inputs | string {
 export type PageFetch =
   | { status: "ok"; text: string; handoff: string[] }
   | { status: "blocked" | "empty" | "parked" | "unreachable"; text: null; handoff: string[] };
+
+const LANDING_FAILURE: Record<string, string> = {
+  blocked: "BLOCKED OUR REQUEST (it refuses automated visits)",
+  empty: "RETURNED ALMOST NO READABLE TEXT",
+  parked: "IS A PARKED DOMAIN, not a real page",
+  unreachable: "COULD NOT BE REACHED",
+};
 
 /** Scheduling and booking systems that take the conversion off the advertiser's domain. */
 const BOOKING_HOSTS =
