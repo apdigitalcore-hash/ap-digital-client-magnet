@@ -523,6 +523,9 @@ Deno.serve(async (req) => {
   let corrected = false;
   let correction = "";
   let busy = false;
+  // A daily quota being spent is not the same as a momentary overload, and
+  // "try again in a minute" is false when the answer is hours.
+  let quota = false;
   // Retry only transient failures. Rotate models between attempts, then use
   // exponential backoff with jitter so simultaneous visitors do not retry in
   // lockstep during an upstream outage.
@@ -558,6 +561,7 @@ Deno.serve(async (req) => {
         // present, otherwise use bounded exponential backoff with jitter.
         if (res.status === 429 || res.status >= 500) {
           busy = true;
+          if (res.status === 429 && /free_tier|quota|RESOURCE_EXHAUSTED/i.test(body)) quota = true;
           if (attempt < MAX_AI_ATTEMPTS - 1) {
             const retryAfter = Number(res.headers.get("retry-after"));
             const exponential = 1_500 * 2 ** attempt;
@@ -620,8 +624,12 @@ Deno.serve(async (req) => {
     // "busy" means the model provider pushed back, which a retry does fix.
     // Anything else is our own failure, and telling someone to retry that is
     // how an outage becomes hours of people retrying into the same crash.
-    const error = busy ? "The AI is busy right now. Try again in a minute." : "The simulation failed. Please try again.";
-    return json({ error, kind: busy ? "busy" : "server", detail: lastError }, 502);
+    const error = quota
+      ? "ADvice has hit its limit with the AI provider for now. This is on us — it should be back within the hour."
+      : busy
+        ? "The AI is busy right now. Try again in a minute."
+        : "The simulation failed. Please try again.";
+    return json({ error, kind: quota ? "quota" : busy ? "busy" : "server", detail: lastError }, 502);
   }
 
   return json({

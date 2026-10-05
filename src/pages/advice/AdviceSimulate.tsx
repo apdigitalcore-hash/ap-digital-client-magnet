@@ -132,7 +132,8 @@ const FailureScreen = ({
   inputs: SimInputs;
   onRetry: () => void;
 }) => {
-  const ours = kind === 'server' || kind === 'network' || kind === 'config';
+  // A spent quota is our bill, not their problem, and retrying cannot fix it.
+  const ours = kind === 'server' || kind === 'network' || kind === 'config' || kind === 'quota';
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
 
@@ -145,9 +146,11 @@ const FailureScreen = ({
       <p className="mt-3 text-[#6e6e73]">{message}</p>
       <p className="mt-2 text-[15px] text-[#86868b]">
         Your answers are still here — nothing was lost.{' '}
-        {ours
-          ? 'This one is on us, not on you, and it has been logged. Trying again may hit the same problem.'
-          : 'This is usually a busy moment on the AI service, and a second attempt normally works.'}
+        {kind === 'quota'
+          ? 'This one is on us — we have hit our limit with the AI provider. It has been logged and should clear within the hour.'
+          : ours
+            ? 'This one is on us, not on you, and it has been logged. Trying again may hit the same problem.'
+            : 'This is usually a busy moment on the AI service, and a second attempt normally works.'}
       </p>
 
       <div className="mt-8 flex flex-col items-center gap-3">

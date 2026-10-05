@@ -112,7 +112,7 @@ export function readImageFile(file: File): Promise<{ data: string; mime: string 
  * busy, try again" — which during an outage told everyone to retry into the
  * same crash for hours.
  */
-export type FailureKind = 'busy' | 'rate' | 'server' | 'network' | 'input' | 'config';
+export type FailureKind = 'busy' | 'quota' | 'rate' | 'server' | 'network' | 'input' | 'config';
 
 export class SimulationError extends Error {
   kind: FailureKind;
@@ -123,7 +123,7 @@ export class SimulationError extends Error {
 }
 
 const kindFor = (status: number, given?: string): FailureKind => {
-  if (given === 'busy' || given === 'rate' || given === 'server' || given === 'input' || given === 'config') return given;
+  if (given === 'busy' || given === 'quota' || given === 'rate' || given === 'server' || given === 'input' || given === 'config') return given;
   if (status === 429) return 'rate';
   if (status >= 500) return 'server';
   if (status >= 400) return 'input';
@@ -207,7 +207,7 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
         // A rate limit, a bad input or a missing key is the final answer;
         // retrying it only wastes the visitor's time. Matching on the kind
         // rather than the wording, which used to drift out of sync.
-        if (e instanceof SimulationError && ['rate', 'input', 'config'].includes(e.kind)) throw e;
+        if (e instanceof SimulationError && ['rate', 'quota', 'input', 'config'].includes(e.kind)) throw e;
       }
     }
     if (attempt < ATTEMPTS - 1) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * (attempt + 1)));

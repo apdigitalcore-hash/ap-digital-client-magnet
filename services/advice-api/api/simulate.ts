@@ -615,6 +615,9 @@ async function run(req: any, res: any) {
   let corrected = false;
   let correction = "";
   let busy = false;
+  // A daily quota being spent is not the same as a momentary overload, and
+  // "try again in a minute" is false when the answer is hours.
+  let quota = false;
   // Two passes: a transient upstream failure on the first pass (Gemini returns
   // 500s under load) should not cost the user their simulation.
   for (const model of [...MODELS, ...MODELS]) {
@@ -648,6 +651,7 @@ async function run(req: any, res: any) {
         // try the next model instead of failing the visitor.
         if (res.status === 429 || res.status >= 500) {
           busy = true;
+          if (res.status === 429 && /free_tier|quota|RESOURCE_EXHAUSTED/i.test(body)) quota = true;
           await new Promise((r) => setTimeout(r, 600));
           continue;
         }
@@ -702,15 +706,19 @@ async function run(req: any, res: any) {
     // "busy" means the model provider pushed back, which a retry does fix.
     // Anything else is our own failure, and telling someone to retry that is
     // how an outage becomes hours of people retrying into the same crash.
-    const error = busy ? "The AI is busy right now. Try again in a minute." : "The simulation failed. Please try again.";
+    const error = quota
+      ? "ADvice has hit its limit with the AI provider for now. This is on us — it should be back within the hour."
+      : busy
+        ? "The AI is busy right now. Try again in a minute."
+        : "The simulation failed. Please try again.";
     await recordFailure(502, lastError || "no model returned a result", {
-      kind: busy ? "busy" : "server",
+      kind: quota ? "quota" : busy ? "busy" : "server",
       channel: inputs.channel,
       industry: inputs.industry,
       objective: inputs.objective,
       landing: landing?.status ?? "none",
     });
-    return json({ error, kind: busy ? "busy" : "server", detail: lastError }, 502);
+    return json({ error, kind: quota ? "quota" : busy ? "busy" : "server", detail: lastError }, 502);
   }
 
   return json({
