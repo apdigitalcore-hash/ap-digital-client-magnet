@@ -13,6 +13,12 @@ export type CityPhoto = {
   base: string;
   /** Desktop focal point, e.g. '78% bottom'. Defaults to centre-bottom. */
   position?: string;
+  /**
+   * True pixel width of the -2260 file. Generated sources are often narrower
+   * than that, and a width descriptor that overstates the file makes the
+   * browser pick it when it is not actually big enough. Defaults to 2260.
+   */
+  wideWidth?: number;
 };
 
 type Props = {
@@ -88,7 +94,7 @@ const CityHero = ({
 
     {photo ? (
       <picture>
-        <source media="(min-width: 1024px)" type="image/webp" srcSet={`${photo.base}-1130.webp 1130w, ${photo.base}-2260.webp 2260w`} sizes="70vw" />
+        <source media="(min-width: 1024px)" type="image/webp" srcSet={`${photo.base}-1130.webp 1130w, ${photo.base}-2260.webp ${photo.wideWidth ?? 2260}w`} sizes="70vw" />
         <source media="(min-width: 1024px)" srcSet={`${photo.base}-2260.jpg`} />
         <source type="image/webp" srcSet={`${photo.base}-m750.webp`} />
         <img
