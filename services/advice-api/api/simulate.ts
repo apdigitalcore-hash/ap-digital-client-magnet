@@ -417,7 +417,16 @@ async function recordFailure(status: number, reason: string, context: Record<str
   try {
     await fetch("https://formsubmit.co/ajax/apdigital.core@gmail.com", {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        // FormSubmit refuses a request with no Origin or Referer — "Make sure
+        // you open this page through a web server". A serverless fetch sends
+        // neither, so without these the alert silently never arrives, which
+        // is exactly the failure this alert exists to report.
+        Origin: "https://ap-digital.ca",
+        Referer: "https://ap-digital.ca/advice",
+      },
       body: JSON.stringify(body),
       signal: AbortSignal.timeout(5000),
     });
@@ -662,6 +671,28 @@ async function run(req: any, res: any) {
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
     return res.end();
+  }
+
+  // GET lists the model names this key can actually call. The free tier
+  // meters each name separately, so the usable list IS the daily capacity,
+  // and guessing names then redeploying to find out is a slow way to learn
+  // it. ListModels does not consume generateContent quota, and model names
+  // are not sensitive.
+  if (req.method === "GET") {
+    if (!GEMINI_API_KEY) return json({ error: "Not configured." }, 500);
+    try {
+      const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", {
+        headers: { "x-goog-api-key": GEMINI_API_KEY },
+        signal: AbortSignal.timeout(10_000),
+      });
+      const d = await r.json();
+      const usable = (d?.models ?? [])
+        .filter((m: any) => (m.supportedGenerationMethods ?? []).includes("generateContent"))
+        .map((m: any) => String(m.name).replace(/^models\//, ""));
+      return json({ configured: MODELS, usable });
+    } catch (e) {
+      return json({ error: e instanceof Error ? e.message : String(e) }, 502);
+    }
   }
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
   if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet.", kind: "config" }, 500);
