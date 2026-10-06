@@ -7,7 +7,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // single hard-coded id. GEMINI_MODEL, when set, is tried first.
 // Each name is metered separately by the free tier — 20 a day each — so the
 // list is also the daily capacity. Order is cheapest-to-best-known-good.
-const MODELS = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
+const MODELS = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-flash-latest", "gemini-3.5-flash-lite"]
   .filter(Boolean) as string[];
 const ALLOWED = (process.env.ALLOWED_ORIGINS ?? "https://ap-digital.ca,https://www.ap-digital.ca")
   .split(",").map((s) => s.trim()).filter(Boolean);
@@ -779,6 +779,14 @@ async function run(req: any, res: any) {
         // must not stop us reporting quota truthfully below.
         if (res.status === 404 || res.status === 400) {
           retired.add(model);
+          // Google names the replacement in the message: "Please update your
+          // code to use models/X". Following it keeps the tool working when a
+          // name is retired, instead of needing a deploy to find out.
+          const suggested = body.match(/use models\/([a-z0-9.\-]+)/i)?.[1];
+          if (suggested && !retired.has(suggested) && !exhausted.has(suggested) && !queue.includes(suggested)) {
+            console.log(JSON.stringify({ event: "model_retired", model, following: suggested }));
+            queue.push(suggested);
+          }
           continue;
         }
         // Quota (429) and overload (5xx) are per-model — back off briefly and
