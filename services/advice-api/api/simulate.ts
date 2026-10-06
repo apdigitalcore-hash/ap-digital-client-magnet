@@ -7,10 +7,33 @@
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // Models are tried in order; Google retires names over time, so a list beats a
 // single hard-coded id. GEMINI_MODEL, when set, is tried first.
-// Each name is metered separately by the free tier — 20 a day each — so the
-// list is also the daily capacity. Order is cheapest-to-best-known-good.
-const MODELS = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-flash-latest", "gemini-3.5-flash-lite"]
-  .filter(Boolean) as string[];
+/**
+ * The free tier meters each model NAME separately — 20 generateContent calls
+ * a day each — so this list is the tool's daily capacity, not just a fallback
+ * chain. Seven distinct models is roughly 140 calls a day.
+ *
+ * Every name here was confirmed callable by this key via GET on this endpoint,
+ * which is also how to re-check it when Google retires one. Aliases are
+ * avoided in the body of the list because they share a bucket with whatever
+ * they resolve to: gemini-flash-latest IS gemini-3.8-flash, so listing both
+ * would spend an attempt discovering the same exhausted quota twice. It sits
+ * last only as a safety net for the day every explicit name is retired.
+ *
+ * Ordered strongest first; the lite models are weaker report writers and are
+ * there to keep the tool alive at the end of a heavy day rather than to be
+ * reached for.
+ */
+const MODELS = [
+  process.env.GEMINI_MODEL,
+  "gemini-2.5-flash",
+  "gemini-3.8-flash",
+  "gemini-3.7-flash",
+  "gemini-3.6-flash",
+  "gemini-3.5-flash",
+  "gemini-3.5-flash-lite",
+  "gemini-3.1-flash-lite",
+  "gemini-flash-latest",
+].filter(Boolean) as string[];
 const ALLOWED = (process.env.ALLOWED_ORIGINS ?? "https://ap-digital.ca,https://www.ap-digital.ca")
   .split(",").map((s) => s.trim()).filter(Boolean);
 const PER_IP_PER_HOUR = 8;
@@ -451,7 +474,16 @@ async function recordFailure(status: number, reason: string, context: Record<str
  * provider's own error ever reaching a visitor.
  */
 const PER_PERSON_PER_DAY = 3;
-const DAILY_CEILING = 16;
+/**
+ * Simulations a day, for everyone together.
+ *
+ * 16 was set when the whole tool looked like it had 20 model calls. Metering
+ * turned out to be per model name, so the real budget is nearer 140, and a
+ * typical simulation spends one call (two only when the claim guard fires).
+ * 50 keeps a wide margin — enough that a bad day is visible in the logs long
+ * before anyone meets a wall.
+ */
+const DAILY_CEILING = 50;
 
 const SUPABASE_URL = process.env.SUPABASE_URL ?? "";
 // Service role, deliberately — never the publishable key. That key ships in
