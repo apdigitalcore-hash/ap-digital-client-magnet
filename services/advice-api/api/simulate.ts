@@ -1,8 +1,8 @@
 // ADvice — Vercel serverless function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
 // Env: GEMINI_API_KEY (required), GEMINI_MODEL (optional), ALLOWED_ORIGINS (optional, comma-separated),
-//      SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (required for the daily limits;
-//      must be the service role, never the publishable key).
+//      ADVICE_BUDGET_URL + ADVICE_BUDGET_SECRET (required for the daily limits —
+//      the Supabase edge function that owns the counter, and a shared secret).
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // Models are tried in order; Google retires names over time, so a list beats a
@@ -518,11 +518,13 @@ const PER_PERSON_PER_DAY = 3;
  */
 const DAILY_CEILING = 50;
 
-const SUPABASE_URL = process.env.SUPABASE_URL ?? "";
-// Service role, deliberately — never the publishable key. That key ships in
-// the client bundle, so anything it can call, a visitor can call, and
-// advice_refund would then be an unlimited supply of simulations.
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+// The counter lives behind a Supabase edge function rather than being spoken
+// to directly. Supabase hands that function its own service role key, so the
+// key that bypasses every row-level security rule never leaves the platform
+// that issued it. What travels here instead is a shared secret: if it leaks,
+// rotate it, and nothing else is exposed.
+const BUDGET_URL = process.env.ADVICE_BUDGET_URL ?? "";
+const BUDGET_SECRET = process.env.ADVICE_BUDGET_SECRET ?? "";
 
 // A single shape rather than a discriminated union: this project compiles
 // with strictNullChecks off, where `if (!budget.allowed)` does not narrow a
@@ -541,41 +543,36 @@ async function hashKey(value: string): Promise<string> {
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-async function rpc(fn: string, body: Record<string, unknown>): Promise<any> {
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
+async function budget(action: string, body: Record<string, unknown>): Promise<any> {
+  const res = await fetch(BUDGET_URL, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      apikey: SUPABASE_KEY,
-      Authorization: `Bearer ${SUPABASE_KEY}`,
-    },
-    body: JSON.stringify(body),
+    headers: { "Content-Type": "application/json", "x-advice-secret": BUDGET_SECRET },
+    body: JSON.stringify({ action, ...body }),
     // Short on purpose. The counter is a gate, not the work, and it fails
-    // open — so a slow one must not add seconds to every simulation. From the
-    // function's region this round trip is tens of milliseconds.
+    // open — so a slow one must not add seconds to every simulation.
     signal: AbortSignal.timeout(2500),
   });
-  if (!res.ok) throw new Error(`${fn}: ${res.status} ${(await res.text()).slice(0, 200)}`);
+  if (!res.ok) throw new Error(`${action}: ${res.status} ${(await res.text()).slice(0, 200)}`);
   return res.json();
 }
 
 async function takeBudget(email: string, ip: string): Promise<Budget> {
-  if (!SUPABASE_URL || !SUPABASE_KEY) {
+  if (!BUDGET_URL || !BUDGET_SECRET) {
     // Without the shared counter there is no global ceiling — only the
     // per-instance limiter below, which a spread of traffic walks straight
     // past. Loud, because silently unprotected is the dangerous state.
     console.error(JSON.stringify({
       event: "budget_store_missing",
-      detail: "SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set on this deployment; the daily ceiling is NOT enforced.",
+      detail: "ADVICE_BUDGET_URL / ADVICE_BUDGET_SECRET are not set on this deployment; the daily ceiling is NOT enforced.",
     }));
     return { allowed: true, globalUsed: -1, personUsed: -1 };
   }
   try {
-    const r = await rpc("advice_consume", {
-      p_person_key: email ? await hashKey(email) : "",
-      p_ip_key: await hashKey(ip),
-      p_person_limit: PER_PERSON_PER_DAY,
-      p_global_limit: DAILY_CEILING,
+    const r = await budget("consume", {
+      personKey: email ? await hashKey(email) : "",
+      ipKey: await hashKey(ip),
+      personLimit: PER_PERSON_PER_DAY,
+      globalLimit: DAILY_CEILING,
     });
     if (r?.allowed) return { allowed: true, globalUsed: r.global_used ?? -1, personUsed: r.person_used ?? -1 };
     return { allowed: false, reason: r?.reason === "person" ? "person" : "global", globalUsed: r?.global_used, personUsed: r?.person_used };
@@ -589,11 +586,21 @@ async function takeBudget(email: string, ip: string): Promise<Budget> {
 
 /** Hands a slot back when the simulation never actually ran. */
 async function refundBudget(email: string, ip: string) {
-  if (!SUPABASE_URL || !SUPABASE_KEY) return;
+  if (!BUDGET_URL || !BUDGET_SECRET) return;
   try {
-    await rpc("advice_refund", { p_person_key: email ? await hashKey(email) : "", p_ip_key: await hashKey(ip) });
+    await budget("refund", { personKey: email ? await hashKey(email) : "", ipKey: await hashKey(ip) });
   } catch {
     /* a refund that fails costs one slot, not the request */
+  }
+}
+
+/** Records what was simulated. Best effort, never blocking. */
+async function recordRun(row: Record<string, unknown>) {
+  if (!BUDGET_URL || !BUDGET_SECRET) return;
+  try {
+    await budget("record", row);
+  } catch (e) {
+    console.error(JSON.stringify({ event: "record_failed", detail: e instanceof Error ? e.message : String(e) }));
   }
 }
 
@@ -789,16 +796,16 @@ async function run(req: any, res: any) {
   // The budget is taken before anything expensive happens, and handed back if
   // the simulation never actually runs.
   const email = str(body.email, 200);
-  const budget = await takeBudget(email, ip);
-  if (!budget.allowed) {
-    if (budget.reason === "person") {
+  const allowance = await takeBudget(email, ip);
+  if (!allowance.allowed) {
+    if (allowance.reason === "person") {
       return json({
         error: `You've used your ${PER_PERSON_PER_DAY} free simulations for today. Your next one unlocks ${resetsAt()}.`,
         kind: "person_limit",
         resetsAt: resetsAt(),
       }, 429);
     }
-    console.error(JSON.stringify({ event: "daily_ceiling_reached", global_used: budget.globalUsed, limit: DAILY_CEILING }));
+    console.error(JSON.stringify({ event: "daily_ceiling_reached", global_used: allowance.globalUsed, limit: DAILY_CEILING }));
     return json({
       error: `ADvice has reached today's limit. It resets ${resetsAt()}.`,
       kind: "daily_limit",
@@ -866,7 +873,7 @@ async function run(req: any, res: any) {
       modelCalls += 1;
       console.log(JSON.stringify({
         event: "model_call", model, call: modelCalls,
-        corrective: corrected, global_used: budget.globalUsed, ceiling: DAILY_CEILING,
+        corrective: corrected, global_used: allowance.globalUsed, ceiling: DAILY_CEILING,
       }));
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
@@ -1019,9 +1026,27 @@ async function run(req: any, res: any) {
 
   console.log(JSON.stringify({
     event: "simulation_ok", model: usedModel, ms: Date.now() - startedAt, model_calls: modelCalls,
-    global_used: budget.globalUsed, ceiling: DAILY_CEILING,
-    person_used: budget.personUsed, channel: inputs.channel, industry: inputs.industry,
+    global_used: allowance.globalUsed, ceiling: DAILY_CEILING,
+    person_used: allowance.personUsed, channel: inputs.channel, industry: inputs.industry,
   }));
+
+  // One row per simulation, so "do people run more than one, and for what"
+  // stops being a guess. Hashed key only — countable, not a mailing list.
+  // Not awaited: a recording failure must never cost someone their report.
+  void recordRun({
+    channel: inputs.channel,
+    industry: inputs.industry,
+    objective: inputs.objective,
+    budget: inputs.budget,
+    currency: inputs.currency,
+    creativeScore: results?.creative?.overall ?? null,
+    confidence: results?.predictions?.confidence ?? null,
+    landingStatus: inputs.landingUrl ? (landing?.status ?? "unreachable") : "none",
+    handoff: !!landing?.handoff?.length,
+    model: usedModel,
+    ms: Date.now() - startedAt,
+    personKey: email ? await hashKey(email) : "",
+  });
   return json({
     id: crypto.randomUUID().slice(0, 8),
     createdAt: new Date().toISOString(),

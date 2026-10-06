@@ -1,61 +1,84 @@
-# ADvice: finishing the daily-limit setup
+# ADvice: limits and usage data
 
-Two steps, both needing a login I can't do. Ten minutes total.
+Three pastes, all inside tools you already use. No Supabase dashboard.
 
-## 1. Create the counter (Supabase)
+## Why it is built this way
 
-The counter lives in Postgres because Vercel functions share no memory, so a
-global ceiling cannot live inside one.
+The counter has to be readable — the server asks "how many has this person had
+today?" before allowing a run — so it cannot live in an email inbox. It lives in
+the database Lovable already manages for you, which is a Supabase project. You
+reach it through Lovable → Cloud, same as the `leads` table.
 
-1. Open the SQL editor:
-   https://supabase.com/dashboard/project/pgivuezbonyqqbaazfnp/sql/new
-2. Paste the whole of `docs/advice-usage-setup.sql` and run it.
-3. Confirm it worked — this should return one row, `advice_usage`:
-   ```sql
-   select tablename from pg_tables where tablename = 'advice_usage';
-   ```
+The key that can bypass every security rule on that database never leaves
+Supabase. A small edge function there owns the counter, and the API proves
+itself with a shared secret you invent. If that secret ever leaks, you rotate it
+and nothing else is exposed.
 
-It is safe to run twice.
+## 1. Create the tables (Lovable)
 
-## 2. Point the API at it (Vercel)
+Lovable → your project → **More** → **Cloud** → **SQL editor**.
+Paste all of `docs/advice-usage-setup.sql` and run it. Safe to run twice.
 
-Project: **advice-api** → Settings → Environment Variables. Add two, for
-Production:
+Check it worked — Cloud → Database should now list `advice_usage` and
+`advice_runs` beside `leads`.
+
+## 2. Add the shared secret (Lovable)
+
+Invent a random string, 30+ characters of gibberish. Generate one with:
+
+```bash
+openssl rand -base64 32
+```
+
+Lovable → **Cloud** → **Secrets** → **Add secret**:
 
 | Name | Value |
 | --- | --- |
-| `SUPABASE_URL` | `https://pgivuezbonyqqbaazfnp.supabase.co` |
-| `SUPABASE_SERVICE_ROLE_KEY` | the **service_role** key from Supabase → Settings → API |
+| `ADVICE_BUDGET_SECRET` | your random string |
 
-**It must be the service_role key, not the anon/publishable one.** The
-publishable key ships inside the client bundle, so anything it can call a
-visitor can call — and `advice_refund` would then be an unlimited supply of
-simulations. The migration grants these functions to `service_role` alone.
+## 3. Point the API at it (Vercel)
 
-Treat that key like a password: it bypasses every row-level security policy in
-the project. Paste it straight from Supabase into Vercel and nowhere else.
+Vercel → **advice-api** → Settings → **Environment Variables**, scope Production:
 
-Then redeploy (any push does it, or Vercel → Deployments → Redeploy).
+| Name | Value |
+| --- | --- |
+| `ADVICE_BUDGET_URL` | `https://pgivuezbonyqqbaazfnp.supabase.co/functions/v1/advice-budget` |
+| `ADVICE_BUDGET_SECRET` | the same random string |
 
-## 3. Check it took
+Then **Deployments → Redeploy**. Environment variables only apply to a new build.
 
-Run four simulations from the same browser. The fourth should say:
+## 4. Check it took
 
-> You've used your 3 free simulations for today. Your next one unlocks in about N hours.
+Run four simulations from one browser. The fourth should say:
 
-If instead it keeps running, the API cannot see the counter. Look in the Vercel
-logs for `budget_store_missing` — that event fires on every request when the
-two variables are absent, which is the deliberate loud failure rather than a
-silent unprotected one.
+> You've used your 3 free simulations for today.
 
-## What this turns on
+If it keeps running, the API cannot see the counter. Vercel logs will show
+`budget_store_missing` on every request — that event exists so an unprotected
+state is loud rather than silent.
 
-- **3 simulations per person per day**, matched on email and IP, whichever is
-  further along, so a fresh address on the same connection does not reset it.
-- **50 simulations a day in total**, well under the roughly 140 model calls the
-  seven-model list provides.
-- **Refunds** — a run that fails on a crash or on the provider's own quota
-  gives the slot back.
+## What you get
 
-Keys are stored as SHA-256 hashes, so the table holds no emails or IP
-addresses.
+**Limits.** Three simulations per person per day, matched on email and IP so a
+fresh address on the same connection does not reset it. Fifty a day across
+everyone, well under the roughly 140 model calls the seven-model list allows. A
+run that fails gives its slot back.
+
+**Evidence.** One row per simulation in `advice_runs`: channel, industry,
+objective, budget, creative score, confidence, whether the landing page could be
+read, whether the booking is handed to another domain, which model answered and
+how long it took.
+
+Deliberately no email address. `person_key` is the same hash the counter uses,
+which makes repeat use countable without the table becoming a mailing list.
+
+Ask Lovable's chat things like *"how many ADvice simulations in the last 7 days,
+grouped by industry"*, or run:
+
+```sql
+select * from advice_repeat_use(30);
+-- runs_total | people | people_repeat | runs_per_person
+```
+
+That last number is the one the paid tier rests on. If almost nobody runs a
+second simulation, there is no paywall worth building yet.
