@@ -1,6 +1,8 @@
 // ADvice — Vercel serverless function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
-// Env: GEMINI_API_KEY (required), GEMINI_MODEL (optional), ALLOWED_ORIGINS (optional, comma-separated).
+// Env: GEMINI_API_KEY (required), GEMINI_MODEL (optional), ALLOWED_ORIGINS (optional, comma-separated),
+//      SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (required for the daily limits;
+//      must be the service role, never the publishable key).
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // Models are tried in order; Google retires names over time, so a list beats a
@@ -442,8 +444,11 @@ async function recordFailure(status: number, reason: string, context: Record<str
 const PER_PERSON_PER_DAY = 3;
 const DAILY_CEILING = 16;
 
-const SUPABASE_URL = process.env.SUPABASE_URL ?? process.env.VITE_SUPABASE_URL ?? "";
-const SUPABASE_KEY = process.env.SUPABASE_ANON_KEY ?? process.env.VITE_SUPABASE_PUBLISHABLE_KEY ?? "";
+const SUPABASE_URL = process.env.SUPABASE_URL ?? "";
+// Service role, deliberately — never the publishable key. That key ships in
+// the client bundle, so anything it can call, a visitor can call, and
+// advice_refund would then be an unlimited supply of simulations.
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
 
 type Budget =
   | { allowed: true; globalUsed: number; personUsed: number }
@@ -478,7 +483,7 @@ async function takeBudget(email: string, ip: string): Promise<Budget> {
     // past. Loud, because silently unprotected is the dangerous state.
     console.error(JSON.stringify({
       event: "budget_store_missing",
-      detail: "SUPABASE_URL / SUPABASE_ANON_KEY are not set on this deployment; the daily ceiling is NOT enforced.",
+      detail: "SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY are not set on this deployment; the daily ceiling is NOT enforced.",
     }));
     return { allowed: true, globalUsed: -1, personUsed: -1 };
   }

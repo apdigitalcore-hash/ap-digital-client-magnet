@@ -18,8 +18,11 @@ create table if not exists public.advice_usage (
 );
 
 alter table public.advice_usage enable row level security;
--- Deliberately no policies: the anon key must not read or write this directly.
--- Every access goes through the SECURITY DEFINER functions below.
+-- Deliberately no policies, and no grants: with RLS on and nothing granted,
+-- neither anon nor authenticated can read or write a row by any route. Every
+-- access goes through the SECURITY DEFINER functions below, which are
+-- executable by service_role alone.
+revoke all on table public.advice_usage from anon, authenticated;
 
 create index if not exists advice_usage_day_idx on public.advice_usage (day);
 
@@ -116,5 +119,8 @@ $$;
 
 revoke all on function public.advice_consume(text, text, integer, integer) from public;
 revoke all on function public.advice_refund(text, text) from public;
-grant execute on function public.advice_consume(text, text, integer, integer) to anon, authenticated;
-grant execute on function public.advice_refund(text, text) to anon, authenticated;
+-- service_role only. The publishable key ships in the client bundle, so
+-- anything anon can execute, a visitor can execute — and advice_refund would
+-- hand them an unlimited supply of simulations.
+grant execute on function public.advice_consume(text, text, integer, integer) to service_role;
+grant execute on function public.advice_refund(text, text) to service_role;
