@@ -517,7 +517,10 @@ async function rpc(fn: string, body: Record<string, unknown>): Promise<any> {
       Authorization: `Bearer ${SUPABASE_KEY}`,
     },
     body: JSON.stringify(body),
-    signal: AbortSignal.timeout(5000),
+    // Short on purpose. The counter is a gate, not the work, and it fails
+    // open — so a slow one must not add seconds to every simulation. From the
+    // function's region this round trip is tens of milliseconds.
+    signal: AbortSignal.timeout(2500),
   });
   if (!res.ok) throw new Error(`${fn}: ${res.status} ${(await res.text()).slice(0, 200)}`);
   return res.json();
