@@ -57,7 +57,9 @@ const Loading = () => {
           transition={{ duration: 18, ease: 'easeOut' }}
         />
       </div>
-      <p className="mt-4 text-xs text-[#86868b]">Usually 10–20 seconds.</p>
+      {/* Honest range: a fresh model answers in about ten seconds, a loaded one
+          takes longer, and a promise of 10–20 reads as a fault at forty. */}
+      <p className="mt-4 text-xs text-[#86868b]">Usually under 30 seconds, occasionally a little longer.</p>
     </div>
   );
 };

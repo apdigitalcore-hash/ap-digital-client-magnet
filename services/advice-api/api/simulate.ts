@@ -799,6 +799,7 @@ async function run(req: any, res: any) {
   ].filter(Boolean).join("\n\n");
 
   let results;
+  let usedModel = "";
   let lastError = "";
   // Set when the claim guard has already asked for one corrective rewrite.
   let corrected = false;
@@ -818,6 +819,9 @@ async function run(req: any, res: any) {
   // retired. A retired name says nothing about quota either way.
   const exhausted = new Set<string>();
   const retired = new Set<string>();
+  // Models that refused thinkingConfig and must be asked without it.
+  const noThinking = new Set<string>();
+  const startedAt = Date.now();
   const queue = [...MODELS];
   for (let model = queue.shift(); model; model = queue.shift()) {
     try {
@@ -841,6 +845,11 @@ async function run(req: any, res: any) {
               temperature: 0.4,
               responseMimeType: "application/json",
               responseSchema: RESPONSE_SCHEMA,
+              // The 3.x models think before answering by default, which took a
+              // simulation from about 10 seconds to over 70 — past the point
+              // where a visitor concludes the tool is broken. A benchmark
+              // lookup against a fixed schema does not need deliberation.
+              ...(noThinking.has(model) ? {} : { thinkingConfig: { thinkingBudget: 0 } }),
             },
           }),
         },
@@ -851,6 +860,13 @@ async function run(req: any, res: any) {
         console.error("gemini", lastError);
         // 404/400 means the name is gone. It is not a quota signal, so it
         // must not stop us reporting quota truthfully below.
+        // Rejected the thinking setting rather than the request: ask again
+        // without it instead of writing the model off.
+        if (res.status === 400 && /thinking/i.test(body) && !noThinking.has(model)) {
+          noThinking.add(model);
+          queue.unshift(model);
+          continue;
+        }
         if (res.status === 404 || res.status === 400) {
           retired.add(model);
           // Google names the replacement in the message: "Please update your
@@ -896,6 +912,7 @@ async function run(req: any, res: any) {
         continue;
       }
       results = normalise(JSON.parse(text));
+      usedModel = model;
 
       // Everything the advertiser actually told us. A banned phrase that
       // appears here is theirs to make; one that does not is invented.
@@ -963,7 +980,7 @@ async function run(req: any, res: any) {
   }
 
   console.log(JSON.stringify({
-    event: "simulation_ok", model_calls: modelCalls,
+    event: "simulation_ok", model: usedModel, ms: Date.now() - startedAt, model_calls: modelCalls,
     global_used: budget.globalUsed, ceiling: DAILY_CEILING,
     person_used: budget.personUsed, channel: inputs.channel, industry: inputs.industry,
   }));
