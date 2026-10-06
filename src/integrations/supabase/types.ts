@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      advice_usage: {
+        Row: {
+          day: string
+          key: string
+          scope: string
+          used: number
+        }
+        Insert: {
+          day: string
+          key: string
+          scope: string
+          used?: number
+        }
+        Update: {
+          day?: string
+          key?: string
+          scope?: string
+          used?: number
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           business: string
@@ -112,6 +133,19 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      advice_consume: {
+        Args: {
+          p_global_limit: number
+          p_ip_key: string
+          p_person_key: string
+          p_person_limit: number
+        }
+        Returns: Json
+      }
+      advice_refund: {
+        Args: { p_ip_key: string; p_person_key: string }
+        Returns: undefined
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
