@@ -7,7 +7,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // single hard-coded id. GEMINI_MODEL, when set, is tried first.
 // Each name is metered separately by the free tier — 20 a day each — so the
 // list is also the daily capacity. Order is cheapest-to-best-known-good.
-const MODELS = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"]
+const MODELS = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
   .filter(Boolean) as string[];
 const ALLOWED = (process.env.ALLOWED_ORIGINS ?? "https://ap-digital.ca,https://www.ap-digital.ca")
   .split(",").map((s) => s.trim()).filter(Boolean);
@@ -740,8 +740,10 @@ async function run(req: any, res: any) {
   // everything immediately, and a transient 5xx buys exactly one retry.
   let transientRetries = 0;
   let modelCalls = 0;
-  // Model names whose own daily allowance is spent.
+  // Model names whose own daily allowance is spent, and names Google has
+  // retired. A retired name says nothing about quota either way.
   const exhausted = new Set<string>();
+  const retired = new Set<string>();
   const queue = [...MODELS];
   for (let model = queue.shift(); model; model = queue.shift()) {
     try {
@@ -773,8 +775,12 @@ async function run(req: any, res: any) {
         const body = (await res.text()).slice(0, 600);
         lastError = `${model}: ${res.status} ${body}`;
         console.error("gemini", lastError);
-        // 404/400 usually means "this model name is gone" — try the next one.
-        if (res.status === 404 || res.status === 400) continue;
+        // 404/400 means the name is gone. It is not a quota signal, so it
+        // must not stop us reporting quota truthfully below.
+        if (res.status === 404 || res.status === 400) {
+          retired.add(model);
+          continue;
+        }
         // Quota (429) and overload (5xx) are per-model — back off briefly and
         // try the next model instead of failing the visitor.
         // The free tier meters each model name separately: gemini-2.5-flash
@@ -785,7 +791,7 @@ async function run(req: any, res: any) {
         if (res.status === 429) {
           busy = true;
           exhausted.add(model);
-          quota = MODELS.every((m) => exhausted.has(m));
+          quota = MODELS.every((m) => exhausted.has(m) || retired.has(m));
           continue;
         }
         // A genuine transient fault is worth exactly one more attempt.
