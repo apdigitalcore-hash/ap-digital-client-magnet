@@ -1,5 +1,6 @@
 import { CONVERSION_NOUN, type Objective, type Range, type Simulation } from './types';
 import { previewPair } from './adPreview';
+import { saveBlob } from './saveFile';
 
 /**
  * Builds the report as a real PDF file.
@@ -230,5 +231,6 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
 
   const slug = (i.campaignName || 'advice-simulation')
     .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
-  doc.save(`${slug || 'advice-simulation'}.pdf`);
+  // Not doc.save(): jsPDF builds the same anchor that phones ignore.
+  await saveBlob(doc.output('blob'), `${slug || 'advice-simulation'}.pdf`);
 }

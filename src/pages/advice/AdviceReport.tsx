@@ -7,6 +7,7 @@ import ReportView from '@/advice/ReportView';
 import { captureEmail, decodeReport, encodeReport, reportUrl, savedEmail } from '@/advice/api';
 import { downloadReportPdf } from '@/advice/pdf';
 import { renderPreviewImage } from '@/advice/previewImage';
+import { saveBlob } from '@/advice/saveFile';
 import { previewPair } from '@/advice/adPreview';
 import { trackCustom, trackGa4 } from '@/lib/pixel';
 import type { Simulation } from '@/advice/types';
@@ -191,11 +192,9 @@ const AdviceReport = () => {
                   onClick={async () => {
                     const blob = await renderPreviewImage(sim);
                     if (!blob) return;
-                    const a = document.createElement('a');
-                    a.href = URL.createObjectURL(blob);
-                    a.download = `${(sim.inputs.campaignName || 'ad-preview').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'ad-preview'}-preview.png`;
-                    a.click();
-                    URL.revokeObjectURL(a.href);
+                    const name = (sim.inputs.campaignName || 'ad-preview')
+                      .toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'ad-preview';
+                    await saveBlob(blob, `${name}-preview.png`);
                   }}
                   className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-black/[0.12] px-5 py-2.5 text-sm font-medium hover:border-black/30"
                 >
