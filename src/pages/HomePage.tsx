@@ -1,6 +1,7 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play, Zap, Target, Users, TrendingUp, ChevronRight, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
+import IndustryGrid from '@/components/IndustryGrid';
+import { ArrowRight, Play, Zap, Target, Users, TrendingUp, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
@@ -255,32 +256,10 @@ const HomePage = () => {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-5 max-w-3xl mx-auto">
-            {[
-              { to: '/salon-marketing', name: 'Salons', tagline: 'Keep your chairs booked' },
-              { to: '/real-estate-marketing', name: 'Real Estate', tagline: 'Buyer & seller leads' },
-              { to: '/trades-marketing', name: 'Trades', tagline: 'Stop relying on word-of-mouth' },
-              { to: '/coaching-marketing', name: 'Coaching', tagline: 'Calendar filled with ideal clients' },
-            ].map(({ to, name, tagline }) => (
-              <Link
-                key={to}
-                to={to}
-                className="group reveal-card relative aspect-square rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 flex flex-col items-center justify-center overflow-hidden"
-              >
-                {/* Dark wash sweeps up on hover — the card becomes the anchor. */}
-                <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-                <h3 className="relative z-10 font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground reveal-ink tracking-tight text-center px-4">
-                  {name}
-                </h3>
-                <p className="reveal-fade relative z-10 text-sm text-white/60 font-medium mt-3 text-center px-6 max-w-[220px] leading-snug">
-                  {tagline}
-                </p>
-                <span className="absolute bottom-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-1 group-hover:translate-x-0">
-                  <ChevronRight className="w-4 h-4 text-white/70" />
-                </span>
-              </Link>
-            ))}
-          </div>
+          {/* All fourteen, not four. Small tiles keep every industry page one
+              click from the homepage without taking more room than the four
+              large cards did. */}
+          <IndustryGrid className="mx-auto max-w-5xl" />
         </div>
       </section>
 
