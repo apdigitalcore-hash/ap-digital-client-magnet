@@ -9,10 +9,14 @@ today?" before allowing a run — so it cannot live in an email inbox. It lives 
 the database Lovable already manages for you, which is a Supabase project. You
 reach it through Lovable → Cloud, same as the `leads` table.
 
-The key that can bypass every security rule on that database never leaves
-Supabase. A small edge function there owns the counter, and the API proves
-itself with a shared secret you invent. If that secret ever leaks, you rotate it
-and nothing else is exposed.
+The key that can bypass every security rule on that database is never needed
+outside Supabase. The counter functions check a shared secret themselves: the
+tables are unreachable, and the publishable key alone opens nothing. If the
+secret leaks you rotate it in two places and nothing else is exposed.
+
+An edge function would have been tidier, but Lovable only deploys edge functions
+its own agent writes — one pushed from GitHub is never picked up — so that
+design would have needed a paid chat message every time it changed.
 
 ## 1. Create the tables (Lovable)
 
@@ -22,19 +26,14 @@ Paste all of `docs/advice-usage-setup.sql` and run it. Safe to run twice.
 Check it worked — Cloud → Database should now list `advice_usage` and
 `advice_runs` beside `leads`.
 
-## 2. Add the shared secret (Lovable)
+## 2. Teach the counter the secret (Lovable)
 
-Invent a random string, 30+ characters of gibberish. Generate one with:
+Run `docs/advice-counter-secret.sql` in the same SQL editor. The last statement
+has a `PASTE_SECRET_HERE` placeholder — replace it with your secret before
+running.
 
-```bash
-openssl rand -base64 32
-```
-
-Lovable → **Cloud** → **Secrets** → **Add secret**:
-
-| Name | Value |
-| --- | --- |
-| `ADVICE_BUDGET_SECRET` | your random string |
+This also replaces the earlier no-secret versions of the functions, so the old
+signatures cannot be called.
 
 ## 3. Point the API at it (Vercel)
 
@@ -42,10 +41,13 @@ Vercel → **advice-api** → Settings → **Environment Variables**, scope Prod
 
 | Name | Value |
 | --- | --- |
-| `ADVICE_BUDGET_URL` | `https://pgivuezbonyqqbaazfnp.supabase.co/functions/v1/advice-budget` |
-| `ADVICE_BUDGET_SECRET` | the same random string |
+| `ADVICE_BUDGET_SECRET` | the same secret |
 
 Then **Deployments → Redeploy**. Environment variables only apply to a new build.
+
+The Supabase URL and publishable key are built in as defaults — both already
+ship in the client bundle, so there is nothing there a visitor could not read,
+and neither is useful without the secret.
 
 ## 4. Check it took
 

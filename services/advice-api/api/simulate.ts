@@ -1,8 +1,9 @@
 // ADvice — Vercel serverless function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
 // Env: GEMINI_API_KEY (required), GEMINI_MODEL (optional), ALLOWED_ORIGINS (optional, comma-separated),
-//      ADVICE_BUDGET_URL + ADVICE_BUDGET_SECRET (required for the daily limits —
-//      the Supabase edge function that owns the counter, and a shared secret).
+//      ADVICE_BUDGET_SECRET (required for the daily limits; must match the row
+//      in advice_config). SUPABASE_URL / SUPABASE_ANON_KEY are optional
+//      overrides — both values are public and already in the client bundle.
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // Models are tried in order; Google retires names over time, so a list beats a
@@ -518,12 +519,20 @@ const PER_PERSON_PER_DAY = 3;
  */
 const DAILY_CEILING = 50;
 
-// The counter lives behind a Supabase edge function rather than being spoken
-// to directly. Supabase hands that function its own service role key, so the
-// key that bypasses every row-level security rule never leaves the platform
-// that issued it. What travels here instead is a shared secret: if it leaks,
-// rotate it, and nothing else is exposed.
-const BUDGET_URL = process.env.ADVICE_BUDGET_URL ?? "";
+// The counter is reached through SECURITY DEFINER functions that check a
+// shared secret themselves. The tables stay unreachable and the service role
+// key is never needed outside Supabase — which matters because Lovable only
+// deploys edge functions its own agent writes, so a function pushed from git
+// is never picked up.
+//
+// URL and publishable key are defaults rather than required settings: both
+// already ship inside the client bundle, so there is nothing here a visitor
+// could not already read. The secret is the only thing that must be set.
+const SUPABASE_URL = process.env.SUPABASE_URL ?? "https://pgivuezbonyqqbaazfnp.supabase.co";
+// The publishable key, which already ships in the client bundle — public by
+// design, and useless on its own: every counter function also demands the
+// secret, and the tables themselves are unreachable.
+const SUPABASE_ANON = process.env.SUPABASE_ANON_KEY ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnaXZ1ZXpib255cXFiYWF6Zm5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkyMDkxMDIsImV4cCI6MjA4NDc4NTEwMn0.XM5CM1GbXLf29zVZYxh2p8-Q2h6QWwi2rCppyIELJF0";
 const BUDGET_SECRET = process.env.ADVICE_BUDGET_SECRET ?? "";
 
 // A single shape rather than a discriminated union: this project compiles
@@ -543,36 +552,40 @@ async function hashKey(value: string): Promise<string> {
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-async function budget(action: string, body: Record<string, unknown>): Promise<any> {
-  const res = await fetch(BUDGET_URL, {
+async function budget(fn: string, args: Record<string, unknown>): Promise<any> {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json", "x-advice-secret": BUDGET_SECRET },
-    body: JSON.stringify({ action, ...body }),
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_ANON,
+      Authorization: `Bearer ${SUPABASE_ANON}`,
+    },
+    body: JSON.stringify({ p_secret: BUDGET_SECRET, ...args }),
     // Short on purpose. The counter is a gate, not the work, and it fails
     // open — so a slow one must not add seconds to every simulation.
     signal: AbortSignal.timeout(2500),
   });
-  if (!res.ok) throw new Error(`${action}: ${res.status} ${(await res.text()).slice(0, 200)}`);
+  if (!res.ok) throw new Error(`${fn}: ${res.status} ${(await res.text()).slice(0, 200)}`);
   return res.json();
 }
 
 async function takeBudget(email: string, ip: string): Promise<Budget> {
-  if (!BUDGET_URL || !BUDGET_SECRET) {
+  if (!BUDGET_SECRET) {
     // Without the shared counter there is no global ceiling — only the
     // per-instance limiter below, which a spread of traffic walks straight
     // past. Loud, because silently unprotected is the dangerous state.
     console.error(JSON.stringify({
       event: "budget_store_missing",
-      detail: "ADVICE_BUDGET_URL / ADVICE_BUDGET_SECRET are not set on this deployment; the daily ceiling is NOT enforced.",
+      detail: "ADVICE_BUDGET_SECRET is not set on this deployment; the daily ceiling is NOT enforced.",
     }));
     return { allowed: true, globalUsed: -1, personUsed: -1 };
   }
   try {
-    const r = await budget("consume", {
-      personKey: email ? await hashKey(email) : "",
-      ipKey: await hashKey(ip),
-      personLimit: PER_PERSON_PER_DAY,
-      globalLimit: DAILY_CEILING,
+    const r = await budget("advice_consume", {
+      p_person_key: email ? await hashKey(email) : "",
+      p_ip_key: await hashKey(ip),
+      p_person_limit: PER_PERSON_PER_DAY,
+      p_global_limit: DAILY_CEILING,
     });
     if (r?.allowed) return { allowed: true, globalUsed: r.global_used ?? -1, personUsed: r.person_used ?? -1 };
     return { allowed: false, reason: r?.reason === "person" ? "person" : "global", globalUsed: r?.global_used, personUsed: r?.person_used };
@@ -586,9 +599,9 @@ async function takeBudget(email: string, ip: string): Promise<Budget> {
 
 /** Hands a slot back when the simulation never actually ran. */
 async function refundBudget(email: string, ip: string) {
-  if (!BUDGET_URL || !BUDGET_SECRET) return;
+  if (!BUDGET_SECRET) return;
   try {
-    await budget("refund", { personKey: email ? await hashKey(email) : "", ipKey: await hashKey(ip) });
+    await budget("advice_refund", { p_person_key: email ? await hashKey(email) : "", p_ip_key: await hashKey(ip) });
   } catch {
     /* a refund that fails costs one slot, not the request */
   }
@@ -596,9 +609,9 @@ async function refundBudget(email: string, ip: string) {
 
 /** Records what was simulated. Best effort, never blocking. */
 async function recordRun(row: Record<string, unknown>) {
-  if (!BUDGET_URL || !BUDGET_SECRET) return;
+  if (!BUDGET_SECRET) return;
   try {
-    await budget("record", row);
+    await budget("advice_record", { p_row: row });
   } catch (e) {
     console.error(JSON.stringify({ event: "record_failed", detail: e instanceof Error ? e.message : String(e) }));
   }

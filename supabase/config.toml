@@ -8,6 +8,3 @@ verify_jwt = false
 
 [functions.advice-simulate]
 verify_jwt = false
-
-[functions.advice-budget]
-verify_jwt = false
