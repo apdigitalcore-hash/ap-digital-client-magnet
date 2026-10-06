@@ -5,7 +5,9 @@
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 // Models are tried in order; Google retires names over time, so a list beats a
 // single hard-coded id. GEMINI_MODEL, when set, is tried first.
-const MODELS = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-flash-latest"]
+// Each name is metered separately by the free tier — 20 a day each — so the
+// list is also the daily capacity. Order is cheapest-to-best-known-good.
+const MODELS = [process.env.GEMINI_MODEL, "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"]
   .filter(Boolean) as string[];
 const ALLOWED = (process.env.ALLOWED_ORIGINS ?? "https://ap-digital.ca,https://www.ap-digital.ca")
   .split(",").map((s) => s.trim()).filter(Boolean);
@@ -738,6 +740,8 @@ async function run(req: any, res: any) {
   // everything immediately, and a transient 5xx buys exactly one retry.
   let transientRetries = 0;
   let modelCalls = 0;
+  // Model names whose own daily allowance is spent.
+  const exhausted = new Set<string>();
   const queue = [...MODELS];
   for (let model = queue.shift(); model; model = queue.shift()) {
     try {
@@ -773,12 +777,16 @@ async function run(req: any, res: any) {
         if (res.status === 404 || res.status === 400) continue;
         // Quota (429) and overload (5xx) are per-model — back off briefly and
         // try the next model instead of failing the visitor.
-        // A 429 is the provider refusing to serve us. Trying another model
-        // on the same key refuses the same way and buys nothing, so stop.
+        // The free tier meters each model name separately: gemini-2.5-flash
+        // and gemini-flash-latest each get their own 20 a day on the same
+        // key. So a 429 must never re-ask the same model, but the next name
+        // is a different pool and worth one attempt. quota is only true once
+        // every model has refused.
         if (res.status === 429) {
           busy = true;
-          quota = true;
-          break;
+          exhausted.add(model);
+          quota = MODELS.every((m) => exhausted.has(m));
+          continue;
         }
         // A genuine transient fault is worth exactly one more attempt.
         if (res.status >= 500) {
