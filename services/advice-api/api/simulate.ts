@@ -491,9 +491,15 @@ const SUPABASE_URL = process.env.SUPABASE_URL ?? "";
 // advice_refund would then be an unlimited supply of simulations.
 const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
 
-type Budget =
-  | { allowed: true; globalUsed: number; personUsed: number }
-  | { allowed: false; reason: "global" | "person"; globalUsed?: number; personUsed?: number };
+// A single shape rather than a discriminated union: this project compiles
+// with strictNullChecks off, where `if (!budget.allowed)` does not narrow a
+// union and `budget.reason` fails to typecheck.
+type Budget = {
+  allowed: boolean;
+  reason?: "global" | "person";
+  globalUsed?: number;
+  personUsed?: number;
+};
 
 /** Hashed so the counter table never holds an email address or an IP. */
 async function hashKey(value: string): Promise<string> {
