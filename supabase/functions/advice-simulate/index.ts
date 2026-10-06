@@ -383,6 +383,8 @@ The campaign objective decides what a conversion IS, and the benchmarks above ar
 
 Score the creative (0-100 each) against direct-response frameworks: AIDA, PAS, the 4 U's (useful, urgent, unique, ultra-specific), specificity of the offer, proof, and a clear single CTA. The overall score weights headline and CTA most. Verdict: Strong >= 75, Needs Work 50-74, Weak < 50. Score "intent" only for Google Search Ads (how well the copy matches the likely search query); return null for other channels.
 
+The competitor snapshot is a benchmark, not research. You cannot see any ad library, so never present those figures as a count of who is advertising right now — a narrow local niche often has nobody advertising at all, while the benchmark says twenty. Give the range a category would typically show and say in the patterns what to verify.
+
 Confidence: high only when product, audience, copy and a landing page are all specific; low when most inputs are vague.
 
 Seasonality: judge against the current date given below. Never call a vertical evergreen without checking its buying calendar first.

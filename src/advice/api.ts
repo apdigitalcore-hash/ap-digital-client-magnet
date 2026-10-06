@@ -87,7 +87,7 @@ export function gateState(): 'ok' | 'email' | 'limit' {
 
 
 /** Downscale to something Gemini reads well without bloating the request. */
-export function readImageFile(file: File): Promise<{ data: string; mime: string }> {
+export function readImageFile(file: File): Promise<NonNullable<SimInputs['image']>> {
   return new Promise((resolve, reject) => {
     const img = new Image();
     const url = URL.createObjectURL(file);
@@ -101,7 +101,15 @@ export function readImageFile(file: File): Promise<{ data: string; mime: string 
       const ctx = canvas.getContext('2d');
       if (!ctx) return reject(new Error('Could not read that image.'));
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      resolve({ data: canvas.toDataURL('image/jpeg', 0.82).split(',')[1], mime: 'image/jpeg' });
+      // Dimensions travel with the creative: the preview has to show it at the
+      // shape the platform would, and a 4:5 image forced into 1.91:1 loses its
+      // top third — which is usually where the headline sits.
+      resolve({
+        data: canvas.toDataURL('image/jpeg', 0.82).split(',')[1],
+        mime: 'image/jpeg',
+        width: canvas.width,
+        height: canvas.height,
+      });
     };
     img.onerror = () => {
       URL.revokeObjectURL(url);

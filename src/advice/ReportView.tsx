@@ -267,8 +267,12 @@ const ReportView = ({ sim }: { sim: Simulation }) => {
 
       <Section n={5} title="Competitor snapshot">
         <div className="grid gap-3 md:grid-cols-[1fr_1fr_2fr]">
-          <Metric label="Est. advertisers" value={span(r.competitors.advertisers, int)} sub="in this niche and region" />
-          <Metric label="Average CPC" value={span(r.competitors.avgCpc, money)} sub="across the category" />
+          {/* A benchmark, not a count. A check of the Meta Ad Library for
+              pediatric dentists across three cities returned zero advertisers
+              against an estimate of 20–50, so the label has to say what the
+              number is before someone plans around it. */}
+          <Metric label="Typical advertisers" value={span(r.competitors.advertisers, int)} sub="industry benchmark, not a live count" />
+          <Metric label="Average CPC" value={span(r.competitors.avgCpc, money)} sub="category benchmark" />
           <Card>
             <h3 className="text-sm font-medium">What top ads do differently</h3>
             <ul className="mt-2 space-y-1.5 text-sm text-[#6e6e73]">

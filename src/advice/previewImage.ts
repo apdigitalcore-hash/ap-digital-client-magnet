@@ -1,5 +1,5 @@
 import type { Simulation } from './types';
-import { previewPair, type PreviewCard } from './adPreview';
+import { creativeAspect, previewPair, type PreviewCard } from './adPreview';
 
 /**
  * Paints the ad preview as a PNG, for sharing.
@@ -52,7 +52,7 @@ export async function renderPreviewImage(sim: Simulation): Promise<Blob | null> 
       h += 28 + 34 + wrap(probe, c.description, colW - 56).length * 26 + 32;
     } else {
       h += wrap(probe, c.primaryText + (c.truncated ? '… See more' : ''), colW - 56).length * 26;
-      if (img) h += (colW / 1.91) + 20;
+      if (img) h += (colW / creativeAspect(p.image)) + 20;
       probe.font = '600 22px -apple-system, Helvetica, Arial, sans-serif';
       h += wrap(probe, c.headline, colW - 56).length * 28 + 44;
     }
@@ -73,7 +73,11 @@ export async function renderPreviewImage(sim: Simulation): Promise<Blob | null> 
   ctx.font = '600 26px -apple-system, Helvetica, Arial, sans-serif';
   ctx.fillText(sim.inputs.campaignName || 'Ad preview', PAD, PAD + 12);
 
-  ([['YOUR AD', p.yours], ['REWRITTEN', p.rewritten]] as const).forEach(([title, c], col) => {
+  const withheld = !!sim.results.recommendations.claimNotice;
+  const cards: [string, PreviewCard][] = withheld
+    ? [['YOUR AD', p.yours]]
+    : [['YOUR AD', p.yours], ['REWRITTEN', p.rewritten]];
+  cards.forEach(([title, c], col) => {
     const x = PAD + col * (colW + GAP);
     let y = PAD + 52;
 
@@ -108,7 +112,7 @@ export async function renderPreviewImage(sim: Simulation): Promise<Blob | null> 
       for (const l of wrap(ctx, c.primaryText + (c.truncated ? '… See more' : ''), colW - 56)) { ctx.fillText(l, x + 28, y); y += 26; }
       y += 8;
       if (img) {
-        const h = colW / 1.91;
+        const h = colW / creativeAspect(p.image);
         ctx.drawImage(img, x, y, colW, h);
         y += h + 20;
       }

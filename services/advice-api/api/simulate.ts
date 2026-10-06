@@ -138,7 +138,22 @@ const LANDING_FAILURE: Record<string, string> = {
 
 /** Scheduling and booking systems that take the conversion off the advertiser's domain. */
 const BOOKING_HOSTS =
-  /(nexhealth|localmed|dentrix|flexbooker|calendly|acuityscheduling|janeapp|setmore|zocdoc|simplepractice|squarespace-scheduling|mindbodyonline|booksy|fresha|vagaro|schedulicity|opendental|curve-dental|clio|housecallpro|jobber)/i;
+  /(nexhealth|localmed|dentrix|flexbooker|flexbook|recallmax|calendly|acuityscheduling|janeapp|setmore|zocdoc|simplepractice|squarespace-scheduling|mindbodyonline|booksy|fresha|vagaro|schedulicity|opendental|curve-dental|clio|housecallpro|jobber|cliniko|mytuxedo|pomelo|dentalintel|lighthouse360|solutionreach|weave|podium|birdeye|appointlet|youcanbook|10to8|simplybook|timify|bookeo|checkfront|resurva|picktime|square\.site|squareup|getjobber|servicetitan|workiz|markate|thryv)/i;
+
+/**
+ * Words that mean "this link completes the conversion" — used to catch booking
+ * systems the list above has never heard of.
+ *
+ * A dental page handed its booking to recallmax.com and flexbook.me, neither
+ * of which was on any list, and the report praised the button instead of
+ * warning about it. A hand-kept list will always be one vendor behind, so the
+ * intent of the link matters more than the brand of it.
+ */
+const BOOKING_INTENT = /\b(book|booking|appointment|schedule|scheduling|reserve|reservation|consult|enquire|inquire|request[- ]?(a[- ]?)?(quote|appointment|call))\b/i;
+
+/** External destinations that are never the conversion — social, maps, reviews. */
+const NOT_A_HANDOFF =
+  /(facebook|instagram|twitter|x\.com|linkedin|youtube|tiktok|pinterest|google\.[a-z.]+|goo\.gl|maps\.|yelp|bbb\.org|wa\.me|whatsapp|apple\.com|cdn|googleapis|gstatic|fonts\.|cloudflare|jquery|wp\.com|gravatar)/i;
 
 /** Domain parking and for-sale pages. The site is not live at all. */
 const PARKED =
@@ -186,13 +201,31 @@ function extract(html: string): { title: string; text: string } {
 /** External hosts the page sends its conversion to — booking systems and forms. */
 export function findHandoff(html: string, self: string): string[] {
   const hosts = new Set<string>();
-  const re = /(?:href|src|action)\s*=\s*["']https?:\/\/([a-z0-9.-]+)/gi;
+  const external = (host: string) => host && host !== self && !host.endsWith(`.${self}`);
+
+  // Anchors, with their text: a link reading "Book Online" to someone else's
+  // host is a handoff whether or not we recognise the vendor.
+  const anchor = /<a\b[^>]*href\s*=\s*["']https?:\/\/([a-z0-9.-]+)([^"']*)["'][^>]*>([\s\S]{0,200}?)<\/a>/gi;
   let m: RegExpExecArray | null;
-  while ((m = re.exec(html))) {
+  while ((m = anchor.exec(html))) {
     const host = m[1].toLowerCase().replace(/^www\./, "");
-    if (host === self || host.endsWith(`.${self}`)) continue;
-    if (BOOKING_HOSTS.test(host)) hosts.add(host);
+    if (!external(host)) continue;
+    const path = m[2] ?? "";
+    const text = (m[3] ?? "").replace(/<[^>]+>/g, " ");
+    if (BOOKING_HOSTS.test(host)) { hosts.add(host); continue; }
+    if (NOT_A_HANDOFF.test(host)) continue;
+    if (BOOKING_INTENT.test(text) || BOOKING_INTENT.test(path)) hosts.add(host);
   }
+
+  // An embedded scheduler or a form posting elsewhere is a handoff on sight —
+  // there is no link text to judge, and nothing else embeds this way.
+  const embed = /(?:src|action)\s*=\s*["']https?:\/\/([a-z0-9.-]+)([^"']*)["']/gi;
+  while ((m = embed.exec(html))) {
+    const host = m[1].toLowerCase().replace(/^www\./, "");
+    if (!external(host) || NOT_A_HANDOFF.test(host)) continue;
+    if (BOOKING_HOSTS.test(host) || BOOKING_INTENT.test(m[2] ?? "")) hosts.add(host);
+  }
+
   return [...hosts].slice(0, 5);
 }
 
@@ -591,6 +624,8 @@ The campaign objective decides what a conversion IS, and the benchmarks above ar
 - Brand awareness: same as Website traffic — no conversion step. Judge on CPM, reach and CTR, and say so.
 
 Score the creative (0-100 each) against direct-response frameworks: AIDA, PAS, the 4 U's (useful, urgent, unique, ultra-specific), specificity of the offer, proof, and a clear single CTA. The overall score weights headline and CTA most. Verdict: Strong >= 75, Needs Work 50-74, Weak < 50. Score "intent" only for Google Search Ads (how well the copy matches the likely search query); return null for other channels.
+
+The competitor snapshot is a benchmark, not research. You cannot see any ad library, so never present those figures as a count of who is advertising right now — a narrow local niche often has nobody advertising at all, while the benchmark says twenty. Give the range a category would typically show and say in the patterns what to verify.
 
 Confidence: high only when product, audience, copy and a landing page are all specific; low when most inputs are vague.
 

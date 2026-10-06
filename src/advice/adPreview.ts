@@ -30,6 +30,22 @@ export function previewKind(channel: string): PreviewKind | null {
   return null;
 }
 
+/**
+ * How tall the creative may be, as width / height.
+ *
+ * Meta's feed shows anything from 1.91:1 down to 4:5 without cropping, so a
+ * 4:5 image must be previewed at 4:5. Forcing everything to 1.91:1 cut the top
+ * third off a portrait creative and showed a problem that would never happen.
+ */
+export const FEED_ASPECT = { widest: 1.91, tallest: 0.8 } as const;
+
+/** The aspect to draw the creative at: its own, clamped to what the feed allows. */
+export function creativeAspect(image?: { width?: number; height?: number }): number {
+  const w = image?.width, h = image?.height;
+  if (!w || !h) return 1.91; // unknown: the platform default
+  return Math.min(FEED_ASPECT.widest, Math.max(FEED_ASPECT.tallest, w / h));
+}
+
 /** Where each surface stops showing text. Exceeding it is the useful signal. */
 export const LIMITS = {
   feed: { primaryText: 125, headline: 40 },

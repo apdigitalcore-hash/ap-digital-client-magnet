@@ -62,7 +62,7 @@ export interface SimInputs {
   description: string;
   landingUrl: string;
   /** Ad creative, sent for this request only — never saved or put in a share link. */
-  image?: { data: string; mime: string };
+  image?: { data: string; mime: string; width?: number; height?: number };
 }
 
 export interface Range { low: number; high: number }

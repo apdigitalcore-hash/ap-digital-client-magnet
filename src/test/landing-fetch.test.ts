@@ -22,6 +22,31 @@ describe('conversion handoff', () => {
     expect(findHandoff(html, 'clinic.ca')).toEqual([]);
   });
 
+  it('catches a booking vendor no list has heard of, by what the link says', () => {
+    // The real failure: recallmax and flexbook were on no list, and the report
+    // praised the button instead of warning about it.
+    const html = `<a href="https://can9.recallmax.com/x">Book Online at Langley Location</a>`;
+    expect(findHandoff(html, 'glowpediatricdentistry.ca')).toEqual(['can9.recallmax.com']);
+  });
+
+  it('catches booking intent in the URL when the link has no text', () => {
+    const html = `<a href="https://flexbook.me/appointment"><img src="/btn.png"></a>`;
+    expect(findHandoff(html, 'clinic.ca')).toEqual(['flexbook.me']);
+  });
+
+  it('does not flag social, maps or review links that say book', () => {
+    const html = `
+      <a href="https://facebook.com/clinic">Book via Messenger</a>
+      <a href="https://maps.google.com/x">Book directions</a>
+      <a href="https://yelp.com/biz/clinic">Book a table</a>`;
+    expect(findHandoff(html, 'clinic.ca')).toEqual([]);
+  });
+
+  it('does not flag ordinary outbound links', () => {
+    const html = `<a href="https://cda-adc.ca/oral-health">Oral health advice</a>`;
+    expect(findHandoff(html, 'clinic.ca')).toEqual([]);
+  });
+
   it('does not repeat the same host', () => {
     const html = `<a href="https://janeapp.com/a">A</a><a href="https://janeapp.com/b">B</a>`;
     expect(findHandoff(html, 'clinic.ca')).toEqual(['janeapp.com']);

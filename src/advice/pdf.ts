@@ -1,5 +1,5 @@
 import { CONVERSION_NOUN, type Objective, type Range, type Simulation } from './types';
-import { previewPair } from './adPreview';
+import { creativeAspect, previewPair } from './adPreview';
 import { saveBlob } from './saveFile';
 
 /**
@@ -162,8 +162,8 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
 
   // ── competitors ───────────────────────────────────────────────────────────
   heading('Competitor snapshot');
-  text(`Estimated advertisers: ${span(r.competitors.advertisers, int)}`, 9, 'normal', '#1d1d1f');
-  text(`Average cost per click: ${span(r.competitors.avgCpc, money)}`, 9, 'normal', '#1d1d1f');
+  text(`Typical advertisers: ${span(r.competitors.advertisers, int)} — industry benchmark, not a live count`, 9, 'normal', '#1d1d1f');
+  text(`Average cost per click: ${span(r.competitors.avgCpc, money)} — category benchmark`, 9, 'normal', '#1d1d1f');
   y += 4;
   text('What top ads do differently', 10, 'bold');
   r.competitors.patterns.forEach((x) => text(`· ${x}`, 9, 'normal', '#6e6e73', 10));
@@ -178,7 +178,13 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
     const colW = (COL - 18) / 2;
     const startY = y;
     let bottom = y;
-    ([['Your ad', preview.yours], ['Rewritten', preview.rewritten]] as const).forEach(([title, c], col) => {
+    // A withheld rewrite returns the advertiser's own words, so the second
+    // card would be a copy of the first.
+    const withheld = !!r.recommendations.claimNotice;
+    const cards: [string, typeof preview.yours][] = withheld
+      ? [['Your ad', preview.yours]]
+      : [['Your ad', preview.yours], ['Rewritten', preview.rewritten]];
+    cards.forEach(([title, c], col) => {
       const x = M + col * (colW + 18);
       y = startY;
       doc.setFont('helvetica', 'bold').setFontSize(8).setTextColor('#6e6e73');
@@ -198,7 +204,7 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
         // The advertiser's own creative, the same one in both cards. A broken
         // or unsupported image must not take the whole PDF down with it.
         if (preview.image) {
-          const h = colW / 1.91;
+          const h = colW / creativeAspect(preview.image);
           try {
             doc.addImage(`data:${preview.image.mime};base64,${preview.image.data}`, 'JPEG', x, y, colW, h);
             y += h + 6;
@@ -214,6 +220,7 @@ export async function downloadReportPdf(sim: Simulation): Promise<void> {
       bottom = Math.max(bottom, y);
     });
     y = bottom + 6;
+    if (withheld) text('No rewrite to compare: the suggested version made unsupported claims and was withheld.', 8, 'normal', '#b25000');
     text('Preview — an approximation of layout and where the text is cut off, not a screenshot of any platform.', 7.5, 'normal', '#86868b');
   }
 
