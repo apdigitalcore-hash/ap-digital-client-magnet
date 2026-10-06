@@ -17,7 +17,14 @@ const PENDING_LEAD_KEY = 'advice:pendingLead';
  * lives in the browser, so it is a nudge rather than a licence check.
  */
 export const FREE_BEFORE_EMAIL = 1;
-export const FREE_TOTAL = 5;
+/**
+ * Simulations per person per day.
+ *
+ * Matches the server, which is the real gate — this count lives in
+ * localStorage and can be cleared, so it exists to set expectations rather
+ * than to enforce anything.
+ */
+export const FREE_TOTAL = 3;
 
 const readNum = (k: string) => {
   try {
@@ -112,7 +119,9 @@ export function readImageFile(file: File): Promise<{ data: string; mime: string 
  * busy, try again" — which during an outage told everyone to retry into the
  * same crash for hours.
  */
-export type FailureKind = 'busy' | 'quota' | 'rate' | 'server' | 'network' | 'input' | 'config';
+export type FailureKind =
+  | 'busy' | 'quota' | 'rate' | 'person_limit' | 'daily_limit'
+  | 'server' | 'network' | 'input' | 'config';
 
 export class SimulationError extends Error {
   kind: FailureKind;
@@ -123,7 +132,8 @@ export class SimulationError extends Error {
 }
 
 const kindFor = (status: number, given?: string): FailureKind => {
-  if (given === 'busy' || given === 'quota' || given === 'rate' || given === 'server' || given === 'input' || given === 'config') return given;
+  const known = ['busy', 'quota', 'rate', 'person_limit', 'daily_limit', 'server', 'input', 'config'];
+  if (given && known.includes(given)) return given as FailureKind;
   if (status === 429) return 'rate';
   if (status >= 500) return 'server';
   if (status >= 400) return 'input';
@@ -136,7 +146,9 @@ async function viaVercel(inputs: SimInputs): Promise<Simulation> {
     res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(inputs),
+      // The server enforces the per-person allowance, so it needs the email
+      // the gate collected. The browser's own count is a convenience only.
+      body: JSON.stringify({ ...inputs, email: savedEmail() ?? '' }),
     });
   } catch {
     // Never reached the server at all — their connection, or we are down.
@@ -176,7 +188,8 @@ async function viaLovable(inputs: SimInputs): Promise<Simulation> {
  * across its instances), and a visitor should not have to press the button
  * again to get a report that a retry would have produced.
  */
-const ATTEMPTS = 4;
+// One retry, not four: every attempt can cost a model call.
+const ATTEMPTS = 2;
 const RETRY_DELAY_MS = 1200;
 
 export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
@@ -207,7 +220,10 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
         // A rate limit, a bad input or a missing key is the final answer;
         // retrying it only wastes the visitor's time. Matching on the kind
         // rather than the wording, which used to drift out of sync.
-        if (e instanceof SimulationError && ['rate', 'quota', 'input', 'config'].includes(e.kind)) throw e;
+        // Limits and quota are final answers. Retrying them, or falling
+        // through to the other backend on the same key, spends budget to
+        // fail again.
+        if (e instanceof SimulationError && ['rate', 'quota', 'person_limit', 'daily_limit', 'input', 'config'].includes(e.kind)) throw e;
       }
     }
     if (attempt < ATTEMPTS - 1) await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * (attempt + 1)));

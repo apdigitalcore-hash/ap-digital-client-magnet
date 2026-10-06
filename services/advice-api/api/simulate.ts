@@ -422,6 +422,99 @@ async function recordFailure(status: number, reason: string, context: Record<str
   }
 }
 
+// ── Daily budget ───────────────────────────────────────────────────────────
+/**
+ * The Gemini key is on the free tier: 20 generateContent calls a day for the
+ * whole tool, permanently. So the budget is enforced here, before a model is
+ * ever called, rather than letting people discover it as a raw quota error.
+ *
+ * PER_PERSON is matched on email and on IP, whichever is further along, so a
+ * fresh address from the same connection does not reset the allowance. The
+ * browser also tracks runs, but that is a convenience: it can be cleared, and
+ * this is the enforcement.
+ *
+ * DAILY_CEILING sits below the provider's 20 on purpose. The headroom absorbs
+ * the corrective pass and leaves room to investigate a bad day without the
+ * provider's own error ever reaching a visitor.
+ */
+const PER_PERSON_PER_DAY = 3;
+const DAILY_CEILING = 16;
+
+const SUPABASE_URL = process.env.SUPABASE_URL ?? process.env.VITE_SUPABASE_URL ?? "";
+const SUPABASE_KEY = process.env.SUPABASE_ANON_KEY ?? process.env.VITE_SUPABASE_PUBLISHABLE_KEY ?? "";
+
+type Budget =
+  | { allowed: true; globalUsed: number; personUsed: number }
+  | { allowed: false; reason: "global" | "person"; globalUsed?: number; personUsed?: number };
+
+/** Hashed so the counter table never holds an email address or an IP. */
+async function hashKey(value: string): Promise<string> {
+  const bytes = new TextEncoder().encode(`advice:${value.trim().toLowerCase()}`);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function rpc(fn: string, body: Record<string, unknown>): Promise<any> {
+  const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_KEY,
+      Authorization: `Bearer ${SUPABASE_KEY}`,
+    },
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(5000),
+  });
+  if (!res.ok) throw new Error(`${fn}: ${res.status} ${(await res.text()).slice(0, 200)}`);
+  return res.json();
+}
+
+async function takeBudget(email: string, ip: string): Promise<Budget> {
+  if (!SUPABASE_URL || !SUPABASE_KEY) {
+    // Without the shared counter there is no global ceiling — only the
+    // per-instance limiter below, which a spread of traffic walks straight
+    // past. Loud, because silently unprotected is the dangerous state.
+    console.error(JSON.stringify({
+      event: "budget_store_missing",
+      detail: "SUPABASE_URL / SUPABASE_ANON_KEY are not set on this deployment; the daily ceiling is NOT enforced.",
+    }));
+    return { allowed: true, globalUsed: -1, personUsed: -1 };
+  }
+  try {
+    const r = await rpc("advice_consume", {
+      p_person_key: email ? await hashKey(email) : "",
+      p_ip_key: await hashKey(ip),
+      p_person_limit: PER_PERSON_PER_DAY,
+      p_global_limit: DAILY_CEILING,
+    });
+    if (r?.allowed) return { allowed: true, globalUsed: r.global_used ?? -1, personUsed: r.person_used ?? -1 };
+    return { allowed: false, reason: r?.reason === "person" ? "person" : "global", globalUsed: r?.global_used, personUsed: r?.person_used };
+  } catch (e) {
+    // A counter that is down must not take the tool down with it. The
+    // provider's own quota is still a backstop, and this is logged.
+    console.error(JSON.stringify({ event: "budget_error", detail: e instanceof Error ? e.message : String(e) }));
+    return { allowed: true, globalUsed: -1, personUsed: -1 };
+  }
+}
+
+/** Hands a slot back when the simulation never actually ran. */
+async function refundBudget(email: string, ip: string) {
+  if (!SUPABASE_URL || !SUPABASE_KEY) return;
+  try {
+    await rpc("advice_refund", { p_person_key: email ? await hashKey(email) : "", p_ip_key: await hashKey(ip) });
+  } catch {
+    /* a refund that fails costs one slot, not the request */
+  }
+}
+
+/** When the allowance comes back, in the visitor's own words. */
+function resetsAt(): string {
+  const now = new Date();
+  const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1));
+  const hours = Math.max(1, Math.round((next.getTime() - now.getTime()) / 3600_000));
+  return hours <= 1 ? "in about an hour" : `in about ${hours} hours`;
+}
+
 const SYSTEM_PROMPT = `You are a senior performance marketer with 10+ years running paid campaigns across Google Ads, Meta, TikTok and LinkedIn for ecommerce, SaaS, local service and B2B brands. You are powering ADvice, a free campaign simulator that predicts performance before a marketer spends money.
 
 Ground every number in industry benchmarks, and keep them internally consistent:
@@ -579,6 +672,26 @@ async function run(req: any, res: any) {
   const ip = (String(req.headers["x-forwarded-for"] ?? "") ?? "").split(",")[0].trim() || "unknown";
   if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while.", kind: "rate" }, 429);
 
+  // The budget is taken before anything expensive happens, and handed back if
+  // the simulation never actually runs.
+  const email = str(body.email, 200);
+  const budget = await takeBudget(email, ip);
+  if (!budget.allowed) {
+    if (budget.reason === "person") {
+      return json({
+        error: `You've used your ${PER_PERSON_PER_DAY} free simulations for today. Your next one unlocks ${resetsAt()}.`,
+        kind: "person_limit",
+        resetsAt: resetsAt(),
+      }, 429);
+    }
+    console.error(JSON.stringify({ event: "daily_ceiling_reached", global_used: budget.globalUsed, limit: DAILY_CEILING }));
+    return json({
+      error: `ADvice has reached today's limit. It resets ${resetsAt()}.`,
+      kind: "daily_limit",
+      resetsAt: resetsAt(),
+    }, 429);
+  }
+
   const [landing, product] = await Promise.all([
     inputs.landingUrl ? fetchPage(inputs.landingUrl) : Promise.resolve(null),
     inputs.productUrl && inputs.productUrl !== inputs.landingUrl ? fetchPage(inputs.productUrl) : Promise.resolve(null),
@@ -618,10 +731,21 @@ async function run(req: any, res: any) {
   // A daily quota being spent is not the same as a momentary overload, and
   // "try again in a minute" is false when the answer is hours.
   let quota = false;
-  // Two passes: a transient upstream failure on the first pass (Gemini returns
-  // 500s under load) should not cost the user their simulation.
-  for (const model of [...MODELS, ...MODELS]) {
+  // One pass, not two. Against a 20-a-day budget, a single failure that
+  // spends eight model calls is unaffordable: it can burn the whole day.
+  // Each entry here is a different model name, tried only when the previous
+  // name is rejected outright, which costs no quota. A quota error stops
+  // everything immediately, and a transient 5xx buys exactly one retry.
+  let transientRetries = 0;
+  let modelCalls = 0;
+  const queue = [...MODELS];
+  for (let model = queue.shift(); model; model = queue.shift()) {
     try {
+      modelCalls += 1;
+      console.log(JSON.stringify({
+        event: "model_call", model, call: modelCalls,
+        corrective: corrected, global_used: budget.globalUsed, ceiling: DAILY_CEILING,
+      }));
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
         {
@@ -649,10 +773,21 @@ async function run(req: any, res: any) {
         if (res.status === 404 || res.status === 400) continue;
         // Quota (429) and overload (5xx) are per-model — back off briefly and
         // try the next model instead of failing the visitor.
-        if (res.status === 429 || res.status >= 500) {
+        // A 429 is the provider refusing to serve us. Trying another model
+        // on the same key refuses the same way and buys nothing, so stop.
+        if (res.status === 429) {
           busy = true;
-          if (res.status === 429 && /free_tier|quota|RESOURCE_EXHAUSTED/i.test(body)) quota = true;
-          await new Promise((r) => setTimeout(r, 600));
+          quota = true;
+          break;
+        }
+        // A genuine transient fault is worth exactly one more attempt.
+        if (res.status >= 500) {
+          busy = true;
+          if (transientRetries < 1) {
+            transientRetries += 1;
+            queue.unshift(model);
+            await new Promise((r) => setTimeout(r, 600));
+          }
           continue;
         }
         return json({ error: "The simulation failed. Please try again.", kind: "server", detail: lastError }, 502);
@@ -683,6 +818,9 @@ async function run(req: any, res: any) {
         corrected = true;
         correction = `\n\nYour previous answer invented claims the advertiser never supplied: ${invented.join("; ")}. Rewrite the ad using only what they gave you. Do not substitute a different unsupported claim. If there is no strong hook in their input, write a plainer ad and say in the improvements what evidence would unlock a stronger one.`;
         results = undefined;
+        // Same model, with the violation named. Costs one extra call, and
+        // only ever when the detector actually found something.
+        queue.unshift(model);
         continue;
       }
       if (invented.length) {
@@ -700,6 +838,11 @@ async function run(req: any, res: any) {
     } catch (e) {
       lastError = `${model}: ${e instanceof Error ? e.message : String(e)}`;
       console.error("gemini error", lastError);
+      // A dropped connection is transient, and worth exactly one more try.
+      if (transientRetries < 1) {
+        transientRetries += 1;
+        queue.unshift(model);
+      }
     }
   }
   if (!results) {
@@ -711,6 +854,8 @@ async function run(req: any, res: any) {
       : busy
         ? "The AI is busy right now. Try again in a minute."
         : "The simulation failed. Please try again.";
+    // They asked for a simulation and did not get one: give the slot back.
+    await refundBudget(email, ip);
     await recordFailure(502, lastError || "no model returned a result", {
       kind: quota ? "quota" : busy ? "busy" : "server",
       channel: inputs.channel,
@@ -721,6 +866,11 @@ async function run(req: any, res: any) {
     return json({ error, kind: quota ? "quota" : busy ? "busy" : "server", detail: lastError }, 502);
   }
 
+  console.log(JSON.stringify({
+    event: "simulation_ok", model_calls: modelCalls,
+    global_used: budget.globalUsed, ceiling: DAILY_CEILING,
+    person_used: budget.personUsed, channel: inputs.channel, industry: inputs.industry,
+  }));
   return json({
     id: crypto.randomUUID().slice(0, 8),
     createdAt: new Date().toISOString(),

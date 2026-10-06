@@ -84,7 +84,7 @@ const EmailGate = ({ onDone }: { onDone: () => void }) => {
       </span>
       <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">Keep simulating — it stays free</h1>
       <p className="mt-3 text-[#6e6e73]">
-        Add your email for {FREE_TOTAL - 1} more simulations. We send the occasional ADvice update and nothing else.
+        Add your email for {FREE_TOTAL} simulations a day. We send the occasional ADvice update and nothing else.
       </p>
       <form onSubmit={submit} className="mt-8 flex flex-col gap-2 sm:flex-row">
         <input
@@ -103,7 +103,7 @@ const EmailGate = ({ onDone }: { onDone: () => void }) => {
 
 const LimitReached = () => (
   <div className="mx-auto max-w-md py-20 text-center">
-    <h1 className="text-3xl font-semibold tracking-[-0.03em]">That is your {FREE_TOTAL} free simulations</h1>
+    <h1 className="text-3xl font-semibold tracking-[-0.03em]">That is your {FREE_TOTAL} for today</h1>
     <p className="mt-3 text-[#6e6e73]">
       If the reports are telling you something worth acting on, the fastest next step is twenty minutes with the person
       who built this — we will look at your account together, free.
@@ -132,8 +132,11 @@ const FailureScreen = ({
   inputs: SimInputs;
   onRetry: () => void;
 }) => {
-  // A spent quota is our bill, not their problem, and retrying cannot fix it.
-  const ours = kind === 'server' || kind === 'network' || kind === 'config' || kind === 'quota';
+  // A spent quota or a reached ceiling is our constraint, not their problem,
+  // and no retry can move it.
+  const ours = kind === 'server' || kind === 'network' || kind === 'config' || kind === 'quota' || kind === 'daily_limit';
+  // Their own allowance: nothing is wrong, they have simply used it.
+  const theirs = kind === 'person_limit';
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
 
@@ -142,11 +145,17 @@ const FailureScreen = ({
       <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#fff0f0]">
         <AlertCircle className="h-5 w-5 text-[#d70015]" />
       </span>
-      <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">That simulation didn’t finish</h1>
+      <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em]">
+        {theirs ? 'That’s your three for today' : kind === 'daily_limit' ? 'ADvice is at today’s limit' : 'That simulation didn’t finish'}
+      </h1>
       <p className="mt-3 text-[#6e6e73]">{message}</p>
       <p className="mt-2 text-[15px] text-[#86868b]">
         Your answers are still here — nothing was lost.{' '}
-        {kind === 'quota'
+        {theirs
+          ? 'Nothing went wrong — this is the free allowance, and it refills on its own.'
+          : kind === 'daily_limit'
+          ? 'ADvice runs on a free AI allowance that is shared by everyone using it, and today’s is spent.'
+          : kind === 'quota'
           ? 'This one is on us — we have hit our limit with the AI provider. It has been logged and should clear within the hour.'
           : ours
             ? 'This one is on us, not on you, and it has been logged. Trying again may hit the same problem.'
@@ -154,7 +163,7 @@ const FailureScreen = ({
       </p>
 
       <div className="mt-8 flex flex-col items-center gap-3">
-        {!ours && (
+        {!ours && !theirs && (
           <button
             type="button"
             onClick={onRetry}
@@ -177,7 +186,9 @@ const FailureScreen = ({
             }}
           >
             <label htmlFor="rescue" className="text-[13px] text-[#6e6e73]">
-              Leave your email and we’ll send the report once it’s fixed.
+              {kind === 'daily_limit'
+                ? 'Leave your email and we’ll tell you once ADvice is back. One message about this run — we won’t add you to anything.'
+                : 'Leave your email and we’ll send the report once it’s fixed.'}
             </label>
             <div className="mt-2 flex gap-2">
               <input
@@ -195,7 +206,9 @@ const FailureScreen = ({
           </form>
         )}
         {ours && sent && (
-          <p className="text-[15px] text-[#248a3d]">Thanks — we’ll send your report once this is fixed.</p>
+          <p className="text-[15px] text-[#248a3d]">
+            {kind === 'daily_limit' ? 'Thanks — we’ll let you know when ADvice is back.' : 'Thanks — we’ll send your report once this is fixed.'}
+          </p>
         )}
 
         {ours && (
