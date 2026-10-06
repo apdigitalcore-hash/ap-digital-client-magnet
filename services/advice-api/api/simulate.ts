@@ -1045,8 +1045,12 @@ async function run(req: any, res: any) {
 
   // One row per simulation, so "do people run more than one, and for what"
   // stops being a guess. Hashed key only — countable, not a mailing list.
-  // Not awaited: a recording failure must never cost someone their report.
-  void recordRun({
+  //
+  // Awaited, despite costing a round trip. Fire-and-forget lost a third of the
+  // rows: a serverless instance is frozen the moment the response is sent, so
+  // an unfinished promise is simply killed. recordRun swallows its own errors,
+  // so awaiting still cannot cost anyone their report.
+  await recordRun({
     channel: inputs.channel,
     industry: inputs.industry,
     objective: inputs.objective,
