@@ -1,16 +1,16 @@
 // ADvice — Lovable Cloud function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
-// Secrets: GEMINI_API_KEY (required), GEMINI_MODEL (optional).
+// Secrets: LOVABLE_API_KEY (auto-injected by Lovable Cloud). AI calls go
+// through the Lovable AI gateway — no free-tier daily quota to exhaust.
+const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+// Models are tried in order (Lovable AI gateway model ids).
+const MODELS = ["google/gemini-2.5-flash", "google/gemini-2.5-flash-lite"];
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Lovable created the secret as "DefaultGeminiProject"; either name works.
-const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY") ?? Deno.env.get("DefaultGeminiProject");
-// Models are tried in order; keep the configured model first and deduplicate it
-// from the stable alias used as a fallback.
-const MODELS = [...new Set([Deno.env.get("GEMINI_MODEL"), "gemini-flash-latest"].filter(Boolean))] as string[];
 const MAX_AI_ATTEMPTS = 4;
 const MAX_RETRY_DELAY_MS = 8_000;
 const PER_IP_PER_HOUR = 8;
@@ -474,7 +474,7 @@ Deno.serve(async (req) => {
     new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
 
-  if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet.", kind: "config" }, 500);
+  if (!LOVABLE_API_KEY) return json({ error: "The simulator isn't configured yet.", kind: "config" }, 500);
 
   let body: Record<string, unknown>;
   try {
@@ -535,21 +535,21 @@ Deno.serve(async (req) => {
     const model = MODELS[attempt % MODELS.length];
     try {
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        "https://ai.gateway.lovable.dev/v1/chat/completions",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
+          headers: { "Content-Type": "application/json", "Authorization": `Bearer ${LOVABLE_API_KEY}` },
           signal: AbortSignal.timeout(55_000),
           body: JSON.stringify({
-            systemInstruction: { parts: [{ text: SYSTEM_PROMPT + correction }] },
-            contents: [{ role: "user", parts: image
-              ? [{ text: userPrompt }, { inlineData: { mimeType: image.mime, data: image.data } }]
-              : [{ text: userPrompt }] }],
-            generationConfig: {
-              temperature: 0.4,
-              responseMimeType: "application/json",
-              responseSchema: RESPONSE_SCHEMA,
-            },
+            model,
+            temperature: 0.4,
+            response_format: { type: "json_object" },
+            messages: [
+              { role: "system", content: SYSTEM_PROMPT + correction },
+              { role: "user", content: image
+                ? [{ type: "text", text: userPrompt }, { type: "image_url", image_url: { url: `data:${image.mime};base64,${image.data}` } }]
+                : userPrompt },
+            ],
           }),
         },
       );

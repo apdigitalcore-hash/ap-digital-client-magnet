@@ -14,6 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
+      advice_config: {
+        Row: {
+          key: string
+          value: string
+        }
+        Insert: {
+          key: string
+          value: string
+        }
+        Update: {
+          key?: string
+          value?: string
+        }
+        Relationships: []
+      }
+      advice_runs: {
+        Row: {
+          budget: number | null
+          channel: string | null
+          confidence: string | null
+          created_at: string
+          creative_score: number | null
+          currency: string | null
+          handoff: boolean
+          id: string
+          industry: string | null
+          landing_status: string | null
+          model: string | null
+          ms: number | null
+          objective: string | null
+          person_key: string | null
+        }
+        Insert: {
+          budget?: number | null
+          channel?: string | null
+          confidence?: string | null
+          created_at?: string
+          creative_score?: number | null
+          currency?: string | null
+          handoff?: boolean
+          id?: string
+          industry?: string | null
+          landing_status?: string | null
+          model?: string | null
+          ms?: number | null
+          objective?: string | null
+          person_key?: string | null
+        }
+        Update: {
+          budget?: number | null
+          channel?: string | null
+          confidence?: string | null
+          created_at?: string
+          creative_score?: number | null
+          currency?: string | null
+          handoff?: boolean
+          id?: string
+          industry?: string | null
+          landing_status?: string | null
+          model?: string | null
+          ms?: number | null
+          objective?: string | null
+          person_key?: string | null
+        }
+        Relationships: []
+      }
       advice_usage: {
         Row: {
           day: string
@@ -139,12 +205,26 @@ export type Database = {
           p_ip_key: string
           p_person_key: string
           p_person_limit: number
+          p_secret: string
         }
         Returns: Json
       }
-      advice_refund: {
-        Args: { p_ip_key: string; p_person_key: string }
+      advice_record: {
+        Args: { p_row: Json; p_secret: string }
         Returns: undefined
+      }
+      advice_refund: {
+        Args: { p_ip_key: string; p_person_key: string; p_secret: string }
+        Returns: undefined
+      }
+      advice_repeat_use: {
+        Args: { p_days?: number }
+        Returns: {
+          people: number
+          people_repeat: number
+          runs_per_person: number
+          runs_total: number
+        }[]
       }
       has_role: {
         Args: {
