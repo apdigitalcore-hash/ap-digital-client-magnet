@@ -34,7 +34,41 @@ const readNum = (k: string) => {
   }
 };
 
-export const runCount = () => readNum(RUNS_KEY);
+/**
+ * Simulations this browser has run today.
+ *
+ * This used to be a single lifetime integer, which quietly became a permanent
+ * lockout the moment the limit changed from "3 free" to "3 a day": after the
+ * third report the browser said "that is your 3 for today" forever, and anyone
+ * returning with 3 or 4 runs from the old 5-run policy was blocked on arrival.
+ *
+ * The day is UTC to match the server, so the browser and the counter roll over
+ * together rather than disagreeing for several hours.
+ */
+const today = () => new Date().toISOString().slice(0, 10);
+
+export function runCount(): number {
+  try {
+    const raw = localStorage.getItem(RUNS_KEY);
+    if (!raw) return 0;
+    // A bare number is the old lifetime format. Those runs were counted under
+    // a different policy, so they start today at zero rather than carrying a
+    // lockout forward.
+    if (!raw.startsWith('{')) return 0;
+    const { d, n } = JSON.parse(raw) as { d?: string; n?: number };
+    return d === today() ? Number(n) || 0 : 0;
+  } catch {
+    return 0;
+  }
+}
+
+export function bumpRunCount() {
+  try {
+    localStorage.setItem(RUNS_KEY, JSON.stringify({ d: today(), n: runCount() + 1 }));
+  } catch {
+    /* storage blocked — the server is the real gate anyway */
+  }
+}
 
 export function savedEmail(): string {
   try {
@@ -213,7 +247,7 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
         // advertiser's, not something to pass around in a link.
         sim.inputs.image = inputs.image;
         try {
-          localStorage.setItem(RUNS_KEY, String(runCount() + 1));
+          bumpRunCount();
         } catch {
           /* storage blocked — the visitor keeps their free runs */
         }
@@ -330,7 +364,7 @@ export async function captureEmail(
   const payload: Record<string, string | number> = {
     email,
     source: 'ADvice simulator',
-    'simulations-run': runCount(),
+    'simulations-run-today': runCount(),
 
     // what they typed
     campaign: inputs?.campaignName || '(untitled)',

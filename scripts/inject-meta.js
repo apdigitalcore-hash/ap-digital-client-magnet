@@ -374,6 +374,21 @@ const staticRoutes = [
     ]}
   },
   {
+    // Written by Lovable but never routed, so /marketing-benchmarks fell to the
+    // catch-all: a crawler or an assistant following the page's own canonical
+    // URL found nothing. The page exists to be quoted by AI search, which makes
+    // the prerendered body the whole point of it.
+    path: 'marketing-benchmarks',
+    title: 'Marketing Costs & Benchmarks Canada 2026 | AP Digital',
+    description: 'Real 2026 benchmarks for Canadian small businesses: Google Ads cost per click by industry, Meta Ads cost per lead, and what agencies charge. Vancouver data included.',
+    body: '<h1>Marketing Costs &amp; Benchmarks for Canadian Small Businesses (2026)</h1><p>What clicks, leads, and agency management actually cost in Canada right now — with Vancouver-specific notes. Figures are industry benchmarks compiled for 2026, not a live auction read.</p><nav aria-label="Related"><ul><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">Social media marketing costs in Canada</a></li><li><a href="/blog/how-much-do-instagram-ads-cost-canada">Instagram ads costs in Canada</a></li><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social media management</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/advice">Simulate your campaign free</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    schema: { "@context": "https://schema.org", "@graph": [
+      orgSchema, founderSchema,
+      breadcrumb([{ name: 'Home', url: '/' }, { name: 'Marketing Benchmarks', url: '/marketing-benchmarks' }]),
+      webPageSchema('Marketing Costs & Benchmarks Canada 2026 | AP Digital', 'Google Ads cost per click, Meta Ads cost per lead and agency pricing benchmarks for Canada in 2026.', '/marketing-benchmarks'),
+    ]}
+  },
+  {
     path: 'pricing',
     title: 'Marketing Pricing Vancouver | From $759/mo | AP Digital',
     description: 'Transparent pricing for paid ads and social media management. Month-to-month. 90-day results guarantee. Updated August 2026.',
