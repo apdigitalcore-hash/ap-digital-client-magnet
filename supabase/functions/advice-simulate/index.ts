@@ -474,7 +474,7 @@ Deno.serve(async (req) => {
     new Response(JSON.stringify(body), { status, headers: { ...corsHeaders, "Content-Type": "application/json" } });
   if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
 
-  if (!GEMINI_API_KEY) return json({ error: "The simulator isn't configured yet.", kind: "config" }, 500);
+  if (!LOVABLE_API_KEY) return json({ error: "The simulator isn't configured yet.", kind: "config" }, 500);
 
   let body: Record<string, unknown>;
   try {
@@ -535,21 +535,21 @@ Deno.serve(async (req) => {
     const model = MODELS[attempt % MODELS.length];
     try {
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        "https://ai.gateway.lovable.dev/v1/chat/completions",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY },
+          headers: { "Content-Type": "application/json", "Authorization": `Bearer ${LOVABLE_API_KEY}` },
           signal: AbortSignal.timeout(55_000),
           body: JSON.stringify({
-            systemInstruction: { parts: [{ text: SYSTEM_PROMPT + correction }] },
-            contents: [{ role: "user", parts: image
-              ? [{ text: userPrompt }, { inlineData: { mimeType: image.mime, data: image.data } }]
-              : [{ text: userPrompt }] }],
-            generationConfig: {
-              temperature: 0.4,
-              responseMimeType: "application/json",
-              responseSchema: RESPONSE_SCHEMA,
-            },
+            model,
+            temperature: 0.4,
+            response_format: { type: "json_object" },
+            messages: [
+              { role: "system", content: SYSTEM_PROMPT + correction },
+              { role: "user", content: image
+                ? [{ type: "text", text: userPrompt }, { type: "image_url", image_url: { url: `data:${image.mime};base64,${image.data}` } }]
+                : userPrompt },
+            ],
           }),
         },
       );
