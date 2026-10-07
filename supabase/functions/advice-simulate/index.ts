@@ -1,6 +1,12 @@
 // ADvice — Lovable Cloud function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
-// Secrets: GEMINI_API_KEY (required), GEMINI_MODEL (optional).
+// Secrets: LOVABLE_API_KEY (auto-injected by Lovable Cloud). AI calls go
+// through the Lovable AI gateway — no free-tier daily quota to exhaust.
+const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
+// Models are tried in order; keep the configured model first and deduplicate it
+// so a matching GEMINI_MODEL value does not waste an attempt on the same model.
+const MODELS = [...new Set([Deno.env.get("GEMINI_MODEL") ?? "google/gemini-2.5-flash", "google/gemini-2.5-flash-lite"].filter(Boolean))] as string[];
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
