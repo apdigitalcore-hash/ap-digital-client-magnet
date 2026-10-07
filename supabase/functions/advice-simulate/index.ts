@@ -12,11 +12,6 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Lovable created the secret as "DefaultGeminiProject"; either name works.
-const GEMINI_API_KEY = Deno.env.get("GEMINI_API_KEY") ?? Deno.env.get("DefaultGeminiProject");
-// Models are tried in order; keep the configured model first and deduplicate it
-// from the stable alias used as a fallback.
-const MODELS = [...new Set([Deno.env.get("GEMINI_MODEL"), "gemini-flash-latest"].filter(Boolean))] as string[];
 const MAX_AI_ATTEMPTS = 4;
 const MAX_RETRY_DELAY_MS = 8_000;
 const PER_IP_PER_HOUR = 8;
