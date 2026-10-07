@@ -3,9 +3,8 @@
 // Secrets: LOVABLE_API_KEY (auto-injected by Lovable Cloud). AI calls go
 // through the Lovable AI gateway — no free-tier daily quota to exhaust.
 const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-// Models are tried in order; keep the configured model first and deduplicate it
-// so a matching GEMINI_MODEL value does not waste an attempt on the same model.
-const MODELS = [...new Set([Deno.env.get("GEMINI_MODEL") ?? "google/gemini-2.5-flash", "google/gemini-2.5-flash-lite"].filter(Boolean))] as string[];
+// Models are tried in order (Lovable AI gateway model ids).
+const MODELS = ["google/gemini-2.5-flash", "google/gemini-2.5-flash-lite"];
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
