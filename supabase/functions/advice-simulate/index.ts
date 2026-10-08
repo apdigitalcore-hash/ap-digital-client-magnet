@@ -578,10 +578,10 @@ Deno.serve(async (req) => {
         return json({ error: "The simulation failed. Please try again.", kind: "server", detail: lastError }, 502);
       }
       const data = await res.json();
-      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+      const text = data?.choices?.[0]?.message?.content;
       if (!text) {
         lastError = `${model}: empty response ${JSON.stringify(data).slice(0, 400)}`;
-        console.error("gemini", lastError);
+        console.error("gateway", lastError);
         continue;
       }
       results = normalise(JSON.parse(text));
