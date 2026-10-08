@@ -295,6 +295,44 @@ const RESPONSE_SCHEMA = {
   required: ["summary", "predictions", "creative", "risk", "recommendations", "competitors"],
 };
 
+/**
+ * The gateway speaks OpenAI-style strict JSON Schema, not Gemini's
+ * responseSchema dialect. Convert: lowercase types, every property required
+ * (strict mode demands it), `nullable` becomes a type union with "null",
+ * and objects get additionalProperties: false. Without this the model is
+ * only told "return some JSON" and picks its own keys, which normalise()
+ * then silently fills with zeroed ranges and empty sections.
+ */
+// deno-lint-ignore no-explicit-any
+const toJsonSchema = (node: any): any => {
+  if (Array.isArray(node)) return node.map(toJsonSchema);
+  if (!node || typeof node !== "object") return node;
+  const out: Record<string, unknown> = {};
+  for (const [k, v] of Object.entries(node)) {
+    if (k === "type" && typeof v === "string") {
+      out.type = v.toLowerCase();
+    } else if (k === "nullable" && v === true) {
+      out.type = [out.type, "null"];
+    } else if (k === "properties") {
+      out.properties = Object.fromEntries(Object.entries(v as object).map(([pk, pv]) => [pk, toJsonSchema(pv)]));
+    } else if (k === "items") {
+      out.items = toJsonSchema(v);
+    } else if (k !== "nullable") {
+      out[k] = toJsonSchema(v);
+    }
+  }
+  if (out.type === "object" && out.properties) {
+    out.required = Object.keys(out.properties as object);
+    out.additionalProperties = false;
+  }
+  return out;
+};
+
+const JSON_SCHEMA_FORMAT = {
+  type: "json_schema",
+  json_schema: { name: "advice_report", strict: true, schema: toJsonSchema(RESPONSE_SCHEMA) },
+};
+
 // ── Claim guard ────────────────────────────────────────────────────────────
 /**
  * Catches claims the rewrite invented.
