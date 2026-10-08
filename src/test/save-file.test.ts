@@ -20,9 +20,7 @@ describe('saveBlob', () => {
   afterEach(() => {
     vi.useRealTimers();
     vi.restoreAllMocks();
-    // @ts-expect-error test cleanup
     delete navigator.canShare;
-    // @ts-expect-error test cleanup
     delete navigator.share;
   });
 
