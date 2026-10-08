@@ -581,7 +581,7 @@ Deno.serve(async (req) => {
           body: JSON.stringify({
             model,
             temperature: 0.4,
-            response_format: { type: "json_object" },
+            response_format: JSON_SCHEMA_FORMAT,
             messages: [
               { role: "system", content: SYSTEM_PROMPT + correction },
               { role: "user", content: image
