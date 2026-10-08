@@ -58,3 +58,16 @@ the title applies.
 - No separate `/roofing-seo` page. The brief limits the work to one page, and
   "roofing seo" is handled by a section and an FAQ here, plus the existing
   `/roofer-marketing` page.
+
+---
+
+## Status: APPLIED 2026-10-07
+
+All three changes approved by Arjun and applied to
+`src/pages/niches/ContractorMarketing.tsx` (TITLE, DESC, H1). Verified in
+`dist/contractor-marketing/index.html` after a full build.
+
+Note for future edits: `scripts/inject-meta.js` derives TITLE/DESC/H1 from the
+React source (see the extractor around line 911), so the hardcoded `title:` and
+`description:` on the route's entry in that file are inert for this page. Edit
+the React file only.
