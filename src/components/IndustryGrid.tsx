@@ -21,19 +21,19 @@ import {
  * The list lives here only. Two copies of it is how four became stale.
  */
 const INDUSTRIES = [
-  { icon: Wrench, name: 'Trades & Contractors', to: '/trades-marketing' },
-  { icon: Scissors, name: 'Salons & Beauty', to: '/salon-marketing' },
   { icon: Home, name: 'Real Estate', to: '/real-estate-marketing' },
+  { icon: Scissors, name: 'Salons & Beauty', to: '/salon-marketing' },
   { icon: GraduationCap, name: 'Coaching & Consulting', to: '/coaching-marketing' },
   { icon: Stethoscope, name: 'Dental & Clinics', to: '/dental-marketing' },
   { icon: Dumbbell, name: 'Gyms & Fitness', to: '/fitness-marketing' },
   { icon: UtensilsCrossed, name: 'Restaurants', to: '/restaurant-marketing' },
   { icon: Scale, name: 'Law Firms', to: '/law-firm-marketing' },
+  { icon: Wrench, name: 'Trades & Contractors', to: '/trades-marketing' },
+  { icon: Hammer, name: 'General Contractors', to: '/contractor-marketing' },
   { icon: Wind, name: 'HVAC', to: '/hvac-marketing' },
   { icon: Droplets, name: 'Plumbers', to: '/plumber-marketing' },
   { icon: Zap, name: 'Electricians', to: '/electrician-marketing' },
   { icon: HardHat, name: 'Roofers', to: '/roofer-marketing' },
-  { icon: Hammer, name: 'General Contractors', to: '/contractor-marketing' },
   { icon: Building2, name: 'Property Management', to: '/property-management-marketing' },
 ];
 
