@@ -1063,6 +1063,11 @@ async function run(req: any, res: any) {
     model: usedModel,
     ms: Date.now() - startedAt,
     personKey: email ? await hashKey(email) : "",
+    // The IP hash is already computed for the daily limit. Recording it too
+    // means a first-time run — which has no email yet, so no personKey — is
+    // still countable. Looser than email: see the migration for why it is a
+    // separate column rather than a fallback.
+    ipKey: await hashKey(ip),
   });
   return json({
     id: crypto.randomUUID().slice(0, 8),
