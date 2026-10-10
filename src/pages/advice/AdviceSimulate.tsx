@@ -67,6 +67,7 @@ const Loading = () => {
 
 /** Asked once, after the first report — not before it. */
 const EmailGate = ({ onDone }: { onDone: () => void }) => {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
   const submit = (e: FormEvent) => {
@@ -75,7 +76,7 @@ const EmailGate = ({ onDone }: { onDone: () => void }) => {
     // is held here and sent the moment this simulation finishes.
     const address = email.trim();
     rememberEmail(address);
-    holdLead(address);
+    holdLead(address, name.trim());
     onDone();
   };
 
@@ -90,8 +91,13 @@ const EmailGate = ({ onDone }: { onDone: () => void }) => {
       </p>
       <form onSubmit={submit} className="mt-8 flex flex-col gap-2 sm:flex-row">
         <input
+          type="text" required value={name} onChange={(e) => setName(e.target.value)}
+          placeholder="Your name" aria-label="Your name" autoComplete="name"
+          className="rounded-xl border border-black/[0.1] bg-[#f5f5f7] px-3.5 py-2.5 text-[15px] outline-none focus:border-[#1d1d1f] focus:bg-white sm:w-36"
+        />
+        <input
           type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@company.com" aria-label="Email address"
+          placeholder="you@company.com" aria-label="Email address" autoComplete="email"
           className="flex-1 rounded-xl border border-black/[0.1] bg-[#f5f5f7] px-3.5 py-2.5 text-[15px] outline-none focus:border-[#1d1d1f] focus:bg-white"
         />
         <button type="submit" className="min-h-[44px] rounded-full bg-[#1d1d1f] px-5 py-2.5 text-sm font-medium text-white hover:bg-black">
