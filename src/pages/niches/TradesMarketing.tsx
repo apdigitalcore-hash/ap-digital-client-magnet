@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     question: 'How much does trades marketing cost in BC?',
-    answer: 'Most BC contractors start with $800–$1,500/month in ad spend plus a $759/month management fee. This covers Google Ads, Meta Ads, creative testing, and weekly reporting. Cost per lead varies a lot by trade, season and how competitive your area is — emergency call-outs are cheaper to win than large installs, and we report yours every week rather than quoting an average up front.',
+    answer: 'Most BC contractors start with $1,000–$1,500/month in ad spend plus a $759/month management fee. This covers Google Ads, Meta Ads, creative testing, and weekly reporting. Cost per lead varies a lot by trade, season and how competitive your area is — emergency call-outs are cheaper to win than large installs, and we report yours every week rather than quoting an average up front.',
   },
   {
     question: 'Should my trades business use Google Ads or Facebook Ads?',
@@ -61,6 +61,18 @@ const faqs = [
   {
     question: 'Can you help my trades business get more reviews?',
     answer: 'Yes. We set up automated review request sequences that go out after every completed job. More 5-star Google reviews improve your local search ranking and build trust with potential customers searching for contractors in their area.',
+  },
+  {
+    question: 'Is it better to buy leads or run my own ads?',
+    answer: 'Shared-lead sites like HomeStars and Angi are an easy start, but they typically send each homeowner to several contractors at once and own the customer relationship. Running your own Google Ads, Meta Ads and Google Business Profile means each call comes only to you and the reviews build on your own listing. Many trades use both while their own channels ramp up.',
+  },
+  {
+    question: 'What is the minimum budget for trades marketing?',
+    answer: 'We recommend at least $1,000/month in ad spend, paid directly to Google or Meta, plus $759/month for management, so about $1,759/month all in. Below that, campaigns rarely gather enough data to optimize.',
+  },
+  {
+    question: 'Do I own my Google Ads account and Google Business Profile?',
+    answer: 'Yes. Your Google Ads account and Google Business Profile stay in your name, and ad spend is billed directly to you by Google or Meta. If you leave, with 30 days\' notice, you keep the accounts, the history and the reviews.',
   },
   {
     question: 'How do I find a trades marketing agency near me in BC?',
@@ -158,6 +170,88 @@ const TradesMarketing = () => (
               <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
+        </div>
+
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">What Trades Marketing Actually Covers</h2>
+        <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
+          <p className="mb-4">
+            Marketing for tradespeople is not a brand exercise. It is a phone-and-calendar problem: getting enough of the right jobs, in the right part of town, at a cost that leaves margin. For a plumbing, electrical, HVAC, roofing or contracting business in BC, three channels do almost all of that work.
+          </p>
+          <p className="mb-4">
+            Google Ads puts you at the top of the page when someone searches for your service in your area. It is the fastest of the three: you pay per click, and leads typically start within the first two weeks. Your Google Business Profile and local SEO decide whether you appear in the Map Pack, the three businesses Google shows on a map, which is where a large share of "near me" calls come from. That builds more slowly but costs nothing per click once you are there. Meta Ads, on Facebook and Instagram, reach homeowners before they search, which matters most for planned work like renovations, heat pumps and re-roofs rather than emergencies.
+          </p>
+          <p>
+            Which mix is right depends far more on your trade than on your city. An emergency plumber and a renovation contractor in the same Surrey postcode need almost opposite campaigns, which is why each trade has its own page below.
+          </p>
+        </div>
+
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Contractor Lead Generation in BC: Rent the Leads or Own Them</h2>
+        <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
+          <p className="mb-4">
+            Most BC trades businesses get their first online leads from a marketplace: HomeStars, Angi, Thumbtack, or Google's own Local Services Ads. These are a reasonable place to start, but the model is worth understanding before you build a business on it.
+          </p>
+          <p className="mb-4">
+            Shared-lead marketplaces typically send the same homeowner to several contractors at once, so you are racing three or four competitors to the phone and the job often goes to whoever is cheapest or quickest. Local Services Ads charge per lead rather than per click and only show a handful of businesses, which makes them useful for emergency trades, but you have little control over which leads you pay for. In every case the platform owns the customer relationship, and when you stop paying, the leads stop.
+          </p>
+          <p>
+            Running your own Google Ads, Meta Ads and Google Business Profile works the other way round. The homeowner calls you and only you, the reviews and profile history accumulate on your own listing, and you can see exactly what each job cost to win. You also own the accounts: your Google Ads account and your Google Business Profile stay in your name, and ad spend is paid directly to Google or Meta, so if you ever leave us you keep all of it.
+          </p>
+        </div>
+
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">How the Trades Differ</h2>
+        <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
+          <p className="mb-4">
+            The same budget can work brilliantly for one trade and poorly for another. These are the differences that shape every campaign we build.
+          </p>
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">Plumbing: speed wins</h3>
+          <p className="mb-4">
+            A large share of plumbing searches are urgent, and the homeowner usually calls the first business that answers. Google Ads and the Map Pack matter most, and a missed call is a lost job, so call answering after hours is as important as the ads themselves. Details on our <Link to="/plumber-marketing" className="text-foreground underline underline-offset-4">plumber marketing</Link> page.
+          </p>
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">Electrical: planned jobs with a permit</h3>
+          <p className="mb-4">
+            Panel upgrades, EV chargers and renovation wiring are mostly planned, researched purchases. Homeowners compare a few electricians, check reviews and licensing, and book days or weeks later. Search ads still lead, but reviews and a credible website carry more weight. See <Link to="/electrician-marketing" className="text-foreground underline underline-offset-4">electrician marketing</Link>.
+          </p>
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">HVAC: two seasons and rebates</h3>
+          <p className="mb-4">
+            Heating demand peaks when the weather turns in fall, cooling demand during summer heat, and heat pump installs are driven partly by rebate programs that change over time. HVAC budgets should move with the season rather than stay flat all year. More on <Link to="/hvac-marketing" className="text-foreground underline underline-offset-4">HVAC marketing</Link>.
+          </p>
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">Roofing: rain sets the calendar</h3>
+          <p className="mb-4">
+            Leak repairs spike when the fall rains arrive, while full replacements are high-value jobs homeowners research for weeks. A roofer needs fast response for one and patient follow-up for the other. See <Link to="/roofer-marketing" className="text-foreground underline underline-offset-4">roofer marketing</Link>.
+          </p>
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">General contracting: the longest sales cycle</h3>
+          <p>
+            Renovations and additions are the largest jobs in home services and take the longest to close, often weeks from first enquiry to signed contract. Portfolio photos and Meta Ads do more of the work here than in any other trade. See <Link to="/contractor-marketing" className="text-foreground underline underline-offset-4">contractor marketing</Link>.
+          </p>
+        </div>
+
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">What the Money Looks Like</h2>
+        <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
+          <p className="mb-4">
+            There are two separate costs. Management is $759/month, month-to-month, with 30 days' notice to pause or cancel. Ad spend is paid directly to Google or Meta on your own card, and we recommend a minimum of $1,000/month so campaigns gather enough data to optimize. So the realistic starting point for a trades business is about $1,759/month all in.
+          </p>
+          <p className="mb-4">
+            The useful question is not what that costs but how many jobs it needs to cover. Take your average job value and your gross margin and work backwards. For example, a trade with a $600 average job and a 40% margin earns about $240 per job, so roughly eight booked jobs a month cover $1,759. A trade whose average job is $10,000 needs one. That arithmetic, more than any industry average, tells you whether paid marketing makes sense for your business right now.
+          </p>
+          <p>
+            Our weekly performance report includes cost per booked job, so you can see which work is profitable to advertise and which is not. See full <Link to="/pricing" className="text-foreground underline underline-offset-4">pricing</Link>.
+          </p>
+        </div>
+
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Your First 90 Days</h2>
+        <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">Weeks 1–2: Build and launch</h3>
+          <p className="mb-4">
+            We agree a lead-volume target with you at kickoff, set up call and form tracking, review your Google Business Profile and website, and launch Google Ads on the services and areas you most want. Most clients see their first qualified leads within 2 weeks of launch.
+          </p>
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">Weeks 3–6: Find what books</h3>
+          <p className="mb-4">
+            Meta Ads typically show qualified leads within 2–3 weeks. With real call data coming in, we cut searches that bring price-shoppers or jobs outside your area, shift budget toward the services that book, and set up review requests after each completed job.
+          </p>
+          <h3 className="font-serif text-xl font-medium text-foreground mb-2">Weeks 7–12: Measure against the target</h3>
+          <p>
+            By the end of month three you have a cost per booked job for each service and a clear view of whether the program pays for itself. If we have missed the lead target we agreed at kickoff, we keep working at no fee for a further 30 days. That is the 90-day results guarantee.
+          </p>
         </div>
 
         <FaqLight faqs={faqs} />
