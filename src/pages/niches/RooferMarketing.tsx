@@ -11,14 +11,14 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Roofer Marketing Vancouver — Roofing Jobs | AP Digital';
-const DESC = 'Roofer marketing with Google Ads & Local SEO for Metro Vancouver. Month-to-month. No contracts. 90-day guarantee.';
+const TITLE = 'Roofing SEO & Roofer Marketing Vancouver | AP Digital';
+const DESC = 'Roofing SEO, Google Ads & Local Services Ads for Metro Vancouver roofers. Seasonal, storm-ready campaigns. Month-to-month, 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/roofer-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Google Search Ads for "roof repair," "roof replacement," & storm damage keywords',
-  'Local Service Ads (LSA) with Google Guaranteed badge',
+  'Local Services Ads, with the Google Guaranteed badge where Google offers them for roofing in your area',
   'Google Business Profile optimization with project photos & reviews',
   'Storm-response campaigns activated within 24 hours of major weather',
   'Landing pages with before-and-after galleries & instant quote forms',
@@ -36,7 +36,7 @@ const results = [
 const faqs = [
   {
     question: 'How much do Google Ads cost for roofers in Metro Vancouver?',
-    answer: 'Roofing is one of the most competitive trades keywords — expect $15–$45 per click for terms like "roof replacement Vancouver." Most roofing companies invest $1,500–$3,000/month in ad spend plus a $759/month management fee. With average job values of $8K–$25K, the ROI is exceptional.',
+    answer: 'Roofing is one of the most competitive trades keywords — expect $15–$45 per click for terms like "roof replacement Vancouver." Most roofing companies invest $1,500–$3,000/month in ad spend plus a $759/month management fee. Average job values run $8K–$25K.',
   },
   {
     question: 'How fast will I get roofing leads from Google Ads?',
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     question: 'How do storm-response campaigns work?',
-    answer: 'When a major windstorm or hail event hits Metro Vancouver, we activate pre-built storm-response campaigns within 24 hours. These target searches like "storm damage roof repair [city]" and "emergency roof tarp." Storm events create 3–5x normal search volume and the leads convert fast because the damage is urgent.',
+    answer: 'When a major windstorm or hail event hits Metro Vancouver, we activate pre-built storm-response campaigns within 24 hours. These target searches like "storm damage roof repair [city]" and "emergency roof tarp." Storm events create a sharp spike in search volume, and the leads convert fast because the damage is urgent.',
   },
   {
     question: 'What roofing keywords should I target?',
@@ -155,7 +155,7 @@ const RooferMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Storm-response campaigns</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">When windstorms hit Metro Vancouver, we activate pre-built campaigns within 24 hours. Storm events create 3–5x search volume and urgent buyers.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">When windstorms hit Metro Vancouver, we activate pre-built campaigns within 24 hours. Storm events create a sharp spike in search volume, and the buyers are urgent.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />

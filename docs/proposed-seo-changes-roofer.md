@@ -65,3 +65,34 @@ proposed one adds the primary term. The same caveat as the title applies.
   roofing page is a stronger answer than two thin ones.
 - The `og:` and `twitter:` titles and descriptions read `TITLE` and `DESC`, so
   they follow automatically. Nothing separate to change.
+
+---
+
+## Status: PARTIALLY APPLIED 2026-10-10
+
+Approved and applied to `src/pages/niches/RooferMarketing.tsx`:
+
+- TITLE (53 chars): `Roofing SEO & Roofer Marketing Vancouver | AP Digital`
+- DESC (140 chars): `Roofing SEO, Google Ads & Local Services Ads for Metro Vancouver roofers. Seasonal, storm-ready campaigns. Month-to-month, 90-day guarantee.`
+- H1: left unchanged. It already carries "roofing leads" and the region, and the
+  title now carries the primary term.
+
+Three claim fixes applied at the same time, in existing copy:
+
+- `"With average job values of $8K-$25K, the ROI is exceptional."` -> `"Average job
+  values run $8K-$25K."` An outcome claim, which the page should not make.
+- `3-5x search volume` during storms, in both an FAQ and a card -> "a sharp spike".
+  An unsourced multiplier.
+- `"Local Service Ads (LSA) with Google Guaranteed badge"` -> the same wording the
+  new copy uses: the badge applies where Google offers LSA for roofing in your
+  area. Google Guaranteed does exist in Canada (CAD 2,000 coverage cap) and
+  roofing is an LSA category, but Canadian roofing eligibility could not be
+  confirmed, so the unhedged version promised a service that may be unavailable.
+
+## STILL OPEN: cannibalisation with /contractor-marketing
+
+`/contractor-marketing`'s applied DESC reads "...for Metro Vancouver GCs and
+roofers...". Now that this page's title leads with "Roofing SEO", the two pages
+compete for the same query, and this is the better target. Dropping "and
+roofers" from the contractor DESC needs its own proposal and sign-off, since
+DESC is a protected field. Not changed.
