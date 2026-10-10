@@ -373,6 +373,7 @@ export async function captureEmail(
 
   const payload: Record<string, string | number> = {
     email,
+    name: savedName(),
     source: 'ADvice simulator',
     'simulations-run-today': runCount(),
 
