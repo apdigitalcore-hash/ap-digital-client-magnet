@@ -47,3 +47,19 @@ The current H1 doesn't contain the page's head term, "trades marketing". It
 also says "Metro Vancouver" while the title and DESC say "BC". The proposal
 fixes both. Keep "Metro Vancouver" instead of "BC" if local intent matters more
 than province-wide reach.
+
+---
+
+## Status: APPLIED 2026-10-10
+
+All three changes approved and applied to `src/pages/niches/TradesMarketing.tsx`.
+Verified in `dist/trades-marketing/index.html`:
+
+- TITLE: `Trades Marketing BC | Contractor Lead Generation | AP Digital`
+- DESC (147 chars): the $500/month error is gone; no `$500` remains on the page.
+- H1: `Trades Marketing and Contractor Leads in BC`
+
+Also closed two visitor-facing link gaps approved at the same time:
+`/contractor-marketing` -> `/property-management-marketing` (card block plus the
+prerendered nav, since the prerenderer keeps in-copy link text but drops the
+href) and `/property-management-marketing` -> `/trades-marketing` (in-copy).

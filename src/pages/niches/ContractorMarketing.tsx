@@ -318,6 +318,10 @@ const ContractorMarketing = () => (
               <p className="font-bold text-foreground">Roofer Marketing</p>
               <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads for roofing companies in BC.</p>
             </Link>
+            <Link to="/property-management-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
+              <p className="font-bold text-foreground">Property Management Marketing</p>
+              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Property managers who hire GCs for turnovers and repairs.</p>
+            </Link>
           </div>
         </div>
 

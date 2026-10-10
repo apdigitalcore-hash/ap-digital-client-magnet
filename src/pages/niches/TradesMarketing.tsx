@@ -11,8 +11,8 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Trades Marketing BC — Contractor Leads | AP Digital';
-const DESC = 'AP Digital runs Google & Meta Ads for BC plumbers, electricians, HVAC companies & roofers. No contracts. Starts at $500/month.';
+const TITLE = 'Trades Marketing BC | Contractor Lead Generation | AP Digital';
+const DESC = 'AP Digital runs Google & Meta Ads for BC plumbers, electricians, HVAC companies & roofers. $759/month management, month-to-month. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/trades-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -121,7 +121,7 @@ const TradesMarketing = () => (
     <main id="main-content" className="pt-24 pb-16">
       <div className="container-custom max-w-4xl">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-8">
-          Trades &amp; Contractor Leads in Metro Vancouver
+          Trades Marketing and Contractor Leads in BC
         </h1>
 
         {/* Short intro */}

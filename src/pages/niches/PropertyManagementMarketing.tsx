@@ -188,6 +188,9 @@ const PropertyManagementMarketing = () => (
             <Link to="/pricing" className="text-foreground underline underline-offset-4 hover:text-foreground/70">pricing</Link>{' '}
             or read{' '}
             <Link to="/blog/property-management-marketing-cost" className="text-foreground underline underline-offset-4 hover:text-foreground/70">what property management marketing costs</Link>.
+            For the trades you hire for turnovers and repairs, see our{' '}
+            <Link to="/trades-marketing" className="text-foreground underline underline-offset-4 hover:text-foreground/70">trades marketing</Link>{' '}
+            page.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
