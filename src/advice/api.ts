@@ -7,6 +7,7 @@ const HISTORY_KEY = 'advice:history';
 const RUNS_KEY = 'advice:runs';
 const EMAIL_KEY = 'advice:email';
 const PENDING_LEAD_KEY = 'advice:pendingLead';
+const NAME_KEY = 'advice:name';
 
 /**
  * Free-use policy.
