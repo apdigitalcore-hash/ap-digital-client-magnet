@@ -94,11 +94,20 @@ export function rememberEmail(email: string) {
  * attached, so the address waits here and goes out the moment the simulation
  * this person was mid-way through finishes.
  */
-export function holdLead(email: string) {
+export function holdLead(email: string, name?: string) {
   try {
     localStorage.setItem(PENDING_LEAD_KEY, email);
+    if (name) localStorage.setItem(NAME_KEY, name);
   } catch {
     /* storage blocked — the report page will ask again */
+  }
+}
+
+function savedName(): string {
+  try {
+    return localStorage.getItem(NAME_KEY) ?? '';
+  } catch {
+    return '';
   }
 }
 
