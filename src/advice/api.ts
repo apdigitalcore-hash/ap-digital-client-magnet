@@ -7,6 +7,7 @@ const HISTORY_KEY = 'advice:history';
 const RUNS_KEY = 'advice:runs';
 const EMAIL_KEY = 'advice:email';
 const PENDING_LEAD_KEY = 'advice:pendingLead';
+const NAME_KEY = 'advice:name';
 
 /**
  * Free-use policy.
@@ -93,11 +94,20 @@ export function rememberEmail(email: string) {
  * attached, so the address waits here and goes out the moment the simulation
  * this person was mid-way through finishes.
  */
-export function holdLead(email: string) {
+export function holdLead(email: string, name?: string) {
   try {
     localStorage.setItem(PENDING_LEAD_KEY, email);
+    if (name) localStorage.setItem(NAME_KEY, name);
   } catch {
     /* storage blocked — the report page will ask again */
+  }
+}
+
+function savedName(): string {
+  try {
+    return localStorage.getItem(NAME_KEY) ?? '';
+  } catch {
+    return '';
   }
 }
 
@@ -363,6 +373,7 @@ export async function captureEmail(
 
   const payload: Record<string, string | number> = {
     email,
+    name: savedName(),
     source: 'ADvice simulator',
     'simulations-run-today': runCount(),
 

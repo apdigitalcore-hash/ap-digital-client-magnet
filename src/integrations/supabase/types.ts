@@ -40,6 +40,7 @@ export type Database = {
           handoff: boolean
           id: string
           industry: string | null
+          ip_key: string | null
           landing_status: string | null
           model: string | null
           ms: number | null
@@ -56,6 +57,7 @@ export type Database = {
           handoff?: boolean
           id?: string
           industry?: string | null
+          ip_key?: string | null
           landing_status?: string | null
           model?: string | null
           ms?: number | null
@@ -72,6 +74,7 @@ export type Database = {
           handoff?: boolean
           id?: string
           industry?: string | null
+          ip_key?: string | null
           landing_status?: string | null
           model?: string | null
           ms?: number | null
@@ -223,6 +226,15 @@ export type Database = {
           people: number
           people_repeat: number
           runs_per_person: number
+          runs_total: number
+        }[]
+      }
+      advice_repeat_use_ip: {
+        Args: { p_days?: number }
+        Returns: {
+          ips: number
+          ips_repeat: number
+          runs_per_ip: number
           runs_total: number
         }[]
       }
