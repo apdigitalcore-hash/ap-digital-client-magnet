@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import {
   Scissors, Home, Building2, Wrench, GraduationCap, Stethoscope, Wind,
-  Dumbbell, UtensilsCrossed, Scale, Droplets, Zap, HardHat, Hammer,
+  Dumbbell, UtensilsCrossed, Scale, Droplets, Zap, HardHat, Hammer, Car,
 } from 'lucide-react';
 
 /**
@@ -25,6 +25,7 @@ const INDUSTRIES = [
   { icon: Scissors, name: 'Salons & Beauty', to: '/salon-marketing' },
   { icon: GraduationCap, name: 'Coaching & Consulting', to: '/coaching-marketing' },
   { icon: Stethoscope, name: 'Dental & Clinics', to: '/dental-marketing' },
+  { icon: Car, name: 'Car Detailing', to: '/car-detailing-marketing' },
   { icon: Dumbbell, name: 'Gyms & Fitness', to: '/fitness-marketing' },
   { icon: UtensilsCrossed, name: 'Restaurants', to: '/restaurant-marketing' },
   { icon: Scale, name: 'Law Firms', to: '/law-firm-marketing' },
