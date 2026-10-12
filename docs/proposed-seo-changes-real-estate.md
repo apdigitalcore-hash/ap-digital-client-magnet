@@ -58,3 +58,18 @@ is acceptable as is.
 - No separate seller-leads or farming page. The brief rules out new pages.
 - The `og:` and `twitter:` fields read `TITLE` and `DESC`, so they follow
   automatically.
+
+---
+
+## Status: APPLIED 2026-10-11
+
+All three applied to `src/pages/niches/RealEstateMarketing.tsx`, verified in
+`dist/real-estate-marketing/index.html`.
+
+- TITLE (60): `Real Estate Marketing Vancouver — Realtor Leads | AP Digital`
+  The Vancouver variant was chosen over the BC one: Vancouver carries more search
+  demand and matches the rest of the site's niche titles. The province-wide angle
+  is kept by the H1 and DESC, which both say BC.
+- DESC (153): seller leads first, price and guarantee from companyFacts.ts, city
+  list dropped since the body and nav already cover it.
+- H1: `Real Estate Marketing and Leads for BC Agents & Brokerages`
