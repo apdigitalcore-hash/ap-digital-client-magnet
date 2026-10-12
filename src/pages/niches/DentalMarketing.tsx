@@ -60,11 +60,11 @@ const faqs = [
   },
   {
     question: 'Can you help my dental clinic rank on Google Maps?',
-    answer: 'We optimize your Google Business Profile: accurate categories, services, hours including emergency availability, insurance and direct billing details, languages spoken and photos of the clinic. That is what Google uses alongside distance and reviews to decide which clinics appear in the map results for searches like "dentist near me". Whether and how you ask patients for reviews is a question to confirm with BCCOHP first.',
+    answer: 'We optimize your Google Business Profile: accurate categories, services, hours including emergency availability, insurance and direct billing details, languages spoken and photos of the clinic. That is what Google uses alongside distance and reviews to decide which clinics appear in the map results for searches like "dentist near me". Confirm with BCCOHP how you ask patients for reviews, and keep anything you publish accurate and unedited.',
   },
   {
     question: 'Can my clinic ask patients for Google reviews?',
-    answer: 'Confirm with BCCOHP before you do. Earlier College rules for dentists have been described as restricting testimonials and reviews, and we could not verify how the current rules treat soliciting, displaying or linking to patient reviews. Patients can leave reviews on Google on their own. If you reply to one, never confirm that the reviewer is a patient or mention their treatment. We do not run review-generation campaigns for dental clinics unless you have confirmed they are permitted.',
+    answer: 'Most likely yes, but confirm with BCCOHP before you build a programme around it. The pre-2022 College rules were described as restricting testimonials and reviews; the current Standards for the Oral Health Team (1 April 2026) contain no such restriction. The only marketing rule is standard 6.2, which requires marketing and advertisements to be accurate and not mislead the public, and the April 2026 Bylaws add no advertising section. Patients can leave reviews on Google on their own. If you reply to one, never confirm that the reviewer is a patient or mention their treatment. We will run a review programme once you have confirmed your approach with BCCOHP.',
   },
   {
     question: 'Can we advertise prices or new-patient specials?',
@@ -230,7 +230,7 @@ const DentalMarketing = () => (
             We keep the profile accurate and complete: the right primary category, each service listed, hours that include whether you take emergencies, accessibility details, languages spoken by your team, insurance and direct billing information, and current photos of the clinic and team. Every detail must be true, because the profile is advertising too.
           </p>
           <p>
-            Reviews are where dentists need to be careful. Patients can leave Google reviews on their own, and those reviews affect how a clinic appears. Whether a clinic may ask patients for reviews, display them on its website or link to them is a question to confirm with BCCOHP; earlier College rules for dentists have been described as restricting testimonials, and we could not verify how the current rules apply. If you reply to a review, never confirm the reviewer is a patient or discuss their care in public.
+            Reviews are where dentists need to be careful. Patients can leave Google reviews on their own, and those reviews affect how a clinic appears. The pre-2022 College rules were described as restricting testimonials and review links; the current Standards contain no such rule, leaving standard 6.2 — accurate and not misleading — as the test. A review that is real and unedited meets that. Confirm with BCCOHP before building a programme around reviews, and never edit or cherry-pick them in a way that misleads. If you reply to a review, never confirm the reviewer is a patient or discuss their care in public.
           </p>
         </div>
 

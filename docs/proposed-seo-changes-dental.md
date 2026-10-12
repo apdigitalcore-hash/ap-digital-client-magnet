@@ -57,3 +57,35 @@ volume. Recommended, for the reason given at the top.
   rules out new pages.
 - The `og:` and `twitter:` fields read `TITLE` and `DESC`, so they follow
   automatically.
+
+---
+
+## RESOLVED 2026-10-12: the review and testimonial question
+
+The cloud session could not reach `oralhealthbc.ca` from its container. Both
+primary PDFs were downloaded and searched locally instead:
+
+- `Standards-for-the-Oral-Health-Team.pdf` (1 April 2026, 36 pages)
+- `BCCOHP-HPOA-Bylaws-April-1-2026.pdf` (140 pages)
+
+Findings:
+
+- **"testimonial" appears 0 times in either document.**
+- The entire marketing rule is standard **6.2**: "You must ensure your oral
+  health team's marketing and advertisements are accurate and do not mislead the
+  public", with one performance indicator, 6.2.1, requiring compliance with
+  advertising, competition and privacy law.
+- The Bylaws contain **no advertising section** — "advertis" appears 0 times.
+  Marketing appears only at 9.11, requiring a health profession corporation to
+  disclose corporate status in marketing and to "comply with the ethics
+  standards respecting marketing", which points back to 6.2.
+
+So the legacy CDSBC Bylaw Part 12 prohibition described by third-party guides
+did not survive the 2022 amalgamation or the 2026 rewrite. Patient reviews are
+not banned for BC dentists; misleading ones would be, like any other misleading
+marketing.
+
+The page's wording has been updated accordingly: it now states what the current
+Standards say, still advises confirming with BCCOHP before building a programme
+around reviews, and keeps the "never confirm a reviewer is a patient" advice,
+which is a privacy point rather than an advertising one.
