@@ -344,7 +344,7 @@ const staticRoutes = [
     path: 'services/social-media',
     title: 'Social Media Marketing Vancouver | Reels & Content | AP Digital',
     description: 'AP Digital manages social media for Vancouver businesses. Instagram Reels, short-form video & organic growth. Month-to-month. From $849/mo.',
-    body: '<h1>Social Media Marketing — Content That Drives Leads</h1><p>AP Digital manages social media for Vancouver businesses across Instagram, Facebook, and TikTok. 12+ custom posts per month, Reels production, and community management. Month-to-month, from $849/month.</p><nav aria-label="Quick links"><ul><li><a href="/coaching-marketing">Coaching Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Social Media Marketing — Content That Drives Leads</h1><p>AP Digital manages social media for Vancouver businesses, two platforms of your choice such as Instagram and Facebook. 12 custom posts per month, captions, scheduling and community management. Month-to-month, from $849/month.</p><nav aria-label="Quick links"><ul><li><a href="/coaching-marketing">Coaching Marketing</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Social Media Marketing', 'Social media management & content creation for Vancouver businesses.', '/services/social-media'),
