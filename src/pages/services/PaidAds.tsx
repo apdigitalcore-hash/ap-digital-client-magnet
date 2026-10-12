@@ -16,13 +16,13 @@ const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Facebook & Instagram ad campaign setup',
-  'Google Ads search & display campaigns',
+  'Google Search & Performance Max campaigns',
   'Audience research & targeting strategy',
   'A/B testing of creatives and copy',
   'Retargeting & lookalike audience campaigns',
   'Weekly performance reports & optimization',
   'Landing page recommendations',
-  'Dedicated account manager',
+  'Every account managed personally by founder Arjun Sharma',
 ];
 
 const costs = [
@@ -32,49 +32,22 @@ const costs = [
   { line: 'Contract', amount: 'Month-to-month', note: "30 days' notice to pause or cancel. No exit fee." },
 ];
 
-const platformFit = [
-  { type: 'Trades & contractors', platform: 'Google Ads first', why: 'A burst pipe or a dead furnace gets typed into Google at the moment of need.' },
-  { type: 'Salons & spas', platform: 'Meta Ads first', why: 'Nobody searches for a new hair colour. They see one in a feed and book.' },
-  { type: 'Dental & health clinics', platform: 'Google Ads first', why: 'High intent, local, and people compare before they call.' },
-  { type: 'Real estate', platform: 'Meta Ads first', why: 'Buyers and sellers are discovered long before they search for an agent.' },
-  { type: 'Coaches & consultants', platform: 'Meta Ads first', why: 'Demand has to be created, not captured.' },
-  { type: 'Restaurants', platform: 'Meta Ads first', why: 'Visual, local, and impulse-driven.' },
-];
 
-const firstThirtyDays = [
-  { when: 'Days 1-3', what: 'Conversion tracking before anything else. If we cannot tell which ad produced which lead, nothing after this matters. Calls get tracked, not just form fills.' },
-  { when: 'Days 3-7', what: 'Audience and keyword research, negative keyword list, first creative built, and a lead-volume target agreed with you in writing before launch.' },
-  { when: 'Week 2', what: 'Campaigns live. Most clients see their first qualified leads in this window. Cost per lead is still noisy and we do not read much into it yet.' },
-  { when: 'Weeks 3-4', what: 'Enough conversion data to optimise against. Search terms pruned weekly, losing creative cut, budget shifted to what is producing.' },
-];
 
-const wasteSources = [
-  'Boosted posts instead of campaigns. Boosting optimises for engagement, not enquiries.',
-  'Broad match with no negative keywords, which quietly spends a third of a local budget on searches with no purchase intent.',
-  'Performance Max with no brand exclusion, claiming credit for people already searching your name.',
-  'Sending ad traffic to a homepage instead of a page with one offer and one action.',
-  'Judging the account in week one, before there is enough data for the numbers to mean anything.',
-  'No call tracking, on a business that gets most of its leads by phone.',
-];
 
-const notFor = [
-  'Budgets under $500/month in ad spend. Below that the platforms cannot gather enough conversion data to optimise, and you pay near-full price for every click indefinitely.',
-  'Businesses with no way to answer a lead within the hour. Speed to first contact changes conversion more than anything we can do in the ad account.',
-  'Anyone who needs a guaranteed cost per lead before launch. We agree a volume target, not a price we cannot know yet.',
-];
 
 const faqs = [
   {
     question: 'Do you charge a percentage of ad spend?',
-    answer: 'No. The fee is a flat $759 per month regardless of what you spend. Percentage billing at 10 to 20% is common and it rewards the agency for spending more of your money whether or not it produces anything. A flat fee removes that incentive entirely.',
+    answer: 'No. The fee is a flat $759 per month regardless of what you spend. Percentage billing, typically 10 to 20% of spend, is common and it rewards the agency for spending more of your money whether or not it produces anything. A flat fee removes that incentive entirely.',
   },
   {
     question: 'Who owns the ad account and the data?',
-    answer: 'You do. The ad account, the pixel, the audiences and the entire conversion history stay in your name. If you leave, you keep all of it. Agencies that own the account are creating a switching cost disguised as an administrative detail.',
+    answer: 'Your Google Ads account and Google Business Profile stay in your name, with their full history, and ad spend is billed to you directly by Google or Meta. If you leave, the Google account and everything in it stay with you. Agencies that own the client\'s ad account are creating a switching cost disguised as an administrative detail.',
   },
   {
     question: 'What is the minimum ad spend that actually works?',
-    answer: 'Around $500 per month is the practical floor and $1,000 is where we recommend starting. Below $500 the platforms cannot gather enough conversion data to optimise, so you pay close to full price for every click indefinitely. That is a platform limitation, not an agency upsell.',
+    answer: 'We recommend at least $1,000 per month in ad spend. The platforms\' automated bidding learns from conversions, and below that level most local businesses produce too few conversions each week for it to learn quickly, so decisions get made on noise. You can run less, with a narrower scope, and we will tell you on the call what that realistically allows.',
   },
   {
     question: 'Do you guarantee results?',
@@ -82,23 +55,23 @@ const faqs = [
   },
   {
     question: 'How much do paid ads cost in Vancouver?',
-    answer: 'Management is $759 per month, flat, and ad spend is separate and paid directly to Google or Meta on your own card. We recommend a minimum of $1,000 per month in ad spend, so most Vancouver businesses run $1,750 to $3,000 a month all in. There is no setup fee and no percentage of spend.',
+    answer: 'Management is $759 per month, flat, and ad spend is separate and paid directly to Google or Meta on your own card. We recommend a minimum of $1,000 per month in ad spend, so the minimum is about $1,759 a month all in, and the total rises with whatever ad spend you choose above that. There is no setup fee and no percentage of spend.',
   },
   {
     question: 'How fast will I see results from paid ads?',
-    answer: 'How quickly the first qualified leads arrive depends on your market, budget and how much people search for what you sell. We optimize aggressively during the first 30 days to dial in targeting, creatives, and landing pages for the best possible cost per lead.',
+    answer: 'How quickly the first qualified leads arrive depends on your market, budget and how much people search for what you sell. Most clients see their first qualified leads within 2 weeks of launch. The first 30 days are mostly about tightening targeting, search terms, creative and landing pages as real data comes in.',
   },
   {
     question: 'Should I use Facebook Ads or Google Ads?',
-    answer: 'It depends on your business. Meta Ads (Facebook and Instagram) are excellent for brand awareness, retargeting, and visual offers. Google Ads capture high-intent searches from people actively looking for your service. We recommend the best platform based on your industry and goals — and many clients benefit from running both.',
+    answer: 'It depends on your business. Meta Ads (Facebook and Instagram) are excellent for brand awareness, retargeting, and visual offers. Google Ads capture high-intent searches from people actively looking for your service. We recommend a platform based on your industry and goals, and suggest getting one working properly before adding the second.',
   },
   {
     question: 'Do you require a long-term contract?',
-    answer: 'No. All of our paid ads management is month-to-month. We earn your business with results, not lock-in contracts. Most clients stay because the campaigns are profitable, not because they are obligated to.',
+    answer: 'No. All of our paid ads management is month-to-month, with 30 days\' notice to pause or cancel and no exit fee.',
   },
   {
     question: 'Who manages my ad campaigns?',
-    answer: 'Arjun Sharma personally manages every account — there is no outsourcing to junior staff or overseas teams. You get direct access to the strategist running your campaigns, which means faster communication and better results.',
+    answer: 'Arjun Sharma personally manages every account — there is no outsourcing to junior staff or overseas teams. You get direct access to the strategist running your campaigns, which means faster communication and no hand-offs.',
   },
 ];
 
@@ -146,7 +119,7 @@ const PaidAds = () => (
           Google &amp; Meta Ads Agency Vancouver
         </h1>
         <p className="text-base text-teal font-semibold mb-6">
-          Google Ads, Facebook &amp; Instagram campaigns managed end-to-end for BC businesses.
+          Google Ads, Facebook and Instagram campaigns managed end-to-end for BC businesses.
         </p>
 
         {/* Short intro */}
@@ -158,7 +131,7 @@ const PaidAds = () => (
         <div className="grid sm:grid-cols-3 gap-4 mb-12">
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">Facebook &amp; Meta Ads</p>
-            <p className="text-sm text-muted-foreground">Facebook and Instagram ads that interrupt your ideal customer with an offer they can't ignore — perfect for salons, realtors, and coaches.</p>
+            <p className="text-sm text-muted-foreground">Facebook and Instagram ads that put a clear offer in front of people who were not searching yet. Usually the lead channel for salons, realtors and coaches.</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">Google Ads for high-intent buyers</p>
@@ -203,7 +176,7 @@ const PaidAds = () => (
 
         {/* ── What it costs ───────────────────────────────────────────── */}
         <section className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What It Costs</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What Paid Ads Management Costs</h2>
           <p className="text-muted-foreground mb-6">
             Two separate bills, and conflating them is where most agency quotes get confusing.
             Management pays for the work. Ad spend goes to the platform on your own card, so you
@@ -230,8 +203,8 @@ const PaidAds = () => (
             </table>
           </div>
           <p className="text-sm text-muted-foreground mt-4">
-            Most Vancouver businesses land between $1,750 and $3,000 a month all in, and the
-            majority of that is ad spend rather than fees. Full breakdown on the{' '}
+            At the recommended minimum that is about $1,759 a month all in, and anything above it is
+            ad spend you choose, not fees. Full breakdown on the{' '}
             <Link to="/pricing" className="text-teal underline hover:text-teal/80">pricing page</Link>.
           </p>
         </section>
@@ -246,63 +219,173 @@ const PaidAds = () => (
             perform worse than one funded properly.
           </p>
           <div className="grid sm:grid-cols-2 gap-4">
-            {platformFit.map((row) => (
-              <div key={row.type} className="bg-card border border-border rounded-xl p-5">
-                <p className="font-bold text-foreground mb-1">{row.type}</p>
-                <p className="text-sm text-teal font-semibold mb-2">{row.platform}</p>
-                <p className="text-sm text-muted-foreground">{row.why}</p>
-              </div>
-            ))}
+            <div className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-1">Trades and contractors: Google Ads first</h3>
+              <p className="text-sm text-muted-foreground">A burst pipe or a dead furnace gets typed into Google at the moment of need, so search ads catch it.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-1">Salons and spas: Meta Ads first</h3>
+              <p className="text-sm text-muted-foreground">Nobody searches for a new hair colour. They see one in a feed, and a visual ad is what prompts the booking.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-1">Dental and health clinics: Google Ads first</h3>
+              <p className="text-sm text-muted-foreground">High intent, local, and people compare clinics before they call. Health ad rules limit retargeting.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-1">Real estate: Meta Ads first</h3>
+              <p className="text-sm text-muted-foreground">Buyers and sellers are reached long before they search for an agent, within Canada's housing ad rules.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-1">Coaches and consultants: Meta Ads first</h3>
+              <p className="text-sm text-muted-foreground">Demand for coaching mostly has to be created rather than captured, and video of the coach does that.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-5">
+              <h3 className="font-bold text-foreground mb-1">Restaurants and car detailing: Meta Ads first</h3>
+              <p className="text-sm text-muted-foreground">Visual, local and often impulse-driven, so before-and-after or food photography does the selling.</p>
+            </div>
           </div>
         </section>
 
-        {/* ── First 30 days ───────────────────────────────────────────── */}
         <section className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">The First 30 Days</h2>
-          <p className="text-muted-foreground mb-6">
-            No strategy decks. Here is what actually happens, in order.
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">Google Search, Performance Max or Meta: When Each Is Wrong</h2>
+          <p className="text-muted-foreground mb-4">
+            Each campaign type is the right answer for some businesses and an expensive mistake for others. Knowing when not to use one matters as much as knowing when to use it.
           </p>
-          <div className="space-y-4">
-            {firstThirtyDays.map((step) => (
-              <div key={step.when} className="bg-card border border-border rounded-xl p-5">
-                <p className="text-sm font-bold text-teal mb-1">{step.when}</p>
-                <p className="text-sm text-muted-foreground">{step.what}</p>
-              </div>
-            ))}
-          </div>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Google Search campaigns</h3>
+          <p className="text-muted-foreground mb-4">
+            Text ads on the results page for the keywords you choose. The clearest intent signal in advertising, and the easiest to control and audit. It is the wrong choice when hardly anyone searches for what you sell, which is common for new products, coaching and anything people buy on impulse.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Performance Max campaigns</h3>
+          <p className="text-muted-foreground mb-4">
+            Google's automated campaign type, which spreads one budget across Search, YouTube, Display, Gmail and Maps and decides placement itself. It can work well for a business with reliable conversion tracking, a steady flow of conversions and good creative assets. It is the wrong choice when tracking is weak, the budget is small, or you need to see exactly which searches you are paying for, because it reports far less than a Search campaign. We add brand exclusions so it does not take credit for people already looking for you.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Meta Ads on Facebook and Instagram</h3>
+          <p className="text-muted-foreground">
+            Facebook and Instagram ads shown to people who were not searching. Strong for visual offers, local discovery and retargeting. It is the wrong choice when demand is urgent and search-led, such as an emergency repair, and it is restricted for some categories: real estate falls under Meta's housing rules in Canada, and health-related ads have their own limits on targeting and wording.
+          </p>
         </section>
 
-        {/* ── Where budgets leak ──────────────────────────────────────── */}
         <section className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">Where Ad Budgets Leak</h2>
-          <p className="text-muted-foreground mb-6">
-            The six things that cost self-managed and badly-managed accounts the most money. If you
-            are running ads yourself, this list is worth checking before you hire anyone.
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">Why We Recommend $1,000 a Month in Ad Spend</h2>
+          <p className="text-muted-foreground mb-4">
+            The recommendation comes from how the platforms learn, not from what we would like you to spend. Both Google's automated bidding and Meta's delivery system optimise by learning from conversions. Meta's own guidance is that an ad set typically needs around 50 optimisation events in a week to leave its learning phase. Google's smart bidding similarly performs better with a steady volume of conversions.
           </p>
-          <ul className="space-y-3">
-            {wasteSources.map((w) => (
-              <li key={w} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span aria-hidden="true" className="mt-2 w-1.5 h-1.5 rounded-full bg-teal shrink-0" />
-                {w}
-              </li>
-            ))}
-          </ul>
+          <p className="text-muted-foreground mb-4">
+            At typical local click costs, $1,000 a month is roughly where many small businesses start producing enough enquiries for that learning to happen within weeks rather than months. Below it, the platforms keep guessing, a single good or bad week swings the numbers, and it takes much longer to know what works.
+          </p>
+          <p className="text-muted-foreground">
+            You can still advertise on less. The usual approach is to narrow the scope: one service, one area, one campaign, so the smaller budget is concentrated rather than spread thin. We will tell you on the call whether that is likely to be worth it for your business.
+          </p>
         </section>
 
-        {/* ── Who this is not for ─────────────────────────────────────── */}
         <section className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">When This Is Not the Right Spend</h2>
-          <p className="text-muted-foreground mb-6">
-            We would rather say this before you pay us than after.
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">Conversion Tracking: Why Most Accounts Measure the Wrong Thing</h2>
+          <p className="text-muted-foreground mb-4">
+            The most common problem we find in an existing ad account is not the ads. It is that the account is counting the wrong things as success, so the platform is optimising toward them.
           </p>
-          <ul className="space-y-3">
-            {notFor.map((n) => (
-              <li key={n} className="flex items-start gap-3 text-sm text-muted-foreground">
-                <span aria-hidden="true" className="mt-2 w-1.5 h-1.5 rounded-full bg-muted-foreground/50 shrink-0" />
-                {n}
-              </li>
-            ))}
-          </ul>
+          <p className="text-muted-foreground mb-4">
+            Typical examples: page views or button clicks counted as conversions; one enquiry counted two or three times because several tags fire; phone calls not tracked at all on a business that lives on the phone; and every form fill treated as equal, so a spam submission counts the same as a real customer. Automated bidding takes those signals literally and finds more of whatever is being counted.
+          </p>
+          <p className="text-muted-foreground">
+            Our setup counts actual enquiries once: form submissions, calls from ads and calls from the website. Where you can tell us which enquiries became customers, those outcomes can be fed back into Google Ads so bidding learns what a good lead looks like, subject to Google's rules for sensitive categories such as health.
+          </p>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What the Weekly Report Contains</h2>
+          <p className="text-muted-foreground mb-4">
+            A short email, written for a business owner rather than a marketer. It covers what was spent on each platform, how many enquiries came in and from which campaigns, the cost per enquiry, and how that compares with the previous weeks and the target we agreed.
+          </p>
+          <p className="text-muted-foreground">
+            It also says what we changed that week and why, and what we plan to test next. It leaves out impressions, reach and click-through rates unless one of them explains a change in enquiries. If something is not working, the report says so.
+          </p>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What Our Management Does Not Include</h2>
+          <p className="text-muted-foreground mb-4">
+            Clear edges make quotes easier to compare. The $759 fee covers Google and Meta ads management. It does not include building a new website, though we review and recommend changes to the pages ads send people to. SEO and other services are scoped on a call rather than sold at a list price. Organic social media is a separate service, our <Link to="/services/social-media" className="text-teal underline hover:text-teal/80">social media management</Link> at $849 a month.
+          </p>
+          <p className="text-muted-foreground">
+            We do not charge a percentage of ad spend, lock you into a contract, promise a cost per lead before launch, or run campaigns that make claims we cannot stand behind. And we do not take on an account when we think the money would be better spent elsewhere first.
+          </p>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What $759 a Month Actually Buys, Week by Week</h2>
+          <p className="text-muted-foreground mb-4">
+            The management fee pays for work, not access to a dashboard. Here is what happens, in order, for a typical new account. Every account is run by founder Arjun Sharma, not passed to a junior.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Days 1 to 3: tracking before anything else</h3>
+          <p className="text-muted-foreground mb-4">
+            Conversion tracking comes first. If we cannot tell which ad produced which lead, nothing after this matters. Calls get tracked as well as form fills, and we check that a single enquiry is counted once, not three times.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Days 3 to 7: research and build</h3>
+          <p className="text-muted-foreground mb-4">
+            Keyword and audience research, a starting negative keyword list, the first ads and creative, and a review of the page each ad will send people to. Before launch we agree a lead-volume target with you in writing; that target is what the 90-day guarantee is measured against.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Week 2: campaigns go live</h3>
+          <p className="text-muted-foreground mb-4">
+            Campaigns go live. Most clients see their first qualified leads in this window. Cost per lead is still noisy, so we watch it without reacting to it.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Weeks 3 and 4: the first real optimisation</h3>
+          <p className="text-muted-foreground mb-4">
+            Meta campaigns typically take two to three weeks to settle. By now there is enough data to prune search terms, cut losing creative and move budget toward what is producing enquiries.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Every week after that</h3>
+          <p className="text-muted-foreground">
+            The same cycle: review the search terms people actually typed and add negatives, check budget pacing and bids, test one new ad or creative against the current best, check that tracking still works, and send you a report. Most of the value of management is in that unglamorous weekly loop.
+          </p>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">Negative Keywords and Where Ad Budgets Leak</h2>
+          <p className="text-muted-foreground mb-4">
+            Most wasted spend in a self-managed account comes from a handful of structural mistakes rather than bad luck. If you run ads yourself, this list is worth checking before you hire anyone.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Searches you never wanted</h3>
+          <p className="text-muted-foreground mb-4">
+            Broad match keywords with no negative list pay for searches with no purchase intent: people looking for jobs, free versions, DIY instructions, or a business with a similar name in another city. Negative keywords tell Google which searches to ignore. A starting list goes in before launch, and it grows every week from the search terms report, which shows what people actually typed before clicking.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Paying for people already looking for you</h3>
+          <p className="text-muted-foreground mb-4">
+            Performance Max with no brand exclusion can spend heavily on people who were already searching for your business by name, then take credit for leads you would have had anyway.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Boosted posts instead of campaigns</h3>
+          <p className="text-muted-foreground mb-4">
+            Boosting a post optimises for engagement, not enquiries. It looks cheap and produces likes.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Sending ad traffic to the homepage</h3>
+          <p className="text-muted-foreground mb-4">
+            A homepage tries to say everything. An ad should send people to a page with one offer and one action that matches what the ad promised.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">No call tracking, judged too early</h3>
+          <p className="text-muted-foreground">
+            A business that gets most of its leads by phone but only tracks forms is optimising against a fraction of its results. And an account judged in week one, before there is enough data, usually gets changed in the wrong direction.
+          </p>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">When You Should Not Run Paid Ads at All</h2>
+          <p className="text-muted-foreground mb-4">
+            We would rather say this before you pay us than after. Paid ads amplify what already works; they do not fix a business that is not ready for more enquiries.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">You cannot answer a lead quickly</h3>
+          <p className="text-muted-foreground mb-4">
+            If enquiries sit for a day before anyone replies, ad spend mostly buys leads for whoever replied first. Speed to first contact typically changes results more than anything we can do inside the ad account.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">The numbers do not work yet</h3>
+          <p className="text-muted-foreground mb-4">
+            If your average sale and margin cannot cover a realistic cost of winning a customer, more traffic makes the loss bigger, not smaller. We will do that arithmetic with you on the call.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">The budget is well below what we recommend</h3>
+          <p className="text-muted-foreground mb-4">
+            Below about $1,000 a month in ad spend, most local businesses produce too few conversions for the platforms to learn from, and results stay slow and noisy. Sometimes the right advice is to wait, or to fix the website and Google Business Profile first.
+          </p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">You need a guaranteed cost per lead before launch</h3>
+          <p className="text-muted-foreground">
+            Nobody can know that until the account has data. We agree a lead-volume target instead, and if we miss it by month three we keep working at no fee for a further 30 days. Ad spend is paid to Google or Meta either way.
+          </p>
         </section>
 
         <section className="mt-16 mb-16">
@@ -339,7 +422,7 @@ const PaidAds = () => (
 
         <section className="bg-card border border-border rounded-2xl p-6 sm:p-8 md:p-12 text-center">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
-          <p className="text-muted-foreground text-lg mb-8">Book your free strategy call and find out how paid ads can fill your pipeline with qualified leads.</p>
+          <p className="text-muted-foreground text-lg mb-8">Book a free 20-minute call and we will tell you honestly whether paid ads make sense for your business right now.</p>
           <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
             <Link to="/book">Book Your Free Strategy Call</Link>
           </Button>
