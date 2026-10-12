@@ -57,3 +57,15 @@ volume. Recommended for the first reason above.
   new pages.
 - The `og:` and `twitter:` fields read `TITLE` and `DESC`, so they follow
   automatically.
+
+---
+
+## Status: PARTIALLY APPLIED 2026-10-12
+
+- TITLE (57): `Coaching Marketing BC — Meta Ads for Coaches | AP Digital` — applied.
+- H1: `Coaching Marketing for BC Coaches` — applied.
+- DESC: left unchanged. The session called this one optional and the current
+  wording is already accurate against companyFacts.ts.
+
+"Client Leads" now appears zero times on the built page, so the fields no longer
+imply client volume that the body says nobody can promise.
