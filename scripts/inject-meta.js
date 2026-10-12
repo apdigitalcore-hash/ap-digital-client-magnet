@@ -1112,6 +1112,14 @@ function loadStaticProse() {
     .replace(/\{[^{}]*\}/g, '')
     .replace(/<[^>]*>/g, '')
     .replace(/&nbsp;/g, ' ')
+    // JSX source already carries entities. The body is re-escaped on the way
+    // out, so without decoding here "Google &amp; Meta" shipped to crawlers as
+    // "Google &amp;amp; Meta" — a literal string, not an ampersand.
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'")
     .replace(/\s+/g, ' ')
     .trim();
 
@@ -1131,10 +1139,13 @@ function loadStaticProse() {
       // template literals and nested JSX that the stripper cannot flatten, and a
       // fragment of it leaked into the prerendered body on the first run. A page
       // is better off missing a paragraph than shipping code to Google.
-      // Headings are short by nature — "Advertising in Surrey, specifically" is
-      // 35 characters and was being dropped — so they get a lower bar than body
-      // paragraphs. The source-leak guard below still applies to both.
-      const min = m[1] === 'p' ? 40 : 18;
+      // Headings are short by nature, so they get a much lower bar than body
+      // paragraphs. 18 was still dropping 131 real headings across the site —
+      // every "What It Costs", "Common Questions" and numbered policy section —
+      // and three whole pages (salon, fitness, restaurant) reached Google with
+      // no headings at all. The source-leak guard below still applies to both,
+      // and is what actually keeps source fragments out.
+      const min = m[1] === 'p' ? 40 : 4;
       if (t.length >= min && !/className|=>|[{}`]|undefined|\$\{/.test(t)) {
         blocks.push({ tag: m[1], text: t });
       }
@@ -1150,7 +1161,14 @@ function expandBodyWithFaqs(body, faqs, lists, prose) {
   // Page prose, minus anything the intro paragraph already carries.
   if (prose && prose.length) {
     const seen = body.replace(/<[^>]*>/g, ' ');
-    const fresh = prose.filter((b) => !seen.includes(b.text.slice(0, 60)));
+    // The generated sections below carry their own headings. Lowering the
+    // heading floor to 4 surfaced the page's own "What You Get" and "How We
+    // Work", which then sat beside the generated "What you get" and "How we
+    // work" as near-duplicate headings. Drop the extracted one; the generated
+    // section is the one with the list under it.
+    const GENERATED = new Set(['what you get', 'how we work', 'all articles']);
+    const fresh = prose.filter((b) => !seen.includes(b.text.slice(0, 60))
+      && !(b.tag !== 'p' && GENERATED.has(b.text.toLowerCase())));
     if (fresh.length) {
       parts.push('<section>' + fresh.map((b) => b.tag === 'p'
         ? `<p>${escapeHtml(b.text)}</p>`
