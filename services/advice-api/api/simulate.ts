@@ -430,6 +430,40 @@ export function sanitiseHealthAudience(audience: string[], industry: string): st
   return [SAFE_ALTERNATIVE, ...kept];
 }
 
+/**
+ * The same problem in a second industry.
+ *
+ * Meta and Google both class real estate as housing, and Canada-targeted
+ * housing ads run under restricted rules: no postal-code targeting, age fixed
+ * at 18-65+, gender fixed, a wide minimum radius, no lookalikes, and no
+ * detailed targeting that infers who is likely to move or sell. A plan that
+ * recommends any of that cannot be executed, so the tool must not suggest it.
+ *
+ * Found when a page on this site turned out to promise realtors exactly that:
+ * targeting homeowners by "home ownership duration, equity position, and life
+ * events". The health filter already existed for the identical reason, so this
+ * is the same guard pointed at a different industry.
+ *
+ * Platform policy changes. These restrictions were verified in October 2026.
+ */
+const HOUSING_TARGETING =
+  /look[- ]?alike|similar audience|seed audience|customer match|(client|customer|email|CRM|contact)\s+(list|data|file|upload)|first[- ]party\s+(data|list)|postal[- ]?code|zip[- ]?code|\bFSA\b|target(ing)?\s+(men|women|males|females)\b|\bgender\b|\bage[ds]?\b[^.]{0,14}\d{2}\s*(?:[-–]|to)\s*\d{2}|\d{2}\s*[-–]\s*\d{2}\s+(year[- ]olds|demographic)|home ?owner|home ownership|equity position|likely to (sell|move)|life events?|household income/i;
+
+const HOUSING_ALTERNATIVE =
+  "Real estate ads to Canada run in the platforms' housing category, so postal-code, age, gender, lookalike and homeowner-intent targeting are unavailable and the location radius has a wide minimum. Name the neighbourhood in the ad and use a landing page per area instead — the creative does the targeting, not the audience settings.";
+
+export function sanitiseHousingAudience(audience: string[], industry: string): string[] {
+  if (industry !== "Real estate") return audience;
+  const kept = (audience ?? []).filter((a) => !HOUSING_TARGETING.test(a));
+  if (kept.length === audience?.length) return audience;
+  return [HOUSING_ALTERNATIVE, ...kept];
+}
+
+/** Applies whichever industry guard is relevant, or none. */
+export function sanitiseAudience(audience: string[], industry: string): string[] {
+  return sanitiseHousingAudience(sanitiseHealthAudience(audience, industry), industry);
+}
+
 // ── Failure logging and alerting ───────────────────────────────────────────
 /**
  * Records every failed simulation and raises an alarm when they cluster.
@@ -978,7 +1012,7 @@ async function run(req: any, res: any) {
         inputs.product, inputs.audience, inputs.headline, inputs.primaryText,
         inputs.description, product?.text, landing?.text,
       ].filter(Boolean).join(" ");
-      results.recommendations.audience = sanitiseHealthAudience(
+      results.recommendations.audience = sanitiseAudience(
         results.recommendations.audience ?? [], inputs.industry,
       );
 

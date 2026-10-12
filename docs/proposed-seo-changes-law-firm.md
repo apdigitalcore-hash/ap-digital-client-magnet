@@ -60,3 +60,17 @@ case volume. Recommended, for the reason given at the top.
   practice-area pages would be harder to rank than one honest page.
 - The `og:` and `twitter:` fields read `TITLE` and `DESC`, so they follow
   automatically.
+
+---
+
+## Status: APPLIED 2026-10-11
+
+All three applied to `src/pages/niches/LawFirmMarketing.tsx` and verified in
+`dist/law-firm-marketing/index.html`. "Case Leads" now appears zero times on the
+page: the title and H1 no longer imply case volume that the body says nobody can
+promise.
+
+- TITLE (54): `Law Firm Marketing Vancouver — Google Ads | AP Digital`
+- DESC (147): `Google Ads and intake tracking for Vancouver law firms — family,
+  immigration, real estate and injury practices. Written to Law Society of BC rules.`
+- H1: `Law Firm Marketing in Vancouver`

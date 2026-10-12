@@ -213,7 +213,7 @@ const CarDetailingMarketing = () => (
             Meta Ads reach car owners within your radius who were not searching for a detailer that day, which makes Meta the natural channel for discovery and high-ticket services, while Google search catches people who already know what they want. If you also want help keeping your own Instagram and Facebook active between ads, that is our <Link to="/services/social-media" className="text-foreground underline underline-offset-4">social media management</Link> service, quoted separately.
           </p>
           <p>
-            For a fuller comparison of the two platforms for a local business, see <Link to="/blog/google-ads-vs-meta-ads-local-business" className="text-foreground underline underline-offset-4">Google Ads vs. Meta Ads</Link>.
+            For a fuller comparison of the two platforms for a local business, see <Link to="/blog/best-ads-platform-for-small-business-canada" className="text-foreground underline underline-offset-4">Google Ads vs. Meta Ads</Link>.
           </p>
         </div>
 
