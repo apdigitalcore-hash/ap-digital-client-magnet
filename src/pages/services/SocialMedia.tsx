@@ -182,7 +182,7 @@ const SocialMedia = () => (
 
         {/* ── What it costs ───────────────────────────────────────────── */}
         <section className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What It Costs</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What Social Media Management Costs</h2>
           <p className="text-muted-foreground mb-6">
             One flat monthly fee, and a clear line about what sits outside it. Packages elsewhere
             run $500 to $3,000 a month, and the variable that moves the price most is whether
@@ -228,19 +228,19 @@ const SocialMedia = () => (
           <p className="text-muted-foreground mb-4">
             Two platforms done consistently beat four done badly. The right pair depends on who your customers are and what you can film.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Instagram</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Instagram for visual businesses</h3>
           <p className="text-muted-foreground mb-4">
             The default for visual businesses: salons, car detailers, restaurants, fitness studios, real estate. Your work is the content, and before-and-afters do much of the selling. Our <Link to="/salon-marketing" className="text-teal underline hover:text-teal/80">salon marketing</Link> and <Link to="/car-detailing-marketing" className="text-teal underline hover:text-teal/80">car detailing marketing</Link> pages cover how that works for those businesses.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Facebook</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Facebook for local audiences</h3>
           <p className="text-muted-foreground mb-4">
             Still where many local customers and older audiences are, and where community groups and reviews live. Usually paired with Instagram, since the two share one business account.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">LinkedIn</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">LinkedIn for coaches and B2B</h3>
           <p className="text-muted-foreground mb-4">
             For coaches, consultants and B2B services, where the buyer is a professional and the content is your thinking rather than your work. See <Link to="/coaching-marketing" className="text-teal underline hover:text-teal/80">coaching marketing</Link>.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">TikTok</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">TikTok, if someone will be on camera</h3>
           <p className="text-muted-foreground">
             Can reach people outside your existing followers, but it rewards frequent, personality-led video. It only makes sense if someone in the business is comfortable on camera regularly.
           </p>
@@ -286,15 +286,15 @@ const SocialMedia = () => (
           <p className="text-muted-foreground mb-4">
             Typically $500 to $5,000 a month across the market, depending mostly on whether content production is included. Ours is $849 for two platforms and 12 posts, without shoot days. The strength is predictability and aligned incentives: we do not earn more by posting more or working slower. The weakness is a fixed scope; if you need daily posting on four platforms, a $849 retainer is the wrong product.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Per post</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Paying by the post</h3>
           <p className="text-muted-foreground mb-4">
             Typically $50 to $250 a post. It looks cheap until you do the arithmetic: 12 posts at $150 is $1,800, usually with no strategy, community management or reporting attached. It suits a business that only needs occasional design work.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Hourly</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Paying by the hour</h3>
           <p className="text-muted-foreground mb-4">
             Typically $75 to $200 an hour. You pay more when the work takes longer, which is fine for a one-off audit or a profile clean-up and poor value for ongoing posting.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">In-house</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Hiring someone in-house</h3>
           <p className="text-muted-foreground mb-4">
             Hiring someone, or giving the job to an existing staff member. You get a person who knows the business and is on site to film, which is a real advantage. You also take on a salary or their time, cover for holidays and turnover, and a single point of failure when they leave. For many small businesses the honest comparison is not agency versus employee but agency versus the owner posting when they remember to.
           </p>
@@ -312,7 +312,7 @@ const SocialMedia = () => (
           <p className="text-muted-foreground mb-4">
             A content calendar planned a month ahead. Twelve custom posts a month across two platforms, with captions and hashtags written for each post rather than templated. Scheduling and publishing. Community management, meaning comments and DMs answered. Monthly reporting on enquiries and profile activity, not just reach.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Not included</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Not included in the fee</h3>
           <p className="text-muted-foreground">
             Shoot days with a videographer on site. Stock footage standing in for your actual work. Paid ad management, which is our separate <Link to="/services/paid-ads" className="text-teal underline hover:text-teal/80">paid ads service</Link> at $759 a month. Follower-count guarantees. Reputation management or review removal. And more than two platforms; if you need three or four, this is not the right package.
           </p>

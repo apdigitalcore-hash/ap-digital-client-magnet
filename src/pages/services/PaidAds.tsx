@@ -176,7 +176,7 @@ const PaidAds = () => (
 
         {/* ── What it costs ───────────────────────────────────────────── */}
         <section className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What It Costs</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What Paid Ads Management Costs</h2>
           <p className="text-muted-foreground mb-6">
             Two separate bills, and conflating them is where most agency quotes get confusing.
             Management pays for the work. Ad spend goes to the platform on your own card, so you
@@ -251,15 +251,15 @@ const PaidAds = () => (
           <p className="text-muted-foreground mb-4">
             Each campaign type is the right answer for some businesses and an expensive mistake for others. Knowing when not to use one matters as much as knowing when to use it.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Google Search</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Google Search campaigns</h3>
           <p className="text-muted-foreground mb-4">
             Text ads on the results page for the keywords you choose. The clearest intent signal in advertising, and the easiest to control and audit. It is the wrong choice when hardly anyone searches for what you sell, which is common for new products, coaching and anything people buy on impulse.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Performance Max</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Performance Max campaigns</h3>
           <p className="text-muted-foreground mb-4">
             Google's automated campaign type, which spreads one budget across Search, YouTube, Display, Gmail and Maps and decides placement itself. It can work well for a business with reliable conversion tracking, a steady flow of conversions and good creative assets. It is the wrong choice when tracking is weak, the budget is small, or you need to see exactly which searches you are paying for, because it reports far less than a Search campaign. We add brand exclusions so it does not take credit for people already looking for you.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Meta Ads</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Meta Ads on Facebook and Instagram</h3>
           <p className="text-muted-foreground">
             Facebook and Instagram ads shown to people who were not searching. Strong for visual offers, local discovery and retargeting. It is the wrong choice when demand is urgent and search-led, such as an emergency repair, and it is restricted for some categories: real estate falls under Meta's housing rules in Canada, and health-related ads have their own limits on targeting and wording.
           </p>
@@ -302,7 +302,7 @@ const PaidAds = () => (
         </section>
 
         <section className="mt-16">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What We Do Not Do</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">What Our Management Does Not Include</h2>
           <p className="text-muted-foreground mb-4">
             Clear edges make quotes easier to compare. The $759 fee covers Google and Meta ads management. It does not include building a new website, though we review and recommend changes to the pages ads send people to. SEO and other services are scoped on a call rather than sold at a list price. Organic social media is a separate service, our <Link to="/services/social-media" className="text-teal underline hover:text-teal/80">social media management</Link> at $849 a month.
           </p>
@@ -324,7 +324,7 @@ const PaidAds = () => (
           <p className="text-muted-foreground mb-4">
             Keyword and audience research, a starting negative keyword list, the first ads and creative, and a review of the page each ad will send people to. Before launch we agree a lead-volume target with you in writing; that target is what the 90-day guarantee is measured against.
           </p>
-          <h3 className="font-bold text-foreground mt-6 mb-2">Week 2: live</h3>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Week 2: campaigns go live</h3>
           <p className="text-muted-foreground mb-4">
             Campaigns go live. Most clients see their first qualified leads in this window. Cost per lead is still noisy, so we watch it without reacting to it.
           </p>
