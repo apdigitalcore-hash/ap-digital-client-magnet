@@ -29,7 +29,7 @@ const guarantees = [
   {
     icon: Zap,
     title: 'No Long-Term Contracts',
-    description: 'Every engagement is month-to-month. We earn your business with results, not lock-in clauses.',
+    description: 'Every engagement is month-to-month. 30 days\' notice to pause or cancel, no lock-in clauses.',
   },
   {
     icon: Trophy,

@@ -23,7 +23,7 @@ const included = [
   'Review generation & reputation management',
   'Short-form video strategy',
   'Landing pages built for Richmond leads',
-  'Monthly ROI reporting — leads & revenue',
+  'Weekly reporting — leads & cost per lead',
   'Local SEO for Richmond service areas',
 ];
 
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'How much does a marketing agency in Richmond cost?',
-    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Richmond businesses start between $1,000 and $2,000/month all in.',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. At our recommended minimum that is about $1,759/month all in: $759 management plus $1,000 ad spend.',
   },
   {
     question: 'How quickly will I see leads as a Richmond business?',
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: 'How much does digital marketing cost in Richmond?',
-    answer: 'Most Richmond clients start with $500–$1,500/month in ad spend. Our management fee is separate, transparent, and quoted before you commit — no surprises.',
+    answer: 'Most Richmond clients start with $1,000–$1,500/month in ad spend. Our management fee is separate, transparent, and quoted before you commit — no surprises.',
   },
   {
     question: 'Who personally manages my Richmond campaign?',
@@ -125,7 +125,7 @@ const Richmond = () => (
           <span className="block">Google &amp; Meta Ads</span>
           <span className="block">+ Social Media Management</span>
         </>}
-        intro={<>AP Digital helps Richmond businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Looking for a digital marketing agency near you in Richmond? We're local and we specialize in your industry. No lock-in contracts. Personal service from founder Arjun Sharma.</>}
+        intro={<>AP Digital runs Meta Ads, Google Ads & social media for Richmond businesses, built around qualified leads. Looking for a digital marketing agency near you in Richmond? We're local, based in Vancouver, BC. No lock-in contracts. Personal service from founder Arjun Sharma.</>}
         photo={{ base: '/richmond-night', position: '80% bottom', wideWidth: 1008 }}
         neighbourhoods={['City Centre', 'Steveston', 'Brighouse']}
       />
@@ -205,7 +205,7 @@ const Richmond = () => (
               Richmond's consumer behaviour has shifted decisively online. When a homeowner in Broadmoor needs an HVAC technician, they're not asking neighbours — they're searching Google within minutes. When someone in Steveston is looking for a new salon, they're clicking on Instagram ads and checking Google reviews before they book. When a Richmond real estate agent wants more listings, they need digital campaigns reaching homeowners in the specific submarkets they serve. The businesses in Richmond that are running targeted Google Ads and Meta Ads campaigns are consistently out-competing businesses relying on referrals and walk-in traffic alone. The gap between digitally active businesses and those without a structured ad strategy is widening every quarter.
             </p>
             <p>
-              What sets paid advertising apart from other growth strategies in Richmond is the immediacy and precision of results. A well-built Google Ads campaign targeting "plumber Richmond BC" or "HVAC Richmond" can generate job leads the same day it goes live — without waiting months for SEO to compound. A Meta Ads campaign targeting the right demographic in a specific Richmond postal code can fill a salon's appointment book within two weeks of launch. This is why Richmond businesses in our core verticals — trades, beauty, real estate, and coaching — consistently see strong returns on ad spend when campaigns are built correctly from the start.
+              What sets paid advertising apart from other growth strategies in Richmond is the immediacy and precision of results. A well-built Google Ads campaign targeting "plumber Richmond BC" or "HVAC Richmond" can start producing enquiries quickly, and most clients see their first qualified leads within 2 weeks of launch — without waiting months for SEO to compound. A Meta Ads campaign targeting the right demographic in a specific Richmond postal code can put a salon in front of nearby clients from the day it launches. This is why Richmond businesses in our core verticals — trades, beauty, real estate, and coaching — get the most from their ad spend when campaigns are built correctly from the start.
             </p>
           </div>
         </div>
@@ -218,7 +218,7 @@ const Richmond = () => (
             Our Richmond Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Richmond business generating leads fast.
+            A clear process for getting your Richmond business generating leads.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">

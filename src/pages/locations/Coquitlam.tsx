@@ -23,7 +23,7 @@ const included = [
   'Review generation & reputation management',
   'Social media management',
   'Landing pages for Coquitlam leads',
-  'Monthly ROI reporting',
+  'Weekly reporting on leads & cost per lead',
   'Local SEO for Coquitlam & Port Moody',
 ];
 
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'How much does a marketing agency in Coquitlam cost?',
-    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Coquitlam businesses start between $1,000 and $2,000/month all in.',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. At our recommended minimum that is about $1,759/month all in: $759 management plus $1,000 ad spend.',
   },
   {
     question: 'How quickly will I see leads in Coquitlam?',
@@ -158,7 +158,7 @@ const Coquitlam = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses across Metro Vancouver with proven ad strategies that attract ideal clients online.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses across Metro Vancouver with ad campaigns aimed at ideal clients online.</p>
             </div>
           </div>
         </div>
@@ -198,10 +198,10 @@ const Coquitlam = () => (
               Coquitlam has transformed dramatically over the last decade. Westwood Plateau and Burke Mountain are now established residential communities with tens of thousands of homeowners who need local services — from trades to health and wellness to professional coaching. Maillardville, one of the oldest neighbourhoods in the Tri-Cities, has its own commercial strip and a tight-knit community increasingly using online search to find local businesses. Port Moody and Port Coquitlam round out the Tri-Cities with their own distinct populations and commercial areas. For a digital marketing agency in Coquitlam BC, this geographic diversity is an asset — it means there's a large, multi-neighbourhood market to target, and businesses that get their geo-targeting right see dramatically better results than those running city-wide or Metro-wide campaigns.
             </p>
             <p>
-              The case for paid advertising as the primary lead generation channel for Coquitlam small businesses is straightforward: the Tri-Cities market is large enough to support real ad volume, but local competition hasn't caught up to Vancouver-level saturation yet. A plumber in Coquitlam running Google Ads today is not bidding against 50 other local plumbers the way a Vancouver contractor would be. A salon in Port Moody running Meta Ads can reach every woman in the target age demographic within a 10km radius at costs that would shock a salon owner in Burnaby or Vancouver. Lead generation in Coquitlam, Port Moody, and Port Coquitlam is still a relatively undercrowded space in the paid advertising ecosystem — and that translates directly to lower cost-per-lead for businesses that move now.
+              The case for paid advertising as the primary lead generation channel for Coquitlam small businesses is straightforward: the Tri-Cities market is large enough to support real ad volume, but local competition hasn't caught up to Vancouver-level saturation yet. A plumber in Coquitlam running Google Ads today is not bidding against 50 other local plumbers the way a Vancouver contractor would be. A salon in Port Moody running Meta Ads can reach every woman in the target age demographic within a 10km radius at costs that would shock a salon owner in Burnaby or Vancouver. Lead generation in Coquitlam, Port Moody, and Port Coquitlam is still a relatively undercrowded space in the paid advertising ecosystem — and that can mean lower cost-per-lead for businesses that move now.
             </p>
             <p>
-              What drives results for a marketing agency Coquitlam businesses can rely on isn't just running ads — it's the combination of precise targeting, compelling creative, and landing pages built to convert. We target Westwood Plateau homeowners differently than we target Burke Mountain families because their demographics, income levels, and service needs differ. We build separate ad sets for Coquitlam proper versus Port Moody versus PoCo when the data supports it, ensuring your budget is concentrated where your best customers actually live. That level of Tri-Cities-specific precision is what separates campaigns that generate real enquiries from campaigns that generate noise. For Coquitlam service businesses ready to stop relying on referrals and build a predictable lead pipeline, paid advertising managed by someone who knows this market is the highest-leverage investment you can make.
+              What drives results for a marketing agency Coquitlam businesses can rely on isn't just running ads — it's the combination of precise targeting, compelling creative, and landing pages built to convert. We target Westwood Plateau homeowners differently than we target Burke Mountain families because their demographics, income levels, and service needs differ. We build separate ad sets for Coquitlam proper versus Port Moody versus PoCo when the data supports it, ensuring your budget is concentrated where your best customers actually live. That level of Tri-Cities-specific precision is what separates campaigns that generate real enquiries from campaigns that generate noise. For Coquitlam service businesses ready to rely less on referrals, paid advertising managed by someone who knows this market is often the most direct place to start.
             </p>
           </div>
         </div>
@@ -214,7 +214,7 @@ const Coquitlam = () => (
             Our Coquitlam Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Coquitlam business generating leads fast — with no guesswork.
+            A clear process for getting your Coquitlam business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
@@ -239,7 +239,7 @@ const Coquitlam = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">4</div>
               <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Scale</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops and your pipeline becomes predictable and reliable.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads are flowing, we scale what's working and cut what isn't. We report cost per lead weekly, so you can see what is working and what is not.</p>
             </div>
           </div>
         </div>

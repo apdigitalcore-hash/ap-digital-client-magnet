@@ -256,7 +256,7 @@ const BlogPost = () => {
           </nav>
 
           <div className="mt-16 bg-card border border-border rounded-2xl p-8 text-center">
-            <h2 className="font-display text-2xl font-bold text-foreground mb-3">Ready to Fill Your Schedule?</h2>
+            <h2 className="font-display text-2xl font-bold text-foreground mb-3">Want a Second Opinion on Your Marketing?</h2>
             <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
               Book a free strategy call with AP DIGITAL and get a custom plan to grow your business.
             </p>

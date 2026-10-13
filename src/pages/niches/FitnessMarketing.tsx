@@ -22,7 +22,7 @@ const included = [
   'Lead form ads with free trial & intro offer funnels',
   'Google Business Profile optimization & review strategy',
   'Landing pages built for membership sign-ups',
-  'Monthly performance reporting & creative testing',
+  'Weekly performance reporting & creative testing',
   'Retargeting campaigns for website visitors & free trial no-shows',
   'Seasonal campaigns (New Year, summer, back-to-school)',
 ];
@@ -36,15 +36,15 @@ const results = [
 const faqs = [
   {
     question: 'How do I get more gym members in Vancouver?',
-    answer: 'Meta Ads are the highest-ROI channel for gyms and studios. We target people within 5–10 km of your location who match your ideal member profile — age, fitness interests, income — and drive them to a free trial or intro offer. How many leads that produces depends on your budget, your offer and how many studios compete in your area — a strong intro offer usually matters more than the ad itself.',
+    answer: 'Meta Ads are usually the main channel for gyms and studios. We target people within 5–10 km of your location who match your ideal member profile, such as age and fitness interests, and drive them to a free trial or intro offer. How many leads that produces depends on your budget, your offer and how many studios compete in your area — a strong intro offer usually matters more than the ad itself.',
   },
   {
     question: 'How much does fitness marketing cost?',
-    answer: 'Most gyms and studios start with $800–$1,500/month in ad spend plus a management fee starting at $759/month. This covers Meta Ads, Google Ads, landing pages, and weekly optimization. No setup fees, no contracts.',
+    answer: 'Most gyms and studios start with $1,000–$1,500/month in ad spend plus a management fee starting at $759/month. This covers Meta Ads, Google Ads, landing pages, and weekly optimization. No setup fees, no contracts.',
   },
   {
     question: 'How fast will I see new members from ads?',
-    answer: 'Meta Ads typically generate free trial bookings within the first week. Most fitness clients see a steady flow of 8–12 leads per week by week 3. The key is having a compelling intro offer — free week, $1 first month, or free class — that lowers the barrier to entry.',
+    answer: 'Most clients see their first qualified leads within 2 weeks of launch, and Meta Ads typically take 2 to 3 weeks to optimize. The key is having a compelling intro offer — free week, $1 first month, or free class — that lowers the barrier to entry.',
   },
   {
     question: 'What type of fitness businesses do you work with?',
@@ -56,11 +56,11 @@ const faqs = [
   },
   {
     question: 'How do I compete with big chain gyms like GoodLife or Anytime Fitness?',
-    answer: 'You don\'t compete on price — you compete on community and specialization. We position your gym around what makes it different (coaching quality, class variety, atmosphere) and target people who value that over $10/month memberships. Boutique fitness members have 3–5x higher lifetime value than big-box members.',
+    answer: 'You don\'t compete on price — you compete on community and specialization. We position your gym around what makes it different (coaching quality, class variety, atmosphere) and target people who value that over $10/month memberships.',
   },
   {
     question: 'Is there a contract for fitness marketing?',
-    answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We also offer a 90-day performance guarantee — if you don\'t see results, you don\'t pay.',
+    answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We agree a lead-volume target at kickoff, and if we miss it by month 3 we keep working at no fee for a further 30 days. Ad spend is paid to Google or Meta either way.',
   },
   {
     question: 'Can you help with New Year and seasonal fitness campaigns?',
@@ -121,7 +121,7 @@ const FitnessMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Transformation content sells</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Before-and-after photos and member testimonial videos are the highest-converting ad creative in fitness. We help you produce and promote them.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Real member stories and class footage are usually the strongest ad creative in fitness. Meta restricts before-and-after imagery for weight loss, so we plan creative around that.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -163,7 +163,7 @@ const FitnessMarketing = () => (
             Joining a gym isn't an emergency — nobody Googles "gym near me" at midnight because they need one right now. It's a considered decision driven by motivation, inspiration, and seeing what's possible. That's why Instagram and Facebook are the dominant channels for fitness.
           </p>
           <p className="mb-4">
-            Transformation photos stop the scroll. Class highlight reels build FOMO. Member testimonials create trust. We run these as paid ads targeting people who already follow fitness accounts, have visited competitor websites, or match your ideal member demographics.
+            Real member stories stop the scroll. Class highlight reels build FOMO. Member testimonials create trust. We run these as paid ads targeting people interested in fitness, people who have visited your site or engaged with your page, and people who match your ideal member profile.
           </p>
           <p>
             The funnel is simple: ad → free trial landing page → booked visit → membership. We optimize every step — from the creative that hooks attention to the retargeting that brings back people who clicked but didn't book.

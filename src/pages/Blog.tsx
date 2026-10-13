@@ -84,7 +84,7 @@ const Blog = () => {
           Digital Marketing Blog — Tips for Salons, Trades &amp; Real Estate
         </h1>
         <p className="text-muted-foreground text-lg mb-12 max-w-2xl">
-          Proven strategies to help local businesses get more leads, more clients, and more revenue.
+          Practical guides to help local businesses get more leads and more clients.
         </p>
 
 

@@ -22,7 +22,7 @@ const included = [
   'Google Business Profile optimization & review management',
   'Instagram content strategy & Reels production guidance',
   'Reservation & online ordering funnel optimization',
-  'Monthly performance reporting & creative testing',
+  'Weekly performance reporting & creative testing',
   'Event & seasonal promotion campaigns',
   'Competitor monitoring & local positioning',
 ];
@@ -40,11 +40,11 @@ const faqs = [
   },
   {
     question: 'How much does restaurant marketing cost?',
-    answer: 'Most restaurants start with $500–$1,500/month in ad spend plus a management fee starting at $759/month. Restaurant ads have lower cost-per-click than most industries, so even a modest budget drives significant foot traffic. No setup fees, no contracts.',
+    answer: 'Most restaurants start with $1,000–$1,500/month in ad spend plus a management fee starting at $759/month. Restaurant ads typically have a lower cost-per-click than most industries, which stretches a modest budget further. No setup fees, no contracts.',
   },
   {
     question: 'How fast will I see more customers from ads?',
-    answer: 'Instagram and Facebook ads drive foot traffic within the first week — especially when promoting a limited-time offer or new menu item. Google Ads captures people actively searching for restaurants and typically generates clicks within 48 hours of launch.',
+    answer: 'Most clients see their first qualified leads within 2 weeks of launch. Instagram and Facebook ads typically respond fastest when promoting a limited-time offer or new menu item, and Google Ads captures people actively searching for restaurants.',
   },
   {
     question: 'Should my restaurant focus on Instagram or Google?',
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     question: 'Is there a contract for restaurant marketing?',
-    answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We also offer a 90-day performance guarantee — if you don\'t see more customers, you don\'t pay.',
+    answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We agree a lead-volume target at kickoff, and if we miss it by month 3 we keep working at no fee for a further 30 days. Ad spend is paid to Google or Meta either way.',
   },
   {
     question: 'How do I compete with bigger restaurant chains on Google?',
@@ -121,12 +121,12 @@ const RestaurantMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Food sells itself visually</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">A great food photo on Instagram has a higher engagement rate than almost any other content type. We turn your dishes into scroll-stopping ads.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">A great food photo is usually among the best-performing content on Instagram. We turn your dishes into scroll-stopping ads.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Hyper-local reach</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">People don't drive 30 minutes for dinner. We target hungry people within 5–15 km of your restaurant — the only radius that fills tables.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">People don't drive 30 minutes for dinner. We target hungry people within 5–15 km of your restaurant, the distance most diners will travel.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -157,7 +157,7 @@ const RestaurantMarketing = () => (
           ))}
         </div>
 
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Why Instagram &amp; Google Are the Only Channels That Matter</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Why Instagram and Google Matter Most for Restaurants</h2>
         <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
           <p className="mb-4">
             Restaurant discovery happens in two places: Instagram and Google. Instagram is where people browse, get inspired, and screenshot places to try. Google is where they search "best Thai food Burnaby" or "restaurants open now near me" when they're ready to eat.
@@ -166,7 +166,7 @@ const RestaurantMarketing = () => (
             We cover both. Instagram Reels and carousel ads showcase your food and atmosphere — building a list of people who want to visit. Google Ads capture them at the moment of decision. Your Google Business Profile (photos, reviews, menu, hours) is the final conversion point.
           </p>
           <p>
-            The economics work: the average table is worth $60–$150, and repeat customers visit 2–4 times per month. At $2–$5 per new customer reached, one converted diner pays for hundreds of ad impressions over their lifetime.
+            Work out the economics with your own numbers: average spend per table and how often regulars return. Those two figures tell you what a new diner is worth, and what you can afford to spend to reach one.
           </p>
         </div>
 

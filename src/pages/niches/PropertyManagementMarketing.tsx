@@ -49,7 +49,7 @@ const faqs = [
   {
     question: 'How much should a property manager spend on marketing?',
     answer:
-      'Budget against the cost of the vacancy rather than a flat percentage. A unit renting at $1,800 a month loses roughly $60 for every day it sits empty, so a two-week reduction in time-to-lease is worth about $840 on that one unit. Most BC property managers we speak to run $800 to $2,000 a month in ad spend across a portfolio, plus $759/month management. Ad spend goes directly to Google or Meta on your own account.',
+      'Budget against the cost of the vacancy rather than a flat percentage. A unit renting at $1,800 a month loses roughly $60 for every day it sits empty, so a two-week reduction in time-to-lease is worth about $840 on that one unit. Most BC property managers we speak to run $1,000 to $2,000 a month in ad spend across a portfolio, plus $759/month management. Ad spend goes directly to Google or Meta on your own account.',
   },
   {
     question: 'Why not just use Facebook Marketplace and Craigslist?',

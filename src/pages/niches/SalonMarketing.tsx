@@ -22,7 +22,7 @@ const included = [
   'Before-and-after content creation',
   'Google Business Profile optimization',
   'Online booking funnel setup',
-  'Monthly performance reporting & optimization',
+  'Weekly performance reporting & optimization',
   'Branded social media content calendar',
   'Retargeting campaigns for website visitors',
 ];
@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     question: 'How much does salon marketing cost in BC?',
-    answer: 'Most salons start with $500–$1,000/month in ad spend plus a $759/month management fee. This covers campaign strategy, creative testing, audience optimization, and weekly reporting. There are no setup fees or long-term contracts.',
+    answer: 'Most salons start with at least $1,000/month in ad spend, our recommended minimum, plus a $759/month management fee. This covers campaign strategy, creative testing, audience optimization, and weekly reporting. There are no setup fees or long-term contracts.',
   },
   {
     question: 'How fast will I see new bookings from ads?',
@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: 'What social media platforms work best for salons?',
-    answer: 'Instagram is the top platform for salons — your work is visual, and Reels drive massive organic reach. Facebook is strong for reaching women 30–55 in your local area. We manage both platforms and run paid ads across the Meta network to maximize bookings.',
+    answer: 'Instagram is the top platform for salons — your work is visual, and Reels can extend your organic reach. Facebook is strong for reaching women 30–55 in your local area. We manage both platforms and run paid ads across the Meta network to maximize bookings.',
   },
   {
     question: 'Do you create content for my salon social media?',
@@ -114,7 +114,7 @@ const SalonMarketing = () => (
 
         {/* Short intro */}
         <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-          Most salons run on referrals and hope. We build you a system — Meta Ads, Reels, and retargeting — that fills every chair on autopilot.
+          Most salons run on referrals and hope. We build you a system — Meta Ads, Reels, and retargeting — aimed at a steady flow of new bookings.
         </p>
 
         <InlineCTA context="salon" />
@@ -124,7 +124,7 @@ const SalonMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Before &amp; afters convert</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Before-and-after content drives 3× more bookings than any other format. We produce it for you.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Before-and-after content is usually the strongest format for salons. We plan it with you and turn it into ads and posts.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />

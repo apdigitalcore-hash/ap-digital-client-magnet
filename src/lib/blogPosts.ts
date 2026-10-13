@@ -147,7 +147,7 @@ Management fees and ad spend are two different bills, and the ads themselves are
 
 Costs swing with your industry, your targeting, and — more than most people expect — your creative. A strong hook can cut cost per lead in half on the same budget and the same audience, which is why creative testing is worth more than micro-optimising bids. Instagram rewards creative over targeting more than any other placement, and we go deeper on [what Instagram ads cost in Canada](/blog/how-much-do-instagram-ads-cost-canada).
 
-Below roughly $500/month in spend, most platforms cannot gather enough conversion data to optimise. That is the practical floor, not an agency upsell. It is worth checking the other end of the funnel too — paid traffic landing on a page that does not convert wastes more money than the ads cost, and [what a website costs in Canada](/blog/how-much-does-a-website-cost-canada) covers when a rebuild is and is not worth it.
+We recommend at least $1,000/month in spend: below that, most local businesses produce too few conversions for the platforms to optimise quickly. That comes from how the platforms learn, not an agency upsell. It is worth checking the other end of the funnel too — paid traffic landing on a page that does not convert wastes more money than the ads cost, and [what a website costs in Canada](/blog/how-much-does-a-website-cost-canada) covers when a rebuild is and is not worth it.
 
 ## Social Media Video Pricing in Canada
 
@@ -290,7 +290,7 @@ Agency fees in this guide come from published Canadian agency pricing and our ow
       { question: 'How much does it cost to market on social media if you do it yourself?', answer: 'Doing it in-house is not free, it just moves the cost. Scheduling tools run $15 to $100 a month, stock assets and templates another $20 to $50, and the real expense is time: most owners spend six to ten hours a week on content, which at any sensible hourly rate exceeds an agency retainer. The honest comparison is not $0 versus $849 — it is your ten hours versus $849.' },
       { question: 'How do social media marketing costs compare to other advertising costs?', answer: 'Social is usually the cheapest paid channel to start in Canada. Meta Ads clear around $0.50 to $2.00 per click for most local businesses, Google Search Ads run $2 to $8 depending on the trade, and traditional advertising — radio, print, direct mail — starts in the thousands with no per-click accountability. The cost of advertising is not just the spend, it is what you can measure afterwards.' },
       { question: 'What are typical social media agency rates in Canada?', answer: 'Most Canadian agencies bill a monthly retainer between $500 and $5,000 depending on scope. Per-post pricing runs $50–$250, hourly consulting $75–$200, and percentage-of-ad-spend deals 10–20%. For a small business a flat retainer is usually the safest: your cost is predictable, and unlike percentage-of-spend it does not reward the agency for spending more of your money.' },
-      { question: 'How much do social media ads cost in Canada?', answer: 'Facebook and Instagram ads run $0.50–$3.50 per click and $10–$60 per lead. TikTok is cheaper at $0.30–$2.00 per click, LinkedIn far more expensive at $4–$12. This is ad spend paid directly to the platform and is separate from any agency management fee. Below about $500/month the platforms cannot gather enough conversion data to optimise properly.' },
+      { question: 'How much do social media ads cost in Canada?', answer: 'Facebook and Instagram ads typically run $0.50–$3.50 per click and $10–$60 per lead. TikTok is cheaper at $0.30–$2.00 per click, LinkedIn far more expensive at $4–$12. This is ad spend paid directly to the platform and is separate from any agency management fee. We recommend at least $1,000/month, because below that most local businesses produce too few conversions for the platforms to optimise properly.' },
       { question: 'How much does a social media manager cost in Canada?', answer: 'A freelance social media manager in Canada typically charges $500–$2,000/month depending on experience and scope. An agency with strategy, paid ads, and reporting will usually cost $1,500–$5,000/month.' },
       { question: 'Is social media marketing worth it for small businesses?', answer: 'Yes — when done strategically. A well-structured campaign with targeted paid ads and consistent organic content can generate measurable leads within the first month. The key is tracking leads, not just likes.' },
       { question: 'How much do Facebook Ads cost in Canada?', answer: 'Facebook (Meta) Ads in Canada typically cost $5–$15 per thousand impressions (CPM) and $0.50–$3.00 per click. Lead generation campaigns usually cost $10–$50 per lead for most service businesses.' },
@@ -367,7 +367,7 @@ It depends on your business type. Google Ads is best for service businesses wher
 Facebook Ads typically have a lower cost per click ($0.50–$3.00) compared to Google Ads ($2–$15+ depending on industry). However, Google Ads often produce higher-quality leads because the intent is higher. The better question is which platform produces cheaper leads that actually convert.
 
 **What's the minimum ad budget for a small business in Canada?**
-We recommend at least $500/month in ad spend to get meaningful data on either platform. Below that, you won't generate enough clicks or leads to optimize your campaigns effectively.
+We recommend at least $1,000/month in ad spend to get meaningful data on either platform. Below that, you won't generate enough clicks or leads to optimize your campaigns effectively.
 
 **Should I run ads on multiple platforms?**
 If your budget allows, yes. Google Ads captures people actively searching for your service, while Facebook Ads builds awareness and retargets people who've already interacted with your business. Together, they cover the full customer journey.
@@ -378,7 +378,7 @@ TikTok Ads can work well for businesses targeting younger demographics (18–35)
     faqs: [
       { question: 'Which ad platform is best for small business in Canada?', answer: 'It depends on your business type. Google Ads is best for service businesses where customers actively search for solutions (trades, dental, legal). Facebook and Instagram Ads are best for visual and relationship-driven businesses (salons, real estate, coaching). Most businesses benefit from running both.' },
       { question: 'Are Google Ads or Facebook Ads cheaper?', answer: 'Facebook Ads typically have a lower cost per click ($0.50–$3.00) compared to Google Ads ($2–$15+ depending on industry). However, Google Ads often produce higher-quality leads because the intent is higher.' },
-      { question: "What's the minimum ad budget for a small business in Canada?", answer: 'We recommend at least $500/month in ad spend to get meaningful data on either platform. Below that, you won\'t generate enough clicks or leads to optimize your campaigns effectively.' },
+      { question: "What's the minimum ad budget for a small business in Canada?", answer: 'We recommend at least $1,000/month in ad spend to get meaningful data on either platform. Below that, you won\'t generate enough clicks or leads to optimize your campaigns effectively.' },
       { question: 'Should I run ads on multiple platforms?', answer: 'If your budget allows, yes. Google Ads captures people actively searching for your service, while Facebook Ads builds awareness and retargets people who\'ve already interacted with your business. Together, they cover the full customer journey.' },
       { question: 'Are TikTok Ads worth it for small business in Canada?', answer: 'TikTok Ads can work well for businesses targeting younger demographics (18–35) with visual or lifestyle-oriented products and services. CPMs are still relatively low compared to Meta, but the platform requires strong video creative to perform.' },
     ],
@@ -679,7 +679,7 @@ Most Vancouver salons spend $1,500–$3,500/month on a complete marketing system
 
 ### What's the best social media platform for salons in Vancouver?
 
-Instagram is the #1 platform for Vancouver salons. It functions as your portfolio, trust signal, and lead generator. Reels and Stories drive the most engagement. TikTok is a strong secondary platform, especially for reaching clients aged 18–35.
+Instagram is usually the most important platform for Vancouver salons. It functions as your portfolio, trust signal, and lead generator. Reels and Stories drive the most engagement. TikTok is a strong secondary platform, especially for reaching clients aged 18–35.
 
 ### How long does it take to see results from salon marketing?
 
@@ -695,7 +695,7 @@ Aim for 50+ Google reviews with a 4.7-star average or higher. Reviews are the si
     dateModified: '2026-08-12',
     faqs: [
       { question: 'How much does salon marketing cost in Vancouver?', answer: 'Most Vancouver salons spend $1,500–$3,500/month on a complete marketing system: $500–$1,000 in Meta ad spend, $500–$1,500 for social media management, and $500–$1,000 for Google Ads. The return is typically 20–60 new client inquiries per month.' },
-      { question: "What's the best social media platform for salons in Vancouver?", answer: 'Instagram is the #1 platform for Vancouver salons. It functions as your portfolio, trust signal, and lead generator. Reels and Stories drive the most engagement. TikTok is a strong secondary platform, especially for reaching clients aged 18–35.' },
+      { question: "What's the best social media platform for salons in Vancouver?", answer: 'Instagram is usually the most important platform for Vancouver salons. It functions as your portfolio, trust signal, and lead generator. Reels and Stories drive the most engagement. TikTok is a strong secondary platform, especially for reaching clients aged 18–35.' },
       { question: 'How long does it take to see results from salon marketing?', answer: 'Most Vancouver salons see their first new client inquiries within 1–2 weeks of launching paid ads. By month 3, you should have a consistent pipeline of 40–60+ monthly inquiries with returning clients building your base.' },
       { question: 'Do I need Google Ads or just social media for my salon?', answer: 'Both work differently. Social media builds brand awareness and fills your chair with new clients. Google Ads capture people actively searching "hair salon near me" — these are the highest-intent leads. The best results come from running both.' },
       { question: 'How many Google reviews does my salon need to compete in Vancouver?', answer: 'Aim for 50+ Google reviews with a 4.7-star average or higher. Reviews are the single biggest trust factor for new Vancouver clients choosing a salon. Ask every happy client for a review immediately after their appointment.' },
@@ -942,7 +942,7 @@ Most contractors in Vancouver fall into one of two traps:
 
 **Trap 2: Wasting money on the wrong platforms.** We've seen Vancouver contractors spend thousands on flyers, Yellow Pages listings, or generic website packages that generate zero leads. The problem isn't the budget — it's the channel.
 
-The solution is a simple, proven system: high-intent Google Ads + [local SEO](/blog/vancouver-small-business-seo-guide) + a strong Google Business Profile. When combined correctly, this system puts your business in front of homeowners in Vancouver the exact moment they need your services.
+The solution is a simple system: high-intent Google Ads + [local SEO](/blog/vancouver-small-business-seo-guide) + a strong Google Business Profile. When combined correctly, this system puts your business in front of homeowners in Vancouver the exact moment they need your services.
 
 ## The Vancouver Trades Marketing System
 
@@ -1024,7 +1024,7 @@ Based on our work with trades clients across BC:
 
 ## Ready to Get More Vancouver Jobs?
 
-AP DIGITAL specializes in marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — [Google Ads](/services/paid-ads), [social media content](/services/social-media), and [local SEO](/blog/vancouver-small-business-seo-guide) — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) for more.
+AP DIGITAL runs marketing for trades and contractors across Metro Vancouver and BC. We build the entire system — [Google Ads](/services/paid-ads), [social media content](/services/social-media), and [local SEO](/blog/vancouver-small-business-seo-guide) — and we measure success in jobs booked, not clicks. See our dedicated [BC trades marketing page](/trades-marketing) for more.
 
 **Book your free strategy call** and get a custom plan to fill your schedule with quality Vancouver jobs.
 
@@ -1036,7 +1036,7 @@ Most trades businesses in Metro Vancouver spend $1,500–$3,500/month on marketi
 
 ### What's the best advertising platform for contractors in Vancouver?
 
-Google Ads is the #1 platform for trades businesses because it captures high-intent searches like "emergency plumber Vancouver." Meta Ads (Facebook/Instagram) are better for larger renovation projects where you need to reach homeowners before they start searching.
+Google Ads is usually the first platform for trades businesses because it captures high-intent searches like "emergency plumber Vancouver." Meta Ads (Facebook/Instagram) are better for larger renovation projects where you need to reach homeowners before they start searching.
 
 ### How long does it take for a contractor to get leads from Google Ads?
 
@@ -1052,7 +1052,7 @@ Both serve different purposes. Google Ads deliver immediate leads from day one. 
     dateModified: '2026-08-12',
     faqs: [
       { question: 'How much should a Vancouver contractor spend on marketing?', answer: 'Most trades businesses in Metro Vancouver spend $1,500–$3,500/month on marketing: $1,000–$2,000 on Google Ads, $500–$1,000 on Meta Ads, plus management fees. This typically generates 20–40 qualified leads per month.' },
-      { question: "What's the best advertising platform for contractors in Vancouver?", answer: 'Google Ads is the #1 platform for trades businesses because it captures high-intent searches like "emergency plumber Vancouver." Meta Ads (Facebook/Instagram) are better for larger renovation projects where you need to reach homeowners before they start searching.' },
+      { question: "What's the best advertising platform for contractors in Vancouver?", answer: 'Google Ads is usually the first platform for trades businesses because it captures high-intent searches like "emergency plumber Vancouver." Meta Ads (Facebook/Instagram) are better for larger renovation projects where you need to reach homeowners before they start searching.' },
       { question: 'How long does it take for a contractor to get leads from Google Ads?', answer: 'Most Vancouver contractors see their first leads within 7–10 days of launching Google Ads. By month 2, you should be getting 20–40 qualified leads per month with a consistent campaign.' },
       { question: 'How many Google reviews does a contractor need in Vancouver?', answer: 'Aim for 30+ Google reviews with a 4.5-star average as a minimum. Contractors with 50+ reviews and a 4.8+ rating consistently win more calls than competitors. Request 1–2 new reviews per week from satisfied clients.' },
       { question: 'Is SEO or Google Ads better for trades businesses?', answer: 'Both serve different purposes. Google Ads deliver immediate leads from day one. SEO builds long-term organic visibility that compounds over time. The best strategy is running Google Ads for instant results while building SEO for sustained lead flow.' },
@@ -1105,7 +1105,7 @@ For Vancouver realtors, the most effective content types are:
 
 ### Step 2: Facebook and Instagram Ads for Consistent Lead Generation
 
-Organic content builds your brand — but paid ads generate consistent, predictable leads. For Vancouver real estate agents, the two most effective campaigns are:
+Organic content builds your brand — but paid ads put you in front of buyers and sellers consistently, on a budget you control. For Vancouver real estate agents, the two most effective campaigns are:
 
 **Seller lead campaigns:** Target homeowners in specific Vancouver neighbourhoods with ads like "Curious what your home is worth in today's market? Get a free Vancouver home valuation." These generate seller leads at relatively low cost because most Vancouver homeowners are curious about their equity.
 
@@ -1226,27 +1226,23 @@ Several factors affect how much each lead costs:
 
 ## Is Meta Ads ROI Worth It for BC Contractors?
 
-Let's run the numbers for a plumber in Metro Vancouver:
+Run the numbers with your own figures rather than an industry average. For a plumber in Metro Vancouver working with us, the fixed costs are:
 
-- Ad spend: $1,000/month
-- Management: $500/month
-- Total: $1,500/month
-- Leads generated: 20–30/month
-- Close rate: 30–40% (6–12 booked jobs)
-- Average job value: $400–$800
-- Monthly revenue from ads: $2,400–$9,600
+- Ad spend: $1,000/month (our recommended minimum), paid directly to Meta
+- Management: $759/month
+- Total: about $1,759/month
 
-Even at the low end, the ROI is strong. At the high end, you're generating 6x your investment. That's why trades businesses in BC that run Meta Ads consistently don't stop — because the math works.
+Then work backwards. Take your average job value and your gross margin to get the profit per booked job, and divide $1,759 by it: that is how many booked jobs a month the ads need to produce to break even. Your actual lead volume and close rate only become clear once a campaign has run for a few weeks, which is why we report cost per lead and booked jobs weekly instead of promising them up front.
 
 ## The Key: What Happens After the Lead
 
-The biggest mistake BC contractors make isn't the ad budget — it's the follow-up. A lead that doesn't get a callback within 30 minutes has an 80% lower chance of converting. Speed matters more than any ad setting.
+The biggest mistake BC contractors make isn't the ad budget — it's the follow-up. A lead that waits hours for a callback is far less likely to convert than one called back within minutes. Speed matters more than any ad setting.
 
 Make sure you have a system to respond fast: a dedicated phone number on your ads, text message follow-up, and a callback process that's faster than your competitors.
 
 ## Ready to Run Meta Ads for Your BC Contractor Business?
 
-At AP DIGITAL, we specialize in [Meta Ads for BC contractors and trades businesses](/services/paid-ads). We handle the targeting, creative, and optimization — you focus on answering the phone.
+At AP DIGITAL, we run [Meta Ads for BC contractors and trades businesses](/services/paid-ads). We handle the targeting, creative, and optimization — you focus on answering the phone.
 
 **Book a free strategy call** and get a custom budget recommendation for your trade and service area.
 
@@ -1258,7 +1254,7 @@ Cost per lead ranges from $20–$70 depending on your trade, location, and ad qu
 
 ### What's the minimum Meta Ads budget for a BC contractor?
 
-We recommend starting with at least $500/month in ad spend plus management fees. This is enough to test your market and generate 10–20 leads per month. Most contractors scale to $1,000–$2,500/month once they see the ROI.
+We recommend starting with at least $1,000/month in ad spend plus management fees. That is typically enough for the platform to gather useful conversion data within a few weeks. Lead volume depends on your trade, area and offer, so we report it weekly rather than promise a number up front.
 
 ### Are Facebook Ads or Instagram Ads better for contractors?
 
@@ -1270,14 +1266,14 @@ Most BC contractors see their first leads within 3–5 days of launching a campa
 
 ### What's the ROI on Meta Ads for contractors in BC?
 
-For a typical plumber spending $1,500/month (ad spend + management), expect 20–30 leads, 6–12 booked jobs, and $2,400–$9,600 in revenue. Even at the low end, that's a 1.6x return on investment.`,
+It depends on your job value, margin and close rate, so work it out from your own numbers. At our recommended minimum a contractor pays about $1,759/month all in: $1,000 ad spend plus $759 management. Divide that by your profit per booked job to see how many jobs a month the ads need to produce to break even. Real lead volume becomes clear after a few weeks of data.`,
     dateModified: '2026-08-12',
     faqs: [
       { question: 'How much do Meta Ads cost per lead for contractors in BC?', answer: 'Cost per lead ranges from $20–$70 depending on your trade, location, and ad quality. Emergency services like plumbing and HVAC tend to have lower CPLs ($25–$45), while renovation projects are higher ($50–$70) but carry much larger job values.' },
-      { question: "What's the minimum Meta Ads budget for a BC contractor?", answer: 'We recommend starting with at least $500/month in ad spend plus management fees. This is enough to test your market and generate 10–20 leads per month. Most contractors scale to $1,000–$2,500/month once they see the ROI.' },
+      { question: "What's the minimum Meta Ads budget for a BC contractor?", answer: 'We recommend starting with at least $1,000/month in ad spend plus management fees. That is typically enough for the platform to gather useful conversion data within a few weeks. Lead volume depends on your trade, area and offer, so we report it weekly rather than promise a number up front.' },
       { question: 'Are Facebook Ads or Instagram Ads better for contractors?', answer: 'Both run through the same Meta Ads platform. Facebook tends to reach older homeowners (35–65) who are decision-makers for larger projects. Instagram works well for showcasing visual before-and-after content. Running ads on both platforms simultaneously gives the best results.' },
       { question: 'How fast will I get leads from Meta Ads?', answer: 'Most BC contractors see their first leads within 3–5 days of launching a campaign. It takes 2–4 weeks for the Meta algorithm to fully optimize your targeting, after which cost per lead typically drops by 20–30%.' },
-      { question: "What's the ROI on Meta Ads for contractors in BC?", answer: 'For a typical plumber spending $1,500/month (ad spend + management), expect 20–30 leads, 6–12 booked jobs, and $2,400–$9,600 in revenue. Even at the low end, that\'s a 1.6x return on investment.' },
+      { question: "What's the ROI on Meta Ads for contractors in BC?", answer: 'It depends on your job value, margin and close rate, so work it out from your own numbers. At our recommended minimum a contractor pays about $1,759/month all in: $1,000 ad spend plus $759 management. Divide that by your profit per booked job to see how many jobs a month the ads need to produce to break even.' },
     ],
   },
 ];
@@ -1516,7 +1512,7 @@ Google Ads operates on an auction system. You bid on keywords, and you pay when 
 
 Your monthly Google Ads budget should be large enough to generate meaningful data. Here's what we recommend for Vancouver businesses:
 
-- **Starting budget**: $800–$1,200/month — enough to test 10–15 keywords and generate initial leads
+- **Starting budget**: $1,000–$1,500/month — enough to test 10–15 keywords and generate initial leads
 - **Growth budget**: $1,500–$3,000/month — enough to compete on 20–30 keywords and scale lead volume
 - **Aggressive budget**: $3,000+/month — full keyword coverage with retargeting and display campaigns
 
@@ -1532,7 +1528,7 @@ You have seen the recommended monthly ranges. This turns them into a number for 
 
 Vancouver is one of the most competitive ad markets in Canada. More businesses bidding on the same keywords drives up costs. But higher costs don't mean lower ROI — Vancouver also has higher average transaction values. A plumber in Vancouver charges more than one in Winnipeg, so even at a higher cost per lead, the return is strong.
 
-The key is targeting efficiency. We use radius targeting, negative keywords, and dayparting to ensure every dollar reaches the right person at the right time. A well-managed campaign in Vancouver typically produces a 3–5x return on ad spend.
+The key is targeting efficiency. We use radius targeting, negative keywords, and dayparting to ensure every dollar reaches the right person at the right time. What that spend returns depends on your margins, close rate and how well the campaign is run, so judge it on cost per lead and booked jobs rather than a promised multiple.
 
 ## Google Ads vs. [Meta Ads](/services/social-media): Cost Comparison
 
@@ -1566,13 +1562,13 @@ Every business is different. The best way to get an accurate Google Ads cost est
 ## Frequently Asked Questions
 
 **How much should I spend on Google Ads in Vancouver?**
-Most Vancouver small businesses start with $800–$1,200/month in ad spend plus management fees. This is enough to test keywords and generate initial leads. Growth-stage businesses typically invest $1,500–$3,000/month for competitive keyword coverage.
+Most Vancouver small businesses start with $1,000–$1,500/month in ad spend plus management fees. This is enough to test keywords and generate initial leads. Growth-stage businesses typically invest $1,500–$3,000/month for competitive keyword coverage.
 
 **What is the average cost per click for Google Ads in Vancouver?**
 Average CPC in Vancouver ranges from $2–$6 for salons and beauty, $4–$12 for real estate, $8–$18 for trades and home services, and $3–$10 for coaching and consulting. Emergency service keywords can reach $25+ per click.
 
 **Are Google Ads worth it for small business in Vancouver?**
-Yes — when managed properly. A well-optimized Google Ads campaign in Vancouver typically produces a 3–5x return on ad spend. The key is targeting the right keywords, using negative keywords to eliminate waste, and sending traffic to a dedicated landing page.
+It can be, when managed properly. Whether it pays depends on your margins and close rate, so measure it by cost per lead and booked jobs rather than a promised multiple. The key is targeting the right keywords, using negative keywords to eliminate waste, and sending traffic to a dedicated landing page.
 
 **How long does it take for Google Ads to start working?**
 You can start seeing clicks and leads within the first week. However, it takes 2–4 weeks of data to properly optimize your campaigns. Most businesses see their best results after 60–90 days of continuous optimization.
@@ -1584,9 +1580,9 @@ Google Ads delivers immediate leads but stops when you stop paying. SEO takes 3�
 Yes. Sending Google Ads traffic to your homepage is one of the most common and costly mistakes. A dedicated landing page with a clear offer, trust signals, and a single call-to-action will double or triple your conversion rate compared to a homepage.`,
     dateModified: '2026-08-11',
     faqs: [
-      { question: 'How much should I spend on Google Ads in Vancouver?', answer: 'Most Vancouver small businesses start with $800–$1,200/month in ad spend plus management fees. Growth-stage businesses typically invest $1,500–$3,000/month for competitive keyword coverage.' },
+      { question: 'How much should I spend on Google Ads in Vancouver?', answer: 'Most Vancouver small businesses start with $1,000–$1,500/month in ad spend plus management fees. Growth-stage businesses typically invest $1,500–$3,000/month for competitive keyword coverage.' },
       { question: 'What is the average cost per click for Google Ads in Vancouver?', answer: 'Average CPC in Vancouver ranges from $2–$6 for salons and beauty, $4–$12 for real estate, $8–$18 for trades and home services, and $3–$10 for coaching and consulting.' },
-      { question: 'Are Google Ads worth it for small business in Vancouver?', answer: 'Yes — when managed properly. A well-optimized Google Ads campaign in Vancouver typically produces a 3–5x return on ad spend.' },
+      { question: 'Are Google Ads worth it for small business in Vancouver?', answer: 'It can be, when managed properly. Whether it pays depends on your margins and close rate, so measure it by cost per lead and booked jobs rather than a promised multiple.' },
       { question: 'How long does it take for Google Ads to start working?', answer: 'You can start seeing clicks and leads within the first week. However, it takes 2–4 weeks to properly optimize your campaigns. Most businesses see their best results after 60–90 days.' },
       { question: 'Google Ads or SEO — which is better for Vancouver businesses?', answer: 'Google Ads delivers immediate leads but stops when you stop paying. SEO takes 3–6 months but produces long-term organic traffic. The best strategy is to run both.' },
       { question: 'Do I need a landing page for Google Ads?', answer: 'Yes. A dedicated landing page with a clear offer and single call-to-action will double or triple your conversion rate compared to sending traffic to your homepage.' },
@@ -1677,7 +1673,7 @@ A 15-second video of a stunning balayage transformation will outperform a 60-sec
 
 - **Testing budget**: $300–$600/month (enough to test 3–5 ad creatives)
 - **Growth budget**: $800–$1,500/month (consistent lead flow)
-- **Management**: Included in our [paid ads package at $759/month](/pricing) — we manage TikTok alongside Meta and Google
+- **Management**: our [paid ads management at $759/month](/pricing) covers Google and Meta; ask on a call whether TikTok fits your business
 
 ## The Bottom Line
 
@@ -1841,7 +1837,7 @@ Cost per lead matters more than cost per click. A $10 click that converts at 15%
 | $2,000 – $4,000 | Multiple services or a wider radius, with budget to bid competitively on the best terms. |
 | $4,000+ | Multi-location or genuinely competitive categories such as legal. |
 
-**The floor is real.** Below roughly $500 a month, Google cannot gather enough conversion data to optimise, so you pay near-full price for every click indefinitely. That is a platform constraint, not an agency upsell.
+**The floor is real.** Below about $1,000 a month, most local businesses produce too few conversions for Google's automated bidding to learn quickly, so results stay slow and noisy. That is why we recommend $1,000 as a minimum: it is a platform constraint, not an agency upsell.
 
 ## Work Out Your Own Budget
 
@@ -1949,8 +1945,8 @@ Visual businesses like [salons](/salon-marketing) and restaurants tend to see th
 
 Don't spread your budget too thin. Here's what each stage requires:
 
-- **Testing phase ($300–$500/month):** Enough for 2–3 ad sets. You'll learn which audiences and creatives work, but lead volume will be limited.
-- **Growth phase ($500–$1,500/month):** The sweet spot for most small businesses. Enough data to optimize and generate consistent leads.
+- **Testing phase (under $1,000/month):** Enough for 2–3 ad sets. You'll learn which audiences and creatives work, but lead volume will be limited and slow to optimise.
+- **Growth phase ($1,000–$1,500/month):** The level we recommend as a minimum for most small businesses. Typically enough data to optimize.
 - **Scale phase ($1,500–$5,000/month):** Full audience coverage with retargeting, lookalike audiences, and multiple ad formats running simultaneously.
 
 On top of ad spend, budget for management. DIY is free but time-consuming. Agency management typically runs $500–$1,500/month. At AP DIGITAL, our [paid ads management](/services/paid-ads) includes Instagram, Facebook, and reporting.
@@ -2002,7 +1998,7 @@ Not all ad formats perform equally. Here's what works best:
 ## Frequently Asked Questions
 
 **What is the minimum budget for Instagram Ads in Canada?**
-You can start with as little as $5/day ($150/month), but we recommend at least $300/month to generate enough data for optimization. Below that, you're essentially guessing.
+You can start with as little as $5/day ($150/month), but we recommend at least $1,000/month to generate enough data for optimization. Below that, you're essentially guessing.
 
 **How much does it cost per follower on Instagram Ads?**
 Follower campaigns typically cost $0.50–$2.00 per new follower in Canada. However, we rarely recommend follower campaigns — lead generation and traffic campaigns deliver better business ROI.
@@ -2027,7 +2023,7 @@ We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby]
 
 **[Book your free strategy call](/book)** and we'll build a custom Instagram Ads plan for your business.`,
     faqs: [
-      { question: 'What is the minimum budget for Instagram Ads in Canada?', answer: 'You can start with as little as $5/day ($150/month), but we recommend at least $300/month to generate enough data for optimization.' },
+      { question: 'What is the minimum budget for Instagram Ads in Canada?', answer: 'You can start with as little as $5/day ($150/month), but we recommend at least $1,000/month to generate enough data for optimization.' },
       { question: 'How much does it cost per follower on Instagram Ads?', answer: 'Follower campaigns typically cost $0.50–$2.00 per new follower in Canada. However, lead generation and traffic campaigns deliver better business ROI.' },
       { question: 'Are Instagram Ads worth it for small business?', answer: 'Yes — especially for visual businesses like salons, restaurants, fitness studios, and real estate. Instagram\'s targeting lets you reach your exact ideal customer within your local area.' },
       { question: 'Do Reels Ads cost less than Feed Ads?', answer: 'Generally yes. Reels placements typically have 20–40% lower CPMs than Feed placements because there\'s less advertiser competition and higher user engagement.' },
@@ -2124,11 +2120,11 @@ The biggest hidden cost isn't the clicks — it's wasted spend from bad manageme
 
 ### No Landing Pages
 
-Sending Google Ads traffic to your homepage is the #1 mistake we see. A dedicated landing page with a clear offer and single call-to-action typically converts 3–5x better than a homepage.
+Sending Google Ads traffic to your homepage is the #1 mistake we see. A dedicated landing page with a clear offer and single call-to-action usually converts better than a homepage.
 
 ### No Follow-Up System
 
-Leads are worthless without fast follow-up. Studies show that calling a lead within 5 minutes makes you 100x more likely to connect than waiting 30 minutes. Set up instant notifications for every new lead.
+Leads are worthless without fast follow-up. Calling a lead within minutes, rather than hours, makes you far more likely to reach them. Set up instant notifications for every new lead.
 
 ### Agency Fees
 
@@ -2137,13 +2133,13 @@ Management fees typically range from $500–$1,500/month for small businesses. A
 ## Frequently Asked Questions
 
 **What's the minimum budget for Google Ads in Canada?**
-We recommend at least $500/month in ad spend to generate meaningful data. Below that, you won't get enough clicks to optimize effectively. Most small businesses see the best results starting at $1,000/month.
+We recommend at least $1,000/month in ad spend to generate meaningful data. Below that, you typically won't get enough clicks and conversions to optimize effectively.
 
 **How long does it take for Google Ads to produce results?**
 You can start seeing clicks and leads within the first week. However, it takes 2–4 weeks to gather enough data for optimization. Most businesses see their best performance after 60–90 days of continuous management.
 
 **Are Google Ads worth it for small business in Canada?**
-Yes — when managed properly. Google Ads puts you in front of people actively searching for your service. A well-optimized campaign typically produces 3–5x return on ad spend. The key is proper targeting, strong landing pages, and conversion tracking.
+Yes — when managed properly. Google Ads puts you in front of people actively searching for your service. Whether it pays depends on your margins and close rate, so measure it by cost per lead and booked jobs rather than a promised multiple. The key is proper targeting, strong landing pages, and conversion tracking.
 
 **Do Google Ads cost more in Vancouver than other Canadian cities?**
 Yes. Vancouver is one of Canada's most competitive ad markets. CPCs are typically 10–25% higher than the national average. However, higher local service prices mean ROI is still strong. Read our detailed [Vancouver Google Ads cost guide](/blog/how-much-do-google-ads-cost-vancouver).
@@ -2160,9 +2156,9 @@ At AP DIGITAL, we help Canadian small businesses build profitable [Google Ads ca
 
 **[Book your free strategy call](/book)** and we'll audit your current campaigns or build a custom Google Ads plan for your business.`,
     faqs: [
-      { question: "What's the minimum budget for Google Ads in Canada?", answer: 'We recommend at least $500/month in ad spend. Most small businesses see the best results starting at $1,000/month.' },
+      { question: "What's the minimum budget for Google Ads in Canada?", answer: 'We recommend at least $1,000/month in ad spend. Below that, you typically won\'t get enough clicks and conversions to optimize effectively.' },
       { question: 'How long does it take for Google Ads to produce results?', answer: 'You can see clicks and leads within the first week, but it takes 2–4 weeks to optimize. Best performance comes after 60–90 days of continuous management.' },
-      { question: 'Are Google Ads worth it for small business in Canada?', answer: 'Yes — when managed properly. A well-optimized campaign typically produces 3–5x return on ad spend.' },
+      { question: 'Are Google Ads worth it for small business in Canada?', answer: 'It can be, when managed properly. Whether it pays depends on your margins and close rate, so measure it by cost per lead and booked jobs rather than a promised multiple.' },
       { question: 'Do Google Ads cost more in Vancouver than other Canadian cities?', answer: 'Yes. Vancouver CPCs are typically 10–25% higher than the national average due to advertiser competition.' },
       { question: 'Google Ads or SEO — which should I choose?', answer: 'Both. Google Ads delivers immediate leads. SEO takes 3–6 months but produces long-term organic traffic. Run both for the best results.' },
       { question: 'How much do Google Ads management fees cost?', answer: 'Agency management fees typically range from $500–$1,500/month for small businesses.' },
@@ -2260,7 +2256,7 @@ If you're under $1,000/month, don't spread across five channels. Focus:
 
 **Step 2: Website ($100–$200/month ongoing).** Make sure it's fast, mobile-friendly, and has clear calls to action. A bad website kills every other marketing effort.
 
-**Step 3: One paid channel ($500–$800/month).** For service businesses, start with [Google Ads](/services/paid-ads). For visual businesses, start with [Instagram Ads](/services/social-media). Don't split $500 between both.
+**Step 3: One paid channel (we recommend at least $1,000/month in ad spend).** For service businesses, start with [Google Ads](/services/paid-ads). For visual businesses, start with [Instagram Ads](/services/social-media). Don't split a small budget between both.
 
 **Step 4: Add channels as revenue grows.** Once your first channel is profitable, reinvest returns into a second channel. Build incrementally.
 
@@ -2316,7 +2312,7 @@ Every business is different. At AP DIGITAL, we help Canadian small businesses bu
     dateModified: '2026-08-30',
     readTime: '11 min read',
     category: 'Strategy',
-    content: `A property manager in BC should budget **$800 to $2,000 per month in ad spend** across a portfolio, plus **$759/month** for management. But that is the wrong way to think about it, and the right way changes the number entirely.
+    content: `A property manager in BC should budget **$1,000 to $2,000 per month in ad spend** across a portfolio, plus **$759/month** for management. But that is the wrong way to think about it, and the right way changes the number entirely.
 
 **Budget against the cost of a vacant day.** A unit renting at $1,800 a month loses roughly **$60 for every day it sits empty**. Cut fourteen days off your average time-to-lease on a single unit and you have recovered about **$840** — more than a month of management fees. That is the arithmetic that matters, not a percentage of revenue.
 
@@ -2338,7 +2334,7 @@ Against that, an ad budget of $1,500 is not a marketing expense. It is a discoun
 
 | Line item | Typical monthly cost |
 |---|---|
-| Ad spend, paid to Google or Meta | $800 – $2,000 |
+| Ad spend, paid to Google or Meta | $1,000 – $2,000 |
 | Management fee | $759 |
 | Listing photography | $150 – $400 per unit, one-off |
 | Your own site's listing pages | Usually already built |
@@ -2350,7 +2346,7 @@ Ad spend goes directly to the platforms on your own account, so you see the real
 | Units managed | Suggested monthly ad spend | Why |
 |---|---|---|
 | Under 20 | Not yet | Too little turnover for campaigns to keep learning |
-| 20 – 60 | $600 – $1,000 | One or two active vacancies at a time |
+| 20 – 60 | $1,000 (our recommended minimum) | One or two active vacancies at a time |
 | 60 – 150 | $1,000 – $1,800 | Enough turnover for continuous optimisation |
 | 150 – 400 | $1,800 – $3,000 | Multiple buildings, separate campaigns per radius |
 | 400+ | $3,000+ | Worth splitting by building type and rent band |
@@ -2403,7 +2399,7 @@ Below are the questions BC property managers ask us most often.
 
 Tell us your unit count, your average rent and your current time-to-lease, and we will tell you what budget makes sense — including when the answer is that your listings, not your advertising, are the constraint. Book a [20-minute call](/book).`,
     faqs: [
-      { question: 'How much should a property manager spend on marketing?', answer: 'Budget against the cost of a vacant day rather than a percentage of revenue. A $1,800 unit loses about $60 for every day it stands empty, so cutting fourteen days off time-to-lease recovers roughly $840 on one unit. Most BC property managers run $800 to $2,000 per month in ad spend across a portfolio, plus $759/month management.' },
+      { question: 'How much should a property manager spend on marketing?', answer: 'Budget against the cost of a vacant day rather than a percentage of revenue. A $1,800 unit loses about $60 for every day it stands empty, so cutting fourteen days off time-to-lease recovers roughly $840 on one unit. Most BC property managers run $1,000 to $2,000 per month in ad spend across a portfolio, plus $759/month management.' },
       { question: 'What does a vacant unit actually cost per day?', answer: 'Divide the monthly rent by 30. A $1,500 unit costs about $49 a day, $1,800 is $59, $2,200 is $72 and $2,800 is $92. A 240-unit portfolio at 5% vacancy has twelve units empty at any moment, which at $1,800 average rent is roughly $700 a day or $21,000 a month.' },
       { question: 'Is Facebook Marketplace enough for rental listings?', answer: 'Use it, but not only it. The issue is that every enquiry, photo view and visitor accumulates on a platform you do not own, so you finish each vacancy with no audience to retarget and no data that makes the next unit cheaper to fill. Advertising to listings on your own site means the second vacancy costs less than the first.' },
       { question: 'How many units do you need before paid ads are worth it?', answer: 'Around twenty. Below that there is not enough turnover for the campaigns to keep learning, so spend goes quiet between vacancies and you pay close to full price for every click. At smaller portfolio sizes, listing photography and your Google Business Profile are the better spend.' },
@@ -2571,11 +2567,11 @@ At AP DIGITAL, we help Canadian small businesses set up their marketing and sale
     title: 'How to Get More Google Reviews for Your Business in Canada',
     metaTitle: 'How to Get More Google Reviews in Canada (2026 Guide) | AP Digital',
     metaDescription: '10 proven methods to get more Google reviews for your Canadian business. Includes review request templates, response scripts, and what Google allows.',
-    excerpt: 'Want more Google reviews? 10 proven methods for Canadian businesses, plus response templates and the rules you need to know.',
+    excerpt: 'Want more Google reviews? 10 practical methods for Canadian businesses, plus response templates and the rules you need to know.',
     date: '2026-08-11',
     readTime: '8 min read',
     category: 'SEO',
-    content: `Google reviews are the single most important factor in local search rankings and the first thing potential customers check before contacting a business. Businesses with 50+ reviews get 266% more leads than those with fewer than 10. This guide gives you 10 proven methods to consistently generate more reviews for your Canadian business.
+    content: `Google reviews are one of the most important factors in local search rankings and one of the first things potential customers check before contacting a business. This guide gives you 10 practical methods to consistently generate more reviews for your Canadian business.
 
 ## Why Google Reviews Matter for Canadian Businesses
 
@@ -2588,7 +2584,7 @@ Google reviews impact your business in four measurable ways:
 
 Investing in reviews delivers compound returns — every review makes your business more visible, more trusted, and more likely to be chosen. Combined with [SEO](/blog/vancouver-small-business-seo-guide), reviews are the foundation of local search dominance.
 
-## 10 Proven Methods to Get More Google Reviews
+## 10 Methods to Get More Google Reviews
 
 ### 1. Ask in Person Right After Delivering Great Service
 

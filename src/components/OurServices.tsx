@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Target, Megaphone } from 'lucide-react';
 
 const services = [
-  { icon: Target, title: 'Paid Advertising', description: 'Targeted ads on Google, Facebook & Instagram that maximize ROI.', link: '/services/paid-ads' },
+  { icon: Target, title: 'Paid Advertising', description: 'Targeted ads on Google, Facebook & Instagram, measured on leads.', link: '/services/paid-ads' },
   { icon: Megaphone, title: 'Social Media Management', description: 'Build authority and engagement with consistent, compelling content.', link: '/services/social-media' },
 ];
 

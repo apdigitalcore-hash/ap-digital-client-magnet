@@ -23,7 +23,7 @@ const included = [
   'Review generation & reputation management',
   'Social media content creation',
   'Landing pages for Langley leads',
-  'Monthly ROI reporting',
+  'Weekly reporting on leads & cost per lead',
   'Local SEO for Langley',
 ];
 
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'How much does a marketing agency in Langley cost?',
-    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes directly to Google or Meta — you keep control of the budget. Most Langley businesses start between $1,000 and $2,000/month all in, including spend.',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes directly to Google or Meta — you keep control of the budget. At our recommended minimum that is about $1,759/month all in: $759 management plus $1,000 ad spend.',
   },
   {
     question: 'How quickly will I see leads in Langley?',
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: 'What does digital marketing cost in Langley?',
-    answer: 'Most Langley clients start with $500–$1,500/month in ad spend. Our management fee is transparent and quoted before you commit.',
+    answer: 'Most Langley clients start with $1,000–$1,500/month in ad spend. Our management fee is transparent and quoted before you commit.',
   },
   {
     question: 'Does AP Digital work with Langley trades businesses?',
@@ -141,7 +141,7 @@ const Langley = () => (
             Who We Help in <span className="italic">Langley</span>
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            From Willowbrook to Murrayville, we help Langley businesses generate leads and fill their calendars.
+            From Willowbrook to Murrayville, we help Langley businesses generate leads.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
@@ -154,7 +154,7 @@ const Langley = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Filling appointment books in Willowbrook & Murrayville — consistent bookings that keep your salon running at full capacity.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Meta Ads and Instagram content aimed at new bookings for salons in Willowbrook & Murrayville.</p>
             </div>
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -206,7 +206,7 @@ const Langley = () => (
               Langley — spanning both the City and the Township — is in the middle of a sustained growth surge that's creating enormous opportunity for local service businesses. Willowbrook continues to evolve as a commercial hub, drawing consumers from across the southern Fraser Valley. Murrayville, Walnut Grove, and Aldergrove have dense residential populations whose residents are increasingly searching for and booking local services online. This is the environment where a digital marketing agency in Langley BC that understands the local geography makes an outsized difference. Generic campaigns targeting broad Metro Vancouver audiences waste budget reaching people who would never drive to your location. Precision targeting at the neighbourhood level is what converts.
             </p>
             <p>
-              Langley's market has a distinctive character: it's suburban and semi-rural, with strong community identity, high homeownership rates, and a trades market that reflects the active development and renovation happening throughout the Township. Lead generation in Langley for contractors — plumbers, HVAC companies, electricians, roofers — is particularly high-return because the demand is real and consistent. There's always a new build or renovation project in Walnut Grove or Willowbrook that needs service providers. Meta Ads work exceptionally well for Langley small business marketing because the demographic targeting lets you reach homeowners specifically, filtering out renters and apartment dwellers who are unlikely to need your services. That precision is the difference between an ad budget that pays for itself tenfold and one that bleeds money.
+              Langley's market has a distinctive character: it's suburban and semi-rural, with strong community identity, high homeownership rates, and a trades market that reflects the active development and renovation happening throughout the Township. Lead generation in Langley for contractors — plumbers, HVAC companies, electricians, roofers — is particularly high-return because the demand is real and consistent. There's always a new build or renovation project in Walnut Grove or Willowbrook that needs service providers. Meta Ads work exceptionally well for Langley small business marketing because the demographic targeting lets you reach homeowners specifically, filtering out renters and apartment dwellers who are unlikely to need your services. That precision is the difference between an ad budget that earns its keep and one that bleeds money.
             </p>
             <p>
               What makes the current moment so important for a marketing agency Langley businesses should be acting on is the competitive window that still exists. Unlike Vancouver or Burnaby where every niche is saturated with advertisers driving up cost-per-click, Langley still offers relatively affordable ad costs with high intent. A plumber in Langley Township running Google Ads today is capturing leads at a fraction of what the same campaign costs in Vancouver. A salon in Willowbrook running Meta Ads can reach the entire Langley and Cloverdale market at lower CPMs than their counterparts in Metrotown or Brentwood. That window won't stay open as more businesses discover what's working — the time to build a dominant position in Langley's digital landscape is now, before competitors do.
@@ -222,7 +222,7 @@ const Langley = () => (
             Our Langley Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Langley business generating leads fast — with no guesswork.
+            A clear process for getting your Langley business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
