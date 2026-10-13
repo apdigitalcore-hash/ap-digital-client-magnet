@@ -69,6 +69,26 @@ or 12 posts; any mention of a street address or postal code.
 are protected. If one needs changing, put it in
 `docs/proposed-seo-changes-audit.md` as a before/after diff and leave the code alone.
 
+## Note: the prerenderer was fixed on 2026-10-12
+
+Commit `79a9d71` fixed three faults in `scripts/inject-meta.js`: the heading
+length floor was 18 characters (dropping 131 real headings site-wide), entities
+were never decoded (so `&amp;` shipped as `&amp;amp;`), and each page's own
+"What You Get" duplicated a generated section of the same name. All literal
+headings now reach crawlers.
+
+**So do not re-diagnose heading visibility.** What remains unreachable is
+narrower: headings whose text is a bare JSX expression such as `{g.title}` —
+11 of them, on `/pricing` and `/about` — which a regex extractor cannot resolve.
+**Report those; do not try to fix the extractor.** The fix is literal markup on
+the page, and that is a separate job.
+
+Likewise, content rendered from arrays (`{ITEMS.map(...)}`) is still invisible
+to the extractor. If you find a page where a substantial section is array-
+rendered, **list it in your summary rather than rewriting it.** Rewriting
+sections into literal markup is page work, not audit work, and it would make
+this diff impossible to review.
+
 ## Job 2 — internal links that never reach a crawler
 
 The href-dropping behaviour means a `<Link>` written in a React page is invisible to
