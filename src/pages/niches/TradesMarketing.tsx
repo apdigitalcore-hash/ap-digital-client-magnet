@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: 'Do you work with plumbers, electricians, and HVAC companies in Vancouver?',
-    answer: 'Yes. We specialize in trades businesses across Metro Vancouver including plumbers, electricians, HVAC technicians, roofers, landscapers, and general contractors. We have proven playbooks for each trade that generate consistent leads.',
+    answer: 'Yes. We specialize in trades businesses across Metro Vancouver including plumbers, electricians, HVAC technicians, roofers, landscapers, and general contractors. We run campaigns for each of those trades and report on cost per booked job.',
   },
   {
     question: 'How do I get my trades business to show up on Google?',

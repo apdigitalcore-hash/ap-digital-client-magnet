@@ -23,7 +23,7 @@ const included = [
   'Google Business Profile optimization with project photos & reviews',
   'Call tracking tied to booked estimates, not just inquiries',
   'Retargeting campaigns for website visitors who didn\'t convert',
-  'Monthly reporting with cost-per-estimate and close-rate metrics',
+  'Weekly reporting with cost-per-estimate and close-rate metrics',
   'Seasonal campaigns aligned with BC renovation peaks (spring & summer)',
 ];
 
