@@ -2566,7 +2566,7 @@ At AP DIGITAL, we help Canadian small businesses set up their marketing and sale
     slug: 'how-to-get-more-google-reviews-canada',
     title: 'How to Get More Google Reviews for Your Business in Canada',
     metaTitle: 'How to Get More Google Reviews in Canada (2026 Guide) | AP Digital',
-    metaDescription: '10 proven methods to get more Google reviews for your Canadian business. Includes review request templates, response scripts, and what Google allows.',
+    metaDescription: '10 practical methods to get more Google reviews for your Canadian business. Includes review request templates, response scripts, and what Google allows.',
     excerpt: 'Want more Google reviews? 10 practical methods for Canadian businesses, plus response templates and the rules you need to know.',
     date: '2026-08-11',
     readTime: '8 min read',

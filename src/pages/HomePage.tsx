@@ -24,7 +24,7 @@ import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSc
 import JsonLd from '@/components/JsonLd';
 
 const TITLE = 'Vancouver Performance Marketing Agency | AP Digital';
-const DESC = 'Vancouver marketing agency for salons, trades, realtors & coaches. Meta & Google Ads that deliver predictable leads. Month-to-month, 90-day guarantee.';
+const DESC = 'Vancouver marketing agency for realtors, salons, coaches & local service businesses. Meta & Google Ads from $759/month. Month-to-month, 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
