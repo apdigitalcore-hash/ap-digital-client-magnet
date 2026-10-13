@@ -97,7 +97,7 @@ const FounderBio = () => (
             Arjun Sharma
           </h1>
           <p className="text-foreground/70 text-lg md:text-xl max-w-3xl leading-relaxed">
-            Founder of AP Digital. Personally manages every client account. Specializes in building booked-estimate systems for trades contractors and local service businesses across British Columbia using Google Ads, Meta Ads, and performance marketing.
+            Founder of AP Digital. Personally manages every client account. Builds booked-estimate systems for local service businesses across British Columbia using Google Ads, Meta Ads, and performance marketing.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <a href="https://www.linkedin.com/in/arjun-sharma-9b2520395/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-foreground/20 text-foreground text-sm hover:bg-foreground hover:text-background transition-colors">
@@ -139,10 +139,10 @@ const FounderBio = () => (
             He built AP Digital around one principle: marketing is only valuable if it makes the phone ring with qualified jobs. Not impressions. Not clicks. Not followers. Booked estimates and closed deals. That philosophy shaped everything about the agency — from month-to-month contracts (no lock-ins) to reporting dashboards that track cost-per-booked-job (not vanity metrics) to the 90-day performance guarantee (if we miss the lead target we agree on, we keep working at no fee for a further 30 days).
           </p>
           <p>
-            Arjun personally manages every client account. When you work with AP Digital, you talk to the person running your campaigns — not a junior account manager, not an overseas team, not a chatbot. He runs campaigns across Google Ads, Meta Ads, and Local Service Ads for trades contractors, salons, real estate agents, coaches, dental clinics, gyms, and restaurants across Metro Vancouver.
+            Arjun personally manages every client account. When you work with AP Digital, you talk to the person running your campaigns — not a junior account manager, not an overseas team, not a chatbot. He runs Google Ads and Meta Ads campaigns for real estate agents, salons, coaches, dental clinics, car detailers and other local service businesses across Metro Vancouver.
           </p>
           <p>
-            His primary focus is trades contractors — plumbers, electricians, HVAC companies, roofers, and general contractors. He's built a methodology he calls "booked-estimate systems": campaigns designed to generate not just leads, but actual booked service calls and on-site estimates. The system tracks from ad click → phone call → booked estimate → completed job → revenue, so every client knows their true cost-per-job, not just cost-per-click.
+            For businesses that sell by phone or estimate, including trades contractors, he's built a methodology he calls "booked-estimate systems": campaigns designed to generate not just leads, but actual booked service calls and on-site estimates. The system tracks from ad click → phone call → booked estimate → completed job → revenue, so every client knows their true cost-per-job, not just cost-per-click.
           </p>
         </div>
       </section>

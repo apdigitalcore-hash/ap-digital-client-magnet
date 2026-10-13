@@ -66,7 +66,7 @@ const ProcessLight = () => {
             How It <span className="italic">Works</span>
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-base text-white/65">
-            A proven 3-step process to predictable lead generation.
+            A simple 3-step process, measured on leads.
           </p>
         </div>
 

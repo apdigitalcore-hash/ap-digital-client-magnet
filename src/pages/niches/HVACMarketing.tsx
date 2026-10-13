@@ -22,7 +22,7 @@ const included = [
   'Call tracking with recorded calls for quality assurance',
   'Landing pages built for phone call conversions',
   'Local Service Ads (LSA) setup & management',
-  'Monthly performance reporting & bid optimization',
+  'Weekly performance reporting & bid optimization',
   'Seasonal campaign adjustments (heating vs. cooling)',
   'Competitor monitoring & ad positioning',
 ];
@@ -40,15 +40,15 @@ const faqs = [
   },
   {
     question: 'How much does HVAC marketing cost?',
-    answer: 'Most HVAC companies start with $1,500–$3,000/month in ad spend plus a management fee starting at $759/month. HVAC has higher cost-per-click than other trades, but the average job value ($500–$15,000) makes the ROI exceptional.',
+    answer: 'Most HVAC companies start with $1,500–$3,000/month in ad spend plus a management fee starting at $759/month. HVAC typically has a higher cost-per-click than other trades, and job values typically range from $500 to $15,000, so we judge campaigns on cost per booked job.',
   },
   {
     question: 'How fast will I get new HVAC service calls from ads?',
-    answer: 'Google Ads generates calls within 48 hours of launch. Most HVAC clients see 3–5 calls per day within the first two weeks. Emergency searches ("no heat," "AC not working") convert fastest because the caller needs help immediately.',
+    answer: 'Most clients see their first qualified leads within 2 weeks of launch. Emergency searches ("no heat," "AC not working") convert fastest because the caller needs help immediately.',
   },
   {
     question: 'Should I use Google Ads or Local Service Ads for HVAC?',
-    answer: 'Both. Local Service Ads (LSAs) appear at the very top of Google with a "Google Guaranteed" badge and you only pay per lead, not per click. Standard Google Ads cover the broader search results. We run both simultaneously to dominate the entire first page.',
+    answer: 'Both. Local Service Ads (LSAs) appear at the very top of Google, with a "Google Guaranteed" badge where Google offers them for HVAC in your area, and you pay per lead, not per click. Standard Google Ads cover the broader search results. We run both so your business can appear in both places.',
   },
   {
     question: 'How do I compete with bigger HVAC companies on Google?',
@@ -56,11 +56,11 @@ const faqs = [
   },
   {
     question: 'Do seasonal changes affect HVAC marketing?',
-    answer: 'Yes. We adjust campaigns seasonally — furnace and heating keywords in fall/winter, AC and cooling keywords in spring/summer. We also ramp up budgets during peak demand periods and scale back during shoulder seasons to maximize your ROI year-round.',
+    answer: 'Yes. We adjust campaigns seasonally — furnace and heating keywords in fall/winter, AC and cooling keywords in spring/summer. We also ramp up budgets during peak demand periods and scale back during shoulder seasons so budget follows demand year-round.',
   },
   {
     question: 'Is there a contract for HVAC marketing?',
-    answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We also offer a 90-day performance guarantee — if you don\'t see results, you don\'t pay.',
+    answer: 'No. AP Digital works month-to-month. No lock-in contracts, no cancellation fees. We agree a lead-volume target at kickoff, and if we miss it by month 3 we keep working at no fee for a further 30 days. Ad spend is paid to Google or Meta either way.',
   },
   {
     question: 'Can you help my HVAC company rank on Google Maps?',
@@ -125,12 +125,12 @@ const HVACMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Emergency searches convert</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">"Furnace repair near me" has a 60%+ call rate. These aren't browsers — they need help now and they'll hire the first company that answers.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">People searching "furnace repair near me" need help now, and they usually hire the first company that answers.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">High job values</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">A furnace install is $5K–$15K. High job values make HVAC one of the most profitable verticals for paid ads.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">A furnace install typically runs $5K–$15K, so a single booked job can cover a meaningful amount of ad spend.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -161,13 +161,13 @@ const HVACMarketing = () => (
           ))}
         </div>
 
-        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Why Google Ads Dominates for HVAC</h2>
+        <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">Why Google Ads Leads for HVAC</h2>
         <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
           <p className="mb-4">
-            HVAC is a search-first industry. Nobody scrolls Instagram looking for a furnace repair company. They Google it — and they call the first company they see. That's why Google Ads and Local Service Ads are the highest-ROI channels for HVAC.
+            HVAC is a search-first industry. Nobody scrolls Instagram looking for a furnace repair company. They Google it — and they call the first company they see. That's why Google Ads and Local Services Ads are usually the first channels to fund for HVAC.
           </p>
           <p className="mb-4">
-            The math is simple: if a furnace installation is worth $8,000 and you're paying $30 per lead with a 25% close rate, your cost to acquire that job is $120. That's a 66x return. No other marketing channel comes close.
+            Work it out with your own numbers: the value of a typical job, your close rate, and what each lead costs once campaigns have data tell you what one booked job costs to win. We report cost per lead and per booked job weekly so that calculation uses real figures.
           </p>
           <p>
             We also run seasonal campaigns — heating-focused keywords from October to March, cooling from April to September — so your budget tracks demand and you're never paying for clicks that don't convert.

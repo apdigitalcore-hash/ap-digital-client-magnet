@@ -23,7 +23,7 @@ const included = [
   'Review generation & reputation management',
   'Short-form video strategy & social media content',
   'Landing pages built for Abbotsford leads',
-  'Monthly ROI reporting — leads & revenue',
+  'Weekly reporting — leads & cost per lead',
   'Local SEO for Abbotsford service areas',
 ];
 
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'How much does a marketing agency in Abbotsford cost?',
-    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Abbotsford businesses start between $1,000 and $2,000/month all in.',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. At our recommended minimum that is about $1,759/month all in: $759 management plus $1,000 ad spend.',
   },
   {
     question: 'How quickly will I get leads as an Abbotsford business?',
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: 'How much does digital marketing cost in Abbotsford?',
-    answer: 'Most Abbotsford clients start with $500–$1,500/month in ad spend. Our management fee is quoted transparently upfront and billed separately — no surprises.',
+    answer: 'Most Abbotsford clients start with $1,000–$1,500/month in ad spend. Our management fee is quoted transparently upfront and billed separately — no surprises.',
   },
   {
     question: 'Who manages my Abbotsford marketing campaign?',
@@ -162,7 +162,7 @@ const Abbotsford = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching and consulting businesses in Abbotsford and the Fraser Valley with proven digital ad strategies that attract premium clients.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching and consulting businesses in Abbotsford and the Fraser Valley with digital ad campaigns aimed at premium clients.</p>
             </div>
           </div>
         </div>
@@ -202,10 +202,10 @@ const Abbotsford = () => (
               Abbotsford is BC's third-largest city and the Fraser Valley's commercial hub — and its small business environment has changed dramatically over the past five years. Rapid population growth, new residential developments in West Abbotsford and Auguston, and a surge in young families moving from Metro Vancouver have created enormous demand for local service businesses. The challenge is visibility. When a new resident in Abbotsford needs a plumber, they search Google — not the Yellow Pages. When a homeowner in Clearbrook wants to find a new salon, they browse Instagram, not newspapers. For a digital marketing agency serving Abbotsford BC businesses, the opportunity is clear: the consumer base has grown massively, but many local businesses still rely on word-of-mouth and referrals that can't scale fast enough to capture it.
             </p>
             <p>
-              The competitive landscape in Abbotsford is also shifting rapidly. Trades businesses, salons, and real estate agents that have moved to paid digital advertising are outpacing competitors who haven't. A well-structured Google Ads campaign targeting "HVAC Abbotsford" or "electrician Abbotsford BC" consistently captures the highest-intent searches at the moment of need — generating job leads that referral networks simply cannot match for volume and consistency. Meta Ads on Facebook and Instagram let Abbotsford businesses reach specific demographics and postal codes with offers tailored to their neighbourhood — filling appointment books for salons, generating listing inquiries for realtors, and booking service calls for trades businesses with remarkable efficiency.
+              The competitive landscape in Abbotsford is also shifting rapidly. Many trades businesses, salons and real estate agents have already moved to paid digital advertising. A well-structured Google Ads campaign targeting "HVAC Abbotsford" or "electrician Abbotsford BC" consistently captures the highest-intent searches at the moment of need — generating job leads that referral networks simply cannot match for volume and consistency. Meta Ads on Facebook and Instagram let Abbotsford businesses reach specific demographics and postal codes with offers tailored to their neighbourhood — reaching new clients for salons, listing enquiries for realtors and service calls for trades businesses.
             </p>
             <p>
-              What makes Abbotsford particularly interesting for paid advertising is the relative lack of saturation compared to Metro Vancouver. The cost-per-click on Google Ads for local service keywords in Abbotsford is often significantly lower than comparable searches in Vancouver or Burnaby — which means your ad budget goes further, your cost-per-lead is lower, and your return on ad spend is higher. This window of relative affordability won't stay open as more Abbotsford businesses discover digital advertising. The businesses that invest now are building a data advantage — audience insights, conversion data, and campaign history — that will compound into a lasting competitive edge in the Fraser Valley market.
+              What makes Abbotsford particularly interesting for paid advertising is the relative lack of saturation compared to Metro Vancouver. The cost-per-click on Google Ads for local service keywords in Abbotsford is often lower than comparable searches in Vancouver or Burnaby, which can stretch an ad budget further. This window of relative affordability won't stay open as more Abbotsford businesses discover digital advertising. The businesses that invest now are building a data advantage — audience insights, conversion data, and campaign history — that will compound into a lasting competitive edge in the Fraser Valley market.
             </p>
           </div>
         </div>
@@ -218,7 +218,7 @@ const Abbotsford = () => (
             Our Abbotsford Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Abbotsford business generating leads fast — with no guesswork.
+            A clear process for getting your Abbotsford business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">

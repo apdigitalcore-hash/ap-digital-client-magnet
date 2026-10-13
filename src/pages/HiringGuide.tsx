@@ -97,7 +97,7 @@ const criteria = [
   },
   {
     title: 'They can show you real case studies with real numbers',
-    good: '"We helped a Kitsilano salon generate 94 leads in 60 days at $8.51 per lead" — specific, verifiable, comparable to your situation.',
+    good: 'A named client, a time period, a lead count and a cost per lead — specific, verifiable, comparable to your situation.',
     bad: '"We helped businesses like yours grow significantly" — vague claims, stock photos, and testimonials that say "great service" but nothing about actual results.',
   },
 ];

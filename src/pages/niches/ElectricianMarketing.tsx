@@ -18,12 +18,12 @@ const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Google Search Ads for "electrician near me," "panel upgrade," & emergency keywords',
-  'Local Service Ads (LSA) setup with Google Guaranteed badge',
+  'Local Services Ads (LSA) setup, with the Google Guaranteed badge where Google offers it in your area',
   'Google Business Profile optimization with service categories & photos',
   'Call tracking tied to booked estimates, not just inquiries',
   'Landing pages built for residential & commercial electricians',
   'EV charger installation campaign (fastest-growing keyword in BC)',
-  'Monthly reporting with cost-per-booked-job metrics',
+  'Weekly reporting with cost-per-booked-job metrics',
   'Negative keyword management to block DIY & job-seeker traffic',
 ];
 
@@ -36,19 +36,19 @@ const results = [
 const faqs = [
   {
     question: 'How much do Google Ads cost for electricians in BC?',
-    answer: 'Most electrical companies invest $1,000–$2,000/month in ad spend plus a $759/month management fee. Electrical keywords cost $10–$30 per click in Metro Vancouver. With average job values of $300–$5,000+ (panel upgrades, EV charger installs, rewiring), the ROI is strong even at higher click costs.',
+    answer: 'Most electrical companies invest $1,000–$2,000/month in ad spend plus a $759/month management fee. Electrical keywords typically cost $10–$30 per click in Metro Vancouver, and jobs typically run $300–$5,000+ (panel upgrades, EV charger installs, rewiring), so we judge campaigns on cost per booked job.',
   },
   {
     question: 'What electrical services get the most searches in Vancouver?',
-    answer: 'Panel upgrades and electrical panel replacement are the highest-volume searches, followed by EV charger installation (up 140% year-over-year in BC), emergency electrician services, outlet and switch installation, and commercial electrical work. We build separate ad groups for each service to maximize relevance.',
+    answer: 'Panel upgrades and electrical panel replacement are the highest-volume searches, followed by EV charger installation, emergency electrician services, outlet and switch installation, and commercial electrical work. We build separate ad groups for each service to maximize relevance.',
   },
   {
     question: 'How fast will I get leads from Google Ads?',
-    answer: 'Emergency electrical searches generate calls within 24–48 hours. Service keywords like "panel upgrade" and "EV charger installation" cost more per click but bring bigger jobs, so we usually split them from emergency terms. We see the strongest volume from Monday to Thursday when homeowners are planning projects.',
+    answer: 'Most clients see their first qualified leads within 2 weeks of launch, and emergency searches usually respond fastest. Service keywords like "panel upgrade" and "EV charger installation" cost more per click but bring bigger jobs, so we usually split them from emergency terms. We see the strongest volume from Monday to Thursday when homeowners are planning projects.',
   },
   {
     question: 'Should electricians use Google Ads or Meta Ads?',
-    answer: 'Google Ads first, always. Electrical work is search-driven — people Google when they need an electrician, they don\'t scroll Facebook looking for one. Meta Ads can work for awareness campaigns (especially EV charger installs targeting Tesla/EV owners), but 80% of your budget should be on Google.',
+    answer: 'Google Ads first, always. Electrical work is search-driven — people Google when they need an electrician, they don\'t scroll Facebook looking for one. Meta Ads can work for awareness campaigns (especially EV charger installs targeting Tesla/EV owners), but most of your budget should typically be on Google.',
   },
   {
     question: 'How do I get more electrical jobs without HomeStars?',
@@ -56,11 +56,11 @@ const faqs = [
   },
   {
     question: 'Is EV charger installation worth advertising for?',
-    answer: 'Yes — it\'s the fastest-growing electrical keyword in BC. BC\'s Zero-Emission Vehicle mandate means EV charger installation searches are up 140% year-over-year. The average Level 2 charger install is $1,500–$3,000, and homeowners are actively searching. We run dedicated EV charger campaigns for several electrical clients.',
+    answer: 'Often, yes. BC\'s zero-emission vehicle requirements are pushing EV adoption, and homeowners searching for a charger install usually have a specific job in mind. A Level 2 charger install typically runs $1,500–$3,000. We run dedicated EV charger campaigns for several electrical clients.',
   },
   {
     question: 'Do you work with commercial electricians?',
-    answer: 'Yes. We run separate campaigns for residential and commercial electrical services. Commercial keywords ("commercial electrician Vancouver," "tenant improvement electrical") have lower volume but much higher job values — $5K–$50K+ per project.',
+    answer: 'Yes. We run separate campaigns for residential and commercial electrical services. Commercial keywords ("commercial electrician Vancouver," "tenant improvement electrical") have lower volume but much higher job values, typically $5K–$50K+ per project.',
   },
   {
     question: 'Is there a contract?',
@@ -126,12 +126,12 @@ const ElectricianMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">EV chargers: BC's fastest-growing keyword</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">EV charger installation searches are up 140% YoY in BC. Average install: $1,500–$3,000. Electricians running ads for this service are printing money.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">EV charger installs typically run $1,500–$3,000, and people searching for one usually have a specific job in mind.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">High job values</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Panel upgrades run $2K–$5K. Rewiring can be $8K–$15K. High job values mean strong ROI on your ad spend.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Panel upgrades typically run $2K–$5K and rewiring $8K–$15K, so one booked job can cover a meaningful amount of ad spend.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -168,7 +168,7 @@ const ElectricianMarketing = () => (
             BC's electrical market is being reshaped by the EV transition and aging housing stock. The province's Zero-Emission Vehicle mandate is driving a surge in Level 2 charger installations, while Vancouver's pre-1980 homes need panel upgrades to support modern loads. Electricians who capture these searches now will own the market for the next decade.
           </p>
           <p className="mb-4">
-            Metro Vancouver has 500+ licensed electrical contractors. The ones showing up in Google's Local Service Ads and Search Ads are getting 70%+ of inbound calls. The rest depend on word-of-mouth and HomeStars — which means inconsistent volume and shared leads.
+            Metro Vancouver has hundreds of electrical contractors. The ones showing up in Google's Local Services Ads and Search Ads tend to get most of the inbound calls. The rest depend on word-of-mouth and HomeStars — which means inconsistent volume and shared leads.
           </p>
           <p>
             The highest-converting campaigns focus on specific services (panel upgrades, EV chargers, knob-and-tube replacement) rather than generic "electrician" keywords — specificity wins in this vertical.

@@ -73,7 +73,7 @@ const structuredData = {
     getPersonSchema({
       name: 'Arjun Sharma',
       jobTitle: 'Founder & Marketing Strategist',
-      description: 'Arjun Sharma is the founder of AP Digital, a Vancouver-based marketing agency helping Canadian small businesses generate predictable leads through short-form content and paid advertising.',
+      description: 'Arjun Sharma is the founder of AP Digital, a Vancouver-based marketing agency helping Canadian small businesses find new clients through short-form content and paid advertising.',
       url: '/about',
       sameAs: [
         'https://www.instagram.com/theapdigital/',
@@ -94,8 +94,8 @@ const About = () => {
     },
     {
       icon: BarChart3,
-      title: 'Results Guaranteed',
-      description: 'We measure everything by leads and revenue, not vanity metrics. If it does not generate business, we do not do it. Every campaign has a cost-per-lead target we commit to.',
+      title: 'Measured on Results',
+      description: 'We measure everything by leads and revenue, not vanity metrics. If it does not generate business, we do not do it. Every campaign has a lead-volume target agreed at kickoff.',
     },
     {
       icon: Video,
@@ -177,7 +177,7 @@ const About = () => {
               About AP Digital — Built for Vancouver Small Business
             </h1>
             <p className="text-foreground/70 text-lg md:text-xl max-w-3xl leading-relaxed">
-              Founded by Arjun Sharma in Vancouver, BC, AP Digital is a specialist marketing agency helping salons, trades, real estate agents, and coaches generate predictable leads through short-form content and targeted paid advertising. No lock-in contracts. No vanity metrics. Just measurable results.
+              Founded by Arjun Sharma in Vancouver, BC, AP Digital is a marketing agency helping local service businesses, from real estate agents and salons to coaches and clinics, find new clients through short-form content and targeted paid advertising. No lock-in contracts. No vanity metrics. Just measurable results.
             </p>
           </div>
         </section>
@@ -241,7 +241,7 @@ const About = () => {
                 AP Digital was founded in Vancouver, BC after Arjun spent years watching local businesses get taken for a ride by agencies that cared more about billing cycles than business outcomes. Flashy campaigns with no leads. Expensive retainers with no accountability. Monthly reports full of impressions, reach, and engagement — but no actual revenue. It was broken, and we knew we could fix it.
               </p>
               <p>
-                We built AP Digital with one mission: help Canadian small businesses get predictable, measurable leads using the strategies that actually work today — short-form content and targeted paid advertising. Every dollar our clients spend is tied to a result. Every campaign is built to generate leads, not just impressions. Every report maps back to real dollars in the bank.
+                We built AP Digital with one mission: help Canadian small businesses get measurable leads using the strategies that actually work today — short-form content and targeted paid advertising. Every dollar our clients spend is tied to a result. Every campaign is built to generate leads, not just impressions. Every report maps back to real dollars in the bank.
               </p>
               <p>
                 Since launching, we have helped salons fill their chairs, contractors fill their calendars, and realtors close more deals — all through one philosophy: marketing is only valuable if it makes the phone ring.
@@ -357,7 +357,7 @@ const About = () => {
 
         <PastelCTA
           headline="Ready to Get Real Results?"
-          subheadline="Book a free strategy call with Arjun and let's talk about how AP Digital can generate predictable leads for your business."
+          subheadline="Book a free strategy call with Arjun and let's talk about what would bring in more leads for your business."
         />
       </main>
 

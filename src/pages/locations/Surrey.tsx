@@ -23,7 +23,7 @@ const included = [
   'Review generation & reputation management',
   'Social media content creation',
   'High-converting landing pages',
-  'Monthly ROI reporting',
+  'Weekly reporting on leads & cost per lead',
   'Local SEO for Surrey',
 ];
 
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'How much does a marketing agency in Surrey cost?',
-    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Surrey businesses start between $1,000 and $2,000/month all in.',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. At our recommended minimum that is about $1,759/month all in: $759 management plus $1,000 ad spend.',
   },
   {
     question: 'How quickly will I see leads in Surrey?',
@@ -125,7 +125,7 @@ const Surrey = () => (
           <span className="block">Google &amp; Meta Ads</span>
           <span className="block">+ Social Media Management</span>
         </>}
-        intro={<>AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — get consistent, predictable leads using Meta Ads & Google Ads. When someone searches "marketing agency near me" in Surrey, we put you in front of them. Month-to-month. Managed personally by Arjun Sharma.</>}
+        intro={<>AP Digital helps Surrey businesses — trades, salons, real estate agents & coaches — win qualified leads using Meta Ads & Google Ads. When someone searches "marketing agency near me" in Surrey, we put you in front of them. Month-to-month. Managed personally by Arjun Sharma.</>}
         photo={{ base: '/surrey-night', position: '72% bottom', wideWidth: 1008 }}
         neighbourhoods={['Newton', 'Guildford', 'South Surrey', 'Cloverdale']}
       />
@@ -150,7 +150,7 @@ const Surrey = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Filling chairs with consistent, reliable bookings for salons throughout Surrey and the surrounding area.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Meta Ads and Instagram content aimed at new bookings for salons throughout Surrey and the surrounding area.</p>
             </div>
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -162,7 +162,7 @@ const Surrey = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Attracting ideal clients online and scaling coaching businesses across BC with proven ad strategies.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Attracting ideal clients online and growing coaching businesses across BC with targeted ad campaigns.</p>
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ const Surrey = () => (
               The shift toward digital-first customer behaviour in Surrey has accelerated dramatically. Surrey small business marketing is no longer optional — it's the primary growth lever. When a homeowner in Guildford needs an HVAC technician, they're not flipping through a directory. They're searching on Google or scrolling Facebook and Instagram. When someone in South Surrey is looking for a new salon, they're clicking on ads they see in their feed. Lead generation in Surrey now happens almost entirely online, and the businesses that invest in Meta Ads and Google Ads are capturing that demand while competitors who rely on word-of-mouth slowly fade. The window to build a dominant local presence before your niche gets saturated is still open — but it won't stay open forever.
             </p>
             <p>
-              What makes paid advertising uniquely powerful for a marketing agency Surrey clients can trust is the precision of targeting. Unlike SEO, which takes months to compound, a well-structured Google Ads or Meta Ads campaign for a Surrey business can generate qualified leads within days of going live. We geo-target specific postal codes in Newton, Guildford, South Surrey, Cloverdale, and Whalley so your ad budget reaches the exact neighbourhoods where your ideal customers live. For trades businesses, this means fewer wasted clicks from outside your service radius. For salons, it means filling chairs with local clients who are actually within driving distance. For realtors, it means reaching motivated buyers and sellers in the specific Surrey submarkets you specialize in — not wasting impressions on people who'll never convert.
+              What makes paid advertising uniquely powerful for a marketing agency Surrey clients can trust is the precision of targeting. Unlike SEO, which takes months to compound, a well-structured Google Ads or Meta Ads campaign for a Surrey business can start producing enquiries quickly; most clients see their first qualified leads within 2 weeks of launch. We geo-target specific postal codes in Newton, Guildford, South Surrey, Cloverdale, and Whalley so your ad budget reaches the exact neighbourhoods where your ideal customers live. For trades businesses, this means fewer wasted clicks from outside your service radius. For salons, it means reaching local clients who are actually within driving distance. For realtors, it means putting listings and market updates in front of people across the areas you serve, within Meta's housing ad rules — not wasting impressions on people who'll never convert.
             </p>
           </div>
         </div>
@@ -218,7 +218,7 @@ const Surrey = () => (
             Our Surrey Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Surrey business generating leads fast — with no guesswork.
+            A clear process for getting your Surrey business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">

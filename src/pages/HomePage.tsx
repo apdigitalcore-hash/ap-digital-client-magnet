@@ -81,8 +81,8 @@ const differentiators = [
   },
   {
     icon: TrendingUp,
-    title: 'Proven Systems',
-    description: 'Battle-tested strategies.',
+    title: 'Clear Systems',
+    description: 'Tested, measured campaigns.',
   },
 ];
 
@@ -429,8 +429,8 @@ const HomePage = () => {
       <FaqLight faqs={homepageFAQs} />
 
       <PastelCTA
-        headline="Ready to Get Predictable Leads?"
-        subheadline="Book a free strategy call and see exactly how we can grow your leads and revenue."
+        headline="Ready to Talk About Your Leads?"
+        subheadline="Book a free strategy call and we will tell you honestly what would move your leads."
       />
 
       <Footer />

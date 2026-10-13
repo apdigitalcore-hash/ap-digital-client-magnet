@@ -26,7 +26,7 @@ const included = [
   'Google Business Profile optimization',
   'Review generation & reputation management',
   'Landing pages built to convert local leads',
-  'Monthly reporting with lead tracking',
+  'Weekly reporting with lead tracking',
   'Local SEO for Google Maps visibility',
   'No contracts — month-to-month',
 ];
@@ -52,7 +52,7 @@ const faqs = [
   },
   {
     question: 'How much does local digital marketing cost in BC?',
-    answer: 'Most clients start with $500–$1,500/month in ad spend plus a management fee that\'s quoted upfront. No hidden costs, no setup fees. You always know exactly what you\'re paying before anything goes live.',
+    answer: 'Most clients start with $1,000–$1,500/month in ad spend plus a $759/month management fee for paid ads. No hidden costs, no setup fees. You always know exactly what you\'re paying before anything goes live.',
   },
   {
     question: 'How quickly will I start getting leads?',
@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     question: 'What makes AP Digital different from other local agencies?',
-    answer: 'The founder, Arjun Sharma, personally manages every account — no outsourcing, no junior staff. We also specialize in four industries (trades, salons, real estate, coaching), so your campaigns use proven playbooks, not guesswork.',
+    answer: 'The founder, Arjun Sharma, personally manages every account — no outsourcing, no junior staff. We work mostly with local service businesses such as real estate agents, salons, coaches and clinics, so we know what tends to work for them.',
   },
 ];
 
@@ -158,7 +158,7 @@ const NearMe = () => (
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">Local business expertise</p>
-            <p className="text-sm text-muted-foreground">We only work with service businesses in BC — trades, salons, realtors, and coaches. Your campaigns use proven playbooks.</p>
+            <p className="text-sm text-muted-foreground">We work with local service businesses in BC, from real estate agents and salons to coaches and clinics.</p>
           </div>
           <div className="bg-card border border-border rounded-xl p-5">
             <p className="font-bold text-foreground mb-1">No contract required</p>
@@ -223,7 +223,7 @@ const NearMe = () => (
 
         <section className="bg-card border border-border rounded-2xl p-8 md:p-12 text-center mt-16">
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Grow Your Local Business?</h2>
-          <p className="text-muted-foreground text-lg mb-8">Book a free strategy call and find out how we can fill your calendar with qualified local leads.</p>
+          <p className="text-muted-foreground text-lg mb-8">Book a free strategy call and find out whether paid ads make sense for your business right now.</p>
           <Button asChild size="lg" className="bg-teal hover:bg-teal/90 text-white">
             <Link to="/book">Book Your Free Strategy Call</Link>
           </Button>

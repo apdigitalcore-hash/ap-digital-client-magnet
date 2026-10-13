@@ -18,12 +18,12 @@ const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
 const included = [
   'Google Search Ads for "plumber near me," "drain cleaning," & emergency keywords',
-  'Local Service Ads (LSA) setup with Google Guaranteed badge',
+  'Local Services Ads (LSA) setup, with the Google Guaranteed badge where Google offers it in your area',
   'Google Business Profile optimization & weekly review generation',
   'Call tracking with recorded calls so you know which ads drive jobs',
   'Landing pages built for phone calls, not form fills',
   'Seasonal campaigns: frozen pipes in winter, drain clearing in spring',
-  'Monthly reporting tied to booked jobs, not just clicks',
+  'Weekly reporting tied to booked jobs, not just clicks',
   'Competitor keyword monitoring across your service area',
 ];
 
@@ -36,15 +36,15 @@ const results = [
 const faqs = [
   {
     question: 'How much do Google Ads cost for plumbers in Metro Vancouver?',
-    answer: 'Most plumbing companies invest $1,000–$2,500/month in ad spend plus a $759/month management fee. Plumbing keywords like "plumber near me" cost $8–$25 per click in Metro Vancouver, but the average service call is worth $200–$800 — making the ROI excellent. Emergency keywords convert fastest and have the highest value per call.',
+    answer: 'Most plumbing companies invest $1,000–$2,500/month in ad spend plus a $759/month management fee. Plumbing keywords like "plumber near me" typically cost $8–$25 per click in Metro Vancouver, and service calls typically run $200–$800, so we judge campaigns on cost per booked job. Emergency keywords convert fastest and have the highest value per call.',
   },
   {
     question: 'How fast will I get calls from Google Ads?',
-    answer: 'Most plumbers see their first inbound calls within 48 hours of launching Google Ads. Emergency plumbing searches ("burst pipe," "clogged drain," "no hot water") convert immediately because the caller needs help right now. We typically see 3–5 calls per day within the first two weeks.',
+    answer: 'Most clients see their first qualified leads within 2 weeks of launch. Emergency plumbing searches ("burst pipe," "clogged drain," "no hot water") convert immediately because the caller needs help right now.',
   },
   {
     question: 'Should plumbers use Google Ads or Local Service Ads?',
-    answer: 'Both. Local Service Ads (LSAs) appear at the very top of Google with a "Google Guaranteed" badge and you only pay per verified lead. Standard Google Search Ads capture the rest of the first page. Running both means you dominate the search results for plumbing queries in your area.',
+    answer: 'Both. Local Service Ads (LSAs) appear at the very top of Google, with a "Google Guaranteed" badge where Google offers them for plumbing in your area, and you pay per verified lead. Standard Google Search Ads cover the rest of the first page. Running both means you can appear in both places for plumbing searches in your area.',
   },
   {
     question: 'How do I compete with big plumbing companies like Mr. Rooter?',
@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     question: 'Is there a contract?',
-    answer: 'No. AP Digital works month-to-month with all plumbing clients. No lock-in contracts, no cancellation fees. We also offer a 90-day performance guarantee — if we don\'t deliver service calls, you don\'t pay.',
+    answer: 'No. AP Digital works month-to-month with all plumbing clients. No lock-in contracts, no cancellation fees. We agree a lead-volume target at kickoff, and if we miss it by month 3 we keep working at no fee for a further 30 days. Ad spend is paid to Google or Meta either way.',
   },
   {
     question: 'How do I find a plumber marketing agency near me?',
@@ -126,12 +126,12 @@ const PlumberMarketing = () => (
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Emergency searches = instant calls</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">"Plumber near me" has a 50%+ call rate in Metro Vancouver. These are homeowners with water on their floor — they call the first company they find.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">People searching "plumber near me" often have water on their floor, and they usually call the first company they find.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
             <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">High job values</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">The average plumbing service call is $200–$800. Drain cleaning, water heater replacement, and re-pipes can be $2K–$15K. The math works in your favour.</p>
+            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Plumbing service calls typically run $200–$800, and drain work, water heater replacement and re-pipes can run $2K–$15K.</p>
           </div>
           <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -165,7 +165,7 @@ const PlumberMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">BC Plumbing Market: What You're Competing For</h2>
         <div className="prose prose-lg text-muted-foreground mb-16 max-w-none">
           <p className="mb-4">
-            Metro Vancouver has 800+ licensed plumbing companies competing for the same homeowner searches. The plumbers who show up first on Google — both in Local Service Ads and Search Ads — capture 70% of the calls. Everyone else fights for referrals and HomeStars scraps.
+            Metro Vancouver has hundreds of plumbing companies competing for the same homeowner searches. The plumbers who show up first on Google, in Local Services Ads and Search Ads, tend to get most of the calls. Everyone else fights for referrals and HomeStars scraps.
           </p>
           <p className="mb-4">
             The BC plumbing market has clear seasonal patterns: frozen pipe emergencies spike from November to February, drain cleaning peaks in spring after winter debris, and water heater replacements are year-round. We build campaigns that match these cycles so your budget tracks real demand.

@@ -23,7 +23,7 @@ const included = [
   'Review generation & reputation management',
   'Social media management',
   'Landing pages for Burnaby leads',
-  'Monthly ROI reporting',
+  'Weekly reporting on leads & cost per lead',
   'Local SEO for Burnaby',
 ];
 
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'How much does a marketing agency in Burnaby cost?',
-    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Burnaby businesses start between $1,000 and $2,000/month all in.',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. At our recommended minimum that is about $1,759/month all in: $759 management plus $1,000 ad spend.',
   },
   {
     question: 'How quickly will I get leads in Burnaby?',
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: 'How much does digital marketing cost in Burnaby?',
-    answer: 'Most clients start with $500–$1,500/month in ad spend. Our management fee is separate, fully transparent, and quoted before you commit.',
+    answer: 'Most clients start with $1,000–$1,500/month in ad spend. Our management fee is separate, fully transparent, and quoted before you commit.',
   },
   {
     question: 'Who manages my account at AP Digital?',
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     question: 'What\'s the minimum budget for Burnaby clients?',
-    answer: 'We recommend a minimum of $500/month in ad spend to generate meaningful results. Our management fee is quoted separately and upfront — no surprises. For most Burnaby businesses, the total investment starts in the $1,000–$2,000/month range including both ad spend and management.',
+    answer: 'We recommend a minimum of $1,000/month in ad spend to generate meaningful data. Our management fee is quoted separately and upfront — no surprises. At that minimum the total is about $1,759/month including management.',
   },
   {
     question: 'Can you help a new Burnaby business with no online presence?',
@@ -129,7 +129,7 @@ const Burnaby = () => (
           <span className="block">Google &amp; Meta Ads</span>
           <span className="block">+ Social Media Management</span>
         </>}
-        intro={<>AP Digital helps Burnaby businesses get a predictable flow of qualified leads using Meta Ads, Google Ads & social media. Searching for a marketing agency near you in Burnaby? You just found one. No lock-in contracts. Personal service from founder Arjun Sharma.</>}
+        intro={<>AP Digital runs Meta Ads, Google Ads & social media for Burnaby businesses, built around qualified leads. Searching for a marketing agency near you in Burnaby? You just found one. No lock-in contracts. Personal service from founder Arjun Sharma.</>}
         photo={{ base: '/burnaby-night', position: '75% bottom', wideWidth: 1008 }}
         neighbourhoods={['Metrotown', 'Brentwood', 'Lougheed']}
       />
@@ -166,7 +166,7 @@ const Burnaby = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses across Metro Vancouver with proven ad strategies that attract ideal clients consistently.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses across Metro Vancouver with ad campaigns aimed at ideal clients.</p>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@ const Burnaby = () => (
               The density of Burnaby's market is both an opportunity and a challenge. There are thousands of potential clients within a tight geographic radius, which makes paid advertising extraordinarily cost-efficient compared to cities with more dispersed populations. Lead generation in Burnaby through Google Ads means your business appears at the top of search results when someone in Metrotown types "HVAC repair near me" or when a Brentwood resident searches "hair salon Burnaby." Meta Ads let you layer on demographic and behavioural targeting — reaching the exact homeowner or lifestyle profile that converts best for your business. For Burnaby small business marketing, the combination of search intent (Google) and social discovery (Meta) creates a comprehensive digital presence that captures demand at every stage of the customer journey.
             </p>
             <p>
-              What separates the Burnaby businesses that dominate their niche from those that struggle to break through is consistency. The businesses winning in Metrotown, Brentwood, North Burnaby, and Edmonds aren't spending more on ads — they're spending smarter. They have campaigns that are precisely geo-targeted, continuously optimized, and tied to landing pages designed specifically to convert Burnaby visitors into booked appointments or phone calls. As a focused marketing agency Burnaby clients rely on month after month, AP Digital brings that precision without the overhead of a large agency. No layers of account managers between you and the person making decisions on your campaigns — just direct, results-focused management from founder Arjun Sharma.
+              What separates the Burnaby businesses that stand out in their niche from those that struggle to break through is consistency. The businesses winning in Metrotown, Brentwood, North Burnaby, and Edmonds aren't spending more on ads — they're spending smarter. They have campaigns that are precisely geo-targeted, continuously optimized, and tied to landing pages designed specifically to convert Burnaby visitors into booked appointments or phone calls. As a focused marketing agency Burnaby clients rely on month after month, AP Digital brings that precision without the overhead of a large agency. No layers of account managers between you and the person making decisions on your campaigns — just direct, results-focused management from founder Arjun Sharma.
             </p>
           </div>
         </div>
@@ -222,7 +222,7 @@ const Burnaby = () => (
             Our Burnaby Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Burnaby business generating leads fast — with no guesswork.
+            A clear process for getting your Burnaby business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">

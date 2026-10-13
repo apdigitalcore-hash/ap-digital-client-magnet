@@ -16,10 +16,10 @@ const services: {
     id: 'service-paid-ads',
     title: 'Paid Ads',
     href: '/services/paid-ads',
-    description: 'Laser-targeted campaigns on Google & Meta that maximize your ROI.',
+    description: 'Targeted campaigns on Google & Meta, measured on leads.',
     details:
-      'We build, manage, and optimize ad campaigns across Google Ads, Meta (Facebook & Instagram), and TikTok — audience research, creative testing, retargeting funnels, and weekly performance reporting.',
-    platforms: ['google', 'meta', 'facebook', 'tiktok'],
+      'We build, manage, and optimize ad campaigns across Google Ads and Meta (Facebook & Instagram) — audience research, creative testing, retargeting funnels, and weekly performance reporting.',
+    platforms: ['google', 'meta', 'facebook'],
     stats: [
       { value: '$759', label: 'Per month' },
       { value: '14', label: 'Days to launch' },
@@ -32,10 +32,10 @@ const services: {
     href: '/services/social-media',
     description: 'Build authority with consistent, compelling content.',
     details:
-      'Your entire social presence handled — content calendars, design, copywriting, community management, and growth strategy across Instagram, Facebook, LinkedIn, and TikTok.',
+      'Content calendars, captions, scheduling and community management on the two platforms that fit your business: usually Instagram and Facebook, or LinkedIn or TikTok.',
     platforms: ['instagram', 'facebook', 'tiktok', 'meta'],
     stats: [
-      { value: '12+', label: 'Posts / month' },
+      { value: '12', label: 'Posts / month' },
       { value: '$849', label: 'Per month' },
       { value: '2', label: 'Platforms' },
     ],

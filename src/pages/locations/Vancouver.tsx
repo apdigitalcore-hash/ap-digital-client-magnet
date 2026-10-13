@@ -23,7 +23,7 @@ const included = [
   'Review generation & reputation management',
   'Short-form video strategy (Reels & TikTok)',
   'High-converting landing pages for Vancouver leads',
-  'Monthly ROI reporting — leads & revenue only',
+  'Weekly reporting — leads & cost per lead only',
   'Local SEO targeting Vancouver neighbourhoods',
 ];
 
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     question: 'How much does a marketing agency in Vancouver cost?',
-    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. Most Vancouver businesses start between $1,000 and $2,000/month all in.',
+    answer: 'Paid ads management is $759/month and social media management is $849/month, quoted separately so you only pay for what you use. Ad spend is separate again and goes straight to Google or Meta, so you keep control of the budget. At our recommended minimum that is about $1,759/month all in: $759 management plus $1,000 ad spend.',
   },
   {
     question: 'How quickly will I get leads in Vancouver?',
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     question: 'How much does digital marketing cost in Vancouver?',
-    answer: 'Most clients start with $500–$1,500/month in ad spend. Our management fee is quoted transparently upfront and billed separately from your ad spend. You always know exactly what you\'re paying before anything goes live.',
+    answer: 'Most clients start with $1,000–$1,500/month in ad spend. Our management fee is quoted transparently upfront and billed separately from your ad spend. You always know exactly what you\'re paying before anything goes live.',
   },
   {
     question: 'Who manages my Vancouver marketing campaign?',
@@ -156,7 +156,7 @@ const Vancouver = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Filling appointment books with consistent new clients for salons in Kitsilano, Mount Pleasant, South Granville, and East Van.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Meta Ads and Instagram content aimed at new clients for salons in Kitsilano, Mount Pleasant, South Granville, and East Van.</p>
             </div>
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
@@ -168,7 +168,7 @@ const Vancouver = () => (
               <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
               <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
               <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses in Vancouver's competitive professional market with proven ad strategies that attract ideal, high-value clients.</p>
+              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses in Vancouver's competitive professional market with ad campaigns aimed at ideal, high-value clients.</p>
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ const Vancouver = () => (
           </p>
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              Vancouver is one of the most densely competitive small business markets in Canada. Every neighbourhood carries its own commercial character — Kitsilano's health-conscious, high-income demographic makes it a goldmine for wellness businesses, fitness studios, and premium salons willing to target precisely. Commercial Drive and East Van have a dense, loyal local customer base that responds strongly to community-rooted brands and local-first messaging. Yaletown and the West End attract young professionals and higher spenders who discover businesses almost entirely through Instagram and Google. Mount Pleasant and South Main have become hubs for creative businesses and boutique services with clients who are extremely online. For a marketing agency in Vancouver BC, understanding these micro-markets is the difference between campaigns that fill your calendar and campaigns that burn budget with nothing to show.
+              Vancouver is one of the most densely competitive small business markets in Canada. Every neighbourhood carries its own commercial character — Kitsilano's health-conscious, high-income demographic makes it a goldmine for wellness businesses, fitness studios, and premium salons willing to target precisely. Commercial Drive and East Van have a dense, loyal local customer base that responds strongly to community-rooted brands and local-first messaging. Yaletown and the West End attract young professionals and higher spenders who discover businesses almost entirely through Instagram and Google. Mount Pleasant and South Main have become hubs for creative businesses and boutique services with clients who are extremely online. For a marketing agency in Vancouver BC, understanding these micro-markets is the difference between campaigns that produce enquiries and campaigns that burn budget with nothing to show.
             </p>
             <p>
               Vancouver's digital-first consumer behaviour has reached a saturation point that no local business can ignore. When someone in Kitsilano needs a plumber, they're not asking neighbours — they're Googling "plumber Vancouver" or "emergency plumber near me" within minutes of the problem appearing. When a homeowner in Point Grey is looking for a renovation contractor, they're scrolling Instagram and Facebook for before-and-after project photos from local tradespeople. When a professional in Yaletown wants to book a haircut or consult a business coach, they're clicking on an ad they saw in their feed. The businesses capturing these moments with Google Ads and Meta Ads are growing. The ones waiting for referrals are slowly getting left behind.
@@ -224,7 +224,7 @@ const Vancouver = () => (
             Our Vancouver Marketing Process
           </h2>
           <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
-            A clear, proven process that gets your Vancouver business generating leads fast — with no guesswork.
+            A clear process for getting your Vancouver business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
