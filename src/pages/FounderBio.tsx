@@ -8,7 +8,7 @@ import JsonLd from '@/components/JsonLd';
 import { founderSchema, organizationSchema, getBreadcrumbSchema, getWebPageSchema } from '@/lib/structuredData';
 
 const TITLE = 'Arjun Sharma | Founder & Lead Strategist | AP Digital Vancouver';
-const DESC = 'Arjun Sharma is the founder of AP Digital, a Vancouver performance marketing agency. He personally manages every client account, running Google Ads and Meta Ads for local service businesses across BC.';
+const DESC = 'Arjun Sharma founded AP Digital in Vancouver, BC. He personally manages every client account, running Google Ads and Meta Ads for local service businesses.';
 const CANONICAL = 'https://ap-digital.ca/about/arjun-sharma';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 

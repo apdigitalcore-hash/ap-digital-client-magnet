@@ -30,6 +30,31 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Search/answer crawlers, distinct from the training crawlers above. OAI-SearchBot
+# builds ChatGPT's search index, Claude-SearchBot and Claude-User serve Claude's
+# browsing, Perplexity-User fetches pages a user asked about. The wildcard rule
+# already permits them; naming them makes the intent explicit.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
 # SEO research crawlers — allowed for our own analytics
 User-agent: SemrushBot
 Allow: /
@@ -46,7 +71,7 @@ Disallow: /
 
 # Sitemaps
 Sitemap: https://ap-digital.ca/sitemap.xml
-# Same 58 URLs under a second name, so a fresh submission in Search Console
+# Same 61 URLs under a second name, so a fresh submission in Search Console
 # reports its own coverage instead of reusing the Aug 8 entry's cached counts.
 Sitemap: https://ap-digital.ca/apdigital-sitemap.xml
 
