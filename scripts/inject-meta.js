@@ -1083,7 +1083,34 @@ function loadStaticLists() {
         results.push({ stat: r[1].replace(/\\'/g, "'"), label: r[2].replace(/\\'/g, "'") });
       }
     }
-    if (included.length || results.length) out[path] = { included, results };
+    // Card arrays. Pages render these through .map(), and the prose extractor
+    // only reads literal h2/h3/p text, so an audit on 2026-10-17 measured ~765
+    // words across /pricing, /marketing-benchmarks and the hiring guide that no
+    // crawler had ever seen. Any array of objects carrying a title plus a body
+    // field is page content by definition, so lift it the same way `included`
+    // and `results` are lifted.
+    const cards = [];
+    for (const arr of src.matchAll(/const (\w+)(?::[^=]*)? = \[([\s\S]*?)\n\];/g)) {
+      const name = arr[1];
+      if (name === 'included' || name === 'results' || name === 'faqs') continue;
+      for (const obj of arr[2].matchAll(/\{([\s\S]*?)\n\s*\}/g)) {
+        const body = obj[1];
+        const t = body.match(/\btitle:\s*'((?:[^'\\]|\\.)*)'/);
+        if (!t) continue;
+        const texts = [];
+        for (const k of ['description', 'detail', 'body', 'answer', 'good', 'bad', 'text']) {
+          const v = body.match(new RegExp('\\b' + k + ":\\s*'((?:[^'\\\\]|\\\\.)*)'"));
+          if (v && v[1].length >= 25) texts.push(v[1].replace(/\\'/g, "'"));
+        }
+        if (!texts.length) continue;
+        const title = t[1].replace(/\\'/g, "'");
+        // Same source-leak guard the prose extractor uses.
+        if (/className|=>|[{}`]|\$\{/.test(title + texts.join(' '))) continue;
+        cards.push({ title, texts });
+      }
+    }
+
+    if (included.length || results.length || cards.length) out[path] = { included, results, cards };
   }
   return out;
 }
@@ -1173,6 +1200,18 @@ function expandBodyWithFaqs(body, faqs, lists, prose) {
       parts.push('<section>' + fresh.map((b) => b.tag === 'p'
         ? `<p>${escapeHtml(b.text)}</p>`
         : `<${b.tag}>${escapeHtml(b.text)}</${b.tag}>`).join('') + '</section>');
+    }
+  }
+
+  // Card sections the page renders through .map(). Dropped because the prose
+  // extractor reads only literal h2/h3/p text; see loadStaticLists.
+  if (lists && lists.cards && lists.cards.length) {
+    const seen = body.replace(/<[^>]*>/g, ' ');
+    const fresh = lists.cards.filter((c) => !seen.includes(c.title.slice(0, 40)));
+    if (fresh.length) {
+      parts.push('<section>' + fresh.map((c) =>
+        `<h3>${escapeHtml(c.title)}</h3>` + c.texts.map((t) => `<p>${escapeHtml(t)}</p>`).join('')
+      ).join('') + '</section>');
     }
   }
 
