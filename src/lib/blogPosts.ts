@@ -669,7 +669,7 @@ Based on our work with salon clients across BC:
 
 AP DIGITAL specializes in [salon marketing](/salon-marketing) across Metro Vancouver and BC. We handle your [social media content](/services/social-media), your [paid ads](/services/paid-ads), and your strategy — so you can focus on your clients.
 
-**Book your free strategy call** and we'll show you exactly how we'd fill your chair within the first 30 days.
+**Book your free strategy call** and we'll walk through what we would run, what it would cost, and how we would measure it.
 
 ## Frequently Asked Questions
 
@@ -1478,7 +1478,7 @@ const deepPosts: BlogPost[] = [
     date: '2026-07-21',
     readTime: '8 min read',
     category: 'Paid Ads',
-    content: `One of the most common questions we get from [Vancouver](/vancouver) business owners is: "How much will Google Ads cost me?" The honest answer is: it depends on your industry, your competition, and your goals. But we can give you real numbers based on what our clients actually pay. If you would rather skip to what we charge, our [Google Ads agency in Vancouver](/services/paid-ads) page publishes the management fee and the recommended minimum spend.
+    content: `One of the most common questions we get from [Vancouver](/vancouver) business owners is: "How much will Google Ads cost me?" The honest answer is: it depends on your industry, your competition, and your goals. But we can give you the ranges reported across the Canadian market, and we publish our own fees rather than quoting on request. If you would rather skip to what we charge, our [Google Ads agency in Vancouver](/services/paid-ads) page publishes the management fee and the recommended minimum spend.
 
 ## Average Cost Per Click in Vancouver by Industry
 
@@ -1928,16 +1928,18 @@ Lead generation campaigns cost more per click but deliver qualified prospects di
 
 ## Instagram Ad Costs by Industry in Canada
 
-Your industry has a massive impact on what you'll pay. Here's what we see across our Canadian clients:
+Your industry has a massive impact on what you'll pay. These are typical ranges reported across the Canadian market, not figures from our own accounts — we do not publish client data. Treat them as a starting point and measure your own:
 
-| Industry | Avg CPC | Avg Cost Per Lead | Recommended Monthly Budget |
-|---|---|---|---|
-| Salons / Beauty | $0.50 – $2.00 | $8 – $25 | $500 – $1,500 |
-| Real Estate | $1.00 – $3.00 | $15 – $45 | $1,000 – $3,000 |
-| Trades / Contractors | $1.50 – $3.50 | $20 – $50 | $800 – $2,000 |
-| Restaurants / Cafés | $0.30 – $1.50 | $5 – $15 | $300 – $1,000 |
-| Coaches / Consulting | $1.00 – $3.00 | $15 – $40 | $500 – $2,000 |
-| Fitness / Gyms | $0.50 – $2.00 | $10 – $30 | $500 – $1,500 |
+| Industry | Typical CPC | Typical Cost Per Lead |
+|---|---|---|
+| Salons / Beauty | $0.50 – $2.00 | $8 – $25 |
+| Real Estate | $1.00 – $3.00 | $15 – $45 |
+| Trades / Contractors | $1.50 – $3.50 | $20 – $50 |
+| Restaurants / Cafés | $0.30 – $1.50 | $5 – $15 |
+| Coaches / Consulting | $1.00 – $3.00 | $15 – $40 |
+| Fitness / Gyms | $0.50 – $2.00 | $10 – $30 |
+
+Whatever the industry, we recommend at least **$1,000/month in ad spend**. Below roughly that level Meta cannot gather enough conversion data to optimise, so the campaign stays in its learning phase and costs stay high.
 
 Visual businesses like [salons](/salon-marketing) and restaurants tend to see the lowest costs because their content performs well on Instagram's visual-first platform.
 
