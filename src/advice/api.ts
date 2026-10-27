@@ -5,6 +5,31 @@ import type { SimInputs, Simulation } from './types';
 
 const HISTORY_KEY = 'advice:history';
 const RUNS_KEY = 'advice:runs';
+const OWNER_KEY_STORAGE = 'advice:ownerKey';
+
+/**
+ * Owner mode. /advice?owner=<key> stores the key and strips it from the URL so
+ * it is not left in history, a screenshot or a shared link. ?owner=off clears
+ * it. The key is only ever a header on the simulate call; the server decides
+ * whether it is valid, and a wrong one is treated as an ordinary visitor.
+ */
+export function readOwnerKeyFromUrl(): void {
+  try {
+    const url = new URL(window.location.href);
+    const v = url.searchParams.get('owner');
+    if (v === null) return;
+    if (v === 'off' || v === '') localStorage.removeItem(OWNER_KEY_STORAGE);
+    else localStorage.setItem(OWNER_KEY_STORAGE, v);
+    url.searchParams.delete('owner');
+    window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+  } catch { /* storage or URL blocked — owner mode simply stays off */ }
+}
+
+export function ownerKey(): string {
+  try { return localStorage.getItem(OWNER_KEY_STORAGE) ?? ''; } catch { return ''; }
+}
+
+export function isOwnerMode(): boolean { return ownerKey() !== ''; }
 const EMAIL_KEY = 'advice:email';
 const PENDING_LEAD_KEY = 'advice:pendingLead';
 const NAME_KEY = 'advice:name';
@@ -123,6 +148,10 @@ function takeHeldLead(): string {
 
 /** What the simulator should do before the next run. */
 export function gateState(): 'ok' | 'email' | 'limit' {
+  // Owner mode runs are content work: no free-run ceiling and no email popup.
+  // The server independently ignores the budget for a valid key, so this only
+  // keeps the UI from asking for something the server will not enforce.
+  if (isOwnerMode()) return 'ok';
   const runs = runCount();
   if (runs >= FREE_TOTAL) return 'limit';
   if (runs >= FREE_BEFORE_EMAIL && !savedEmail()) return 'email';
@@ -197,7 +226,10 @@ async function viaVercel(inputs: SimInputs): Promise<Simulation> {
   try {
     res = await fetch(`${ADVICE_API_URL}/api/simulate`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(ownerKey() ? { 'x-advice-owner': ownerKey() } : {}),
+      },
       // The server enforces the per-person allowance, so it needs the email
       // the gate collected. The browser's own count is a convenience only.
       body: JSON.stringify({ ...inputs, email: savedEmail() ?? '' }),
@@ -257,7 +289,7 @@ export async function runSimulation(inputs: SimInputs): Promise<Simulation> {
         // advertiser's, not something to pass around in a link.
         sim.inputs.image = inputs.image;
         try {
-          bumpRunCount();
+          if (!isOwnerMode()) bumpRunCount();
         } catch {
           /* storage blocked — the visitor keeps their free runs */
         }

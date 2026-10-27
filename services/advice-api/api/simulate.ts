@@ -1,6 +1,7 @@
 // ADvice — Vercel serverless function. Runs one campaign simulation through
 // Gemini and returns the report. Stateless: nothing is stored server-side.
 // Env: GEMINI_API_KEY (required), GEMINI_MODEL (optional), ALLOWED_ORIGINS (optional, comma-separated),
+//      ADVICE_OWNER_KEY (optional; enables owner mode, see isOwner below)
 //      ADVICE_BUDGET_SECRET (required for the daily limits; must match the row
 //      in advice_config). SUPABASE_URL / SUPABASE_ANON_KEY are optional
 //      overrides — both values are public and already in the client bundle.
@@ -39,12 +40,35 @@ const ALLOWED = (process.env.ALLOWED_ORIGINS ?? "https://ap-digital.ca,https://w
   .split(",").map((s) => s.trim()).filter(Boolean);
 const PER_IP_PER_HOUR = 8;
 
+/**
+ * Owner mode. Lets the account holder run simulations for content work without
+ * spending the visitor allowance or the global ceiling.
+ *
+ * Header only — never the email, which a visitor controls. A wrong or missing
+ * header is treated as an ordinary visitor and says nothing about whether the
+ * key exists, so the endpoint cannot be probed for it. If ADVICE_OWNER_KEY is
+ * unset the feature is simply off.
+ */
+const OWNER_KEY = process.env.ADVICE_OWNER_KEY ?? "";
+
+function isOwner(header: unknown): boolean {
+  if (!OWNER_KEY) return false;
+  const given = typeof header === "string" ? header : "";
+  // Constant-time: compare every byte of a fixed-width buffer either way, so
+  // the duration does not leak how much of the key was correct.
+  const a = Buffer.from(given.padEnd(128).slice(0, 128));
+  const c = Buffer.from(OWNER_KEY.padEnd(128).slice(0, 128));
+  let diff = given.length === OWNER_KEY.length ? 0 : 1;
+  for (let i = 0; i < 128; i++) diff |= a[i] ^ c[i];
+  return diff === 0;
+}
+
 function corsFor(origin: string | null): Record<string, string> {
   const ok = origin && (ALLOWED.includes(origin) || /^https:\/\/[a-z0-9-]+\.lovable\.app$/.test(origin) || /^http:\/\/localhost:\d+$/.test(origin));
   return {
     "Access-Control-Allow-Origin": ok ? origin! : ALLOWED[0],
     "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Headers": "Content-Type, x-advice-owner",
     "Vary": "Origin",
   };
 }
@@ -838,12 +862,19 @@ async function run(req: any, res: any) {
   const image = readImage(body);
 
   const ip = (String(req.headers["x-forwarded-for"] ?? "") ?? "").split(",")[0].trim() || "unknown";
-  if (limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while.", kind: "rate" }, 429);
+  const owner = isOwner(req.headers["x-advice-owner"]);
+  if (!owner && limited(ip)) return json({ error: "You've run a lot of simulations this hour. Try again in a little while.", kind: "rate" }, 429);
 
   // The budget is taken before anything expensive happens, and handed back if
   // the simulation never actually runs.
   const email = str(body.email, 200);
-  const allowance = await takeBudget(email, ip);
+  // Owner runs are content work, not usage: they take no allowance and touch
+  // neither the per-person, per-IP nor global counter, so the visitor limits
+  // and the analytics stay honest.
+  const allowance: Budget = owner
+    ? { allowed: true, globalUsed: 0 }
+    : await takeBudget(email, ip);
+  if (owner) console.log(JSON.stringify({ event: "owner_run", channel: str(body.channel, 40), industry: str(body.industry, 40) }));
   if (!allowance.allowed) {
     if (allowance.reason === "person") {
       return json({
@@ -1060,7 +1091,9 @@ async function run(req: any, res: any) {
         ? "The AI is busy right now. Try again in a minute."
         : "The simulation failed. Please try again.";
     // They asked for a simulation and did not get one: give the slot back.
-    await refundBudget(email, ip);
+    // An owner run never took one, so refunding would credit a slot that was
+    // never spent and let the real daily ceiling drift upward.
+    if (!owner) await refundBudget(email, ip);
     await recordFailure(502, lastError || "no model returned a result", {
       kind: quota ? "quota" : busy ? "busy" : "server",
       channel: inputs.channel,
@@ -1084,7 +1117,11 @@ async function run(req: any, res: any) {
   // rows: a serverless instance is frozen the moment the response is sent, so
   // an unfinished promise is simply killed. recordRun swallows its own errors,
   // so awaiting still cannot cost anyone their report.
-  await recordRun({
+  // advice_runs exists to measure real repeat use — the number the paid tier
+  // rests on. Owner runs are content work, so recording them would inflate it
+  // and corrupt the one metric that matters. The owner_run console line above
+  // is how these are counted instead.
+  if (!owner) await recordRun({
     channel: inputs.channel,
     industry: inputs.industry,
     objective: inputs.objective,

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import { AlertCircle, ArrowLeft, ArrowRight, Check, RotateCcw, Sparkles } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
-import { FREE_TOTAL, captureEmail, gateState, holdLead, readImageFile, rememberEmail, runSimulation, SimulationError, type FailureKind } from '@/advice/api';
+import { FREE_TOTAL, captureEmail, gateState, holdLead, isOwnerMode, readImageFile, readOwnerKeyFromUrl, rememberEmail, runSimulation, SimulationError, type FailureKind } from '@/advice/api';
 import { CHANNELS, CURRENCIES, EMPTY_INPUTS, INDUSTRIES, OBJECTIVES, OBJECTIVES_BY_CHANNEL, type Objective, type SimInputs } from '@/advice/types';
 
 const STEPS = ['Your business', 'Channel & budget', 'Your ad'];
@@ -241,6 +241,9 @@ const AdviceSimulate = () => {
   // form is filled and Run is pressed, never on arrival.
   const [failure, setFailure] = useState('');
   const [failureKind, setFailureKind] = useState<FailureKind>('server');
+  // ?owner=<key> is read before the gate is computed, so arriving with the key
+  // in the URL skips the limit on this first render rather than the next one.
+  const [owner] = useState(() => { readOwnerKeyFromUrl(); return isOwnerMode(); });
   const [gate, setGate] = useState<'ok' | 'email' | 'limit'>(() => (gateState() === 'limit' ? 'limit' : 'ok'));
 
   const set = <K extends keyof SimInputs>(k: K) => (e: { target: { value: string } }) =>
@@ -299,6 +302,14 @@ const AdviceSimulate = () => {
         <meta property="og:image" content="https://ap-digital.ca/advice-og.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
+
+      {owner && (
+        <div className="mx-auto mb-4 flex max-w-3xl items-center gap-2 px-4">
+          <span className="rounded-full bg-foreground/[0.06] px-3 py-1 text-xs font-medium text-muted-foreground">
+            Owner mode — unlimited runs, not counted as usage
+          </span>
+        </div>
+      )}
 
       {failure ? (
         <FailureScreen
