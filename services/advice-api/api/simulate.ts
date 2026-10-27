@@ -49,11 +49,11 @@ const PER_IP_PER_HOUR = 8;
  * key exists, so the endpoint cannot be probed for it. If ADVICE_OWNER_KEY is
  * unset the feature is simply off.
  */
-const OWNER_KEY = process.env.ADVICE_OWNER_KEY ?? "";
+const OWNER_KEY = (process.env.ADVICE_OWNER_KEY ?? "").trim();
 
 function isOwner(header: unknown): boolean {
   if (!OWNER_KEY) return false;
-  const given = typeof header === "string" ? header : "";
+  const given = (typeof header === "string" ? header : "").trim();
   // Constant-time: compare every byte of a fixed-width buffer either way, so
   // the duration does not leak how much of the key was correct.
   const a = Buffer.from(given.padEnd(128).slice(0, 128));
@@ -833,6 +833,13 @@ async function run(req: any, res: any) {
   // it. ListModels does not consume generateContent quota, and model names
   // are not sensitive.
   if (req.method === "GET") {
+    // Owner-mode self-check. Reports only whether the key is configured and how
+    // long it is — never the value — so a misconfiguration can be diagnosed
+    // without the secret going anywhere. Length is enough to spot the usual
+    // cause, a trailing newline picked up when pasting into the dashboard.
+    if (String(req.query?.check ?? "") === "owner") {
+      return json({ ownerConfigured: OWNER_KEY.length > 0, ownerKeyLength: OWNER_KEY.length });
+    }
     if (!GEMINI_API_KEY) return json({ error: "Not configured." }, 500);
     try {
       const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200", {
