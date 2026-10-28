@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Coquitlam Google & Meta Ads From $759/mo — No Lock-In';
+const TITLE = 'Digital Marketing Agency Coquitlam — Ads from $759/mo';
 const DESC = 'Google Ads and Meta Ads for Coquitlam, Port Moody and Port Coquitlam businesses. From $759/month with no lock-in contract. Book a 20-minute call.';
 const CANONICAL = 'https://ap-digital.ca/coquitlam';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

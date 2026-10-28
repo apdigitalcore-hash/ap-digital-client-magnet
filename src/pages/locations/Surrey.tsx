@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Surrey Lead Generation: Google & Meta Ads, No Lock-In';
+const TITLE = 'Digital Marketing Agency Surrey — Google Ads from $759/mo';
 const DESC = 'Paid ads for Surrey businesses in Newton, Guildford, South Surrey and Cloverdale. $759/month, cancel with 30 days\' notice. No long-term contract.';
 const CANONICAL = 'https://ap-digital.ca/surrey';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

@@ -133,3 +133,37 @@ The Manifest.
 
 Apply the titles because they are free and correct. Do not expect them to be
 the fix.
+
+---
+
+## Status: TITLES APPLIED 2026-10-28
+
+Five titles applied; all seven now read:
+
+| Page | Title |
+|---|---|
+| vancouver | Digital Marketing Agency Vancouver — Ads from $759/mo |
+| surrey | Digital Marketing Agency Surrey — Google Ads from $759/mo |
+| burnaby | Digital Marketing Agency Burnaby — Ads from $759/mo (unchanged) |
+| langley | Digital Marketing Agency Langley — Ads from $759/mo |
+| coquitlam | Digital Marketing Agency Coquitlam — Ads from $759/mo |
+| abbotsford | Digital Marketing Agency Abbotsford — Ads from $759/mo |
+| richmond | unchanged — re-measure after a month of indexing |
+
+## STILL OPEN: the H1s have the same mismatch
+
+Every city H1 reads `<City> Google & Meta Ads + Social Media Management`. Like
+the old titles, none contains "digital marketing" or "agency", the phrases
+carrying the impressions. The H1 is a strong on-page signal and is now the
+remaining misaligned field.
+
+Not changed: these are protected, and only the titles were approved. A
+proposal would be, for each city:
+
+```diff
+- <City> Google & Meta Ads + Social Media Management
++ Digital Marketing Agency in <City> — Google & Meta Ads
+```
+
+which keeps the service description while leading with the searched phrase.
+Decide separately.

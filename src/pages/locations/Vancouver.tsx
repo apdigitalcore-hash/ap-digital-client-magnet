@@ -11,7 +11,7 @@ import JsonLd from '@/components/JsonLd';
 import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 
-const TITLE = 'Google & Meta Ads Vancouver — From $759/mo, No Contract';
+const TITLE = 'Digital Marketing Agency Vancouver — Ads from $759/mo';
 const DESC = 'Google Ads and Meta Ads managed for Vancouver businesses — Kitsilano, Mount Pleasant, Yaletown, East Van. From $759/month, month-to-month, no lock-in.';
 const CANONICAL = 'https://ap-digital.ca/vancouver';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
