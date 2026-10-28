@@ -1,85 +1,135 @@
-# Proposed title changes: city pages
+# City pages — query evidence and title proposals
 
-Protected fields — nothing below is changed in code. Each lives in that page's
-`const TITLE`; `scripts/inject-meta.js` syncs it at build time.
+Protected fields. Nothing below is changed in code. Each title lives in that
+page's `const TITLE`; `scripts/inject-meta.js` syncs it at build time.
 
-## The evidence (Search Console, 90 days, per page)
+Search Console, 90 days, per page.
 
-**/surrey — 1,651+ impressions across its top queries, 0 clicks**
+---
 
-| Query | Impressions | Clicks |
-|---|---|---|
-| google ads agency surrey | 425 | 0 |
-| digital marketing services surrey | 340 | 0 |
-| google ads surrey | 335 | 0 |
-| digital marketing agency surrey | 277 | 0 |
-| surrey marketing company | 274 | 0 |
+## The headline number
 
-**/vancouver — ~2,430 impressions across its top queries, 0 clicks**
+| City | Impressions (top queries) | Clicks |
+|---|---:|---:|
+| coquitlam | 3,333 | ~0 |
+| vancouver | 2,430 | ~0 |
+| surrey | 1,651 | ~0 |
+| abbotsford | 1,341 | ~0 |
+| langley | 1,161 | ~0 |
+| burnaby | 480 | ~0 |
+| richmond | 170 | ~0 |
+| **total** | **10,566** | **~4** |
 
-| Query | Impressions | Clicks |
-|---|---|---|
-| digital marketing vancouver | 692 | 0 |
-| digital marketing agency vancouver | 595 | 0 |
-| digital marketing agency | 569 | 0 |
-| marketing agency near me | 227 | 0 |
-| digital marketing near me | 177 | 0 |
+**City pages are about 72% of the site's 14,600 monthly impressions and produce
+almost none of its 87 clicks.** They are shown constantly, for commercial
+ready-to-hire searches, and earn nothing.
 
-Every one of these is a commercial, ready-to-hire query. The pages are shown
-for exactly the right searches and earn nothing from them.
+---
 
-## The mismatch
+## Per page: what is searched vs what the title says
 
-| Page | Current title | What people actually search |
-|---|---|---|
-| /vancouver | Google & Meta Ads Vancouver — From $759/mo, No Contract | digital marketing **agency** vancouver |
-| /surrey | Surrey **Lead Generation**: Google & Meta Ads, No Lock-In | digital marketing **agency** surrey, google ads **agency** surrey |
-| /burnaby | **Digital Marketing Agency** Burnaby — Ads from $759/mo | already aligned |
+### /vancouver — 2,430
+`digital marketing vancouver` 692 · `digital marketing agency vancouver` 595 ·
+`digital marketing agency` 569 · `marketing agency near me` 227
+Title: **Google & Meta Ads Vancouver — From $759/mo, No Contract**
+Missing: "digital marketing", "agency".
 
-The titles are written around the service and the price. The searches are for a
-category — "digital marketing agency" plus a city. "Lead Generation" appears in
-none of Surrey's top queries.
+### /coquitlam — 3,333, the largest and the odd one
+`advertising agency` 1,241 · `marketing agency` 651 · `marketing agency near me`
+558 · `advertising services` 467 · `digital marketing services coquitlam` 416
+Title: **Coquitlam Google & Meta Ads From $759/mo — No Lock-In**
+
+Most of this volume is **generic and ungeographic** — "advertising agency",
+"marketing agency". Those are national head terms where a Coquitlam page will
+not rank, and the impressions are almost certainly from deep positions. The
+realistic target here is `digital marketing services coquitlam` (416) and
+`marketing agency near me` (558), the latter being a Map Pack query rather than
+a blue-link one.
+
+### /surrey — 1,651
+`google ads agency surrey` 425 · `digital marketing services surrey` 340 ·
+`google ads surrey` 335 · `digital marketing agency surrey` 277 ·
+`surrey marketing company` 274
+Title: **Surrey Lead Generation: Google & Meta Ads, No Lock-In**
+"Lead Generation" appears in none of its top queries.
+
+### /abbotsford — 1,341, wrong on two counts
+`digital marketing abbotsford` 391 · `digital marketing services abbotsford` 343 ·
+`abbotsford marketing company` 284 · `digital marketing agency abbotsford` 211
+Title: **Abbotsford Marketing for Trades — $759/mo, No Contract**
+
+The title is aimed at trades. Nobody is searching Abbotsford + trades, and
+trades has zero clients (commit `510da0a`). It is misaligned with the queries
+and with the business.
+
+### /langley — 1,161
+`digital marketing langley` 322 · `digital marketing services langley` 292 ·
+`langley marketing company` 254 · `marketing agency langley` 153
+Title: **Langley Google & Meta Ads — Month-to-Month, No Contract**
+Missing: "digital marketing".
+
+### /burnaby — 480
+Title: **Digital Marketing Agency Burnaby — Ads from $759/mo**
+Already aligned. This is the template the others should follow.
+
+### /richmond — 170
+`digital marketing company richmond` 51 · `digital marketing agency richmond` 33
+Title: **Richmond Google Ads for Local Business — No Contract**
+Low volume because it was unindexed until 21 October. Re-measure in a month
+before changing anything.
+
+---
 
 ## Proposals
 
 ```diff
-  /vancouver  (current 55)
+  /vancouver   (current 55)
 - Google & Meta Ads Vancouver — From $759/mo, No Contract
-+ Digital Marketing Agency Vancouver — Ads from $759/mo
-  53 chars. Leads with the category term carrying 595 + 692 monthly
-  impressions, keeps the price, drops "No Contract" which no query contains.
++ Digital Marketing Agency Vancouver — Ads from $759/mo            (53)
 
-  /surrey  (current 53)
+  /surrey      (current 53)
 - Surrey Lead Generation: Google & Meta Ads, No Lock-In
-+ Digital Marketing Agency Surrey — Google Ads from $759/mo
-  57 chars. "Lead Generation" is replaced by the two phrases that actually
-  carry the impressions. Keeps Google Ads, which is its own 335-impression
-  query, and the price.
++ Digital Marketing Agency Surrey — Google Ads from $759/mo        (57)
 
-  /burnaby
-  No change. Already leads with the category term.
+  /langley     (current 54)
+- Langley Google & Meta Ads — Month-to-Month, No Contract
++ Digital Marketing Agency Langley — Ads from $759/mo              (51)
 
-  /richmond, /langley, /coquitlam, /abbotsford
-  Pull each page's own query list before changing anything. Do not assume the
-  Vancouver and Surrey pattern transfers; Abbotsford's title is aimed at
-  trades, which may or may not match what it is shown for.
+  /abbotsford  (current 53)
+- Abbotsford Marketing for Trades — $759/mo, No Contract
++ Digital Marketing Agency Abbotsford — Ads from $759/mo           (54)
+
+  /coquitlam   (current 52)
+- Coquitlam Google & Meta Ads From $759/mo — No Lock-In
++ Digital Marketing Agency Coquitlam — Ads from $759/mo            (53)
+
+  /burnaby     no change — already correct
+  /richmond    no change yet — too little data since it was indexed
 ```
+
+Every proposal follows the one page that is already aligned, keeps the price,
+and drops "No Contract" / "No Lock-In", which appear in no query. The H1s should
+be reviewed alongside these, but are not proposed here.
+
+---
 
 ## What this will and will not do
 
-It will not fix zero clicks on its own. Zero clicks from 4,000+ impressions
-means these pages sit on page two or three, where even a perfect title earns
-almost nothing. Title alignment raises the click-through rate *once the page is
-visible*; it does not move position.
+**It will not fix zero clicks.** Zero from 10,566 impressions means these pages
+sit on page two or beyond, where even a perfect title earns almost nothing.
+Title alignment lifts click-through *once a page is visible*; it does not move
+position.
 
-Position on "digital marketing agency <city>" is set by authority — how many
-other sites reference you. That is the binding constraint, and it is not
-something a title, or more words on the page, can change. These pages are
-already 1,400-1,900 words.
+Position on "digital marketing agency <city>" is set by authority — who else
+references you. These pages are already 1,400–1,900 words; more words will not
+change it.
 
-The faster route for local commercial intent is the Map Pack, which ranks on a
-different system: proximity, categories, completeness and reviews rather than
-backlinks. See the audit's section on Google Business Profile.
+**The realistic route is the Map Pack.** `marketing agency near me` alone is 558
+impressions on Coquitlam and 227 on Vancouver. Those are map queries, ranked by
+proximity, categories, completeness and reviews — a different system, and one
+where a ten-client local agency can genuinely compete. That means the Google
+Business Profile and fixing the West Vancouver entries on Clutch, LinkedIn and
+The Manifest.
 
-Recommendation: apply the two title changes because they are free and correct,
-but treat them as housekeeping, not as the fix.
+Apply the titles because they are free and correct. Do not expect them to be
+the fix.
