@@ -1,6 +1,5 @@
 import { ReactNode, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import adviceLogo from '/advice-logo.png';
 
 /**
  * The ADvice wordmark — the rocket replaces the "i", so the mark is the
@@ -8,7 +7,7 @@ import adviceLogo from '/advice-logo.png';
  * image is taller than the letters and aligned on its baseline.
  */
 export const AdviceLogo = ({ className = '' }: { className?: string }) => (
-  <img src={adviceLogo} alt="ADvice" className={`w-auto ${className}`} />
+  <img src="/advice-logo.png" alt="ADvice" className={`w-auto ${className}`} />
 );
 
 // Every tap target clears 44px on a phone, which is why the nav links carry a
