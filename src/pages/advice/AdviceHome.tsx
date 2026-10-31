@@ -96,7 +96,7 @@ const AdviceHome = () => (
     <section className="pt-20 text-center sm:pt-28">
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }} className="mx-auto max-w-[980px] px-5">
         <div className="flex flex-col items-center gap-4">
-          <img src={adviceLogo} alt="ADvice" className="h-20 w-auto sm:h-28" />
+          <img src="/advice-logo.png" alt="ADvice" className="h-20 w-auto sm:h-28" />
           <p className="text-[15px] font-medium text-[#6e6e73] sm:text-[17px]">
             by{' '}
             <Link to="/" className="underline decoration-[#d2d2d7] underline-offset-4 transition-colors hover:text-[#1d1d1f] hover:decoration-[#1d1d1f]">
