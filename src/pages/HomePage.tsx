@@ -180,12 +180,12 @@ const HomePage = () => {
             plate as well: a hidden container does not stop the fetch. The
             source media queries make the browser pick exactly one file. */}
         <picture>
-          <source media="(min-width: 1024px)" type="image/webp" srcSet="/seawall-1130.webp 1130w, /seawall-2260.webp 1555w" sizes="70vw" />
-          <source media="(min-width: 1024px)" srcSet="/seawall-2260.jpg" />
-          <source type="image/webp" srcSet="/seawall-m750.webp" />
+          <source media="(min-width: 1024px)" type="image/webp" srcSet="/vancouver-night-1130.webp 1130w, /vancouver-night-2260.webp 2260w" sizes="70vw" />
+          <source media="(min-width: 1024px)" srcSet="/vancouver-night-2260.jpg" />
+          <source type="image/webp" srcSet="/vancouver-night-m750.webp" />
           <img
             aria-hidden="true"
-            src="/seawall-m750.webp"
+            src="/vancouver-night-m750.webp"
             alt=""
             width={750}
             height={780}
