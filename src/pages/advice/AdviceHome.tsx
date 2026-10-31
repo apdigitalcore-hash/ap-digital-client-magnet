@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import AdviceShell from '@/advice/AdviceShell';
 import { CHANNELS } from '@/advice/types';
-import adviceLogo from '/advice-logo.png';
 
 const TITLE = 'ADvice — Free AI Ad Campaign Simulator';
 const DESC = 'Simulate your Google, Meta, TikTok or LinkedIn campaign before you spend a dollar. Predicted CTR, CPC, CPA and ROAS, a creative score, and rewritten ad copy. Free.';
