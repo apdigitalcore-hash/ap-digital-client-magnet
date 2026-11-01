@@ -180,15 +180,15 @@ const HomePage = () => {
             plate as well: a hidden container does not stop the fetch. The
             source media queries make the browser pick exactly one file. */}
         <picture>
-          <source media="(min-width: 1024px)" type="image/webp" srcSet="/vancouver-night-1130.webp 1130w, /vancouver-night-2260.webp 2260w" sizes="70vw" />
-          <source media="(min-width: 1024px)" srcSet="/vancouver-night-2260.jpg" />
-          <source type="image/webp" srcSet="/vancouver-night-m750.webp" />
+          <source media="(min-width: 1024px)" type="image/webp" srcSet="/curve_hero.webp 1555w" sizes="70vw" />
+          <source media="(min-width: 1024px)" srcSet="/curve_hero.webp" />
+          <source type="image/webp" srcSet="/curve_hero-m750.webp" />
           <img
             aria-hidden="true"
-            src="/vancouver-night-m750.webp"
+            src="/curve_hero-m750.webp"
             alt=""
             width={750}
-            height={780}
+            height={488}
             {...{ fetchpriority: 'high' }}
             decoding="async"
             className="pointer-events-none relative block h-[90vw] w-full select-none object-cover object-bottom [mask-image:linear-gradient(to_bottom,transparent_0%,#000_20%)] sm:h-[60vw] lg:absolute lg:inset-y-0 lg:right-0 lg:left-[max(30%,560px)] lg:h-full lg:w-auto lg:object-[78%_bottom] lg:[mask-image:linear-gradient(to_right,transparent_0%,#000_30%)]"
