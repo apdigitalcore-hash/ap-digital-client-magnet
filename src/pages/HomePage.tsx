@@ -1,11 +1,10 @@
 // HomePage - Main landing page for AP DIGITAL - Performance Marketing Agency
 import { Link } from 'react-router-dom';
 import IndustryGrid from '@/components/IndustryGrid';
-import { ArrowRight, Play, Zap, Target, Users, TrendingUp, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
-import Header from '@/components/Header';
+import { ArrowRight, Zap, Target, Users, TrendingUp, CalendarDays, ShieldCheck, Clock } from 'lucide-react';
 import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
-import { Button } from '@/components/ui/button';
+import exactHero from '@/assets/curve_hero_exact.webp.asset.json';
 
 import SectionLabel from '@/components/light/SectionLabel';
 import ProcessLight from '@/components/light/ProcessLight';
@@ -113,93 +112,32 @@ const HomePage = () => {
         <meta name="robots" content="index, follow" />
       </Helmet>
       <JsonLd data={structuredData} />
-      <Header />
-
-      {/* ─────────────────── HERO ─────────────────── */}
-      {/* The photograph is the hero, not a band beneath it. Copy sits on the
-          pale left of the frame, over a scrim that guarantees contrast.
-
-          MOBILE HEIGHT IS DRIVEN BY CONTENT AND vw — NEVER vh/svh/dvh.
-          Mobile browsers change the viewport height as the URL bar hides and
-          shows, so any vh-family height makes the full-bleed photograph resize
-          mid-scroll, visibly. HeroShowcase carries the same note from an
-          earlier round on the sphere: vh was tried, then svh, and both still
-          resized on a real phone.
-
-          A fixed vw multiple does not work either. The plate is bottom-anchored,
-          so the skyline lands at (sectionHeight - 0.717 x width). Narrow phones
-          wrap the headline onto more lines, so the copy ends LOWER while a
-          ratio-based height gets SHORTER — at 170vw the copy cleared the
-          skyline by 41px at 430px wide and collided with it by 134px at 375px.
-
-          So the section takes its height from the content, and the copy reserves
-          the photograph underneath it: 72vw covers the 0.717 x width offset and
-          the +40px is the gap. That holds the same gap at every phone width, and
-          contains no unit the URL bar can change. Desktop keeps svh — no URL
-          bar, no problem. */}
-      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground lg:flex lg:min-h-[720px] lg:flex-col lg:h-[100svh] lg:max-h-[920px]">
-        <div className="relative z-10 w-full container-custom pt-28 pb-8 sm:pt-36 lg:flex lg:flex-1 lg:items-center lg:pt-24 lg:pb-12">
-          <div className="max-w-[640px] lg:-translate-y-2">
-            <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-primary-foreground/75 sm:mb-5 lg:text-[11px]">
-              Vancouver Digital Marketing
-            </p>
-
-            <h1 className="mb-5 font-serif text-[2.75rem] font-normal leading-[0.98] tracking-normal sm:text-6xl lg:max-w-[620px] lg:text-[4.25rem] xl:text-[4.75rem]">
-              Vancouver{' '}
-              <span className="italic">Performance</span>{' '}
-              <span className="sm:whitespace-nowrap">Marketing Agency</span>
-            </h1>
-
-            <p className="mb-7 max-w-[500px] text-[15px] leading-relaxed text-primary-foreground/85 sm:text-lg lg:mb-7">
-              Google &amp; Meta Ads and social media for local businesses — and if we miss the lead target we agree on in 90 days, we keep working at no fee for a further 30 days.
-            </p>
-
-            <div className="flex flex-col items-stretch gap-4 sm:items-start lg:gap-3">
-              <Button asChild variant="secondary" size="lg" className="h-14 rounded-full px-8 text-[13px] font-semibold uppercase tracking-[0.14em] sm:min-w-[210px]">
-                <Link to="/book">
-                  Book a call
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
-              <a href="#how-it-works" className="group inline-flex w-fit items-center gap-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-primary-foreground/85 transition-colors hover:text-primary-foreground">
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-primary-foreground/70 transition-colors group-hover:border-primary-foreground">
-                  <Play className="h-3 w-3 fill-current" />
-                </span>
-                How it works
-              </a>
-            </div>
-          </div>
-        </div>
-
-
-        {/* Night plate — one element, two placements.
-            Desktop anchors it right and bottom, starting where the copy ends
-            (never less than 560px or 30% from the left) so the skyline cannot
-            slide under the headline; mobile drops it to a band under the copy.
-            It is a single <picture> because a phone was downloading the desktop
-            plate as well: a hidden container does not stop the fetch. The
-            source media queries make the browser pick exactly one file. */}
-        <picture>
-          <source media="(min-width: 1024px)" type="image/webp" srcSet="/curve_hero.webp 1555w" sizes="70vw" />
-          <source media="(min-width: 1024px)" srcSet="/curve_hero.webp" />
-          <source type="image/webp" srcSet="/curve_hero-m750.webp" />
-          <img
-            aria-hidden="true"
-            src="/curve_hero-m750.webp"
-            alt=""
-            width={750}
-            height={488}
-            {...{ fetchpriority: 'high' }}
-            decoding="async"
-            className="pointer-events-none relative block h-[90vw] w-full select-none object-cover object-bottom [mask-image:linear-gradient(to_bottom,transparent_0%,#000_20%)] sm:h-[60vw] lg:absolute lg:inset-y-0 lg:right-0 lg:left-[max(30%,560px)] lg:h-full lg:w-auto lg:object-[78%_bottom] lg:[mask-image:linear-gradient(to_right,transparent_0%,#000_30%)]"
-          />
-        </picture>
-
-        <div className="relative z-10 w-full container-custom hidden lg:block pb-8">
-          <div className="border-t border-white/20 pt-6 text-left text-[11px] tracking-[0.3em] uppercase text-white/70">
-            Google Ads <span className="mx-4 text-white/40">/</span> Meta Ads <span className="mx-4 text-white/40">/</span> Social Media
-          </div>
-        </div>
+      <section aria-label="AP Digital Vancouver marketing" className="relative w-full">
+        <img
+          src={exactHero.url}
+          alt="AP Digital. Vancouver Performance Marketing Agency. Google and Meta Ads and social media for local businesses. If we miss the agreed lead target in 90 days, we keep working at no fee for a further 30 days."
+          width={1555}
+          height={1011}
+          {...{ fetchpriority: 'high' }}
+          decoding="async"
+          className="block h-auto w-full"
+        />
+        <h1 className="sr-only">Vancouver Performance Marketing Agency</h1>
+        <nav aria-label="Main navigation">
+          <Link to="/" aria-label="AP Digital home" className="absolute left-[4%] top-[3%] h-[6%] w-[12%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <Link to="/" aria-label="Home" className="absolute left-[22%] top-[3%] h-[6%] w-[4%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <a href="#services" aria-label="Services" className="absolute left-[26.5%] top-[3%] h-[6%] w-[6.5%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <a href="#industries" aria-label="Industries" className="absolute left-[34%] top-[3%] h-[6%] w-[7%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <a href="#locations" aria-label="Locations" className="absolute left-[42%] top-[3%] h-[6%] w-[7%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <Link to="/advice" aria-label="ADvice free simulator" className="absolute left-[50%] top-[3%] h-[6%] w-[8%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <Link to="/pricing" aria-label="Pricing" className="absolute left-[59%] top-[3%] h-[6%] w-[4%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <Link to="/about" aria-label="About" className="absolute left-[64%] top-[3%] h-[6%] w-[4%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <Link to="/blog" aria-label="Blog" className="absolute left-[69%] top-[3%] h-[6%] w-[3%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <Link to="/contact" aria-label="Contact" className="absolute left-[73%] top-[3%] h-[6%] w-[5%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+          <Link to="/book" aria-label="Book Free Call" className="absolute left-[84.5%] top-[3%] h-[6%] w-[11%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+        </nav>
+        <Link to="/book" aria-label="Book a call" className="absolute left-[5%] top-[63.5%] h-[7%] w-[16%] rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
+        <a href="#how-it-works" aria-label="How it works" className="absolute left-[5%] top-[71.5%] h-[4%] w-[14%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-ring" />
       </section>
 
       {/* ─────────────────── TRUST BAR ─────────────────── */}
@@ -247,7 +185,7 @@ const HomePage = () => {
       </section>
 
       {/* ─────────────────── INDUSTRIES ─────────────────── */}
-      <section className="py-24 md:py-32 bg-[#EDEFF2]">
+      <section id="industries" className="py-24 md:py-32 bg-[#EDEFF2]">
         <div className="container-custom">
           <div className="text-center mb-14">
             <SectionLabel label="Industries" />
@@ -274,7 +212,7 @@ const HomePage = () => {
       </section>
 
       <ProcessLight />
-      <ServicesLight />
+      <div id="services"><ServicesLight /></div>
 
       {/* ─────────────────── ADVICE ─────────────────── */}
       <section className="py-24 md:py-28 bg-white border-y border-foreground/[0.07]">
@@ -344,7 +282,7 @@ const HomePage = () => {
       </section>
 
       {/* ─────────────────── CITIES ─────────────────── */}
-      <section className="py-24 md:py-32 bg-white">
+      <section id="locations" className="py-24 md:py-32 bg-white">
         <div className="container-custom">
           <div className="text-center mb-14">
             <SectionLabel label="Locations" />
