@@ -97,7 +97,7 @@ We've spoken with dozens of Canadian business owners who spent six to twelve mon
 | Growth Agency | $1,500 – $3,000 | Separate | Strategy, 12–20 posts, short video, reporting, light ads | Small businesses serious about leads |
 | Full-Service Agency | $3,000 – $5,000+ | Separate | Dedicated team, advanced ads, video, multi-platform, CRO | Scaling or competitive businesses |
 
-Note: Management fees are separate from ad spend. Ad spend is paid directly to Meta, Google, or LinkedIn and typically ranges from $500 to $5,000 per month depending on your market and goals.
+Note: Management fees are separate from ad spend. Ad spend is paid directly to Meta, Google, or LinkedIn and typically ranges from $500 to $5,000 per month depending on your market and goals. The fee ranges in the table above are our estimate of the current Canadian market rather than survey data.
 
 ## Recommended Ad Spend by Industry in Canada
 
@@ -162,6 +162,8 @@ Video is quoted separately from social media management almost everywhere, so it
 | Monthly content package (4 – 8 videos) | $1,000 – $4,000/month |
 | Motion graphics or animation | $500 – $3,000 per video |
 
+*Estimate, not survey data: these ranges are our read of current Canadian market rates, gathered from publicly listed agency and freelancer pricing. Treat them as a sanity check on a quote you have been given, not a benchmark.*
+
 The gap between a $300 freelancer video and a $3,000 produced one is mostly crew, location, and revisions — not whether it performs. For most local service businesses, footage shot on a recent phone and edited well outperforms a polished brand film, because it looks like the feed it appears in rather than an interruption.
 
 **To be straightforward: we do not produce video.** AP Digital runs paid ads and manages social accounts, and where a client needs video we tell them to hire a specialist or shoot it themselves. These numbers are here because you will be quoted them, not because we are quoting them.
@@ -197,6 +199,8 @@ Management fees barely move across the country — a freelancer in Halifax and o
 | Ottawa | $700 – $2,200 | $800 – $2,500 | Steadier, government-heavy market with fewer aggressive bidders |
 | Smaller cities and towns | $500 – $1,500 | $400 – $1,500 | Thin competition, so a modest budget can own the local feed |
 
+*Estimate, not survey data: these ranges are our read of current Canadian market rates, gathered from publicly listed agency and freelancer pricing. Treat them as a sanity check on a quote you have been given, not a benchmark.*
+
 Two things are worth saying plainly. **Montreal costs more than the auction suggests** if your customers are francophone, because you need separate French creative rather than a translated caption. And **a Toronto business on a Halifax budget will lose**: the same $800 that buys steady reach in a small market barely registers in the GTA feed.
 
 Our own rate is the same wherever you are — [$849/month](/pricing) for social media management, ad spend billed separately by the platform — because the work does not change; the auction does.
@@ -209,6 +213,8 @@ Our own rate is the same wherever you are — [$849/month](/pricing) for social 
 | Established local service business (2 – 10 staff) | $800 – $1,800 | $800 – $2,500 |
 | Multi-location or regional brand | $2,000 – $4,000 | $2,500 – $10,000 |
 | Ecommerce scaling nationally | $3,000 – $6,000 | $5,000+ |
+
+*Estimate, not survey data: these ranges are our read of current Canadian market rates, gathered from publicly listed agency and freelancer pricing. Treat them as a sanity check on a quote you have been given, not a benchmark.*
 
 A local plumber in Surrey and a national ecommerce brand both "do social media", but the work has almost nothing in common. Smaller local businesses usually get further by putting more into ad spend and less into content volume: twelve good posts and $1,500 in well-targeted ads beat thirty posts and no budget nearly every time.
 
@@ -275,7 +281,7 @@ Whatever tier you land on, the cheapest money you will ever spend is the money y
 
 ## Where these numbers come from
 
-Agency fees in this guide come from published Canadian agency pricing and our own rate card. Platform costs are auction-driven, so the ranges are benchmarks, not quotes — your own costs depend on your industry, location, audience and creative.
+Agency and freelancer fee ranges in this guide are our own estimate of the 2026 Canadian market, read off publicly listed pricing pages. They are not a survey, and we have not audited them — where a table gives a fee range, treat it as a sanity check rather than a measured figure. AP Digital's own rates are stated separately below. Platform costs are auction-driven, so those ranges are benchmarks, not quotes — your own costs depend on your industry, location, audience and creative.
 
 - **Meta (Facebook & Instagram) auction and pricing** — [Meta Business Help Center: about ad auctions](https://www.facebook.com/business/help/430291176997542)
 - **Facebook advertising benchmarks by industry** — [LocalIQ/WordStream Facebook ad benchmarks](https://localiq.com/blog/facebook-advertising-benchmarks/)
