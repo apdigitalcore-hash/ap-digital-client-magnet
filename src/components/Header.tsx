@@ -85,7 +85,14 @@ const Header = () => {
     // (/case-studies/:studyId) opens on a near-black hero.
     pathname.startsWith('/case-studies/') && pathname !== '/case-studies'
   );
-  const useDarkChrome = !hasDarkHero;
+  // Chrome follows what is BEHIND the bar right now, not what the page's hero
+  // was. Unscrolled the bar is transparent, so on a dark hero it has to be
+  // light-on-dark. The moment it takes a background it is sitting over body
+  // content, and no page on the site has a dark body — so past the scroll
+  // threshold every page gets the light bar with dark text. Deriving this from
+  // the hero alone left the homepage showing white nav text on a grey-washed
+  // bar over the white sections, all the way down the page.
+  const useDarkChrome = !hasDarkHero || isScrolled;
   const isLightPage = useDarkChrome;
 
 
