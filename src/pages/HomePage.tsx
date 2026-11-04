@@ -17,8 +17,6 @@ import PastelCTA from '@/components/light/PastelCTA';
 import HeroMoveCard from '@/components/HeroMoveCard';
 import WhileYouScroll from '@/components/WhileYouScroll';
 
-import { lazy, Suspense } from 'react';
-const SocialMediaBudgetCalculator = lazy(() => import('@/components/SocialMediaBudgetCalculator'));
 
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
@@ -268,16 +266,6 @@ const HomePage = () => {
               click from the homepage without taking more room than the four
               large cards did. */}
           <IndustryGrid className="mx-auto max-w-5xl" />
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 bg-white">
-        <div className="container-custom">
-          <div className="mx-auto max-w-3xl">
-            <Suspense fallback={null}>
-              <SocialMediaBudgetCalculator />
-            </Suspense>
-          </div>
         </div>
       </section>
 
