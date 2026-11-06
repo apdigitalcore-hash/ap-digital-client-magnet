@@ -1,56 +1,40 @@
 import { Link } from 'react-router-dom';
-import {
-  Scissors, Home, Building2, Wrench, GraduationCap, Stethoscope, Wind,
-  Dumbbell, UtensilsCrossed, Scale, Droplets, Zap, HardHat, Hammer, Car,
-} from 'lucide-react';
+import { INDUSTRY_GROUPS } from '@/lib/industries';
 
 /**
- * Every industry page, as one compact band of links.
+ * The industry directory, as a set of grouped link columns.
  *
- * The homepage and the city pages each used to show four of the fourteen, in
- * their own markup, which meant a dentist, lawyer, roofer or restaurant owner
- * saw nothing for them — and ten pages got no link from the strongest pages on
- * the site.
+ * This was fifteen equal tiles in a flat grid, each carrying its own icon chip.
+ * A droplet beside "Plumbers" and a wrench beside "Trades" say nothing the word
+ * does not already say, and fifteen unrelated glyphs were most of the visual
+ * noise. Headings and plain links replace them, so a plumber reads the six
+ * names under "Trades & home services" instead of scanning all fifteen.
  *
- * A single "Industries" card opening an index page would read cleaner, but it
- * puts every industry page an extra hop from the homepage. With the site
- * averaging position 40 in search, moving links further away is the wrong
- * direction, so this keeps all fourteen and makes the tiles small enough that
- * it still takes less room than four large cards did.
- *
- * The list lives here only. Two copies of it is how four became stale.
+ * The list itself lives in @/lib/industries.
  */
-const INDUSTRIES = [
-  { icon: Home, name: 'Real Estate', to: '/real-estate-marketing' },
-  { icon: Scissors, name: 'Salons & Beauty', to: '/salon-marketing' },
-  { icon: GraduationCap, name: 'Coaching & Consulting', to: '/coaching-marketing' },
-  { icon: Stethoscope, name: 'Dental & Clinics', to: '/dental-marketing' },
-  { icon: Car, name: 'Car Detailing', to: '/car-detailing-marketing' },
-  { icon: Dumbbell, name: 'Gyms & Fitness', to: '/fitness-marketing' },
-  { icon: UtensilsCrossed, name: 'Restaurants', to: '/restaurant-marketing' },
-  { icon: Scale, name: 'Law Firms', to: '/law-firm-marketing' },
-  { icon: Wrench, name: 'Trades & Contractors', to: '/trades-marketing' },
-  { icon: Hammer, name: 'General Contractors', to: '/contractor-marketing' },
-  { icon: Wind, name: 'HVAC', to: '/hvac-marketing' },
-  { icon: Droplets, name: 'Plumbers', to: '/plumber-marketing' },
-  { icon: Zap, name: 'Electricians', to: '/electrician-marketing' },
-  { icon: HardHat, name: 'Roofers', to: '/roofer-marketing' },
-  { icon: Building2, name: 'Property Management', to: '/property-management-marketing' },
-];
-
 const IndustryGrid = ({ className = '' }: { className?: string }) => (
-  <div className={`grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 ${className}`}>
-    {INDUSTRIES.map(({ icon: Icon, name, to }) => (
-      <Link
-        key={to}
-        to={to}
-        className="group flex items-center gap-3 rounded-2xl bg-white px-4 py-3.5 elev-1 transition-all duration-200 hover:-translate-y-0.5 hover:elev-2"
-      >
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#EDEFF2] transition-colors group-hover:bg-[#0C0E11]">
-          <Icon className="h-4 w-4 text-foreground transition-colors group-hover:text-white" strokeWidth={1.75} />
-        </span>
-        <span className="text-sm font-medium leading-tight text-foreground">{name}</span>
-      </Link>
+  // CSS columns rather than a grid: the groups are different lengths, and in a
+  // grid the six-item trades column set the first row's height, leaving a gap
+  // under every short group beside it. Columns let them flow and pack.
+  <div className={`columns-1 gap-10 sm:columns-2 lg:columns-3 ${className}`}>
+    {INDUSTRY_GROUPS.map((group) => (
+      <div key={group.label} className="mb-10 break-inside-avoid">
+        <h3 className="border-b border-foreground/10 pb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          {group.label}
+        </h3>
+        <ul>
+          {group.items.map((item) => (
+            <li key={item.to}>
+              <Link
+                to={item.to}
+                className="block border-b border-foreground/[0.06] py-2.5 text-[15px] font-medium text-foreground transition-colors hover:text-muted-foreground"
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     ))}
   </div>
 );
