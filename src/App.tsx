@@ -12,7 +12,6 @@ import NotFound from "./pages/NotFound";
 import AIChat from "./components/AIChat";
 import ScrollToTop from "./components/ScrollToTop";
 import PageViewTracker from "./components/PageViewTracker";
-import { useRevealCards } from "./hooks/useRevealCards";
 
 
 // Lazy load all other pages — loaded on demand
@@ -71,8 +70,6 @@ const OAuthConsent = lazy(() => import("./pages/OAuthConsent"));
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Lets a tap fill a reveal card, since hover does not exist on touch.
-  useRevealCards();
 
   return (
   <HelmetProvider>

@@ -121,20 +121,17 @@ const SalonMarketing = () => (
 
         {/* 3-column why strip */}
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Before &amp; afters convert</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Before-and-after content is usually the strongest format for salons. We plan it with you and turn it into ads and posts.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Before &amp; afters convert</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Before-and-after content is usually the strongest format for salons. We plan it with you and turn it into ads and posts.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Local targeting that works</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">We put your offer in front of women in your area who are actively searching for a new stylist — not random impressions.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Local targeting that works</p>
+            <p className="relative z-10 text-sm text-muted-foreground">We put your offer in front of women in your area who are actively searching for a new stylist — not random impressions.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. If we miss the bookings target we agree on in 90 days, we keep working at no fee for a further 30 days.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Month-to-month. If we miss the bookings target we agree on in 90 days, we keep working at no fee for a further 30 days.</p>
           </div>
         </div>
 
@@ -151,11 +148,10 @@ const SalonMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>

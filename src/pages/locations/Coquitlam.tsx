@@ -136,29 +136,25 @@ const Coquitlam = () => (
             Across Coquitlam, Port Moody, and Port Coquitlam — we help local businesses generate leads and grow.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Trades & Contractors</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Plumbers, HVAC, and electricians across Coquitlam & Tri-Cities staying booked solid with precision-targeted campaigns.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Zap className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Trades & Contractors</h3>
+              <p className="relative z-10 text-muted-foreground">Plumbers, HVAC, and electricians across Coquitlam & Tri-Cities staying booked solid with precision-targeted campaigns.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Consistent bookings in Coquitlam & Port Moody — no more relying on word-of-mouth and hoping the phone rings.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Star className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Hair Salons & Beauty Studios</h3>
+              <p className="relative z-10 text-muted-foreground">Consistent bookings in Coquitlam & Port Moody — no more relying on word-of-mouth and hoping the phone rings.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Target className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Real Estate Agents</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Leads across the Tri-Cities market — targeted ad campaigns that reach motivated buyers and sellers throughout the area.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Target className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Real Estate Agents</h3>
+              <p className="relative z-10 text-muted-foreground">Leads across the Tri-Cities market — targeted ad campaigns that reach motivated buyers and sellers throughout the area.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses across Metro Vancouver with ad campaigns aimed at ideal clients online.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Users className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Coaches & Consultants</h3>
+              <p className="relative z-10 text-muted-foreground">Growing coaching businesses across Metro Vancouver with ad campaigns aimed at ideal clients online.</p>
             </div>
           </div>
         </div>
@@ -217,29 +213,25 @@ const Coquitlam = () => (
             A clear process for getting your Coquitlam business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">1</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Free Strategy Call</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We learn your Coquitlam market, your competition, and your goals. Whether you serve Coquitlam, Port Moody, PoCo, or all three — we plan around your service area.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">1</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Free Strategy Call</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">We learn your Coquitlam market, your competition, and your goals. Whether you serve Coquitlam, Port Moody, PoCo, or all three — we plan around your service area.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">2</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Campaign Build</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We build your Meta Ads or Google Ads campaign targeting Coquitlam and surrounding areas — Westwood Plateau, Burke Mountain, Port Moody, Port Coquitlam, and New Westminster.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">2</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Campaign Build</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Coquitlam and surrounding areas — Westwood Plateau, Burke Mountain, Port Moody, Port Coquitlam, and New Westminster.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">3</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Launch & Optimize</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to ensure your Tri-Cities campaign is delivering real, qualified leads from day one.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">3</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Launch & Optimize</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to ensure your Tri-Cities campaign is delivering real, qualified leads from day one.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">4</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Scale</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads are flowing, we scale what's working and cut what isn't. We report cost per lead weekly, so you can see what is working and what is not.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">4</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Scale</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. We report cost per lead weekly, so you can see what is working and what is not.</p>
             </div>
           </div>
         </div>
@@ -295,23 +287,20 @@ const Coquitlam = () => (
             We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <MapPin className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Personal Management</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <MapPin className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Personal Management</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <TrendingUp className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">No Contracts</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <TrendingUp className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">No Contracts</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Fast Results</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Campaigns go live within a week of kickoff, and we optimise daily through the first fortnight rather than setting and forgetting.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Zap className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Fast Results</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Campaigns go live within a week of kickoff, and we optimise daily through the first fortnight rather than setting and forgetting.</p>
             </div>
           </div>
         </div>

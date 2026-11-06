@@ -123,20 +123,17 @@ const PlumberMarketing = () => (
         <InlineCTA context="plumbing company" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Emergency searches = instant calls</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">People searching "plumber near me" often have water on their floor, and they usually call the first company they find.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Emergency searches = instant calls</p>
+            <p className="relative z-10 text-sm text-muted-foreground">People searching "plumber near me" often have water on their floor, and they usually call the first company they find.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">High job values</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Plumbing service calls typically run $200–$800, and drain work, water heater replacement and re-pipes can run $2K–$15K.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">High job values</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Plumbing service calls typically run $200–$800, and drain work, water heater replacement and re-pipes can run $2K–$15K.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">No contracts. If we miss the booked-call target we agree on in 90 days, we keep working at no fee for a further 30 days.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
+            <p className="relative z-10 text-sm text-muted-foreground">No contracts. If we miss the booked-call target we agree on in 90 days, we keep working at no fee for a further 30 days.</p>
           </div>
         </div>
 
@@ -153,11 +150,10 @@ const PlumberMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>
@@ -182,19 +178,19 @@ const PlumberMarketing = () => (
           <div className="grid sm:grid-cols-2 gap-4">
             <Link to="/trades-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Trades & Contractor Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
             </Link>
             <Link to="/hvac-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">HVAC Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads & lead gen for HVAC companies in BC.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Google Ads & lead gen for HVAC companies in BC.</p>
             </Link>
             <Link to="/electrician-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Electrician Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Lead generation for BC electricians.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Lead generation for BC electricians.</p>
             </Link>
             <Link to="/roofer-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Roofer Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads for roofing companies in Metro Vancouver.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Google Ads for roofing companies in Metro Vancouver.</p>
             </Link>
           </div>
         </div>

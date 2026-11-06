@@ -144,29 +144,25 @@ const Burnaby = () => (
             From Metrotown to Brentwood, we help local Burnaby businesses compete and win online.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Trades & Contractors</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Plumbers, HVAC, and electricians across Burnaby & North Shore getting consistent job bookings through targeted campaigns.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Zap className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Trades & Contractors</h3>
+              <p className="relative z-10 text-muted-foreground">Plumbers, HVAC, and electricians across Burnaby & North Shore getting consistent job bookings through targeted campaigns.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Consistent bookings for salons near Metrotown & Brentwood — no more slow weeks or empty appointment books.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Star className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Hair Salons & Beauty Studios</h3>
+              <p className="relative z-10 text-muted-foreground">Consistent bookings for salons near Metrotown & Brentwood — no more slow weeks or empty appointment books.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Target className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Real Estate Agents</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Buyer & seller leads in Burnaby's competitive condo market — targeted ads that reach motivated buyers and sellers.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Target className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Real Estate Agents</h3>
+              <p className="relative z-10 text-muted-foreground">Buyer & seller leads in Burnaby's competitive condo market — targeted ads that reach motivated buyers and sellers.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Growing coaching businesses across Metro Vancouver with ad campaigns aimed at ideal clients.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Users className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Coaches & Consultants</h3>
+              <p className="relative z-10 text-muted-foreground">Growing coaching businesses across Metro Vancouver with ad campaigns aimed at ideal clients.</p>
             </div>
           </div>
         </div>
@@ -225,29 +221,25 @@ const Burnaby = () => (
             A clear process for getting your Burnaby business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">1</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Free Strategy Call</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We learn your Burnaby market, your competition, and your goals. Every campaign starts with a clear picture of what success looks like for your specific business.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">1</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Free Strategy Call</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">We learn your Burnaby market, your competition, and your goals. Every campaign starts with a clear picture of what success looks like for your specific business.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">2</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Campaign Build</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We build your Meta Ads or Google Ads campaign targeting Burnaby and surrounding areas — Metrotown, Brentwood, North Burnaby, Edmonds, and beyond.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">2</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Campaign Build</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Burnaby and surrounding areas — Metrotown, Brentwood, North Burnaby, Edmonds, and beyond.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">3</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Launch & Optimize</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to ensure your Burnaby campaign is performing from day one.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">3</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Launch & Optimize</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to ensure your Burnaby campaign is performing from day one.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">4</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Scale</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead improves as the campaign matures and data builds.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">4</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Scale</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead improves as the campaign matures and data builds.</p>
             </div>
           </div>
         </div>
@@ -303,23 +295,20 @@ const Burnaby = () => (
             We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <MapPin className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Personal Management</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <MapPin className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Personal Management</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <TrendingUp className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">No Contracts</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <TrendingUp className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">No Contracts</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Fast Results</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Most Burnaby clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Zap className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Fast Results</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Most Burnaby clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>

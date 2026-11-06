@@ -140,29 +140,25 @@ const Surrey = () => (
             From South Surrey to Guildford, we generate qualified leads for local businesses across the region.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Trades & Contractors</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Plumbers, HVAC, electricians, and roofers across Surrey & South Fraser getting booked solid with targeted ads.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Zap className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Trades & Contractors</h3>
+              <p className="relative z-10 text-muted-foreground">Plumbers, HVAC, electricians, and roofers across Surrey & South Fraser getting booked solid with targeted ads.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Star className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Hair Salons & Beauty Studios</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Meta Ads and Instagram content aimed at new bookings for salons throughout Surrey and the surrounding area.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Star className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Hair Salons & Beauty Studios</h3>
+              <p className="relative z-10 text-muted-foreground">Meta Ads and Instagram content aimed at new bookings for salons throughout Surrey and the surrounding area.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Target className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Real Estate Agents</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Buyer & seller leads in Surrey's competitive market — targeted campaigns that reach motivated homeowners.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Target className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Real Estate Agents</h3>
+              <p className="relative z-10 text-muted-foreground">Buyer & seller leads in Surrey's competitive market — targeted campaigns that reach motivated homeowners.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Users className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground reveal-ink mb-2">Coaches & Consultants</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body">Attracting ideal clients online and growing coaching businesses across BC with targeted ad campaigns.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Users className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-xl font-medium text-foreground mb-2">Coaches & Consultants</h3>
+              <p className="relative z-10 text-muted-foreground">Attracting ideal clients online and growing coaching businesses across BC with targeted ad campaigns.</p>
             </div>
           </div>
         </div>
@@ -221,29 +217,25 @@ const Surrey = () => (
             A clear process for getting your Surrey business generating leads — with no guesswork.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">1</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Free Strategy Call</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We learn your Surrey market, your competition, and your goals. No cookie-cutter approach — every campaign starts with understanding your specific business.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">1</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Free Strategy Call</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">We learn your Surrey market, your competition, and your goals. No cookie-cutter approach — every campaign starts with understanding your specific business.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">2</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Campaign Build</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">We build your Meta Ads or Google Ads campaign targeting Surrey and surrounding areas — Newton, Guildford, South Surrey, Cloverdale, White Rock, and beyond.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">2</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Campaign Build</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">We build your Meta Ads or Google Ads campaign targeting Surrey and surrounding areas — Newton, Guildford, South Surrey, Cloverdale, White Rock, and beyond.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">3</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Launch & Optimize</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Surrey campaign hits its stride as fast as possible.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">3</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Launch & Optimize</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Live within 7 days. We monitor and optimize daily in the first 2 weeks to make sure your Surrey campaign hits its stride as fast as possible.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3 reveal-ink">4</div>
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Scale</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground/25 mb-3">4</div>
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Scale</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Once leads are flowing, we scale what's working and cut what isn't. Your cost-per-lead drops as the campaign matures and data accumulates.</p>
             </div>
           </div>
         </div>
@@ -299,23 +291,20 @@ const Surrey = () => (
             We're not a big agency with account managers and hand-offs. We're a focused team that delivers.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <MapPin className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Personal Management</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <MapPin className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Personal Management</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Arjun Sharma personally manages every account. No outsourcing, no hand-offs, no junior staff touching your campaigns.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <TrendingUp className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">No Contracts</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <TrendingUp className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">No Contracts</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Month-to-month with zero lock-in. We earn your business every single month by actually delivering results.</p>
             </div>
-            <div className="group reveal-card relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <Zap className="relative z-10 w-8 h-8 text-foreground reveal-ink mb-4" />
-              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground reveal-ink mb-2">Fast Results</h3>
-              <p className="relative z-10 text-muted-foreground reveal-body text-sm">Most Surrey clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
+            <div className="group relative overflow-hidden bg-white elev-2 rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1">
+              <Zap className="relative z-10 w-8 h-8 text-foreground mb-4" />
+              <h3 className="relative z-10 font-serif text-lg font-medium text-foreground mb-2">Fast Results</h3>
+              <p className="relative z-10 text-muted-foreground text-sm">Most Surrey clients see their first qualified leads within 2 weeks of launch. We move fast and optimize constantly.</p>
             </div>
           </div>
         </div>

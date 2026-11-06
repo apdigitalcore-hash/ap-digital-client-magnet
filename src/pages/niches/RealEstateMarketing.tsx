@@ -145,20 +145,17 @@ const RealEstateMarketing = () => (
 
         {/* 3-column why strip */}
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Qualified leads, delivered</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Facebook and Instagram lead ads capture buyers and sellers in your market and push them straight to your CRM.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Qualified leads, delivered</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Facebook and Instagram lead ads capture buyers and sellers in your market and push them straight to your CRM.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Build the brand people trust</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Listing tours, market updates, and neighbourhood content that position you as the go-to local expert.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Build the brand people trust</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Listing tours, market updates, and neighbourhood content that position you as the go-to local expert.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. Most agents see their first leads within two weeks of launch.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Month-to-month. Most agents see their first leads within two weeks of launch.</p>
           </div>
         </div>
 
@@ -175,11 +172,10 @@ const RealEstateMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>

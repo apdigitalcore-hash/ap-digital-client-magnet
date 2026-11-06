@@ -138,20 +138,17 @@ const LawFirmMarketing = () => (
         <InlineCTA context="firm" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Urgent, high-intent search</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">"Family lawyer Vancouver," "immigration lawyer near me," "real estate lawyer Burnaby" — people searching with a specific matter in mind.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Urgent, high-intent search</p>
+            <p className="relative z-10 text-sm text-muted-foreground">"Family lawyer Vancouver," "immigration lawyer near me," "real estate lawyer Burnaby" — people searching with a specific matter in mind.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Economics differ by practice</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">What a new client is worth varies enormously by practice area and fee model. We build budgets and bids around your firm's own numbers, not a generic cost per lead.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Economics differ by practice</p>
+            <p className="relative z-10 text-sm text-muted-foreground">What a new client is worth varies enormously by practice area and fee model. We build budgets and bids around your firm's own numbers, not a generic cost per lead.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Compliance-aware copy</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Ads and pages written to stay within Law Society of BC marketing rules: no outcome promises, no superlatives, no result testimonials. You approve everything.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Compliance-aware copy</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Ads and pages written to stay within Law Society of BC marketing rules: no outcome promises, no superlatives, no result testimonials. You approve everything.</p>
           </div>
         </div>
 
@@ -168,11 +165,10 @@ const LawFirmMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>

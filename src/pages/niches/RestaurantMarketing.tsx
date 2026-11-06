@@ -118,20 +118,17 @@ const RestaurantMarketing = () => (
         <InlineCTA context="restaurant" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Food sells itself visually</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">A great food photo is usually among the best-performing content on Instagram. We turn your dishes into scroll-stopping ads.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Food sells itself visually</p>
+            <p className="relative z-10 text-sm text-muted-foreground">A great food photo is usually among the best-performing content on Instagram. We turn your dishes into scroll-stopping ads.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Hyper-local reach</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">People don't drive 30 minutes for dinner. We target hungry people within 5–15 km of your restaurant, the distance most diners will travel.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Hyper-local reach</p>
+            <p className="relative z-10 text-sm text-muted-foreground">People don't drive 30 minutes for dinner. We target hungry people within 5–15 km of your restaurant, the distance most diners will travel.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. 90-day guarantee: if we miss the target we agree on, we keep working at no fee for a further 30 days.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">No contract, no risk</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Month-to-month. 90-day guarantee: if we miss the target we agree on, we keep working at no fee for a further 30 days.</p>
           </div>
         </div>
 
@@ -148,11 +145,10 @@ const RestaurantMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>

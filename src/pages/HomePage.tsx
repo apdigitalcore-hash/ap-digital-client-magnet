@@ -300,25 +300,22 @@ const HomePage = () => {
             </p>
           </div>
 
-          {/* Same dark-wash reveal as the industry tiles. */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {differentiators.map((item) => (
               <div
                 key={item.title}
-                className="group reveal-card relative overflow-hidden rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8"
+                className="group relative overflow-hidden rounded-3xl bg-white elev-2 hover:elev-3 hover:-translate-y-1 transition-all duration-300 p-6 sm:p-8"
               >
-                <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-
-                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl mb-5 bg-[#EDEFF2] reveal-chip">
+                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-2xl mb-5 bg-[#EDEFF2]">
                   <item.icon
-                    className="w-5 h-5 text-foreground reveal-ink"
+                    className="w-5 h-5 text-foreground"
                     strokeWidth={1.5}
                   />
                 </span>
-                <h3 className="relative z-10 font-serif text-lg sm:text-xl font-medium mb-2 leading-tight text-foreground reveal-ink">
+                <h3 className="relative z-10 font-serif text-lg sm:text-xl font-medium mb-2 leading-tight text-foreground">
                   {item.title}
                 </h3>
-                <p className="relative z-10 text-sm leading-relaxed text-muted-foreground reveal-body">
+                <p className="relative z-10 text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>
@@ -389,16 +386,15 @@ const HomePage = () => {
                   to={href}
                   className="group relative flex items-center justify-between gap-4 overflow-hidden rounded-2xl bg-white elev-1 hover:elev-2 px-6 py-5 transition-all duration-300"
                 >
-                  <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
                   <span className="relative z-10">
-                    <span className="block font-serif text-lg font-medium text-foreground reveal-ink sm:text-xl">
+                    <span className="block font-serif text-lg font-medium text-foreground sm:text-xl">
                       {city}
                     </span>
-                    <span className="mt-0.5 block text-xs text-muted-foreground reveal-ink/55">
+                    <span className="mt-0.5 block text-xs text-muted-foreground /55">
                       {sub}
                     </span>
                   </span>
-                  <span className="relative z-10 text-[10px] font-semibold tracking-[0.18em] text-foreground/25 reveal-ink/40">
+                  <span className="relative z-10 text-[10px] font-semibold tracking-[0.18em] text-foreground/25 /40">
                     {pop}
                   </span>
                 </Link>

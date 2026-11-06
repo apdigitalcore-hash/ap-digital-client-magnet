@@ -147,20 +147,17 @@ const RooferMarketing = () => (
         <InlineCTA context="roofing company" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Highest job values in trades</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Average roof replacement: $8K–$25K. A single closed job can easily cover months of ad spend. No other trade has this ratio.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Highest job values in trades</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Average roof replacement: $8K–$25K. A single closed job can easily cover months of ad spend. No other trade has this ratio.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Storm-response campaigns</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">When windstorms hit Metro Vancouver, we activate pre-built campaigns within 24 hours. Storm events create a sharp spike in search volume, and the buyers are urgent.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Storm-response campaigns</p>
+            <p className="relative z-10 text-sm text-muted-foreground">When windstorms hit Metro Vancouver, we activate pre-built campaigns within 24 hours. Storm events create a sharp spike in search volume, and the buyers are urgent.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">No contracts. If we miss the lead target we agree on in 90 days, we keep working at no fee for a further 30 days. Month-to-month, always.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
+            <p className="relative z-10 text-sm text-muted-foreground">No contracts. If we miss the lead target we agree on in 90 days, we keep working at no fee for a further 30 days. Month-to-month, always.</p>
           </div>
         </div>
 
@@ -177,11 +174,10 @@ const RooferMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>
@@ -331,23 +327,23 @@ const RooferMarketing = () => (
           <div className="grid sm:grid-cols-2 gap-4">
             <Link to="/contractor-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">General Contractor Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Renovation and build leads for BC contractors.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Renovation and build leads for BC contractors.</p>
             </Link>
             <Link to="/trades-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Trades & Contractor Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
             </Link>
             <Link to="/plumber-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Plumber Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads & lead gen for plumbing companies in BC.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Google Ads & lead gen for plumbing companies in BC.</p>
             </Link>
             <Link to="/electrician-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Electrician Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Lead generation for BC electricians.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Lead generation for BC electricians.</p>
             </Link>
             <Link to="/hvac-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">HVAC Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Lead generation for HVAC companies in Metro Vancouver.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Lead generation for HVAC companies in Metro Vancouver.</p>
             </Link>
           </div>
         </div>

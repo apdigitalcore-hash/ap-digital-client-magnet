@@ -121,20 +121,17 @@ const CarDetailingMarketing = () => (
         <InlineCTA context="detailing business" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Your before-and-afters are the ad</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Few services show their result in a single photo. A swirled bonnet next to a corrected one does more selling than any headline we could write.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Your before-and-afters are the ad</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Few services show their result in a single photo. A swirled bonnet next to a corrected one does more selling than any headline we could write.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Mobile or shop, built differently</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">A mobile detailer sells convenience across a service area. A shop sells a place worth driving to. The targeting, copy and Google profile follow from that.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Mobile or shop, built differently</p>
+            <p className="relative z-10 text-sm text-muted-foreground">A mobile detailer sells convenience across a service area. A shop sells a place worth driving to. The targeting, copy and Google profile follow from that.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">No contract, 90-day guarantee</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Month-to-month. If we miss the lead target we agree on at kickoff by month 3, we keep working at no fee for a further 30 days.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">No contract, 90-day guarantee</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Month-to-month. If we miss the lead target we agree on at kickoff by month 3, we keep working at no fee for a further 30 days.</p>
           </div>
         </div>
 
@@ -151,11 +148,10 @@ const CarDetailingMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">How We Work</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>
@@ -293,19 +289,19 @@ const CarDetailingMarketing = () => (
           <div className="grid sm:grid-cols-2 gap-4">
             <Link to="/services/paid-ads" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Google &amp; Meta Ads</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">How we run paid ads for local service businesses.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">How we run paid ads for local service businesses.</p>
             </Link>
             <Link to="/services/social-media" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Social Media Management</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Instagram and Facebook managed between campaigns.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Instagram and Facebook managed between campaigns.</p>
             </Link>
             <Link to="/salon-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Salon Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Before-and-after led Meta Ads for Vancouver salons.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Before-and-after led Meta Ads for Vancouver salons.</p>
             </Link>
             <Link to="/pricing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Pricing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Management fees, ad spend and what is included.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Management fees, ad spend and what is included.</p>
             </Link>
           </div>
         </div>

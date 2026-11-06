@@ -139,20 +139,17 @@ const ContractorMarketing = () => (
         <InlineCTA context="contracting business" />
 
         <div className="grid sm:grid-cols-3 gap-4 mb-16">
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Highest job values in home services</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Kitchen renovations: $25K–$80K. Basement finishing: $30K–$60K. Laneway houses: $150K–$350K. One closed deal can return 100x+ your monthly ad spend.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Highest job values in home services</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Kitchen renovations: $25K–$80K. Basement finishing: $30K–$60K. Laneway houses: $150K–$350K. One closed deal can return 100x+ your monthly ad spend.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">Google + Meta: full funnel</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google captures homeowners searching now. Meta reaches homeowners dreaming and planning. Running both fills your estimate calendar with qualified projects.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">Google + Meta: full funnel</p>
+            <p className="relative z-10 text-sm text-muted-foreground">Google captures homeowners searching now. Meta reaches homeowners dreaming and planning. Running both fills your estimate calendar with qualified projects.</p>
           </div>
-          <div className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-            <p className="reveal-ink relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
-            <p className="reveal-body relative z-10 text-sm text-muted-foreground">No contracts. If we miss the lead target we agree on in 90 days, we keep working at no fee for a further 30 days. Month-to-month, always.</p>
+          <div className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-6">
+            <p className="relative z-10 font-semibold text-foreground mb-1">90-day guarantee</p>
+            <p className="relative z-10 text-sm text-muted-foreground">No contracts. If we miss the lead target we agree on in 90 days, we keep working at no fee for a further 30 days. Month-to-month, always.</p>
           </div>
         </div>
 
@@ -169,11 +166,10 @@ const ContractorMarketing = () => (
         <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">What Sets Us Apart</h2>
         <div className="grid sm:grid-cols-3 gap-6 mb-16">
           {results.map((r) => (
-            <div key={r.label} className="group reveal-card relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
-              <span aria-hidden="true" className="reveal-wash absolute inset-0 bg-[#0C0E11]" />
-              <r.icon className="reveal-ink relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
-              <div className="reveal-ink relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
-              <p className="reveal-body relative z-10 text-muted-foreground text-sm">{r.label}</p>
+            <div key={r.label} className="group relative overflow-hidden bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl transition-all duration-300 p-7 text-center">
+              <r.icon className="relative z-10 w-8 h-8 text-foreground mx-auto mb-3" />
+              <div className="relative z-10 font-serif text-3xl font-medium text-foreground mb-2">{r.stat}</div>
+              <p className="relative z-10 text-muted-foreground text-sm">{r.label}</p>
             </div>
           ))}
         </div>
@@ -304,23 +300,23 @@ const ContractorMarketing = () => (
           <div className="grid sm:grid-cols-2 gap-4">
             <Link to="/trades-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Trades & Contractor Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Our full trades marketing program for all contractor types.</p>
             </Link>
             <Link to="/plumber-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Plumber Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads & lead gen for plumbing companies in BC.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Google Ads & lead gen for plumbing companies in BC.</p>
             </Link>
             <Link to="/electrician-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Electrician Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Lead generation for BC electricians.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Lead generation for BC electricians.</p>
             </Link>
             <Link to="/roofer-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Roofer Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Google Ads for roofing companies in BC.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Google Ads for roofing companies in BC.</p>
             </Link>
             <Link to="/property-management-marketing" className="bg-white elev-2 hover:elev-3 hover:-translate-y-1 rounded-3xl p-6 transition-all duration-300">
               <p className="font-bold text-foreground">Property Management Marketing</p>
-              <p className="reveal-body relative z-10 text-sm text-muted-foreground">Property managers who hire GCs for turnovers and repairs.</p>
+              <p className="relative z-10 text-sm text-muted-foreground">Property managers who hire GCs for turnovers and repairs.</p>
             </Link>
           </div>
         </div>
