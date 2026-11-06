@@ -1,161 +1,201 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import SectionLabel from './SectionLabel';
 import { MARKS, type MarkKey } from './BrandMarks';
+import { CursorArt, ChatArt } from './ObjectArt';
 
+/**
+ * Two service cards, wide, with the title split across two lines — the name in
+ * full strength and the qualifier in a lighter tone — a LEARN MORE control, and
+ * a media panel bleeding off the inner edge.
+ *
+ * The card used to carry a title, a one-line description, a long details
+ * paragraph, a read-more link and a three-column bordered stat grid. The
+ * details paragraph is the service page's job, so the card keeps the line that
+ * says what the service is and the three facts a buyer actually weighs, set as
+ * one quiet row rather than a bordered table.
+ *
+ * The media panel holds the real platform marks. A generic 3D object would say
+ * less here than the Google and Meta logos do.
+ */
 const services: {
   id: string;
   title: string;
+  qualifier: string;
   href: string;
   description: string;
-  details: string;
+  Art: typeof CursorArt;
   platforms: MarkKey[];
-  stats: { value: string; label: string }[];
+  facts: string[];
+  tone: 'light' | 'dark';
 }[] = [
   {
     id: 'service-paid-ads',
     title: 'Paid Ads',
+    qualifier: 'Google & Meta',
     href: '/services/paid-ads',
-    description: 'Targeted campaigns on Google & Meta, measured on leads.',
-    details:
-      'We build, manage, and optimize ad campaigns across Google Ads and Meta (Facebook & Instagram) — audience research, creative testing, retargeting funnels, and weekly performance reporting.',
+    description:
+      'Audience research, creative testing and retargeting funnels, reported weekly on leads rather than impressions.',
+    Art: CursorArt,
     platforms: ['google', 'meta', 'facebook'],
-    stats: [
-      { value: '$759', label: 'Per month' },
-      { value: '14', label: 'Days to launch' },
-      { value: '0', label: 'Lock-in months' },
-    ],
+    facts: ['$759 / month', '14 days to launch', 'No lock-in'],
+    tone: 'light',
   },
   {
     id: 'service-social-media',
     title: 'Social Media',
+    qualifier: 'content & community',
     href: '/services/social-media',
-    description: 'Build authority with consistent, compelling content.',
-    details:
-      'Content calendars, captions, scheduling and community management on the two platforms that fit your business: usually Instagram and Facebook, or LinkedIn or TikTok.',
+    description:
+      'Content calendars, captions, scheduling and community management on the two platforms that fit your business.',
+    Art: ChatArt,
     platforms: ['instagram', 'facebook', 'tiktok', 'meta'],
-    stats: [
-      { value: '12', label: 'Posts / month' },
-      { value: '$849', label: 'Per month' },
-      { value: '2', label: 'Platforms' },
-    ],
+    facts: ['$849 / month', '12 posts / month', '2 platforms'],
+    tone: 'dark',
   },
 ];
 
-/* Dark tile carrying the platform marks — the logos are the point of interest,
-   so the tile stays plain and the chips supply the colour. */
-const PlatformTile = ({ platforms }: { platforms: MarkKey[] }) => (
-  <div className="relative mx-auto aspect-square w-full max-w-[240px] shrink-0 sm:mx-0 sm:w-[38%] sm:max-w-none">
+/* The drawing carries the panel; the platform chips sit beneath it, because a
+   logo says which platforms this is actually bought on and a drawing cannot. */
+const MediaPanel = ({
+  Art,
+  platforms,
+  tone,
+}: {
+  Art: typeof CursorArt;
+  platforms: MarkKey[];
+  tone: 'light' | 'dark';
+}) => {
+  const dark = tone === 'dark';
+  const line = dark ? 'hsl(0 0% 100% / 0.05)' : 'hsl(220 20% 10% / 0.045)';
+  return (
     <div
-      className="relative flex h-full w-full items-center justify-center overflow-hidden rounded-[2rem] p-5"
-      style={{
-        background:
-          'linear-gradient(160deg, #2E333A 0%, #1B1F25 30%, #101318 62%, #0A0C0F 100%)',
-        boxShadow:
-          '0 26px 60px -22px hsl(220 30% 8% / 0.5), inset 0 -14px 34px hsl(0 0% 0% / 0.5)',
-      }}
+      className={`relative flex shrink-0 flex-col items-center justify-center gap-5 overflow-hidden rounded-[1.5rem] px-6 py-8 sm:w-[42%] ${
+        dark ? 'bg-white/[0.06]' : 'bg-[#E8EBEF]'
+      }`}
     >
-      {/* Corner light source. */}
+      {/* Faint grid, so the panel reads as a surface rather than a flat swatch. */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
-          background:
-            'radial-gradient(58% 48% at 26% 10%, hsl(0 0% 100% / 0.20) 0%, transparent 68%)',
+          backgroundImage: `linear-gradient(${line} 1px, transparent 1px), linear-gradient(90deg, ${line} 1px, transparent 1px)`,
+          backgroundSize: '26px 26px',
         }}
       />
-      {/* Top rim light. */}
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-[10%] top-px h-px"
-        style={{
-          background:
-            'linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.45), transparent)',
-        }}
-      />
-
-      <div className="relative grid grid-cols-2 gap-3.5">
+      <Art tone={dark ? 'dark' : 'light'} className="relative h-28 w-28 sm:h-32 sm:w-32" />
+      <div className="relative flex items-center gap-2.5">
         {platforms.map((key) => {
           const { Mark, label } = MARKS[key];
           return (
             <span
               key={key}
               title={label}
-              className="flex h-[3.25rem] w-[3.25rem] items-center justify-center rounded-2xl bg-white shadow-[0_6px_16px_-6px_hsl(220_30%_5%/0.6)]"
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-[0_8px_18px_-10px_hsl(220_30%_5%/0.45)]"
             >
-              <Mark className="h-7 w-7" />
+              <Mark className="h-[1.15rem] w-[1.15rem]" />
             </span>
           );
         })}
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 const ServicesLight = () => (
-  <section id="services" className="bg-white py-24 md:py-32">
+  <section id="services" className="bg-[#EDEFF2] py-24 md:py-32">
     <div className="container-custom">
-      <div className="mb-16 text-center">
+      <div className="mb-14 text-center">
         <SectionLabel label="Services" />
         <h2 className="mt-6 font-serif text-4xl font-medium leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl">
           What We <span className="italic">Deliver</span>
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
-          Full-stack digital marketing to dominate your market.
-        </p>
       </div>
 
-      <div className="mx-auto mb-12 max-w-4xl space-y-6">
-        {services.map((service) => (
-          <div
-            key={service.title}
-            id={service.id}
-            className="elev-2 hover:elev-3 group scroll-mt-24 rounded-[2rem] bg-[#F4F6F8] p-4 transition-shadow duration-300 sm:p-5"
-          >
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-stretch sm:gap-7">
-              <PlatformTile platforms={service.platforms} />
+      <div className="mx-auto mb-12 grid max-w-5xl gap-6">
+        {services.map((service) => {
+          const dark = service.tone === 'dark';
+          return (
+            <article
+              key={service.id}
+              id={service.id}
+              className={`elev-2 scroll-mt-24 overflow-hidden rounded-[1.75rem] p-5 sm:p-6 ${
+                dark ? 'bg-[#0C0E11]' : 'bg-white'
+              }`}
+            >
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-stretch">
+                <div className="flex flex-1 flex-col justify-between gap-7 py-2 sm:py-4 sm:pl-4">
+                  <div>
+                    <h3 className="font-serif text-[1.9rem] font-medium leading-[1.15] sm:text-[2.35rem]">
+                      <span className={dark ? 'text-white' : 'text-foreground'}>
+                        {service.title}
+                      </span>
+                      <br />
+                      <span className={dark ? 'text-white/45' : 'text-foreground/40'}>
+                        {service.qualifier}
+                      </span>
+                    </h3>
+                    <p
+                      className={`mt-4 max-w-md text-sm leading-relaxed ${
+                        dark ? 'text-white/60' : 'text-muted-foreground'
+                      }`}
+                    >
+                      {service.description}
+                    </p>
+                  </div>
 
-              <div className="flex flex-1 flex-col justify-center py-2 pr-1 sm:py-4">
-                <h3 className="font-serif text-2xl font-medium text-foreground sm:text-[1.75rem]">
-                  {service.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {service.description}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/60">
-                  {service.details}
-                </p>
+                  <div>
+                    <Link
+                      to={service.href}
+                      className="group inline-flex items-center gap-3"
+                    >
+                      <span
+                        className={`flex h-9 w-9 items-center justify-center rounded-full transition-transform duration-200 group-hover:-translate-y-0.5 ${
+                          dark ? 'bg-white' : 'bg-foreground'
+                        }`}
+                      >
+                        <ArrowUpRight
+                          className={`h-4 w-4 ${dark ? 'text-[#0C0E11]' : 'text-background'}`}
+                          strokeWidth={2}
+                        />
+                      </span>
+                      <span
+                        className={`text-[11px] font-semibold uppercase tracking-[0.18em] ${
+                          dark ? 'text-white/70' : 'text-foreground/70'
+                        }`}
+                      >
+                        Learn more
+                      </span>
+                    </Link>
 
-                <Link
-                  to={service.href}
-                  className="mt-5 inline-flex w-fit items-center gap-2 text-sm font-semibold text-foreground underline-offset-4 hover:underline"
-                >
-                  Read more
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-foreground text-background transition-transform group-hover:translate-x-0.5">
-                    <ArrowRight className="h-3 w-3" />
-                  </span>
-                </Link>
-
-                <div className="mt-6 grid grid-cols-3 gap-4 border-t border-foreground/10 pt-5">
-                  {service.stats.map((s) => (
-                    <div key={s.label}>
-                      <p className="font-serif text-xl text-foreground sm:text-2xl">{s.value}</p>
-                      <p className="mt-0.5 text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                        {s.label}
-                      </p>
-                    </div>
-                  ))}
+                    <p
+                      className={`mt-5 text-xs ${dark ? 'text-white/40' : 'text-foreground/40'}`}
+                    >
+                      {service.facts.join('  ·  ')}
+                    </p>
+                  </div>
                 </div>
+
+                <MediaPanel
+                  Art={service.Art}
+                  platforms={service.platforms}
+                  tone={service.tone}
+                />
               </div>
-            </div>
-          </div>
-        ))}
+            </article>
+          );
+        })}
       </div>
 
       <p className="text-center text-sm text-muted-foreground">
         See exactly how we work —{' '}
-        <Link to="/case-studies" className="text-foreground underline underline-offset-4">our approach</Link> ·{' '}
-        <Link to="/blog" className="text-foreground underline underline-offset-4">read our blog</Link>
+        <Link to="/case-studies" className="text-foreground underline underline-offset-4">
+          our approach
+        </Link>{' '}
+        ·{' '}
+        <Link to="/blog" className="text-foreground underline underline-offset-4">
+          read our blog
+        </Link>
       </p>
     </div>
   </section>
