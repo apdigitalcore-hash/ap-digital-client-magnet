@@ -230,27 +230,13 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ─────────────────── THE ONE MOVE ─────────────────── */}
-      {/* This was "Today's Move / one insight every single day" over a card
-          that rotated by day-of-year. Nothing published daily, so the promise
-          was not true; it is now one permanent piece of advice in a banner. */}
+      {/* ─────────────────── FREE ADVICE ─────────────────── */}
+      {/* One statement, and the banner is the whole section. There used to be a
+          heading and subhead above it inside a grey panel, which meant two
+          headlines and three nested backgrounds for a single idea. */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container-custom">
-          {/* Grey panel holds the whole section, so the dark banner sits on grey
-              on white — three layers of depth instead of a panel floating alone. */}
-          <div className="mx-auto max-w-4xl rounded-[2.25rem] bg-[#EDEFF2] px-6 py-14 sm:px-12 sm:py-16">
-            <div className="text-center mb-12">
-              <SectionLabel label="Free Advice" />
-              <h2 className="mt-6 font-serif text-4xl sm:text-5xl font-medium leading-[1.05] tracking-tight text-foreground">
-                If you fix <span className="italic">one thing</span>
-              </h2>
-              <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground">
-                Fix this one. It costs nothing and it outperforms most of what
-                an agency will sell you.
-              </p>
-            </div>
-            <HeroMoveCard />
-          </div>
+          <HeroMoveCard />
         </div>
       </section>
 

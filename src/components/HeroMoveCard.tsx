@@ -9,77 +9,61 @@ const InstagramGlyph = ({ className = '' }: { className?: string }) => (
 );
 
 /**
- * This was a 30-item array that rotated by day-of-year, headed "Today's Move"
- * with a date and an N/89 streak counter. Nothing actually published daily, so
- * the date and counter implied a cadence that did not exist — and a visitor who
- * came back twice saw a different "insight" with no way to find the first one.
- * It is now one fixed piece of advice in a banner. The 21x figure is the Lead
- * Response Management study (Oldroyd et al., MIT/InsideSales), which is why it
- * is attributed on the page rather than stated as ours.
+ * This began as 30 pieces of advice rotating by day-of-year inside a card, under
+ * a section heading of its own. Between the heading, the subhead, the eyebrow,
+ * the headline, the body, the stat and the handle, one idea was carrying seven
+ * pieces of text and two competing headlines.
+ *
+ * It is now one statement. The banner is the whole section — there is no section
+ * heading above it any more, because the statement is the heading.
  */
-const ADVICE = {
-  label: 'The one that matters most',
-  headline: 'Most leads die in the first five minutes.',
-  body: 'Contacting an inbound lead within five minutes converts far better than waiting half an hour — the MIT lead-response study put it at roughly 21x. Nothing else on your marketing list moves the number that much for that little work. An SMS auto-reply the moment a form submits beats silence, even if all it says is "got it, calling now."',
-  statLabel: 'Respond within',
-  statValue: '5 min',
-};
-
 const HeroMoveCard = () => {
   return (
-    <div className="elev-3 relative overflow-hidden rounded-[1.5rem] bg-[#0C0E11] px-6 py-8 sm:px-10 sm:py-10">
-      {/* Overhead sheen so the black panel carries its own light. */}
+    <aside className="elev-3 relative overflow-hidden rounded-[2rem] bg-[#0C0E11] px-7 py-16 sm:px-16 sm:py-24">
+      {/* Overhead sheen so the black band carries its own light. */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(70% 60% at 50% -10%, hsl(0 0% 100% / 0.12) 0%, transparent 70%)',
+            'radial-gradient(60% 70% at 50% -5%, hsl(0 0% 100% / 0.11) 0%, transparent 72%)',
         }}
       />
 
-      <div className="relative grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-12">
-        <div>
-          <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
-            {ADVICE.label}
-          </span>
-          {/* The global h3 rule applies font-bold; at Playfair's weight that
-              reads as a slab on a dark panel, so this sets 400. */}
-          <h3 className="mt-4 font-serif text-[26px] font-normal leading-[1.25] tracking-normal text-white sm:text-[34px]">
-            {ADVICE.headline}
-          </h3>
-          <p className="mt-4 max-w-xl text-[13.5px] leading-relaxed text-white/70">
-            {ADVICE.body}
-          </p>
-        </div>
+      <div className="relative mx-auto max-w-3xl text-center">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.26em] text-white/45">
+          Free advice
+        </span>
 
-        {/* Stat rail — a vertical divider on desktop, a horizontal one on mobile. */}
-        <div className="flex items-end justify-between gap-6 border-t border-white/10 pt-6 md:flex-col md:items-start md:justify-center md:gap-8 md:border-l md:border-t-0 md:pl-12 md:pt-0">
-          <div>
-            <p className="mb-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/55">
-              {ADVICE.statLabel}
-            </p>
-            <p className="font-serif text-[2.75rem] leading-none text-white">
-              {ADVICE.statValue}
-            </p>
-          </div>
-          <a
-            href={INSTAGRAM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Follow @theapdigital on Instagram"
-            className="group inline-flex items-center gap-2"
-          >
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-lg bg-white/10 transition-colors group-hover:bg-white/20">
-              <InstagramGlyph className="h-3.5 w-3.5 text-white" />
-            </span>
-            <span className="text-xs font-medium text-white/70 transition-colors group-hover:text-white">
-              @theapdigital
-            </span>
-          </a>
-        </div>
+        {/* The global heading rule applies font-bold; at Playfair's weight that
+            reads as a slab on a dark band, so this sets 400. */}
+        <p
+          className="mt-7 font-serif text-[27px] font-normal leading-[1.2] tracking-normal text-white sm:text-[44px]"
+          style={{ textWrap: 'balance' }}
+        >
+          No amount of advertising will fix an offer nobody wants.
+        </p>
+
+        <p className="mx-auto mt-7 max-w-lg text-[13.5px] leading-relaxed text-white/55">
+          Make it specific enough that a stranger can repeat it back to you.
+          Targeting, creative and budget only multiply whatever the offer already
+          is.
+        </p>
+
+        <a
+          href={INSTAGRAM_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Follow @theapdigital on Instagram"
+          className="group mt-10 inline-flex items-center gap-2"
+        >
+          <InstagramGlyph className="h-3.5 w-3.5 text-white/45 transition-colors group-hover:text-white" />
+          <span className="text-[11px] font-medium tracking-wide text-white/45 transition-colors group-hover:text-white">
+            @theapdigital
+          </span>
+        </a>
       </div>
-    </div>
+    </aside>
   );
 };
 
