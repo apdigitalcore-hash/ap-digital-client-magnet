@@ -23,9 +23,13 @@ export const LEGACY_BLOG_REDIRECTS: Record<string, string> = {
   'facebook-ads-vancouver-small-business': 'best-ads-platform-for-small-business-canada',
   'facebook-ads-vs-google-ads': 'best-ads-platform-for-small-business-canada',
   'google-ads-vs-meta-ads-local-business': 'best-ads-platform-for-small-business-canada',
-  'real-estate-social-media-tips': 'real-estate-agent-social-media-tips',
+  // Was pointed at real-estate-agent-social-media-tips, which is itself a
+  // redirect. A chain costs a crawl hop and Google consolidates it slower, so
+  // both now point straight at the live post.
+  'real-estate-social-media-tips': 'real-estate-agent-marketing-vancouver-bc',
   'how-much-should-salon-spend-on-marketing': 'salon-marketing-vancouver-bc',
-  'average-cost-per-lead-plumbers-canada': 'plumber-marketing-metro-vancouver',
+  // Same flattening: plumber-marketing-metro-vancouver is itself a redirect.
+  'average-cost-per-lead-plumbers-canada': '/plumber-marketing',
   'how-to-calculate-marketing-budget-service-business': 'digital-marketing-budget-small-business-canada',
 
   // Pruned 2026-09-24: thin posts that duplicated a stronger page. Targets
