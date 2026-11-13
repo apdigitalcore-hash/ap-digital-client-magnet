@@ -1,17 +1,20 @@
 import { useEffect } from 'react';
 
+import { trackBookingLead } from '@/lib/booking';
+
 /**
  * Calendly inline embed.
  *
- * This file used to fire Lead on the widget's `calendly.event_scheduled`
- * message. The event type also has a confirmation redirect to /thank-you,
- * which fires its own Lead, so every booking was counted twice — confirmed in
- * the pixel data on 29 Sep and 4 Oct, one booking and two Leads each day.
+ * This fires the booking Lead from the widget's `calendly.event_scheduled`
+ * message. /thank-you fires the same conversion for bookings that arrive via
+ * the event type's confirmation redirect; `trackBookingLead` dedupes across
+ * both, so running the pair cannot double-count the way it did on 29 Sep and
+ * 4 Oct.
  *
- * /thank-you is now the only place a booking Lead fires. It has the better
- * coverage of the two: the redirect runs for bookings made through a direct
- * calendly.com link as well as through this embed, which the message listener
- * never saw.
+ * The listener is load-bearing on the current plan. The confirmation redirect
+ * is a paid Calendly feature and the account is on the free tier, so /thank-you
+ * is unreachable after a booking and this message is the only evidence a call
+ * was ever booked. See src/lib/booking.ts.
  */
 
 const WIDGET_JS = 'https://assets.calendly.com/assets/external/widget.js';
@@ -91,10 +94,29 @@ function initNewInlineWidgets() {
   }
 }
 
+const CALENDLY_ORIGIN = 'https://calendly.com';
+
+/**
+ * Calendly posts its widget events up to the parent frame. The origin check is
+ * not optional: without it any page that can reach this window could post a
+ * fake booking and manufacture a conversion.
+ */
+function isEventScheduled(e: MessageEvent): boolean {
+  if (e.origin !== CALENDLY_ORIGIN) return false;
+  const data = e.data as { event?: unknown } | null;
+  return !!data && typeof data === 'object' && data.event === 'calendly.event_scheduled';
+}
+
 /** Loads the Calendly widget assets and mounts any inline embed on the page. */
 export function useCalendlyEmbed() {
   useEffect(() => {
     loadCalendlyAssets();
     initNewInlineWidgets();
+
+    const onMessage = (e: MessageEvent) => {
+      if (isEventScheduled(e)) trackBookingLead('embed');
+    };
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
   }, []);
 }

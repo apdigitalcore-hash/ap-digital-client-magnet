@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { CalendarCheck, ArrowRight } from 'lucide-react';
 
-import { track } from '@/lib/pixel';
+import { trackBookingLead } from '@/lib/booking';
 import { CONTACT } from '@/lib/companyFacts';
 
 const TITLE = "You're booked in | AP Digital";
@@ -13,22 +13,19 @@ const TITLE = "You're booked in | AP Digital";
  * ("Redirect to an external site") points here, so a booking completes on our
  * own page rather than on calendly.com where the pixel cannot see it.
  *
- * This is now the only place a booking Lead fires. lib/calendly.ts used to fire
- * a second one from the embed's `calendly.event_scheduled` message, which
- * double-counted every booking made through the widget — one booking and two
- * Leads on both 29 Sep and 4 Oct. That listener is gone; this page covers the
- * embed and direct calendly.com links alike.
+ * That redirect is a paid Calendly feature and the account is on the free
+ * plan, so in practice this page is currently unreachable after a booking and
+ * lib/calendly.ts does the counting instead. Both call `trackBookingLead`,
+ * which fires once per session, so this page costs nothing while the redirect
+ * is off and needs no change on the day it is switched on.
  *
  * CTA clicks fire Contact instead, so a click that never becomes a booking is
  * never counted as a conversion. ADvice fires its own AdviceReportViewed and
  * AdviceSignup custom events, so free-tool signups stay out of this bucket.
- *
- * Because the Lead depends on the redirect, it is load-bearing configuration:
- * if the redirect is ever removed in Calendly, bookings stop being counted.
  */
 const ThankYou = () => {
   useEffect(() => {
-    track('Lead', { content_name: 'free-pilot' });
+    trackBookingLead('redirect');
   }, []);
 
   return (
