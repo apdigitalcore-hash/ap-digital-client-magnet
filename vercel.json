@@ -43,12 +43,12 @@
     },
     {
       "source": "/blog/best-digital-marketing-agency-vancouver",
-      "destination": "/blog/digital-marketing-agency-vancouver-bc",
+      "destination": "/how-to-choose-a-marketing-agency-vancouver",
       "permanent": true
     },
     {
       "source": "/blog/how-to-choose-marketing-agency-bc",
-      "destination": "/blog/digital-marketing-agency-vancouver-bc",
+      "destination": "/how-to-choose-a-marketing-agency-vancouver",
       "permanent": true
     },
     {
@@ -210,6 +210,11 @@
       "source": "/blog/how-to-get-more-salon-clients-vancouver",
       "destination": "/blog/salon-marketing-vancouver-bc",
       "permanent": true
+    },
+    {
+      "source": "/blog/digital-marketing-agency-vancouver-bc",
+      "destination": "/how-to-choose-a-marketing-agency-vancouver",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -324,10 +329,6 @@
     {
       "source": "/blog/best-ads-for-trades-businesses-canada",
       "destination": "/blog/best-ads-for-trades-businesses-canada.html"
-    },
-    {
-      "source": "/blog/digital-marketing-agency-vancouver-bc",
-      "destination": "/blog/digital-marketing-agency-vancouver-bc.html"
     },
     {
       "source": "/blog/salon-marketing-vancouver-bc",

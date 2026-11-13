@@ -21,7 +21,7 @@ import WhileYouScroll from '@/components/WhileYouScroll';
 import { organizationSchema, getWebSiteSchema, getWebPageSchema, getBreadcrumbSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Vancouver Performance Marketing Agency | AP Digital';
+const TITLE = 'Digital Marketing Agency Vancouver | AP Digital';
 const DESC = 'Vancouver marketing agency for realtors, salons, coaches & local service businesses. Meta & Google Ads from $759/month. Month-to-month, 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
@@ -138,13 +138,12 @@ const HomePage = () => {
       <section className="relative isolate overflow-hidden bg-primary text-primary-foreground lg:flex lg:min-h-[720px] lg:flex-col lg:h-[100svh] lg:max-h-[920px]">
         <div className="relative z-10 w-full container-custom pt-28 pb-8 sm:pt-36 lg:flex lg:flex-1 lg:items-center lg:pt-24 lg:pb-12">
           <div className="max-w-[640px] lg:-translate-y-2">
-            <p className="mb-4 text-[10px] font-medium uppercase tracking-[0.3em] text-primary-foreground/75 sm:mb-5 lg:text-[11px]">
-              Vancouver Digital Marketing
-            </p>
-
+            {/* The eyebrow used to read "Vancouver Digital Marketing", which was
+                a near-repeat of the h1 once the h1 stopped saying "Performance".
+                One idea does not need saying twice, so it is gone. */}
             <h1 className="mb-5 font-serif text-[2.75rem] font-normal leading-[0.98] tracking-normal sm:text-6xl lg:max-w-[620px] lg:text-[4.25rem] xl:text-[4.75rem]">
               Vancouver{' '}
-              <span className="italic">Performance</span>{' '}
+              <span className="italic">Digital</span>{' '}
               <span className="sm:whitespace-nowrap">Marketing Agency</span>
             </h1>
 

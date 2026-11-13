@@ -15,8 +15,8 @@
  */
 export const LEGACY_BLOG_REDIRECTS: Record<string, string> = {
   'social-media-marketing-cost-canada': 'how-much-does-social-media-marketing-cost-canada',
-  'best-digital-marketing-agency-vancouver': 'digital-marketing-agency-vancouver-bc',
-  'how-to-choose-marketing-agency-bc': 'digital-marketing-agency-vancouver-bc',
+  'best-digital-marketing-agency-vancouver': '/how-to-choose-a-marketing-agency-vancouver',
+  'how-to-choose-marketing-agency-bc': '/how-to-choose-a-marketing-agency-vancouver',
   'how-to-market-a-trades-business-online': 'trades-marketing-vancouver-bc',
   'trades-digital-marketing-guide': 'trades-marketing-vancouver-bc',
   'how-to-get-more-salon-clients': 'salon-marketing-vancouver-bc',
@@ -31,6 +31,13 @@ export const LEGACY_BLOG_REDIRECTS: Record<string, string> = {
   // Same flattening: plumber-marketing-metro-vancouver is itself a redirect.
   'average-cost-per-lead-plumbers-canada': '/plumber-marketing',
   'how-to-calculate-marketing-budget-service-business': 'digital-marketing-budget-small-business-canada',
+
+  // Retired 2026-11-12: an 878-word "how to choose an agency" post that
+  // carried a commercial metaTitle ("Digital Marketing Agency Vancouver BC"),
+  // so it competed with the homepage for the money term while duplicating
+  // the hiring guide, which is 2.4x longer and had 14 inbound links to its
+  // zero. Folded into the guide.
+  'digital-marketing-agency-vancouver-bc': '/how-to-choose-a-marketing-agency-vancouver',
 
   // Pruned 2026-09-24: thin posts that duplicated a stronger page. Targets
   // starting with "/" are service or city pages rather than other posts.
