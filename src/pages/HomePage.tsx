@@ -138,12 +138,21 @@ const HomePage = () => {
       <section className="relative isolate overflow-hidden bg-primary text-primary-foreground lg:flex lg:min-h-[720px] lg:flex-col lg:h-[100svh] lg:max-h-[920px]">
         <div className="relative z-10 w-full container-custom pt-28 pb-8 sm:pt-36 lg:flex lg:flex-1 lg:items-center lg:pt-24 lg:pb-12">
           <div className="max-w-[640px] lg:-translate-y-2">
-            {/* The eyebrow used to read "Vancouver Digital Marketing", which was
-                a near-repeat of the h1 once the h1 stopped saying "Performance".
-                One idea does not need saying twice, so it is gone. */}
+            {/* Title and h1 deliberately disagree, and the split is the point.
+                The title is the SERP listing, so it carries the phrase people
+                actually type: "digital marketing agency vancouver" draws 1,430
+                impressions a quarter against nothing measurable for the
+                performance wording. The h1 is what a visitor reads on arrival,
+                so it keeps "Performance" — it says in one word why this is not
+                the eight agencies they just scrolled past, and it holds the
+                position 2 ranking for "performance marketing agency vancouver"
+                that the phrase earns on a far thinner SERP.
+
+                The eyebrow above this used to read "Vancouver Digital
+                Marketing", which restated the headline. One idea, said once. */}
             <h1 className="mb-5 font-serif text-[2.75rem] font-normal leading-[0.98] tracking-normal sm:text-6xl lg:max-w-[620px] lg:text-[4.25rem] xl:text-[4.75rem]">
               Vancouver{' '}
-              <span className="italic">Digital</span>{' '}
+              <span className="italic">Performance</span>{' '}
               <span className="sm:whitespace-nowrap">Marketing Agency</span>
             </h1>
 
