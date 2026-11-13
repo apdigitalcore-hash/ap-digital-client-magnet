@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
+import { trackGa4 } from '@/lib/pixel';
 
 // Allowed niche values for validation
 const ALLOWED_NICHES = ['salon', 'real-estate', 'trades', 'coaching', 'other'] as const;
@@ -196,6 +197,15 @@ const ContactForm = () => {
       a2: validatedData.phone || '',
       a3: nicheLabels[validatedData.niche] || validatedData.niche,
     });
+
+    // GA4 records form_start automatically, and a booking fires generate_lead,
+    // but nothing marked the step between them — so a form filled in and then
+    // abandoned at Calendly looked identical to a form never finished. This
+    // names the handoff, which is what separates the two drop-offs.
+    //
+    // GA4 only, via trackGa4: the enquiry is not a booking yet, and sending a
+    // Meta Lead here would count an intent as a conversion.
+    trackGa4('contact_form_submit', { niche: validatedData.niche });
 
     // Route through /book rather than calendly.com directly. The Calendly embed
     // there posts calendly.event_scheduled back to us, which is what fires the
