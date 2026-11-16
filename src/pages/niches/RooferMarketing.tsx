@@ -11,8 +11,14 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Roofing SEO & Roofer Marketing Vancouver | AP Digital';
-const DESC = 'Roofing SEO, Google Ads & Local Services Ads for Metro Vancouver roofers. Seasonal, storm-ready campaigns. Month-to-month, 90-day guarantee.';
+// The one national term the site holds page one for: "roofer marketing",
+// position 8.2, 152 impressions, zero clicks. Its top ten queries carry no
+// city at all and 2,136 of 2,151 impressions are Canadian, so a roofer in
+// Calgary is reading this listing and seeing another city's name. The other
+// niche pages keep their geo — they rank page one on the Vancouver variants
+// and would be trading something that works for something that does not.
+const TITLE = 'Roofer Marketing & Roofing SEO | AP Digital';
+const DESC = 'Roofing SEO, Google Ads and Local Services Ads for roofing companies across Canada. Seasonal, storm-ready campaigns. Month-to-month, 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/roofer-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
