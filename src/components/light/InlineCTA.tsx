@@ -27,15 +27,19 @@ const InlineCTA = ({ context }: { context?: string }) => (
         </p>
       </div>
       <div className="flex shrink-0 flex-wrap gap-3">
-        <a
-          href={CONTACT.calendly}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* /book, not calendly.com. This band is the most prominent call to
+            action on every niche and city page, and it used to hand the visitor
+            straight to Calendly — off the site, and past the embed on /book
+            whose event_scheduled message is the only thing that fires the Lead
+            event on the free plan. Every booking that started here was
+            invisible to both GA4 and the Meta pixel. */}
+        <Link
+          to="/book"
           className="inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors hover:bg-foreground/85"
         >
           Book a 20-min call
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
-        </a>
+        </Link>
         <a
           href={CONTACT.phoneHref}
           className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"

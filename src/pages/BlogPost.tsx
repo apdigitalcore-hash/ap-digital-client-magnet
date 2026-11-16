@@ -13,6 +13,7 @@ import { CalendarDays, Clock, ArrowLeft } from 'lucide-react';
 import { getArticleSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 import { lazy, Suspense } from 'react';
+import InlineCTA from '@/components/light/InlineCTA';
 
 const SocialMediaBudgetCalculator = lazy(() => import('@/components/SocialMediaBudgetCalculator'));
 
@@ -105,6 +106,16 @@ const BlogPost = () => {
 
   const renderContent = (content: string) => {
     const sections = content.split(/^## /m);
+    // One conversion point inside the article, not only after it.
+    //
+    // The cost guide runs 3,926 words and is 45% of the site's search traffic,
+    // and its single booking link sat at the very end — below eight links to
+    // other posts, the service chips, and then three more posts. A reader who
+    // came to find out what social media costs was offered ten more articles
+    // before a single chance to act. This places the same band the niche pages
+    // use a third of the way down, where someone still reading has shown
+    // enough intent to be worth asking.
+    const ctaAfter = sections.length >= 6 ? Math.floor(sections.length / 3) : -1;
     return sections.map((section, i) => {
       if (i === 0) {
         return section.split('\n\n').map((p, j) => renderBlock(p, j));
@@ -114,6 +125,7 @@ const BlogPost = () => {
         <div key={i}>
           <h2 className="font-display text-2xl font-bold text-foreground mt-10 mb-4">{heading.trim()}</h2>
           {rest.map((p, j) => renderBlock(p, j))}
+          {i === ctaAfter && <InlineCTA />}
         </div>
       );
     });
