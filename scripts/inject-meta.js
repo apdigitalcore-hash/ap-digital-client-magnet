@@ -18,10 +18,10 @@ const founderSchema = {
   "description": "Arjun Sharma is the founder of AP Digital, a performance marketing agency in Vancouver, BC. He personally manages every client account, specializing in Google Ads, Meta Ads, and social media marketing for service businesses across British Columbia.",
   "url": `${BASE_URL}/about`,
   "worksFor": { "@id": `${BASE_URL}/#organization` },
-  "knowsAbout": ["Google Ads", "Meta Ads", "Facebook Advertising", "Instagram Marketing", "Social Media Marketing", "Lead Generation", "Performance Marketing", "Local SEO"]
-  // No sameAs here on purpose — see the matching note in structuredData.ts.
-  // It listed the company's own profiles, which tells a machine the person and
-  // the company are one entity. "worksFor" above already states the link.
+  "knowsAbout": ["Google Ads", "Meta Ads", "Facebook Advertising", "Instagram Marketing", "Social Media Marketing", "Lead Generation", "Performance Marketing", "Local SEO"],
+  // See the matching note in structuredData.ts: Arjun's own profile, not the
+  // company's.
+  "sameAs": ["https://www.linkedin.com/in/arjun-sharma-9b2520395"]
 };
 
 const websiteSchema = {

@@ -23,11 +23,12 @@ export const founderSchema = {
     "Local SEO",
     "Performance Marketing"
   ],
-  // No sameAs here on purpose. It used to list the company LinkedIn and
-  // Instagram, which tells a machine that Arjun Sharma the person and AP
-  // DIGITAL the company are the same entity — the opposite of what sameAs is
-  // for, and it blurs both. "worksFor" above already states the relationship.
-  // A personal profile URL belongs here if one exists; the company's does not.
+  // Arjun's own profile, not the company's. It used to list the AP Digital
+  // LinkedIn and Instagram, which tells a machine the founder and the agency
+  // are one entity; "worksFor" above already states the relationship.
+  "sameAs": [
+    "https://www.linkedin.com/in/arjun-sharma-9b2520395"
+  ]
 };
 
 // Body copy has always said "Metro Vancouver and the Fraser Valley" while this
