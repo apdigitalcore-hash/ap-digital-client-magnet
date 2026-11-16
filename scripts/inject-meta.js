@@ -18,8 +18,10 @@ const founderSchema = {
   "description": "Arjun Sharma is the founder of AP Digital, a performance marketing agency in Vancouver, BC. He personally manages every client account, specializing in Google Ads, Meta Ads, and social media marketing for service businesses across British Columbia.",
   "url": `${BASE_URL}/about`,
   "worksFor": { "@id": `${BASE_URL}/#organization` },
-  "knowsAbout": ["Google Ads", "Meta Ads", "Facebook Advertising", "Instagram Marketing", "Social Media Marketing", "Lead Generation", "Performance Marketing", "Local SEO"],
-  "sameAs": ["https://www.linkedin.com/company/theapdigital/", "https://www.instagram.com/theapdigital/"]
+  "knowsAbout": ["Google Ads", "Meta Ads", "Facebook Advertising", "Instagram Marketing", "Social Media Marketing", "Lead Generation", "Performance Marketing", "Local SEO"]
+  // No sameAs here on purpose — see the matching note in structuredData.ts.
+  // It listed the company's own profiles, which tells a machine the person and
+  // the company are one entity. "worksFor" above already states the link.
 };
 
 const websiteSchema = {
@@ -70,7 +72,59 @@ const orgSchema = {
   ],
   "sameAs": ["https://www.instagram.com/theapdigital/", "https://www.linkedin.com/company/theapdigital/", "https://maps.google.com/?cid=2620094312878162208"],
   "priceRange": "$$",
-  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
+  "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+  "currenciesAccepted": "CAD",
+  "paymentAccepted": "Credit Card, E-Transfer",
+  // These last two existed only in src/lib/structuredData.ts, so they shipped
+  // in the React bundle and never reached the served HTML. An answer engine
+  // that reads the page without running the app — which is most of them — saw
+  // a business with no stated expertise and no prices. The assertion below
+  // keeps them in step with the React copy.
+  "knowsAbout": [
+    "Google Ads Management",
+    "Meta Ads (Facebook & Instagram)",
+    "Social Media Marketing",
+    "Pay-Per-Click Advertising",
+    "Lead Generation for Service Businesses",
+    "Local Business Marketing",
+    "Performance Marketing"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Marketing Services",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Paid Ads Management",
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Paid Ads Management",
+            "description": "Google Ads and Meta Ads campaign management including strategy, creative testing, optimization, and weekly reporting."
+          },
+          "price": "759",
+          "priceCurrency": "CAD",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "759", "priceCurrency": "CAD", "unitText": "MONTH" }
+        }]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Social Media Management",
+        "itemListElement": [{
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Social Media Management",
+            "description": "Full social media management across 2 platforms including 12 custom posts per month, captions, scheduling, and community management."
+          },
+          "price": "849",
+          "priceCurrency": "CAD",
+          "priceSpecification": { "@type": "UnitPriceSpecification", "price": "849", "priceCurrency": "CAD", "unitText": "MONTH" }
+        }]
+      }
+    ]
+  }
 };
 
 function breadcrumb(items) {
@@ -141,7 +195,7 @@ const staticRoutes = [
     path: 'trades-marketing',
     title: 'Trades Marketing BC | Plumber, HVAC & Electrician Leads | AP Digital',
     description: 'AP Digital runs Google & Meta Ads for BC plumbers, electricians, HVAC companies & roofers. No contracts. Starts at $759/month.',
-    body: '<h1>Trades &amp; Contractor Marketing — Get More Leads in BC</h1><p>When a pipe bursts, people Google. We make sure they find you first — and that your phone keeps ringing year-round.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/roofer-marketing">Roofer Marketing</a></li><li><a href="/contractor-marketing">Contractor Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/blog/trades-marketing-vancouver-bc">Best ads for trades</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Trades &amp; Contractor Marketing — Get More Leads in BC</h1><p>When a pipe bursts, people Google. We make sure they find you first — and that your phone keeps ringing year-round.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/electrician-marketing">Electrician Marketing</a></li><li><a href="/hvac-marketing">HVAC Marketing</a></li><li><a href="/roofer-marketing">Roofer Marketing</a></li><li><a href="/contractor-marketing">Contractor Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/blog/trades-marketing-vancouver-bc">Best ads for trades</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/digital-marketing-near-me">Marketing agency near me</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Trades & Contractor Marketing', 'Lead generation for BC plumbers, electricians, HVAC, roofers & general contractors using Google Ads & Meta Ads.', '/trades-marketing'),
@@ -153,7 +207,7 @@ const staticRoutes = [
     path: 'salon-marketing',
     title: 'Salon Marketing Vancouver | Fill Your Chair Every Week | AP Digital',
     description: 'Get more salon clients with Meta Ads & Instagram content. AP Digital serves Vancouver salons. Month-to-month. No contracts.',
-    body: '<h1>Salon Marketing — Fill Your Chair Every Week</h1><p>AP Digital helps hair salons, barbershops, and beauty studios in Vancouver get more new client inquiries with Meta Ads, Instagram content, and Google Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/fitness-marketing">Fitness Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/car-detailing-marketing">Car Detailing Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/blog/salon-marketing-vancouver-bc">Salon marketing guide</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/case-studies">How we work</a></li></ul></nav>',
+    body: '<h1>Salon Marketing — Fill Your Chair Every Week</h1><p>AP Digital helps hair salons, barbershops, and beauty studios in Vancouver get more new client inquiries with Meta Ads, Instagram content, and Google Ads. Month-to-month. No contracts. 90-day results guarantee.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/fitness-marketing">Fitness Marketing</a></li><li><a href="/dental-marketing">Dental Marketing</a></li><li><a href="/car-detailing-marketing">Car Detailing Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/blog/salon-marketing-vancouver-bc">Salon marketing guide</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/digital-marketing-near-me">Marketing agency near me</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/case-studies">How we work</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Salon Marketing', 'Social media & paid ads for Vancouver salons. Get consistent bookings every week.', '/salon-marketing'),
@@ -163,7 +217,7 @@ const staticRoutes = [
   },
   {
     path: 'car-detailing-marketing',
-    title: 'Car Detailing Marketing Vancouver — More Bookings | AP Digital',
+    title: 'Car Detailing Marketing Vancouver | AP Digital',
     description: 'Google Ads & Meta Ads for mobile and shop-based auto detailers in Metro Vancouver. $759/month, month-to-month, 90-day results guarantee.',
     body: '<h1>Car Detailing Marketing in Metro Vancouver</h1><p>Ceramic coatings, paint correction, interior resets and mobile maintenance washes. AP Digital runs Google Ads and Meta Ads for mobile and shop-based auto detailing businesses across Metro Vancouver and the Fraser Valley, measured on booked appointments rather than clicks.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/blog/best-ads-platform-for-small-business-canada">Google Ads vs. Meta Ads</a></li><li><a href="/blog/how-to-get-more-google-reviews-canada">How to get more Google reviews</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
@@ -177,7 +231,7 @@ const staticRoutes = [
     path: 'real-estate-marketing',
     title: 'Real Estate Marketing BC | Buyer & Seller Leads | AP Digital',
     description: 'Real estate marketing with Meta Ads & Google Ads for BC realtors. Serving Vancouver, Surrey & Burnaby. Month-to-month.',
-    body: '<h1>Real Estate Marketing — Consistent Buyer &amp; Seller Leads</h1><p>AP Digital generates qualified buyer and seller leads for BC realtors using Meta Ads and Google Ads. Month-to-month. No lock-in contracts.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/property-management-marketing">Property Management Marketing</a></li><li><a href="/law-firm-marketing">Law Firm Marketing</a></li><li><a href="/coaching-marketing">Coaching Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/blog/real-estate-agent-marketing-vancouver-bc">Realtor marketing guide</a></li><li><a href="/blog/best-crm-small-business-canada">Best CRM for small businesses</a></li><li><a href="/case-studies">How we work</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Real Estate Marketing — Consistent Buyer &amp; Seller Leads</h1><p>AP Digital generates qualified buyer and seller leads for BC realtors using Meta Ads and Google Ads. Month-to-month. No lock-in contracts.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/property-management-marketing">Property Management Marketing</a></li><li><a href="/law-firm-marketing">Law Firm Marketing</a></li><li><a href="/coaching-marketing">Coaching Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/blog/real-estate-agent-marketing-vancouver-bc">Realtor marketing guide</a></li><li><a href="/blog/best-crm-small-business-canada">Best CRM for small businesses</a></li><li><a href="/case-studies">How we work</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/marketing-benchmarks">Marketing benchmarks</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Real Estate Marketing', 'Buyer and seller lead generation, listing promotion and neighbourhood farming campaigns for BC realtors using Meta Ads & Google Ads.', '/real-estate-marketing'),
@@ -213,7 +267,7 @@ const staticRoutes = [
     path: 'dental-marketing',
     title: 'Dental Marketing Vancouver | Get More Patients | AP Digital',
     description: 'Get more dental patients with Google Ads & Meta Ads. AP Digital serves Vancouver dental clinics. Month-to-month. No contracts. 90-day guarantee.',
-    body: '<h1>Dental Marketing — Get More Patients Online</h1><p>We run Google Ads and Meta campaigns that put your clinic in front of people searching for a dentist in your area, and we track every enquiry through to a booked appointment.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/law-firm-marketing">Law Firm Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/dental-marketing">Dental marketing guide</a></li><li><a href="/blog/how-much-do-google-ads-cost-vancouver">What Google Ads cost</a></li><li><a href="/blog/best-crm-small-business-canada">Best CRM for small businesses</a></li><li><a href="/case-studies">How we work</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>Dental Marketing — Get More Patients Online</h1><p>We run Google Ads and Meta campaigns that put your clinic in front of people searching for a dentist in your area, and we track every enquiry through to a booked appointment.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/salon-marketing">Salon Marketing</a></li><li><a href="/law-firm-marketing">Law Firm Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/dental-marketing">Dental marketing guide</a></li><li><a href="/blog/how-much-do-google-ads-cost-vancouver">What Google Ads cost</a></li><li><a href="/blog/best-crm-small-business-canada">Best CRM for small businesses</a></li><li><a href="/case-studies">How we work</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/marketing-benchmarks">Marketing benchmarks</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('Dental Marketing', 'Google Ads, Google Business Profile and intake tracking for Metro Vancouver dental clinics, written to BCCOHP advertising standards.', '/dental-marketing'),
@@ -225,7 +279,7 @@ const staticRoutes = [
     path: 'hvac-marketing',
     title: 'HVAC Marketing Vancouver | More Service Calls | AP Digital',
     description: 'Get more HVAC service calls with Google Ads & Meta Ads. AP Digital serves Vancouver HVAC companies. Month-to-month. No contracts.',
-    body: '<h1>HVAC Marketing — More Service Calls, Less Downtime</h1><p>AP Digital helps HVAC companies in Metro Vancouver generate consistent service calls and installation leads through Google Ads and Meta Ads. Month-to-month. No contracts.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/roofer-marketing">Roofer Marketing</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/hvac-marketing">HVAC marketing guide</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/case-studies">How we work</a></li></ul></nav>',
+    body: '<h1>HVAC Marketing — More Service Calls, Less Downtime</h1><p>AP Digital helps HVAC companies in Metro Vancouver generate consistent service calls and installation leads through Google Ads and Meta Ads. Month-to-month. No contracts.</p><nav aria-label="Related"><ul><li><a href="/services/paid-ads">Google &amp; Meta Ads</a></li><li><a href="/services/social-media">Social Media Management</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/roofer-marketing">Roofer Marketing</a></li><li><a href="/trades-marketing">Trades Marketing</a></li><li><a href="/vancouver">Vancouver</a></li><li><a href="/surrey">Surrey</a></li><li><a href="/hvac-marketing">HVAC marketing guide</a></li><li><a href="/blog/how-much-does-social-media-marketing-cost-canada">What social media marketing costs</a></li><li><a href="/digital-marketing-near-me">Marketing agency near me</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/book">Book a Free Call</a></li><li><a href="/burnaby">Burnaby</a></li><li><a href="/richmond">Richmond</a></li><li><a href="/langley">Langley</a></li><li><a href="/coquitlam">Coquitlam</a></li><li><a href="/abbotsford">Abbotsford</a></li><li><a href="/case-studies">How we work</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       serviceSchema('HVAC Marketing', 'Lead generation for HVAC companies in Metro Vancouver.', '/hvac-marketing'),
@@ -408,7 +462,7 @@ const staticRoutes = [
     path: 'case-studies',
     title: 'Our Approach | How We Work | AP Digital',
     description: 'How AP Digital runs paid ads and social media for BC businesses: what we report, what we charge, and the terms. No published case studies yet.',
-    body: '<h1>How We Work</h1><p>We do not have published case studies yet. Rather than showing numbers we cannot attribute to a named client, here is exactly how the work runs: paid ads management at $759/month, social media management at $849/month, both month-to-month with no lock-in contract and 30 days notice to cancel. Ad spend is separate and paid directly to Google or Meta. We agree a lead-volume target before launch, and report leads, cost per lead, and what changed each week.</p><nav aria-label="Quick links"><ul><li><a href="/pricing">Pricing</a></li><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
+    body: '<h1>How We Work</h1><p>We do not have published case studies yet. Rather than showing numbers we cannot attribute to a named client, here is exactly how the work runs: paid ads management at $759/month, social media management at $849/month, both month-to-month with no lock-in contract and 30 days notice to cancel. Ad spend is separate and paid directly to Google or Meta. We agree a lead-volume target before launch, and report leads, cost per lead, and what changed each week.</p><nav aria-label="Quick links"><ul><li><a href="/marketing-benchmarks">Marketing benchmarks</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/services/paid-ads">Paid Ads</a></li><li><a href="/contact">Book a Free Call</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
       orgSchema, founderSchema,
       breadcrumb([{ name: 'Home', url: '/' }, { name: 'Our Approach', url: '/case-studies' }]),
@@ -474,7 +528,7 @@ const staticRoutes = [
   // ─── Founder bio ───
   {
     path: 'about/arjun-sharma',
-    title: 'Arjun Sharma | Founder & Lead Strategist | AP Digital Vancouver',
+    title: 'Arjun Sharma | Founder, AP Digital Vancouver',
     description: 'Arjun Sharma is the founder of AP Digital, a Vancouver performance marketing agency. He personally manages every client account, specializing in Google Ads and Meta Ads for trades contractors across BC.',
     body: '<h1>Arjun Sharma — Founder &amp; Lead Strategist</h1><p>Arjun Sharma founded AP Digital in Vancouver, BC to run Google Ads and Meta Ads for real estate agents, salons, coaches and other local service businesses. He personally manages every client account.</p><nav aria-label="Quick links"><ul><li><a href="/about">About AP Digital</a></li><li><a href="/case-studies">Our Approach</a></li><li><a href="/blog">Articles by Arjun</a></li><li><a href="/contact">Book a Free Call</a></li><li><a href="/plumber-marketing">Plumber Marketing</a></li><li><a href="/blog/how-much-do-google-ads-cost-vancouver">What Google Ads cost in Vancouver</a></li><li><a href="/blog/meta-ads-cost-contractors-bc">What Meta Ads cost contractors</a></li><li><a href="/blog/trades-marketing-vancouver-bc">Trades marketing in Vancouver</a></li><li><a href="/blog/vancouver-small-business-seo-guide">Vancouver small business SEO guide</a></li></ul></nav>',
     schema: { "@context": "https://schema.org", "@graph": [
@@ -726,6 +780,25 @@ function loadPostsFromSource() {
       `Missing here: [${missing}]. Only here: [${extra}].`);
   }
   console.log(`   areaServed: ${fromHere.length} areas, in step with structuredData.ts`);
+
+  // knowsAbout and the offer prices live in both files too, and drifted the
+  // same way areaServed did — present in the React copy, absent here.
+  // Anchor on organizationSchema itself: '#organization' also appears inside
+  // founderSchema's worksFor, which is a different knowsAbout list.
+  const kaBlock = ts.slice(ts.indexOf('"knowsAbout"', ts.indexOf('export const organizationSchema')));
+  const kaSource = [...kaBlock.slice(0, kaBlock.indexOf(']')).matchAll(/"([^"]+)"/g)]
+    .map((m) => m[1]).filter((n) => n !== 'knowsAbout');
+  const kaMissing = kaSource.filter((n) => !(orgSchema.knowsAbout || []).includes(n));
+  if (kaMissing.length) {
+    throw new Error(`inject-meta: knowsAbout drift — missing here: [${kaMissing}]`);
+  }
+  const priceSource = [...ts.matchAll(/"price":\s*"(\d+)"/g)].map((m) => m[1]);
+  const priceHere = JSON.stringify(orgSchema.hasOfferCatalog);
+  const priceMissing = [...new Set(priceSource)].filter((p) => !priceHere.includes(`"${p}"`));
+  if (priceMissing.length) {
+    throw new Error(`inject-meta: offer price drift — missing here: [${priceMissing}]`);
+  }
+  console.log(`   knowsAbout: ${kaSource.length} topics, offers: ${[...new Set(priceSource)].join('/')} CAD, in step`);
 }
 
 const sourcePosts = loadPostsFromSource();
@@ -1514,6 +1587,24 @@ for (const [from, to] of Object.entries(legacyRedirects)) {
   stubCount++;
 }
 console.log(`   Legacy URLs: ${stubCount} redirect stub(s) written`);
+
+// ── _redirects, generated rather than hand-kept ────────────────────────────
+// This file is the Netlify/Cloudflare-Pages form of the same map, and it is
+// the one mechanism here that would produce real 301s if the host ever reads
+// it. It used to live in public/ and was edited by hand, so it drifted: twelve
+// of the thirty-six entries, two of them still pointing at a redirect that had
+// already been flattened. Deriving it from legacyRedirects.ts removes the only
+// copy that could disagree.
+{
+  const lines = Object.entries(legacyRedirects)
+    .map(([from, to]) => `/blog/${from}  ${to.startsWith('/') ? to : `/blog/${to}`}  301!`)
+    .sort();
+  writeFileSync(resolve(distDir, '_redirects'),
+    '# Generated by scripts/inject-meta.js from src/lib/legacyRedirects.ts.\n' +
+    '# Do not edit by hand — edit the source map and rebuild.\n\n' +
+    lines.join('\n') + '\n');
+  console.log(`   _redirects: ${lines.length} rule(s) generated`);
+}
 
 console.log('\n✅ Meta injection complete.');
 console.log(`   ${staticRoutes.length} pages + ${blogPosts.length} blog posts generated.`);

@@ -9,7 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { getServiceSchema, getBreadcrumbSchema, getWebPageSchema, getFAQSchema, founderSchema } from '@/lib/structuredData';
 import JsonLd from '@/components/JsonLd';
 
-const TITLE = 'Social Media Management Rates Vancouver — $849/mo | AP Digital';
+const TITLE = 'Social Media Management Vancouver | AP Digital';
 const DESC = 'Social media management at $849/month — 2 platforms, 12 posts, captions and community management. See how flat-rate pricing compares to per-post and hourly agency rates. Month-to-month.';
 const CANONICAL = 'https://ap-digital.ca/services/social-media';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

@@ -367,9 +367,9 @@ const respond = (raw: string): Msg => {
     return {
       id,
       role: 'bot',
-      // No published case studies yet, so this answers honestly rather than
+      // We do not publish client results, so this answers honestly rather than
       // quoting figures we cannot show anyone.
-      text: "We don't have published case studies yet — when we do, they'll have real names and real numbers on them. What I can tell you is how we work: paid ads at $759/month, social media at $849/month, month-to-month with no lock-in, and a lead-volume target agreed before anything goes live.",
+      text: "We don't publish client results — clients hire us to grow their business, not to become our marketing material. What I can tell you is how we work: paid ads at $759/month, social media at $849/month, month-to-month with no lock-in, and a lead-volume target agreed before anything goes live.",
       cta: { label: 'See pricing', to: '/pricing' },
       suggestions: [
         { label: 'See pricing', intent: 'pricing' },

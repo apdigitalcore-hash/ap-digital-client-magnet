@@ -274,7 +274,7 @@ const HiringGuide = () => (
               'We work in four verticals only: salons, trades, real estate, and coaches. No generalism.',
               'Month-to-month. No contracts, no cancellation fees, no lock-in.',
               'Your ad account is yours. You own the data, the audiences, and the campaign history.',
-              'No published case studies yet — and we say so rather than quoting numbers you cannot verify.',
+              'We don\u2019t publish client results — and we say so rather than quoting numbers you cannot verify.',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-muted-foreground">
                 <CheckCircle className="w-4 h-4 text-teal shrink-0 mt-0.5" />

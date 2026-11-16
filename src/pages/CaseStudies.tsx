@@ -25,7 +25,7 @@ import { PAID_ADS, SOCIAL_MEDIA, TERMS, TIMELINES } from '@/lib/companyFacts';
 
 const TITLE = 'Our Approach | How We Work | AP Digital';
 const DESC =
-  'How AP Digital runs paid ads and social media for BC businesses: what we report, what we charge, and the terms. No published case studies yet.';
+  'How AP Digital runs paid ads and social media for BC businesses: what we report, what we charge, and the terms. We don\u2019t publish client results.';
 const CANONICAL = 'https://ap-digital.ca/case-studies';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
 
@@ -86,12 +86,13 @@ const CaseStudies = () => {
             Our approach
           </p>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground leading-[1.05] tracking-tight mb-6">
-            We don't have case studies up yet.
+            We don't publish client results.
           </h1>
           <p className="text-lg text-muted-foreground mb-4">
-            Most agency case-study pages are unverifiable. Ours would have been too, so it is not
-            here. When we publish results, they will carry a real client name, real numbers, and
-            that client's permission.
+            Most agency case-study pages are unverifiable, and ours would have been too. Clients
+            hire us to grow their business, not to become our marketing material, so their numbers
+            stay theirs. If that ever changes it will be with a real name and that client's
+            permission — not a logo wall and a percentage.
           </p>
           <p className="text-lg text-muted-foreground">
             Until then, the useful thing we can tell you is exactly how the work runs and what it

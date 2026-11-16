@@ -1396,7 +1396,7 @@ const deepPosts: BlogPost[] = [
   {
     slug: 'how-much-do-google-ads-cost-vancouver',
     title: 'How Much Do Google Ads Cost in Vancouver? 2026 Pricing Guide',
-    metaTitle: 'How Much Do Google Ads Cost in Vancouver? 2026 Guide | AP Digital',
+    metaTitle: 'How Much Do Google Ads Cost in Vancouver? | AP Digital',
     metaDescription: 'Google Ads costs in Vancouver by industry. Average CPC, monthly budgets, and what to expect for salons, trades, real estate, and coaches in BC.',
     excerpt: 'Vancouver Google Ads costs vary by industry. Here\'s what local businesses actually pay per click, per lead, and per month in 2026.',
     date: '2026-07-21',
@@ -1515,7 +1515,7 @@ Yes. Sending Google Ads traffic to your homepage is one of the most common and c
   {
     slug: 'tiktok-ads-small-business-bc',
     title: 'TikTok Ads for Small Businesses in BC: Is It Worth It in 2026?',
-    metaTitle: 'TikTok Ads for Small Businesses in BC | Worth It? | AP Digital',
+    metaTitle: 'TikTok Ads for Small Businesses in BC | AP Digital',
     metaDescription: 'Should your BC small business run TikTok Ads? Costs, targeting, which industries benefit, and how TikTok compares to Meta Ads for local businesses.',
     excerpt: 'TikTok Ads are getting cheaper while Meta costs rise. Here\'s whether TikTok makes sense for your BC service business in 2026.',
     date: '2026-07-21',
@@ -1610,7 +1610,7 @@ But for most BC service businesses, [Meta Ads](/services/paid-ads) remain the pr
   {
     slug: 'marketing-agency-tri-cities',
     title: 'Hiring a Marketing Agency in the Tri-Cities: What to Expect in 2026',
-    metaTitle: 'Marketing Agency Tri-Cities | Coquitlam, Port Moody | AP Digital',
+    metaTitle: 'Marketing Agency Tri-Cities | Coquitlam BC | AP Digital',
     metaDescription: 'Google & Meta Ads for Tri-Cities businesses, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.',
     excerpt: 'What a marketing agency costs in Coquitlam, Port Moody and Port Coquitlam, what you should get for it, and the questions worth asking before you sign.',
     date: '2026-08-24',
@@ -1716,7 +1716,7 @@ Tell us what you sell and what a good month looks like, and we will tell you whe
   {
     slug: 'tri-cities-google-ads-cost',
     title: 'What Does a Tri-Cities Business Pay for Google Ads in 2026?',
-    metaTitle: 'Google Ads Cost Tri-Cities | Coquitlam & Port Moody | AP Digital',
+    metaTitle: 'Google Ads Cost Tri-Cities | Coquitlam BC | AP Digital',
     metaDescription: 'Google Ads for Tri-Cities businesses, managed from $759/month. First leads typically within 2 weeks. Month-to-month. No contracts.',
     excerpt: 'Real Google Ads costs for Coquitlam, Port Moody and Port Coquitlam businesses — cost per click by industry, monthly budgets, and what management actually adds.',
     date: '2026-08-24',
@@ -1829,7 +1829,7 @@ Book a 20-minute call. Tell us what you sell and what a customer is worth, and w
   {
     slug: 'how-much-do-instagram-ads-cost-canada',
     title: 'How Much Do Instagram Ads Cost in Canada: 2026 Guide',
-    metaTitle: 'How Much Do Instagram Ads Cost in Canada? 2026 Guide | AP Digital',
+    metaTitle: 'How Much Do Instagram Ads Cost in Canada? | AP Digital',
     metaDescription: 'Instagram Ads costs in Canada: CPC, CPM, cost per lead by industry. Real 2026 pricing for small businesses with budget recommendations.',
     excerpt: 'What do Instagram Ads actually cost in Canada? Real 2026 data on CPC, CPM, and cost per lead — plus budget recommendations by industry.',
     date: '2026-08-11',
@@ -1960,7 +1960,7 @@ We serve businesses across [Vancouver](/vancouver), [Surrey](/surrey), [Burnaby]
   {
     slug: 'google-ads-cost-small-business-canada',
     title: 'How Much Do Google Ads Cost for Small Business in Canada: 2026 Guide',
-    metaTitle: 'How Much Do Google Ads Cost in Canada? 2026 Small Business Guide | AP Digital',
+    metaTitle: 'How Much Do Google Ads Cost in Canada? | AP Digital',
     metaDescription: 'Google Ads costs for Canadian small businesses: CPC by industry, monthly budgets, and cost per lead. Real 2026 data with budget recommendations.',
     excerpt: 'What do Google Ads actually cost for small businesses in Canada? Real 2026 CPC data by industry, budget tiers, and tips to reduce wasted spend.',
     date: '2026-08-11',
@@ -2093,7 +2093,7 @@ At AP DIGITAL, we help Canadian small businesses build profitable [Google Ads ca
   {
     slug: 'digital-marketing-budget-small-business-canada',
     title: 'Digital Marketing Budget for Small Business in Canada: 2026 Guide',
-    metaTitle: 'Digital Marketing Budget Guide for Canadian Small Business 2026 | AP Digital',
+    metaTitle: 'Small Business Marketing Budget Canada | AP Digital',
     metaDescription: 'How much should a Canadian small business spend on marketing? Budget breakdowns by revenue, channel allocation and industry benchmarks for 2026.',
     excerpt: 'How much should your small business spend on digital marketing in 2026? Budget breakdowns by revenue level, channel allocation, and industry.',
     date: '2026-08-11',
@@ -2491,7 +2491,7 @@ At AP DIGITAL, we help Canadian small businesses set up their marketing and sale
   {
     slug: 'how-to-get-more-google-reviews-canada',
     title: 'How to Get More Google Reviews for Your Business in Canada',
-    metaTitle: 'How to Get More Google Reviews in Canada (2026 Guide) | AP Digital',
+    metaTitle: 'How to Get More Google Reviews in Canada | AP Digital',
     metaDescription: '10 practical methods to get more Google reviews for your Canadian business. Includes review request templates, response scripts, and what Google allows.',
     excerpt: 'Want more Google reviews? 10 practical methods for Canadian businesses, plus response templates and the rules you need to know.',
     date: '2026-08-11',

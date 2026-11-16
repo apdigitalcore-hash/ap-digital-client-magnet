@@ -10,7 +10,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Car Detailing Marketing Vancouver — More Bookings | AP Digital';
+const TITLE = 'Car Detailing Marketing Vancouver | AP Digital';
 const DESC = 'Google Ads & Meta Ads for mobile and shop-based auto detailers in Metro Vancouver. $759/month, month-to-month, 90-day results guarantee.';
 const CANONICAL = 'https://ap-digital.ca/car-detailing-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';

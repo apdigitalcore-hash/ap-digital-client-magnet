@@ -16,6 +16,7 @@ const Footer = () => {
     { label: 'Our Approach', href: '/case-studies' },
     { label: 'Blog', href: '/blog' },
     { label: 'Pricing', href: '/pricing' },
+    { label: 'Benchmarks', href: '/marketing-benchmarks' },
     { label: 'Contact', href: '/contact' },
   ];
 
@@ -45,6 +46,10 @@ const Footer = () => {
     { label: 'Langley', href: '/langley' },
     { label: 'Coquitlam', href: '/coquitlam' },
     { label: 'Abbotsford', href: '/abbotsford' },
+    // Both this and /marketing-benchmarks above were in the sitemap and
+    // indexable with no internal link anywhere on the site. An orphan is
+    // crawled rarely and ranks accordingly, whatever is on it.
+    { label: 'Near Me', href: '/digital-marketing-near-me' },
   ];
 
   const legal = [

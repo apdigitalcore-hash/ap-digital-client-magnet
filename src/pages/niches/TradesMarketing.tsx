@@ -11,7 +11,7 @@ import FaqLight from '@/components/light/FaqLight';
 import PastelCTA from '@/components/light/PastelCTA';
 import InlineCTA from '@/components/light/InlineCTA';
 
-const TITLE = 'Trades Marketing BC | Contractor Lead Generation | AP Digital';
+const TITLE = 'Trades Marketing BC | Contractor Leads | AP Digital';
 const DESC = 'AP Digital runs Google & Meta Ads for BC plumbers, electricians, HVAC companies & roofers. $759/month management, month-to-month. 90-day guarantee.';
 const CANONICAL = 'https://ap-digital.ca/trades-marketing';
 const OG_IMAGE = 'https://ap-digital.ca/og-image.png';
